@@ -1,0 +1,33 @@
+/* Seals of the World specific styles */
+
+/* Override gradient for ocean theme */
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+}
+
+.magazine-header {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(230,240,255,0.95) 100%);
+}
+
+/* Ocean-themed accent colors */
+.text-content h2::after {
+    background: linear-gradient(90deg, #1e3c72, #2a5298);
+}
+
+.fact-card {
+    background: linear-gradient(135deg, #2a5298 0%, #1e3c72 100%);
+}
+
+.back-arrow {
+    color: #1e3c72;
+}
+
+/* Seal-specific animations */
+@keyframes swim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.image-container img:hover {
+    animation: swim 2s ease-in-out;
+}

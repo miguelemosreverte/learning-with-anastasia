@@ -281,8 +281,8 @@
         };
 
         // Language switching functionality
-        let currentLang = localStorage.getItem('selectedLanguage') || 'en';
-
+        // currentLang is defined in language-switcher.js
+        
         function updateContent(lang) {
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -301,14 +301,17 @@
             document.documentElement.lang = lang;
         }
 
-        // Initialize content
-        updateContent(currentLang);
+        // Initialize content when language-switcher.js loads
+        window.addEventListener('DOMContentLoaded', () => {
+            const lang = localStorage.getItem('selectedLanguage') || 'en';
+            updateContent(lang);
+        });
 
         // Listen for language changes
         window.addEventListener('storage', (e) => {
             if (e.key === 'selectedLanguage') {
-                currentLang = e.newValue || 'en';
-                updateContent(currentLang);
+                const newLang = e.newValue || 'en';
+                updateContent(newLang);
             }
         });
     </script>

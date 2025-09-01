@@ -1,0 +1,50 @@
+/* Iron Snail specific styles */
+
+/* Override gradient for deep ocean theme */
+body {
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+}
+
+.magazine-header {
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,240,250,0.95) 100%);
+}
+
+/* Deep ocean accent colors */
+.text-content h2::after {
+    background: linear-gradient(90deg, #302b63, #24243e);
+}
+
+.fact-card {
+    background: linear-gradient(135deg, #302b63 0%, #0f0c29 100%);
+}
+
+.back-arrow {
+    color: #302b63;
+}
+
+/* Iron snail specific styling */
+.image-container {
+    position: relative;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 70%, rgba(15,12,41,0.3) 100%);
+    pointer-events: none;
+}
+
+/* Metallic sheen effect on hover */
+@keyframes metallic-sheen {
+    0% { filter: brightness(1); }
+    50% { filter: brightness(1.2) contrast(1.1); }
+    100% { filter: brightness(1); }
+}
+
+.content-section:hover .image-container img {
+    animation: metallic-sheen 2s ease-in-out;
+}

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seals of the World - Educational Magazine</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+        
+        /* Fun Fact Cards */
+        .fact-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            margin: 40px 0;
+        }
+        
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            color: #000;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .fact-card p {
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <h1 data-i18n="title">Seals of the World</h1>
+        <p data-i18n="subtitle">Amazing Ocean Acrobats</p>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img 
+            src="assets/images/hero-seal-colony.jpg" 
+            alt="Large colony of various seal species resting on coastal rocks at golden sunset, with elephant seals, harbor seals, and sea lions visible, ocean waves gently lapping at the rocks, warm golden light illuminating the scene"
+            class="hero-image"
+        >
+        <div class="hero-overlay">
+            <h1 class="hero-title" data-i18n="heroTitle">Ocean's Playful Giants</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">Meet the Amazing Seal Families</p>
+        </div>
+    </section>
+    
+    <!-- Section 1: What Are Seals? -->
+    <section class="content-section">
+        <div class="text-content">
+            <h2 data-i18n="section1Title">What Are Seals?</h2>
+            <p data-i18n="section1Text1">Seals are amazing ocean animals that can live both in water and on land! They're like the puppies of the sea - playful, smart, and super cute. There are 33 different types of seals around the world!</p>
+            <p data-i18n="section1Text2">Seals have flippers instead of legs, which makes them incredible swimmers. They can hold their breath for a really long time - some for over an hour! That's like watching your favorite movie underwater!</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/harbor-seal-portrait.jpg" 
+                alt="Close-up portrait of a curious harbor seal with large dark eyes and whiskers, wet fur glistening in sunlight, friendly expression looking directly at camera"
+            >
+        </div>
+    </section>
+    
+    <!-- Section 2: Elephant Seals - The Giants -->
+    <section class="content-section">
+        <div class="text-content">
+            <h2 data-i18n="section2Title">Elephant Seals - The Giants</h2>
+            <p data-i18n="section2Text1">Elephant seals are the biggest seals in the world! Male elephant seals can weigh as much as four cars put together - that's 4,000 kilograms! They get their name from the male's big nose that looks like an elephant's trunk.</p>
+            <p data-i18n="section2Text2">These gentle giants love to sunbathe on beaches. Even though they're huge, they're amazing divers and can go deeper than most submarines - down to 2,000 meters deep!</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/elephant-seal-beach.jpg" 
+                alt="Massive male elephant seal with distinctive large nose resting on sandy beach, showing impressive size compared to surrounding rocks, peaceful expression while sunbathing"
+            >
+        </div>
+    </section>
+    
+    <!-- Fun Fact Card -->
+    <div class="content-section">
+        <div class="fact-card">
+            <h3 data-i18n="funFact1Title">🦭 Fun Fact: Super Sleepers</h3>
+            <p data-i18n="funFact1Text">Elephant seals can hold their breath for up to 2 hours while sleeping underwater! They take short naps while floating or slowly sinking, then swim back up for air without even waking up!</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/seal-sleeping-underwater.jpg" 
+                alt="Peaceful seal sleeping underwater, floating gracefully with eyes closed, sunlight filtering through the water creating beautiful patterns around the relaxed seal"
+            >
+        </div>
+    </div>
+    
+    <!-- Section 3: Harbor Seals - The Friendly Ones -->
+    <section class="content-section">
+        <div class="text-content">
+            <h2 data-i18n="section3Title">Harbor Seals - The Friendly Ones</h2>
+            <p data-i18n="section3Text1">Harbor seals are like the friendly neighbors of the seal world! They live close to shores and often pop their heads up to watch people. They have spotted coats that are unique to each seal - like fingerprints!</p>
+            <p data-i18n="section3Text2">Baby harbor seals are called pups and they can swim right after they're born! Their moms recognize them by their special smell and voice, even in a group of hundreds of seals.</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/harbor-seal-pup.jpg" 
+                alt="Adorable harbor seal pup with spotted fur pattern on rocky shore, big curious eyes looking at camera, mother seal nearby keeping watch, coastal habitat visible"
+            >
+        </div>
+    </section>
+    
+    <!-- Section 4: Sea Lions - The Acrobats -->
+    <section class="content-section">
+        <div class="text-content">
+            <h2 data-i18n="section4Title">Sea Lions - The Acrobats</h2>
+            <p data-i18n="section4Text1">Sea lions are the acrobats of the seal family! Unlike true seals, they can walk on their four flippers, making them super agile on land. They're also the noisiest seals - their bark can be heard from far away!</p>
+            <p data-i18n="section4Text2">Sea lions are incredibly smart and playful. They love to surf on waves just for fun and often play games with seaweed or fish. Young sea lions even have their own 'nurseries' where they play together while their moms hunt!</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/sea-lion-playing.jpg" 
+                alt="Playful California sea lion leaping out of the water, water droplets sparkling in sunlight, showing athletic ability and joyful expression, ocean waves in background"
+            >
+        </div>
+    </section>
+    
+    <!-- Section 5: Leopard Seals - The Spotted Hunters -->
+    <section class="content-section">
+        <div class="text-content">
+            <h2 data-i18n="section5Title">Leopard Seals - The Spotted Beauties</h2>
+            <p data-i18n="section5Text1">Leopard seals get their name from their beautiful spotted coats! They live in the cold waters around Antarctica and are excellent swimmers. They have long, sleek bodies that help them glide through the water like underwater rockets!</p>
+            <p data-i18n="section5Text2">These seals are curious about humans and sometimes swim up to boats to investigate. They have big smiles that make them look friendly, and they're known for their playful nature with objects they find in the water.</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/leopard-seal-swimming.jpg" 
+                alt="Elegant leopard seal swimming underwater showing distinctive spotted pattern on its sides, streamlined body gliding through clear Antarctic waters, curious expression"
+            >
+        </div>
+    </section>
+    
+    <!-- Fun Fact Card -->
+    <div class="content-section">
+        <div class="fact-card">
+            <h3 data-i18n="funFact2Title">🎵 Fun Fact: Underwater Singers</h3>
+            <p data-i18n="funFact2Text">Male seals sing underwater to attract females! Each species has its own special songs. Weddell seals make sci-fi sounds that can be heard through thick ice, while bearded seals create spiraling whistles that sound like spaceships!</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/seal-singing.jpg" 
+                alt="Seal with mouth open underwater appearing to sing, bubbles rising from its mouth, ethereal underwater lighting creating a magical atmosphere"
+            >
+        </div>
+    </div>
+    
+    <!-- Section 6: Baby Seals -->
+    <section class="content-section">
+        <div class="text-content">
+            <h2 data-i18n="section6Title">Adorable Seal Pups</h2>
+            <p data-i18n="section6Text1">Baby seals are some of the cutest animals in the ocean! Most seal pups are born with fluffy white fur called lanugo that keeps them warm. They look like living stuffed animals!</p>
+            <p data-i18n="section6Text2">Seal moms are amazing! They can find their own pup among thousands by their unique call and smell. Pups grow super fast - some double their weight in just a few weeks by drinking their mom's rich milk!</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/seal-pup-white.jpg" 
+                alt="Fluffy white harp seal pup lying on ice, huge dark eyes contrasting with pure white fur coat, looking adorable and cuddly in its Arctic nursery habitat"
+            >
+        </div>
+    </section>
+    
+    <!-- Section 7: How Seals Live -->
+    <section class="content-section">
+        <div class="text-content">
+            <h2 data-i18n="section7Title">Life in Two Worlds</h2>
+            <p data-i18n="section7Text1">Seals are amazing because they live in two worlds - ocean and land! In water, they're graceful swimmers who can do underwater somersaults and spirals. On land, they love to sunbathe and socialize in big groups called colonies.</p>
+            <p data-i18n="section7Text2">Seals have special adaptations like closeable nostrils, excellent underwater vision, and sensitive whiskers that help them find food in dark water. They're perfectly designed for their ocean lifestyle!</p>
+        </div>
+        <div class="image-container">
+            <img 
+                src="assets/images/seal-colony-beach.jpg" 
+                alt="Large colony of seals of various sizes lounging on a sunny beach, some playing in shallow water, others sleeping on warm sand, showing social behavior and community living"
+            >
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p data-i18n="footer1">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-i18n="footer2">Discovering the wonderful world of seals</p>
+    </div>
+    
+    <!-- Language Switcher Script -->
+    <script src="../language-switcher.js"></script>
+    
+    <!-- Page-specific translations -->
+    <script>
+        const translations = {
+            en: {
+                title: "Seals of the World",
+                subtitle: "Amazing Ocean Acrobats",
+                heroTitle: "Ocean's Playful Giants",
+                heroSubtitle: "Meet the Amazing Seal Families",
+                section1Title: "What Are Seals?",
+                section1Text1: "Seals are amazing ocean animals that can live both in water and on land! They're like the puppies of the sea - playful, smart, and super cute. There are 33 different types of seals around the world!",
+                section1Text2: "Seals have flippers instead of legs, which makes them incredible swimmers. They can hold their breath for a really long time - some for over an hour! That's like watching your favorite movie underwater!",
+                section2Title: "Elephant Seals - The Giants",
+                section2Text1: "Elephant seals are the biggest seals in the world! Male elephant seals can weigh as much as four cars put together - that's 4,000 kilograms! They get their name from the male's big nose that looks like an elephant's trunk.",
+                section2Text2: "These gentle giants love to sunbathe on beaches. Even though they're huge, they're amazing divers and can go deeper than most submarines - down to 2,000 meters deep!",
+                funFact1Title: "🦭 Fun Fact: Super Sleepers",
+                funFact1Text: "Elephant seals can hold their breath for up to 2 hours while sleeping underwater! They take short naps while floating or slowly sinking, then swim back up for air without even waking up!",
+                section3Title: "Harbor Seals - The Friendly Ones",
+                section3Text1: "Harbor seals are like the friendly neighbors of the seal world! They live close to shores and often pop their heads up to watch people. They have spotted coats that are unique to each seal - like fingerprints!",
+                section3Text2: "Baby harbor seals are called pups and they can swim right after they're born! Their moms recognize them by their special smell and voice, even in a group of hundreds of seals.",
+                section4Title: "Sea Lions - The Acrobats",
+                section4Text1: "Sea lions are the acrobats of the seal family! Unlike true seals, they can walk on their four flippers, making them super agile on land. They're also the noisiest seals - their bark can be heard from far away!",
+                section4Text2: "Sea lions are incredibly smart and playful. They love to surf on waves just for fun and often play games with seaweed or fish. Young sea lions even have their own 'nurseries' where they play together while their moms hunt!",
+                section5Title: "Leopard Seals - The Spotted Beauties",
+                section5Text1: "Leopard seals get their name from their beautiful spotted coats! They live in the cold waters around Antarctica and are excellent swimmers. They have long, sleek bodies that help them glide through the water like underwater rockets!",
+                section5Text2: "These seals are curious about humans and sometimes swim up to boats to investigate. They have big smiles that make them look friendly, and they're known for their playful nature with objects they find in the water.",
+                funFact2Title: "🎵 Fun Fact: Underwater Singers",
+                funFact2Text: "Male seals sing underwater to attract females! Each species has its own special songs. Weddell seals make sci-fi sounds that can be heard through thick ice, while bearded seals create spiraling whistles that sound like spaceships!",
+                section6Title: "Adorable Seal Pups",
+                section6Text1: "Baby seals are some of the cutest animals in the ocean! Most seal pups are born with fluffy white fur called lanugo that keeps them warm. They look like living stuffed animals!",
+                section6Text2: "Seal moms are amazing! They can find their own pup among thousands by their unique call and smell. Pups grow super fast - some double their weight in just a few weeks by drinking their mom's rich milk!",
+                section7Title: "Life in Two Worlds",
+                section7Text1: "Seals are amazing because they live in two worlds - ocean and land! In water, they're graceful swimmers who can do underwater somersaults and spirals. On land, they love to sunbathe and socialize in big groups called colonies.",
+                section7Text2: "Seals have special adaptations like closeable nostrils, excellent underwater vision, and sensitive whiskers that help them find food in dark water. They're perfectly designed for their ocean lifestyle!",
+                footer1: "© 2025 Learning with Anastasia - Educational Magazine Collection",
+                footer2: "Discovering the wonderful world of seals"
+            },
+            es: {
+                title: "Focas del Mundo",
+                subtitle: "Increíbles Acróbatas del Océano",
+                heroTitle: "Gigantes Juguetones del Océano",
+                heroSubtitle: "Conoce a las Asombrosas Familias de Focas",
+                section1Title: "¿Qué Son las Focas?",
+                section1Text1: "¡Las focas son animales oceánicos increíbles que pueden vivir tanto en el agua como en la tierra! Son como los perritos del mar: juguetones, inteligentes y súper lindos. ¡Hay 33 tipos diferentes de focas en el mundo!",
+                section1Text2: "Las focas tienen aletas en lugar de patas, lo que las hace nadadoras increíbles. ¡Pueden aguantar la respiración por mucho tiempo - algunas por más de una hora! ¡Es como ver tu película favorita bajo el agua!",
+                section2Title: "Elefantes Marinos - Los Gigantes",
+                section2Text1: "¡Los elefantes marinos son las focas más grandes del mundo! Los machos pueden pesar tanto como cuatro autos juntos - ¡eso es 4,000 kilogramos! Obtienen su nombre de la gran nariz del macho que parece una trompa de elefante.",
+                section2Text2: "A estos gentiles gigantes les encanta tomar el sol en las playas. Aunque son enormes, son buzos increíbles y pueden ir más profundo que la mayoría de los submarinos - ¡hasta 2,000 metros de profundidad!",
+                funFact1Title: "🦭 Dato Curioso: Súper Dormilones",
+                funFact1Text: "¡Los elefantes marinos pueden aguantar la respiración hasta 2 horas mientras duermen bajo el agua! Toman siestas cortas mientras flotan o se hunden lentamente, ¡luego nadan de vuelta para respirar sin siquiera despertar!",
+                section3Title: "Focas Comunes - Las Amigables",
+                section3Text1: "¡Las focas comunes son como los vecinos amigables del mundo de las focas! Viven cerca de las costas y a menudo sacan sus cabezas para observar a la gente. ¡Tienen pelajes manchados que son únicos para cada foca - como huellas dactilares!",
+                section3Text2: "Los bebés focas se llaman cachorros y ¡pueden nadar justo después de nacer! Sus mamás los reconocen por su olor y voz especial, incluso en un grupo de cientos de focas.",
+                section4Title: "Leones Marinos - Los Acróbatas",
+                section4Text1: "¡Los leones marinos son los acróbatas de la familia de las focas! A diferencia de las focas verdaderas, pueden caminar sobre sus cuatro aletas, haciéndolos súper ágiles en tierra. ¡También son las focas más ruidosas - su ladrido se puede escuchar desde lejos!",
+                section4Text2: "Los leones marinos son increíblemente inteligentes y juguetones. Les encanta surfear en las olas solo por diversión y a menudo juegan con algas o peces. ¡Los leones marinos jóvenes incluso tienen sus propias 'guarderías' donde juegan juntos mientras sus mamás cazan!",
+                section5Title: "Focas Leopardo - Las Bellezas Manchadas",
+                section5Text1: "¡Las focas leopardo obtienen su nombre de sus hermosos pelajes manchados! Viven en las aguas frías alrededor de la Antártida y son excelentes nadadoras. ¡Tienen cuerpos largos y elegantes que les ayudan a deslizarse por el agua como cohetes submarinos!",
+                section5Text2: "Estas focas son curiosas sobre los humanos y a veces nadan hacia los barcos para investigar. Tienen grandes sonrisas que las hacen parecer amigables, y son conocidas por su naturaleza juguetona con objetos que encuentran en el agua.",
+                funFact2Title: "🎵 Dato Curioso: Cantantes Submarinos",
+                funFact2Text: "¡Los machos cantan bajo el agua para atraer a las hembras! Cada especie tiene sus propias canciones especiales. Las focas de Weddell hacen sonidos de ciencia ficción que se pueden escuchar a través del hielo grueso, ¡mientras que las focas barbudas crean silbidos en espiral que suenan como naves espaciales!",
+                section6Title: "Adorables Cachorros de Foca",
+                section6Text1: "¡Los bebés focas son algunos de los animales más lindos del océano! La mayoría de los cachorros nacen con pelaje blanco esponjoso llamado lanugo que los mantiene calientes. ¡Parecen peluches vivientes!",
+                section6Text2: "¡Las mamás focas son increíbles! Pueden encontrar a su propio cachorro entre miles por su llamada y olor únicos. ¡Los cachorros crecen súper rápido - algunos duplican su peso en solo unas semanas bebiendo la rica leche de su mamá!",
+                section7Title: "Vida en Dos Mundos",
+                section7Text1: "¡Las focas son increíbles porque viven en dos mundos - océano y tierra! En el agua, son nadadoras elegantes que pueden hacer volteretas y espirales submarinas. En tierra, les encanta tomar el sol y socializar en grandes grupos llamados colonias.",
+                section7Text2: "Las focas tienen adaptaciones especiales como narices que se pueden cerrar, excelente visión submarina y bigotes sensibles que les ayudan a encontrar comida en agua oscura. ¡Están perfectamente diseñadas para su estilo de vida oceánico!",
+                footer1: "© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas",
+                footer2: "Descubriendo el maravilloso mundo de las focas"
+            },
+            ru: {
+                title: "Тюлени Мира",
+                subtitle: "Удивительные Океанские Акробаты",
+                heroTitle: "Игривые Гиганты Океана",
+                heroSubtitle: "Познакомьтесь с Удивительными Семействами Тюленей",
+                section1Title: "Что Такое Тюлени?",
+                section1Text1: "Тюлени - удивительные океанские животные, которые могут жить как в воде, так и на суше! Они как щенки моря - игривые, умные и супер милые. В мире существует 33 различных вида тюленей!",
+                section1Text2: "У тюленей есть ласты вместо ног, что делает их невероятными пловцами. Они могут задерживать дыхание на очень долгое время - некоторые более чем на час! Это как смотреть любимый фильм под водой!",
+                section2Title: "Морские Слоны - Гиганты",
+                section2Text1: "Морские слоны - самые большие тюлени в мире! Самцы морских слонов могут весить как четыре машины вместе - это 4000 килограммов! Они получили свое название из-за большого носа самца, который похож на хобот слона.",
+                section2Text2: "Эти нежные гиганты любят загорать на пляжах. Хотя они огромные, они удивительные ныряльщики и могут погружаться глубже, чем большинство подводных лодок - до 2000 метров в глубину!",
+                funFact1Title: "🦭 Интересный Факт: Супер Сони",
+                funFact1Text: "Морские слоны могут задерживать дыхание до 2 часов, пока спят под водой! Они делают короткие дремоты, плавая или медленно погружаясь, затем плывут обратно за воздухом, даже не просыпаясь!",
+                section3Title: "Обыкновенные Тюлени - Дружелюбные",
+                section3Text1: "Обыкновенные тюлени как дружелюбные соседи в мире тюленей! Они живут близко к берегам и часто высовывают головы, чтобы наблюдать за людьми. У них пятнистая шкура, уникальная для каждого тюленя - как отпечатки пальцев!",
+                section3Text2: "Детеныши тюленей называются щенками и могут плавать сразу после рождения! Их мамы узнают их по особому запаху и голосу, даже в группе из сотен тюленей.",
+                section4Title: "Морские Львы - Акробаты",
+                section4Text1: "Морские львы - акробаты семейства тюленей! В отличие от настоящих тюленей, они могут ходить на своих четырех ластах, что делает их супер ловкими на суше. Они также самые шумные тюлени - их лай слышен издалека!",
+                section4Text2: "Морские львы невероятно умны и игривы. Они любят кататься на волнах просто для удовольствия и часто играют с водорослями или рыбой. У молодых морских львов даже есть свои 'детские сады', где они играют вместе, пока их мамы охотятся!",
+                section5Title: "Морские Леопарды - Пятнистые Красавцы",
+                section5Text1: "Морские леопарды получили свое название из-за их красивой пятнистой шкуры! Они живут в холодных водах вокруг Антарктиды и являются отличными пловцами. У них длинные, обтекаемые тела, которые помогают им скользить по воде как подводные ракеты!",
+                section5Text2: "Эти тюлени любопытны к людям и иногда подплывают к лодкам, чтобы исследовать. У них большие улыбки, которые делают их дружелюбными, и они известны своей игривой натурой с предметами, которые находят в воде.",
+                funFact2Title: "🎵 Интересный Факт: Подводные Певцы",
+                funFact2Text: "Самцы поют под водой, чтобы привлечь самок! У каждого вида есть свои особые песни. Тюлени Уэдделла издают звуки научной фантастики, которые слышны через толстый лед, а бородатые тюлени создают спиральные свистки, которые звучат как космические корабли!",
+                section6Title: "Очаровательные Детеныши Тюленей",
+                section6Text1: "Детеныши тюленей - одни из самых милых животных в океане! Большинство детенышей рождаются с пушистым белым мехом, называемым лануго, который держит их в тепле. Они выглядят как живые плюшевые игрушки!",
+                section6Text2: "Мамы-тюлени удивительны! Они могут найти своего собственного детеныша среди тысяч по их уникальному зову и запаху. Детеныши растут супер быстро - некоторые удваивают свой вес всего за несколько недель, питаясь богатым молоком мамы!",
+                section7Title: "Жизнь в Двух Мирах",
+                section7Text1: "Тюлени удивительны, потому что они живут в двух мирах - океане и на суше! В воде они грациозные пловцы, которые могут делать подводные сальто и спирали. На суше они любят загорать и общаться в больших группах, называемых колониями.",
+                section7Text2: "У тюленей есть специальные приспособления, такие как закрывающиеся ноздри, отличное подводное зрение и чувствительные усы, которые помогают им находить пищу в темной воде. Они идеально созданы для их океанского образа жизни!",
+                footer1: "© 2025 Учимся с Анастасией - Коллекция Образовательных Журналов",
+                footer2: "Открывая удивительный мир тюленей"
+            }
+        };
+        
+        function updateContent(lang) {
+            const t = translations[lang];
+            
+            // Update all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (t[key]) {
+                    element.textContent = t[key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
