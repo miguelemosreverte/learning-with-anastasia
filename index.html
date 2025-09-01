@@ -385,6 +385,14 @@
                 <span class="read-more">Explore Issue →</span>
             </div>
         </a>
+        
+        <!-- Coming Soon Card -->
+        <div class="magazine-card coming-soon">
+            <div class="coming-soon-content">
+                <h3 data-i18n="comingSoon">Coming Soon</h3>
+                <p data-i18n="nextIssue">Next Issue in Development</p>
+            </div>
+        </div>
     </div>
     
     <div class="footer">
@@ -407,7 +415,9 @@
                 readMore: "Explore Issue →",
                 footer: "© 2025 Learning with Anastasia. An Educational Magazine Collection.",
                 new: "NEW",
-                issue: "ISSUE"
+                issue: "ISSUE",
+                comingSoon: "Coming Soon",
+                nextIssue: "Next Issue in Development"
             },
             es: {
                 title: "Aprendiendo con Anastasia",
@@ -422,7 +432,9 @@
                 readMore: "Explorar Edición →",
                 footer: "© 2025 Aprendiendo con Anastasia. Una Colección de Revistas Educativas.",
                 new: "NUEVO",
-                issue: "EDICIÓN"
+                issue: "EDICIÓN",
+                comingSoon: "Próximamente",
+                nextIssue: "Próxima Edición en Desarrollo"
             },
             ru: {
                 title: "Учимся с Анастасией",
@@ -437,7 +449,9 @@
                 readMore: "Изучить выпуск →",
                 footer: "© 2025 Учимся с Анастасией. Коллекция образовательных журналов.",
                 new: "НОВЫЙ",
-                issue: "ВЫПУСК"
+                issue: "ВЫПУСК",
+                comingSoon: "Скоро",
+                nextIssue: "Следующий выпуск в разработке"
             }
         };
         
@@ -514,6 +528,12 @@
             
             // Update footer
             document.querySelector('.footer p').textContent = t.footer;
+            
+            // Update Coming Soon card
+            const comingSoonTitle = document.querySelector('.coming-soon-content h3');
+            const comingSoonText = document.querySelector('.coming-soon-content p');
+            if (comingSoonTitle) comingSoonTitle.textContent = t.comingSoon;
+            if (comingSoonText) comingSoonText.textContent = t.nextIssue;
         }
     </script>
 </body>
