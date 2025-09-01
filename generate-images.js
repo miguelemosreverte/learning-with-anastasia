@@ -17,7 +17,7 @@ const imageConfigs = [
   {
     name: 'iron-snail-cover',
     path: 'chrysomallon-squamiferum/assets/images/magazine-cover.jpg',
-    prompt: 'Chrysomallon squamiferum iron snail with metallic scales, Studio Ghibli whimsical character design meets Pixar-level material rendering and subsurface scattering on shell, Van Gogh color strokes in the water currents, children\'s book illustration storytelling, bioluminescent deep sea with volumetric lighting, iridescent iron scales with realistic metallic sheen, magical underwater atmosphere, hand-painted details with photorealistic textures, portrait orientation',
+    prompt: 'Scientifically accurate Chrysomallon squamiferum (scaly-foot snail) on black volcanic rock near deep ocean hydrothermal vent, actual iron sulfide scales covering its foot visible as dark metallic plates, shell appears oxidized with rusty coloration, accurate size showing 4-5cm snail, black smoker vent in background releasing mineral-rich hot water, deep sea environment at 2500m depth, no bioluminescence (too deep for light), realistic deep ocean darkness with minimal lighting from volcanic activity, documentary photography style with scientific accuracy, portrait orientation',
     size: '1024x1792',
     style: 'vivid',
     quality: 'hd'
