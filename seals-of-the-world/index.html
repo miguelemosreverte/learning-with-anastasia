@@ -4,18 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="pageTitle">Seals of the World - Learning with Anastasia</title>
-    <link rel="stylesheet" href="../shared-styles.css">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Fun Facts Section */
+        .fun-facts {
+            background: #fff;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+        
+        .fun-facts h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #000;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+        
+        .facts-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .fact-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            text-align: center;
+        }
+        
+        .fact-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .fact-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #444;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="language-switcher"></div>
-    
-    <main class="magazine-layout">
-        <header class="magazine-header">
-            <a href="../index.html" class="back-arrow">←</a>
-            <h1 data-i18n="title">Seals of the World</h1>
-            <p class="subtitle" data-i18n="subtitle">Amazing swimmers from every ocean!</p>
-        </header>
+    <div class="header">
+        <h1 data-i18n="title">Seals of the World</h1>
+        <p data-i18n="subtitle">Amazing swimmers from every ocean!</p>
+    </div>
 
         <section class="content-section">
             <div class="image-container">
@@ -28,7 +180,7 @@
             </div>
         </section>
 
-        <section class="content-section reverse">
+        <section class="content-section">
             <div class="image-container">
                 <img src="assets/images/elephant-seal-beach.jpg" alt="A massive elephant seal on a sandy beach, showing its incredible size and distinctive inflatable nose, surrounded by smaller seals for size comparison" data-i18n-alt="elephantSealAlt">
             </div>
@@ -50,7 +202,7 @@
             </div>
         </section>
 
-        <section class="content-section reverse">
+        <section class="content-section">
             <div class="image-container">
                 <img src="assets/images/weddell-seal-ice.jpg" alt="A Weddell seal resting on Antarctic ice, with its plump body and cat-like face, showing its distinctive upturned mouth that looks like a permanent smile" data-i18n-alt="weddellSealAlt">
             </div>
@@ -72,7 +224,7 @@
             </div>
         </section>
 
-        <section class="content-section reverse">
+        <section class="content-section">
             <div class="image-container">
                 <img src="assets/images/harp-seal-pup.jpg" alt="An adorable white harp seal pup with big black eyes lying on pristine white ice, its fluffy coat looking like a snowball with a face" data-i18n-alt="harpSealAlt">
             </div>
@@ -115,7 +267,6 @@
                 </div>
             </div>
         </section>
-    </main>
 
     <script>
         const translations = {
