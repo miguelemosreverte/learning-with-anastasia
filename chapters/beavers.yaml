@@ -5,7 +5,24 @@ meta:
     en: "Beavers: Nature's Master Engineers"
     es: "Castores: Los Maestros Ingenieros de la Naturaleza"
     ru: "Бобры: Мастера-инженеры природы"
-  description: "Follow Benny the Beaver as he builds his first dam, learning about engineering and teamwork"
+  subtitle:
+    en: "An Educational Journey into Nature's Architecture"
+    es: "Un Viaje Educativo hacia la Arquitectura de la Naturaleza"
+    ru: "Образовательное путешествие в архитектуру природы"
+  description: "Follow Baby Beaver as he builds his first dam, learning about engineering and teamwork"
+  preface:
+    en:
+      - "Welcome to the fascinating world of beavers, nature's most skilled engineers! In this educational journey, we'll follow a young beaver as he learns the ancient art of dam building passed down through generations."
+      - "Beavers are remarkable creatures that shape entire ecosystems with their constructions. Their dams create wetlands that support countless species, prevent erosion, and even help fight climate change by storing carbon."
+      - "Through our story, you'll discover how beavers use mathematics, physics, and teamwork to create structures that can last for decades. Join us as we explore the step-by-step process of building a beaver dam!"
+    es:
+      - "¡Bienvenidos al fascinante mundo de los castores, los ingenieros más hábiles de la naturaleza! En este viaje educativo, seguiremos a un joven castor mientras aprende el antiguo arte de la construcción de presas transmitido a través de generaciones."
+      - "Los castores son criaturas notables que dan forma a ecosistemas enteros con sus construcciones. Sus presas crean humedales que apoyan a innumerables especies, previenen la erosión e incluso ayudan a combatir el cambio climático almacenando carbono."
+      - "A través de nuestra historia, descubrirás cómo los castores usan matemáticas, física y trabajo en equipo para crear estructuras que pueden durar décadas. ¡Únete a nosotros mientras exploramos el proceso paso a paso de construir una presa de castor!"
+    ru:
+      - "Добро пожаловать в увлекательный мир бобров, самых искусных инженеров природы! В этом образовательном путешествии мы последуем за молодым бобром, который изучает древнее искусство строительства плотин, передаваемое из поколения в поколение."
+      - "Бобры - замечательные существа, которые формируют целые экосистемы своими сооружениями. Их плотины создают водно-болотные угодья, поддерживающие бесчисленные виды, предотвращают эрозию и даже помогают бороться с изменением климата, сохраняя углерод."
+      - "Через нашу историю вы узнаете, как бобры используют математику, физику и командную работу для создания сооружений, которые могут простоять десятилетиями. Присоединяйтесь к нам, пока мы исследуем пошаговый процесс строительства бобровой плотины!"
 
 hero:
   title:
@@ -35,8 +52,8 @@ sections:
       ru: "Знакомьтесь с Малышом Бобром"
     content:
       en: "Baby Beaver is a young beaver with big dreams! He has strong teeth that never stop growing, waterproof fur, and a flat tail that works like a rudder when swimming. Today, he's ready to build his very first dam!"
-      es: "¡Bebé Castor es un joven castor con grandes sueños! Tiene dientes fuertes que nunca dejan de crecer, pelaje impermeable y una cola plana que funciona como timón al nadar."
-      ru: "Малыш Бобр - молодой бобр с большими мечтами! У него крепкие зубы, которые никогда не перестают расти, водонепроницаемый мех и плоский хвост."
+      es: "¡Bebé Castor es un joven castor con grandes sueños! Tiene dientes fuertes que nunca dejan de crecer, pelaje impermeable y una cola plana que funciona como timón al nadar. ¡Hoy, está listo para construir su primera presa!"
+      ru: "Малыш Бобр - молодой бобр с большими мечтами! У него крепкие зубы, которые никогда не перестают расти, водонепроницаемый мех и плоский хвост, который работает как руль при плавании. Сегодня он готов построить свою первую плотину!"
     image: "baby-beaver-portrait.jpg"
     imageAlt:
       en: "Young beaver with bright eyes, shiny brown fur, and eager expression"
@@ -362,7 +379,48 @@ imageGeneration:
   style:
     global: "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes"
   
-  routing:
+  viewerDetails:
+  - title:
+      en: "The Beaver's Tail"
+      es: "La Cola del Castor"
+      ru: "Хвост Бобра"
+    description:
+      en: "Did you notice how Baby Beaver uses his flat tail? It serves as a rudder for swimming, a prop when sitting upright, and makes a loud warning slap on water to alert family of danger!"
+      es: "¿Notaste cómo Bebé Castor usa su cola plana? Sirve como timón para nadar, como apoyo cuando se sienta erguido, ¡y hace un fuerte golpe de advertencia en el agua para alertar a la familia del peligro!"
+      ru: "Вы заметили, как Малыш Бобр использует свой плоский хвост? Он служит рулем при плавании, опорой при сидении и издает громкий предупреждающий шлепок по воде, чтобы предупредить семью об опасности!"
+    image: "detail-beaver-tail.jpg"
+    
+  - title:
+      en: "Underwater Entrances"
+      es: "Entradas Subacuáticas"
+      ru: "Подводные Входы"
+    description:
+      en: "Look closely at the lodge - all entrances are underwater! This clever design keeps predators out while allowing beavers to come and go safely, even when the pond freezes over."
+      es: "¡Mira de cerca la madriguera - todas las entradas están bajo el agua! Este diseño inteligente mantiene a los depredadores fuera mientras permite a los castores entrar y salir con seguridad, incluso cuando el estanque se congela."
+      ru: "Посмотрите внимательно на хатку - все входы находятся под водой! Эта умная конструкция не пускает хищников, позволяя бобрам безопасно входить и выходить, даже когда пруд замерзает."
+    image: "detail-underwater-entrance.jpg"
+    
+  - title:
+      en: "Orange Teeth"
+      es: "Dientes Naranjas"
+      ru: "Оранжевые Зубы"
+    description:
+      en: "Beavers have orange teeth! The orange color comes from iron in their tooth enamel, which makes their teeth incredibly strong - perfect for gnawing through wood."
+      es: "¡Los castores tienen dientes naranjas! El color naranja proviene del hierro en el esmalte dental, lo que hace que sus dientes sean increíblemente fuertes - perfectos para roer madera."
+      ru: "У бобров оранжевые зубы! Оранжевый цвет происходит от железа в зубной эмали, что делает их зубы невероятно крепкими - идеальными для прогрызания древесины."
+    image: "detail-orange-teeth.jpg"
+    
+  - title:
+      en: "Engineering Mathematics"
+      es: "Matemáticas de Ingeniería"
+      ru: "Инженерная Математика"
+    description:
+      en: "Notice how the dam curves upstream? This arch shape distributes water pressure evenly, using the same principle as human-built arch dams. Beavers are natural engineers!"
+      es: "¿Notas cómo la presa se curva río arriba? Esta forma de arco distribuye la presión del agua uniformemente, usando el mismo principio que las presas de arco construidas por humanos. ¡Los castores son ingenieros naturales!"
+      ru: "Заметили, как плотина изгибается вверх по течению? Эта арочная форма равномерно распределяет давление воды, используя тот же принцип, что и арочные плотины, построенные людьми. Бобры - природные инженеры!"
+    image: "detail-dam-curve.jpg"
+
+routing:
     openai:
       - "hero-beaver-landscape.jpg"
       - "ecosystem-thriving.jpg"

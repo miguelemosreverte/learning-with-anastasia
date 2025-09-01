@@ -5,8 +5,8 @@ const Handlebars = require('handlebars');
 
 class ChapterBuilder {
     constructor() {
-        // Load the template
-        const templatePath = path.join(__dirname, '../templates/chapter-template.hbs');
+        // Load the template - using the fixed version
+        const templatePath = path.join(__dirname, '../templates/chapter-template-fixed.hbs');
         const templateSource = fs.readFileSync(templatePath, 'utf8');
         this.template = Handlebars.compile(templateSource);
     }

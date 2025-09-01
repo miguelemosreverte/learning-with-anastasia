@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{meta.title.en}} - Educational Magazine</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Selector */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .language-selector select {
+            padding: 5px 10px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Preface Section */
+        .preface-section {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .preface-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .preface-content {
+            font-family: 'Merriweather', serif;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .preface-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .fact-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching */
+        [data-lang]:not(.active) {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <select id="languageSelect" onchange="changeLanguage(this.value)">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+            <option value="ru">Русский</option>
+        </select>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">{{meta.title.en}}</h1>
+        <h1 data-lang="es">{{meta.title.es}}</h1>
+        <h1 data-lang="ru">{{meta.title.ru}}</h1>
+        <p data-lang="en" class="active">{{meta.subtitle.en}}</p>
+        <p data-lang="es">{{meta.subtitle.es}}</p>
+        <p data-lang="ru">{{meta.subtitle.ru}}</p>
+    </header>
+
+    <!-- Hero Section -->
+    {{#if hero}}
+    <section class="hero-section">
+        <img src="{{hero.image}}" alt="{{hero.title.en}}" class="hero-image">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">{{hero.title.en}}</h2>
+            <h2 class="hero-title" data-lang="es">{{hero.title.es}}</h2>
+            <h2 class="hero-title" data-lang="ru">{{hero.title.ru}}</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">{{hero.subtitle.en}}</p>
+            <p class="hero-subtitle" data-lang="es">{{hero.subtitle.es}}</p>
+            <p class="hero-subtitle" data-lang="ru">{{hero.subtitle.ru}}</p>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Preface Section -->
+    {{#if meta.preface}}
+    <section class="preface-section">
+        <h2 data-lang="en" class="active">Introduction</h2>
+        <h2 data-lang="es">Introducción</h2>
+        <h2 data-lang="ru">Введение</h2>
+        <div class="preface-content">
+            <div data-lang="en" class="active">
+                {{#each meta.preface.en}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+            <div data-lang="es">
+                {{#each meta.preface.es}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+            <div data-lang="ru">
+                {{#each meta.preface.ru}}
+                <p>{{this}}</p>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Content Sections -->
+    {{#each sections}}
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/{{image}}" 
+                 alt="{{imageAlt.en}}" 
+                 data-alt-en="{{imageAlt.en}}"
+                 data-alt-es="{{imageAlt.es}}"
+                 data-alt-ru="{{imageAlt.ru}}">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">{{title.en}}</h2>
+            <h2 data-lang="es">{{title.es}}</h2>
+            <h2 data-lang="ru">{{title.ru}}</h2>
+            <div data-lang="en" class="active">
+                <p>{{content.en}}</p>
+            </div>
+            <div data-lang="es">
+                <p>{{content.es}}</p>
+            </div>
+            <div data-lang="ru">
+                <p>{{content.ru}}</p>
+            </div>
+        </div>
+    </section>
+    {{/each}}
+
+    <!-- Viewer Details Section -->
+    {{#if viewerDetails}}
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            {{#each viewerDetails}}
+            <div class="detail-card">
+                {{#if image}}
+                <img src="assets/images/{{image}}" alt="{{title.en}}">
+                {{/if}}
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">{{title.en}}</h3>
+                    <h3 data-lang="es">{{title.es}}</h3>
+                    <h3 data-lang="ru">{{title.ru}}</h3>
+                    <p data-lang="en" class="active">{{description.en}}</p>
+                    <p data-lang="es">{{description.es}}</p>
+                    <p data-lang="ru">{{description.ru}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Fun Facts Section -->
+    {{#if funFacts}}
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">{{funFacts.title.en}}</h2>
+            <h2 data-lang="es">{{funFacts.title.es}}</h2>
+            <h2 data-lang="ru">{{funFacts.title.ru}}</h2>
+            <div class="facts-grid">
+                {{#each funFacts.facts}}
+                <div class="fact-card">
+                    <span class="fact-icon">{{icon}}</span>
+                    <h3 data-lang="en" class="active">{{title.en}}</h3>
+                    <h3 data-lang="es">{{title.es}}</h3>
+                    <h3 data-lang="ru">{{title.ru}}</h3>
+                    <p data-lang="en" class="active">{{content.en}}</p>
+                    <p data-lang="es">{{content.es}}</p>
+                    <p data-lang="ru">{{content.ru}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    {{/if}}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Educational Magazine Series</p>
+        <p data-lang="es">© 2025 Serie de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Образовательная серия журналов</p>
+    </footer>
+
+    <script>
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Hide all language elements
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected language elements
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Update image alt texts
+            document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                img.alt = img.getAttribute('data-alt-' + lang);
+            });
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            document.getElementById('languageSelect').value = savedLang;
+            changeLanguage(savedLang);
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
