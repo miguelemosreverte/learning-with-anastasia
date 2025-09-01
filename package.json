@@ -1,0 +1,23 @@
+{
+  "name": "learning-with-anastasia",
+  "version": "1.0.0",
+  "description": "Educational magazine collection with multi-language support",
+  "main": "index.html",
+  "scripts": {
+    "generate-images": "node generate-images.js",
+    "generate-missing": "node generate-images.js --missing",
+    "generate-specific": "node generate-images.js --specific",
+    "serve": "python3 -m http.server 8000",
+    "open": "open http://localhost:8000"
+  },
+  "keywords": [
+    "education",
+    "magazine",
+    "wildlife",
+    "nature"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}

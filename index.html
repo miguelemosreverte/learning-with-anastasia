@@ -253,6 +253,56 @@
             letter-spacing: 1px;
         }
         
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .lang-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Flag emoji fallback */
+        .lang-btn .flag-emoji {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            background: #f0f0f0;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .header h1 {
@@ -272,6 +322,19 @@
     </style>
 </head>
 <body>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+    
     <div class="header">
         <div class="nat-geo-logo">NG</div>
         <h1>Learning with Anastasia</h1>
@@ -325,7 +388,133 @@
     </div>
     
     <div class="footer">
-        <p>© 2025 Learning with Anastasia. An Educational Magazine Collection.</p>
+        <p data-i18n="footer">© 2025 Learning with Anastasia. An Educational Magazine Collection.</p>
     </div>
+    
+    <script>
+        // Translations
+        const translations = {
+            en: {
+                title: "Learning with Anastasia",
+                subtitle: "A Collection of Educational Magazines",
+                issue1Title: "Polar Bears & Antarctica",
+                issue1Subtitle: "An exploration of Arctic wildlife and the icy continent at the bottom of the world",
+                issue2Title: "The Iron Snail",
+                issue2Subtitle: "Chrysomallon Squamiferum - The only creature with iron armor from the deep ocean vents",
+                issue3Title: "Seals of the World",
+                issue3Subtitle: "From elephant seals to sea lions - exploring all types of pinnipeds across the globe",
+                date: "January 2025",
+                readMore: "Explore Issue →",
+                footer: "© 2025 Learning with Anastasia. An Educational Magazine Collection.",
+                new: "NEW",
+                issue: "ISSUE"
+            },
+            es: {
+                title: "Aprendiendo con Anastasia",
+                subtitle: "Una Colección de Revistas Educativas",
+                issue1Title: "Osos Polares y Antártida",
+                issue1Subtitle: "Una exploración de la vida silvestre ártica y el continente helado en el fondo del mundo",
+                issue2Title: "El Caracol de Hierro",
+                issue2Subtitle: "Chrysomallon Squamiferum - La única criatura con armadura de hierro de las fuentes oceánicas profundas",
+                issue3Title: "Focas del Mundo",
+                issue3Subtitle: "Desde elefantes marinos hasta leones marinos - explorando todos los tipos de pinnípedos del mundo",
+                date: "Enero 2025",
+                readMore: "Explorar Edición →",
+                footer: "© 2025 Aprendiendo con Anastasia. Una Colección de Revistas Educativas.",
+                new: "NUEVO",
+                issue: "EDICIÓN"
+            },
+            ru: {
+                title: "Учимся с Анастасией",
+                subtitle: "Коллекция образовательных журналов",
+                issue1Title: "Белые медведи и Антарктида",
+                issue1Subtitle: "Исследование арктической дикой природы и ледяного континента на дне мира",
+                issue2Title: "Железная улитка",
+                issue2Subtitle: "Chrysomallon Squamiferum - Единственное существо с железной броней из глубоководных источников",
+                issue3Title: "Тюлени мира",
+                issue3Subtitle: "От морских слонов до морских львов - изучение всех видов ластоногих по всему миру",
+                date: "Январь 2025",
+                readMore: "Изучить выпуск →",
+                footer: "© 2025 Учимся с Анастасией. Коллекция образовательных журналов.",
+                new: "НОВЫЙ",
+                issue: "ВЫПУСК"
+            }
+        };
+        
+        // Get current language from localStorage or default to English
+        let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+        
+        // Initialize language on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setLanguage(currentLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    setLanguage(lang);
+                });
+            });
+        });
+        
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('selectedLanguage', lang);
+            
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update text content
+            updateContent(lang);
+        }
+        
+        function updateContent(lang) {
+            const t = translations[lang];
+            
+            // Update header
+            document.querySelector('.header h1').textContent = t.title;
+            document.querySelector('.header p').textContent = t.subtitle;
+            
+            // Update magazine cards
+            const cards = document.querySelectorAll('.magazine-card');
+            
+            // Issue 1
+            if (cards[0]) {
+                cards[0].querySelector('.magazine-title').textContent = t.issue1Title;
+                cards[0].querySelector('.magazine-subtitle').textContent = t.issue1Subtitle;
+                cards[0].querySelector('.magazine-date').textContent = t.date;
+                cards[0].querySelector('.read-more').textContent = t.readMore;
+                cards[0].querySelector('.issue-number').textContent = `${t.issue} #1`;
+            }
+            
+            // Issue 2
+            if (cards[1]) {
+                cards[1].querySelector('.magazine-title').textContent = t.issue2Title;
+                cards[1].querySelector('.magazine-subtitle').textContent = t.issue2Subtitle;
+                cards[1].querySelector('.magazine-date').textContent = t.date;
+                cards[1].querySelector('.read-more').textContent = t.readMore;
+                cards[1].querySelector('.issue-number').textContent = `${t.issue} #2`;
+                cards[1].querySelector('.new-badge').textContent = t.new;
+            }
+            
+            // Issue 3
+            if (cards[2]) {
+                cards[2].querySelector('.magazine-title').textContent = t.issue3Title;
+                cards[2].querySelector('.magazine-subtitle').textContent = t.issue3Subtitle;
+                cards[2].querySelector('.magazine-date').textContent = t.date;
+                cards[2].querySelector('.read-more').textContent = t.readMore;
+                cards[2].querySelector('.issue-number').textContent = `${t.issue} #3`;
+                cards[2].querySelector('.new-badge').textContent = t.new;
+            }
+            
+            // Update footer
+            document.querySelector('.footer p').textContent = t.footer;
+        }
+    </script>
 </body>
 </html>
