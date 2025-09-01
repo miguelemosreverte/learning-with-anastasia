@@ -143,6 +143,48 @@
             color: #444;
         }
         
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .content-section {
@@ -169,9 +211,22 @@
         <p data-i18n="subtitle">Discover the incredible snail with iron armor!</p>
     </div>
 
+    <section class="hero-section">
+        <img 
+            src="assets/images/hero-deep-ocean.jpg" 
+            alt="Dramatic deep ocean scene with hydrothermal vents glowing in the darkness, black smoker chimneys releasing hot water creating ethereal underwater clouds, volcanic rocks covered with unique deep-sea life, mysterious blue-black water with bioluminescent creatures in the distance"
+            class="hero-image"
+            data-i18n-alt="heroImageAlt"
+        >
+        <div class="hero-overlay">
+            <h1 class="hero-title" data-i18n="heroTitle">The Iron Knight of the Deep</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">Nature's Most Metal Creature</p>
+        </div>
+    </section>
+
         <section class="content-section">
             <div class="image-container">
-                <img src="assets/images/iron-snail-hero.jpg" alt="A scientifically accurate scaly-foot snail (Chrysomallon squamiferum) on black volcanic rock near deep ocean hydrothermal vents, showing its unique iron sulfide scales that look like dark metallic armor plates covering its foot, with its cream-colored shell visible" data-i18n-alt="heroImageAlt">
+                <img src="assets/images/iron-snail-hero.jpg" alt="A scientifically accurate scaly-foot snail (Chrysomallon squamiferum) on black volcanic rock near deep ocean hydrothermal vents, showing its unique iron sulfide scales that look like dark metallic armor plates covering its foot, with its cream-colored shell visible" data-i18n-alt="snailImageAlt">
             </div>
             <div class="text-content">
                 <h2 data-i18n="section1Title">Meet the Iron Snail!</h2>
@@ -275,7 +330,11 @@
                 title: "The Amazing Iron Snail",
                 subtitle: "Discover the incredible snail with iron armor!",
                 
-                heroImageAlt: "A scientifically accurate scaly-foot snail (Chrysomallon squamiferum) on black volcanic rock near deep ocean hydrothermal vents, showing its unique iron sulfide scales that look like dark metallic armor plates covering its foot, with its cream-colored shell visible",
+                heroImageAlt: "Dramatic deep ocean scene with hydrothermal vents glowing in the darkness, black smoker chimneys releasing hot water creating ethereal underwater clouds, volcanic rocks covered with unique deep-sea life, mysterious blue-black water with bioluminescent creatures in the distance",
+                heroTitle: "The Iron Knight of the Deep",
+                heroSubtitle: "Nature's Most Metal Creature",
+                
+                snailImageAlt: "A scientifically accurate scaly-foot snail (Chrysomallon squamiferum) on black volcanic rock near deep ocean hydrothermal vents, showing its unique iron sulfide scales that look like dark metallic armor plates covering its foot, with its cream-colored shell visible",
                 
                 section1Title: "Meet the Iron Snail!",
                 section1Text1: "Deep in the ocean, where hot water bubbles up from the Earth, lives the most amazing snail in the world! Scientists call it Chrysomallon squamiferum, but we can call it the iron snail because it has real metal armor!",
@@ -328,7 +387,11 @@
                 title: "El Increíble Caracol de Hierro",
                 subtitle: "¡Descubre el caracol con armadura de hierro!",
                 
-                heroImageAlt: "Un caracol de pie escamoso científicamente preciso (Chrysomallon squamiferum) sobre roca volcánica negra cerca de fuentes hidrotermales del océano profundo, mostrando sus únicas escamas de sulfuro de hierro que parecen placas de armadura metálica oscura cubriendo su pie, con su concha de color crema visible",
+                heroImageAlt: "Dramática escena del océano profundo con fuentes hidrotermales brillando en la oscuridad, chimeneas de humo negro liberando agua caliente creando nubes etéreas bajo el agua, rocas volcánicas cubiertas de vida única del mar profundo, misteriosa agua azul-negra con criaturas bioluminiscentes en la distancia",
+                heroTitle: "El Caballero de Hierro del Abismo",
+                heroSubtitle: "La Criatura Más Metal de la Naturaleza",
+                
+                snailImageAlt: "Un caracol de pie escamoso científicamente preciso (Chrysomallon squamiferum) sobre roca volcánica negra cerca de fuentes hidrotermales del océano profundo, mostrando sus únicas escamas de sulfuro de hierro que parecen placas de armadura metálica oscura cubriendo su pie, con su concha de color crema visible",
                 
                 section1Title: "¡Conoce al Caracol de Hierro!",
                 section1Text1: "En lo profundo del océano, donde el agua caliente burbujea desde la Tierra, ¡vive el caracol más increíble del mundo! Los científicos lo llaman Chrysomallon squamiferum, pero podemos llamarlo caracol de hierro porque ¡tiene armadura de metal real!",
@@ -381,7 +444,11 @@
                 title: "Удивительная Железная Улитка",
                 subtitle: "Откройте для себя невероятную улитку с железной броней!",
                 
-                heroImageAlt: "Научно точная чешуйчатая улитка (Chrysomallon squamiferum) на черной вулканической породе возле глубоководных гидротермальных источников, показывающая ее уникальные чешуи из сульфида железа, которые выглядят как темные металлические броневые пластины, покрывающие ее ногу, с видимой кремовой раковиной",
+                heroImageAlt: "Драматическая сцена глубокого океана с гидротермальными источниками, светящимися в темноте, черные курильщики выпускают горячую воду, создавая эфирные подводные облака, вулканические породы, покрытые уникальной глубоководной жизнью, таинственная сине-черная вода с биолюминесцентными существами вдали",
+                heroTitle: "Железный Рыцарь Глубин",
+                heroSubtitle: "Самое Металлическое Существо Природы",
+                
+                snailImageAlt: "Научно точная чешуйчатая улитка (Chrysomallon squamiferum) на черной вулканической породе возле глубоководных гидротермальных источников, показывающая ее уникальные чешуи из сульфида железа, которые выглядят как темные металлические броневые пластины, покрывающие ее ногу, с видимой кремовой раковиной",
                 
                 section1Title: "Знакомьтесь с Железной Улиткой!",
                 section1Text1: "Глубоко в океане, где горячая вода пузырится из Земли, живет самая удивительная улитка в мире! Ученые называют ее Chrysomallon squamiferum, но мы можем называть ее железной улиткой, потому что у нее настоящая металлическая броня!",

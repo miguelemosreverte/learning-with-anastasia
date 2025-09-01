@@ -143,6 +143,48 @@
             color: #444;
         }
         
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .content-section {
@@ -168,6 +210,19 @@
         <h1 data-i18n="title">Seals of the World</h1>
         <p data-i18n="subtitle">Amazing swimmers from every ocean!</p>
     </div>
+
+    <section class="hero-section">
+        <img 
+            src="assets/images/hero-seals-ocean.jpg" 
+            alt="Majestic ocean scene with multiple seal species on rocky outcrops and in crystal blue water, sunlight streaming through waves, seals playing and swimming, coastal cliffs in background with crashing waves, realistic marine atmosphere"
+            class="hero-image"
+            data-i18n-alt="heroImageAlt"
+        >
+        <div class="hero-overlay">
+            <h1 class="hero-title" data-i18n="heroTitle">Masters of the Ocean</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">From Arctic Ice to Tropical Beaches</p>
+        </div>
+    </section>
 
         <section class="content-section">
             <div class="image-container">
@@ -275,6 +330,10 @@
                 title: "Seals of the World",
                 subtitle: "Amazing swimmers from every ocean!",
                 
+                heroImageAlt: "Majestic ocean scene with multiple seal species on rocky outcrops and in crystal blue water, sunlight streaming through waves, seals playing and swimming, coastal cliffs in background with crashing waves, realistic marine atmosphere",
+                heroTitle: "Masters of the Ocean",
+                heroSubtitle: "From Arctic Ice to Tropical Beaches",
+                
                 harborSealAlt: "A friendly harbor seal resting on coastal rocks, with its spotted gray coat glistening in the sunlight, showing its adorable whiskers and big round eyes",
                 
                 section1Title: "Meet the Harbor Seal!",
@@ -328,6 +387,10 @@
                 title: "Focas del Mundo",
                 subtitle: "¡Increíbles nadadoras de todos los océanos!",
                 
+                heroImageAlt: "Majestuosa escena oceánica con múltiples especies de focas en afloramientos rocosos y en agua cristalina azul, luz solar filtrándose a través de las olas, focas jugando y nadando, acantilados costeros en el fondo con olas rompiendo, atmósfera marina realista",
+                heroTitle: "Maestras del Océano",
+                heroSubtitle: "Desde el Hielo Ártico hasta las Playas Tropicales",
+                
                 harborSealAlt: "Una amigable foca común descansando en rocas costeras, con su pelaje gris moteado brillando bajo el sol, mostrando sus adorables bigotes y grandes ojos redondos",
                 
                 section1Title: "¡Conoce a la Foca Común!",
@@ -380,6 +443,10 @@
                 pageTitle: "Тюлени Мира - Учимся с Анастасией",
                 title: "Тюлени Мира",
                 subtitle: "Удивительные пловцы из всех океанов!",
+                
+                heroImageAlt: "Величественная океанская сцена с несколькими видами тюленей на скалистых выступах и в кристально голубой воде, солнечный свет проникает сквозь волны, тюлени играют и плавают, прибрежные скалы на заднем плане с разбивающимися волнами, реалистичная морская атмосфера",
+                heroTitle: "Мастера Океана",
+                heroSubtitle: "От Арктического Льда до Тропических Пляжей",
                 
                 harborSealAlt: "Дружелюбный обыкновенный тюлень отдыхает на прибрежных скалах, его пятнистая серая шерсть блестит на солнце, показывая его очаровательные усы и большие круглые глаза",
                 
