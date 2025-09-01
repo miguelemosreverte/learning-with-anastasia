@@ -3,658 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seals of the World - National Geographic Style</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            background: #000;
-            overflow-x: hidden;
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
-                        url('assets/images/hero-background.jpg') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        
-        .nat-geo-logo {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 60px;
-            border: 3px solid #FFCC00;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: #FFCC00;
-            font-size: 24px;
-            font-family: 'Oswald', sans-serif;
-        }
-        
-        .hero-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(60px, 12vw, 140px);
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            line-height: 0.9;
-            text-align: center;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
-            margin-bottom: 20px;
-        }
-        
-        .hero-subtitle {
-            font-family: 'Merriweather', serif;
-            font-size: clamp(18px, 3vw, 28px);
-            color: #FFCC00;
-            font-weight: 300;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-        }
-        
-        .scroll-indicator {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 30px;
-            height: 50px;
-            border: 2px solid rgba(255,255,255,0.5);
-            border-radius: 15px;
-            display: flex;
-            justify-content: center;
-            padding-top: 8px;
-        }
-        
-        .scroll-dot {
-            width: 4px;
-            height: 8px;
-            background: #fff;
-            border-radius: 2px;
-            animation: scroll 2s infinite;
-        }
-        
-        @keyframes scroll {
-            0% { opacity: 0; transform: translateY(0); }
-            50% { opacity: 1; }
-            100% { opacity: 0; transform: translateY(20px); }
-        }
-        
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
-        /* Intro Section */
-        .intro-section {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2940') center/cover;
-            padding: 100px 0;
-            display: flex;
-            align-items: center;
-        }
-        
-        .intro-statement {
-            background: rgba(255,204,0,0.9);
-            padding: 40px;
-            margin-bottom: 60px;
-            position: relative;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .intro-statement::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100px;
-            height: 4px;
-            background: #000;
-        }
-        
-        .intro-statement p {
-            font-size: 20px;
-            line-height: 1.8;
-            color: #000;
-            font-weight: 400;
-        }
-        
-        .intro-statement strong {
-            font-family: 'Oswald', sans-serif;
-            font-size: 24px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-        
-        /* Section Headers */
-        .section-header {
-            font-family: 'Oswald', sans-serif;
-            font-size: clamp(40px, 8vw, 80px);
-            color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 60px;
-            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
-            letter-spacing: -1px;
-        }
-        
-        /* Types Section */
-        .types-section {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1544467887-4d6ec1d30db4?q=80&w=2940') center/cover;
-            padding: 100px 0;
-        }
-        
-        .types-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-        }
-        
-        .type-card {
-            background: rgba(0,0,0,0.8);
-            padding: 40px;
-            border-left: 4px solid #FFCC00;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease;
-        }
-        
-        .type-card:hover {
-            transform: translateX(10px);
-        }
-        
-        .type-card h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 28px;
-            color: #FFCC00;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-        
-        .type-card p {
-            color: #fff;
-            font-size: 16px;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-        
-        /* Species Sections */
-        .elephant-seals-section {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=2940') center/cover;
-            padding: 100px 0;
-        }
-        
-        .harbor-seals-section {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1544467887-4ba84cb49ad8?q=80&w=2940') center/cover;
-            padding: 100px 0;
-        }
-        
-        .leopard-seals-section {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=2940') center/cover;
-            padding: 100px 0;
-        }
-        
-        .monk-seals-section {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1583212292454-1fe6229603b7?q=80&w=2940') center/cover;
-            padding: 100px 0;
-        }
-        
-        .eared-seals-section {
-            position: relative;
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1544467887-588d2bb65b00?q=80&w=2940') center/cover;
-            padding: 100px 0;
-        }
-        
-        .species-content {
-            background: rgba(0,0,0,0.8);
-            padding: 60px;
-            backdrop-filter: blur(10px);
-            border-top: 4px solid #FFCC00;
-            max-width: 900px;
-        }
-        
-        .species-content h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 48px;
-            color: #FFCC00;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-        }
-        
-        .species-content h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 24px;
-            color: #fff;
-            margin: 30px 0 15px 0;
-        }
-        
-        .species-content p {
-            color: #fff;
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        
-        .species-list {
-            list-style: none;
-        }
-        
-        .species-list li {
-            color: #fff;
-            font-size: 18px;
-            line-height: 2;
-            padding-left: 30px;
-            position: relative;
-            margin-bottom: 20px;
-        }
-        
-        .species-list li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #FFCC00;
-            font-size: 24px;
-        }
-        
-        /* Adaptations Section */
-        .adaptations-section {
-            background: #111;
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .adaptations-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-        
-        .adaptation-card {
-            background: linear-gradient(135deg, rgba(255,204,0,0.1), rgba(255,204,0,0.05));
-            border: 2px solid #FFCC00;
-            padding: 40px;
-            transition: transform 0.3s ease;
-        }
-        
-        .adaptation-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .adaptation-card h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 24px;
-            color: #FFCC00;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-        
-        .adaptation-card p {
-            color: #fff;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        /* Explorer Note */
-        .explorer-section {
-            background: #111;
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .explorer-note {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 60px;
-            background: linear-gradient(135deg, rgba(255,204,0,0.1), rgba(255,204,0,0.05));
-            border: 2px solid #FFCC00;
-            position: relative;
-        }
-        
-        .explorer-note::before {
-            content: '"';
-            position: absolute;
-            top: -40px;
-            left: 40px;
-            font-size: 120px;
-            color: #FFCC00;
-            opacity: 0.3;
-            font-family: 'Merriweather', serif;
-        }
-        
-        .explorer-note p {
-            font-family: 'Merriweather', serif;
-            font-size: 24px;
-            line-height: 1.8;
-            color: #fff;
-            font-style: italic;
-            text-align: center;
-        }
-        
-        .photographer-credit {
-            text-align: center;
-            margin-top: 30px;
-            color: #FFCC00;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-        
-        /* Cover Magazine */
-        .magazine-cover {
-            position: fixed;
-            top: 30px;
-            right: 30px;
-            width: 120px;
-            height: 160px;
-            background: url('assets/images/magazine-cover.jpg') center/cover;
-            border: 3px solid #FFCC00;
-            border-radius: 8px;
-            z-index: 1000;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-        
-        .magazine-cover:hover {
-            opacity: 1;
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .container {
-                padding: 0 20px;
-            }
-            
-            .hero-title {
-                font-size: 60px;
-            }
-            
-            .section-header {
-                font-size: 40px;
-            }
-            
-            .species-content {
-                padding: 40px 20px;
-            }
-            
-            .types-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .adaptations-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            
-            .explorer-note {
-                padding: 40px 20px;
-            }
-            
-            .magazine-cover {
-                width: 80px;
-                height: 106px;
-                top: 20px;
-                right: 20px;
-            }
-        }
-    </style>
+    <title data-i18n="pageTitle">Seals of the World - Learning with Anastasia</title>
+    <link rel="stylesheet" href="../shared-styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Magazine Cover -->
-    <div class="magazine-cover"></div>
+    <div class="language-switcher"></div>
+    
+    <main class="magazine-layout">
+        <header class="magazine-header">
+            <a href="../index.html" class="back-arrow">←</a>
+            <h1 data-i18n="title">Seals of the World</h1>
+            <p class="subtitle" data-i18n="subtitle">Amazing swimmers from every ocean!</p>
+        </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="nat-geo-logo">NG</div>
-        <h1 class="hero-title">Seals of<br>the World</h1>
-        <p class="hero-subtitle">Ocean's Master Swimmers</p>
-        <div class="scroll-indicator">
-            <div class="scroll-dot"></div>
-        </div>
-    </section>
-    
-    <!-- Intro Section -->
-    <section class="intro-section">
-        <div class="container">
-            <div class="intro-statement">
-                <p><strong>Seals are among the ocean's most remarkable mammals</strong> — perfectly adapted for life both in water and on land. From the massive elephant seals that can hold their breath for over two hours to the agile harbor seals that navigate coastal waters with ease, these pinnipeds represent millions of years of evolutionary perfection.</p>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/harbor-seal-rocks.jpg" alt="A friendly harbor seal resting on coastal rocks, with its spotted gray coat glistening in the sunlight, showing its adorable whiskers and big round eyes" data-i18n-alt="harborSealAlt">
             </div>
-        </div>
-    </section>
-    
-    <!-- Types Section -->
-    <section class="types-section">
-        <div class="container">
-            <h2 class="section-header">Three Groups<br>of Pinnipeds</h2>
+            <div class="text-content">
+                <h2 data-i18n="section1Title">Meet the Harbor Seal!</h2>
+                <p data-i18n="section1Text1">Harbor seals are the puppies of the sea! They live near coastlines all around the northern parts of our planet. These playful friends love to rest on rocks and beaches, warming up in the sunshine.</p>
+                <p data-i18n="section1Text2">With their spotted coats and big, curious eyes, harbor seals are excellent swimmers. They can hold their breath for up to 30 minutes and dive as deep as 500 feet to catch fish!</p>
+            </div>
+        </section>
+
+        <section class="content-section reverse">
+            <div class="image-container">
+                <img src="assets/images/elephant-seal-beach.jpg" alt="A massive elephant seal on a sandy beach, showing its incredible size and distinctive inflatable nose, surrounded by smaller seals for size comparison" data-i18n-alt="elephantSealAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section2Title">The Giant Elephant Seal</h2>
+                <p data-i18n="section2Text1">Elephant seals are the giants of the seal world! Male elephant seals can weigh as much as four cars put together! They get their name from the male's huge nose that looks like an elephant's trunk.</p>
+                <p data-i18n="section2Text2">These amazing divers are the champions of deep diving. They can dive deeper than any other seal - over a mile deep! That's like stacking five Eiffel Towers on top of each other!</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/leopard-seal-swimming.jpg" alt="A sleek leopard seal swimming gracefully underwater, showing its distinctive spotted pattern and streamlined body, with sunlight filtering through the water" data-i18n-alt="leopardSealAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section3Title">The Speedy Leopard Seal</h2>
+                <p data-i18n="section3Text1">Leopard seals are the race cars of the Antarctic waters! With their spotted coats that look like a leopard's fur, these seals are incredible swimmers who can zoom through the water at 25 miles per hour!</p>
+                <p data-i18n="section3Text2">They have the longest, most powerful jaws of any seal, which they use to catch fish and squid. Leopard seals are also known for their beautiful underwater songs that sound like they're from another world!</p>
+            </div>
+        </section>
+
+        <section class="content-section reverse">
+            <div class="image-container">
+                <img src="assets/images/weddell-seal-ice.jpg" alt="A Weddell seal resting on Antarctic ice, with its plump body and cat-like face, showing its distinctive upturned mouth that looks like a permanent smile" data-i18n-alt="weddellSealAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section4Title">The Smiling Weddell Seal</h2>
+                <p data-i18n="section4Text1">Weddell seals are the happiest-looking seals in Antarctica! Their faces have a natural upward curve that makes them look like they're always smiling. These champion divers live further south than any other mammal!</p>
+                <p data-i18n="section4Text2">They're amazing at making breathing holes in the ice using their strong teeth. Weddell seals can stay underwater for over an hour, exploring the magical world beneath the Antarctic ice!</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/monk-seal-beach.jpg" alt="A rare Hawaiian monk seal lounging on a tropical beach with palm trees in the background, showing its gray coat and peaceful expression" data-i18n-alt="monkSealAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section5Title">The Tropical Monk Seal</h2>
+                <p data-i18n="section5Text1">Hawaiian monk seals are the only seals that live in warm, tropical waters! While their cousins love cold water, these special seals enjoy the sunny beaches of Hawaii, where they nap on the warm sand.</p>
+                <p data-i18n="section5Text2">They got their name because the fold of skin on their heads looks like a monk's hood. These peaceful seals love to rest during the day and hunt for fish, octopuses, and lobsters at night!</p>
+            </div>
+        </section>
+
+        <section class="content-section reverse">
+            <div class="image-container">
+                <img src="assets/images/harp-seal-pup.jpg" alt="An adorable white harp seal pup with big black eyes lying on pristine white ice, its fluffy coat looking like a snowball with a face" data-i18n-alt="harpSealAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section6Title">The Adorable Harp Seal</h2>
+                <p data-i18n="section6Text1">Harp seal babies are some of the cutest animals on Earth! They're born with fluffy white coats that keep them warm on the ice. As they grow up, they develop a beautiful harp-shaped pattern on their backs!</p>
+                <p data-i18n="section6Text2">These amazing travelers swim thousands of miles every year between their summer and winter homes. Harp seals are fantastic swimmers and can do backflips and spins in the water like underwater acrobats!</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/fur-seal-colony.jpg" alt="A group of fur seals playing together on coastal rocks, showing their thick fur coats and playful nature, with some seals swimming in the background" data-i18n-alt="furSealAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section7Title">The Fluffy Fur Seal</h2>
+                <p data-i18n="section7Text1">Fur seals have the softest, thickest fur coats in the seal family! They have two layers of fur that keep them cozy in cold water - it's like wearing a warm sweater and a raincoat at the same time!</p>
+                <p data-i18n="section7Text2">Unlike true seals, fur seals can walk on all four flippers, which makes them great climbers on rocky shores. They love to play together and can often be seen surfing in the waves just for fun!</p>
+            </div>
+        </section>
+
+        <section class="fun-facts">
+            <h2 data-i18n="funFactsTitle">Amazing Seal Facts!</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <span class="fact-icon">🏊</span>
+                    <p data-i18n="funFact1">Seals can sleep underwater! They have a special reflex that makes them surface to breathe even while sleeping.</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">👁️</span>
+                    <p data-i18n="funFact2">Seals can see perfectly underwater but are a bit nearsighted on land - like the opposite of us!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🎵</span>
+                    <p data-i18n="funFact3">Each seal has its own unique call, like a voice fingerprint, so moms and babies can find each other!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">❄️</span>
+                    <p data-i18n="funFact4">Some seals can slow their heartbeat from 100 to 4 beats per minute when diving!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "Seals of the World - Learning with Anastasia",
+                title: "Seals of the World",
+                subtitle: "Amazing swimmers from every ocean!",
+                
+                harborSealAlt: "A friendly harbor seal resting on coastal rocks, with its spotted gray coat glistening in the sunlight, showing its adorable whiskers and big round eyes",
+                
+                section1Title: "Meet the Harbor Seal!",
+                section1Text1: "Harbor seals are the puppies of the sea! They live near coastlines all around the northern parts of our planet. These playful friends love to rest on rocks and beaches, warming up in the sunshine.",
+                section1Text2: "With their spotted coats and big, curious eyes, harbor seals are excellent swimmers. They can hold their breath for up to 30 minutes and dive as deep as 500 feet to catch fish!",
+                
+                elephantSealAlt: "A massive elephant seal on a sandy beach, showing its incredible size and distinctive inflatable nose, surrounded by smaller seals for size comparison",
+                
+                section2Title: "The Giant Elephant Seal",
+                section2Text1: "Elephant seals are the giants of the seal world! Male elephant seals can weigh as much as four cars put together! They get their name from the male's huge nose that looks like an elephant's trunk.",
+                section2Text2: "These amazing divers are the champions of deep diving. They can dive deeper than any other seal - over a mile deep! That's like stacking five Eiffel Towers on top of each other!",
+                
+                leopardSealAlt: "A sleek leopard seal swimming gracefully underwater, showing its distinctive spotted pattern and streamlined body, with sunlight filtering through the water",
+                
+                section3Title: "The Speedy Leopard Seal",
+                section3Text1: "Leopard seals are the race cars of the Antarctic waters! With their spotted coats that look like a leopard's fur, these seals are incredible swimmers who can zoom through the water at 25 miles per hour!",
+                section3Text2: "They have the longest, most powerful jaws of any seal, which they use to catch fish and squid. Leopard seals are also known for their beautiful underwater songs that sound like they're from another world!",
+                
+                weddellSealAlt: "A Weddell seal resting on Antarctic ice, with its plump body and cat-like face, showing its distinctive upturned mouth that looks like a permanent smile",
+                
+                section4Title: "The Smiling Weddell Seal",
+                section4Text1: "Weddell seals are the happiest-looking seals in Antarctica! Their faces have a natural upward curve that makes them look like they're always smiling. These champion divers live further south than any other mammal!",
+                section4Text2: "They're amazing at making breathing holes in the ice using their strong teeth. Weddell seals can stay underwater for over an hour, exploring the magical world beneath the Antarctic ice!",
+                
+                monkSealAlt: "A rare Hawaiian monk seal lounging on a tropical beach with palm trees in the background, showing its gray coat and peaceful expression",
+                
+                section5Title: "The Tropical Monk Seal",
+                section5Text1: "Hawaiian monk seals are the only seals that live in warm, tropical waters! While their cousins love cold water, these special seals enjoy the sunny beaches of Hawaii, where they nap on the warm sand.",
+                section5Text2: "They got their name because the fold of skin on their heads looks like a monk's hood. These peaceful seals love to rest during the day and hunt for fish, octopuses, and lobsters at night!",
+                
+                harpSealAlt: "An adorable white harp seal pup with big black eyes lying on pristine white ice, its fluffy coat looking like a snowball with a face",
+                
+                section6Title: "The Adorable Harp Seal",
+                section6Text1: "Harp seal babies are some of the cutest animals on Earth! They're born with fluffy white coats that keep them warm on the ice. As they grow up, they develop a beautiful harp-shaped pattern on their backs!",
+                section6Text2: "These amazing travelers swim thousands of miles every year between their summer and winter homes. Harp seals are fantastic swimmers and can do backflips and spins in the water like underwater acrobats!",
+                
+                furSealAlt: "A group of fur seals playing together on coastal rocks, showing their thick fur coats and playful nature, with some seals swimming in the background",
+                
+                section7Title: "The Fluffy Fur Seal",
+                section7Text1: "Fur seals have the softest, thickest fur coats in the seal family! They have two layers of fur that keep them cozy in cold water - it's like wearing a warm sweater and a raincoat at the same time!",
+                section7Text2: "Unlike true seals, fur seals can walk on all four flippers, which makes them great climbers on rocky shores. They love to play together and can often be seen surfing in the waves just for fun!",
+                
+                funFactsTitle: "Amazing Seal Facts!",
+                funFact1: "Seals can sleep underwater! They have a special reflex that makes them surface to breathe even while sleeping.",
+                funFact2: "Seals can see perfectly underwater but are a bit nearsighted on land - like the opposite of us!",
+                funFact3: "Each seal has its own unique call, like a voice fingerprint, so moms and babies can find each other!",
+                funFact4: "Some seals can slow their heartbeat from 100 to 4 beats per minute when diving!"
+            },
+            es: {
+                pageTitle: "Focas del Mundo - Aprendiendo con Anastasia",
+                title: "Focas del Mundo",
+                subtitle: "¡Increíbles nadadoras de todos los océanos!",
+                
+                harborSealAlt: "Una amigable foca común descansando en rocas costeras, con su pelaje gris moteado brillando bajo el sol, mostrando sus adorables bigotes y grandes ojos redondos",
+                
+                section1Title: "¡Conoce a la Foca Común!",
+                section1Text1: "¡Las focas comunes son los cachorros del mar! Viven cerca de las costas en todas las partes del norte de nuestro planeta. Estos amigos juguetones les encanta descansar en rocas y playas, calentándose al sol.",
+                section1Text2: "Con sus pelajes moteados y grandes ojos curiosos, las focas comunes son excelentes nadadoras. ¡Pueden contener la respiración hasta 30 minutos y bucear hasta 500 pies de profundidad para atrapar peces!",
+                
+                elephantSealAlt: "Un enorme elefante marino en una playa de arena, mostrando su increíble tamaño y su distintiva nariz inflable, rodeado de focas más pequeñas para comparar el tamaño",
+                
+                section2Title: "El Gigante Elefante Marino",
+                section2Text1: "¡Los elefantes marinos son los gigantes del mundo de las focas! ¡Los machos pueden pesar tanto como cuatro autos juntos! Obtienen su nombre de la enorme nariz del macho que parece la trompa de un elefante.",
+                section2Text2: "Estos increíbles buceadores son los campeones del buceo profundo. ¡Pueden bucear más profundo que cualquier otra foca - más de una milla de profundidad! ¡Es como apilar cinco Torres Eiffel una encima de la otra!",
+                
+                leopardSealAlt: "Una elegante foca leopardo nadando graciosamente bajo el agua, mostrando su distintivo patrón moteado y cuerpo aerodinámico, con la luz del sol filtrándose a través del agua",
+                
+                section3Title: "La Veloz Foca Leopardo",
+                section3Text1: "¡Las focas leopardo son los autos de carrera de las aguas antárticas! Con sus pelajes moteados que parecen el pelaje de un leopardo, estas focas son nadadoras increíbles que pueden volar por el agua a 25 millas por hora!",
+                section3Text2: "Tienen las mandíbulas más largas y poderosas de cualquier foca, que usan para atrapar peces y calamares. ¡Las focas leopardo también son conocidas por sus hermosas canciones submarinas que suenan como de otro mundo!",
+                
+                weddellSealAlt: "Una foca de Weddell descansando en hielo antártico, con su cuerpo regordete y cara de gato, mostrando su distintiva boca curvada hacia arriba que parece una sonrisa permanente",
+                
+                section4Title: "La Sonriente Foca de Weddell",
+                section4Text1: "¡Las focas de Weddell son las focas con aspecto más feliz de la Antártida! Sus caras tienen una curva natural hacia arriba que las hace parecer que siempre están sonriendo. ¡Estos campeones buceadores viven más al sur que cualquier otro mamífero!",
+                section4Text2: "Son increíbles haciendo agujeros para respirar en el hielo usando sus fuertes dientes. ¡Las focas de Weddell pueden permanecer bajo el agua por más de una hora, explorando el mundo mágico bajo el hielo antártico!",
+                
+                monkSealAlt: "Una rara foca monje hawaiana descansando en una playa tropical con palmeras de fondo, mostrando su pelaje gris y expresión pacífica",
+                
+                section5Title: "La Foca Monje Tropical",
+                section5Text1: "¡Las focas monje hawaianas son las únicas focas que viven en aguas tropicales cálidas! Mientras sus primas aman el agua fría, estas focas especiales disfrutan de las playas soleadas de Hawái, donde duermen siestas en la arena caliente.",
+                section5Text2: "Obtuvieron su nombre porque el pliegue de piel en sus cabezas parece la capucha de un monje. ¡Estas focas pacíficas aman descansar durante el día y cazar peces, pulpos y langostas por la noche!",
+                
+                harpSealAlt: "Una adorable cría de foca arpa blanca con grandes ojos negros acostada sobre hielo blanco prístino, su pelaje esponjoso pareciendo una bola de nieve con cara",
+                
+                section6Title: "La Adorable Foca Arpa",
+                section6Text1: "¡Los bebés de foca arpa son algunos de los animales más lindos de la Tierra! Nacen con pelajes blancos esponjosos que los mantienen calientes en el hielo. ¡A medida que crecen, desarrollan un hermoso patrón en forma de arpa en sus espaldas!",
+                section6Text2: "Estos increíbles viajeros nadan miles de millas cada año entre sus hogares de verano e invierno. ¡Las focas arpa son nadadoras fantásticas y pueden hacer volteretas y giros en el agua como acróbatas submarinos!",
+                
+                furSealAlt: "Un grupo de lobos marinos jugando juntos en rocas costeras, mostrando sus gruesos pelajes y naturaleza juguetona, con algunas focas nadando en el fondo",
+                
+                section7Title: "El Esponjoso Lobo Marino",
+                section7Text1: "¡Los lobos marinos tienen los pelajes más suaves y gruesos de la familia de las focas! Tienen dos capas de pelaje que los mantienen cómodos en agua fría - ¡es como usar un suéter caliente y un impermeable al mismo tiempo!",
+                section7Text2: "A diferencia de las focas verdaderas, los lobos marinos pueden caminar sobre sus cuatro aletas, lo que los hace grandes escaladores en costas rocosas. ¡Les encanta jugar juntos y a menudo se les puede ver surfeando en las olas solo por diversión!",
+                
+                funFactsTitle: "¡Datos Asombrosos sobre las Focas!",
+                funFact1: "¡Las focas pueden dormir bajo el agua! Tienen un reflejo especial que las hace salir a la superficie para respirar incluso mientras duermen.",
+                funFact2: "Las focas pueden ver perfectamente bajo el agua pero son un poco miopes en tierra - ¡como lo opuesto a nosotros!",
+                funFact3: "Cada foca tiene su propia llamada única, como una huella de voz, ¡para que las mamás y los bebés puedan encontrarse!",
+                funFact4: "¡Algunas focas pueden reducir su ritmo cardíaco de 100 a 4 latidos por minuto cuando bucean!"
+            },
+            ru: {
+                pageTitle: "Тюлени Мира - Учимся с Анастасией",
+                title: "Тюлени Мира",
+                subtitle: "Удивительные пловцы из всех океанов!",
+                
+                harborSealAlt: "Дружелюбный обыкновенный тюлень отдыхает на прибрежных скалах, его пятнистая серая шерсть блестит на солнце, показывая его очаровательные усы и большие круглые глаза",
+                
+                section1Title: "Знакомьтесь с Обыкновенным Тюленем!",
+                section1Text1: "Обыкновенные тюлени - это щенки моря! Они живут возле береговых линий по всей северной части нашей планеты. Эти игривые друзья любят отдыхать на скалах и пляжах, греясь на солнышке.",
+                section1Text2: "С их пятнистой шерстью и большими любопытными глазами, обыкновенные тюлени - отличные пловцы. Они могут задерживать дыхание до 30 минут и нырять на глубину до 500 футов, чтобы ловить рыбу!",
+                
+                elephantSealAlt: "Огромный морской слон на песчаном пляже, показывающий свой невероятный размер и характерный надувной нос, окруженный меньшими тюленями для сравнения размеров",
+                
+                section2Title: "Гигантский Морской Слон",
+                section2Text1: "Морские слоны - это гиганты мира тюленей! Самцы морских слонов могут весить столько же, сколько четыре машины вместе! Они получили свое название из-за огромного носа самца, который похож на хобот слона.",
+                section2Text2: "Эти удивительные ныряльщики - чемпионы глубоководного погружения. Они могут нырять глубже любого другого тюленя - более чем на милю в глубину! Это как поставить пять Эйфелевых башен одну на другую!",
+                
+                leopardSealAlt: "Изящный морской леопард грациозно плывет под водой, показывая свой характерный пятнистый узор и обтекаемое тело, с солнечным светом, проникающим сквозь воду",
+                
+                section3Title: "Быстрый Морской Леопард",
+                section3Text1: "Морские леопарды - это гоночные машины антарктических вод! С их пятнистой шерстью, похожей на мех леопарда, эти тюлени - невероятные пловцы, которые могут мчаться по воде со скоростью 25 миль в час!",
+                section3Text2: "У них самые длинные и мощные челюсти среди всех тюленей, которые они используют для ловли рыбы и кальмаров. Морские леопарды также известны своими красивыми подводными песнями, которые звучат как из другого мира!",
+                
+                weddellSealAlt: "Тюлень Уэдделла отдыхает на антарктическом льду, с его пухлым телом и кошачьей мордой, показывая свой характерный вздернутый рот, который выглядит как постоянная улыбка",
+                
+                section4Title: "Улыбающийся Тюлень Уэдделла",
+                section4Text1: "Тюлени Уэдделла - самые счастливые на вид тюлени в Антарктиде! Их лица имеют естественный изгиб вверх, что заставляет их выглядеть, будто они всегда улыбаются. Эти чемпионы-ныряльщики живут дальше на юг, чем любое другое млекопитающее!",
+                section4Text2: "Они удивительно умеют делать дыхательные отверстия во льду, используя свои крепкие зубы. Тюлени Уэдделла могут оставаться под водой более часа, исследуя волшебный мир под антарктическим льдом!",
+                
+                monkSealAlt: "Редкий гавайский тюлень-монах отдыхает на тропическом пляже с пальмами на заднем плане, показывая свою серую шерсть и мирное выражение",
+                
+                section5Title: "Тропический Тюлень-Монах",
+                section5Text1: "Гавайские тюлени-монахи - единственные тюлени, которые живут в теплых тропических водах! В то время как их родственники любят холодную воду, эти особенные тюлени наслаждаются солнечными пляжами Гавайев, где они дремлют на теплом песке.",
+                section5Text2: "Они получили свое название потому, что складка кожи на их головах похожа на капюшон монаха. Эти мирные тюлени любят отдыхать днем и охотиться на рыбу, осьминогов и омаров ночью!",
+                
+                harpSealAlt: "Очаровательный белый детеныш гренландского тюленя с большими черными глазами лежит на девственно белом льду, его пушистая шерсть выглядит как снежок с лицом",
+                
+                section6Title: "Очаровательный Гренландский Тюлень",
+                section6Text1: "Детеныши гренландского тюленя - одни из самых милых животных на Земле! Они рождаются с пушистой белой шерстью, которая согревает их на льду. По мере взросления у них развивается красивый узор в форме арфы на спине!",
+                section6Text2: "Эти удивительные путешественники проплывают тысячи миль каждый год между своими летними и зимними домами. Гренландские тюлени - фантастические пловцы и могут делать сальто и вращения в воде как подводные акробаты!",
+                
+                furSealAlt: "Группа морских котиков играет вместе на прибрежных скалах, показывая их густую шерсть и игривую натуру, с некоторыми тюленями, плавающими на заднем плане",
+                
+                section7Title: "Пушистый Морской Котик",
+                section7Text1: "Морские котики имеют самую мягкую и густую шерсть в семействе тюленей! У них два слоя меха, которые держат их в уюте в холодной воде - это как носить теплый свитер и дождевик одновременно!",
+                section7Text2: "В отличие от настоящих тюленей, морские котики могут ходить на всех четырех ластах, что делает их отличными скалолазами на скалистых берегах. Они любят играть вместе и часто их можно увидеть катающимися на волнах просто для удовольствия!",
+                
+                funFactsTitle: "Удивительные Факты о Тюленях!",
+                funFact1: "Тюлени могут спать под водой! У них есть особый рефлекс, который заставляет их всплывать для дыхания даже во время сна.",
+                funFact2: "Тюлени могут прекрасно видеть под водой, но немного близоруки на суше - как противоположность нам!",
+                funFact3: "У каждого тюленя есть свой уникальный зов, как голосовой отпечаток, чтобы мамы и детеныши могли найти друг друга!",
+                funFact4: "Некоторые тюлени могут замедлить свое сердцебиение со 100 до 4 ударов в минуту при нырянии!"
+            }
+        };
+
+        // Language switching functionality
+        let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
             
-            <div class="types-grid">
-                <div class="type-card">
-                    <h3>True Seals (Phocidae)</h3>
-                    <p>Also known as earless seals, these marine mammals have no external ear flaps and cannot rotate their rear flippers forward. They are excellent swimmers but move awkwardly on land by wiggling on their bellies.</p>
-                </div>
-                
-                <div class="type-card">
-                    <h3>Eared Seals (Otariidae)</h3>
-                    <p>These seals have external ear flaps and can rotate their rear flippers forward, allowing them to "walk" on land. This group includes sea lions and fur seals, known for their agility both in water and on shore.</p>
-                </div>
-                
-                <div class="type-card">
-                    <h3>Walruses (Odobenidae)</h3>
-                    <p>The largest pinnipeds, walruses are distinguished by their prominent tusks and massive size. They use their tusks for hauling themselves out of water, breaking ice, and establishing dominance within their social groups.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Elephant Seals -->
-    <section class="elephant-seals-section">
-        <div class="container">
-            <div class="species-content">
-                <h2>Elephant Seals</h2>
-                <p>The giants of the seal world, elephant seals are named for their enormous size and the inflatable trunk-like snout found on mature males. These remarkable marine mammals are champion divers and can hold their breath longer than any other seal.</p>
-                
-                <h3>Northern Elephant Seals</h3>
-                <p>Found along the Pacific coast from Alaska to Mexico, northern elephant seals can dive to depths of over 5,000 feet and hold their breath for up to 2 hours. Males can reach 16 feet in length and weigh up to 5,000 pounds.</p>
-                
-                <h3>Southern Elephant Seals</h3>
-                <p>The largest of all seals, southern elephant seals inhabit sub-Antarctic islands. Bulls can reach lengths of 20 feet and weigh up to 8,800 pounds. They spend 8-10 months at sea, returning to land only to breed and molt.</p>
-                
-                <h3>Remarkable Adaptations</h3>
-                <ul class="species-list">
-                    <li>Can collapse their lungs to prevent nitrogen narcosis during deep dives</li>
-                    <li>Store oxygen in their blood and muscles rather than in their lungs</li>
-                    <li>Slow their heart rate from 120 to 4 beats per minute while diving</li>
-                    <li>Males fast for 3-4 months during breeding season, losing up to 40% of their body weight</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Harbor Seals -->
-    <section class="harbor-seals-section">
-        <div class="container">
-            <div class="species-content">
-                <h2>Harbor Seals</h2>
-                <p>The most widely distributed pinniped in the Northern Hemisphere, harbor seals are the familiar faces of coastal waters. Their spotted coats and curious nature make them popular with marine wildlife watchers.</p>
-                
-                <h3>Habitat and Distribution</h3>
-                <p>Harbor seals inhabit temperate and Arctic marine coastlines throughout the Northern Hemisphere. They prefer shallow coastal waters, sandy beaches, rocky shores, and estuaries where they can easily access both marine prey and safe resting areas.</p>
-                
-                <h3>Behavior and Diet</h3>
-                <ul class="species-list">
-                    <li>Opportunistic feeders that hunt fish, squid, crustaceans, and mollusks</li>
-                    <li>Can dive to depths of 1,500 feet and stay underwater for 30 minutes</li>
-                    <li>Pups are born able to swim and dive within hours of birth</li>
-                    <li>Highly social animals that gather in groups called colonies or pods</li>
-                    <li>Use a variety of vocalizations to communicate, including barks, growls, and clicks</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Leopard Seals -->
-    <section class="leopard-seals-section">
-        <div class="container">
-            <div class="species-content">
-                <h2>Leopard Seals</h2>
-                <p>The apex predator of the Antarctic, leopard seals are formidable hunters with powerful jaws and razor-sharp teeth. Their sleek, spotted bodies and reptilian heads make them unmistakable in the icy waters of the Southern Ocean.</p>
-                
-                <h3>Antarctic Dominance</h3>
-                <p>Leopard seals are found throughout the waters surrounding Antarctica and sub-Antarctic islands. They are perfectly adapted to life in the ice-cold Antarctic waters, where they reign as one of the top predators in the marine ecosystem.</p>
-                
-                <h3>Hunting and Diet</h3>
-                <ul class="species-list">
-                    <li>Primarily hunt penguins, but also eat fish, squid, and other seals</li>
-                    <li>Use their powerful flippers to catch penguins as they enter the water</li>
-                    <li>Can grow up to 12 feet long and weigh up to 1,300 pounds</li>
-                    <li>Solitary hunters with exceptional underwater agility and speed</li>
-                    <li>Known to play with their prey before consuming it</li>
-                    <li>Have been observed showing curiosity toward humans, particularly underwater photographers</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Monk Seals -->
-    <section class="monk-seals-section">
-        <div class="container">
-            <div class="species-content">
-                <h2>Monk Seals</h2>
-                <p>Among the rarest seals in the world, monk seals are critically endangered marine mammals found in warm, tropical waters. Their name comes from the hood-like fold of skin around their necks, reminiscent of a monk's cowl.</p>
-                
-                <h3>Three Species, Varying Fates</h3>
-                <p>There are three species of monk seals: Hawaiian monk seals (critically endangered with about 1,400 individuals remaining), Mediterranean monk seals (critically endangered with fewer than 700 remaining), and Caribbean monk seals (declared extinct in 2008).</p>
-                
-                <h3>Conservation Challenges</h3>
-                <ul class="species-list">
-                    <li>Habitat loss due to coastal development and human disturbance</li>
-                    <li>Entanglement in fishing nets and marine debris</li>
-                    <li>Competition with commercial fishing operations for food sources</li>
-                    <li>Climate change affecting prey distribution and beach nesting sites</li>
-                    <li>Small population sizes make them vulnerable to disease outbreaks</li>
-                    <li>Intensive conservation efforts include protected areas and rescue programs</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Eared Seals -->
-    <section class="eared-seals-section">
-        <div class="container">
-            <div class="species-content">
-                <h2>Fur Seals & Sea Lions</h2>
-                <p>The most acrobatic of all pinnipeds, eared seals include both fur seals and sea lions. Their external ears and ability to rotate their rear flippers make them the most agile seals on land, capable of surprising speed and maneuverability.</p>
-                
-                <h3>Fur Seals</h3>
-                <p>Once hunted nearly to extinction for their luxurious fur, these seals have dense double-layered coats that keep them warm in cold waters. They are smaller and more streamlined than sea lions, with pointed snouts and longer flippers.</p>
-                
-                <h3>Sea Lions</h3>
-                <p>Known for their intelligence and playful nature, sea lions are often featured in marine parks and aquariums. California sea lions are particularly well-known for their ability to learn complex behaviors and their natural curiosity.</p>
-                
-                <h3>Shared Characteristics</h3>
-                <ul class="species-list">
-                    <li>External ear flaps that can be closed underwater</li>
-                    <li>Ability to rotate rear flippers forward for walking on land</li>
-                    <li>Highly social behavior with complex vocalizations</li>
-                    <li>Excellent underwater vision and hearing</li>
-                    <li>Strong swimming abilities with speeds up to 25 mph underwater</li>
-                    <li>Males typically much larger than females (sexual dimorphism)</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Adaptations Section -->
-    <section class="adaptations-section">
-        <div class="container">
-            <h2 class="section-header">Remarkable<br>Adaptations</h2>
+            document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+                const key = element.getAttribute('data-i18n-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    element.alt = translations[lang][key];
+                }
+            });
             
-            <div class="adaptations-grid">
-                <div class="adaptation-card">
-                    <h3>Thermoregulation</h3>
-                    <p>Seals maintain body temperature through thick blubber layers, dense fur, and specialized blood vessel arrangements that minimize heat loss in cold water.</p>
-                </div>
-                
-                <div class="adaptation-card">
-                    <h3>Diving Physiology</h3>
-                    <p>Collapsible lungs, high oxygen-carrying capacity in blood and muscles, and the ability to dramatically slow heart rate enable extreme deep-sea diving.</p>
-                </div>
-                
-                <div class="adaptation-card">
-                    <h3>Sensory Systems</h3>
-                    <p>Sensitive whiskers detect water movements from fish and prey, while excellent underwater vision and hearing help navigate murky ocean depths.</p>
-                </div>
-                
-                <div class="adaptation-card">
-                    <h3>Efficient Swimming</h3>
-                    <p>Streamlined body shapes, powerful flippers, and flexible spines allow seals to move through water with remarkable efficiency and speed.</p>
-                </div>
-                
-                <div class="adaptation-card">
-                    <h3>Social Behaviors</h3>
-                    <p>Complex communication systems, cooperative hunting strategies, and intricate breeding rituals have evolved to ensure species survival.</p>
-                </div>
-                
-                <div class="adaptation-card">
-                    <h3>Reproductive Strategies</h3>
-                    <p>Delayed implantation, extended maternal care, and synchronized breeding seasons optimize pup survival in challenging marine environments.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Explorer Note -->
-    <section class="explorer-section">
-        <div class="container">
-            <div class="explorer-note">
-                <p>In the vast theater of the world's oceans, seals represent nature's perfect balance between grace and power, vulnerability and resilience. Each species tells a story of adaptation, survival, and the delicate relationship between marine life and our changing planet. Their future depends not only on the health of our oceans, but on our commitment to protecting these remarkable marine ambassadors.</p>
-                <div class="photographer-credit">National Geographic Collection</div>
-            </div>
-        </div>
-    </section>
-<script src="../language-switcher.js"></script>
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize content
+        updateContent(currentLang);
+
+        // Listen for language changes
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'selectedLanguage') {
+                currentLang = e.newValue || 'en';
+                updateContent(currentLang);
+            }
+        });
+    </script>
+    <script src="../language-switcher.js"></script>
 </body>
 </html>

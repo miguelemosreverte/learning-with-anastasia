@@ -3,554 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chrysomallon Squamiferum: The Iron Snail - National Geographic Style</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Source Sans Pro', sans-serif;
-            background: #000;
-            overflow-x: hidden;
-        }
-        
-        /* Hero Section with Deep Sea Background */
-        .hero-section {
-            position: relative;
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,20,50,0.7)), 
-                        url('assets/images/hero-background.jpg') center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
-        
-        .nat-geo-logo {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 60px;
-            border: 3px solid #FFCC00;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: #FFCC00;
-            font-size: 24px;
-            font-family: 'Oswald', sans-serif;
-        }
-        
-        .hero-content {
-            text-align: center;
-            z-index: 2;
-            padding: 0 20px;
-        }
-        
-        .hero-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 5rem;
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .hero-subtitle {
-            font-family: 'Merriweather', serif;
-            font-size: 1.8rem;
-            color: #FFCC00;
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease-out 0.3s backwards;
-        }
-        
-        .hero-description {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-            animation: fadeInUp 1s ease-out 0.6s backwards;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Content Sections */
-        .content-section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
-            color: #FFCC00;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 40px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 3px;
-            background: #FFCC00;
-        }
-        
-        /* Deep Sea Background */
-        .deep-sea-section {
-            background: linear-gradient(180deg, #000 0%, #001133 50%, #002266 100%);
-            color: #fff;
-        }
-        
-        /* Iron Armor Section */
-        .iron-armor-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #fff;
-        }
-        
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-            margin-bottom: 60px;
-        }
-        
-        .content-text {
-            padding: 20px;
-        }
-        
-        .content-text h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            color: #FFCC00;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        .content-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 20px;
-        }
-        
-        .image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-        
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.5s ease;
-        }
-        
-        .image-container:hover img {
-            transform: scale(1.05);
-        }
-        
-        .image-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-            color: #fff;
-            padding: 20px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Facts Grid */
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-        
-        .fact-card {
-            background: rgba(255,204,0,0.1);
-            border: 2px solid #FFCC00;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-        
-        .fact-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,204,0,0.2);
-        }
-        
-        .fact-number {
-            font-family: 'Oswald', sans-serif;
-            font-size: 3rem;
-            color: #FFCC00;
-            margin-bottom: 10px;
-        }
-        
-        .fact-label {
-            font-size: 1rem;
-            color: #ccc;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        /* Hydrothermal Vents Section */
-        .vents-section {
-            background: linear-gradient(180deg, #002266 0%, #003399 100%);
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .vents-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.5"><animate attributeName="r" from="1" to="50" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" from="0.5" to="0" dur="3s" repeatCount="indefinite"/></circle></svg>') center/cover;
-            opacity: 0.1;
-        }
-        
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding: 60px 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 100%;
-            background: #FFCC00;
-        }
-        
-        .timeline-item {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        
-        .timeline-content {
-            background: rgba(0,0,0,0.7);
-            padding: 30px;
-            width: 45%;
-            border: 2px solid #FFCC00;
-            position: relative;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-right: 55%;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: 55%;
-        }
-        
-        .timeline-date {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.5rem;
-            color: #FFCC00;
-            margin-bottom: 10px;
-        }
-        
-        .timeline-text {
-            color: #ccc;
-            line-height: 1.6;
-        }
-        
-        /* Conservation Alert */
-        .conservation-alert {
-            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
-            color: #fff;
-            padding: 40px;
-            margin: 60px 0;
-            text-align: center;
-            border-radius: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .conservation-alert::before {
-            content: '⚠';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 200px;
-            opacity: 0.1;
-        }
-        
-        .conservation-alert h3 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-        
-        .conservation-alert p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* Footer */
-        .article-footer {
-            background: #000;
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 3px solid #FFCC00;
-        }
-        
-        .footer-logo {
-            width: 80px;
-            height: 80px;
-            border: 3px solid #FFCC00;
-            margin: 0 auto 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: #FFCC00;
-            font-size: 32px;
-            font-family: 'Oswald', sans-serif;
-        }
-        
-        .footer-text {
-            color: #666;
-            font-size: 1rem;
-            letter-spacing: 1px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.3rem;
-            }
-            
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeline-content {
-                width: 90%;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin: 0 auto;
-            }
-            
-            .timeline::before {
-                left: 20px;
-            }
-        }
-    </style>
+    <title data-i18n="pageTitle">The Amazing Iron Snail - Learning with Anastasia</title>
+    <link rel="stylesheet" href="../shared-styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="hero-section">
-        <div class="nat-geo-logo">NG</div>
-        <div class="hero-content">
-            <h1 class="hero-title">The Iron Snail</h1>
-            <h2 class="hero-subtitle">Chrysomallon Squamiferum</h2>
-            <p class="hero-description">
-                Deep in the Indian Ocean's hydrothermal vents lives the most metal creature on Earth - 
-                a snail with an iron shell and scales, thriving in one of the planet's most extreme environments.
-            </p>
-        </div>
-    </div>
+    <div class="language-switcher"></div>
     
-    <section class="content-section deep-sea-section">
-        <h2 class="section-title">Life in the Abyss</h2>
-        <div class="content-grid">
-            <div class="content-text">
-                <h3>The Deepest Depths</h3>
-                <p>
-                    At depths of 2,400 to 2,900 meters below the Indian Ocean's surface, where sunlight never reaches 
-                    and pressure would crush most life forms, the scaly-foot snail has made its home.
-                </p>
-                <p>
-                    These remarkable gastropods cluster around hydrothermal vents, where superheated water rich in 
-                    minerals erupts from the ocean floor, creating an alien landscape of black smokers and chemical gardens.
-                </p>
-                <p>
-                    In this world of eternal darkness, where temperatures can swing from near-freezing to over 400°C 
-                    in the space of centimeters, the scaly-foot snail has evolved adaptations found nowhere else on Earth.
-                </p>
-            </div>
+    <main class="magazine-layout">
+        <header class="magazine-header">
+            <a href="../index.html" class="back-arrow">←</a>
+            <h1 data-i18n="title">The Amazing Iron Snail</h1>
+            <p class="subtitle" data-i18n="subtitle">Discover the incredible snail with iron armor!</p>
+        </header>
+
+        <section class="content-section">
             <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Chrysomallon_squamiferum_-_ZooKeys-055-001-g003A.jpeg" alt="Scaly-foot snail specimen">
-                <div class="image-caption">The Iron-Plated Marvel of the Deep</div>
+                <img src="assets/images/iron-snail-hero.jpg" alt="A scientifically accurate scaly-foot snail (Chrysomallon squamiferum) on black volcanic rock near deep ocean hydrothermal vents, showing its unique iron sulfide scales that look like dark metallic armor plates covering its foot, with its cream-colored shell visible" data-i18n-alt="heroImageAlt">
             </div>
-        </div>
-        
-        <div class="facts-grid">
-            <div class="fact-card">
-                <div class="fact-number">2,900m</div>
-                <div class="fact-label">Maximum Depth</div>
+            <div class="text-content">
+                <h2 data-i18n="section1Title">Meet the Iron Snail!</h2>
+                <p data-i18n="section1Text1">Deep in the ocean, where hot water bubbles up from the Earth, lives the most amazing snail in the world! Scientists call it Chrysomallon squamiferum, but we can call it the iron snail because it has real metal armor!</p>
+                <p data-i18n="section1Text2">This incredible snail is the only animal on Earth that makes armor from iron. It's like a tiny knight from the deep sea, wearing shiny metal scales that protect it from the hot water around its home.</p>
             </div>
-            <div class="fact-card">
-                <div class="fact-number">400°C</div>
-                <div class="fact-label">Vent Temperature</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">3</div>
-                <div class="fact-label">Known Populations</div>
-            </div>
-            <div class="fact-card">
-                <div class="fact-number">2001</div>
-                <div class="fact-label">Year Discovered</div>
-            </div>
-        </div>
-    </section>
-    
-    <section class="content-section iron-armor-section">
-        <h2 class="section-title">Nature's Iron Armor</h2>
-        <div class="content-grid">
+        </section>
+
+        <section class="content-section reverse">
             <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Crysomallon_squamiferum_01.JPG" alt="Close-up of iron scales">
-                <div class="image-caption">Iron Sulfide Scales - Unique in Nature</div>
+                <img src="assets/images/iron-scales-closeup.jpg" alt="Extreme close-up view of the iron sulfide scales on the foot of a scaly-foot snail, showing the overlapping dark metallic plates that look like medieval armor, with each scale having a distinctive hexagonal shape and metallic sheen" data-i18n-alt="scalesImageAlt">
             </div>
-            <div class="content-text">
-                <h3>A Living Fortress</h3>
-                <p>
-                    The scaly-foot snail is the only known animal to incorporate iron sulfides into its skeleton. 
-                    Its shell is composed of three layers: an outer layer of iron sulfides, a middle organic layer, 
-                    and an inner calcium carbonate layer.
-                </p>
-                <p>
-                    Even more remarkable are the sclerites - scale-like plates covering its foot. These iron-plated 
-                    scales, unique among all known life forms, provide protection from predators and the harsh 
-                    chemical environment of the vents.
-                </p>
-                <p>
-                    Scientists have discovered that the snail's iron armor is so effective that it has inspired 
-                    research into new types of military armor and protective equipment.
-                </p>
+            <div class="text-content">
+                <h2 data-i18n="section2Title">Amazing Iron Armor</h2>
+                <p data-i18n="section2Text1">The iron snail's foot is covered with hundreds of tiny iron scales, just like a dragon from fairy tales! These scales are made of iron sulfide, which makes them super strong and gives them a beautiful dark, metallic color.</p>
+                <p data-i18n="section2Text2">Each scale overlaps the next one, creating perfect armor that protects the snail. Scientists are so amazed by this design that they're studying it to make better armor for people!</p>
             </div>
-        </div>
-    </section>
-    
-    <section class="content-section vents-section">
-        <h2 class="section-title">Hydrothermal Vent Ecology</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-date">Chemical Energy</div>
-                    <div class="timeline-text">
-                        Unlike surface ecosystems powered by sunlight, vent communities rely on chemosynthetic bacteria 
-                        that convert chemicals from the vents into energy.
-                    </div>
+        </section>
+
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/hydrothermal-vent-home.jpg" alt="Deep ocean hydrothermal vent with black smoker chimneys releasing hot water, surrounded by unique deep-sea life including tube worms and the iron snail's habitat, showing the dramatic underwater landscape with volcanic rocks" data-i18n-alt="ventImageAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section3Title">A Very Special Home</h2>
+                <p data-i18n="section3Text1">The iron snail lives in one of the most exciting places on Earth - near underwater volcanoes! These places are called hydrothermal vents, where super hot water shoots up from cracks in the ocean floor.</p>
+                <p data-i18n="section3Text2">The water here can be as hot as your oven at home, but the iron snail loves it! Very few animals can live in such an extreme place, which makes the iron snail extra special.</p>
+            </div>
+        </section>
+
+        <section class="content-section reverse">
+            <div class="image-container">
+                <img src="assets/images/bacteria-friends.jpg" alt="Microscopic view showing the friendly bacteria that live inside the iron snail, depicted as glowing green dots that help feed the snail, illustrating the amazing partnership between the snail and its tiny helpers" data-i18n-alt="bacteriaImageAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section4Title">Tiny Friends Inside</h2>
+                <p data-i18n="section4Text1">The iron snail has a wonderful secret - it carries tiny bacteria friends inside its body! These bacteria are like little chefs that make food for the snail using chemicals from the hot water.</p>
+                <p data-i18n="section4Text2">This amazing partnership means the iron snail doesn't need to hunt for food. The bacteria friends take care of making all the energy the snail needs to grow and make its incredible iron armor!</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/three-layer-shell.jpg" alt="Cross-section diagram of the iron snail's three-layer shell showing the outer iron sulfide layer, middle organic layer, and inner calcium carbonate layer, each layer colored differently to show the unique structure" data-i18n-alt="shellImageAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section5Title">A Shell Like No Other</h2>
+                <p data-i18n="section5Text1">The iron snail's shell is built like a super sandwich with three amazing layers! The outer layer has iron, the middle layer is soft and squishy, and the inner layer is hard like other snail shells.</p>
+                <p data-i18n="section5Text2">This special three-layer design makes the shell incredibly strong. If something tries to crack it, the soft middle layer absorbs the impact like a cushion. It's so clever that engineers want to copy this design!</p>
+            </div>
+        </section>
+
+        <section class="content-section reverse">
+            <div class="image-container">
+                <img src="assets/images/size-comparison.jpg" alt="Size comparison showing the iron snail next to a golf ball, demonstrating that the snail is about the same size, with its dark metallic scales clearly visible against the white golf ball" data-i18n-alt="sizeImageAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section6Title">Small but Mighty</h2>
+                <p data-i18n="section6Text1">The iron snail is about the size of a golf ball - not very big, but perfectly sized for its deep-sea home! Even though it's small, it's one of the toughest animals in the ocean.</p>
+                <p data-i18n="section6Text2">Its iron armor makes it nearly impossible for predators to eat. When scientists first discovered it, they couldn't believe such an amazing animal existed!</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/discovery-celebration.jpg" alt="Scientists in a research vessel celebrating the discovery of the iron snail, looking at specimens in containers with excitement and wonder, showing the joy of scientific discovery" data-i18n-alt="discoveryImageAlt">
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="section7Title">An Amazing Discovery</h2>
+                <p data-i18n="section7Text1">Scientists discovered the iron snail in 2001, and it amazed the whole world! No one had ever seen an animal with iron armor before. It was like finding a real-life Pokemon in the deep ocean!</p>
+                <p data-i18n="section7Text2">Every time scientists study the iron snail, they learn something new and exciting. It shows us that our planet still has incredible surprises waiting to be discovered!</p>
+            </div>
+        </section>
+
+        <section class="fun-facts">
+            <h2 data-i18n="funFactsTitle">Fun Facts About Iron Snails!</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <span class="fact-icon">🛡️</span>
+                    <p data-i18n="funFact1">Their iron scales are so strong that scientists are studying them to make better bulletproof vests!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🔥</span>
+                    <p data-i18n="funFact2">They live in water that can be 400°C (750°F) - hotter than your oven!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🦾</span>
+                    <p data-i18n="funFact3">They're the only known animal that uses iron to build part of its body!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🏠</span>
+                    <p data-i18n="funFact4">They only live in three places on Earth, all near underwater volcanoes in the Indian Ocean!</p>
                 </div>
             </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-date">Symbiotic Relationship</div>
-                    <div class="timeline-text">
-                        The scaly-foot snail hosts chemosynthetic bacteria in its enlarged esophageal gland, 
-                        which provide nutrition through chemical conversion.
-                    </div>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <div class="timeline-date">Extreme Adaptation</div>
-                    <div class="timeline-text">
-                        The snail can withstand temperature gradients of hundreds of degrees, toxic chemicals, 
-                        and crushing pressure that would kill most organisms instantly.
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="conservation-alert">
-            <h3>Endangered Species</h3>
-            <p>
-                In 2019, the scaly-foot snail became the first species to be listed as endangered due to the threat 
-                of deep-sea mining. Its entire habitat exists in just three locations, making it extremely vulnerable 
-                to human activities.
-            </p>
-        </div>
-    </section>
-    
-    <section class="content-section">
-        <h2 class="section-title">Scientific Significance</h2>
-        <div class="content-grid">
-            <div class="content-text">
-                <h3>Biomimicry Applications</h3>
-                <p>
-                    The unique iron-plated structure of the scaly-foot snail has captured the attention of materials 
-                    scientists worldwide. Its multi-layered shell design is being studied for applications in 
-                    next-generation body armor and protective equipment.
-                </p>
-                <p>
-                    The U.S. military has funded research into replicating the snail's armor structure, which shows 
-                    remarkable resistance to both penetration and fracture through its unique layered composition.
-                </p>
-                <p>
-                    Beyond defense applications, the snail's ability to incorporate metals into biological structures 
-                    could inspire new approaches to manufacturing and materials science.
-                </p>
-            </div>
-            <div class="image-container">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Alviniconcha_hessleri_and_Ifremeria_nautilei.jpg" alt="Hydrothermal vent community">
-                <div class="image-caption">The Extreme Community of Deep-Sea Vents</div>
-            </div>
-        </div>
-    </section>
-    
-    <footer class="article-footer">
-        <div class="footer-logo">NG</div>
-        <p class="footer-text">
-            © 2025 National Geographic Style Educational Content<br>
-            Exploring Earth's Most Extraordinary Creatures
-        </p>
-    </footer>
-<script src="../language-switcher.js"></script>
+        </section>
+    </main>
+
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "The Amazing Iron Snail - Learning with Anastasia",
+                title: "The Amazing Iron Snail",
+                subtitle: "Discover the incredible snail with iron armor!",
+                
+                heroImageAlt: "A scientifically accurate scaly-foot snail (Chrysomallon squamiferum) on black volcanic rock near deep ocean hydrothermal vents, showing its unique iron sulfide scales that look like dark metallic armor plates covering its foot, with its cream-colored shell visible",
+                
+                section1Title: "Meet the Iron Snail!",
+                section1Text1: "Deep in the ocean, where hot water bubbles up from the Earth, lives the most amazing snail in the world! Scientists call it Chrysomallon squamiferum, but we can call it the iron snail because it has real metal armor!",
+                section1Text2: "This incredible snail is the only animal on Earth that makes armor from iron. It's like a tiny knight from the deep sea, wearing shiny metal scales that protect it from the hot water around its home.",
+                
+                scalesImageAlt: "Extreme close-up view of the iron sulfide scales on the foot of a scaly-foot snail, showing the overlapping dark metallic plates that look like medieval armor, with each scale having a distinctive hexagonal shape and metallic sheen",
+                
+                section2Title: "Amazing Iron Armor",
+                section2Text1: "The iron snail's foot is covered with hundreds of tiny iron scales, just like a dragon from fairy tales! These scales are made of iron sulfide, which makes them super strong and gives them a beautiful dark, metallic color.",
+                section2Text2: "Each scale overlaps the next one, creating perfect armor that protects the snail. Scientists are so amazed by this design that they're studying it to make better armor for people!",
+                
+                ventImageAlt: "Deep ocean hydrothermal vent with black smoker chimneys releasing hot water, surrounded by unique deep-sea life including tube worms and the iron snail's habitat, showing the dramatic underwater landscape with volcanic rocks",
+                
+                section3Title: "A Very Special Home",
+                section3Text1: "The iron snail lives in one of the most exciting places on Earth - near underwater volcanoes! These places are called hydrothermal vents, where super hot water shoots up from cracks in the ocean floor.",
+                section3Text2: "The water here can be as hot as your oven at home, but the iron snail loves it! Very few animals can live in such an extreme place, which makes the iron snail extra special.",
+                
+                bacteriaImageAlt: "Microscopic view showing the friendly bacteria that live inside the iron snail, depicted as glowing green dots that help feed the snail, illustrating the amazing partnership between the snail and its tiny helpers",
+                
+                section4Title: "Tiny Friends Inside",
+                section4Text1: "The iron snail has a wonderful secret - it carries tiny bacteria friends inside its body! These bacteria are like little chefs that make food for the snail using chemicals from the hot water.",
+                section4Text2: "This amazing partnership means the iron snail doesn't need to hunt for food. The bacteria friends take care of making all the energy the snail needs to grow and make its incredible iron armor!",
+                
+                shellImageAlt: "Cross-section diagram of the iron snail's three-layer shell showing the outer iron sulfide layer, middle organic layer, and inner calcium carbonate layer, each layer colored differently to show the unique structure",
+                
+                section5Title: "A Shell Like No Other",
+                section5Text1: "The iron snail's shell is built like a super sandwich with three amazing layers! The outer layer has iron, the middle layer is soft and squishy, and the inner layer is hard like other snail shells.",
+                section5Text2: "This special three-layer design makes the shell incredibly strong. If something tries to crack it, the soft middle layer absorbs the impact like a cushion. It's so clever that engineers want to copy this design!",
+                
+                sizeImageAlt: "Size comparison showing the iron snail next to a golf ball, demonstrating that the snail is about the same size, with its dark metallic scales clearly visible against the white golf ball",
+                
+                section6Title: "Small but Mighty",
+                section6Text1: "The iron snail is about the size of a golf ball - not very big, but perfectly sized for its deep-sea home! Even though it's small, it's one of the toughest animals in the ocean.",
+                section6Text2: "Its iron armor makes it nearly impossible for predators to eat. When scientists first discovered it, they couldn't believe such an amazing animal existed!",
+                
+                discoveryImageAlt: "Scientists in a research vessel celebrating the discovery of the iron snail, looking at specimens in containers with excitement and wonder, showing the joy of scientific discovery",
+                
+                section7Title: "An Amazing Discovery",
+                section7Text1: "Scientists discovered the iron snail in 2001, and it amazed the whole world! No one had ever seen an animal with iron armor before. It was like finding a real-life Pokemon in the deep ocean!",
+                section7Text2: "Every time scientists study the iron snail, they learn something new and exciting. It shows us that our planet still has incredible surprises waiting to be discovered!",
+                
+                funFactsTitle: "Fun Facts About Iron Snails!",
+                funFact1: "Their iron scales are so strong that scientists are studying them to make better bulletproof vests!",
+                funFact2: "They live in water that can be 400°C (750°F) - hotter than your oven!",
+                funFact3: "They're the only known animal that uses iron to build part of its body!",
+                funFact4: "They only live in three places on Earth, all near underwater volcanoes in the Indian Ocean!"
+            },
+            es: {
+                pageTitle: "El Increíble Caracol de Hierro - Aprendiendo con Anastasia",
+                title: "El Increíble Caracol de Hierro",
+                subtitle: "¡Descubre el caracol con armadura de hierro!",
+                
+                heroImageAlt: "Un caracol de pie escamoso científicamente preciso (Chrysomallon squamiferum) sobre roca volcánica negra cerca de fuentes hidrotermales del océano profundo, mostrando sus únicas escamas de sulfuro de hierro que parecen placas de armadura metálica oscura cubriendo su pie, con su concha de color crema visible",
+                
+                section1Title: "¡Conoce al Caracol de Hierro!",
+                section1Text1: "En lo profundo del océano, donde el agua caliente burbujea desde la Tierra, ¡vive el caracol más increíble del mundo! Los científicos lo llaman Chrysomallon squamiferum, pero podemos llamarlo caracol de hierro porque ¡tiene armadura de metal real!",
+                section1Text2: "Este caracol increíble es el único animal en la Tierra que hace armadura de hierro. Es como un pequeño caballero del mar profundo, ¡usando escamas metálicas brillantes que lo protegen del agua caliente alrededor de su hogar!",
+                
+                scalesImageAlt: "Vista de primer plano extremo de las escamas de sulfuro de hierro en el pie de un caracol de pie escamoso, mostrando las placas metálicas oscuras superpuestas que parecen armadura medieval, con cada escama teniendo una forma hexagonal distintiva y brillo metálico",
+                
+                section2Title: "Armadura de Hierro Asombrosa",
+                section2Text1: "¡El pie del caracol de hierro está cubierto con cientos de pequeñas escamas de hierro, como un dragón de los cuentos de hadas! Estas escamas están hechas de sulfuro de hierro, lo que las hace súper fuertes y les da un hermoso color metálico oscuro.",
+                section2Text2: "Cada escama se superpone a la siguiente, creando una armadura perfecta que protege al caracol. ¡Los científicos están tan asombrados por este diseño que lo están estudiando para hacer mejor armadura para las personas!",
+                
+                ventImageAlt: "Fuente hidrotermal del océano profundo con chimeneas de humo negro liberando agua caliente, rodeada de vida única del mar profundo incluyendo gusanos de tubo y el hábitat del caracol de hierro, mostrando el dramático paisaje submarino con rocas volcánicas",
+                
+                section3Title: "Un Hogar Muy Especial",
+                section3Text1: "El caracol de hierro vive en uno de los lugares más emocionantes de la Tierra: ¡cerca de volcanes submarinos! Estos lugares se llaman fuentes hidrotermales, donde el agua súper caliente sale disparada desde grietas en el fondo del océano.",
+                section3Text2: "¡El agua aquí puede estar tan caliente como tu horno en casa, pero al caracol de hierro le encanta! Muy pocos animales pueden vivir en un lugar tan extremo, ¡lo que hace al caracol de hierro extra especial!",
+                
+                bacteriaImageAlt: "Vista microscópica mostrando las bacterias amigas que viven dentro del caracol de hierro, representadas como puntos verdes brillantes que ayudan a alimentar al caracol, ilustrando la increíble asociación entre el caracol y sus pequeños ayudantes",
+                
+                section4Title: "Pequeños Amigos Adentro",
+                section4Text1: "El caracol de hierro tiene un secreto maravilloso: ¡lleva pequeñas bacterias amigas dentro de su cuerpo! Estas bacterias son como pequeños chefs que hacen comida para el caracol usando químicos del agua caliente.",
+                section4Text2: "¡Esta increíble asociación significa que el caracol de hierro no necesita cazar comida! ¡Las bacterias amigas se encargan de hacer toda la energía que el caracol necesita para crecer y hacer su increíble armadura de hierro!",
+                
+                shellImageAlt: "Diagrama de sección transversal de la concha de tres capas del caracol de hierro mostrando la capa externa de sulfuro de hierro, la capa orgánica media y la capa interna de carbonato de calcio, cada capa coloreada de manera diferente para mostrar la estructura única",
+                
+                section5Title: "Una Concha Como Ninguna Otra",
+                section5Text1: "¡La concha del caracol de hierro está construida como un súper sándwich con tres capas increíbles! La capa externa tiene hierro, la capa del medio es suave y esponjosa, y la capa interna es dura como las conchas de otros caracoles.",
+                section5Text2: "Este diseño especial de tres capas hace que la concha sea increíblemente fuerte. Si algo intenta romperla, la capa suave del medio absorbe el impacto como un cojín. ¡Es tan inteligente que los ingenieros quieren copiar este diseño!",
+                
+                sizeImageAlt: "Comparación de tamaño mostrando el caracol de hierro junto a una pelota de golf, demostrando que el caracol es aproximadamente del mismo tamaño, con sus escamas metálicas oscuras claramente visibles contra la pelota de golf blanca",
+                
+                section6Title: "Pequeño pero Poderoso",
+                section6Text1: "El caracol de hierro es del tamaño de una pelota de golf: ¡no muy grande, pero del tamaño perfecto para su hogar en el mar profundo! Aunque es pequeño, es uno de los animales más resistentes del océano.",
+                section6Text2: "Su armadura de hierro hace casi imposible que los depredadores lo coman. ¡Cuando los científicos lo descubrieron por primera vez, no podían creer que existiera un animal tan increíble!",
+                
+                discoveryImageAlt: "Científicos en un barco de investigación celebrando el descubrimiento del caracol de hierro, mirando especímenes en contenedores con emoción y asombro, mostrando la alegría del descubrimiento científico",
+                
+                section7Title: "Un Descubrimiento Asombroso",
+                section7Text1: "¡Los científicos descubrieron el caracol de hierro en 2001, y asombró al mundo entero! Nadie había visto antes un animal con armadura de hierro. ¡Era como encontrar un Pokémon de la vida real en el océano profundo!",
+                section7Text2: "Cada vez que los científicos estudian el caracol de hierro, aprenden algo nuevo y emocionante. ¡Nos muestra que nuestro planeta todavía tiene sorpresas increíbles esperando ser descubiertas!",
+                
+                funFactsTitle: "¡Datos Divertidos Sobre los Caracoles de Hierro!",
+                funFact1: "¡Sus escamas de hierro son tan fuertes que los científicos las están estudiando para hacer mejores chalecos antibalas!",
+                funFact2: "¡Viven en agua que puede estar a 400°C (750°F) - más caliente que tu horno!",
+                funFact3: "¡Son el único animal conocido que usa hierro para construir parte de su cuerpo!",
+                funFact4: "¡Solo viven en tres lugares en la Tierra, todos cerca de volcanes submarinos en el Océano Índico!"
+            },
+            ru: {
+                pageTitle: "Удивительная Железная Улитка - Учимся с Анастасией",
+                title: "Удивительная Железная Улитка",
+                subtitle: "Откройте для себя невероятную улитку с железной броней!",
+                
+                heroImageAlt: "Научно точная чешуйчатая улитка (Chrysomallon squamiferum) на черной вулканической породе возле глубоководных гидротермальных источников, показывающая ее уникальные чешуи из сульфида железа, которые выглядят как темные металлические броневые пластины, покрывающие ее ногу, с видимой кремовой раковиной",
+                
+                section1Title: "Знакомьтесь с Железной Улиткой!",
+                section1Text1: "Глубоко в океане, где горячая вода пузырится из Земли, живет самая удивительная улитка в мире! Ученые называют ее Chrysomallon squamiferum, но мы можем называть ее железной улиткой, потому что у нее настоящая металлическая броня!",
+                section1Text2: "Эта невероятная улитка - единственное животное на Земле, которое делает броню из железа. Она как крошечный рыцарь из глубокого моря, носящий блестящие металлические чешуи, которые защищают ее от горячей воды вокруг ее дома!",
+                
+                scalesImageAlt: "Экстремальный крупный план чешуек сульфида железа на ноге чешуйчатой улитки, показывающий перекрывающиеся темные металлические пластины, которые выглядят как средневековая броня, с каждой чешуей, имеющей характерную шестиугольную форму и металлический блеск",
+                
+                section2Title: "Удивительная Железная Броня",
+                section2Text1: "Нога железной улитки покрыта сотнями крошечных железных чешуек, прямо как у дракона из сказок! Эти чешуи сделаны из сульфида железа, что делает их супер прочными и придает им красивый темный металлический цвет.",
+                section2Text2: "Каждая чешуя перекрывает следующую, создавая идеальную броню, которая защищает улитку. Ученые так поражены этим дизайном, что изучают его, чтобы сделать лучшую броню для людей!",
+                
+                ventImageAlt: "Глубоководный гидротермальный источник с черными курильщиками, выпускающими горячую воду, окруженный уникальной глубоководной жизнью, включая трубчатых червей и среду обитания железной улитки, показывающий драматический подводный ландшафт с вулканическими породами",
+                
+                section3Title: "Очень Особенный Дом",
+                section3Text1: "Железная улитка живет в одном из самых захватывающих мест на Земле - возле подводных вулканов! Эти места называются гидротермальными источниками, где супер горячая вода выстреливает из трещин в океанском дне.",
+                section3Text2: "Вода здесь может быть такой же горячей, как ваша духовка дома, но железной улитке это нравится! Очень мало животных могут жить в таком экстремальном месте, что делает железную улитку особенно особенной!",
+                
+                bacteriaImageAlt: "Микроскопический вид, показывающий дружественные бактерии, которые живут внутри железной улитки, изображенные как светящиеся зеленые точки, которые помогают кормить улитку, иллюстрируя удивительное партнерство между улиткой и ее крошечными помощниками",
+                
+                section4Title: "Крошечные Друзья Внутри",
+                section4Text1: "У железной улитки есть чудесный секрет - она носит крошечных бактерий-друзей внутри своего тела! Эти бактерии как маленькие повара, которые делают еду для улитки, используя химические вещества из горячей воды.",
+                section4Text2: "Это удивительное партнерство означает, что железной улитке не нужно охотиться за едой. Бактерии-друзья заботятся о создании всей энергии, которая нужна улитке для роста и создания ее невероятной железной брони!",
+                
+                shellImageAlt: "Диаграмма поперечного сечения трехслойной раковины железной улитки, показывающая внешний слой сульфида железа, средний органический слой и внутренний слой карбоната кальция, каждый слой окрашен по-разному, чтобы показать уникальную структуру",
+                
+                section5Title: "Раковина, Не Похожая ни на Что",
+                section5Text1: "Раковина железной улитки построена как супер-бутерброд с тремя удивительными слоями! Внешний слой содержит железо, средний слой мягкий и губчатый, а внутренний слой твердый, как раковины других улиток.",
+                section5Text2: "Этот особый трехслойный дизайн делает раковину невероятно прочной. Если что-то пытается ее сломать, мягкий средний слой поглощает удар, как подушка. Это так умно, что инженеры хотят скопировать этот дизайн!",
+                
+                sizeImageAlt: "Сравнение размеров, показывающее железную улитку рядом с мячом для гольфа, демонстрируя, что улитка примерно такого же размера, с ее темными металлическими чешуями, ясно видимыми на фоне белого мяча для гольфа",
+                
+                section6Title: "Маленькая, но Могучая",
+                section6Text1: "Железная улитка размером с мяч для гольфа - не очень большая, но идеального размера для ее глубоководного дома! Хотя она маленькая, она одно из самых выносливых животных в океане.",
+                section6Text2: "Ее железная броня делает почти невозможным для хищников ее съесть. Когда ученые впервые обнаружили ее, они не могли поверить, что такое удивительное животное существует!",
+                
+                discoveryImageAlt: "Ученые на исследовательском судне празднуют открытие железной улитки, рассматривая образцы в контейнерах с волнением и удивлением, показывая радость научного открытия",
+                
+                section7Title: "Удивительное Открытие",
+                section7Text1: "Ученые открыли железную улитку в 2001 году, и она поразила весь мир! Никто никогда раньше не видел животное с железной броней. Это было как найти настоящего покемона в глубоком океане!",
+                section7Text2: "Каждый раз, когда ученые изучают железную улитку, они узнают что-то новое и захватывающее. Это показывает нам, что на нашей планете все еще есть невероятные сюрпризы, ждущие своего открытия!",
+                
+                funFactsTitle: "Забавные Факты о Железных Улитках!",
+                funFact1: "Их железные чешуи настолько прочные, что ученые изучают их, чтобы сделать лучшие бронежилеты!",
+                funFact2: "Они живут в воде, которая может быть 400°C (750°F) - горячее, чем ваша духовка!",
+                funFact3: "Они единственное известное животное, которое использует железо для построения части своего тела!",
+                funFact4: "Они живут только в трех местах на Земле, все возле подводных вулканов в Индийском океане!"
+            }
+        };
+
+        // Language switching functionality
+        let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            
+            document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+                const key = element.getAttribute('data-i18n-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    element.alt = translations[lang][key];
+                }
+            });
+            
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize content
+        updateContent(currentLang);
+
+        // Listen for language changes
+        window.addEventListener('storage', (e) => {
+            if (e.key === 'selectedLanguage') {
+                currentLang = e.newValue || 'en';
+                updateContent(currentLang);
+            }
+        });
+    </script>
+    <script src="../language-switcher.js"></script>
 </body>
 </html>
