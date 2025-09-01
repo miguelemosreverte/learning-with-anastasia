@@ -21,13 +21,22 @@ function extractImagesFromHTML(htmlPath) {
   const html = fs.readFileSync(htmlPath, 'utf8');
   const images = [];
   
-  // Match img tags with alt text and src
-  const imgRegex = /<img[^>]+src=["']([^"']+)["'][^>]*alt=["']([^"']+)["']|<img[^>]+alt=["']([^"']+)["'][^>]*src=["']([^"']+)["']/gi;
+  // More flexible regex that handles any order and spacing
+  const imgRegex = /<img[^>]*>/gi;
   let match;
   
   while ((match = imgRegex.exec(html)) !== null) {
-    const src = match[1] || match[4];
-    const alt = match[2] || match[3];
+    const imgTag = match[0];
+    
+    // Extract src attribute
+    const srcMatch = imgTag.match(/src=["']([^"']+)["']/);
+    if (!srcMatch) continue;
+    const src = srcMatch[1];
+    
+    // Extract alt attribute
+    const altMatch = imgTag.match(/alt=["']([^"']+)["']/);
+    if (!altMatch) continue;
+    const alt = altMatch[1];
     
     // Skip if it's an external URL
     if (src.startsWith('http')) continue;
@@ -41,6 +50,8 @@ function extractImagesFromHTML(htmlPath) {
       fullPath: path.join(path.dirname(htmlPath), src)
     });
   }
+  
+  console.log(`Debug: Found ${images.length} images with valid alt text`);
   
   return images;
 }
