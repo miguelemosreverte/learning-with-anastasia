@@ -42,24 +42,39 @@
             margin-top: 10px;
         }
 
-        /* Language Selector */
-        .language-selector {
+        /* Language Switcher */
+        .language-switcher {
             position: fixed;
             top: 20px;
             right: 20px;
+            display: flex;
+            gap: 15px;
             z-index: 1000;
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .language-selector select {
-            padding: 5px 10px;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+        
+        .lang-btn {
+            width: 40px;
+            height: 30px;
+            border: 2px solid transparent;
+            border-radius: 4px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.9);
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
         }
 
         /* Hero Section */
@@ -351,13 +366,11 @@
     </style>
 </head>
 <body>
-    <!-- Language Selector -->
-    <div class="language-selector">
-        <select id="languageSelect" onchange="changeLanguage(this.value)">
-            <option value="en">English</option>
-            <option value="es">Español</option>
-            <option value="ru">Русский</option>
-        </select>
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">🇬🇧</button>
+        <button class="lang-btn" data-lang="es" title="Español">🇪🇸</button>
+        <button class="lang-btn" data-lang="ru" title="Русский">🇷🇺</button>
     </div>
 
     <!-- Header -->
@@ -850,14 +863,22 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p data-lang="en" class="active">© 2025 Educational Magazine Series</p>
-        <p data-lang="es">© 2025 Serie de Revistas Educativas</p>
-        <p data-lang="ru">© 2025 Образовательная серия журналов</p>
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
     </footer>
 
     <script>
         // Language switching functionality
         function changeLanguage(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
             // Hide all language elements
             document.querySelectorAll('[data-lang]').forEach(el => {
                 el.classList.remove('active');
@@ -880,8 +901,14 @@
         // Load saved language preference
         window.addEventListener('DOMContentLoaded', () => {
             const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-            document.getElementById('languageSelect').value = savedLang;
             changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
         });
 
         // Smooth scroll for internal links

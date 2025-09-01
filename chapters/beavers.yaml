@@ -379,6 +379,52 @@ imageGeneration:
   style:
     global: "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes"
   
+  funFacts:
+    title:
+      en: "Amazing Beaver Facts!"
+      es: "¡Datos Asombrosos sobre Castores!"
+      ru: "Удивительные факты о бобрах!"
+    facts:
+      - icon: "🦷"
+        title:
+          en: "Iron Teeth"
+          es: "Dientes de Hierro"
+          ru: "Железные зубы"
+        content:
+          en: "Beaver teeth never stop growing! They're orange because they contain iron, making them stronger than most animal teeth."
+          es: "¡Los dientes de castor nunca dejan de crecer! Son naranjas porque contienen hierro, haciéndolos más fuertes que la mayoría de los dientes animales."
+          ru: "Зубы бобров никогда не перестают расти! Они оранжевые, потому что содержат железо, что делает их прочнее, чем зубы большинства животных."
+      
+      - icon: "🏗️"
+        title:
+          en: "Master Builders"
+          es: "Constructores Maestros"
+          ru: "Мастера-строители"
+        content:
+          en: "The largest beaver dam ever found is in Canada - it's 2,790 feet long and visible from space!"
+          es: "¡La presa de castor más grande jamás encontrada está en Canadá - mide 850 metros de largo y es visible desde el espacio!"
+          ru: "Самая большая бобровая плотина находится в Канаде - она длиной 850 метров и видна из космоса!"
+      
+      - icon: "🏊"
+        title:
+          en: "Swimming Champions"
+          es: "Campeones de Natación"
+          ru: "Чемпионы по плаванию"
+        content:
+          en: "Beavers can hold their breath underwater for up to 15 minutes and swim at speeds of 5 mph!"
+          es: "¡Los castores pueden contener la respiración bajo el agua hasta 15 minutos y nadar a velocidades de 8 km/h!"
+          ru: "Бобры могут задерживать дыхание под водой до 15 минут и плавать со скоростью 8 км/ч!"
+      
+      - icon: "🌙"
+        title:
+          en: "Night Workers"
+          es: "Trabajadores Nocturnos"
+          ru: "Ночные работники"
+        content:
+          en: "Beavers are nocturnal, doing most of their building and foraging work at night when it's safer from predators."
+          es: "Los castores son nocturnos, haciendo la mayor parte de su construcción y búsqueda de alimento por la noche cuando es más seguro de los depredadores."
+          ru: "Бобры ведут ночной образ жизни, выполняя большую часть строительства и поиска пищи ночью, когда безопаснее от хищников."
+  
   viewerDetails:
   - title:
       en: "The Beaver's Tail"
