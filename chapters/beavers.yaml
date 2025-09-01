@@ -133,14 +133,14 @@ sections:
       ru: "Папа Бобр Приходит"
     content:
       en: "Papa Beaver, with his grey-tinged fur and years of experience, comes to check on Baby Beaver's progress. He's built dozens of dams and knows all the tricks!"
-      es: "Papá Castor, con su pelaje grisáceo y años de experiencia, viene a verificar el progreso de Bebé Castor."
-      ru: "Папа Бобр, с его седоватым мехом и многолетним опытом, приходит проверить прогресс Малыша Бобра."
+      es: "Papá Castor, con su pelaje grisáceo y años de experiencia, viene a verificar el progreso de Bebé Castor. ¡Ha construido docenas de presas y conoce todos los trucos!"
+      ru: "Папа Бобр, с его седоватым мехом и многолетним опытом, приходит проверить прогресс Малыша Бобра. Он построил десятки плотин и знает все хитрости!"
     action: "older male beaver that looks like parent of the reference beaver, grey-tinged fur, wise expression, sturdy build"
     image: "papa-beaver.jpg"
     imageAlt:
       en: "Older beaver with grey-tinged fur, wise eyes, and sturdy build"
       es: "Castor mayor con pelaje grisáceo, ojos sabios y constitución robusta"
-      ru: "Старший бобр с седоватым мехом, мудрыми глазами"
+      ru: "Старший бобр с седоватым мехом, мудрыми глазами и крепким телосложением"
 
   - id: teamwork-lifting
     use_characters: ["${meet-baby-beaver.image}", "${papa-beaver-arrives.image}"]
@@ -153,8 +153,8 @@ sections:
       ru: "Шаг 5: Командная работа делает сильнее"
     content:
       en: "Papa Beaver shows Baby Beaver how two beavers can lift logs that one cannot. Together, they position the biggest logs at the base, making the dam much stronger!"
-      es: "Papá Castor le muestra a Bebé Castor cómo dos castores pueden levantar troncos que uno no puede. ¡Juntos, colocan los troncos más grandes en la base!"
-      ru: "Папа Бобр показывает Малышу Бобру, как два бобра могут поднять бревна, которые один не может."
+      es: "Papá Castor le muestra a Bebé Castor cómo dos castores pueden levantar troncos que uno no puede. ¡Juntos, colocan los troncos más grandes en la base, haciendo la presa mucho más fuerte!"
+      ru: "Папа Бобр показывает Малышу Бобру, как два бобра могут поднять бревна, которые один не может. Вместе они устанавливают самые большие бревна в основание, делая плотину намного прочнее!"
     image: "baby-papa-teamwork.jpg"
 
   - id: applying-mud
@@ -168,8 +168,8 @@ sections:
       ru: "Шаг 6: Герметизация грязью"
     content:
       en: "Now comes the messy part! Baby Beaver scoops mud from the river bottom and packs it between the sticks. The mud acts like cement, sealing gaps so water can't rush through."
-      es: "¡Ahora viene la parte sucia! Bebé Castor recoge barro del fondo del río y lo empaca entre los palos."
-      ru: "Теперь наступает грязная часть! Малыш Бобр зачерпывает грязь со дна реки."
+      es: "¡Ahora viene la parte sucia! Bebé Castor recoge barro del fondo del río y lo empaca entre los palos. El barro actúa como cemento, sellando los huecos para que el agua no pueda pasar corriendo."
+      ru: "Теперь наступает грязная часть! Малыш Бобр зачерпывает грязь со дна реки и утрамбовывает её между палками. Грязь действует как цемент, запечатывая щели, чтобы вода не могла прорваться."
     image: "baby-beaver-mudwork.jpg"
 
   - id: adding-stones
@@ -183,8 +183,8 @@ sections:
       ru: "Шаг 7: Укрепление камнями"
     content:
       en: "Baby Beaver adds stones to the base for extra strength. Each stone is carefully chosen and placed. The dam is getting taller - water is starting to pool behind it!"
-      es: "Bebé Castor agrega piedras a la base para mayor resistencia. Cada piedra es cuidadosamente elegida y colocada."
-      ru: "Малыш Бобр добавляет камни к основанию для дополнительной прочности."
+      es: "Bebé Castor agrega piedras a la base para mayor resistencia. Cada piedra es cuidadosamente elegida y colocada. ¡La presa se está haciendo más alta - el agua está comenzando a acumularse detrás de ella!"
+      ru: "Малыш Бобр добавляет камни к основанию для дополнительной прочности. Каждый камень тщательно выбирается и размещается. Плотина становится выше - вода начинает скапливаться за ней!"
     image: "baby-beaver-stones.jpg"
 
   # Generate mama using baby as reference (to look like mother of baby)
@@ -199,8 +199,8 @@ sections:
       ru: "Мама Бобр Приносит Припасы"
     content:
       en: "Mama Beaver arrives with fresh willow bark - beaver's favorite food! She's proud of Baby Beaver's hard work and brings snacks to keep everyone energized."
-      es: "¡Mamá Castor llega con corteza de sauce fresca - la comida favorita de los castores!"
-      ru: "Мама Бобр приходит со свежей ивовой корой - любимой едой бобров!"
+      es: "¡Mamá Castor llega con corteza de sauce fresca - la comida favorita de los castores! Está orgullosa del trabajo duro de Bebé Castor y trae bocadillos para mantener a todos con energía."
+      ru: "Мама Бобр приходит со свежей ивовой корой - любимой едой бобров! Она гордится усердной работой Малыша Бобра и приносит закуски, чтобы все оставались полными энергии."
     action: "female beaver that looks like mother of the reference beaver, gentle nurturing expression, carrying willow branches"
     image: "mama-beaver.jpg"
     imageAlt:
@@ -219,8 +219,8 @@ sections:
       ru: "Шаг 8: Семейный проект"
     content:
       en: "The whole beaver family works together! Papa Beaver positions logs, Mama Beaver weaves branches, and Baby Beaver packs mud. Beaver families are very close - they work, play, and live together."
-      es: "¡Toda la familia de castores trabaja junta! Papá Castor posiciona troncos, Mamá Castor entrelaza ramas, y Bebé Castor empaca barro."
-      ru: "Вся семья бобров работает вместе! Папа Бобр устанавливает бревна, Мама Бобр плетет ветки, а Малыш Бобр утрамбовывает грязь."
+      es: "¡Toda la familia de castores trabaja junta! Papá Castor posiciona troncos, Mamá Castor entrelaza ramas, y Bebé Castor empaca barro. Las familias de castores son muy unidas - trabajan, juegan y viven juntos."
+      ru: "Вся семья бобров работает вместе! Папа Бобр устанавливает бревна, Мама Бобр плетет ветки, а Малыш Бобр утрамбовывает грязь. Семьи бобров очень близки - они работают, играют и живут вместе."
     image: "family-building.jpg"
 
   - id: testing-dam
@@ -234,8 +234,8 @@ sections:
       ru: "Шаг 9: Тестирование структуры"
     content:
       en: "Baby Beaver swims along the dam, feeling for water currents that show leaks. When he finds one, he quickly patches it with more mud and sticks. Quality control is important!"
-      es: "Bebé Castor nada a lo largo de la presa, sintiendo las corrientes de agua que muestran fugas."
-      ru: "Малыш Бобр плавает вдоль плотины, ощущая водные потоки, которые показывают утечки."
+      es: "Bebé Castor nada a lo largo de la presa, sintiendo las corrientes de agua que muestran fugas. Cuando encuentra una, rápidamente la parchea con más barro y palos. ¡El control de calidad es importante!"
+      ru: "Малыш Бобр плавает вдоль плотины, ощущая водные потоки, которые показывают утечки. Когда он находит одну, он быстро залатывает её дополнительной грязью и палками. Контроль качества важен!"
     image: "baby-beaver-testing.jpg"
 
   - id: pond-forming
@@ -264,8 +264,8 @@ sections:
       ru: "Шаг 11: Строительство хатки"
     content:
       en: "Now Baby Beaver builds a lodge - the beaver home! It's like an island house made of sticks and mud, with underwater entrances for safety. The living chamber inside stays dry and cozy."
-      es: "¡Ahora Bebé Castor construye una madriguera - el hogar del castor! Es como una casa isla hecha de palos y barro."
-      ru: "Теперь Малыш Бобр строит хатку - дом бобра! Это как островной дом из палок и грязи."
+      es: "¡Ahora Bebé Castor construye una madriguera - el hogar del castor! Es como una casa isla hecha de palos y barro, con entradas subacuáticas para seguridad. La cámara de vivienda interior se mantiene seca y acogedora."
+      ru: "Теперь Малыш Бобр строит хатку - дом бобра! Это как островной дом из палок и грязи, с подводными входами для безопасности. Жилая камера внутри остаётся сухой и уютной."
     image: "baby-beaver-lodge.jpg"
 
   - id: underwater-entrance
@@ -279,8 +279,8 @@ sections:
       ru: "Секретная подводная дверь"
     content:
       en: "The lodge has a secret - you can only enter from underwater! This keeps the beaver family safe from predators. Baby Beaver dives down and swims up into the dry, warm chamber inside."
-      es: "¡La madriguera tiene un secreto - solo puedes entrar desde debajo del agua!"
-      ru: "У хатки есть секрет - войти можно только из-под воды!"
+      es: "¡La madriguera tiene un secreto - solo puedes entrar desde debajo del agua! Esto mantiene a la familia de castores a salvo de los depredadores. Bebé Castor se sumerge y nada hacia arriba hacia la cámara seca y cálida del interior."
+      ru: "У хатки есть секрет - войти можно только из-под воды! Это защищает семью бобров от хищников. Малыш Бобр ныряет вниз и всплывает в сухую, тёплую камеру внутри."
     image: "baby-beaver-underwater.jpg"
 
   - id: winter-preparation
@@ -294,8 +294,8 @@ sections:
       ru: "Подготовка к зиме"
     content:
       en: "The beaver family stores branches underwater near their lodge. In winter, when the pond freezes, they'll have food without going outside. Beavers are amazing planners!"
-      es: "La familia de castores almacena ramas bajo el agua cerca de su madriguera."
-      ru: "Семья бобров хранит ветки под водой возле своей хатки."
+      es: "La familia de castores almacena ramas bajo el agua cerca de su madriguera. En invierno, cuando el estanque se congele, tendrán comida sin salir afuera. ¡Los castores son planificadores increíbles!"
+      ru: "Семья бобров хранит ветки под водой возле своей хатки. Зимой, когда пруд замёрзнет, у них будет еда без необходимости выходить наружу. Бобры - удивительные планировщики!"
     image: "family-winter-prep.jpg"
 
   - id: completed-dam
@@ -309,8 +309,8 @@ sections:
       ru: "Миссия выполнена!"
     content:
       en: "Baby Beaver's first dam is complete! He celebrates by slapping his tail on the water - SMACK! This sound can be heard half a mile away. It's how beavers say 'We did it!'"
-      es: "¡La primera presa de Bebé Castor está completa! Celebra golpeando su cola en el agua - ¡SMACK!"
-      ru: "Первая плотина Малыша Бобра готова! Он празднует, хлопая хвостом по воде - ШЛЕП!"
+      es: "¡La primera presa de Bebé Castor está completa! Celebra golpeando su cola en el agua - ¡SMACK! Este sonido se puede escuchar a media milla de distancia. ¡Es como los castores dicen 'Lo logramos'!"
+      ru: "Первая плотина Малыша Бобра готова! Он празднует, хлопая хвостом по воде - ШЛЕП! Этот звук слышно на расстоянии полумили. Так бобры говорят 'Мы сделали это!'"
     image: "baby-beaver-celebration.jpg"
 
   - id: ecosystem-thriving
@@ -322,8 +322,8 @@ sections:
       ru: "Новая экосистема"
     content:
       en: "Thanks to Baby Beaver's dam, the whole area has transformed! Fish swim in the deep water, birds nest in the wetlands, and deer come to drink. One beaver family has created a home for hundreds of animals!"
-      es: "¡Gracias a la presa de Bebé Castor, toda el área se ha transformado!"
-      ru: "Благодаря плотине Малыша Бобра вся территория преобразилась!"
+      es: "¡Gracias a la presa de Bebé Castor, toda el área se ha transformado! Los peces nadan en el agua profunda, los pájaros anidan en los humedales, y los ciervos vienen a beber. ¡Una familia de castores ha creado un hogar para cientos de animales!"
+      ru: "Благодаря плотине Малыша Бобра вся территория преобразилась! Рыбы плавают в глубокой воде, птицы гнездятся на болотах, а олени приходят пить. Одна семья бобров создала дом для сотен животных!"
     image: "ecosystem-thriving.jpg"
     imageType: "landscape"  # Final landscape showing the transformed ecosystem
 
