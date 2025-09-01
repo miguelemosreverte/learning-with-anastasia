@@ -6,6 +6,13 @@ const path = require("path");
 const ARTISTIC_STYLE = `
 Studio Ghibli's whimsical warmth combined with Pixar-quality rendering and Van Gogh-inspired atmospheric effects.
 Child-friendly, educational, vibrant colors with magical lighting.
+
+IMPORTANT TEXT POLICY:
+- DO NOT add any text in English or other modern languages to the images
+- Latin scientific names are acceptable (e.g., "Chrysomallon squamiferum")
+- Symbols, arrows, and visual indicators are fine
+- Diagrams with visual elements only (no text labels)
+- This ensures the images work for all languages (English, Spanish, Russian, etc.)
 `;
 
 async function generateIronSnailImage(referenceImagePath, prompt, outputPath) {

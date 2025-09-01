@@ -14,6 +14,13 @@ Create a scientifically accurate and realistic image with the following artistic
 - IMPORTANT: Maintain scientific accuracy and realism - no fantasy elements unless specifically about imagination
 - IMPORTANT: Objects must be physically plausible in their environment (no electric lights underwater, no tropical plants in Arctic, etc.)
 - High detail, cinematic lighting, hand-painted feel with photorealistic textures
+
+IMPORTANT TEXT POLICY:
+- DO NOT add any text in English or other modern languages
+- Latin scientific names are acceptable when needed
+- Symbols, arrows, and visual indicators are fine
+- No text labels, captions, or written words (except Latin)
+- This ensures images work for all languages
 `;
 
 // Function to extract images from HTML file
