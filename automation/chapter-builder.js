@@ -76,6 +76,13 @@ class ChapterBuilder {
     generateHTML(chapterData) {
         console.log(`🎨 Generating HTML for: ${chapterData.meta.title.en}`);
         
+        // Debug: Check if viewerDetails exists
+        if (chapterData.viewerDetails) {
+            console.log(`   ✓ Found ${chapterData.viewerDetails.length} viewer details`);
+        } else {
+            console.log(`   ✗ No viewer details found`);
+        }
+        
         // Generate the HTML using the template
         const html = this.template(chapterData);
         

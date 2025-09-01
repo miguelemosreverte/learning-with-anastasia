@@ -3,31 +3,7 @@
   "style": {
     "global": "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes"
   },
-  "routing": {
-    "openai": [
-      "hero-beaver-landscape.jpg",
-      "ecosystem-thriving.jpg"
-    ],
-    "gemini": [
-      "baby-beaver-portrait.jpg",
-      "papa-beaver.jpg",
-      "mama-beaver.jpg",
-      "baby-beaver-surveying.jpg",
-      "baby-beaver-gathering.jpg",
-      "baby-beaver-first-log.jpg",
-      "baby-beaver-weaving.jpg",
-      "baby-papa-teamwork.jpg",
-      "baby-beaver-mudwork.jpg",
-      "baby-beaver-stones.jpg",
-      "family-building.jpg",
-      "baby-beaver-testing.jpg",
-      "baby-beaver-pond-success.jpg",
-      "baby-beaver-lodge.jpg",
-      "baby-beaver-underwater.jpg",
-      "family-winter-prep.jpg",
-      "baby-beaver-celebration.jpg"
-    ]
-  },
+  "routing": {},
   "characters": {
     "baby-beaver": {
       "name": "Baby Beaver",

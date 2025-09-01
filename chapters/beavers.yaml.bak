@@ -392,45 +392,45 @@ imageGeneration:
     global: "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes"
 
 viewerDetails:
-- title:
-    en: "The Beaver's Tail"
-    es: "La Cola del Castor"
-    ru: "Хвост Бобра"
-  description:
-    en: "Did you notice how Baby Beaver uses his flat tail? It serves as a rudder for swimming, a prop when sitting upright, and makes a loud warning slap on water to alert family of danger!"
-    es: "¿Notaste cómo Bebé Castor usa su cola plana? Sirve como timón para nadar, como apoyo cuando se sienta erguido, ¡y hace un fuerte golpe de advertencia en el agua para alertar a la familia del peligro!"
-    ru: "Вы заметили, как Малыш Бобр использует свой плоский хвост? Он служит рулем при плавании, опорой при сидении и издает громкий предупреждающий шлепок по воде, чтобы предупредить семью об опасности!"
-  image: "detail-beaver-tail.jpg"
-  
-- title:
-    en: "Underwater Entrances"
-    es: "Entradas Subacuáticas"
-    ru: "Подводные Входы"
-  description:
-    en: "Look closely at the lodge - all entrances are underwater! This clever design keeps predators out while allowing beavers to come and go safely, even when the pond freezes over."
-    es: "¡Mira de cerca la madriguera - todas las entradas están bajo el agua! Este diseño inteligente mantiene a los depredadores fuera mientras permite a los castores entrar y salir con seguridad, incluso cuando el estanque se congela."
-    ru: "Посмотрите внимательно на хатку - все входы находятся под водой! Эта умная конструкция не пускает хищников, позволяя бобрам безопасно входить и выходить, даже когда пруд замерзает."
-  image: "detail-underwater-entrance.jpg"
-  
-- title:
-    en: "Orange Teeth"
-    es: "Dientes Naranjas"
-    ru: "Оранжевые Зубы"
-  description:
-    en: "Beavers have orange teeth! The orange color comes from iron in their tooth enamel, which makes their teeth incredibly strong - perfect for gnawing through wood."
-    es: "¡Los castores tienen dientes naranjas! El color naranja proviene del hierro en el esmalte dental, lo que hace que sus dientes sean increíblemente fuertes - perfectos para roer madera."
-    ru: "У бобров оранжевые зубы! Оранжевый цвет происходит от железа в зубной эмали, что делает их зубы невероятно крепкими - идеальными для прогрызания древесины."
-  image: "detail-orange-teeth.jpg"
-  
-- title:
-    en: "Engineering Mathematics"
-    es: "Matemáticas de Ingeniería"
-    ru: "Инженерная Математика"
-  description:
-    en: "Notice how the dam curves upstream? This arch shape distributes water pressure evenly, using the same principle as human-built arch dams. Beavers are natural engineers!"
-    es: "¿Notas cómo la presa se curva río arriba? Esta forma de arco distribuye la presión del agua uniformemente, usando el mismo principio que las presas de arco construidas por humanos. ¡Los castores son ingenieros naturales!"
-    ru: "Заметили, как плотина изгибается вверх по течению? Эта арочная форма равномерно распределяет давление воды, используя тот же принцип, что и арочные плотины, построенные людьми. Бобры - природные инженеры!"
-  image: "detail-dam-curve.jpg"
+  - title:
+      en: "The Beaver's Tail"
+      es: "La Cola del Castor"
+      ru: "Хвост Бобра"
+    description:
+      en: "Did you notice how Baby Beaver uses his flat tail? It serves as a rudder for swimming, a prop when sitting upright, and makes a loud warning slap on water to alert family of danger!"
+      es: "¿Notaste cómo Bebé Castor usa su cola plana? Sirve como timón para nadar, como apoyo cuando se sienta erguido, ¡y hace un fuerte golpe de advertencia en el agua para alertar a la familia del peligro!"
+      ru: "Вы заметили, как Малыш Бобр использует свой плоский хвост? Он служит рулем при плавании, опорой при сидении и издает громкий предупреждающий шлепок по воде, чтобы предупредить семью об опасности!"
+    image: "detail-beaver-tail.jpg"
+    
+  - title:
+      en: "Underwater Entrances"
+      es: "Entradas Subacuáticas"
+      ru: "Подводные Входы"
+    description:
+      en: "Look closely at the lodge - all entrances are underwater! This clever design keeps predators out while allowing beavers to come and go safely, even when the pond freezes over."
+      es: "¡Mira de cerca la madriguera - todas las entradas están bajo el agua! Este diseño inteligente mantiene a los depredadores fuera mientras permite a los castores entrar y salir con seguridad, incluso cuando el estanque se congela."
+      ru: "Посмотрите внимательно на хатку - все входы находятся под водой! Эта умная конструкция не пускает хищников, позволяя бобрам безопасно входить и выходить, даже когда пруд замерзает."
+    image: "detail-underwater-entrance.jpg"
+    
+  - title:
+      en: "Orange Teeth"
+      es: "Dientes Naranjas"
+      ru: "Оранжевые Зубы"
+    description:
+      en: "Beavers have orange teeth! The orange color comes from iron in their tooth enamel, which makes their teeth incredibly strong - perfect for gnawing through wood."
+      es: "¡Los castores tienen dientes naranjas! El color naranja proviene del hierro en el esmalte dental, lo que hace que sus dientes sean increíblemente fuertes - perfectos para roer madera."
+      ru: "У бобров оранжевые зубы! Оранжевый цвет происходит от железа в зубной эмали, что делает их зубы невероятно крепкими - идеальными для прогрызания древесины."
+    image: "detail-orange-teeth.jpg"
+    
+  - title:
+      en: "Engineering Mathematics"
+      es: "Matemáticas de Ingeniería"
+      ru: "Инженерная Математика"
+    description:
+      en: "Notice how the dam curves upstream? This arch shape distributes water pressure evenly, using the same principle as human-built arch dams. Beavers are natural engineers!"
+      es: "¿Notas cómo la presa se curva río arriba? Esta forma de arco distribuye la presión del agua uniformemente, usando el mismo principio que las presas de arco construidas por humanos. ¡Los castores son ingenieros naturales!"
+      ru: "Заметили, как плотина изгибается вверх по течению? Эта арочная форма равномерно распределяет давление воды, используя тот же принцип, что и арочные плотины, построенные людьми. Бобры - природные инженеры!"
+    image: "detail-dam-curve.jpg"
 
 routing:
     openai:
