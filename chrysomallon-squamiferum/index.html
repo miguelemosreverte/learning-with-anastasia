@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrysomallon Squamiferum: The Iron Snail - National Geographic Style</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #000;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section with Deep Sea Background */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,20,50,0.7)), 
+                        url('assets/images/hero-background.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .nat-geo-logo {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border: 3px solid #FFCC00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #FFCC00;
+            font-size: 24px;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 5rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: #FFCC00;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease-out 0.3s backwards;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Content Sections */
+        .content-section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: #FFCC00;
+        }
+        
+        /* Deep Sea Background */
+        .deep-sea-section {
+            background: linear-gradient(180deg, #000 0%, #001133 50%, #002266 100%);
+            color: #fff;
+        }
+        
+        /* Iron Armor Section */
+        .iron-armor-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #fff;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .content-text {
+            padding: 20px;
+        }
+        
+        .content-text h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: #FFCC00;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .content-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            color: #fff;
+            padding: 20px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Facts Grid */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .fact-card {
+            background: rgba(255,204,0,0.1);
+            border: 2px solid #FFCC00;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .fact-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,204,0,0.2);
+        }
+        
+        .fact-number {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            margin-bottom: 10px;
+        }
+        
+        .fact-label {
+            font-size: 1rem;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Hydrothermal Vents Section */
+        .vents-section {
+            background: linear-gradient(180deg, #002266 0%, #003399 100%);
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vents-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="white" opacity="0.5"><animate attributeName="r" from="1" to="50" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" from="0.5" to="0" dur="3s" repeatCount="indefinite"/></circle></svg>') center/cover;
+            opacity: 0.1;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 60px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #FFCC00;
+        }
+        
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .timeline-content {
+            background: rgba(0,0,0,0.7);
+            padding: 30px;
+            width: 45%;
+            border: 2px solid #FFCC00;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 55%;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 55%;
+        }
+        
+        .timeline-date {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-text {
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        /* Conservation Alert */
+        .conservation-alert {
+            background: linear-gradient(135deg, #ff3333 0%, #cc0000 100%);
+            color: #fff;
+            padding: 40px;
+            margin: 60px 0;
+            text-align: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .conservation-alert::before {
+            content: '⚠';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 200px;
+            opacity: 0.1;
+        }
+        
+        .conservation-alert h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .conservation-alert p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Footer */
+        .article-footer {
+            background: #000;
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 3px solid #FFCC00;
+        }
+        
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            border: 3px solid #FFCC00;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #FFCC00;
+            font-size: 32px;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .footer-text {
+            color: #666;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-content {
+                width: 90%;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin: 0 auto;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="nat-geo-logo">NG</div>
+        <div class="hero-content">
+            <h1 class="hero-title">The Iron Snail</h1>
+            <h2 class="hero-subtitle">Chrysomallon Squamiferum</h2>
+            <p class="hero-description">
+                Deep in the Indian Ocean's hydrothermal vents lives the most metal creature on Earth - 
+                a snail with an iron shell and scales, thriving in one of the planet's most extreme environments.
+            </p>
+        </div>
+    </div>
+    
+    <section class="content-section deep-sea-section">
+        <h2 class="section-title">Life in the Abyss</h2>
+        <div class="content-grid">
+            <div class="content-text">
+                <h3>The Deepest Depths</h3>
+                <p>
+                    At depths of 2,400 to 2,900 meters below the Indian Ocean's surface, where sunlight never reaches 
+                    and pressure would crush most life forms, the scaly-foot snail has made its home.
+                </p>
+                <p>
+                    These remarkable gastropods cluster around hydrothermal vents, where superheated water rich in 
+                    minerals erupts from the ocean floor, creating an alien landscape of black smokers and chemical gardens.
+                </p>
+                <p>
+                    In this world of eternal darkness, where temperatures can swing from near-freezing to over 400°C 
+                    in the space of centimeters, the scaly-foot snail has evolved adaptations found nowhere else on Earth.
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Chrysomallon_squamiferum_-_ZooKeys-055-001-g003A.jpeg" alt="Scaly-foot snail specimen">
+                <div class="image-caption">The Iron-Plated Marvel of the Deep</div>
+            </div>
+        </div>
+        
+        <div class="facts-grid">
+            <div class="fact-card">
+                <div class="fact-number">2,900m</div>
+                <div class="fact-label">Maximum Depth</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-number">400°C</div>
+                <div class="fact-label">Vent Temperature</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-number">3</div>
+                <div class="fact-label">Known Populations</div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-number">2001</div>
+                <div class="fact-label">Year Discovered</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section iron-armor-section">
+        <h2 class="section-title">Nature's Iron Armor</h2>
+        <div class="content-grid">
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Crysomallon_squamiferum_01.JPG" alt="Close-up of iron scales">
+                <div class="image-caption">Iron Sulfide Scales - Unique in Nature</div>
+            </div>
+            <div class="content-text">
+                <h3>A Living Fortress</h3>
+                <p>
+                    The scaly-foot snail is the only known animal to incorporate iron sulfides into its skeleton. 
+                    Its shell is composed of three layers: an outer layer of iron sulfides, a middle organic layer, 
+                    and an inner calcium carbonate layer.
+                </p>
+                <p>
+                    Even more remarkable are the sclerites - scale-like plates covering its foot. These iron-plated 
+                    scales, unique among all known life forms, provide protection from predators and the harsh 
+                    chemical environment of the vents.
+                </p>
+                <p>
+                    Scientists have discovered that the snail's iron armor is so effective that it has inspired 
+                    research into new types of military armor and protective equipment.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section vents-section">
+        <h2 class="section-title">Hydrothermal Vent Ecology</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Chemical Energy</div>
+                    <div class="timeline-text">
+                        Unlike surface ecosystems powered by sunlight, vent communities rely on chemosynthetic bacteria 
+                        that convert chemicals from the vents into energy.
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Symbiotic Relationship</div>
+                    <div class="timeline-text">
+                        The scaly-foot snail hosts chemosynthetic bacteria in its enlarged esophageal gland, 
+                        which provide nutrition through chemical conversion.
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">Extreme Adaptation</div>
+                    <div class="timeline-text">
+                        The snail can withstand temperature gradients of hundreds of degrees, toxic chemicals, 
+                        and crushing pressure that would kill most organisms instantly.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="conservation-alert">
+            <h3>Endangered Species</h3>
+            <p>
+                In 2019, the scaly-foot snail became the first species to be listed as endangered due to the threat 
+                of deep-sea mining. Its entire habitat exists in just three locations, making it extremely vulnerable 
+                to human activities.
+            </p>
+        </div>
+    </section>
+    
+    <section class="content-section">
+        <h2 class="section-title">Scientific Significance</h2>
+        <div class="content-grid">
+            <div class="content-text">
+                <h3>Biomimicry Applications</h3>
+                <p>
+                    The unique iron-plated structure of the scaly-foot snail has captured the attention of materials 
+                    scientists worldwide. Its multi-layered shell design is being studied for applications in 
+                    next-generation body armor and protective equipment.
+                </p>
+                <p>
+                    The U.S. military has funded research into replicating the snail's armor structure, which shows 
+                    remarkable resistance to both penetration and fracture through its unique layered composition.
+                </p>
+                <p>
+                    Beyond defense applications, the snail's ability to incorporate metals into biological structures 
+                    could inspire new approaches to manufacturing and materials science.
+                </p>
+            </div>
+            <div class="image-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/46/Alviniconcha_hessleri_and_Ifremeria_nautilei.jpg" alt="Hydrothermal vent community">
+                <div class="image-caption">The Extreme Community of Deep-Sea Vents</div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="article-footer">
+        <div class="footer-logo">NG</div>
+        <p class="footer-text">
+            © 2025 National Geographic Style Educational Content<br>
+            Exploring Earth's Most Extraordinary Creatures
+        </p>
+    </footer>
+</body>
+</html>
