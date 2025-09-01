@@ -1,0 +1,117 @@
+{
+  "chapter": "sea-otters",
+  "style": {
+    "global": "Studio Ghibli warmth, Pixar quality, Van Gogh atmospheric effects, child-friendly, vibrant colors"
+  },
+  "routing": {
+    "openai": [
+      "hero-sea-otters.jpg",
+      "kelp-forest-ecosystem.jpg"
+    ],
+    "gemini": [
+      "otter-portrait.jpg",
+      "otter-floating.jpg",
+      "otter-using-rock.jpg",
+      "mother-and-pup.jpg"
+    ]
+  },
+  "characters": {
+    "ollie": {
+      "name": "Ollie the Otter",
+      "reference": "references/ollie-otter.jpg",
+      "description": "Main character - young sea otter with distinctive white chest marking"
+    },
+    "mama": {
+      "name": "Mama Otter",
+      "reference": "references/mama-otter.jpg",
+      "description": "Ollie's mother - larger otter with gentle expression"
+    },
+    "professor": {
+      "name": "Professor Kelp",
+      "reference": "references/professor-kelp.jpg",
+      "description": "Wise old otter with grey whiskers who teaches about the ecosystem"
+    }
+  },
+  "actions": [
+    {
+      "image": "otter-using-rock.jpg",
+      "character": "ollie",
+      "action": "using a rock to crack open a sea urchin while floating on back"
+    },
+    {
+      "image": "mother-and-pup.jpg",
+      "characters": [
+        "mama",
+        "ollie"
+      ],
+      "action": "mama floating with baby Ollie resting on her belly"
+    },
+    {
+      "image": "otter-floating.jpg",
+      "character": "ollie",
+      "action": "wrapped in kelp, sleeping peacefully on the water"
+    }
+  ],
+  "images": [
+    {
+      "filename": "hero-sea-otters.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Majestic kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among the kelp fronds",
+        "es": "Majestuoso bosque de algas con luz dorada atravesando el agua, nutrias marinas flotando pacíficamente entre las frondas de algas",
+        "ru": "Величественный лес ламинарии с золотым солнечным светом, проникающим сквозь воду, морские выдры мирно плавают среди водорослей"
+      }
+    },
+    {
+      "filename": "otter-portrait.jpg",
+      "type": "specific-animal",
+      "alt": {
+        "en": "Close-up of a sea otter's face showing its whiskers, small ears, and expressive eyes",
+        "es": "Primer plano de la cara de una nutria marina mostrando sus bigotes, orejas pequeñas y ojos expresivos",
+        "ru": "Крупный план морды морской выдры с усами, маленькими ушами и выразительными глазами"
+      },
+      "reference": "references/sea-otter-face.jpg",
+      "needsTranslations": false
+    },
+    {
+      "filename": "otter-floating.jpg",
+      "type": "behavior",
+      "alt": {
+        "en": "Sea otter floating on its back in calm water, wrapped in kelp, holding a sea urchin",
+        "es": "Nutria marina flotando de espaldas en agua tranquila, envuelta en algas, sosteniendo un erizo de mar",
+        "ru": "Морская выдра плавает на спине в спокойной воде, обернутая в ламинарию, держит морского ежа"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "otter-using-rock.jpg",
+      "type": "specific-behavior",
+      "alt": {
+        "en": "Sea otter floating on back, using a rock on its chest to crack open a shellfish",
+        "es": "Nutria marina flotando de espaldas, usando una roca en su pecho para abrir un marisco",
+        "ru": "Морская выдра плавает на спине, используя камень на груди, чтобы расколоть моллюска"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kelp-forest-ecosystem.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Vibrant underwater kelp forest with sunlight filtering through, showing the rich ecosystem with fish and sea otters",
+        "es": "Vibrante bosque submarino de algas con luz solar filtrándose, mostrando el rico ecosistema con peces y nutrias marinas",
+        "ru": "Яркий подводный лес ламинарии с проникающим солнечным светом, показывающий богатую экосистему с рыбами и морскими выдрами"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "mother-and-pup.jpg",
+      "type": "specific-animal",
+      "alt": {
+        "en": "Mother sea otter floating on her back with a fluffy pup resting on her belly",
+        "es": "Madre nutria marina flotando de espaldas con un cachorro esponjoso descansando en su vientre",
+        "ru": "Мать-выдра плавает на спине с пушистым детёнышем на животе"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

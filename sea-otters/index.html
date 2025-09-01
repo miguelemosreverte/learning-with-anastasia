@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">Sea Otters: Ocean&#x27;s Playful Engineers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Magazine Container */
+        .magazine-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            position: relative;
+            top: -50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+            align-items: center;
+        }
+
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .content-section:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .text-content {
+            padding: 2rem;
+        }
+
+        .text-content h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .text-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .text-content p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .fun-facts h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .fact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .fact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .magazine-container {
+                padding: 1rem;
+                top: -30px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="assets/images/hero-sea-otters.jpg" 
+             alt="Majestic kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among the kelp fronds" 
+             data-i18n-alt="heroImageAlt" 
+             class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="heroTitle">Sea Otters</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">The Floating Teddy Bears of the Ocean</p>
+        </div>
+    </section>
+
+    <!-- Magazine Container -->
+    <div class="magazine-container">
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/otter-portrait.jpg" 
+                     alt="Close-up of a sea otter&#x27;s face showing its whiskers, small ears, and expressive eyes" 
+                     data-i18n-alt="otterPortraitAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="meetOtterTitle">Meet the Sea Otter!</h2>
+                <p data-i18n="meetOtterContent">Sea otters are amazing marine mammals that live in the Pacific Ocean. They have the thickest fur of any animal - up to one million hairs per square inch! This incredible fur coat keeps them warm in cold ocean waters. Unlike other marine mammals, sea otters don&#x27;t have blubber for insulation.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/otter-floating.jpg" 
+                     alt="Sea otter floating on its back in calm water, wrapped in kelp, holding a sea urchin" 
+                     data-i18n-alt="otterFloatingAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="floatingTitle">Life on Their Backs</h2>
+                <p data-i18n="floatingContent">Sea otters spend most of their lives floating on their backs! They eat, sleep, and even give birth while floating. They use kelp as an anchor, wrapping themselves in it so they don&#x27;t drift away while sleeping. Groups of otters floating together are called &#x27;rafts&#x27; - sometimes over 100 otters float together!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/otter-using-rock.jpg" 
+                     alt="Sea otter floating on back, using a rock on its chest to crack open a shellfish" 
+                     data-i18n-alt="otterToolUseAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="toolUseTitle">Ocean&#x27;s Tool Users</h2>
+                <p data-i18n="toolUseContent">Sea otters are one of the few animals that use tools! They use rocks to crack open shellfish like clams and sea urchins. Each otter has a favorite rock that they keep in a pouch of loose skin under their armpit. They place the rock on their chest and smash the shellfish against it - nature&#x27;s dinner table!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/kelp-forest-ecosystem.jpg" 
+                     alt="Vibrant underwater kelp forest with sunlight filtering through, showing the rich ecosystem with fish and sea otters" 
+                     data-i18n-alt="kelpForestAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="ecosystemTitle">Kelp Forest Guardians</h2>
+                <p data-i18n="ecosystemContent">Sea otters are ecosystem heroes! By eating sea urchins, they protect kelp forests from being destroyed. Without otters, sea urchins would eat all the kelp, turning vibrant underwater forests into barren areas. Kelp forests provide homes for thousands of species and help fight climate change by absorbing carbon dioxide.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/mother-and-pup.jpg" 
+                     alt="Mother sea otter floating on her back with a fluffy pup resting on her belly" 
+                     data-i18n-alt="motherPupAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="babyOttersTitle">Adorable Otter Pups</h2>
+                <p data-i18n="babyOttersContent">Baby sea otters, called pups, are born in the water and can float immediately! Their fluffy fur is so buoyant they can&#x27;t dive underwater for the first few weeks. Mother otters are incredibly devoted, carrying their pups on their bellies for months, teaching them to swim, dive, and find food. The bond between mother and pup is one of the strongest in the animal kingdom!</p>
+            </div>
+        </section>
+
+        <!-- Fun Facts Section -->
+        <section class="fun-facts">
+            <h2 data-i18n="funFactsTitle">Amazing Otter Facts!</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <span class="fact-icon">🍽️</span>
+                    <p data-i18n="funFact1">Sea otters eat 25% of their body weight every day - that&#x27;s like a kid eating 40 hamburgers!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🤝</span>
+                    <p data-i18n="funFact2">Otters hold hands while sleeping so they don&#x27;t drift apart!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🦷</span>
+                    <p data-i18n="funFact3">Their teeth are purple! The purple color comes from eating so many purple sea urchins.</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">💨</span>
+                    <p data-i18n="funFact4">They can blow air into their fur to stay extra floaty - like wearing a life jacket!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Language Switcher -->
+    <script src="../language-switcher.js"></script>
+    
+    <!-- Translations -->
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "Sea Otters: Ocean&#x27;s Playful Engineers",
+                heroTitle: "Sea Otters",
+                heroSubtitle: "The Floating Teddy Bears of the Ocean",
+                heroImageAlt: "Majestic kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among the kelp fronds",
+                meetOtterTitle: "Meet the Sea Otter!",
+                meetOtterContent: "Sea otters are amazing marine mammals that live in the Pacific Ocean. They have the thickest fur of any animal - up to one million hairs per square inch! This incredible fur coat keeps them warm in cold ocean waters. Unlike other marine mammals, sea otters don&#x27;t have blubber for insulation.",
+                otterPortraitAlt: "Close-up of a sea otter&#x27;s face showing its whiskers, small ears, and expressive eyes",
+                floatingTitle: "Life on Their Backs",
+                floatingContent: "Sea otters spend most of their lives floating on their backs! They eat, sleep, and even give birth while floating. They use kelp as an anchor, wrapping themselves in it so they don&#x27;t drift away while sleeping. Groups of otters floating together are called &#x27;rafts&#x27; - sometimes over 100 otters float together!",
+                otterFloatingAlt: "Sea otter floating on its back in calm water, wrapped in kelp, holding a sea urchin",
+                toolUseTitle: "Ocean&#x27;s Tool Users",
+                toolUseContent: "Sea otters are one of the few animals that use tools! They use rocks to crack open shellfish like clams and sea urchins. Each otter has a favorite rock that they keep in a pouch of loose skin under their armpit. They place the rock on their chest and smash the shellfish against it - nature&#x27;s dinner table!",
+                otterToolUseAlt: "Sea otter floating on back, using a rock on its chest to crack open a shellfish",
+                ecosystemTitle: "Kelp Forest Guardians",
+                ecosystemContent: "Sea otters are ecosystem heroes! By eating sea urchins, they protect kelp forests from being destroyed. Without otters, sea urchins would eat all the kelp, turning vibrant underwater forests into barren areas. Kelp forests provide homes for thousands of species and help fight climate change by absorbing carbon dioxide.",
+                kelpForestAlt: "Vibrant underwater kelp forest with sunlight filtering through, showing the rich ecosystem with fish and sea otters",
+                babyOttersTitle: "Adorable Otter Pups",
+                babyOttersContent: "Baby sea otters, called pups, are born in the water and can float immediately! Their fluffy fur is so buoyant they can&#x27;t dive underwater for the first few weeks. Mother otters are incredibly devoted, carrying their pups on their bellies for months, teaching them to swim, dive, and find food. The bond between mother and pup is one of the strongest in the animal kingdom!",
+                motherPupAlt: "Mother sea otter floating on her back with a fluffy pup resting on her belly",
+                funFactsTitle: "Amazing Otter Facts!",
+                funFact1: "Sea otters eat 25% of their body weight every day - that&#x27;s like a kid eating 40 hamburgers!",
+                funFact2: "Otters hold hands while sleeping so they don&#x27;t drift apart!",
+                funFact3: "Their teeth are purple! The purple color comes from eating so many purple sea urchins.",
+                funFact4: "They can blow air into their fur to stay extra floaty - like wearing a life jacket!",
+            },
+            es: {
+                pageTitle: "Nutrias Marinas: Ingenieros Juguetones del Océano",
+                heroTitle: "Nutrias Marinas",
+                heroSubtitle: "Los Ositos de Peluche Flotantes del Océano",
+                heroImageAlt: "Majestuoso bosque de algas con luz dorada atravesando el agua, nutrias marinas flotando pacíficamente entre las frondas de algas",
+                meetOtterTitle: "¡Conoce a la Nutria Marina!",
+                meetOtterContent: "Las nutrias marinas son increíbles mamíferos marinos que viven en el Océano Pacífico. ¡Tienen el pelaje más grueso de cualquier animal - hasta un millón de pelos por pulgada cuadrada! Este increíble abrigo de piel las mantiene calientes en las frías aguas del océano.",
+                otterPortraitAlt: "Primer plano de la cara de una nutria marina mostrando sus bigotes, orejas pequeñas y ojos expresivos",
+                floatingTitle: "Vida de Espaldas",
+                floatingContent: "¡Las nutrias marinas pasan la mayor parte de su vida flotando de espaldas! Comen, duermen e incluso dan a luz mientras flotan. Usan las algas como ancla, envolviéndose en ellas para no alejarse mientras duermen.",
+                otterFloatingAlt: "Nutria marina flotando de espaldas en agua tranquila, envuelta en algas, sosteniendo un erizo de mar",
+                toolUseTitle: "Usuarios de Herramientas del Océano",
+                toolUseContent: "¡Las nutrias marinas son uno de los pocos animales que usan herramientas! Usan rocas para abrir mariscos como almejas y erizos de mar. Cada nutria tiene una roca favorita que guarda en una bolsa de piel suelta bajo su axila.",
+                otterToolUseAlt: "Nutria marina flotando de espaldas, usando una roca en su pecho para abrir un marisco",
+                ecosystemTitle: "Guardianes del Bosque de Algas",
+                ecosystemContent: "¡Las nutrias marinas son héroes del ecosistema! Al comer erizos de mar, protegen los bosques de algas de ser destruidos. Sin nutrias, los erizos de mar comerían todas las algas, convirtiendo los vibrantes bosques submarinos en áreas estériles.",
+                kelpForestAlt: "Vibrante bosque submarino de algas con luz solar filtrándose, mostrando el rico ecosistema con peces y nutrias marinas",
+                babyOttersTitle: "Adorables Cachorros de Nutria",
+                babyOttersContent: "¡Los bebés nutria marina, llamados cachorros, nacen en el agua y pueden flotar inmediatamente! Su pelaje esponjoso es tan flotante que no pueden sumergirse durante las primeras semanas. Las madres nutria son increíblemente devotas.",
+                motherPupAlt: "Madre nutria marina flotando de espaldas con un cachorro esponjoso descansando en su vientre",
+                funFactsTitle: "¡Datos Asombrosos de las Nutrias!",
+                funFact1: "Las nutrias marinas comen el 25% de su peso corporal cada día - ¡es como si un niño comiera 40 hamburguesas!",
+                funFact2: "¡Las nutrias se toman de las manos mientras duermen para no separarse!",
+                funFact3: "¡Sus dientes son morados! El color morado viene de comer tantos erizos de mar morados.",
+                funFact4: "¡Pueden soplar aire en su pelaje para flotar más - como usar un chaleco salvavidas!",
+            },
+            ru: {
+                pageTitle: "Морские выдры: Игривые инженеры океана",
+                heroTitle: "Морские выдры",
+                heroSubtitle: "Плавающие плюшевые мишки океана",
+                heroImageAlt: "Величественный лес ламинарии с золотым солнечным светом, проникающим сквозь воду, морские выдры мирно плавают среди водорослей",
+                meetOtterTitle: "Познакомьтесь с морской выдрой!",
+                meetOtterContent: "Морские выдры - удивительные морские млекопитающие, обитающие в Тихом океане. У них самый густой мех среди всех животных - до миллиона волосков на квадратный дюйм! Эта невероятная шуба согревает их в холодных океанских водах.",
+                otterPortraitAlt: "Крупный план морды морской выдры с усами, маленькими ушами и выразительными глазами",
+                floatingTitle: "Жизнь на спине",
+                floatingContent: "Морские выдры проводят большую часть жизни, плавая на спине! Они едят, спят и даже рожают, плавая на воде. Они используют ламинарию как якорь, обматываясь в неё, чтобы не уплыть во время сна.",
+                otterFloatingAlt: "Морская выдра плавает на спине в спокойной воде, обернутая в ламинарию, держит морского ежа",
+                toolUseTitle: "Пользователи инструментов океана",
+                toolUseContent: "Морские выдры - одни из немногих животных, использующих инструменты! Они используют камни, чтобы раскалывать моллюсков и морских ежей. У каждой выдры есть любимый камень, который она хранит в кожаном кармане под мышкой.",
+                otterToolUseAlt: "Морская выдра плавает на спине, используя камень на груди, чтобы расколоть моллюска",
+                ecosystemTitle: "Хранители леса ламинарии",
+                ecosystemContent: "Морские выдры - герои экосистемы! Поедая морских ежей, они защищают леса ламинарии от уничтожения. Без выдр морские ежи съели бы всю ламинарию, превратив яркие подводные леса в пустоши.",
+                kelpForestAlt: "Яркий подводный лес ламинарии с проникающим солнечным светом, показывающий богатую экосистему с рыбами и морскими выдрами",
+                babyOttersTitle: "Очаровательные детёныши выдры",
+                babyOttersContent: "Детёныши морских выдр рождаются в воде и сразу могут плавать! Их пушистый мех настолько плавучий, что они не могут нырять первые несколько недель. Матери-выдры невероятно преданны.",
+                motherPupAlt: "Мать-выдра плавает на спине с пушистым детёнышем на животе",
+                funFactsTitle: "Удивительные факты о выдрах!",
+                funFact1: "Морские выдры съедают 25% своего веса каждый день - это как если бы ребёнок съел 40 гамбургеров!",
+                funFact2: "Выдры держатся за лапы во время сна, чтобы не расплыться!",
+                funFact3: "Их зубы фиолетовые! Фиолетовый цвет появляется от поедания морских ежей.",
+                funFact4: "Они могут надувать воздухом свой мех для лучшей плавучести - как спасательный жилет!",
+            }
+        };
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+                const key = element.getAttribute('data-i18n-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    element.alt = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize with stored language or default
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            updateContent(savedLang);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+# Sea Otters Chapter Definition
+meta:
+  id: sea-otters
+  title:
+    en: "Sea Otters: Ocean's Playful Engineers"
+    es: "Nutrias Marinas: Ingenieros Juguetones del Océano"
+    ru: "Морские выдры: Игривые инженеры океана"
+  description: "Learn about the adorable sea otters and their important role in ocean ecosystems"
+
+hero:
+  title:
+    en: "Sea Otters"
+    es: "Nutrias Marinas"
+    ru: "Морские выдры"
+  subtitle:
+    en: "The Floating Teddy Bears of the Ocean"
+    es: "Los Ositos de Peluche Flotantes del Océano"
+    ru: "Плавающие плюшевые мишки океана"
+  image: "hero-sea-otters.jpg"
+  imageType: "landscape"  # Uses OpenAI for beautiful ocean scene
+  imageAlt:
+    en: "Majestic kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among the kelp fronds"
+    es: "Majestuoso bosque de algas con luz dorada atravesando el agua, nutrias marinas flotando pacíficamente entre las frondas de algas"
+    ru: "Величественный лес ламинарии с золотым солнечным светом, проникающим сквозь воду, морские выдры мирно плавают среди водорослей"
+
+sections:
+  - id: meet-the-otter
+    titleKey: "meetOtterTitle"
+    contentKey: "meetOtterContent"
+    title:
+      en: "Meet the Sea Otter!"
+      es: "¡Conoce a la Nutria Marina!"
+      ru: "Познакомьтесь с морской выдрой!"
+    content:
+      en: "Sea otters are amazing marine mammals that live in the Pacific Ocean. They have the thickest fur of any animal - up to one million hairs per square inch! This incredible fur coat keeps them warm in cold ocean waters. Unlike other marine mammals, sea otters don't have blubber for insulation."
+      es: "Las nutrias marinas son increíbles mamíferos marinos que viven en el Océano Pacífico. ¡Tienen el pelaje más grueso de cualquier animal - hasta un millón de pelos por pulgada cuadrada! Este increíble abrigo de piel las mantiene calientes en las frías aguas del océano."
+      ru: "Морские выдры - удивительные морские млекопитающие, обитающие в Тихом океане. У них самый густой мех среди всех животных - до миллиона волосков на квадратный дюйм! Эта невероятная шуба согревает их в холодных океанских водах."
+    image: "otter-portrait.jpg"
+    imageType: "specific-animal"  # Uses Gemini with reference
+    imageAltKey: "otterPortraitAlt"
+    imageAlt:
+      en: "Close-up of a sea otter's face showing its whiskers, small ears, and expressive eyes"
+      es: "Primer plano de la cara de una nutria marina mostrando sus bigotes, orejas pequeñas y ojos expresivos"
+      ru: "Крупный план морды морской выдры с усами, маленькими ушами и выразительными глазами"
+    referenceImage: "references/sea-otter-face.jpg"
+
+  - id: floating-lifestyle
+    titleKey: "floatingTitle"
+    contentKey: "floatingContent"
+    title:
+      en: "Life on Their Backs"
+      es: "Vida de Espaldas"
+      ru: "Жизнь на спине"
+    content:
+      en: "Sea otters spend most of their lives floating on their backs! They eat, sleep, and even give birth while floating. They use kelp as an anchor, wrapping themselves in it so they don't drift away while sleeping. Groups of otters floating together are called 'rafts' - sometimes over 100 otters float together!"
+      es: "¡Las nutrias marinas pasan la mayor parte de su vida flotando de espaldas! Comen, duermen e incluso dan a luz mientras flotan. Usan las algas como ancla, envolviéndose en ellas para no alejarse mientras duermen."
+      ru: "Морские выдры проводят большую часть жизни, плавая на спине! Они едят, спят и даже рожают, плавая на воде. Они используют ламинарию как якорь, обматываясь в неё, чтобы не уплыть во время сна."
+    image: "otter-floating.jpg"
+    imageType: "behavior"  # Uses Gemini for specific behavior
+    imageAltKey: "otterFloatingAlt"
+    imageAlt:
+      en: "Sea otter floating on its back in calm water, wrapped in kelp, holding a sea urchin"
+      es: "Nutria marina flotando de espaldas en agua tranquila, envuelta en algas, sosteniendo un erizo de mar"
+      ru: "Морская выдра плавает на спине в спокойной воде, обернутая в ламинарию, держит морского ежа"
+
+  - id: tool-use
+    titleKey: "toolUseTitle"
+    contentKey: "toolUseContent"
+    title:
+      en: "Ocean's Tool Users"
+      es: "Usuarios de Herramientas del Océano"
+      ru: "Пользователи инструментов океана"
+    content:
+      en: "Sea otters are one of the few animals that use tools! They use rocks to crack open shellfish like clams and sea urchins. Each otter has a favorite rock that they keep in a pouch of loose skin under their armpit. They place the rock on their chest and smash the shellfish against it - nature's dinner table!"
+      es: "¡Las nutrias marinas son uno de los pocos animales que usan herramientas! Usan rocas para abrir mariscos como almejas y erizos de mar. Cada nutria tiene una roca favorita que guarda en una bolsa de piel suelta bajo su axila."
+      ru: "Морские выдры - одни из немногих животных, использующих инструменты! Они используют камни, чтобы раскалывать моллюсков и морских ежей. У каждой выдры есть любимый камень, который она хранит в кожаном кармане под мышкой."
+    image: "otter-using-rock.jpg"
+    imageType: "specific-behavior"  # Uses Gemini for accuracy
+    imageAltKey: "otterToolUseAlt"
+    imageAlt:
+      en: "Sea otter floating on back, using a rock on its chest to crack open a shellfish"
+      es: "Nutria marina flotando de espaldas, usando una roca en su pecho para abrir un marisco"
+      ru: "Морская выдра плавает на спине, используя камень на груди, чтобы расколоть моллюска"
+
+  - id: ecosystem-heroes
+    titleKey: "ecosystemTitle"
+    contentKey: "ecosystemContent"
+    title:
+      en: "Kelp Forest Guardians"
+      es: "Guardianes del Bosque de Algas"
+      ru: "Хранители леса ламинарии"
+    content:
+      en: "Sea otters are ecosystem heroes! By eating sea urchins, they protect kelp forests from being destroyed. Without otters, sea urchins would eat all the kelp, turning vibrant underwater forests into barren areas. Kelp forests provide homes for thousands of species and help fight climate change by absorbing carbon dioxide."
+      es: "¡Las nutrias marinas son héroes del ecosistema! Al comer erizos de mar, protegen los bosques de algas de ser destruidos. Sin nutrias, los erizos de mar comerían todas las algas, convirtiendo los vibrantes bosques submarinos en áreas estériles."
+      ru: "Морские выдры - герои экосистемы! Поедая морских ежей, они защищают леса ламинарии от уничтожения. Без выдр морские ежи съели бы всю ламинарию, превратив яркие подводные леса в пустоши."
+    image: "kelp-forest-ecosystem.jpg"
+    imageType: "landscape"  # Uses OpenAI for beautiful ecosystem scene
+    imageAltKey: "kelpForestAlt"
+    imageAlt:
+      en: "Vibrant underwater kelp forest with sunlight filtering through, showing the rich ecosystem with fish and sea otters"
+      es: "Vibrante bosque submarino de algas con luz solar filtrándose, mostrando el rico ecosistema con peces y nutrias marinas"
+      ru: "Яркий подводный лес ламинарии с проникающим солнечным светом, показывающий богатую экосистему с рыбами и морскими выдрами"
+
+  - id: baby-otters
+    titleKey: "babyOttersTitle"
+    contentKey: "babyOttersContent"
+    title:
+      en: "Adorable Otter Pups"
+      es: "Adorables Cachorros de Nutria"
+      ru: "Очаровательные детёныши выдры"
+    content:
+      en: "Baby sea otters, called pups, are born in the water and can float immediately! Their fluffy fur is so buoyant they can't dive underwater for the first few weeks. Mother otters are incredibly devoted, carrying their pups on their bellies for months, teaching them to swim, dive, and find food. The bond between mother and pup is one of the strongest in the animal kingdom!"
+      es: "¡Los bebés nutria marina, llamados cachorros, nacen en el agua y pueden flotar inmediatamente! Su pelaje esponjoso es tan flotante que no pueden sumergirse durante las primeras semanas. Las madres nutria son increíblemente devotas."
+      ru: "Детёныши морских выдр рождаются в воде и сразу могут плавать! Их пушистый мех настолько плавучий, что они не могут нырять первые несколько недель. Матери-выдры невероятно преданны."
+    image: "mother-and-pup.jpg"
+    imageType: "specific-animal"  # Uses Gemini for accurate otter pup
+    imageAltKey: "motherPupAlt"
+    imageAlt:
+      en: "Mother sea otter floating on her back with a fluffy pup resting on her belly"
+      es: "Madre nutria marina flotando de espaldas con un cachorro esponjoso descansando en su vientre"
+      ru: "Мать-выдра плавает на спине с пушистым детёнышем на животе"
+
+funFacts:
+  title:
+    en: "Amazing Otter Facts!"
+    es: "¡Datos Asombrosos de las Nutrias!"
+    ru: "Удивительные факты о выдрах!"
+  facts:
+    - key: "funFact1"
+      icon: "🍽️"
+      text:
+        en: "Sea otters eat 25% of their body weight every day - that's like a kid eating 40 hamburgers!"
+        es: "Las nutrias marinas comen el 25% de su peso corporal cada día - ¡es como si un niño comiera 40 hamburguesas!"
+        ru: "Морские выдры съедают 25% своего веса каждый день - это как если бы ребёнок съел 40 гамбургеров!"
+    
+    - key: "funFact2"
+      icon: "🤝"
+      text:
+        en: "Otters hold hands while sleeping so they don't drift apart!"
+        es: "¡Las nutrias se toman de las manos mientras duermen para no separarse!"
+        ru: "Выдры держатся за лапы во время сна, чтобы не расплыться!"
+    
+    - key: "funFact3"
+      icon: "🦷"
+      text:
+        en: "Their teeth are purple! The purple color comes from eating so many purple sea urchins."
+        es: "¡Sus dientes son morados! El color morado viene de comer tantos erizos de mar morados."
+        ru: "Их зубы фиолетовые! Фиолетовый цвет появляется от поедания морских ежей."
+    
+    - key: "funFact4"
+      icon: "💨"
+      text:
+        en: "They can blow air into their fur to stay extra floaty - like wearing a life jacket!"
+        es: "¡Pueden soplar aire en su pelaje para flotar más - como usar un chaleco salvavidas!"
+        ru: "Они могут надувать воздухом свой мех для лучшей плавучести - как спасательный жилет!"
+
+# Image generation instructions
+imageGeneration:
+  # Character references - consistent characters across images
+  characters:
+    ollie:
+      name: "Ollie the Otter"
+      reference: "references/ollie-otter.jpg"
+      description: "Main character - young sea otter with distinctive white chest marking"
+    
+    mama:
+      name: "Mama Otter"
+      reference: "references/mama-otter.jpg"
+      description: "Ollie's mother - larger otter with gentle expression"
+    
+    professor:
+      name: "Professor Kelp"
+      reference: "references/professor-kelp.jpg"
+      description: "Wise old otter with grey whiskers who teaches about the ecosystem"
+  
+  # Actions that characters perform
+  actions:
+    - image: "otter-using-rock.jpg"
+      character: "ollie"
+      action: "using a rock to crack open a sea urchin while floating on back"
+    
+    - image: "mother-and-pup.jpg"
+      characters: ["mama", "ollie"]
+      action: "mama floating with baby Ollie resting on her belly"
+    
+    - image: "otter-floating.jpg"
+      character: "ollie"
+      action: "wrapped in kelp, sleeping peacefully on the water"
+  
+  referenceImages:
+    - id: "sea-otter-face"
+      path: "references/sea-otter-face.jpg"
+      description: "Close-up reference of sea otter facial features"
+    - id: "otter-floating"
+      path: "references/otter-floating-kelp.jpg"
+      description: "Reference of otter floating behavior"
+  
+  style:
+    global: "Studio Ghibli warmth, Pixar quality, Van Gogh atmospheric effects, child-friendly, vibrant colors"
+    
+  routing:
+    # Images that should use OpenAI (generic/creative)
+    openai:
+      - "hero-sea-otters.jpg"
+      - "kelp-forest-ecosystem.jpg"
+    
+    # Images that need Gemini with reference (specific accuracy)
+    gemini:
+      - "otter-portrait.jpg"
+      - "otter-floating.jpg"
+      - "otter-using-rock.jpg"
+      - "mother-and-pup.jpg"

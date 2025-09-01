@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">{{meta.title.en}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Magazine Container */
+        .magazine-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            position: relative;
+            top: -50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+            align-items: center;
+        }
+
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .content-section:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .text-content {
+            padding: 2rem;
+        }
+
+        .text-content h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .text-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .text-content p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .fun-facts h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .fact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .fact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .magazine-container {
+                padding: 1rem;
+                top: -30px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="assets/images/{{hero.image}}" 
+             alt="{{hero.imageAlt.en}}" 
+             data-i18n-alt="heroImageAlt" 
+             class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="heroTitle">{{hero.title.en}}</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">{{hero.subtitle.en}}</p>
+        </div>
+    </section>
+
+    <!-- Magazine Container -->
+    <div class="magazine-container">
+        {{#each sections}}
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/{{this.image}}" 
+                     alt="{{this.imageAlt.en}}" 
+                     data-i18n-alt="{{this.imageAltKey}}"
+                     {{#if this.hasTranslations}}
+                     data-multilang-src="{{this.image}}"
+                     class="multilang-image"
+                     {{/if}}>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="{{this.titleKey}}">{{this.title.en}}</h2>
+                <p data-i18n="{{this.contentKey}}">{{this.content.en}}</p>
+            </div>
+        </section>
+        {{/each}}
+
+        <!-- Fun Facts Section -->
+        {{#if funFacts}}
+        <section class="fun-facts">
+            <h2 data-i18n="funFactsTitle">{{funFacts.title.en}}</h2>
+            <div class="facts-grid">
+                {{#each funFacts.facts}}
+                <div class="fact-card">
+                    <span class="fact-icon">{{this.icon}}</span>
+                    <p data-i18n="{{this.key}}">{{this.text.en}}</p>
+                </div>
+                {{/each}}
+            </div>
+        </section>
+        {{/if}}
+    </div>
+
+    <!-- Language Switcher -->
+    <script src="../language-switcher.js"></script>
+    
+    <!-- Translations -->
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "{{meta.title.en}}",
+                heroTitle: "{{hero.title.en}}",
+                heroSubtitle: "{{hero.subtitle.en}}",
+                heroImageAlt: "{{hero.imageAlt.en}}",
+                {{#each sections}}
+                {{this.titleKey}}: "{{this.title.en}}",
+                {{this.contentKey}}: "{{this.content.en}}",
+                {{this.imageAltKey}}: "{{this.imageAlt.en}}",
+                {{/each}}
+                {{#if funFacts}}
+                funFactsTitle: "{{funFacts.title.en}}",
+                {{#each funFacts.facts}}
+                {{this.key}}: "{{this.text.en}}",
+                {{/each}}
+                {{/if}}
+            },
+            es: {
+                pageTitle: "{{meta.title.es}}",
+                heroTitle: "{{hero.title.es}}",
+                heroSubtitle: "{{hero.subtitle.es}}",
+                heroImageAlt: "{{hero.imageAlt.es}}",
+                {{#each sections}}
+                {{this.titleKey}}: "{{this.title.es}}",
+                {{this.contentKey}}: "{{this.content.es}}",
+                {{this.imageAltKey}}: "{{this.imageAlt.es}}",
+                {{/each}}
+                {{#if funFacts}}
+                funFactsTitle: "{{funFacts.title.es}}",
+                {{#each funFacts.facts}}
+                {{this.key}}: "{{this.text.es}}",
+                {{/each}}
+                {{/if}}
+            },
+            ru: {
+                pageTitle: "{{meta.title.ru}}",
+                heroTitle: "{{hero.title.ru}}",
+                heroSubtitle: "{{hero.subtitle.ru}}",
+                heroImageAlt: "{{hero.imageAlt.ru}}",
+                {{#each sections}}
+                {{this.titleKey}}: "{{this.title.ru}}",
+                {{this.contentKey}}: "{{this.content.ru}}",
+                {{this.imageAltKey}}: "{{this.imageAlt.ru}}",
+                {{/each}}
+                {{#if funFacts}}
+                funFactsTitle: "{{funFacts.title.ru}}",
+                {{#each funFacts.facts}}
+                {{this.key}}: "{{this.text.ru}}",
+                {{/each}}
+                {{/if}}
+            }
+        };
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+                const key = element.getAttribute('data-i18n-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    element.alt = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize with stored language or default
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            updateContent(savedLang);
+        });
+    </script>
+</body>
+</html>
