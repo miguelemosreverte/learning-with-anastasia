@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polar Bears and Antarctica - National Geographic Style</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #000;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section with Polar Bear Background */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                        url('assets/images/hero-background.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .nat-geo-logo {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border: 3px solid #FFCC00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #FFCC00;
+            font-size: 24px;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(60px, 12vw, 140px);
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(18px, 3vw, 28px);
+            color: #FFCC00;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+        }
+        
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            border: 2px solid rgba(255,255,255,0.5);
+            border-radius: 15px;
+            display: flex;
+            justify-content: center;
+            padding-top: 8px;
+        }
+        
+        .scroll-dot {
+            width: 4px;
+            height: 8px;
+            background: #fff;
+            border-radius: 2px;
+            animation: scroll 2s infinite;
+        }
+        
+        @keyframes scroll {
+            0% { opacity: 0; transform: translateY(0); }
+            50% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(20px); }
+        }
+        
+        /* Truth Section */
+        .truth-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1559666126-84f389727b9a?q=80&w=2940') center/cover;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        .truth-statement {
+            background: rgba(255,204,0,0.9);
+            padding: 40px;
+            margin-bottom: 60px;
+            position: relative;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .truth-statement::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: #000;
+        }
+        
+        .truth-statement p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #000;
+            font-weight: 400;
+        }
+        
+        .truth-statement strong {
+            font-family: 'Oswald', sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        
+        /* Why Section with Arctic Background */
+        .why-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1478059299873-f047d8c5fe1a?q=80&w=2940') center/cover;
+            padding: 100px 0;
+        }
+        
+        .section-header {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(40px, 8vw, 80px);
+            color: #fff;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+            letter-spacing: -1px;
+        }
+        
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        .reason-card {
+            background: rgba(0,0,0,0.7);
+            padding: 40px;
+            border-left: 4px solid #FFCC00;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease;
+        }
+        
+        .reason-card:hover {
+            transform: translateX(10px);
+        }
+        
+        .reason-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 28px;
+            color: #FFCC00;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        
+        .reason-card p {
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        /* Wildlife Sections */
+        .antarctica-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1551415923-a2297c7fda79?q=80&w=2932') center/cover;
+            padding: 100px 0;
+        }
+        
+        .arctic-section {
+            position: relative;
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=2940') center/cover;
+            padding: 100px 0;
+        }
+        
+        .wildlife-content {
+            background: rgba(0,0,0,0.8);
+            padding: 60px;
+            backdrop-filter: blur(10px);
+            border-top: 4px solid #FFCC00;
+            max-width: 900px;
+        }
+        
+        .wildlife-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 48px;
+            color: #FFCC00;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        
+        .wildlife-list {
+            list-style: none;
+        }
+        
+        .wildlife-list li {
+            color: #fff;
+            font-size: 18px;
+            line-height: 2;
+            padding-left: 30px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        
+        .wildlife-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #FFCC00;
+            font-size: 24px;
+        }
+        
+        /* Explorer Note */
+        .explorer-section {
+            background: #111;
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .explorer-note {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(255,204,0,0.1), rgba(255,204,0,0.05));
+            border: 2px solid #FFCC00;
+            position: relative;
+        }
+        
+        .explorer-note::before {
+            content: '"';
+            position: absolute;
+            top: -40px;
+            left: 40px;
+            font-size: 120px;
+            color: #FFCC00;
+            opacity: 0.3;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .explorer-note p {
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            line-height: 1.8;
+            color: #fff;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .photographer-credit {
+            text-align: center;
+            margin-top: 30px;
+            color: #FFCC00;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 60px;
+            }
+            
+            .section-header {
+                font-size: 40px;
+            }
+            
+            .wildlife-content {
+                padding: 40px 20px;
+            }
+            
+            .reasons-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .explorer-note {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="nat-geo-logo">NG</div>
+        <h1 class="hero-title">Polar Bears<br>&amp; Antarctica</h1>
+        <p class="hero-subtitle">A Tale of Two Poles</p>
+        <div class="scroll-indicator">
+            <div class="scroll-dot"></div>
+        </div>
+    </section>
+    
+    <!-- Truth Section -->
+    <section class="truth-section">
+        <div class="container">
+            <div class="truth-statement">
+                <p><strong>No, polar bears do not live in Antarctica</strong> — they are native to the Arctic region. Antarctica is the natural home for penguins, seals, and other unique marine life, while polar bears reside in the frozen lands and seas of the Northern Hemisphere, such as Canada, Russia, and the United States.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Section -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-header">Why There Are No<br>Polar Bears in Antarctica</h2>
+            
+            <div class="reasons-grid">
+                <div class="reason-card">
+                    <h3>Geographic Separation</h3>
+                    <p>The Arctic and Antarctic are on opposite ends of the Earth and have never been connected, preventing natural migration of polar bears to the Southern Hemisphere.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <h3>Evolutionary History</h3>
+                    <p>Polar bears evolved to live in the Arctic, an environment rich with their specific prey.</p>
+                </div>
+                
+                <div class="reason-card">
+                    <h3>Ecological Disruption</h3>
+                    <p>Introducing polar bears to Antarctica would have devastating consequences for the existing ecosystem, as the native animals, like penguins and seals, have no natural predators to fear or evade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Antarctica Wildlife -->
+    <section class="antarctica-section">
+        <div class="container">
+            <div class="wildlife-content">
+                <h2>Antarctica's Native Wildlife</h2>
+                <ul class="wildlife-list">
+                    <li>Antarctica is a continent with diverse marine life, including penguins and various species of seals</li>
+                    <li>The absence of land predators like polar bears helps maintain the delicate balance of the Antarctic ecosystem, which has adapted to life without them</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Arctic Wildlife -->
+    <section class="arctic-section">
+        <div class="container">
+            <div class="wildlife-content">
+                <h2>The Arctic's Inhabitants</h2>
+                <ul class="wildlife-list">
+                    <li>The Arctic is the polar bear's natural habitat and is home to other animals like arctic foxes, arctic hares, and various bird species</li>
+                    <li>Polar bears are apex predators in their Arctic environment, relying on sea ice to hunt seals and other prey</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Explorer Note -->
+    <section class="explorer-section">
+        <div class="container">
+            <div class="explorer-note">
+                <p>In the grand theater of nature, each pole plays its unique role — the Arctic with its wandering bears on shifting ice, and Antarctica with its tuxedoed penguins on ancient glaciers. This separation is not a mistake of nature, but rather a masterpiece of evolution and geography.</p>
+                <div class="photographer-credit">National Geographic Collection</div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

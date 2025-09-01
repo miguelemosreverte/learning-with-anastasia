@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning with Anastasia - Magazine Collection</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #000;
+            color: #fff;
+            min-height: 100vh;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 3px solid #FFCC00;
+            position: relative;
+        }
+        
+        .nat-geo-logo {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #FFCC00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #FFCC00;
+            font-size: 24px;
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #FFCC00;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            color: #ccc;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        /* Magazine Grid */
+        .magazine-grid {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+        
+        /* Magazine Card */
+        .magazine-card {
+            background: #111;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .magazine-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 204, 0, 0.3);
+        }
+        
+        .magazine-cover {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .magazine-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .magazine-card:hover .magazine-cover img {
+            transform: scale(1.1);
+        }
+        
+        .issue-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #FFCC00;
+            color: #000;
+            padding: 8px 16px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        
+        .new-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #ff3333;
+            color: #fff;
+            padding: 6px 12px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .magazine-info {
+            padding: 30px;
+            background: linear-gradient(to bottom, #1a1a1a, #111);
+        }
+        
+        .magazine-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #FFCC00;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .magazine-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .magazine-date {
+            font-size: 0.9rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #FFCC00;
+            color: #000;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+        
+        .magazine-card:hover .read-more {
+            background: #ffd633;
+        }
+        
+        /* Coming Soon Card */
+        .coming-soon {
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            border: 2px dashed #444;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 204, 0, 0.03) 10px,
+                rgba(255, 204, 0, 0.03) 20px
+            );
+        }
+        
+        .coming-soon-content {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+        }
+        
+        .coming-soon-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+        
+        .coming-soon-content p {
+            color: #444;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Footer */
+        .footer {
+            background: #000;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #333;
+            margin-top: 80px;
+        }
+        
+        .footer p {
+            color: #666;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nat-geo-logo {
+                position: static;
+                margin: 0 auto 20px;
+            }
+            
+            .magazine-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nat-geo-logo">NG</div>
+        <h1>Learning with Anastasia</h1>
+        <p>A Collection of Educational Magazines</p>
+    </div>
+    
+    <div class="magazine-grid">
+        <!-- Issue 1: Polar Bears -->
+        <a href="polar-bears-antarctica/" class="magazine-card">
+            <div class="magazine-cover">
+                <img src="polar-bears-antarctica/assets/images/magazine-cover.jpg" alt="Polar Bears Issue Cover">
+                <div class="issue-number">ISSUE #1</div>
+                <div class="new-badge">NEW</div>
+            </div>
+            <div class="magazine-info">
+                <h2 class="magazine-title">Polar Bears & Antarctica</h2>
+                <p class="magazine-subtitle">An exploration of Arctic wildlife and the icy continent at the bottom of the world</p>
+                <p class="magazine-date">January 2025</p>
+                <span class="read-more">Explore Issue →</span>
+            </div>
+        </a>
+        
+        <!-- Coming Soon Placeholder 1 -->
+        <div class="magazine-card coming-soon">
+            <div class="coming-soon-content">
+                <h3>Coming Soon</h3>
+                <p>Issue #2</p>
+            </div>
+        </div>
+        
+        <!-- Coming Soon Placeholder 2 -->
+        <div class="magazine-card coming-soon">
+            <div class="coming-soon-content">
+                <h3>Coming Soon</h3>
+                <p>Issue #3</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>© 2025 Learning with Anastasia. An Educational Magazine Collection.</p>
+    </div>
+</body>
+</html>
