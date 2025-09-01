@@ -19,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@google/genai": "^1.16.0",
     "axios": "^1.11.0"
   }
 }
