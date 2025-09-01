@@ -98,6 +98,55 @@ function setLanguage(lang) {
     if (typeof updateContent === 'function') {
         updateContent(lang);
     }
+    
+    // Update multilingual images if they exist
+    updateMultilingualImages(lang);
+}
+
+// Function to swap images based on language
+function updateMultilingualImages(lang) {
+    const multilingImages = document.querySelectorAll('.multilang-image');
+    
+    multilingImages.forEach(img => {
+        const baseName = img.getAttribute('data-multilang-src');
+        if (baseName) {
+            const currentSrc = img.src;
+            const pathParts = currentSrc.split('/');
+            const filename = pathParts[pathParts.length - 1];
+            
+            // Check if language-specific version exists
+            // For English, use the base image (no .en suffix)
+            let newFilename;
+            if (lang === 'en') {
+                newFilename = `${baseName}.jpg`;
+            } else {
+                // For Spanish and Russian, check if the translated version exists
+                // by attempting to set it and falling back if needed
+                newFilename = `${baseName}.${lang}.jpg`;
+            }
+            
+            // Build new path
+            pathParts[pathParts.length - 1] = newFilename;
+            const newSrc = pathParts.join('/');
+            
+            // Only update if different
+            if (currentSrc !== newSrc) {
+                // Create a test image to check if the translated version exists
+                const testImg = new Image();
+                testImg.onload = function() {
+                    // Image exists, use it
+                    img.src = newSrc;
+                };
+                testImg.onerror = function() {
+                    // Image doesn't exist, keep the English version
+                    if (lang !== 'en') {
+                        console.log(`No ${lang} version for ${baseName}, keeping English`);
+                    }
+                };
+                testImg.src = newSrc;
+            }
+        }
+    });
 }
 
 // Initialize when DOM is ready
