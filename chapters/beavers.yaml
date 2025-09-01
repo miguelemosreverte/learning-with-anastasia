@@ -24,9 +24,9 @@ hero:
     ru: "Красивая речная долина на рассвете с бобровой плотиной, создающей мирный пруд"
 
 sections:
-  # First, establish our main character
+  # First, establish the baby beaver (main character)
   - id: meet-baby-beaver
-    generate_character: true  # This generates our base character
+    generate_character: true  # Generate Baby Beaver first
     titleKey: "meetBabyBeaverTitle"
     contentKey: "meetBabyBeaverContent"
     title:
@@ -104,8 +104,10 @@ sections:
       ru: "Малыш Бобр переплетает ветки между бревнами, как корзину. Он работает и над, и под водой."
     image: "baby-beaver-weaving.jpg"
 
+  # Generate papa using baby as reference (to look like parent of baby)
   - id: papa-beaver-arrives
-    generate_character: true  # Generate Papa Beaver
+    generate_character: true
+    use_character: "${meet-baby-beaver.image}"  # Use Baby as reference
     titleKey: "papaBeaverArrivesTitle"
     contentKey: "papaBeaverArrivesContent"
     title:
@@ -116,6 +118,7 @@ sections:
       en: "Papa Beaver, with his grey-tinged fur and years of experience, comes to check on Baby Beaver's progress. He's built dozens of dams and knows all the tricks!"
       es: "Papá Castor, con su pelaje grisáceo y años de experiencia, viene a verificar el progreso de Bebé Castor."
       ru: "Папа Бобр, с его седоватым мехом и многолетним опытом, приходит проверить прогресс Малыша Бобра."
+    action: "older male beaver that looks like parent of the reference beaver, grey-tinged fur, wise expression, sturdy build"
     image: "papa-beaver.jpg"
     imageAlt:
       en: "Older beaver with grey-tinged fur, wise eyes, and sturdy build"
@@ -167,8 +170,10 @@ sections:
       ru: "Малыш Бобр добавляет камни к основанию для дополнительной прочности."
     image: "baby-beaver-stones.jpg"
 
+  # Generate mama using baby as reference (to look like mother of baby)
   - id: mama-beaver-arrives
-    generate_character: true  # Generate Mama Beaver
+    generate_character: true
+    use_character: "${meet-baby-beaver.image}"  # Use Baby as reference
     titleKey: "mamaBeaverArrivesTitle"
     contentKey: "mamaBeaverArrivesContent"
     title:
@@ -179,6 +184,7 @@ sections:
       en: "Mama Beaver arrives with fresh willow bark - beaver's favorite food! She's proud of Baby Beaver's hard work and brings snacks to keep everyone energized."
       es: "¡Mamá Castor llega con corteza de sauce fresca - la comida favorita de los castores!"
       ru: "Мама Бобр приходит со свежей ивовой корой - любимой едой бобров!"
+    action: "female beaver that looks like mother of the reference beaver, gentle nurturing expression, carrying willow branches"
     image: "mama-beaver.jpg"
     imageAlt:
       en: "Female beaver with gentle expression, carrying willow branches"

@@ -36,22 +36,33 @@ class RecursiveImageGenerator {
         // Check if this section uses a character from a previous section
         if (section.use_character) {
             const refId = this.parseReference(section.use_character);
-            if (refId && this.generatedImages[refId]) {
-                resolved.characterReference = this.generatedImages[refId];
+            if (refId) {
+                // Always set that we WANT a reference, even if not generated yet
                 resolved.characterId = refId;
+                if (this.generatedImages[refId]) {
+                    resolved.characterReference = this.generatedImages[refId];
+                } else {
+                    // Mark that we need this reference but don't have it yet
+                    resolved.missingCharacterRef = refId;
+                }
             }
         }
         
         // Check if this section uses multiple characters
         if (section.use_characters) {
             resolved.characterReferences = [];
+            resolved.missingCharacterRefs = [];
             section.use_characters.forEach(ref => {
                 const refId = this.parseReference(ref);
-                if (refId && this.generatedImages[refId]) {
-                    resolved.characterReferences.push({
-                        id: refId,
-                        path: this.generatedImages[refId]
-                    });
+                if (refId) {
+                    if (this.generatedImages[refId]) {
+                        resolved.characterReferences.push({
+                            id: refId,
+                            path: this.generatedImages[refId]
+                        });
+                    } else {
+                        resolved.missingCharacterRefs.push(refId);
+                    }
                 }
             });
         }
@@ -105,16 +116,45 @@ class RecursiveImageGenerator {
     }
 
     /**
+     * Check if all referenced images exist
+     */
+    checkDependencies(section) {
+        const missingDeps = [];
+        
+        if (section.characterReference && !fs.existsSync(section.characterReference)) {
+            missingDeps.push(section.characterId);
+        }
+        
+        if (section.characterReferences) {
+            section.characterReferences.forEach(ref => {
+                if (!fs.existsSync(ref.path)) {
+                    missingDeps.push(ref.id);
+                }
+            });
+        }
+        
+        return missingDeps;
+    }
+
+    /**
      * Generate a single image with potential character reference
      */
-    async generateImage(section, outputDir) {
+    async generateImage(section, outputDir, forceRegenerate = false) {
         const outputPath = path.join(outputDir, section.image);
         
         console.log(`\n📸 Generating: ${section.image}`);
         console.log(`   ID: ${section.id}`);
         
-        // Skip if exists
-        if (fs.existsSync(outputPath)) {
+        // Check if dependencies exist (for reference-based generation)
+        if (section.missingCharacterRef || (section.missingCharacterRefs && section.missingCharacterRefs.length > 0)) {
+            const missingDeps = section.missingCharacterRef ? [section.missingCharacterRef] : section.missingCharacterRefs;
+            console.log(`   ⚠️ Missing character references: ${missingDeps.join(', ')}`);
+            console.log(`   🔄 Will retry after dependencies are generated`);
+            return { success: false, missingDeps, needsRegeneration: true };
+        }
+        
+        // Skip if exists and not forcing regeneration
+        if (fs.existsSync(outputPath) && !forceRegenerate) {
             console.log(`   ✓ Already exists`);
             this.generatedImages[section.id] = outputPath;
             if (section.generate_character) {
@@ -123,9 +163,13 @@ class RecursiveImageGenerator {
             return { success: true, path: outputPath, skipped: true };
         }
         
-        // Determine service based on references
-        const hasReference = section.characterReference || (section.characterReferences && section.characterReferences.length > 0);
-        const service = hasReference ? 'gemini' : (section.imageType === 'landscape' || section.imageType === 'hero' ? 'openai' : 'gemini');
+        // Determine service based on whether this section WANTS references
+        const wantsReference = section.use_character || section.use_characters || 
+                               section.characterId || section.missingCharacterRef || 
+                               (section.characterReferences && section.characterReferences.length > 0) ||
+                               (section.missingCharacterRefs && section.missingCharacterRefs.length > 0);
+        // Use Gemini when we want reference images, OpenAI otherwise
+        const service = wantsReference ? 'gemini' : 'openai';
         
         console.log(`   Service: ${service.toUpperCase()}`);
         if (section.action) {
@@ -137,7 +181,10 @@ class RecursiveImageGenerator {
         
         try {
             let result;
-            if (service === 'gemini' && hasReference) {
+            // Check if we have actual reference images available
+            const hasActualReference = section.characterReference || (section.characterReferences && section.characterReferences.length > 0);
+            
+            if (service === 'gemini' && hasActualReference) {
                 result = await this.generateWithGeminiReference(section, outputPath);
             } else if (service === 'gemini') {
                 result = await this.generateWithGemini(section, outputPath);
@@ -170,11 +217,13 @@ class RecursiveImageGenerator {
         const referenceImage = section.characterReference || section.characterReferences[0].path;
         
         const scriptContent = `
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+const { GoogleGenAI } = require("@google/genai");
 const fs = require("fs");
 
 async function generate() {
-    const genAI = new GoogleGenerativeAI("${this.geminiKey}");
+    const ai = new GoogleGenAI({
+        apiKey: "${this.geminiKey}"
+    });
     
     const referenceData = fs.readFileSync("${referenceImage}");
     const base64Reference = referenceData.toString("base64");
@@ -197,27 +246,42 @@ async function generate() {
         }
     ];
     
-    try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const response = await model.generateContent(prompt);
-        
-        if (response && response.candidates && response.candidates[0]) {
-            const parts = response.candidates[0].content.parts;
-            for (const part of parts) {
-                if (part.inlineData) {
-                    const buffer = Buffer.from(part.inlineData.data, "base64");
-                    fs.writeFileSync("${outputPath}", buffer);
-                    console.log("SUCCESS");
-                    return;
+    let retries = 3;
+    while (retries > 0) {
+        try {
+            const response = await ai.models.generateContent({
+                model: "gemini-2.5-flash-image-preview",
+                contents: prompt
+            });
+            
+            if (response && response.candidates && response.candidates[0]) {
+                const parts = response.candidates[0].content.parts;
+                for (const part of parts) {
+                    if (part.inlineData) {
+                        const buffer = Buffer.from(part.inlineData.data, "base64");
+                        fs.writeFileSync("${outputPath}", buffer);
+                        console.log("SUCCESS");
+                        return;
+                    } else if (part.text) {
+                        console.log("TEXT_RESPONSE:", part.text.substring(0, 100));
+                    }
                 }
             }
+            console.error("No image generated - response had text only");
+            process.exit(1);
+        } catch (error) {
+            retries--;
+            if (error.message && error.message.includes("500") && retries > 0) {
+                console.log(\`RETRY: \${retries} attempts remaining\`);
+                await new Promise(resolve => setTimeout(resolve, 3000));
+            } else {
+                console.error(error.message);
+                process.exit(1);
+            }
         }
-        console.error("No image generated");
-        process.exit(1);
-    } catch (error) {
-        console.error(error.message);
-        process.exit(1);
     }
+    console.error("Failed after 3 retries");
+    process.exit(1);
 }
 
 generate();
@@ -418,14 +482,19 @@ req.end();
             console.log(`   ${i + 1}. ${s.id} ${s.use_character ? `(uses ${this.parseReference(s.use_character)})` : ''}`);
         });
         
+        // Track sections that need regeneration
+        const needsRegeneration = new Set();
+        
         // Generate in order
         const results = {
             total: orderedSections.length,
             success: 0,
             failed: 0,
-            skipped: 0
+            skipped: 0,
+            regenerated: 0
         };
         
+        // First pass: generate all images
         for (const section of orderedSections) {
             // Resolve references
             const resolvedSection = this.resolveReferences(section, sections);
@@ -439,13 +508,38 @@ req.end();
                 } else {
                     results.success++;
                 }
+            } else if (result.needsRegeneration) {
+                needsRegeneration.add(section.id);
             } else {
                 results.failed++;
             }
             
             // Rate limiting
-            if (!result.skipped) {
+            if (!result.skipped && result.success) {
                 await new Promise(resolve => setTimeout(resolve, 3000));
+            }
+        }
+        
+        // Second pass: regenerate dependent images if needed
+        if (needsRegeneration.size > 0) {
+            console.log(`\n🔄 Regenerating ${needsRegeneration.size} dependent images...`);
+            
+            for (const sectionId of needsRegeneration) {
+                const section = sections.find(s => s.id === sectionId);
+                if (!section) continue;
+                
+                const resolvedSection = this.resolveReferences(section, sections);
+                const result = await this.generateImage(resolvedSection, imageDir, true);
+                
+                if (result.success) {
+                    results.regenerated++;
+                    needsRegeneration.delete(sectionId);
+                }
+                
+                // Rate limiting
+                if (result.success) {
+                    await new Promise(resolve => setTimeout(resolve, 3000));
+                }
             }
         }
         
@@ -454,6 +548,7 @@ req.end();
         console.log('✨ Recursive Generation Complete!');
         console.log(`   Generated: ${results.success}`);
         console.log(`   Skipped: ${results.skipped}`);
+        console.log(`   Regenerated: ${results.regenerated}`);
         console.log(`   Failed: ${results.failed}`);
         console.log(`   Characters created: ${Object.keys(this.characters).length}`);
         
