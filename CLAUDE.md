@@ -107,16 +107,57 @@ git commit -m "feat: [description] - Coverage: X%, Tests: +N"
 ## Project-Specific Context
 
 ### Architecture Overview
-<!-- Add project structure here -->
+The project uses a YAML-driven image generation pipeline:
+1. **Chapter Definition**: `chapters/[name].yaml` defines all content, images, and translations
+2. **Image Generation**: `run-recursive-generation.js` processes YAML to generate images
+3. **HTML Building**: `chapter-builder.js` converts YAML to HTML using Handlebars templates
+
+### Image Generation Workflow
+```bash
+# 1. Ensure .env file has API keys
+# Check .env contains:
+# OPENAI_API_KEY=sk-...
+# GEMINI_API_KEY=...
+
+# 2. Run the recursive generator (reads .env automatically)
+source .env && export OPENAI_API_KEY GEMINI_API_KEY
+node run-recursive-generation.js
+
+# 3. The script will:
+#    - Read chapters/beavers.yaml (or other chapter)
+#    - Generate missing images using references
+#    - Skip existing images
+#    - Build HTML automatically
+```
+
+### Key Files
+- `run-recursive-generation.js` - Main entry point for image generation
+- `automation/recursive-image-generator.js` - Core recursive generation logic
+- `automation/chapter-builder.js` - YAML to HTML converter
+- `templates/chapter-template-fixed.hbs` - Handlebars template for chapters
+- `.env` - Contains API keys (OPENAI_API_KEY, GEMINI_API_KEY)
 
 ### Key Dependencies
-<!-- List main dependencies and their purposes -->
+- `@google/generative-ai` - Gemini API for text generation
+- `@google/genai` - Gemini for image generation with references
+- `openai` - OpenAI API for image generation
+- `js-yaml` - YAML parsing
+- `handlebars` - Template engine
+
+### Routing System
+Images are routed to different AI services based on `routing` section in YAML:
+- `openai`: Images without reference requirements
+- `gemini`: Images requiring reference images (using `referenceImage` field)
 
 ### Known Issues
-<!-- Track known problems to fix -->
+- Language selector only showing English flag (needs CSS fix)
 
 ### Recent Changes
-<!-- AI should update this with recent work -->
+- Fixed language selector to use circular flag buttons
+- Added viewer detail images with proper references
+- Completed Spanish/Russian translations for all sections
+- Fixed Fun Facts and Viewer Details rendering
+- Documented proper workflow using .env file
 
 ## Regression Prevention
 

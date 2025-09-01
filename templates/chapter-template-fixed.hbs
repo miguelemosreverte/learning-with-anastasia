@@ -366,8 +366,8 @@
             }
         }
 
-        /* Hide elements for language switching */
-        [data-lang]:not(.active) {
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
             display: none;
         }
     </style>

@@ -133,6 +133,30 @@
       "filename": "ecosystem-thriving.jpg",
       "type": "landscape",
       "needsTranslations": false
+    },
+    {
+      "filename": "detail-beaver-tail.jpg",
+      "type": "content",
+      "reference": "${baby-beaver-portrait.image}",
+      "needsTranslations": false
+    },
+    {
+      "filename": "detail-underwater-entrance.jpg",
+      "type": "content",
+      "reference": "${baby-beaver-lodge.image}",
+      "needsTranslations": false
+    },
+    {
+      "filename": "detail-orange-teeth.jpg",
+      "type": "content",
+      "reference": "${baby-beaver-gathering.image}",
+      "needsTranslations": false
+    },
+    {
+      "filename": "detail-dam-curve.jpg",
+      "type": "content",
+      "reference": "${baby-beaver-testing.image}",
+      "needsTranslations": false
     }
   ]
 }
