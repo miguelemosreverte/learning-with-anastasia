@@ -104,36 +104,6 @@
             margin-top: 20px;
         }
 
-        /* Preface Section */
-        .preface-section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 40px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-        }
-
-        .preface-section h2 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
-            color: #000;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
-        .preface-content {
-            font-family: 'Merriweather', serif;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: #444;
-        }
-
-        .preface-content p {
-            margin-bottom: 20px;
-        }
-
         /* Content Sections */
         .content-section {
             max-width: 1200px;
@@ -403,7 +373,7 @@
     <!-- Hero Section -->
     {{#if hero}}
     <section class="hero-section">
-        <img src="{{hero.image}}" alt="{{hero.title.en}}" class="hero-image">
+        <img src="assets/images/{{hero.image}}" alt="{{hero.title.en}}" class="hero-image">
         <div class="hero-overlay">
             <h2 class="hero-title" data-lang="en" class="active">{{hero.title.en}}</h2>
             <h2 class="hero-title" data-lang="es">{{hero.title.es}}</h2>
@@ -411,32 +381,6 @@
             <p class="hero-subtitle" data-lang="en" class="active">{{hero.subtitle.en}}</p>
             <p class="hero-subtitle" data-lang="es">{{hero.subtitle.es}}</p>
             <p class="hero-subtitle" data-lang="ru">{{hero.subtitle.ru}}</p>
-        </div>
-    </section>
-    {{/if}}
-
-    <!-- Preface Section -->
-    {{#if meta.preface}}
-    <section class="preface-section">
-        <h2 data-lang="en" class="active">Introduction</h2>
-        <h2 data-lang="es">Introducción</h2>
-        <h2 data-lang="ru">Введение</h2>
-        <div class="preface-content">
-            <div data-lang="en" class="active">
-                {{#each meta.preface.en}}
-                <p>{{this}}</p>
-                {{/each}}
-            </div>
-            <div data-lang="es">
-                {{#each meta.preface.es}}
-                <p>{{this}}</p>
-                {{/each}}
-            </div>
-            <div data-lang="ru">
-                {{#each meta.preface.ru}}
-                <p>{{this}}</p>
-                {{/each}}
-            </div>
         </div>
     </section>
     {{/if}}

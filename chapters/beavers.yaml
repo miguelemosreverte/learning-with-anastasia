@@ -72,8 +72,8 @@ sections:
       ru: "Шаг 1: Поиск идеального места"
     content:
       en: "First, Baby Beaver must find the perfect spot for his dam. He looks for a narrow part of the river where the water flows steadily but not too fast. The banks should be strong enough to support his construction."
-      es: "Primero, Bebé Castor debe encontrar el lugar perfecto para su presa. Busca una parte estrecha del río donde el agua fluya constantemente pero no demasiado rápido."
-      ru: "Сначала Малыш Бобр должен найти идеальное место для своей плотины. Он ищет узкую часть реки, где вода течет равномерно."
+      es: "Primero, Bebé Castor debe encontrar el lugar perfecto para su presa. Busca una parte estrecha del río donde el agua fluya constantemente pero no demasiado rápido. Las orillas deben ser lo suficientemente fuertes para soportar su construcción."
+      ru: "Сначала Малыш Бобр должен найти идеальное место для своей плотины. Он ищет узкую часть реки, где вода течет равномерно, но не слишком быстро. Берега должны быть достаточно прочными, чтобы поддерживать его сооружение."
     image: "baby-beaver-surveying.jpg"
 
   - id: gathering-sticks
@@ -87,8 +87,8 @@ sections:
       ru: "Шаг 2: Сбор материалов"
     content:
       en: "Baby Beaver starts collecting branches, twigs, and logs. He uses his sharp teeth to gnaw through wood - they're stronger than iron! He can carry heavy logs by dragging them or floating them down the river."
-      es: "Bebé Castor comienza a recolectar ramas, ramitas y troncos. Usa sus afilados dientes para roer la madera - ¡son más fuertes que el hierro!"
-      ru: "Малыш Бобр начинает собирать ветки, прутья и бревна. Он использует свои острые зубы, чтобы прогрызать древесину."
+      es: "Bebé Castor comienza a recolectar ramas, ramitas y troncos. Usa sus afilados dientes para roer la madera - ¡son más fuertes que el hierro! Puede cargar troncos pesados arrastrándolos o flotándolos río abajo."
+      ru: "Малыш Бобр начинает собирать ветки, прутья и бревна. Он использует свои острые зубы, чтобы прогрызать древесину - они прочнее железа! Он может переносить тяжелые бревна, волоча их или сплавляя по реке."
     image: "baby-beaver-gathering.jpg"
 
   - id: first-anchor-log
@@ -102,8 +102,8 @@ sections:
       ru: "Шаг 3: Фундамент"
     content:
       en: "The most important part! Baby Beaver places the first heavy log across the river bottom. This anchor log must be perfectly positioned - it will hold everything else in place."
-      es: "¡La parte más importante! Bebé Castor coloca el primer tronco pesado en el fondo del río. Este tronco ancla debe estar perfectamente posicionado."
-      ru: "Самая важная часть! Малыш Бобр кладет первое тяжелое бревно поперек дна реки."
+      es: "¡La parte más importante! Bebé Castor coloca el primer tronco pesado en el fondo del río. Este tronco ancla debe estar perfectamente posicionado - mantendrá todo lo demás en su lugar."
+      ru: "Самая важная часть! Малыш Бобр кладет первое тяжелое бревно поперек дна реки. Это якорное бревно должно быть идеально расположено - оно будет удерживать все остальное на месте."
     image: "baby-beaver-first-log.jpg"
 
   - id: adding-branches
@@ -117,8 +117,8 @@ sections:
       ru: "Шаг 4: Строительство каркаса"
     content:
       en: "Baby Beaver weaves branches between the logs like a basket. He works both above and below water - beavers can hold their breath for 15 minutes! The structure starts taking shape."
-      es: "Bebé Castor entrelaza ramas entre los troncos como una canasta. Trabaja tanto arriba como debajo del agua - ¡los castores pueden contener la respiración durante 15 minutos!"
-      ru: "Малыш Бобр переплетает ветки между бревнами, как корзину. Он работает и над, и под водой."
+      es: "Bebé Castor entrelaza ramas entre los troncos como una canasta. Trabaja tanto arriba como debajo del agua - ¡los castores pueden contener la respiración durante 15 minutos! La estructura comienza a tomar forma."
+      ru: "Малыш Бобр переплетает ветки между бревнами, как корзину. Он работает и над, и под водой - бобры могут задерживать дыхание на 15 минут! Сооружение начинает обретать форму."
     image: "baby-beaver-weaving.jpg"
 
   # Generate papa using baby as reference (to look like parent of baby)
@@ -249,8 +249,8 @@ sections:
       ru: "Шаг 10: Формируется пруд!"
     content:
       en: "Success! Water is pooling behind the dam, creating a calm pond. This pond will become home to fish, frogs, ducks, and many other animals. Baby Beaver has created a whole ecosystem!"
-      es: "¡Éxito! El agua se acumula detrás de la presa, creando un estanque tranquilo."
-      ru: "Успех! Вода скапливается за плотиной, создавая спокойный пруд."
+      es: "¡Éxito! El agua se acumula detrás de la presa, creando un estanque tranquilo. Este estanque se convertirá en hogar para peces, ranas, patos y muchos otros animales. ¡Bebé Castor ha creado todo un ecosistema!"
+      ru: "Успех! Вода скапливается за плотиной, создавая спокойный пруд. Этот пруд станет домом для рыб, лягушек, уток и многих других животных. Малыш Бобр создал целую экосистему!"
     image: "baby-beaver-pond-success.jpg"
 
   - id: building-lodge
