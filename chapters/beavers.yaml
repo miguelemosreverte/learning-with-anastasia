@@ -1,0 +1,381 @@
+# Beavers Chapter Definition - Progressive Dam Building Story
+meta:
+  id: beavers
+  title:
+    en: "Beavers: Nature's Master Engineers"
+    es: "Castores: Los Maestros Ingenieros de la Naturaleza"
+    ru: "Бобры: Мастера-инженеры природы"
+  description: "Follow Benny the Beaver as he builds his first dam, learning about engineering and teamwork"
+
+hero:
+  title:
+    en: "Beavers"
+    es: "Castores"
+    ru: "Бобры"
+  subtitle:
+    en: "Building Dreams, One Stick at a Time"
+    es: "Construyendo Sueños, Una Rama a la Vez"
+    ru: "Строим мечты, по одной веточке"
+  image: "hero-beaver-landscape.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Beautiful river valley at sunrise with beaver dam creating peaceful pond, mist rising from water"
+    es: "Hermoso valle fluvial al amanecer con presa de castor creando un estanque tranquilo"
+    ru: "Красивая речная долина на рассвете с бобровой плотиной, создающей мирный пруд"
+
+sections:
+  # First, establish our main character
+  - id: meet-baby-beaver
+    generate_character: true  # This generates our base character
+    titleKey: "meetBabyBeaverTitle"
+    contentKey: "meetBabyBeaverContent"
+    title:
+      en: "Meet Baby Beaver"
+      es: "Conoce al Bebé Castor"
+      ru: "Знакомьтесь с Малышом Бобром"
+    content:
+      en: "Baby Beaver is a young beaver with big dreams! He has strong teeth that never stop growing, waterproof fur, and a flat tail that works like a rudder when swimming. Today, he's ready to build his very first dam!"
+      es: "¡Bebé Castor es un joven castor con grandes sueños! Tiene dientes fuertes que nunca dejan de crecer, pelaje impermeable y una cola plana que funciona como timón al nadar."
+      ru: "Малыш Бобр - молодой бобр с большими мечтами! У него крепкие зубы, которые никогда не перестают расти, водонепроницаемый мех и плоский хвост."
+    image: "baby-beaver-portrait.jpg"
+    imageAlt:
+      en: "Young beaver with bright eyes, shiny brown fur, and eager expression"
+      es: "Joven castor con ojos brillantes, pelaje marrón brillante y expresión ansiosa"
+      ru: "Молодой бобр с яркими глазами, блестящей коричневой шерстью"
+
+  # Now use Baby Beaver in subsequent scenes
+  - id: surveying-river
+    use_character: "${meet-baby-beaver.image}"  # Reference Baby Beaver
+    action: "standing on riverbank, studying the water flow with a thoughtful expression"
+    titleKey: "surveyingTitle"
+    contentKey: "surveyingContent"
+    title:
+      en: "Step 1: Finding the Perfect Spot"
+      es: "Paso 1: Encontrando el Lugar Perfecto"
+      ru: "Шаг 1: Поиск идеального места"
+    content:
+      en: "First, Baby Beaver must find the perfect spot for his dam. He looks for a narrow part of the river where the water flows steadily but not too fast. The banks should be strong enough to support his construction."
+      es: "Primero, Bebé Castor debe encontrar el lugar perfecto para su presa. Busca una parte estrecha del río donde el agua fluya constantemente pero no demasiado rápido."
+      ru: "Сначала Малыш Бобр должен найти идеальное место для своей плотины. Он ищет узкую часть реки, где вода течет равномерно."
+    image: "baby-beaver-surveying.jpg"
+
+  - id: gathering-sticks
+    use_character: "${meet-baby-beaver.image}"
+    action: "carrying a large branch in his mouth, walking on hind legs"
+    titleKey: "gatheringTitle"
+    contentKey: "gatheringContent"
+    title:
+      en: "Step 2: Gathering Materials"
+      es: "Paso 2: Recolectando Materiales"
+      ru: "Шаг 2: Сбор материалов"
+    content:
+      en: "Baby Beaver starts collecting branches, twigs, and logs. He uses his sharp teeth to gnaw through wood - they're stronger than iron! He can carry heavy logs by dragging them or floating them down the river."
+      es: "Bebé Castor comienza a recolectar ramas, ramitas y troncos. Usa sus afilados dientes para roer la madera - ¡son más fuertes que el hierro!"
+      ru: "Малыш Бобр начинает собирать ветки, прутья и бревна. Он использует свои острые зубы, чтобы прогрызать древесину."
+    image: "baby-beaver-gathering.jpg"
+
+  - id: first-anchor-log
+    use_character: "${meet-baby-beaver.image}"
+    action: "pushing a large log into position across the river bottom"
+    titleKey: "firstLogTitle"
+    contentKey: "firstLogContent"
+    title:
+      en: "Step 3: The Foundation"
+      es: "Paso 3: La Fundación"
+      ru: "Шаг 3: Фундамент"
+    content:
+      en: "The most important part! Baby Beaver places the first heavy log across the river bottom. This anchor log must be perfectly positioned - it will hold everything else in place."
+      es: "¡La parte más importante! Bebé Castor coloca el primer tronco pesado en el fondo del río. Este tronco ancla debe estar perfectamente posicionado."
+      ru: "Самая важная часть! Малыш Бобр кладет первое тяжелое бревно поперек дна реки."
+    image: "baby-beaver-first-log.jpg"
+
+  - id: adding-branches
+    use_character: "${meet-baby-beaver.image}"
+    action: "carefully weaving branches between logs, working underwater"
+    titleKey: "addingBranchesTitle"
+    contentKey: "addingBranchesContent"
+    title:
+      en: "Step 4: Building the Framework"
+      es: "Paso 4: Construyendo la Estructura"
+      ru: "Шаг 4: Строительство каркаса"
+    content:
+      en: "Baby Beaver weaves branches between the logs like a basket. He works both above and below water - beavers can hold their breath for 15 minutes! The structure starts taking shape."
+      es: "Bebé Castor entrelaza ramas entre los troncos como una canasta. Trabaja tanto arriba como debajo del agua - ¡los castores pueden contener la respiración durante 15 minutos!"
+      ru: "Малыш Бобр переплетает ветки между бревнами, как корзину. Он работает и над, и под водой."
+    image: "baby-beaver-weaving.jpg"
+
+  - id: papa-beaver-arrives
+    generate_character: true  # Generate Papa Beaver
+    titleKey: "papaBeaverArrivesTitle"
+    contentKey: "papaBeaverArrivesContent"
+    title:
+      en: "Papa Beaver Arrives"
+      es: "Papá Castor Llega"
+      ru: "Папа Бобр Приходит"
+    content:
+      en: "Papa Beaver, with his grey-tinged fur and years of experience, comes to check on Baby Beaver's progress. He's built dozens of dams and knows all the tricks!"
+      es: "Papá Castor, con su pelaje grisáceo y años de experiencia, viene a verificar el progreso de Bebé Castor."
+      ru: "Папа Бобр, с его седоватым мехом и многолетним опытом, приходит проверить прогресс Малыша Бобра."
+    image: "papa-beaver.jpg"
+    imageAlt:
+      en: "Older beaver with grey-tinged fur, wise eyes, and sturdy build"
+      es: "Castor mayor con pelaje grisáceo, ojos sabios y constitución robusta"
+      ru: "Старший бобр с седоватым мехом, мудрыми глазами"
+
+  - id: teamwork-lifting
+    use_characters: ["${meet-baby-beaver.image}", "${papa-beaver-arrives.image}"]
+    action: "both beavers working together to position a heavy log"
+    titleKey: "teamworkTitle"
+    contentKey: "teamworkContent"
+    title:
+      en: "Step 5: Teamwork Makes It Stronger"
+      es: "Paso 5: El Trabajo en Equipo lo Hace Más Fuerte"
+      ru: "Шаг 5: Командная работа делает сильнее"
+    content:
+      en: "Papa Beaver shows Baby Beaver how two beavers can lift logs that one cannot. Together, they position the biggest logs at the base, making the dam much stronger!"
+      es: "Papá Castor le muestra a Bebé Castor cómo dos castores pueden levantar troncos que uno no puede. ¡Juntos, colocan los troncos más grandes en la base!"
+      ru: "Папа Бобр показывает Малышу Бобру, как два бобра могут поднять бревна, которые один не может."
+    image: "baby-papa-teamwork.jpg"
+
+  - id: applying-mud
+    use_character: "${meet-baby-beaver.image}"
+    action: "using front paws to pack mud between sticks, focused expression"
+    titleKey: "mudSealTitle"
+    contentKey: "mudSealContent"
+    title:
+      en: "Step 6: Sealing with Mud"
+      es: "Paso 6: Sellando con Barro"
+      ru: "Шаг 6: Герметизация грязью"
+    content:
+      en: "Now comes the messy part! Baby Beaver scoops mud from the river bottom and packs it between the sticks. The mud acts like cement, sealing gaps so water can't rush through."
+      es: "¡Ahora viene la parte sucia! Bebé Castor recoge barro del fondo del río y lo empaca entre los palos."
+      ru: "Теперь наступает грязная часть! Малыш Бобр зачерпывает грязь со дна реки."
+    image: "baby-beaver-mudwork.jpg"
+
+  - id: adding-stones
+    use_character: "${meet-baby-beaver.image}"
+    action: "carrying stones in his arms to reinforce the dam base"
+    titleKey: "stonesTitle"
+    contentKey: "stonesContent"
+    title:
+      en: "Step 7: Reinforcing with Stones"
+      es: "Paso 7: Reforzando con Piedras"
+      ru: "Шаг 7: Укрепление камнями"
+    content:
+      en: "Baby Beaver adds stones to the base for extra strength. Each stone is carefully chosen and placed. The dam is getting taller - water is starting to pool behind it!"
+      es: "Bebé Castor agrega piedras a la base para mayor resistencia. Cada piedra es cuidadosamente elegida y colocada."
+      ru: "Малыш Бобр добавляет камни к основанию для дополнительной прочности."
+    image: "baby-beaver-stones.jpg"
+
+  - id: mama-beaver-arrives
+    generate_character: true  # Generate Mama Beaver
+    titleKey: "mamaBeaverArrivesTitle"
+    contentKey: "mamaBeaverArrivesContent"
+    title:
+      en: "Mama Beaver Brings Supplies"
+      es: "Mamá Castor Trae Suministros"
+      ru: "Мама Бобр Приносит Припасы"
+    content:
+      en: "Mama Beaver arrives with fresh willow bark - beaver's favorite food! She's proud of Baby Beaver's hard work and brings snacks to keep everyone energized."
+      es: "¡Mamá Castor llega con corteza de sauce fresca - la comida favorita de los castores!"
+      ru: "Мама Бобр приходит со свежей ивовой корой - любимой едой бобров!"
+    image: "mama-beaver.jpg"
+    imageAlt:
+      en: "Female beaver with gentle expression, carrying willow branches"
+      es: "Castor hembra con expresión gentil, llevando ramas de sauce"
+      ru: "Бобриха с нежным выражением, несущая ивовые ветки"
+
+  - id: family-building
+    use_characters: ["${meet-baby-beaver.image}", "${papa-beaver-arrives.image}", "${mama-beaver-arrives.image}"]
+    action: "whole beaver family working together on the dam, each doing different tasks"
+    titleKey: "familyBuildingTitle"
+    contentKey: "familyBuildingContent"
+    title:
+      en: "Step 8: Family Project"
+      es: "Paso 8: Proyecto Familiar"
+      ru: "Шаг 8: Семейный проект"
+    content:
+      en: "The whole beaver family works together! Papa Beaver positions logs, Mama Beaver weaves branches, and Baby Beaver packs mud. Beaver families are very close - they work, play, and live together."
+      es: "¡Toda la familia de castores trabaja junta! Papá Castor posiciona troncos, Mamá Castor entrelaza ramas, y Bebé Castor empaca barro."
+      ru: "Вся семья бобров работает вместе! Папа Бобр устанавливает бревна, Мама Бобр плетет ветки, а Малыш Бобр утрамбовывает грязь."
+    image: "family-building.jpg"
+
+  - id: testing-dam
+    use_character: "${meet-baby-beaver.image}"
+    action: "swimming near the completed dam section, checking for leaks"
+    titleKey: "testingTitle"
+    contentKey: "testingContent"
+    title:
+      en: "Step 9: Testing the Structure"
+      es: "Paso 9: Probando la Estructura"
+      ru: "Шаг 9: Тестирование структуры"
+    content:
+      en: "Baby Beaver swims along the dam, feeling for water currents that show leaks. When he finds one, he quickly patches it with more mud and sticks. Quality control is important!"
+      es: "Bebé Castor nada a lo largo de la presa, sintiendo las corrientes de agua que muestran fugas."
+      ru: "Малыш Бобр плавает вдоль плотины, ощущая водные потоки, которые показывают утечки."
+    image: "baby-beaver-testing.jpg"
+
+  - id: pond-forming
+    use_character: "${meet-baby-beaver.image}"
+    action: "standing proudly on top of the dam, looking at the pond forming behind it"
+    titleKey: "pondFormingTitle"
+    contentKey: "pondFormingContent"
+    title:
+      en: "Step 10: The Pond Forms!"
+      es: "Paso 10: ¡Se Forma el Estanque!"
+      ru: "Шаг 10: Формируется пруд!"
+    content:
+      en: "Success! Water is pooling behind the dam, creating a calm pond. This pond will become home to fish, frogs, ducks, and many other animals. Baby Beaver has created a whole ecosystem!"
+      es: "¡Éxito! El agua se acumula detrás de la presa, creando un estanque tranquilo."
+      ru: "Успех! Вода скапливается за плотиной, создавая спокойный пруд."
+    image: "baby-beaver-pond-success.jpg"
+
+  - id: building-lodge
+    use_character: "${meet-baby-beaver.image}"
+    action: "constructing a beaver lodge in the middle of the new pond"
+    titleKey: "lodgeTitle"
+    contentKey: "lodgeContent"
+    title:
+      en: "Step 11: Building the Lodge"
+      es: "Paso 11: Construyendo la Madriguera"
+      ru: "Шаг 11: Строительство хатки"
+    content:
+      en: "Now Baby Beaver builds a lodge - the beaver home! It's like an island house made of sticks and mud, with underwater entrances for safety. The living chamber inside stays dry and cozy."
+      es: "¡Ahora Bebé Castor construye una madriguera - el hogar del castor! Es como una casa isla hecha de palos y barro."
+      ru: "Теперь Малыш Бобр строит хатку - дом бобра! Это как островной дом из палок и грязи."
+    image: "baby-beaver-lodge.jpg"
+
+  - id: underwater-entrance
+    use_character: "${meet-baby-beaver.image}"
+    action: "swimming through the underwater entrance of the lodge"
+    titleKey: "underwaterTitle"
+    contentKey: "underwaterContent"
+    title:
+      en: "Secret Underwater Door"
+      es: "Puerta Secreta Submarina"
+      ru: "Секретная подводная дверь"
+    content:
+      en: "The lodge has a secret - you can only enter from underwater! This keeps the beaver family safe from predators. Baby Beaver dives down and swims up into the dry, warm chamber inside."
+      es: "¡La madriguera tiene un secreto - solo puedes entrar desde debajo del agua!"
+      ru: "У хатки есть секрет - войти можно только из-под воды!"
+    image: "baby-beaver-underwater.jpg"
+
+  - id: winter-preparation
+    use_characters: ["${meet-baby-beaver.image}", "${papa-beaver-arrives.image}", "${mama-beaver-arrives.image}"]
+    action: "family storing branches underwater near the lodge for winter food"
+    titleKey: "winterPrepTitle"
+    contentKey: "winterPrepContent"
+    title:
+      en: "Preparing for Winter"
+      es: "Preparándose para el Invierno"
+      ru: "Подготовка к зиме"
+    content:
+      en: "The beaver family stores branches underwater near their lodge. In winter, when the pond freezes, they'll have food without going outside. Beavers are amazing planners!"
+      es: "La familia de castores almacena ramas bajo el agua cerca de su madriguera."
+      ru: "Семья бобров хранит ветки под водой возле своей хатки."
+    image: "family-winter-prep.jpg"
+
+  - id: completed-dam
+    use_character: "${meet-baby-beaver.image}"
+    action: "sitting on the completed dam at sunset, tail slapping the water in celebration"
+    titleKey: "completedTitle"
+    contentKey: "completedContent"
+    title:
+      en: "Mission Accomplished!"
+      es: "¡Misión Cumplida!"
+      ru: "Миссия выполнена!"
+    content:
+      en: "Baby Beaver's first dam is complete! He celebrates by slapping his tail on the water - SMACK! This sound can be heard half a mile away. It's how beavers say 'We did it!'"
+      es: "¡La primera presa de Bebé Castor está completa! Celebra golpeando su cola en el agua - ¡SMACK!"
+      ru: "Первая плотина Малыша Бобра готова! Он празднует, хлопая хвостом по воде - ШЛЕП!"
+    image: "baby-beaver-celebration.jpg"
+
+  - id: ecosystem-thriving
+    titleKey: "ecosystemTitle"
+    contentKey: "ecosystemContent"
+    title:
+      en: "A New Ecosystem"
+      es: "Un Nuevo Ecosistema"
+      ru: "Новая экосистема"
+    content:
+      en: "Thanks to Baby Beaver's dam, the whole area has transformed! Fish swim in the deep water, birds nest in the wetlands, and deer come to drink. One beaver family has created a home for hundreds of animals!"
+      es: "¡Gracias a la presa de Bebé Castor, toda el área se ha transformado!"
+      ru: "Благодаря плотине Малыша Бобра вся территория преобразилась!"
+    image: "ecosystem-thriving.jpg"
+    imageType: "landscape"  # Final landscape showing the transformed ecosystem
+
+funFacts:
+  title:
+    en: "Amazing Beaver Facts!"
+    es: "¡Datos Asombrosos sobre Castores!"
+    ru: "Удивительные факты о бобрах!"
+  facts:
+    - key: "funFact1"
+      icon: "🦷"
+      text:
+        en: "Beaver teeth are orange because they contain iron - making them super strong!"
+        es: "¡Los dientes de castor son naranjas porque contienen hierro - haciéndolos súper fuertes!"
+        ru: "Зубы бобра оранжевые, потому что содержат железо - это делает их супер крепкими!"
+    
+    - key: "funFact2"
+      icon: "🏗️"
+      text:
+        en: "The largest beaver dam ever found is in Canada - it's over 2,800 feet long!"
+        es: "¡La presa de castor más grande jamás encontrada está en Canadá - mide más de 850 metros!"
+        ru: "Самая большая бобровая плотина находится в Канаде - она длиной более 850 метров!"
+    
+    - key: "funFact3"
+      icon: "🏊"
+      text:
+        en: "Beavers can hold their breath underwater for up to 15 minutes!"
+        es: "¡Los castores pueden contener la respiración bajo el agua hasta 15 minutos!"
+        ru: "Бобры могут задерживать дыхание под водой до 15 минут!"
+    
+    - key: "funFact4"
+      icon: "🌙"
+      text:
+        en: "Beavers are mostly nocturnal - they do most of their work at night!"
+        es: "¡Los castores son principalmente nocturnos - hacen la mayor parte de su trabajo por la noche!"
+        ru: "Бобры в основном ночные животные - большую часть работы они делают ночью!"
+
+# Image generation instructions
+imageGeneration:
+  characters:
+    baby-beaver:
+      name: "Baby Beaver"
+      description: "Young eager beaver with bright brown fur, expressive eyes, flat tail"
+    
+    papa-beaver:
+      name: "Papa Beaver"
+      description: "Older beaver with grey-tinged fur, wise expression, sturdy build"
+    
+    mama-beaver:
+      name: "Mama Beaver"
+      description: "Female beaver with gentle expression, nurturing demeanor"
+  
+  style:
+    global: "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes"
+  
+  routing:
+    openai:
+      - "hero-beaver-landscape.jpg"
+      - "ecosystem-thriving.jpg"
+    
+    gemini:
+      - "baby-beaver-portrait.jpg"
+      - "papa-beaver.jpg"
+      - "mama-beaver.jpg"
+      - "baby-beaver-surveying.jpg"
+      - "baby-beaver-gathering.jpg"
+      - "baby-beaver-first-log.jpg"
+      - "baby-beaver-weaving.jpg"
+      - "baby-papa-teamwork.jpg"
+      - "baby-beaver-mudwork.jpg"
+      - "baby-beaver-stones.jpg"
+      - "family-building.jpg"
+      - "baby-beaver-testing.jpg"
+      - "baby-beaver-pond-success.jpg"
+      - "baby-beaver-lodge.jpg"
+      - "baby-beaver-underwater.jpg"
+      - "family-winter-prep.jpg"
+      - "baby-beaver-celebration.jpg"
