@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">Beavers: Nature&#x27;s Master Engineers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: white;
+            padding: 2rem;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Magazine Container */
+        .magazine-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: white;
+            position: relative;
+            top: -50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        /* Content Sections */
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+            align-items: center;
+        }
+
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+
+        .content-section:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .text-content {
+            padding: 2rem;
+        }
+
+        .text-content h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .text-content h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .text-content p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+        }
+
+        .fun-facts h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .fact-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .fact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .magazine-container {
+                padding: 1rem;
+                top: -30px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="assets/images/hero-beaver-landscape.jpg" 
+             alt="Beautiful river valley at sunrise with beaver dam creating peaceful pond, mist rising from water" 
+             data-i18n-alt="heroImageAlt" 
+             class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-i18n="heroTitle">Beavers</h1>
+            <p class="hero-subtitle" data-i18n="heroSubtitle">Building Dreams, One Stick at a Time</p>
+        </div>
+    </section>
+
+    <!-- Magazine Container -->
+    <div class="magazine-container">
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-portrait.jpg" 
+                     alt="Young beaver with bright eyes, shiny brown fur, and eager expression" 
+                     data-i18n-alt="section0ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="meetBabyBeaverTitle">Meet Baby Beaver</h2>
+                <p data-i18n="meetBabyBeaverContent">Baby Beaver is a young beaver with big dreams! He has strong teeth that never stop growing, waterproof fur, and a flat tail that works like a rudder when swimming. Today, he&#x27;s ready to build his very first dam!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-surveying.jpg" 
+                     alt="" 
+                     data-i18n-alt="section1ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="surveyingTitle">Step 1: Finding the Perfect Spot</h2>
+                <p data-i18n="surveyingContent">First, Baby Beaver must find the perfect spot for his dam. He looks for a narrow part of the river where the water flows steadily but not too fast. The banks should be strong enough to support his construction.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-gathering.jpg" 
+                     alt="" 
+                     data-i18n-alt="section2ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="gatheringTitle">Step 2: Gathering Materials</h2>
+                <p data-i18n="gatheringContent">Baby Beaver starts collecting branches, twigs, and logs. He uses his sharp teeth to gnaw through wood - they&#x27;re stronger than iron! He can carry heavy logs by dragging them or floating them down the river.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-first-log.jpg" 
+                     alt="" 
+                     data-i18n-alt="section3ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="firstLogTitle">Step 3: The Foundation</h2>
+                <p data-i18n="firstLogContent">The most important part! Baby Beaver places the first heavy log across the river bottom. This anchor log must be perfectly positioned - it will hold everything else in place.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-weaving.jpg" 
+                     alt="" 
+                     data-i18n-alt="section4ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="addingBranchesTitle">Step 4: Building the Framework</h2>
+                <p data-i18n="addingBranchesContent">Baby Beaver weaves branches between the logs like a basket. He works both above and below water - beavers can hold their breath for 15 minutes! The structure starts taking shape.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/papa-beaver.jpg" 
+                     alt="Older beaver with grey-tinged fur, wise eyes, and sturdy build" 
+                     data-i18n-alt="section5ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="papaBeaverArrivesTitle">Papa Beaver Arrives</h2>
+                <p data-i18n="papaBeaverArrivesContent">Papa Beaver, with his grey-tinged fur and years of experience, comes to check on Baby Beaver&#x27;s progress. He&#x27;s built dozens of dams and knows all the tricks!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-papa-teamwork.jpg" 
+                     alt="" 
+                     data-i18n-alt="section6ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="teamworkTitle">Step 5: Teamwork Makes It Stronger</h2>
+                <p data-i18n="teamworkContent">Papa Beaver shows Baby Beaver how two beavers can lift logs that one cannot. Together, they position the biggest logs at the base, making the dam much stronger!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-mudwork.jpg" 
+                     alt="" 
+                     data-i18n-alt="section7ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="mudSealTitle">Step 6: Sealing with Mud</h2>
+                <p data-i18n="mudSealContent">Now comes the messy part! Baby Beaver scoops mud from the river bottom and packs it between the sticks. The mud acts like cement, sealing gaps so water can&#x27;t rush through.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-stones.jpg" 
+                     alt="" 
+                     data-i18n-alt="section8ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="stonesTitle">Step 7: Reinforcing with Stones</h2>
+                <p data-i18n="stonesContent">Baby Beaver adds stones to the base for extra strength. Each stone is carefully chosen and placed. The dam is getting taller - water is starting to pool behind it!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/mama-beaver.jpg" 
+                     alt="Female beaver with gentle expression, carrying willow branches" 
+                     data-i18n-alt="section9ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="mamaBeaverArrivesTitle">Mama Beaver Brings Supplies</h2>
+                <p data-i18n="mamaBeaverArrivesContent">Mama Beaver arrives with fresh willow bark - beaver&#x27;s favorite food! She&#x27;s proud of Baby Beaver&#x27;s hard work and brings snacks to keep everyone energized.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/family-building.jpg" 
+                     alt="" 
+                     data-i18n-alt="section10ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="familyBuildingTitle">Step 8: Family Project</h2>
+                <p data-i18n="familyBuildingContent">The whole beaver family works together! Papa Beaver positions logs, Mama Beaver weaves branches, and Baby Beaver packs mud. Beaver families are very close - they work, play, and live together.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-testing.jpg" 
+                     alt="" 
+                     data-i18n-alt="section11ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="testingTitle">Step 9: Testing the Structure</h2>
+                <p data-i18n="testingContent">Baby Beaver swims along the dam, feeling for water currents that show leaks. When he finds one, he quickly patches it with more mud and sticks. Quality control is important!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-pond-success.jpg" 
+                     alt="" 
+                     data-i18n-alt="section12ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="pondFormingTitle">Step 10: The Pond Forms!</h2>
+                <p data-i18n="pondFormingContent">Success! Water is pooling behind the dam, creating a calm pond. This pond will become home to fish, frogs, ducks, and many other animals. Baby Beaver has created a whole ecosystem!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-lodge.jpg" 
+                     alt="" 
+                     data-i18n-alt="section13ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="lodgeTitle">Step 11: Building the Lodge</h2>
+                <p data-i18n="lodgeContent">Now Baby Beaver builds a lodge - the beaver home! It&#x27;s like an island house made of sticks and mud, with underwater entrances for safety. The living chamber inside stays dry and cozy.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-underwater.jpg" 
+                     alt="" 
+                     data-i18n-alt="section14ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="underwaterTitle">Secret Underwater Door</h2>
+                <p data-i18n="underwaterContent">The lodge has a secret - you can only enter from underwater! This keeps the beaver family safe from predators. Baby Beaver dives down and swims up into the dry, warm chamber inside.</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/family-winter-prep.jpg" 
+                     alt="" 
+                     data-i18n-alt="section15ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="winterPrepTitle">Preparing for Winter</h2>
+                <p data-i18n="winterPrepContent">The beaver family stores branches underwater near their lodge. In winter, when the pond freezes, they&#x27;ll have food without going outside. Beavers are amazing planners!</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/baby-beaver-celebration.jpg" 
+                     alt="" 
+                     data-i18n-alt="section16ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="completedTitle">Mission Accomplished!</h2>
+                <p data-i18n="completedContent">Baby Beaver&#x27;s first dam is complete! He celebrates by slapping his tail on the water - SMACK! This sound can be heard half a mile away. It&#x27;s how beavers say &#x27;We did it!&#x27;</p>
+            </div>
+        </section>
+        <section class="content-section">
+            <div class="image-container">
+                <img src="assets/images/ecosystem-thriving.jpg" 
+                     alt="" 
+                     data-i18n-alt="section17ImageAlt"
+>
+            </div>
+            <div class="text-content">
+                <h2 data-i18n="ecosystemTitle">A New Ecosystem</h2>
+                <p data-i18n="ecosystemContent">Thanks to Baby Beaver&#x27;s dam, the whole area has transformed! Fish swim in the deep water, birds nest in the wetlands, and deer come to drink. One beaver family has created a home for hundreds of animals!</p>
+            </div>
+        </section>
+
+        <!-- Fun Facts Section -->
+        <section class="fun-facts">
+            <h2 data-i18n="funFactsTitle">Amazing Beaver Facts!</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <span class="fact-icon">🦷</span>
+                    <p data-i18n="funFact1">Beaver teeth are orange because they contain iron - making them super strong!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🏗️</span>
+                    <p data-i18n="funFact2">The largest beaver dam ever found is in Canada - it&#x27;s over 2,800 feet long!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🏊</span>
+                    <p data-i18n="funFact3">Beavers can hold their breath underwater for up to 15 minutes!</p>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-icon">🌙</span>
+                    <p data-i18n="funFact4">Beavers are mostly nocturnal - they do most of their work at night!</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Language Switcher -->
+    <script src="../language-switcher.js"></script>
+    
+    <!-- Translations -->
+    <script>
+        const translations = {
+            en: {
+                pageTitle: "Beavers: Nature&#x27;s Master Engineers",
+                heroTitle: "Beavers",
+                heroSubtitle: "Building Dreams, One Stick at a Time",
+                heroImageAlt: "Beautiful river valley at sunrise with beaver dam creating peaceful pond, mist rising from water",
+                meetBabyBeaverTitle: "Meet Baby Beaver",
+                meetBabyBeaverContent: "Baby Beaver is a young beaver with big dreams! He has strong teeth that never stop growing, waterproof fur, and a flat tail that works like a rudder when swimming. Today, he&#x27;s ready to build his very first dam!",
+                section0ImageAlt: "Young beaver with bright eyes, shiny brown fur, and eager expression",
+                surveyingTitle: "Step 1: Finding the Perfect Spot",
+                surveyingContent: "First, Baby Beaver must find the perfect spot for his dam. He looks for a narrow part of the river where the water flows steadily but not too fast. The banks should be strong enough to support his construction.",
+                section1ImageAlt: "",
+                gatheringTitle: "Step 2: Gathering Materials",
+                gatheringContent: "Baby Beaver starts collecting branches, twigs, and logs. He uses his sharp teeth to gnaw through wood - they&#x27;re stronger than iron! He can carry heavy logs by dragging them or floating them down the river.",
+                section2ImageAlt: "",
+                firstLogTitle: "Step 3: The Foundation",
+                firstLogContent: "The most important part! Baby Beaver places the first heavy log across the river bottom. This anchor log must be perfectly positioned - it will hold everything else in place.",
+                section3ImageAlt: "",
+                addingBranchesTitle: "Step 4: Building the Framework",
+                addingBranchesContent: "Baby Beaver weaves branches between the logs like a basket. He works both above and below water - beavers can hold their breath for 15 minutes! The structure starts taking shape.",
+                section4ImageAlt: "",
+                papaBeaverArrivesTitle: "Papa Beaver Arrives",
+                papaBeaverArrivesContent: "Papa Beaver, with his grey-tinged fur and years of experience, comes to check on Baby Beaver&#x27;s progress. He&#x27;s built dozens of dams and knows all the tricks!",
+                section5ImageAlt: "Older beaver with grey-tinged fur, wise eyes, and sturdy build",
+                teamworkTitle: "Step 5: Teamwork Makes It Stronger",
+                teamworkContent: "Papa Beaver shows Baby Beaver how two beavers can lift logs that one cannot. Together, they position the biggest logs at the base, making the dam much stronger!",
+                section6ImageAlt: "",
+                mudSealTitle: "Step 6: Sealing with Mud",
+                mudSealContent: "Now comes the messy part! Baby Beaver scoops mud from the river bottom and packs it between the sticks. The mud acts like cement, sealing gaps so water can&#x27;t rush through.",
+                section7ImageAlt: "",
+                stonesTitle: "Step 7: Reinforcing with Stones",
+                stonesContent: "Baby Beaver adds stones to the base for extra strength. Each stone is carefully chosen and placed. The dam is getting taller - water is starting to pool behind it!",
+                section8ImageAlt: "",
+                mamaBeaverArrivesTitle: "Mama Beaver Brings Supplies",
+                mamaBeaverArrivesContent: "Mama Beaver arrives with fresh willow bark - beaver&#x27;s favorite food! She&#x27;s proud of Baby Beaver&#x27;s hard work and brings snacks to keep everyone energized.",
+                section9ImageAlt: "Female beaver with gentle expression, carrying willow branches",
+                familyBuildingTitle: "Step 8: Family Project",
+                familyBuildingContent: "The whole beaver family works together! Papa Beaver positions logs, Mama Beaver weaves branches, and Baby Beaver packs mud. Beaver families are very close - they work, play, and live together.",
+                section10ImageAlt: "",
+                testingTitle: "Step 9: Testing the Structure",
+                testingContent: "Baby Beaver swims along the dam, feeling for water currents that show leaks. When he finds one, he quickly patches it with more mud and sticks. Quality control is important!",
+                section11ImageAlt: "",
+                pondFormingTitle: "Step 10: The Pond Forms!",
+                pondFormingContent: "Success! Water is pooling behind the dam, creating a calm pond. This pond will become home to fish, frogs, ducks, and many other animals. Baby Beaver has created a whole ecosystem!",
+                section12ImageAlt: "",
+                lodgeTitle: "Step 11: Building the Lodge",
+                lodgeContent: "Now Baby Beaver builds a lodge - the beaver home! It&#x27;s like an island house made of sticks and mud, with underwater entrances for safety. The living chamber inside stays dry and cozy.",
+                section13ImageAlt: "",
+                underwaterTitle: "Secret Underwater Door",
+                underwaterContent: "The lodge has a secret - you can only enter from underwater! This keeps the beaver family safe from predators. Baby Beaver dives down and swims up into the dry, warm chamber inside.",
+                section14ImageAlt: "",
+                winterPrepTitle: "Preparing for Winter",
+                winterPrepContent: "The beaver family stores branches underwater near their lodge. In winter, when the pond freezes, they&#x27;ll have food without going outside. Beavers are amazing planners!",
+                section15ImageAlt: "",
+                completedTitle: "Mission Accomplished!",
+                completedContent: "Baby Beaver&#x27;s first dam is complete! He celebrates by slapping his tail on the water - SMACK! This sound can be heard half a mile away. It&#x27;s how beavers say &#x27;We did it!&#x27;",
+                section16ImageAlt: "",
+                ecosystemTitle: "A New Ecosystem",
+                ecosystemContent: "Thanks to Baby Beaver&#x27;s dam, the whole area has transformed! Fish swim in the deep water, birds nest in the wetlands, and deer come to drink. One beaver family has created a home for hundreds of animals!",
+                section17ImageAlt: "",
+                funFactsTitle: "Amazing Beaver Facts!",
+                funFact1: "Beaver teeth are orange because they contain iron - making them super strong!",
+                funFact2: "The largest beaver dam ever found is in Canada - it&#x27;s over 2,800 feet long!",
+                funFact3: "Beavers can hold their breath underwater for up to 15 minutes!",
+                funFact4: "Beavers are mostly nocturnal - they do most of their work at night!",
+            },
+            es: {
+                pageTitle: "Castores: Los Maestros Ingenieros de la Naturaleza",
+                heroTitle: "Castores",
+                heroSubtitle: "Construyendo Sueños, Una Rama a la Vez",
+                heroImageAlt: "Hermoso valle fluvial al amanecer con presa de castor creando un estanque tranquilo",
+                meetBabyBeaverTitle: "Conoce al Bebé Castor",
+                meetBabyBeaverContent: "¡Bebé Castor es un joven castor con grandes sueños! Tiene dientes fuertes que nunca dejan de crecer, pelaje impermeable y una cola plana que funciona como timón al nadar.",
+                section0ImageAlt: "Joven castor con ojos brillantes, pelaje marrón brillante y expresión ansiosa",
+                surveyingTitle: "Paso 1: Encontrando el Lugar Perfecto",
+                surveyingContent: "Primero, Bebé Castor debe encontrar el lugar perfecto para su presa. Busca una parte estrecha del río donde el agua fluya constantemente pero no demasiado rápido.",
+                section1ImageAlt: "",
+                gatheringTitle: "Paso 2: Recolectando Materiales",
+                gatheringContent: "Bebé Castor comienza a recolectar ramas, ramitas y troncos. Usa sus afilados dientes para roer la madera - ¡son más fuertes que el hierro!",
+                section2ImageAlt: "",
+                firstLogTitle: "Paso 3: La Fundación",
+                firstLogContent: "¡La parte más importante! Bebé Castor coloca el primer tronco pesado en el fondo del río. Este tronco ancla debe estar perfectamente posicionado.",
+                section3ImageAlt: "",
+                addingBranchesTitle: "Paso 4: Construyendo la Estructura",
+                addingBranchesContent: "Bebé Castor entrelaza ramas entre los troncos como una canasta. Trabaja tanto arriba como debajo del agua - ¡los castores pueden contener la respiración durante 15 minutos!",
+                section4ImageAlt: "",
+                papaBeaverArrivesTitle: "Papá Castor Llega",
+                papaBeaverArrivesContent: "Papá Castor, con su pelaje grisáceo y años de experiencia, viene a verificar el progreso de Bebé Castor.",
+                section5ImageAlt: "Castor mayor con pelaje grisáceo, ojos sabios y constitución robusta",
+                teamworkTitle: "Paso 5: El Trabajo en Equipo lo Hace Más Fuerte",
+                teamworkContent: "Papá Castor le muestra a Bebé Castor cómo dos castores pueden levantar troncos que uno no puede. ¡Juntos, colocan los troncos más grandes en la base!",
+                section6ImageAlt: "",
+                mudSealTitle: "Paso 6: Sellando con Barro",
+                mudSealContent: "¡Ahora viene la parte sucia! Bebé Castor recoge barro del fondo del río y lo empaca entre los palos.",
+                section7ImageAlt: "",
+                stonesTitle: "Paso 7: Reforzando con Piedras",
+                stonesContent: "Bebé Castor agrega piedras a la base para mayor resistencia. Cada piedra es cuidadosamente elegida y colocada.",
+                section8ImageAlt: "",
+                mamaBeaverArrivesTitle: "Mamá Castor Trae Suministros",
+                mamaBeaverArrivesContent: "¡Mamá Castor llega con corteza de sauce fresca - la comida favorita de los castores!",
+                section9ImageAlt: "Castor hembra con expresión gentil, llevando ramas de sauce",
+                familyBuildingTitle: "Paso 8: Proyecto Familiar",
+                familyBuildingContent: "¡Toda la familia de castores trabaja junta! Papá Castor posiciona troncos, Mamá Castor entrelaza ramas, y Bebé Castor empaca barro.",
+                section10ImageAlt: "",
+                testingTitle: "Paso 9: Probando la Estructura",
+                testingContent: "Bebé Castor nada a lo largo de la presa, sintiendo las corrientes de agua que muestran fugas.",
+                section11ImageAlt: "",
+                pondFormingTitle: "Paso 10: ¡Se Forma el Estanque!",
+                pondFormingContent: "¡Éxito! El agua se acumula detrás de la presa, creando un estanque tranquilo.",
+                section12ImageAlt: "",
+                lodgeTitle: "Paso 11: Construyendo la Madriguera",
+                lodgeContent: "¡Ahora Bebé Castor construye una madriguera - el hogar del castor! Es como una casa isla hecha de palos y barro.",
+                section13ImageAlt: "",
+                underwaterTitle: "Puerta Secreta Submarina",
+                underwaterContent: "¡La madriguera tiene un secreto - solo puedes entrar desde debajo del agua!",
+                section14ImageAlt: "",
+                winterPrepTitle: "Preparándose para el Invierno",
+                winterPrepContent: "La familia de castores almacena ramas bajo el agua cerca de su madriguera.",
+                section15ImageAlt: "",
+                completedTitle: "¡Misión Cumplida!",
+                completedContent: "¡La primera presa de Bebé Castor está completa! Celebra golpeando su cola en el agua - ¡SMACK!",
+                section16ImageAlt: "",
+                ecosystemTitle: "Un Nuevo Ecosistema",
+                ecosystemContent: "¡Gracias a la presa de Bebé Castor, toda el área se ha transformado!",
+                section17ImageAlt: "",
+                funFactsTitle: "¡Datos Asombrosos sobre Castores!",
+                funFact1: "¡Los dientes de castor son naranjas porque contienen hierro - haciéndolos súper fuertes!",
+                funFact2: "¡La presa de castor más grande jamás encontrada está en Canadá - mide más de 850 metros!",
+                funFact3: "¡Los castores pueden contener la respiración bajo el agua hasta 15 minutos!",
+                funFact4: "¡Los castores son principalmente nocturnos - hacen la mayor parte de su trabajo por la noche!",
+            },
+            ru: {
+                pageTitle: "Бобры: Мастера-инженеры природы",
+                heroTitle: "Бобры",
+                heroSubtitle: "Строим мечты, по одной веточке",
+                heroImageAlt: "Красивая речная долина на рассвете с бобровой плотиной, создающей мирный пруд",
+                meetBabyBeaverTitle: "Знакомьтесь с Малышом Бобром",
+                meetBabyBeaverContent: "Малыш Бобр - молодой бобр с большими мечтами! У него крепкие зубы, которые никогда не перестают расти, водонепроницаемый мех и плоский хвост.",
+                section0ImageAlt: "Молодой бобр с яркими глазами, блестящей коричневой шерстью",
+                surveyingTitle: "Шаг 1: Поиск идеального места",
+                surveyingContent: "Сначала Малыш Бобр должен найти идеальное место для своей плотины. Он ищет узкую часть реки, где вода течет равномерно.",
+                section1ImageAlt: "",
+                gatheringTitle: "Шаг 2: Сбор материалов",
+                gatheringContent: "Малыш Бобр начинает собирать ветки, прутья и бревна. Он использует свои острые зубы, чтобы прогрызать древесину.",
+                section2ImageAlt: "",
+                firstLogTitle: "Шаг 3: Фундамент",
+                firstLogContent: "Самая важная часть! Малыш Бобр кладет первое тяжелое бревно поперек дна реки.",
+                section3ImageAlt: "",
+                addingBranchesTitle: "Шаг 4: Строительство каркаса",
+                addingBranchesContent: "Малыш Бобр переплетает ветки между бревнами, как корзину. Он работает и над, и под водой.",
+                section4ImageAlt: "",
+                papaBeaverArrivesTitle: "Папа Бобр Приходит",
+                papaBeaverArrivesContent: "Папа Бобр, с его седоватым мехом и многолетним опытом, приходит проверить прогресс Малыша Бобра.",
+                section5ImageAlt: "Старший бобр с седоватым мехом, мудрыми глазами",
+                teamworkTitle: "Шаг 5: Командная работа делает сильнее",
+                teamworkContent: "Папа Бобр показывает Малышу Бобру, как два бобра могут поднять бревна, которые один не может.",
+                section6ImageAlt: "",
+                mudSealTitle: "Шаг 6: Герметизация грязью",
+                mudSealContent: "Теперь наступает грязная часть! Малыш Бобр зачерпывает грязь со дна реки.",
+                section7ImageAlt: "",
+                stonesTitle: "Шаг 7: Укрепление камнями",
+                stonesContent: "Малыш Бобр добавляет камни к основанию для дополнительной прочности.",
+                section8ImageAlt: "",
+                mamaBeaverArrivesTitle: "Мама Бобр Приносит Припасы",
+                mamaBeaverArrivesContent: "Мама Бобр приходит со свежей ивовой корой - любимой едой бобров!",
+                section9ImageAlt: "Бобриха с нежным выражением, несущая ивовые ветки",
+                familyBuildingTitle: "Шаг 8: Семейный проект",
+                familyBuildingContent: "Вся семья бобров работает вместе! Папа Бобр устанавливает бревна, Мама Бобр плетет ветки, а Малыш Бобр утрамбовывает грязь.",
+                section10ImageAlt: "",
+                testingTitle: "Шаг 9: Тестирование структуры",
+                testingContent: "Малыш Бобр плавает вдоль плотины, ощущая водные потоки, которые показывают утечки.",
+                section11ImageAlt: "",
+                pondFormingTitle: "Шаг 10: Формируется пруд!",
+                pondFormingContent: "Успех! Вода скапливается за плотиной, создавая спокойный пруд.",
+                section12ImageAlt: "",
+                lodgeTitle: "Шаг 11: Строительство хатки",
+                lodgeContent: "Теперь Малыш Бобр строит хатку - дом бобра! Это как островной дом из палок и грязи.",
+                section13ImageAlt: "",
+                underwaterTitle: "Секретная подводная дверь",
+                underwaterContent: "У хатки есть секрет - войти можно только из-под воды!",
+                section14ImageAlt: "",
+                winterPrepTitle: "Подготовка к зиме",
+                winterPrepContent: "Семья бобров хранит ветки под водой возле своей хатки.",
+                section15ImageAlt: "",
+                completedTitle: "Миссия выполнена!",
+                completedContent: "Первая плотина Малыша Бобра готова! Он празднует, хлопая хвостом по воде - ШЛЕП!",
+                section16ImageAlt: "",
+                ecosystemTitle: "Новая экосистема",
+                ecosystemContent: "Благодаря плотине Малыша Бобра вся территория преобразилась!",
+                section17ImageAlt: "",
+                funFactsTitle: "Удивительные факты о бобрах!",
+                funFact1: "Зубы бобра оранжевые, потому что содержат железо - это делает их супер крепкими!",
+                funFact2: "Самая большая бобровая плотина находится в Канаде - она длиной более 850 метров!",
+                funFact3: "Бобры могут задерживать дыхание под водой до 15 минут!",
+                funFact4: "Бобры в основном ночные животные - большую часть работы они делают ночью!",
+            }
+        };
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-alt]').forEach(element => {
+                const key = element.getAttribute('data-i18n-alt');
+                if (translations[lang] && translations[lang][key]) {
+                    element.alt = translations[lang][key];
+                }
+            });
+
+            document.documentElement.lang = lang;
+        }
+
+        // Initialize with stored language or default
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+            updateContent(savedLang);
+        });
+    </script>
+</body>
+</html>
