@@ -151,9 +151,8 @@ class ChapterBuilder {
             // Generate HTML
             const html = this.generateHTML(chapterData);
             
-            // Determine output path
-            const chapterId = chapterData.meta.id;
-            const outputPath = path.join(outputDir, chapterId, 'index.html');
+            // Determine output path - output directly to the outputDir
+            const outputPath = path.join(outputDir, 'index.html');
             
             // Save HTML
             this.saveHTML(html, outputPath);
@@ -161,8 +160,8 @@ class ChapterBuilder {
             // Get list of images to generate
             const imageList = this.getImageList(chapterData);
             
-            // Create image directory
-            const imageDir = path.join(outputDir, chapterId, 'assets', 'images');
+            // Create image directory - directly in outputDir
+            const imageDir = path.join(outputDir, 'assets', 'images');
             if (!fs.existsSync(imageDir)) {
                 fs.mkdirSync(imageDir, { recursive: true });
             }
@@ -170,7 +169,7 @@ class ChapterBuilder {
             // Save image generation manifest
             const manifestPath = path.join(imageDir, 'generation-manifest.json');
             fs.writeFileSync(manifestPath, JSON.stringify({
-                chapter: chapterId,
+                chapter: chapterData.meta.id,
                 style: chapterData.imageGeneration?.style || {},
                 routing: chapterData.imageGeneration?.routing || {},
                 characters: chapterData.imageGeneration?.characters || {},
@@ -189,7 +188,7 @@ class ChapterBuilder {
             
             return {
                 success: true,
-                chapterId,
+                chapterId: chapterData.meta.id,
                 outputPath,
                 imageManifest: manifestPath,
                 imageCount: imageList.length
