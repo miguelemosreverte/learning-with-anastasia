@@ -246,10 +246,10 @@ async function generate() {
     
     const prompt = [
         {
-            text: \`Using the character from the reference image, show: ${section.action || section.content.en}
+            text: \`Using the character from the reference image, show: ${section.action || section.prompt || section.content?.en || 'Generate image'}
             
             IMPORTANT: Keep the character's appearance EXACTLY the same as in the reference.
-            ${section.title ? 'Scene: ' + section.title.en : ''}
+            ${section.title && section.title.en ? 'Scene: ' + section.title.en : ''}
             
             Style: Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors.
             NO TEXT in the image.\`
@@ -326,7 +326,7 @@ generate();
      * Generate with Gemini (no reference)
      */
     async generateWithGemini(section, outputPath) {
-        const prompt = section.imageAlt?.en || section.content?.en || 'Generate image';
+        const prompt = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
         
         const scriptContent = `
 const { GoogleGenerativeAI } = require("@google/generative-ai");
@@ -337,7 +337,7 @@ async function generate() {
     
     const prompt = \`Create: ${prompt}
     
-    ${section.title ? 'Scene: ' + section.title.en : ''}
+    ${section.title && section.title.en ? 'Scene: ' + section.title.en : ''}
     
     Style: Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors.
     NO TEXT in the image.\`;
@@ -391,7 +391,7 @@ generate();
      * Generate with OpenAI
      */
     async generateWithOpenAI(section, outputPath) {
-        const prompt = section.imageAlt?.en || section.content?.en || 'Generate image';
+        const prompt = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
         
         const scriptContent = `
 const https = require('https');
