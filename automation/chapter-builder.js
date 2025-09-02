@@ -36,6 +36,9 @@ class ChapterBuilder {
                 // Mark if this image will have translations
                 section.hasTranslations = this.needsTranslatedVersions(section);
                 
+                // Mark action sequences (sub-parts of a scene)
+                section.isActionSequence = this.isActionSequence(section.id);
+                
                 return section;
             });
 
@@ -50,6 +53,37 @@ class ChapterBuilder {
         }
 
         return chapterData;
+    }
+
+    /**
+     * Determine if a section is part of an action sequence
+     */
+    isActionSequence(sectionId) {
+        // Action sequences are sub-parts of scenes with specific patterns
+        const actionPatterns = [
+            // Grooming sequence
+            'grooming-preparation', 'grooming-deep-clean', 'grooming-complete',
+            // Marina meeting sequence
+            'marina-first-glimpse', 'marina-introduction', 'marina-playing-together',
+            // Ruby teaching sequence
+            'ruby-teaching-basics', 'ruby-practicing', 'ruby-success',
+            // First floating sequence
+            'first-floating-attempt', 'first-floating-struggle', 'first-floating-success',
+            // Any section with these suffixes
+            '-attempt', '-struggle', '-success',
+            '-preparation', '-practicing', '-complete',
+            '-first-glimpse', '-introduction', '-together'
+        ];
+        
+        return actionPatterns.some(pattern => {
+            if (pattern.startsWith('-')) {
+                // Suffix pattern
+                return sectionId && sectionId.endsWith(pattern);
+            } else {
+                // Exact match
+                return sectionId === pattern;
+            }
+        });
     }
 
     /**

@@ -150,6 +150,36 @@
             overflow: hidden;
         }
         
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
         .content-section:nth-child(even) {
             direction: rtl;
         }
@@ -349,6 +379,11 @@
             .content-section {
                 grid-template-columns: 1fr;
             }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
 
             .content-section:nth-child(even) {
                 direction: ltr;
@@ -489,7 +524,7 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
             <img src="assets/images/first-floating-attempt.jpg" 
                  alt="Baby Ollie struggling with his first floating attempts, rolling sideways" 
@@ -512,7 +547,7 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
             <img src="assets/images/first-floating-struggle.jpg" 
                  alt="Baby Ollie concentrating hard while learning to balance on the water" 
@@ -535,7 +570,7 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
             <img src="assets/images/first-floating-success.jpg" 
                  alt="Baby Ollie floating perfectly on his back with pure happiness" 
@@ -558,26 +593,72 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
-            <img src="assets/images/grooming-time.jpg" 
-                 alt="Ollie and Mama Otter grooming their fur, showing detailed grooming behavior" 
-                 data-alt-en="Ollie and Mama Otter grooming their fur, showing detailed grooming behavior"
-                 data-alt-es="Ollie y Mamá Nutria acicalando su pelaje, mostrando comportamiento detallado"
-                 data-alt-ru="Олли и Мама Выдра ухаживают за своим мехом">
+            <img src="assets/images/grooming-preparation.jpg" 
+                 alt="Mama Otter and Ollie floating together, preparing to start their grooming routine" 
+                 data-alt-en="Mama Otter and Ollie floating together, preparing to start their grooming routine"
+                 data-alt-es="Mamá Nutria y Ollie flotando juntos, preparándose para comenzar su rutina de acicalamiento"
+                 data-alt-ru="Мама Выдра и Олли плавают вместе, готовясь начать свою процедуру ухода за мехом">
         </div>
         <div class="text-content">
-            <h2 data-lang="en" class="active">The Grooming Ritual</h2>
-            <h2 data-lang="es">El Ritual de Acicalamiento</h2>
-            <h2 data-lang="ru">Ритуал ухода за мехом</h2>
+            <h2 data-lang="en" class="active">Getting Ready for the Day</h2>
+            <h2 data-lang="es">Preparándose para el Día</h2>
+            <h2 data-lang="ru">Готовимся к дню</h2>
             <div data-lang="en" class="active">
-                <p>Every morning began with grooming time. Ollie watched as Mama demonstrated the proper technique: rubbing, rolling, and blowing air into the fur. &#x27;Clean fur means warm and dry,&#x27; she explained. &#x27;Without our fur, we would freeze in these cold waters. We don&#x27;t have blubber like seals - our fur is everything!&#x27;</p>
+                <p>Every morning began with the most important ritual - grooming time! &#x27;Come here, little one,&#x27; Mama called gently. &#x27;We need to prepare your fur for the day ahead.&#x27; Ollie swam over eagerly, knowing this special time with Mama was crucial. &#x27;Our fur is our life jacket, our warmth, and our home,&#x27; she explained as they found a calm spot floating together.</p>
             </div>
             <div data-lang="es">
-                <p>Cada mañana comenzaba con el tiempo de acicalamiento. Ollie observaba mientras Mamá demostraba la técnica adecuada: frotar, rodar y soplar aire en el pelaje. &#x27;Pelaje limpio significa caliente y seco,&#x27; explicó. &#x27;Sin nuestro pelaje, nos congelaríamos en estas aguas frías. No tenemos grasa como las focas - ¡nuestro pelaje lo es todo!&#x27;</p>
+                <p>¡Cada mañana comenzaba con el ritual más importante - tiempo de acicalamiento! &#x27;Ven aquí, pequeño,&#x27; llamó Mamá suavemente. &#x27;Necesitamos preparar tu pelaje para el día que viene.&#x27; Ollie nadó ansiosamente, sabiendo que este tiempo especial con Mamá era crucial. &#x27;Nuestro pelaje es nuestro chaleco salvavidas, nuestro calor y nuestro hogar,&#x27; explicó mientras encontraban un lugar tranquilo flotando juntos.</p>
             </div>
             <div data-lang="ru">
-                <p>Каждое утро начиналось с ухода за мехом. Олли наблюдал, как Мама демонстрировала правильную технику: потирание, перекатывание и вдувание воздуха в мех. &#x27;Чистый мех означает тепло и сухость,&#x27; - объясняла она. &#x27;Без нашего меха мы бы замёрзли в этих холодных водах. У нас нет жира, как у тюленей - наш мех - это всё!&#x27;</p>
+                <p>Каждое утро начиналось с самого важного ритуала - времени ухода за мехом! &#x27;Иди сюда, малыш,&#x27; - нежно позвала Мама. &#x27;Нам нужно подготовить твой мех к предстоящему дню.&#x27; Олли охотно подплыл, зная, что это особенное время с Мамой было крайне важным. &#x27;Наш мех - это наш спасательный жилет, наше тепло и наш дом,&#x27; - объяснила она, когда они нашли спокойное место, плавая вместе.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <img src="assets/images/grooming-deep-clean.jpg" 
+                 alt="Mama Otter showing Ollie detailed grooming techniques, blowing air into fur" 
+                 data-alt-en="Mama Otter showing Ollie detailed grooming techniques, blowing air into fur"
+                 data-alt-es="Mamá Nutria mostrando a Ollie técnicas detalladas de acicalamiento, soplando aire en el pelaje"
+                 data-alt-ru="Мама Выдра показывает Олли детальные техники ухода за мехом, вдувая воздух в мех">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Deep Cleaning</h2>
+            <h2 data-lang="es">La Limpieza Profunda</h2>
+            <h2 data-lang="ru">Глубокая чистка</h2>
+            <div data-lang="en" class="active">
+                <p>Mama showed Ollie the proper technique: first, vigorous rubbing with their paws to work up the natural oils. Then, rolling and twisting in the water to reach every spot. &#x27;Now the most important part,&#x27; she said, taking a deep breath and blowing air into Ollie&#x27;s fur. &#x27;This traps warm air between your hairs. Without our fur being properly fluffed, we would freeze in these cold waters!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Mamá le mostró a Ollie la técnica adecuada: primero, frotado vigoroso con sus patas para producir los aceites naturales. Luego, rodar y girar en el agua para alcanzar cada punto. &#x27;Ahora la parte más importante,&#x27; dijo, tomando una respiración profunda y soplando aire en el pelaje de Ollie. &#x27;¡Esto atrapa aire caliente entre tus pelos. Sin que nuestro pelaje esté adecuadamente esponjado, nos congelaríamos en estas aguas frías!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Мама показала Олли правильную технику: сначала энергичное потирание лапками для выработки натуральных масел. Затем перекатывание и кручение в воде, чтобы добраться до каждого места. &#x27;Теперь самая важная часть,&#x27; - сказала она, глубоко вдохнув и вдувая воздух в мех Олли. &#x27;Это задерживает тёплый воздух между волосками. Без правильно распушенного меха мы бы замёрзли в этих холодных водах!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <img src="assets/images/grooming-complete.jpg" 
+                 alt="Ollie with beautifully groomed, fluffy fur looking happy and ready for the day" 
+                 data-alt-en="Ollie with beautifully groomed, fluffy fur looking happy and ready for the day"
+                 data-alt-es="Ollie con pelaje hermosamente acicalado y esponjoso luciendo feliz y listo para el día"
+                 data-alt-ru="Олли с красиво ухоженным, пушистым мехом выглядит счастливым и готовым к дню">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Fluffy and Ready!</h2>
+            <h2 data-lang="es">¡Esponjoso y Listo!</h2>
+            <h2 data-lang="ru">Пушистый и готов!</h2>
+            <div data-lang="en" class="active">
+                <p>After the thorough grooming, Ollie&#x27;s fur was perfectly fluffed and waterproof! He felt incredibly light and warm, floating like the softest cloud on the ocean. &#x27;Look at you now!&#x27; Mama beamed proudly. &#x27;Your fur is so clean and full of air - you&#x27;re ready for any adventure the day might bring!&#x27; Ollie spun in a happy circle, feeling cozy and confident in his beautiful, well-groomed coat.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Después del acicalamiento completo, el pelaje de Ollie estaba perfectamente esponjado e impermeable! Se sentía increíblemente ligero y cálido, flotando como la nube más suave en el océano. &#x27;¡Mírate ahora!&#x27; sonrió Mamá orgullosamente. &#x27;¡Tu pelaje está tan limpio y lleno de aire - estás listo para cualquier aventura que el día pueda traer!&#x27; Ollie giró en un círculo feliz, sintiéndose cómodo y confiado en su hermoso y bien cuidado pelaje.</p>
+            </div>
+            <div data-lang="ru">
+                <p>После тщательного ухода мех Олли был идеально распушен и водонепроницаем! Он чувствовал себя невероятно лёгким и тёплым, плавая как самое мягкое облако в океане. &#x27;Посмотри на себя!&#x27; - гордо улыбнулась Мама. &#x27;Твой мех такой чистый и полный воздуха - ты готов к любому приключению, которое может принести день!&#x27; Олли закружился в счастливом кружке, чувствуя себя уютно и уверенно в своей красивой, ухоженной шубке.</p>
             </div>
         </div>
     </section>
@@ -719,7 +800,7 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
             <img src="assets/images/first-dive-attempt.jpg" 
                  alt="Ollie trying to dive underwater but popping back up, looking surprised" 
@@ -1041,26 +1122,72 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
-            <img src="assets/images/meeting-marina.jpg" 
-                 alt="Young female otter Marina meeting Ollie for the first time, both looking happy" 
-                 data-alt-en="Young female otter Marina meeting Ollie for the first time, both looking happy"
-                 data-alt-es="Joven nutria Marina conociendo a Ollie por primera vez, ambos felices"
-                 data-alt-ru="Молодая выдра Марина встречает Олли впервые, оба выглядят счастливыми">
+            <img src="assets/images/marina-first-glimpse.jpg" 
+                 alt="Ollie spotting Marina from a distance, both otters in separate areas of the kelp forest" 
+                 data-alt-en="Ollie spotting Marina from a distance, both otters in separate areas of the kelp forest"
+                 data-alt-es="Ollie viendo a Marina desde la distancia, ambas nutrias en áreas separadas del bosque de algas"
+                 data-alt-ru="Олли замечает Марину издалека, обе выдры в разных частях леса ламинарии">
         </div>
         <div class="text-content">
-            <h2 data-lang="en" class="active">A New Friend</h2>
-            <h2 data-lang="es">Una Nueva Amiga</h2>
-            <h2 data-lang="ru">Новая подруга</h2>
+            <h2 data-lang="en" class="active">A Stranger in the Distance</h2>
+            <h2 data-lang="es">Una Extraña en la Distancia</h2>
+            <h2 data-lang="ru">Незнакомка вдали</h2>
             <div data-lang="en" class="active">
-                <p>While exploring, Ollie met Marina, a young female otter from the southern bay. She had bright eyes and a playful spirit. &#x27;Want to practice diving together?&#x27; she asked with a smile. They spent the day diving for sea stars and racing through the kelp. Ollie had never had so much fun with someone his own age!</p>
+                <p>While exploring beyond his usual kelp forest home, Ollie spotted something unusual - another young otter floating gracefully near a distant reef. She had beautiful sleek fur that gleamed in the filtered sunlight, and she moved through the water with amazing skill. &#x27;Who could that be?&#x27; Ollie wondered, his curiosity growing as he watched her dive and surface with perfect technique.</p>
             </div>
             <div data-lang="es">
-                <p>Mientras exploraba, Ollie conoció a Marina, una joven nutria hembra de la bahía sur. Tenía ojos brillantes y un espíritu juguetón. &#x27;¿Quieres practicar buceo juntos?&#x27; preguntó con una sonrisa. Pasaron el día buceando por estrellas de mar y corriendo por las algas. ¡Ollie nunca se había divertido tanto con alguien de su edad!</p>
+                <p>Mientras exploraba más allá de su hogar habitual en el bosque de algas, Ollie vio algo inusual - otra nutria joven flotando con gracia cerca de un arrecife distante. Tenía hermoso pelaje lustroso que brillaba con la luz solar filtrada, y se movía por el agua con increíble habilidad. &#x27;¿Quién podría ser?&#x27; se preguntó Ollie, su curiosidad creciendo mientras la observaba bucear y salir a la superficie con técnica perfecta.</p>
             </div>
             <div data-lang="ru">
-                <p>Исследуя окрестности, Олли встретил Марину, молодую самку выдры из южного залива. У неё были яркие глаза и игривый дух. &#x27;Хочешь потренироваться нырять вместе?&#x27; - спросила она с улыбкой. Они провели день, ныряя за морскими звёздами и гоняясь через ламинарию. Олли никогда не было так весело с кем-то своего возраста!</p>
+                <p>Исследуя территорию за пределами своего обычного дома в лесу ламинарии, Олли заметил что-то необычное - другую молодую выдру, грациозно плавающую около далёкого рифа. У неё был красивый гладкий мех, который блестел в фильтрованном солнечном свете, и она двигалась по воде с удивительным мастерством. &#x27;Кто это может быть?&#x27; - задался вопросом Олли, его любопытство росло, пока он наблюдал, как она ныряет и всплывает с совершенной техникой.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <img src="assets/images/marina-introduction.jpg" 
+                 alt="Ollie and Marina meeting face to face, both looking excited and friendly" 
+                 data-alt-en="Ollie and Marina meeting face to face, both looking excited and friendly"
+                 data-alt-es="Ollie y Marina encontrándose cara a cara, ambos luciendo emocionados y amigables"
+                 data-alt-ru="Олли и Марина встречаются лицом к лицу, оба выглядят взволнованными и дружелюбными">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">A New Friend Appears</h2>
+            <h2 data-lang="es">Aparece una Nueva Amiga</h2>
+            <h2 data-lang="ru">Появляется новая подруга</h2>
+            <div data-lang="en" class="active">
+                <p>Gathering his courage, Ollie swam closer to the mysterious otter. &#x27;Hello!&#x27; he called out shyly. The young female turned with bright, friendly eyes and a warm smile. &#x27;Hi there! I&#x27;m Marina from the southern bay,&#x27; she replied cheerfully. &#x27;I&#x27;ve never seen this part of the kelp forest before - it&#x27;s absolutely beautiful!&#x27; Ollie felt his nervousness melt away as Marina&#x27;s playful spirit shined through.</p>
+            </div>
+            <div data-lang="es">
+                <p>Armándose de valor, Ollie nadó más cerca de la nutria misteriosa. &#x27;¡Hola!&#x27; gritó tímidamente. La joven hembra se volteó con ojos brillantes y amigables y una sonrisa cálida. &#x27;¡Hola! Soy Marina de la bahía sur,&#x27; respondió alegremente. &#x27;¡Nunca había visto esta parte del bosque de algas antes - es absolutamente hermosa!&#x27; Ollie sintió que su nerviosismo se desvanecía mientras el espíritu juguetón de Marina brillaba.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Набравшись храбрости, Олли подплыл ближе к загадочной выдре. &#x27;Привет!&#x27; - застенчиво позвал он. Молодая самка обернулась с яркими, дружелюбными глазами и теплой улыбкой. &#x27;Привет! Я Марина из южного залива,&#x27; - весело ответила она. &#x27;Я никогда не видела эту часть леса ламинарии раньше - она совершенно прекрасна!&#x27; Олли почувствовал, как его нервозность исчезает, когда игривый дух Марины засиял.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <img src="assets/images/marina-playing-together.jpg" 
+                 alt="Ollie and Marina racing joyfully through the kelp forest, playing together" 
+                 data-alt-en="Ollie and Marina racing joyfully through the kelp forest, playing together"
+                 data-alt-es="Ollie y Marina corriendo alegremente por el bosque de algas, jugando juntos"
+                 data-alt-ru="Олли и Марина радостно гоняются по лесу ламинарии, играя вместе">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Racing Through the Kelp</h2>
+            <h2 data-lang="es">Corriendo por las Algas</h2>
+            <h2 data-lang="ru">Гонки через ламинарию</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Want to practice diving together?&#x27; Marina asked with sparkling eyes. &#x27;I know some fun games!&#x27; They spent the most wonderful day diving for colorful sea stars, playing hide-and-seek among the kelp fronds, and racing through underwater tunnels. Marina taught Ollie new swimming tricks, and he showed her the best spots for finding tasty sea urchins. Ollie had never had so much fun with someone his own age!</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;¿Quieres practicar buceo juntos?&#x27; preguntó Marina con ojos centelleantes. &#x27;¡Conozco algunos juegos divertidos!&#x27; Pasaron el día más maravilloso buceando por coloridas estrellas de mar, jugando al escondite entre las frondas de algas, y corriendo por túneles submarinos. Marina le enseñó nuevos trucos de natación a Ollie, y él le mostró los mejores lugares para encontrar erizos de mar sabrosos. ¡Ollie nunca se había divertido tanto con alguien de su edad!</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Хочешь потренироваться нырять вместе?&#x27; - спросила Марина с искрящимися глазами. &#x27;Я знаю несколько весёлых игр!&#x27; Они провели самый чудесный день, ныряя за разноцветными морскими звёздами, играя в прятки среди водорослей и гоняясь по подводным туннелям. Марина научила Олли новым плавательным трюкам, а он показал ей лучшие места для поиска вкусных морских ежей. Олли никогда не было так весело с кем-то своего возраста!</p>
             </div>
         </div>
     </section>
@@ -1133,26 +1260,72 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
-            <img src="assets/images/teaching-ruby.jpg" 
-                 alt="Ollie patiently teaching Ruby diving techniques" 
-                 data-alt-en="Ollie patiently teaching Ruby diving techniques"
-                 data-alt-es="Ollie enseñando pacientemente técnicas de buceo a Ruby"
-                 data-alt-ru="Олли терпеливо учит Руби технике ныряния">
+            <img src="assets/images/ruby-teaching-basics.jpg" 
+                 alt="Ollie demonstrating proper diving form to his little sister Ruby" 
+                 data-alt-en="Ollie demonstrating proper diving form to his little sister Ruby"
+                 data-alt-es="Ollie demostrando la forma correcta de bucear a su hermanita Ruby"
+                 data-alt-ru="Олли демонстрирует правильную технику ныряния своей сестрёнке Руби">
         </div>
         <div class="text-content">
             <h2 data-lang="en" class="active">Big Brother Teacher</h2>
             <h2 data-lang="es">Hermano Mayor Maestro</h2>
             <h2 data-lang="ru">Старший брат учитель</h2>
             <div data-lang="en" class="active">
-                <p>Ruby was ready to learn diving, and Ollie was her teacher! &#x27;Remember what Mama taught me,&#x27; he said patiently. &#x27;Take a deep breath, tuck your chin, and push with your tail.&#x27; Ruby&#x27;s first attempts were clumsy, but Ollie encouraged her. &#x27;You&#x27;re doing great! I was worse when I started!&#x27; Being a teacher made Ollie feel grown up and responsible.</p>
+                <p>Ruby was ready to learn diving, and Ollie was excited to be her teacher! &#x27;Remember what Mama taught me,&#x27; he said patiently, positioning himself next to his little sister. &#x27;First, take a deep breath and hold it tight. Then tuck your chin and push down with your tail.&#x27; Ollie demonstrated the perfect diving technique, disappearing beneath the surface gracefully. Being a teacher made Ollie feel grown up and responsible.</p>
             </div>
             <div data-lang="es">
-                <p>¡Ruby estaba lista para aprender a bucear, y Ollie era su maestro! &#x27;Recuerda lo que Mamá me enseñó,&#x27; dijo pacientemente. &#x27;Toma una respiración profunda, mete la barbilla y empuja con tu cola.&#x27; Los primeros intentos de Ruby fueron torpes, pero Ollie la animó. &#x27;¡Lo estás haciendo genial! ¡Yo era peor cuando empecé!&#x27; Ser maestro hizo que Ollie se sintiera adulto y responsable.</p>
+                <p>¡Ruby estaba lista para aprender a bucear, y Ollie estaba emocionado de ser su maestro! &#x27;Recuerda lo que Mamá me enseñó,&#x27; dijo pacientemente, posicionándose junto a su hermanita. &#x27;Primero, toma una respiración profunda y mantenla. Luego mete la barbilla y empuja hacia abajo con tu cola.&#x27; Ollie demostró la técnica de buceo perfecta, desapareciendo bajo la superficie con gracia. Ser maestro hizo que Ollie se sintiera adulto y responsable.</p>
             </div>
             <div data-lang="ru">
-                <p>Руби была готова учиться нырять, и Олли был её учителем! &#x27;Помни, чему Мама учила меня,&#x27; - терпеливо сказал он. &#x27;Глубоко вдохни, прижми подбородок и толкайся хвостом.&#x27; Первые попытки Руби были неуклюжими, но Олли подбадривал её. &#x27;У тебя отлично получается! Я был хуже, когда начинал!&#x27; Быть учителем заставляло Олли чувствовать себя взрослым и ответственным.</p>
+                <p>Руби была готова учиться нырять, и Олли был рад быть её учителем! &#x27;Помни, чему Мама учила меня,&#x27; - терпеливо сказал он, расположившись рядом со своей младшей сестрёнкой. &#x27;Сначала глубоко вдохни и задержи дыхание. Затем прижми подбородок и толкайся хвостом вниз.&#x27; Олли продемонстрировал идеальную технику ныряния, грациозно исчезнув под поверхностью. Быть учителем заставляло Олли чувствовать себя взрослым и ответственным.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <img src="assets/images/ruby-practicing.jpg" 
+                 alt="Ruby struggling with her first diving attempts while Ollie encourages her" 
+                 data-alt-en="Ruby struggling with her first diving attempts while Ollie encourages her"
+                 data-alt-es="Ruby luchando con sus primeros intentos de buceo mientras Ollie la anima"
+                 data-alt-ru="Руби борется с первыми попытками ныряния, пока Олли её подбадривает">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Ruby&#x27;s First Tries</h2>
+            <h2 data-lang="es">Los Primeros Intentos de Ruby</h2>
+            <h2 data-lang="ru">Первые попытки Руби</h2>
+            <div data-lang="en" class="active">
+                <p>Ruby took a big breath and attempted her first dive, but instead of going down smoothly, she flopped sideways and came up sputtering! &#x27;That&#x27;s okay!&#x27; Ollie encouraged warmly. &#x27;I was much worse when I started - I once got so confused I tried to dive upward!&#x27; Ruby giggled and tried again, this time managing to get partway down before bobbing back up like a cork. &#x27;Almost there!&#x27; Ollie cheered.</p>
+            </div>
+            <div data-lang="es">
+                <p>Ruby tomó una gran respiración e intentó su primer buceo, ¡pero en lugar de bajar suavemente, se volcó hacia un lado y salió farfullando! &#x27;¡Está bien!&#x27; animó Ollie cálidamente. &#x27;¡Yo era mucho peor cuando empecé - una vez me confundí tanto que traté de bucear hacia arriba!&#x27; Ruby se rió y lo intentó de nuevo, esta vez logrando bajar a medias antes de volver a subir como un corcho. &#x27;¡Casi lo logras!&#x27; gritó Ollie.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Руби глубоко вдохнула и попыталась совершить первое погружение, но вместо плавного спуска вниз, она перевернулась на бок и всплыла, фыркая! &#x27;Ничего страшного!&#x27; - тепло подбодрил Олли. &#x27;Я был намного хуже, когда начинал - однажды я так запутался, что попытался нырнуть вверх!&#x27; Руби хихикнула и попробовала снова, на этот раз ей удалось погрузиться наполовину, прежде чем снова всплыть как пробка. &#x27;Почти получилось!&#x27; - ободрил Олли.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <img src="assets/images/ruby-success.jpg" 
+                 alt="Ruby diving perfectly while Ollie cheers and Mama watches proudly" 
+                 data-alt-en="Ruby diving perfectly while Ollie cheers and Mama watches proudly"
+                 data-alt-es="Ruby buceando perfectamente mientras Ollie la celebra y Mamá observa orgullosa"
+                 data-alt-ru="Руби ныряет идеально, пока Олли радуется, а Мама гордо наблюдает">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Perfect Dive!</h2>
+            <h2 data-lang="es">¡Buceo Perfecto!</h2>
+            <h2 data-lang="ru">Идеальное погружение!</h2>
+            <div data-lang="en" class="active">
+                <p>On her fifth try, something magical happened - Ruby took a deep breath, tucked perfectly, and dove straight down like a natural! She stayed underwater for several seconds before popping up with the biggest smile ever. &#x27;I did it! I really did it!&#x27; she squealed with joy. Ollie was so proud he did a happy somersault. &#x27;You&#x27;re the best student ever, Ruby!&#x27; Mama watched from nearby, beaming with pride at both her children.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡En su quinto intento, algo mágico pasó - Ruby tomó una respiración profunda, se posicionó perfectamente, y se zambulló directamente como una natural! Se mantuvo bajo el agua por varios segundos antes de salir con la sonrisa más grande. &#x27;¡Lo hice! ¡Realmente lo hice!&#x27; chilló de alegría. Ollie estaba tan orgulloso que hizo una voltereta feliz. &#x27;¡Eres la mejor estudiante, Ruby!&#x27; Mamá observaba desde cerca, radiante de orgullo por ambos hijos.</p>
+            </div>
+            <div data-lang="ru">
+                <p>На пятой попытке произошло что-то волшебное - Руби глубоко вдохнула, идеально сгруппировалась и нырнула прямо вниз как настоящая! Она оставалась под водой несколько секунд, прежде чем всплыть с самой большой улыбкой. &#x27;Я сделала это! Я действительно сделала это!&#x27; - визжала она от радости. Олли был так горд, что сделал радостное сальто. &#x27;Ты лучшая ученица, Руби!&#x27; Мама наблюдала поблизости, сияя от гордости за обоих детей.</p>
             </div>
         </div>
     </section>
@@ -1606,13 +1779,13 @@
             <h2 data-lang="es">La Promesa de la Dra. Océano</h2>
             <h2 data-lang="ru">Обещание доктора Океан</h2>
             <div data-lang="en" class="active">
-                <p>Dr. Ocean, the marine biologist who&#x27;d studied them for years, made a promise: &#x27;I&#x27;ll spend my life making sure sea otters thrive. You saved the kelp forests, now we&#x27;ll save you.&#x27; She showed them plans for more protected areas, otter crossing bridges over roads, and pollution cleanup projects. Hope floated on every wave!</p>
+                <p>Dr. Ocean, the marine biologist who&#x27;d studied them for years, made a promise: &#x27;I&#x27;ll spend my life making sure sea otters thrive. You saved the kelp forests, now we&#x27;ll celebrate your success!&#x27; She showed them plans for expanding natural habitats, beautiful otter crossing bridges, and marine sanctuary programs. Joy and hope floated on every wave!</p>
             </div>
             <div data-lang="es">
-                <p>La Dra. Océano, la bióloga marina que los había estudiado durante años, hizo una promesa: &#x27;Pasaré mi vida asegurándome de que las nutrias marinas prosperen. Ustedes salvaron los bosques de algas, ahora los salvaremos a ustedes.&#x27; Les mostró planes para más áreas protegidas, puentes de cruce para nutrias sobre carreteras, y proyectos de limpieza de contaminación. ¡La esperanza flotaba en cada ola!</p>
+                <p>La Dra. Océano, la bióloga marina que los había estudiado durante años, hizo una promesa: &#x27;Pasaré mi vida asegurándome de que las nutrias marinas prosperen. Ustedes salvaron los bosques de algas, ¡ahora celebraremos su éxito!&#x27; Les mostró planes para expandir hábitats naturales, hermosos puentes para nutrias y programas de santuarios marinos. ¡La alegría y la esperanza flotaban en cada ola!</p>
             </div>
             <div data-lang="ru">
-                <p>Доктор Океан, морской биолог, изучавший их годами, дала обещание: &#x27;Я проведу свою жизнь, обеспечивая процветание морских выдр. Вы спасли леса ламинарии, теперь мы спасём вас.&#x27; Она показала им планы для большего количества охраняемых территорий, мостов для выдр над дорогами и проектов по очистке от загрязнения. Надежда плавала на каждой волне!</p>
+                <p>Доктор Океан, морской биолог, изучавший их годами, дала обещание: &#x27;Я проведу свою жизнь, обеспечивая процветание морских выдр. Вы спасли леса ламинарии, теперь мы отпразднуем ваш успех!&#x27; Она показала им планы расширения естественных местообитаний, красивых мостов для выдр и программ морских заповедников. Радость и надежда плавали на каждой волне!</p>
             </div>
         </div>
     </section>
@@ -1662,103 +1835,56 @@
             </div>
         </div>
     </section>
-
-    <!-- Viewer Details Section -->
-    <section class="viewer-details">
-        <h2 data-lang="en" class="active">Did You Notice?</h2>
-        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
-        <h2 data-lang="ru">Вы Заметили?</h2>
-        <div class="details-grid">
-            <div class="detail-card">
-                <img src="assets/images/detail-tool-use.jpg" alt="Tool Use Intelligence">
-                <div class="detail-content">
-                    <h3 data-lang="en" class="active">Tool Use Intelligence</h3>
-                    <h3 data-lang="es">Inteligencia en Uso de Herramientas</h3>
-                    <h3 data-lang="ru">Интеллект использования инструментов</h3>
-                    <p data-lang="en" class="active">Sea otters are one of the few animals that use tools! Each otter has a favorite rock they keep in a pouch under their arm. Some otters have been observed using the same rock for over 8 years!</p>
-                    <p data-lang="es">¡Las nutrias marinas son uno de los pocos animales que usan herramientas! Cada nutria tiene una roca favorita que guarda en una bolsa bajo su brazo. ¡Se ha observado que algunas nutrias usan la misma roca durante más de 8 años!</p>
-                    <p data-lang="ru">Морские выдры - одни из немногих животных, использующих инструменты! У каждой выдры есть любимый камень, который она хранит в кармане под мышкой. Наблюдали, как некоторые выдры используют один и тот же камень более 8 лет!</p>
-                </div>
-            </div>
-            <div class="detail-card">
-                <img src="assets/images/detail-keystone.jpg" alt="Keystone Species">
-                <div class="detail-content">
-                    <h3 data-lang="en" class="active">Keystone Species</h3>
-                    <h3 data-lang="es">Especie Clave</h3>
-                    <h3 data-lang="ru">Ключевой вид</h3>
-                    <p data-lang="en" class="active">Sea otters are a keystone species - without them, entire ecosystems collapse. By eating sea urchins, they prevent the destruction of kelp forests, which provide homes for thousands of species and help fight climate change.</p>
-                    <p data-lang="es">Las nutrias marinas son una especie clave - sin ellas, ecosistemas enteros colapsan. Al comer erizos de mar, previenen la destrucción de los bosques de algas, que proporcionan hogares para miles de especies y ayudan a combatir el cambio climático.</p>
-                    <p data-lang="ru">Морские выдры - ключевой вид - без них рушатся целые экосистемы. Поедая морских ежей, они предотвращают уничтожение лесов ламинарии, которые обеспечивают дома для тысяч видов и помогают бороться с изменением климата.</p>
-                </div>
-            </div>
-            <div class="detail-card">
-                <img src="assets/images/detail-no-blubber.jpg" alt="No Blubber, Just Fur">
-                <div class="detail-content">
-                    <h3 data-lang="en" class="active">No Blubber, Just Fur</h3>
-                    <h3 data-lang="es">Sin Grasa, Solo Pelaje</h3>
-                    <h3 data-lang="ru">Без жира, только мех</h3>
-                    <p data-lang="en" class="active">Unlike other marine mammals, sea otters don&#x27;t have blubber for insulation. They rely entirely on their incredibly dense fur and high metabolism to stay warm. They must groom constantly to maintain their fur&#x27;s insulating properties.</p>
-                    <p data-lang="es">A diferencia de otros mamíferos marinos, las nutrias marinas no tienen grasa para aislamiento. Dependen completamente de su pelaje increíblemente denso y alto metabolismo para mantenerse calientes. Deben acicalarse constantemente para mantener las propiedades aislantes de su pelaje.</p>
-                    <p data-lang="ru">В отличие от других морских млекопитающих, у морских выдр нет жира для изоляции. Они полностью полагаются на свой невероятно густой мех и высокий метаболизм, чтобы согреться. Они должны постоянно ухаживать за собой, чтобы поддерживать изолирующие свойства меха.</p>
-                </div>
-            </div>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/" 
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru="">
         </div>
-    </section>
-
-    <!-- Fun Facts Section -->
-    <section class="fun-facts-section">
-        <div class="fun-facts-container">
+        <div class="text-content">
             <h2 data-lang="en" class="active">Amazing Otter Facts!</h2>
             <h2 data-lang="es">¡Datos Asombrosos de las Nutrias!</h2>
             <h2 data-lang="ru">Удивительные факты о выдрах!</h2>
-            <div class="facts-grid">
-                <div class="fact-card">
-                    <img src="assets/images/fun-fact-fur.jpg" alt="Super Dense Fur" class="fact-card-image">
-                    <div class="fact-card-content">
-                        <h3 data-lang="en" class="active">Super Dense Fur</h3>
-                        <h3 data-lang="es">Pelaje Súper Denso</h3>
-                        <h3 data-lang="ru">Супер густой мех</h3>
-                        <p data-lang="en" class="active">Sea otters have the densest fur of any animal - up to 1 million hairs per square inch! That&#x27;s more hair in one tiny area than most animals have on their entire body!</p>
-                        <p data-lang="es">¡Las nutrias marinas tienen el pelaje más denso de cualquier animal - hasta 1 millón de pelos por pulgada cuadrada! ¡Eso es más pelo en un área pequeña que el que la mayoría de los animales tienen en todo su cuerpo!</p>
-                        <p data-lang="ru">У морских выдр самый густой мех среди всех животных - до 1 миллиона волосков на квадратный дюйм! Это больше волос на одном квадратном дюйме, чем у человека на всей голове!</p>
-                    </div>
-                </div>
-                <div class="fact-card">
-                    <img src="assets/images/fun-fact-eating.jpg" alt="Eating Machines" class="fact-card-image">
-                    <div class="fact-card-content">
-                        <h3 data-lang="en" class="active">Eating Machines</h3>
-                        <h3 data-lang="es">Máquinas de Comer</h3>
-                        <h3 data-lang="ru">Машины для еды</h3>
-                        <p data-lang="en" class="active">Sea otters eat 25% of their body weight every day! For a 60-pound otter, that&#x27;s 15 pounds of food daily - imagine eating that much seafood every single day!</p>
-                        <p data-lang="es">¡Las nutrias marinas comen el 25% de su peso corporal cada día! Para una nutria de 60 libras, eso es 15 libras de comida diaria - ¡imaginen comer tanto marisco todos los días!</p>
-                        <p data-lang="ru">Морские выдры съедают 25% своего веса каждый день! Для выдры весом 60 фунтов это 15 фунтов еды ежедневно - как если бы человек съедал 40 гамбургеров!</p>
-                    </div>
-                </div>
-                <div class="fact-card">
-                    <img src="assets/images/fun-fact-holding-hands.jpg" alt="Holding Hands" class="fact-card-image">
-                    <div class="fact-card-content">
-                        <h3 data-lang="en" class="active">Holding Hands</h3>
-                        <h3 data-lang="es">Tomados de las Manos</h3>
-                        <h3 data-lang="ru">Держась за лапы</h3>
-                        <p data-lang="en" class="active">Otters hold hands while sleeping so they don&#x27;t drift apart! These groups are called &#x27;rafts&#x27; and can include over 100 otters floating together!</p>
-                        <p data-lang="es">¡Las nutrias se toman de las manos mientras duermen para no separarse! Estos grupos se llaman &#x27;balsas&#x27; y pueden incluir más de 100 nutrias flotando juntas!</p>
-                        <p data-lang="ru">Выдры держатся за лапы во время сна, чтобы не расплыться! Эти группы называются &#x27;плотами&#x27; и могут включать более 100 выдр, плавающих вместе!</p>
-                    </div>
-                </div>
-                <div class="fact-card">
-                    <img src="assets/images/fun-fact-purple-teeth.jpg" alt="Purple Teeth" class="fact-card-image">
-                    <div class="fact-card-content">
-                        <h3 data-lang="en" class="active">Purple Teeth</h3>
-                        <h3 data-lang="es">Dientes Púrpuras</h3>
-                        <h3 data-lang="ru">Пурпурные зубы</h3>
-                        <p data-lang="en" class="active">Their teeth can turn purple from eating so many purple sea urchins! It&#x27;s a sign of a healthy otter diet and doesn&#x27;t hurt them at all.</p>
-                        <p data-lang="es">¡Sus dientes pueden volverse púrpuras por comer tantos erizos de mar púrpuras! Es una señal de una dieta saludable de nutria y no les hace daño en absoluto.</p>
-                        <p data-lang="ru">Их зубы могут стать пурпурными от поедания множества пурпурных морских ежей! Это признак здорового питания выдры и совсем не вредит им.</p>
-                    </div>
-                </div>
+            <div data-lang="en" class="active">
+                <p>Did you know that sea otters have some of the most amazing abilities in the animal kingdom? Let&#x27;s discover some incredible facts about these playful ocean engineers that will amaze you!</p>
+            </div>
+            <div data-lang="es">
+                <p>¿Sabías que las nutrias marinas tienen algunas de las habilidades más increíbles del reino animal? ¡Descubramos algunos hechos increíbles sobre estos ingenieros oceánicos juguetones que te asombrarán!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Знали ли вы, что у морских выдр есть одни из самых удивительных способностей в животном царстве? Давайте откроем некоторые невероятные факты об этих игривых океанских инженерах, которые вас поразят!</p>
             </div>
         </div>
     </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/" 
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru="">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Amazing Otter Details!</h2>
+            <h2 data-lang="es">¡Detalles Asombrosos de las Nutrias!</h2>
+            <h2 data-lang="ru">Удивительные детали о выдрах!</h2>
+            <div data-lang="en" class="active">
+                <p>Let&#x27;s take a closer look at some of the most fascinating aspects of sea otter behavior and biology. These incredible creatures have evolved amazing adaptations to thrive in their ocean home!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Echemos un vistazo más de cerca a algunos de los aspectos más fascinantes del comportamiento y la biología de las nutrias marinas! ¡Estas criaturas increíbles han desarrollado adaptaciones sorprendentes para prosperar en su hogar oceánico!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Давайте внимательнее посмотрим на некоторые из самых увлекательных аспектов поведения и биологии морских выдр. Эти невероятные существа развили удивительные приспособления для процветания в своём океанском доме!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+
+    <!-- Fun Facts Section -->
 
     <!-- Footer -->
     <footer class="footer">

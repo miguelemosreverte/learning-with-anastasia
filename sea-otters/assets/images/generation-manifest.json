@@ -67,12 +67,32 @@
       "needsTranslations": false
     },
     {
-      "filename": "grooming-time.jpg",
+      "filename": "grooming-preparation.jpg",
       "type": "content",
       "alt": {
-        "en": "Ollie and Mama Otter grooming their fur, showing detailed grooming behavior",
-        "es": "Ollie y Mamá Nutria acicalando su pelaje, mostrando comportamiento detallado",
-        "ru": "Олли и Мама Выдра ухаживают за своим мехом"
+        "en": "Mama Otter and Ollie floating together, preparing to start their grooming routine",
+        "es": "Mamá Nutria y Ollie flotando juntos, preparándose para comenzar su rutina de acicalamiento",
+        "ru": "Мама Выдра и Олли плавают вместе, готовясь начать свою процедуру ухода за мехом"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "grooming-deep-clean.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Mama Otter showing Ollie detailed grooming techniques, blowing air into fur",
+        "es": "Mamá Nutria mostrando a Ollie técnicas detalladas de acicalamiento, soplando aire en el pelaje",
+        "ru": "Мама Выдра показывает Олли детальные техники ухода за мехом, вдувая воздух в мех"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "grooming-complete.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie with beautifully groomed, fluffy fur looking happy and ready for the day",
+        "es": "Ollie con pelaje hermosamente acicalado y esponjoso luciendo feliz y listo para el día",
+        "ru": "Олли с красиво ухоженным, пушистым мехом выглядит счастливым и готовым к дню"
       },
       "needsTranslations": false
     },
@@ -277,12 +297,32 @@
       "needsTranslations": false
     },
     {
-      "filename": "meeting-marina.jpg",
+      "filename": "marina-first-glimpse.jpg",
       "type": "content",
       "alt": {
-        "en": "Young female otter Marina meeting Ollie for the first time, both looking happy",
-        "es": "Joven nutria Marina conociendo a Ollie por primera vez, ambos felices",
-        "ru": "Молодая выдра Марина встречает Олли впервые, оба выглядят счастливыми"
+        "en": "Ollie spotting Marina from a distance, both otters in separate areas of the kelp forest",
+        "es": "Ollie viendo a Marina desde la distancia, ambas nutrias en áreas separadas del bosque de algas",
+        "ru": "Олли замечает Марину издалека, обе выдры в разных частях леса ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "marina-introduction.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie and Marina meeting face to face, both looking excited and friendly",
+        "es": "Ollie y Marina encontrándose cara a cara, ambos luciendo emocionados y amigables",
+        "ru": "Олли и Марина встречаются лицом к лицу, оба выглядят взволнованными и дружелюбными"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "marina-playing-together.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie and Marina racing joyfully through the kelp forest, playing together",
+        "es": "Ollie y Marina corriendo alegremente por el bosque de algas, jugando juntos",
+        "ru": "Олли и Марина радостно гоняются по лесу ламинарии, играя вместе"
       },
       "needsTranslations": false
     },
@@ -317,12 +357,32 @@
       "needsTranslations": false
     },
     {
-      "filename": "teaching-ruby.jpg",
+      "filename": "ruby-teaching-basics.jpg",
       "type": "content",
       "alt": {
-        "en": "Ollie patiently teaching Ruby diving techniques",
-        "es": "Ollie enseñando pacientemente técnicas de buceo a Ruby",
-        "ru": "Олли терпеливо учит Руби технике ныряния"
+        "en": "Ollie demonstrating proper diving form to his little sister Ruby",
+        "es": "Ollie demostrando la forma correcta de bucear a su hermanita Ruby",
+        "ru": "Олли демонстрирует правильную технику ныряния своей сестрёнке Руби"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "ruby-practicing.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ruby struggling with her first diving attempts while Ollie encourages her",
+        "es": "Ruby luchando con sus primeros intentos de buceo mientras Ollie la anima",
+        "ru": "Руби борется с первыми попытками ныряния, пока Олли её подбадривает"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "ruby-success.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ruby diving perfectly while Ollie cheers and Mama watches proudly",
+        "es": "Ruby buceando perfectamente mientras Ollie la celebra y Mamá observa orgullosa",
+        "ru": "Руби ныряет идеально, пока Олли радуется, а Мама гордо наблюдает"
       },
       "needsTranslations": false
     },

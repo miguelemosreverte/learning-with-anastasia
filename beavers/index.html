@@ -150,6 +150,36 @@
             overflow: hidden;
         }
         
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
         .content-section:nth-child(even) {
             direction: rtl;
         }
@@ -348,6 +378,11 @@
 
             .content-section {
                 grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
             }
 
             .content-section:nth-child(even) {
@@ -788,7 +823,7 @@
             </div>
         </div>
     </section>
-    <section class="content-section">
+    <section class="content-section action-sequence">
         <div class="image-container">
             <img src="assets/images/family-winter-prep.jpg" 
                  alt="" 
