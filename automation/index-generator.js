@@ -216,11 +216,12 @@ class IndexGenerator {
         }
 
         .language-selector {
-            position: absolute;
-            top: 30px;
-            right: 50px;
+            position: fixed;
+            top: 20px;
+            right: 20px;
             display: flex;
             gap: 10px;
+            z-index: 1000;
         }
 
         .language-selector button {
