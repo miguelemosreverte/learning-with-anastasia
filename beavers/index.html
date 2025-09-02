@@ -204,9 +204,11 @@
         }
 
         .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .fact-card {
@@ -224,8 +226,8 @@
 
         .fact-card-image {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
+            display: block;
         }
 
         .fact-card-content {
@@ -267,9 +269,11 @@
         }
 
         .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .detail-card {
@@ -286,8 +290,8 @@
 
         .detail-card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
+            display: block;
         }
 
         .detail-content {
@@ -864,14 +868,14 @@
                 </div>
             </div>
             <div class="detail-card">
-                <img src="assets/images/detail-orange-teeth.jpg" alt="Orange Teeth">
+                <img src="assets/images/detail-orange-teeth.jpg" alt="Those Orange Teeth...">
                 <div class="detail-content">
-                    <h3 data-lang="en" class="active">Orange Teeth</h3>
-                    <h3 data-lang="es">Dientes Naranjas</h3>
-                    <h3 data-lang="ru">Оранжевые Зубы</h3>
-                    <p data-lang="en" class="active">Beavers have orange teeth! The orange color comes from iron in their tooth enamel, which makes their teeth incredibly strong - perfect for gnawing through wood.</p>
-                    <p data-lang="es">¡Los castores tienen dientes naranjas! El color naranja proviene del hierro en el esmalte dental, lo que hace que sus dientes sean increíblemente fuertes - perfectos para roer madera.</p>
-                    <p data-lang="ru">У бобров оранжевые зубы! Оранжевый цвет происходит от железа в зубной эмали, что делает их зубы невероятно крепкими - идеальными для прогрызания древесины.</p>
+                    <h3 data-lang="en" class="active">Those Orange Teeth...</h3>
+                    <h3 data-lang="es">Esos Dientes Naranjas...</h3>
+                    <h3 data-lang="ru">Эти Оранжевые Зубы...</h3>
+                    <p data-lang="en" class="active">Did you see Baby Beaver&#x27;s bright orange teeth? That unusual color isn&#x27;t from eating carrots - it&#x27;s nature&#x27;s special design! The orange comes from a special coating that makes them super strong.</p>
+                    <p data-lang="es">¿Viste los brillantes dientes naranjas de Bebé Castor? Ese color inusual no es por comer zanahorias - ¡es un diseño especial de la naturaleza! El naranja viene de un recubrimiento especial que los hace súper fuertes.</p>
+                    <p data-lang="ru">Видели яркие оранжевые зубы Малыша Бобра? Этот необычный цвет не от моркови - это особый дизайн природы! Оранжевый цвет от специального покрытия, которое делает их супер крепкими.</p>
                 </div>
             </div>
             <div class="detail-card">
@@ -896,15 +900,15 @@
             <h2 data-lang="ru">Удивительные факты о бобрах!</h2>
             <div class="facts-grid">
                 <div class="fact-card">
-                    <img src="assets/images/fun-fact-teeth.jpg" alt="Iron Teeth" class="fact-card-image">
+                    <img src="assets/images/fun-fact-teeth.jpg" alt="...Because of Iron!" class="fact-card-image">
                     <div class="fact-card-content">
                         <span class="fact-icon">🦷</span>
-                        <h3 data-lang="en" class="active">Iron Teeth</h3>
-                        <h3 data-lang="es">Dientes de Hierro</h3>
-                        <h3 data-lang="ru">Железные зубы</h3>
-                        <p data-lang="en" class="active">Beaver teeth never stop growing! They&#x27;re orange because they contain iron, making them stronger than most animal teeth.</p>
-                        <p data-lang="es">¡Los dientes de castor nunca dejan de crecer! Son naranjas porque contienen hierro, haciéndolos más fuertes que la mayoría de los dientes animales.</p>
-                        <p data-lang="ru">Зубы бобров никогда не перестают расти! Они оранжевые, потому что содержат железо, что делает их прочнее, чем зубы большинства животных.</p>
+                        <h3 data-lang="en" class="active">...Because of Iron!</h3>
+                        <h3 data-lang="es">...¡Por el Hierro!</h3>
+                        <h3 data-lang="ru">...Из-за Железа!</h3>
+                        <p data-lang="en" class="active">The secret behind those orange teeth? Iron! Beaver teeth contain actual iron in their enamel, making them harder than steel knives. They never stop growing and self-sharpen as they gnaw!</p>
+                        <p data-lang="es">¿El secreto detrás de esos dientes naranjas? ¡Hierro! Los dientes de castor contienen hierro real en su esmalte, haciéndolos más duros que cuchillos de acero. ¡Nunca dejan de crecer y se afilan solos al roer!</p>
+                        <p data-lang="ru">Секрет оранжевых зубов? Железо! Зубы бобров содержат настоящее железо в эмали, делая их твёрже стальных ножей. Они никогда не перестают расти и самозатачиваются при грызении!</p>
                     </div>
                 </div>
                 <div class="fact-card">

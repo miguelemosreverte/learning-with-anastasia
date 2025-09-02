@@ -379,13 +379,13 @@ funFacts:
   facts:
     - icon: "🦷"
       title:
-        en: "Iron Teeth"
-        es: "Dientes de Hierro"
-        ru: "Железные зубы"
+        en: "...Because of Iron!"
+        es: "...¡Por el Hierro!"
+        ru: "...Из-за Железа!"
       content:
-        en: "Beaver teeth never stop growing! They're orange because they contain iron, making them stronger than most animal teeth."
-        es: "¡Los dientes de castor nunca dejan de crecer! Son naranjas porque contienen hierro, haciéndolos más fuertes que la mayoría de los dientes animales."
-        ru: "Зубы бобров никогда не перестают расти! Они оранжевые, потому что содержат железо, что делает их прочнее, чем зубы большинства животных."
+        en: "The secret behind those orange teeth? Iron! Beaver teeth contain actual iron in their enamel, making them harder than steel knives. They never stop growing and self-sharpen as they gnaw!"
+        es: "¿El secreto detrás de esos dientes naranjas? ¡Hierro! Los dientes de castor contienen hierro real en su esmalte, haciéndolos más duros que cuchillos de acero. ¡Nunca dejan de crecer y se afilan solos al roer!"
+        ru: "Секрет оранжевых зубов? Железо! Зубы бобров содержат настоящее железо в эмали, делая их твёрже стальных ножей. Они никогда не перестают расти и самозатачиваются при грызении!"
       image: "fun-fact-teeth.jpg"
     
     - icon: "🏗️"
@@ -461,13 +461,13 @@ viewerDetails:
   image: "detail-underwater-entrance.jpg"
   
 - title:
-    en: "Orange Teeth"
-    es: "Dientes Naranjas"
-    ru: "Оранжевые Зубы"
+    en: "Those Orange Teeth..."
+    es: "Esos Dientes Naranjas..."
+    ru: "Эти Оранжевые Зубы..."
   description:
-    en: "Beavers have orange teeth! The orange color comes from iron in their tooth enamel, which makes their teeth incredibly strong - perfect for gnawing through wood."
-    es: "¡Los castores tienen dientes naranjas! El color naranja proviene del hierro en el esmalte dental, lo que hace que sus dientes sean increíblemente fuertes - perfectos para roer madera."
-    ru: "У бобров оранжевые зубы! Оранжевый цвет происходит от железа в зубной эмали, что делает их зубы невероятно крепкими - идеальными для прогрызания древесины."
+    en: "Did you see Baby Beaver's bright orange teeth? That unusual color isn't from eating carrots - it's nature's special design! The orange comes from a special coating that makes them super strong."
+    es: "¿Viste los brillantes dientes naranjas de Bebé Castor? Ese color inusual no es por comer zanahorias - ¡es un diseño especial de la naturaleza! El naranja viene de un recubrimiento especial que los hace súper fuertes."
+    ru: "Видели яркие оранжевые зубы Малыша Бобра? Этот необычный цвет не от моркови - это особый дизайн природы! Оранжевый цвет от специального покрытия, которое делает их супер крепкими."
   image: "detail-orange-teeth.jpg"
   
 - title:

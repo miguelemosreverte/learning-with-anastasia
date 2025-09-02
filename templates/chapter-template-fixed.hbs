@@ -204,9 +204,11 @@
         }
 
         .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .fact-card {
@@ -224,8 +226,8 @@
 
         .fact-card-image {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
+            display: block;
         }
 
         .fact-card-content {
@@ -267,9 +269,11 @@
         }
 
         .details-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .detail-card {
@@ -286,8 +290,8 @@
 
         .detail-card img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
+            display: block;
         }
 
         .detail-content {
