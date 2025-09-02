@@ -489,8 +489,51 @@ req.end();
             fs.mkdirSync(imageDir, { recursive: true });
         }
         
-        // Build dependency order
-        const sections = chapterData.sections || [];
+        // Build dependency order - include all sections, funFacts, and viewerDetails
+        let allSections = chapterData.sections || [];
+        
+        // Add fun facts as sections if they exist
+        if (chapterData.funFacts && chapterData.funFacts.facts) {
+            chapterData.funFacts.facts.forEach((fact, index) => {
+                if (fact.image) {
+                    allSections.push({
+                        id: `fun-fact-${index}`,
+                        title: fact.title,
+                        content: fact.content,
+                        image: fact.image,
+                        isFunFact: true
+                    });
+                }
+            });
+        }
+        
+        // Add viewer details as sections if they exist
+        if (chapterData.viewerDetails) {
+            chapterData.viewerDetails.forEach((detail, index) => {
+                if (detail.image) {
+                    allSections.push({
+                        id: `viewer-detail-${index}`,
+                        title: detail.title,
+                        description: detail.description,
+                        image: detail.image,
+                        isViewerDetail: true
+                    });
+                }
+            });
+        }
+        
+        // Add hero section if it exists
+        if (chapterData.hero && chapterData.hero.image) {
+            allSections.push({
+                id: 'hero-section',
+                title: chapterData.hero.title,
+                subtitle: chapterData.hero.subtitle,
+                image: chapterData.hero.image,
+                isHero: true
+            });
+        }
+        
+        const sections = allSections;
         const orderedSections = this.buildDependencyOrder(sections);
         
         console.log(`\n📋 Generation order (${orderedSections.length} sections):`);

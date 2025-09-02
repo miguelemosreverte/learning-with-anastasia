@@ -2091,8 +2091,12 @@
         }
         
         function performLanguageSwitch(lang) {
-            // Save current scroll position
+            // Prevent any scroll changes
             const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
             
             // Update button states
             document.querySelectorAll('.lang-btn').forEach(btn => {
@@ -2126,7 +2130,11 @@
                 });
             }
             
-            // Restore scroll position
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
             window.scrollTo(0, scrollPos);
             
             // Save preference
