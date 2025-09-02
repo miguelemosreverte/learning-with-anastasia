@@ -9,6 +9,10 @@ meta:
     en: "An Educational Journey into Nature's Architecture"
     es: "Un Viaje Educativo hacia la Arquitectura de la Naturaleza"
     ru: "Образовательное путешествие в архитектуру природы"
+  footerSubtitle:
+    en: "Teaching nature's engineering through storytelling"
+    es: "Enseñando la ingeniería de la naturaleza a través de cuentos"
+    ru: "Обучение природной инженерии через рассказы"
   description: "Follow Baby Beaver as he builds his first dam, learning about engineering and teamwork"
   preface:
     en:
