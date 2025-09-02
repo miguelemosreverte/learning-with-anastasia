@@ -117,6 +117,96 @@
       "needsTranslations": false
     },
     {
+      "filename": "professor-kelp-classroom.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp teaching in his natural kelp forest classroom",
+        "es": "Profesor Kelp enseñando en su aula natural del bosque de algas",
+        "ru": "Профессор Келп преподаёт в своём природном классе в лесу ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-ancient-map.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp demonstrating kelp forest patterns as a living map",
+        "es": "Profesor Kelp demostrando patrones del bosque de algas como un mapa viviente",
+        "ru": "Профессор Келп демонстрирует узоры леса ламинарии как живую карту"
+      },
+      "needsTranslations": true
+    },
+    {
+      "filename": "professor-tide-wisdom.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp teaching tide patterns in flowing water",
+        "es": "Profesor Kelp enseñando patrones de marea en agua fluyente",
+        "ru": "Профессор Келп обучает приливным паттернам в текущей воде"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-student-gathering.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp teaching a circle of young otter students",
+        "es": "Profesor Kelp enseñando a un círculo de jóvenes estudiantes nutria",
+        "ru": "Профессор Келп обучает круг молодых учеников-выдр"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-shell-collection.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp displaying his educational shell collection",
+        "es": "Profesor Kelp mostrando su colección educativa de conchas",
+        "ru": "Профессор Келп демонстрирует свою образовательную коллекцию ракушек"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-weather-signs.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp teaching weather prediction through natural signs",
+        "es": "Profesor Kelp enseñando predicción del clima a través de señales naturales",
+        "ru": "Профессор Келп обучает предсказанию погоды по природным знакам"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-night-lesson.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp teaching about bioluminescence at twilight",
+        "es": "Profesor Kelp enseñando sobre bioluminiscencia al atardecer",
+        "ru": "Профессор Келп обучает биолюминесценции в сумерках"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-graduation.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp's graduation ceremony presenting special stone to Ollie",
+        "es": "Ceremonia de graduación del Profesor Kelp presentando piedra especial a Ollie",
+        "ru": "Выпускная церемония Профессора Келп с вручением особого камня Олли"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-wisdom-circle.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp sharing wisdom in center of student circle",
+        "es": "Profesor Kelp compartiendo sabiduría en centro del círculo de estudiantes",
+        "ru": "Профессор Келп делится мудростью в центре круга учеников"
+      },
+      "needsTranslations": false
+    },
+    {
       "filename": "first-rock-tool.jpg",
       "type": "content",
       "alt": {

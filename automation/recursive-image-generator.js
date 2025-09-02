@@ -184,7 +184,7 @@ class RecursiveImageGenerator {
                                section.referenceImage ||  // Add check for referenceImage field
                                (section.characterReferences && section.characterReferences.length > 0) ||
                                (section.missingCharacterRefs && section.missingCharacterRefs.length > 0);
-        // Use Gemini when we want reference images, OpenAI otherwise
+        // Use Gemini when we have reference images, OpenAI otherwise
         const service = wantsReference ? 'gemini' : 'openai';
         
         console.log(`   Service: ${service.toUpperCase()}`);
@@ -193,12 +193,19 @@ class RecursiveImageGenerator {
         }
         if (section.characterId) {
             console.log(`   Using character: ${section.characterId}`);
+        } else if (section.use_character) {
+            const match = section.use_character.match(/\$\{(.+?)\.image\}/);
+            if (match) {
+                console.log(`   Using character: ${match[1]}`);
+            }
         }
         
         try {
             let result;
             // Check if we have actual reference images available
-            const hasActualReference = section.characterReference || (section.characterReferences && section.characterReferences.length > 0);
+            const hasActualReference = section.characterReference || 
+                                      section.use_character ||
+                                      (section.characterReferences && section.characterReferences.length > 0);
             
             if (service === 'gemini' && hasActualReference) {
                 result = await this.generateWithGeminiReference(section, outputPath);
@@ -230,161 +237,158 @@ class RecursiveImageGenerator {
      * Generate with Gemini using character reference
      */
     async generateWithGeminiReference(section, outputPath) {
-        const referenceImage = section.characterReference || section.characterReferences[0].path;
+        const { GoogleGenAI } = require("@google/genai");
         
-        const scriptContent = `
-const { GoogleGenAI } = require("@google/genai");
-const fs = require("fs");
-
-async function generate() {
-    const ai = new GoogleGenAI({
-        apiKey: "${this.geminiKey}"
-    });
-    
-    const referenceData = fs.readFileSync("${referenceImage}");
-    const base64Reference = referenceData.toString("base64");
-    
-    const prompt = [
-        {
-            text: \`Using the character from the reference image, show: ${section.action || section.prompt || section.content?.en || 'Generate image'}
-            
-            IMPORTANT: Keep the character's appearance EXACTLY the same as in the reference.
-            ${section.title && section.title.en ? 'Scene: ' + section.title.en : ''}
-            
-            Style: Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors.
-            NO TEXT in the image.\`
-        },
-        {
-            inlineData: {
-                mimeType: "image/jpeg",
-                data: base64Reference
+        // Handle use_character field (with ${} syntax)
+        let referenceImage;
+        if (section.use_character) {
+            // Extract the image ID from ${id.image} format
+            const match = section.use_character.match(/\$\{(.+?)\.image\}/);
+            if (match) {
+                const characterId = match[1];
+                referenceImage = path.join(path.dirname(outputPath), `${characterId}.jpg`);
+            } else {
+                referenceImage = section.use_character;
             }
+        } else {
+            referenceImage = section.characterReference || section.characterReferences[0].path;
         }
-    ];
-    
-    let retries = 3;
-    while (retries > 0) {
-        try {
-            const response = await ai.models.generateContent({
-                model: "gemini-2.5-flash-image-preview",
-                contents: prompt
-            });
-            
-            if (response && response.candidates && response.candidates[0]) {
+        
+        const ai = new GoogleGenAI({
+            apiKey: this.geminiKey
+        });
+        
+        const referenceData = fs.readFileSync(referenceImage);
+        const base64Reference = referenceData.toString("base64");
+        
+        const prompt = [
+            {
+                text: `Create a cheerful, child-friendly illustration. Using the cute otter character from the reference image, create a heartwarming scene: ${section.action || section.prompt || section.content?.en || 'Generate image'}
+                
+                Keep the otter character looking exactly the same as in the reference - same fur color, same cute features.
+                ${section.title && section.title.en ? 'Context: ' + section.title.en : ''}
+                
+                Style: Animated movie quality, bright cheerful colors, wholesome and positive atmosphere.
+                Absolutely NO text or words in the image.`
+            },
+            {
+                inlineData: {
+                    mimeType: "image/jpeg",
+                    data: base64Reference
+                }
+            }
+        ];
+        
+        let retries = 3;
+        while (retries > 0) {
+            try {
+                console.log("   🔄 Calling Gemini API with reference image...");
+                const response = await ai.models.generateContent({
+                    model: "gemini-2.5-flash-image-preview",
+                    contents: prompt
+                });
+                
+                // Debug response structure
+                console.log("   📊 Response received, checking structure...");
+                if (!response) {
+                    throw new Error("No response from Gemini API");
+                }
+                
+                if (!response.candidates || !response.candidates[0]) {
+                    console.error("   ❌ Response missing candidates:", JSON.stringify(response, null, 2));
+                    throw new Error("Response missing candidates");
+                }
+                
+                if (!response.candidates[0].content) {
+                    console.error("   ❌ Candidate missing content:", JSON.stringify(response.candidates[0], null, 2));
+                    throw new Error("Candidate missing content");
+                }
+                
+                if (!response.candidates[0].content.parts) {
+                    console.error("   ❌ Content missing parts:", JSON.stringify(response.candidates[0].content, null, 2));
+                    throw new Error("Content missing parts");
+                }
+                
                 const parts = response.candidates[0].content.parts;
                 for (const part of parts) {
                     if (part.inlineData) {
                         const buffer = Buffer.from(part.inlineData.data, "base64");
-                        fs.writeFileSync("${outputPath}", buffer);
-                        console.log("SUCCESS");
-                        return;
-                    } else if (part.text) {
-                        console.log("TEXT_RESPONSE:", part.text.substring(0, 100));
+                        fs.writeFileSync(outputPath, buffer);
+                        console.log(`   ✅ Generated with character reference`);
+                        return { success: true, path: outputPath };
                     }
                 }
-            }
-            console.error("No image generated - response had text only");
-            process.exit(1);
-        } catch (error) {
-            retries--;
-            if (error.message && error.message.includes("500") && retries > 0) {
-                console.log(\`RETRY: \${retries} attempts remaining\`);
-                await new Promise(resolve => setTimeout(resolve, 3000));
-            } else {
-                console.error(error.message);
-                process.exit(1);
+                
+                throw new Error("No image data in response");
+                
+            } catch (error) {
+                retries--;
+                console.error(`   ⚠️ Error: ${error.message}`);
+                
+                if (retries > 0) {
+                    console.log(`   🔄 Retrying... (${retries} attempts remaining)`);
+                    await new Promise(resolve => setTimeout(resolve, 3000));
+                } else {
+                    throw error;
+                }
             }
         }
-    }
-    console.error("Failed after 3 retries");
-    process.exit(1);
-}
-
-generate();
-`;
-
-        const scriptPath = path.join(path.dirname(outputPath), '.temp-gemini-ref.js');
-        fs.writeFileSync(scriptPath, scriptContent);
         
-        try {
-            const { stdout } = await execPromise(`node "${scriptPath}"`, { timeout: 60000 });
-            
-            if (stdout.includes('SUCCESS')) {
-                console.log(`   ✅ Generated with character reference`);
-                fs.unlinkSync(scriptPath);
-                return { success: true, path: outputPath };
-            } else {
-                throw new Error('Generation failed');
-            }
-        } catch (error) {
-            if (fs.existsSync(scriptPath)) fs.unlinkSync(scriptPath);
-            throw error;
-        }
+        throw new Error("Failed after 3 retries");
     }
 
     /**
      * Generate with Gemini (no reference)
      */
     async generateWithGemini(section, outputPath) {
-        const prompt = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
+        const { GoogleGenerativeAI } = require("@google/generative-ai");
+        const genAI = new GoogleGenerativeAI(this.geminiKey);
         
-        const scriptContent = `
-const { GoogleGenerativeAI } = require("@google/generative-ai");
-const fs = require("fs");
-
-async function generate() {
-    const genAI = new GoogleGenerativeAI("${this.geminiKey}");
-    
-    const prompt = \`Create: ${prompt}
-    
-    ${section.title && section.title.en ? 'Scene: ' + section.title.en : ''}
-    
-    Style: Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors.
-    NO TEXT in the image.\`;
-    
-    try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const response = await model.generateContent(prompt);
+        const promptText = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
+        const prompt = `Create: ${promptText}
         
-        if (response && response.candidates && response.candidates[0]) {
-            const parts = response.candidates[0].content.parts;
-            for (const part of parts) {
-                if (part.inlineData) {
-                    const buffer = Buffer.from(part.inlineData.data, "base64");
-                    fs.writeFileSync("${outputPath}", buffer);
-                    console.log("SUCCESS");
-                    return;
+        ${section.title && section.title.en ? 'Scene: ' + section.title.en : ''}
+        
+        Style: Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors.
+        NO TEXT in the image.`;
+        
+        let retries = 3;
+        while (retries > 0) {
+            try {
+                console.log("   🔄 Calling Gemini API...");
+                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+                const response = await model.generateContent(prompt);
+                
+                if (!response || !response.candidates || !response.candidates[0]) {
+                    throw new Error("Invalid response structure from Gemini");
+                }
+                
+                const parts = response.candidates[0].content.parts;
+                for (const part of parts) {
+                    if (part.inlineData) {
+                        const buffer = Buffer.from(part.inlineData.data, "base64");
+                        fs.writeFileSync(outputPath, buffer);
+                        console.log(`   ✅ Generated with Gemini`);
+                        return { success: true, path: outputPath };
+                    }
+                }
+                
+                throw new Error("No image data in response");
+                
+            } catch (error) {
+                retries--;
+                console.error(`   ⚠️ Error: ${error.message}`);
+                
+                if (retries > 0) {
+                    console.log(`   🔄 Retrying... (${retries} attempts remaining)`);
+                    await new Promise(resolve => setTimeout(resolve, 3000));
+                } else {
+                    throw error;
                 }
             }
         }
-        console.error("No image generated");
-        process.exit(1);
-    } catch (error) {
-        console.error(error.message);
-        process.exit(1);
-    }
-}
-
-generate();
-`;
-
-        const scriptPath = path.join(path.dirname(outputPath), '.temp-gemini.js');
-        fs.writeFileSync(scriptPath, scriptContent);
         
-        try {
-            const { stdout } = await execPromise(`node "${scriptPath}"`, { timeout: 60000 });
-            
-            if (stdout.includes('SUCCESS')) {
-                console.log(`   ✅ Generated with Gemini`);
-                fs.unlinkSync(scriptPath);
-                return { success: true, path: outputPath };
-            } else {
-                throw new Error('Generation failed');
-            }
-        } catch (error) {
-            if (fs.existsSync(scriptPath)) fs.unlinkSync(scriptPath);
-            throw error;
-        }
+        throw new Error("Failed after 3 retries");
     }
 
     /**
@@ -516,6 +520,8 @@ req.end();
                         title: detail.title,
                         description: detail.description,
                         image: detail.image,
+                        use_character: detail.use_character,
+                        action: detail.action,
                         isViewerDetail: true
                     });
                 }

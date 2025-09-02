@@ -197,7 +197,7 @@ sections:
       en: Magnificent kelp forest with sunlight streaming through, creating ethereal underwater atmosphere
       es: Magnífico bosque de algas con luz solar atravesando, creando atmósfera etérea submarina
       ru: Великолепный лес ламинарии с проникающим солнечным светом
-  - id: professor-kelp-intro
+  - id: professor-kelp
     generate_character: true
     title:
       en: Meeting Professor Kelp
@@ -212,6 +212,150 @@ sections:
       en: Elderly wise sea otter with grey whiskers floating near tall kelp, scholarly appearance
       es: Nutria marina anciana y sabia con bigotes grises flotando cerca de algas altas
       ru: Пожилая мудрая морская выдра с седыми усами около высокой ламинарии
+  - id: professor-kelp-classroom
+    title:
+      en: Professor's Kelp Classroom
+      es: El Aula del Profesor Kelp
+      ru: Класс Профессора Келп
+    content:
+      en: Professor Kelp led Ollie to a clearing in the kelp forest. 'This is my classroom,' he announced proudly, gesturing with his weathered paws. Sunbeams created a natural spotlight through the canopy. 'Every day, young otters come here to learn. Today's lesson - the secret language of the kelp forest. Listen carefully to how the kelp moves!'
+      es: El Profesor Kelp llevó a Ollie a un claro en el bosque de algas. 'Esta es mi aula,' anunció con orgullo, gesticulando con sus patas curtidas. Los rayos del sol creaban un foco natural a través del dosel. '¡Cada día, nutrias jóvenes vienen aquí a aprender. La lección de hoy - el lenguaje secreto del bosque de algas. Escucha atentamente cómo se mueve el alga!'
+      ru: Профессор Келп привёл Олли на поляну в лесу ламинарии. 'Это мой класс,' - гордо объявил он, жестикулируя своими потёртыми лапами. Солнечные лучи создавали естественный прожектор сквозь полог. 'Каждый день молодые выдры приходят сюда учиться. Сегодняшний урок - тайный язык леса ламинарии. Слушай внимательно, как движутся водоросли!'
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp teaching in underwater kelp classroom with sunbeams
+    image: professor-kelp-classroom.jpg
+    imageAlt:
+      en: Professor Kelp teaching in his natural kelp forest classroom
+      es: Profesor Kelp enseñando en su aula natural del bosque de algas
+      ru: Профессор Келп преподаёт в своём природном классе в лесу ламинарии
+  - id: professor-ancient-map
+    title:
+      en: The Ancient Kelp Map
+      es: El Mapa Antiguo de Algas
+      ru: Древняя карта ламинарии
+    content:
+      en: Professor Kelp showed Ollie patterns in the kelp. 'See how the older kelp grows differently?' he explained, tracing the strands with his paw. 'This forest is like a living map! That thick grove marks where the current is strongest. Those sparse areas show where otters feed most. I've memorized every twist and turn over my fifty years here.'
+      es: El Profesor Kelp le mostró a Ollie patrones en las algas. '¿Ves cómo las algas más viejas crecen diferente?' explicó, trazando las hebras con su pata. '¡Este bosque es como un mapa viviente! Ese bosquecillo espeso marca donde la corriente es más fuerte. Esas áreas escasas muestran donde las nutrias se alimentan más. He memorizado cada giro durante mis cincuenta años aquí.'
+      ru: Профессор Келп показал Олли узоры в ламинарии. 'Видишь, как старые водоросли растут по-другому?' - объяснил он, обводя пряди лапой. 'Этот лес как живая карта! Та густая роща отмечает, где течение сильнее всего. Те редкие участки показывают, где выдры кормятся больше всего. Я запомнил каждый поворот за свои пятьдесят лет здесь.'
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp showing kelp patterns like reading a map
+    image: professor-ancient-map.jpg
+    imageAlt:
+      en: Professor Kelp demonstrating kelp forest patterns as a living map
+      es: Profesor Kelp demostrando patrones del bosque de algas como un mapa viviente
+      ru: Профессор Келп демонстрирует узоры леса ламинарии как живую карту
+  - id: professor-tide-wisdom
+    title:
+      en: Reading the Tides
+      es: Leyendo las Mareas
+      ru: Чтение приливов
+    content:
+      en: "'Feel that pull?' Professor Kelp asked, his fur rippling in the current. 'The tide is changing. In exactly one hour, the best shellfish beds will be exposed. But in two hours, they'll be too deep again. Timing is everything!' He taught Ollie to feel the subtle changes in water temperature and pressure that predicted the tides."
+      es: "'¿Sientes ese tirón?' preguntó el Profesor Kelp, su pelaje ondeando en la corriente. 'La marea está cambiando. En exactamente una hora, los mejores bancos de mariscos estarán expuestos. ¡Pero en dos horas, estarán demasiado profundos otra vez. El tiempo lo es todo!' Le enseñó a Ollie a sentir los cambios sutiles en la temperatura y presión del agua que predecían las mareas."
+      ru: "'Чувствуешь это притяжение?' - спросил Профессор Келп, его мех колыхался в течении. 'Прилив меняется. Ровно через час откроются лучшие ракушечные отмели. Но через два часа они снова будут слишком глубоко. Время - это всё!' Он учил Олли чувствовать тонкие изменения температуры и давления воды, которые предсказывали приливы."
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp teaching about tides with fur rippling in current
+    image: professor-tide-wisdom.jpg
+    imageAlt:
+      en: Professor Kelp teaching tide patterns in flowing water
+      es: Profesor Kelp enseñando patrones de marea en agua fluyente
+      ru: Профессор Келп обучает приливным паттернам в текущей воде
+  - id: professor-student-gathering
+    title:
+      en: The Student Circle
+      es: El Círculo de Estudiantes
+      ru: Круг учеников
+    content:
+      en: More young otters arrived for Professor Kelp's famous lessons. They formed a circle, holding paws to stay together in the current. 'Today's special guest is Ollie!' Professor announced. The young otters chirped excitedly. Professor began demonstrating advanced floating techniques, using his tail as a rudder while keeping his paws free for eating.
+      es: Más nutrias jóvenes llegaron para las famosas lecciones del Profesor Kelp. Formaron un círculo, tomándose de las patas para mantenerse juntos en la corriente. '¡El invitado especial de hoy es Ollie!' anunció el Profesor. Las nutrias jóvenes chirriaron emocionadas. El Profesor comenzó a demostrar técnicas avanzadas de flotación, usando su cola como timón mientras mantenía sus patas libres para comer.
+      ru: Больше молодых выдр прибыло на знаменитые уроки Профессора Келп. Они образовали круг, держась за лапы, чтобы оставаться вместе в течении. 'Сегодняшний особый гость - Олли!' - объявил Профессор. Молодые выдры взволнованно защебетали. Профессор начал демонстрировать продвинутые техники плавания, используя хвост как руль, оставляя лапы свободными для еды.
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp with circle of young otter students holding paws
+    image: professor-student-gathering.jpg
+    imageAlt:
+      en: Professor Kelp teaching a circle of young otter students
+      es: Profesor Kelp enseñando a un círculo de jóvenes estudiantes nutria
+      ru: Профессор Келп обучает круг молодых учеников-выдр
+  - id: professor-shell-collection
+    title:
+      en: The Shell Museum
+      es: El Museo de Conchas
+      ru: Музей ракушек
+    content:
+      en: Professor Kelp led them to his special collection spot. 'I've been collecting unique shells for decades,' he said, showing an array of colorful specimens anchored in the kelp. 'Each one teaches us something - this spiral shell shows perfect mathematics, this flat one makes the best anvil, and this rare purple one? It only appears after storms from the deep waters!'
+      es: El Profesor Kelp los llevó a su lugar especial de colección. 'He estado coleccionando conchas únicas durante décadas,' dijo, mostrando una variedad de especímenes coloridos anclados en las algas. 'Cada una nos enseña algo - esta concha espiral muestra matemáticas perfectas, esta plana hace el mejor yunque, ¿y esta rara púrpura? ¡Solo aparece después de tormentas de aguas profundas!'
+      ru: Профессор Келп привёл их к своему особому месту коллекции. 'Я собираю уникальные ракушки десятилетиями,' - сказал он, показывая множество красочных экземпляров, закреплённых в ламинарии. 'Каждая учит нас чему-то - эта спиральная ракушка показывает совершенную математику, эта плоская - лучшая наковальня, а эта редкая фиолетовая? Она появляется только после штормов из глубоких вод!'
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp showing his collection of educational shells
+    image: professor-shell-collection.jpg
+    imageAlt:
+      en: Professor Kelp displaying his educational shell collection
+      es: Profesor Kelp mostrando su colección educativa de conchas
+      ru: Профессор Келп демонстрирует свою образовательную коллекцию ракушек
+  - id: professor-weather-signs
+    title:
+      en: Weather Prophet
+      es: Profeta del Clima
+      ru: Пророк погоды
+    content:
+      en: Professor Kelp's whiskers twitched. 'Storm coming in three days,' he announced confidently. The students looked at the calm water, confused. 'The kelp is swaying differently, the small fish are gathering deeper, and feel that water temperature? It dropped half a degree. These signs never lie.' He taught them to read nature's weather forecast.
+      es: Los bigotes del Profesor Kelp se movieron. 'Tormenta llegando en tres días,' anunció con confianza. Los estudiantes miraron el agua calmada, confundidos. 'Las algas se balancean diferente, los peces pequeños se están reuniendo más profundo, ¿y sienten esa temperatura del agua? Bajó medio grado. Estas señales nunca mienten.' Les enseñó a leer el pronóstico del tiempo de la naturaleza.
+      ru: Усы Профессора Келп дёрнулись. 'Шторм через три дня,' - уверенно объявил он. Ученики посмотрели на спокойную воду, смущённые. 'Ламинария качается по-другому, мелкая рыба собирается глубже, и чувствуете температуру воды? Она упала на полградуса. Эти знаки никогда не лгут.' Он учил их читать природный прогноз погоды.
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp's whiskers twitching as he predicts weather
+    image: professor-weather-signs.jpg
+    imageAlt:
+      en: Professor Kelp teaching weather prediction through natural signs
+      es: Profesor Kelp enseñando predicción del clima a través de señales naturales
+      ru: Профессор Келп обучает предсказанию погоды по природным знакам
+  - id: professor-night-lesson
+    title:
+      en: Mysteries of the Night Ocean
+      es: Misterios del Océano Nocturno
+      ru: Тайны ночного океана
+    content:
+      en: As sunset approached, Professor Kelp prepared a special lesson. 'The ocean transforms at night,' he whispered. 'Different creatures emerge, the kelp releases special nutrients, and look - bioluminescent plankton!' He waved his paw through the water, creating trails of blue-green light. 'Night diving requires courage, but the rewards are magical.'
+      es: Al acercarse el atardecer, el Profesor Kelp preparó una lección especial. 'El océano se transforma de noche,' susurró. 'Diferentes criaturas emergen, las algas liberan nutrientes especiales, y miren - ¡plancton bioluminiscente!' Movió su pata por el agua, creando rastros de luz azul-verde. 'El buceo nocturno requiere coraje, pero las recompensas son mágicas.'
+      ru: С приближением заката Профессор Келп подготовил особый урок. 'Океан преображается ночью,' - прошептал он. 'Появляются другие существа, ламинария выделяет особые питательные вещества, и смотрите - биолюминесцентный планктон!' Он взмахнул лапой в воде, создавая следы сине-зелёного света. 'Ночное погружение требует смелости, но награды волшебные.'
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp creating bioluminescent trails in twilight water
+    image: professor-night-lesson.jpg
+    imageAlt:
+      en: Professor Kelp teaching about bioluminescence at twilight
+      es: Profesor Kelp enseñando sobre bioluminiscencia al atardecer
+      ru: Профессор Келп обучает биолюминесценции в сумерках
+  - id: professor-graduation
+    title:
+      en: Graduation Day
+      es: Día de Graduación
+      ru: День выпуска
+    content:
+      en: After days of lessons, Professor Kelp gathered his students. 'Ollie, you've learned well. But remember - knowledge without kindness is worthless. Use what you've learned to help others.' He presented Ollie with a special smooth stone, worn perfect by years of use. 'This was my first tool. Now it's yours. May it serve you as well as it served me.'
+      es: Después de días de lecciones, el Profesor Kelp reunió a sus estudiantes. 'Ollie, has aprendido bien. Pero recuerda - el conocimiento sin bondad no vale nada. Usa lo que has aprendido para ayudar a otros.' Le presentó a Ollie una piedra lisa especial, desgastada perfectamente por años de uso. 'Esta fue mi primera herramienta. Ahora es tuya. Que te sirva tan bien como me sirvió a mí.'
+      ru: После дней уроков Профессор Келп собрал своих учеников. 'Олли, ты хорошо учился. Но помни - знания без доброты ничего не стоят. Используй то, что узнал, чтобы помогать другим.' Он подарил Олли особый гладкий камень, идеально отполированный годами использования. 'Это был мой первый инструмент. Теперь он твой. Пусть он служит тебе так же хорошо, как служил мне.'
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp presenting Ollie with ceremonial tool stone
+    image: professor-graduation.jpg
+    imageAlt:
+      en: Professor Kelp's graduation ceremony presenting special stone to Ollie
+      es: Ceremonia de graduación del Profesor Kelp presentando piedra especial a Ollie
+      ru: Выпускная церемония Профессора Келп с вручением особого камня Олли
+  - id: professor-wisdom-circle
+    title:
+      en: The Wisdom Circle
+      es: El Círculo de Sabiduría
+      ru: Круг мудрости
+    content:
+      en: "Professor Kelp's final lesson was the most important. 'Form a circle, everyone,' he instructed. As they floated together, he spoke: 'The ocean's greatest secret isn't about food or tools - it's about community. We're all connected like the kelp forest itself. When one of us struggles, we all help. When one succeeds, we all celebrate. Never forget this truth.'"
+      es: "La lección final del Profesor Kelp fue la más importante. 'Formen un círculo, todos,' instruyó. Mientras flotaban juntos, habló: 'El mayor secreto del océano no es sobre comida o herramientas - es sobre comunidad. Todos estamos conectados como el bosque de algas mismo. Cuando uno lucha, todos ayudamos. Cuando uno tiene éxito, todos celebramos. Nunca olviden esta verdad.'"
+      ru: "Последний урок Профессора Келп был самым важным. 'Образуйте круг, все,' - проинструктировал он. Пока они плавали вместе, он говорил: 'Величайший секрет океана не о еде или инструментах - он о сообществе. Мы все связаны, как сам лес ламинарии. Когда один из нас борется, мы все помогаем. Когда один преуспевает, мы все празднуем. Никогда не забывайте эту истину.'"
+    use_character: ${professor-kelp.image}
+    action: Professor Kelp in center of otter circle sharing final wisdom
+    image: professor-wisdom-circle.jpg
+    imageAlt:
+      en: Professor Kelp sharing wisdom in center of student circle
+      es: Profesor Kelp compartiendo sabiduría en centro del círculo de estudiantes
+      ru: Профессор Келп делится мудростью в центре круга учеников
   - id: first-rock-tool
     title:
       en: The Magic of Tools
@@ -239,7 +383,7 @@ sections:
       ru: Сегодняшний урок - поиск морских ежей. Профессор Келп показал Олли, как находить пурпурных колючих существ, прячущихся в расщелинах скал. 'Морские ежи вкусные, но будь осторожен с их иглами!' - предупредил он. 'Мы едим так много пурпурных ежей, что иногда наши зубы тоже становятся пурпурными! Но это нормально - это показывает, что мы здорово питаемся!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
     action: Young otter and elder learning to identify purple sea urchins
     image: urchin-hunt.jpg
     imageAlt:
@@ -387,7 +531,7 @@ sections:
       ru: Профессор Келп провёл для Олли экскурсию по экосистеме леса ламинарии. 'Видишь тех рыб, прячущихся в ламинарии? Морского окуня, ламинариевого окуня? Им нужен лес для укрытия. А те крошечные улитки, чистящие листья ламинарии? У каждого здесь есть работа. Но у нас, выдр, самая важная работа - мы не даём морским ежам съесть всю ламинарию!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
     action: Elder otter teaching young otter about kelp forest ecosystem
     image: kelp-ecosystem-tour.jpg
     imageAlt:
@@ -455,7 +599,7 @@ sections:
       ru: Плывя в новую область, Олли открыл самый красивый сад ламинарии, который когда-либо видел! Золотые листья ламинарии грациозно качались, создавая подводные соборы света. Глаза Профессора Келпа искрились от радости. 'Посмотри, какие здоровые и крепкие эти леса ламинарии!' - воскликнул он. 'Каждый лист тянется к солнечному свету, создавая дома для тысяч существ. Вот как выглядит наш океан, когда всё находится в идеальном балансе!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
     action: Otters marveling at beautiful healthy golden kelp forest
     image: healthy-kelp-garden.jpg
     imageAlt:
@@ -507,7 +651,7 @@ sections:
       ru: Олли открыл самые чистые воды, которые когда-либо видел - настолько прозрачные, что можно было видеть каждую песчинку на дне! Настоящие медузы танцевали грациозно, как живые радуги. 'Посмотри на эту совершенную прозрачность!' - радостно воскликнул Профессор Келп. 'Когда воды такие чистые, каждое существо процветает. Медузы светятся здоровьем, ламинария сверкает, и даже солнечный свет кажется ярче, танцуя через наш хрустальный дом.'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
     action: Otters marveling at pristine clear waters with jellyfish
     image: crystal-clear-waters.jpg
     imageAlt:
@@ -686,7 +830,7 @@ sections:
       ru: Великолепный горбатый кит всплыл рядом, выдыхая туманные фонтаны в утренний воздух! С безопасного расстояния Олли и выдры наблюдали с благоговением, как нежный гигант грациозно скользил по воде. 'Эти древние путешествуют через целые океаны,' - почтительно прошептал Профессор Келп. 'Мы делим море с самыми великолепными существами на Земле. Их песни могут путешествовать на мили под водой!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
     action: Otters watching magnificent humpback whale from safe distance
     image: whale-watching.jpg
     imageAlt:
@@ -704,7 +848,7 @@ sections:
       ru: Там, где ламинария погибла, Профессор Келп показал всем, как помочь ей вырасти снова. 'Мы едим дополнительных ежей здесь, чтобы дать молодой ламинарии шанс,' - объяснил он. 'Если мы все будем работать вместе, лес вернётся. Это наша ответственность как хранителей ламинарии. Каждая выдра имеет значение!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
       - ${marina-first-glimpse.image}
     action: Group of otters working together to clear urchins from recovering kelp area
     image: kelp-restoration.jpg
@@ -739,7 +883,7 @@ sections:
       ru: Однажды утром морское дно было покрыто пурпурными морскими ежами - тысячи их! 'Без достаточного количества выдр это происходит,' - серьёзно сказал Профессор Келп. 'Они съедают всю ламинарию и создают пустоши ежей - подводные пустыни. Вот почему каждая выдра важна. Мы хранители баланса. Время пировать и спасать наш лес!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
     action: Otters looking at massive purple sea urchin population covering seafloor
     image: urchin-explosion.jpg
     imageAlt:
@@ -813,7 +957,7 @@ sections:
       ru: Профессор Келп раскрыл удивительные секреты выдр! 'Наблюдайте внимательно,' - прошептал он. Некоторые выдры могли делать кувырки под водой, другие могли балансировать тремя ракушками одновременно, а самые талантливые даже могли плавать назад, ухаживая за собой! 'Каждая семья выдр имеет особые навыки, передаваемые через поколения. Эти естественные поведения делают нас уникальными и помогают процветать способами, которых никто не ожидает!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
     action: Otters demonstrating amazing natural swimming and balancing skills
     image: natural-otter-behaviors.jpg
     imageAlt:
@@ -891,7 +1035,7 @@ sections:
       ru: Пришли отличные новости - природа благословила их залив идеальными условиями! 'Посмотрите на это чистое святилище вокруг нас - ламинария процветает, воды кристально чисты, и естественный баланс везде,' - радостно объявил Профессор Келп. 'Это наш райский дом. Природа обеспечила нас всем необходимым, потому что мы научились жить в гармонии с океаном!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
       - ${marina-first-glimpse.image}
     action: Otters celebrating in pristine protected marine sanctuary
     image: protected-area.jpg
@@ -926,7 +1070,7 @@ sections:
       en: Professor Kelp gathered everyone to celebrate the changing seasons! 'Look how beautiful each season brings new gifts - spring brings baby kelp, summer warms our waters perfectly, autumn brings the richest harvests, and winter shows us the most spectacular storms from a safe distance. Nature's cycles have repeated for millions of years, and we've learned to dance with every change!'
       es: ¡El Profesor Kelp reunió a todos para celebrar las estaciones cambiantes! 'Miren qué hermoso cada estación trae nuevos regalos - la primavera trae algas bebé, el verano calienta nuestras aguas perfectamente, el otoño trae las cosechas más ricas, y el invierno nos muestra las tormentas más espectaculares desde una distancia segura. Los ciclos de la naturaleza se han repetido durante millones de años, ¡y hemos aprendido a bailar con cada cambio!'
       ru: Профессор Келп собрал всех, чтобы отметить смену сезонов! 'Посмотрите, как красиво каждый сезон приносит новые подарки - весна приносит молодую ламинарию, лето идеально обогревает наши воды, осень приносит самые богатые урожаи, а зима показывает нам самые зрелищные штормы с безопасного расстояния. Природные циклы повторяются миллионы лет, и мы научились танцевать с каждым изменением!'
-    use_character: ${professor-kelp-intro.image}
+    use_character: ${professor-kelp.image}
     action: Professor Kelp celebrating seasonal changes with otter community
     image: seasonal-changes.jpg
     imageAlt:
@@ -978,7 +1122,7 @@ sections:
       ru: Там, где когда-то было бесплодное морское дно, молодая ламинария теперь покачивалась на течении. Восстановление сработало! Рыба вернулась, тюлени посещали, и вода искрилась жизнью. 'Мы сделали это,' - сказал Профессор Келп со слезами на глазах. 'Выдры, люди, работающие вместе. Вот что возможно, когда всем не всё равно. Лес снова жив!'
     use_characters:
       - ${birth-of-ollie.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
       - ${marina-first-glimpse.image}
     action: Otters celebrating in restored, thriving kelp forest
     image: kelp-revival.jpg
@@ -1059,7 +1203,7 @@ sections:
     use_characters:
       - ${birth-of-ollie.image}
       - ${mama-otter.image}
-      - ${professor-kelp-intro.image}
+      - ${professor-kelp.image}
       - ${marina-first-glimpse.image}
       - ${meet-ruby.image}
     image: magazine-cover.jpg
@@ -1161,6 +1305,15 @@ routing:
     - grooming-deep-clean.jpg
     - grooming-complete.jpg
     - professor-kelp.jpg
+    - professor-kelp-classroom.jpg
+    - professor-ancient-map.jpg
+    - professor-tide-wisdom.jpg
+    - professor-student-gathering.jpg
+    - professor-shell-collection.jpg
+    - professor-weather-signs.jpg
+    - professor-night-lesson.jpg
+    - professor-graduation.jpg
+    - professor-wisdom-circle.jpg
     - first-rock-tool.jpg
     - urchin-hunt.jpg
     - kelp-anchoring.jpg
