@@ -181,21 +181,6 @@ class IndexGenerator {
             position: relative;
         }
         
-        .nat-geo-logo {
-            position: absolute;
-            top: 30px;
-            left: 50px;
-            width: 60px;
-            height: 60px;
-            border: 3px solid #FFCC00;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            color: #FFCC00;
-            font-size: 24px;
-            font-family: 'Oswald', sans-serif;
-        }
 
         .header h1 {
             font-family: 'Oswald', sans-serif;
@@ -259,27 +244,6 @@ class IndexGenerator {
             background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height="0.667" fill="white"/><rect width="3" height="0.667" y="0.667" fill="%230039a6"/><rect width="3" height="0.666" y="1.334" fill="%23d52b1e"/></svg>');
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(5deg); }
-            75% { transform: translateY(-10px) rotate(-5deg); }
-        }
-
-        .language-selector button {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .language-selector button:nth-child(2) {
-            animation-delay: 1.3s;
-        }
-
-        .language-selector button:nth-child(3) {
-            animation-delay: 2.6s;
-        }
-
-        .language-selector button:hover {
-            animation-play-state: paused;
-        }
 
         .search-container {
             max-width: 800px;
@@ -414,6 +378,38 @@ class IndexGenerator {
             to { opacity: 1; transform: translateY(0); }
         }
 
+        .footer {
+            background: #111;
+            padding: 60px 40px;
+            margin-top: 100px;
+            border-top: 3px solid #FFCC00;
+            text-align: center;
+        }
+
+        .footer h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            color: #FFCC00;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .footer p {
+            color: #888;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .footer .copyright {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -428,7 +424,6 @@ class IndexGenerator {
 </head>
 <body>
     <div class="header">
-        <div class="nat-geo-logo">NG</div>
         <h1 data-en="Learning with Anastasia" data-es="Aprendiendo con Anastasia" data-ru="Учимся с Анастасией">Learning with Anastasia</h1>
         <p data-en="Wildlife Magazine Collection" data-es="Colección de Revistas de Vida Silvestre" data-ru="Коллекция журналов о дикой природе">Wildlife Magazine Collection</p>
         <div class="language-selector">
@@ -464,6 +459,27 @@ class IndexGenerator {
 
     <div class="no-results" id="noResults">
         No magazines found. Try a different search term.
+    </div>
+
+    <div class="footer">
+        <h3 data-en="About Learning with Anastasia" data-es="Acerca de Aprendiendo con Anastasia" data-ru="О программе Учимся с Анастасией">About Learning with Anastasia</h3>
+        <p data-en="An educational journey through the amazing world of wildlife, designed to inspire young minds to explore, learn, and protect our planet's incredible creatures." 
+           data-es="Un viaje educativo a través del increíble mundo de la vida silvestre, diseñado para inspirar a las mentes jóvenes a explorar, aprender y proteger las increíbles criaturas de nuestro planeta."
+           data-ru="Образовательное путешествие по удивительному миру дикой природы, созданное для того, чтобы вдохновить юные умы исследовать, учиться и защищать невероятных существ нашей планеты.">
+            An educational journey through the amazing world of wildlife, designed to inspire young minds to explore, learn, and protect our planet's incredible creatures.
+        </p>
+        <p data-en="Each magazine issue takes you on a unique adventure, combining stunning visuals with fascinating facts and interactive learning experiences."
+           data-es="Cada número de la revista te lleva a una aventura única, combinando imágenes impresionantes con hechos fascinantes y experiencias de aprendizaje interactivas."
+           data-ru="Каждый выпуск журнала отправляет вас в уникальное приключение, сочетая потрясающие визуальные эффекты с увлекательными фактами и интерактивным обучением.">
+            Each magazine issue takes you on a unique adventure, combining stunning visuals with fascinating facts and interactive learning experiences.
+        </p>
+        <div class="copyright">
+            <p data-en="© 2025 Learning with Anastasia. Created with love for curious young explorers everywhere."
+               data-es="© 2025 Aprendiendo con Anastasia. Creado con amor para jóvenes exploradores curiosos de todo el mundo."
+               data-ru="© 2025 Учимся с Анастасией. Создано с любовью для любознательных юных исследователей по всему миру.">
+                © 2025 Learning with Anastasia. Created with love for curious young explorers everywhere.
+            </p>
+        </div>
     </div>
 
     <script>
