@@ -33,6 +33,21 @@ class RecursiveImageGenerator {
     resolveReferences(section, allSections) {
         const resolved = { ...section };
         
+        // Check if this section has a referenceImage field
+        if (section.referenceImage) {
+            const refId = this.parseReference(section.referenceImage);
+            if (refId) {
+                // Always set that we WANT a reference, even if not generated yet
+                resolved.characterId = refId;
+                if (this.generatedImages[refId]) {
+                    resolved.characterReference = this.generatedImages[refId];
+                } else {
+                    // Mark that we need this reference but don't have it yet
+                    resolved.missingCharacterRef = refId;
+                }
+            }
+        }
+        
         // Check if this section uses a character from a previous section
         if (section.use_character) {
             const refId = this.parseReference(section.use_character);
@@ -166,6 +181,7 @@ class RecursiveImageGenerator {
         // Determine service based on whether this section WANTS references
         const wantsReference = section.use_character || section.use_characters || 
                                section.characterId || section.missingCharacterRef || 
+                               section.referenceImage ||  // Add check for referenceImage field
                                (section.characterReferences && section.characterReferences.length > 0) ||
                                (section.missingCharacterRefs && section.missingCharacterRefs.length > 0);
         // Use Gemini when we want reference images, OpenAI otherwise

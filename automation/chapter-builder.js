@@ -19,23 +19,25 @@ class ChapterBuilder {
         const yamlContent = fs.readFileSync(yamlPath, 'utf8');
         const chapterData = yaml.load(yamlContent);
         
-        // Add generated keys for sections if not present
-        chapterData.sections = chapterData.sections.map((section, index) => {
-            if (!section.titleKey) {
-                section.titleKey = `section${index}Title`;
-            }
-            if (!section.contentKey) {
-                section.contentKey = `section${index}Content`;
-            }
-            if (!section.imageAltKey) {
-                section.imageAltKey = `section${index}ImageAlt`;
-            }
-            
-            // Mark if this image will have translations
-            section.hasTranslations = this.needsTranslatedVersions(section);
-            
-            return section;
-        });
+        // Filter out hidden sections and add generated keys for visible sections
+        chapterData.sections = chapterData.sections
+            .filter(section => !section.hidden)  // Exclude hidden sections from main content
+            .map((section, index) => {
+                if (!section.titleKey) {
+                    section.titleKey = `section${index}Title`;
+                }
+                if (!section.contentKey) {
+                    section.contentKey = `section${index}Content`;
+                }
+                if (!section.imageAltKey) {
+                    section.imageAltKey = `section${index}ImageAlt`;
+                }
+                
+                // Mark if this image will have translations
+                section.hasTranslations = this.needsTranslatedVersions(section);
+                
+                return section;
+            });
 
         // Process fun facts
         if (chapterData.funFacts && chapterData.funFacts.facts) {

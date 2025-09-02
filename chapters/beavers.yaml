@@ -327,58 +327,49 @@ sections:
     image: "ecosystem-thriving.jpg"
     imageType: "landscape"  # Final landscape showing the transformed ecosystem
 
-  # Viewer Detail Images - Close-up educational shots
-  - id: "detail-beaver-tail"
-    title:
-      en: "Beaver Tail Detail"
-      es: "Detalle de Cola de Castor"
-      ru: "Детали хвоста бобра"
-    content:
-      en: "Close-up of the beaver's paddle-shaped tail"
-      es: "Primer plano de la cola en forma de paleta del castor"
-      ru: "Крупный план лопатообразного хвоста бобра"
-    image: "detail-beaver-tail.jpg"
-    referenceImage: "${baby-beaver-portrait.image}"
-    prompt: "Using the baby beaver from the reference image, create a detailed close-up of the beaver's flat paddle-shaped tail. Show the distinctive scaly, leathery texture. The tail should be the same color as the beaver in the reference. Show it being used as a rudder in water or slapping the water surface. Educational photography style, Studio Ghibli warmth."
-    
-  - id: "detail-underwater-entrance"
-    title:
-      en: "Underwater Lodge Entrance"
-      es: "Entrada Subacuática de la Madriguera"
-      ru: "Подводный вход в хатку"
-    content:
-      en: "Cross-section showing underwater entrance"
-      es: "Sección transversal mostrando entrada subacuática"
-      ru: "Поперечный разрез, показывающий подводный вход"
+  # Regenerate viewer detail images with proper references
+  - id: "detail-underwater-entrance-v2"
     image: "detail-underwater-entrance.jpg"
-    referenceImage: "${baby-beaver-lodge.image}"
-    prompt: "Using the beaver lodge from the reference image, create a cross-section or underwater view showing the hidden entrance tunnel below the waterline. Show the tunnel leading up into the dry chamber. Clear water should reveal the entrance. Same artistic style as reference. Educational cutaway illustration, Studio Ghibli warmth."
+    referenceImage: "${building-lodge.image}"
+    prompt: "Using the beaver lodge from the reference image, create a cross-section or underwater view showing the hidden entrance tunnel below the waterline. Show the same lodge style and construction from reference. The tunnel should lead up into a dry chamber. Clear water reveals the entrance. Same artistic Studio Ghibli style as reference."
+    hidden: true  # Don't show in main content
     
-  - id: "detail-orange-teeth"
-    title:
-      en: "Orange Iron Teeth"
-      es: "Dientes Naranjas de Hierro"
-      ru: "Оранжевые железные зубы"
-    content:
-      en: "Close-up of beaver's distinctive orange teeth"
-      es: "Primer plano de los distintivos dientes naranjas del castor"
-      ru: "Крупный план характерных оранжевых зубов бобра"
+  - id: "detail-orange-teeth-v2"
     image: "detail-orange-teeth.jpg"
-    referenceImage: "${baby-beaver-gathering.image}"
-    prompt: "Using the baby beaver from the reference image who is gathering wood, create an extreme close-up of the beaver's mouth showing bright orange front teeth (incisors). The orange color should be vivid, showing iron-rich enamel. Include wood shavings and a branch being gnawed. Same character as reference. Educational macro photography, Studio Ghibli style."
+    referenceImage: "${gathering-sticks.image}"
+    prompt: "Using the exact same baby beaver character from the reference image who is gathering wood, create an extreme close-up of this specific beaver's mouth showing bright orange front teeth (incisors). Keep the same fur color and texture as the reference beaver. The orange color should be vivid from iron-rich enamel. Include wood shavings. Same character, same art style."
+    hidden: true  # Don't show in main content
     
-  - id: "detail-dam-curve"
-    title:
-      en: "Dam Engineering"
-      es: "Ingeniería de la Presa"
-      ru: "Инженерия плотины"
-    content:
-      en: "Aerial view showing curved dam structure"
-      es: "Vista aérea mostrando la estructura curva de la presa"
-      ru: "Вид с воздуха на изогнутую структуру плотины"
+  - id: "detail-dam-curve-v2"
     image: "detail-dam-curve.jpg"
-    referenceImage: "${baby-beaver-testing.image}"
-    prompt: "Using the completed dam from the reference image, create an aerial or elevated view emphasizing the curved arch shape of the dam. Show how it curves upstream (convex toward water flow). Highlight the intricate stick and mud construction. Water should be pooling behind creating a pond. Educational diagram clarity, Studio Ghibli beauty."
+    referenceImage: "${testing-dam.image}"
+    prompt: "Using the exact dam structure from the reference image where baby beaver is testing it, create an aerial or elevated view of this same dam emphasizing its curved arch shape. Show the same stick and mud construction style. The curve should be upstream (convex toward water flow). Water pooling behind. Same artistic style and dam design as reference."
+    hidden: true  # Don't show in main content
+
+  # Fun fact images with references
+  - id: "fun-fact-teeth"
+    image: "fun-fact-teeth.jpg"
+    referenceImage: "${gathering-sticks.image}"
+    prompt: "Using the baby beaver from reference, show this character prominently displaying orange teeth while gnawing on a branch. Educational style showing the iron-orange color clearly. Same character as reference."
+    hidden: true
+    
+  - id: "fun-fact-dam-size"
+    image: "fun-fact-dam-size.jpg"
+    referenceImage: "${testing-dam.image}"
+    prompt: "Using the dam from reference, create a wide panoramic view showing the impressive scale of a beaver dam stretching across a river. Include tiny beaver for scale. Same dam construction style as reference. Add text overlay '2,790 feet' for educational impact."
+    hidden: true
+    
+  - id: "fun-fact-swimming"
+    image: "fun-fact-swimming.jpg"
+    referenceImage: "${underwater-entrance.image}"
+    prompt: "Using the baby beaver from reference swimming underwater, show this same character swimming gracefully underwater with air bubbles, demonstrating their swimming ability. Clear underwater view. Same character and art style."
+    hidden: true
+    
+  - id: "fun-fact-nocturnal"
+    image: "fun-fact-nocturnal.jpg"
+    referenceImage: "${family-building.image}"
+    prompt: "Using the beaver family from reference, show the same family working on their dam at night under moonlight and stars. Magical nighttime atmosphere. Same characters and dam from reference."
+    hidden: true
 
 funFacts:
   title:
@@ -395,6 +386,7 @@ funFacts:
         en: "Beaver teeth never stop growing! They're orange because they contain iron, making them stronger than most animal teeth."
         es: "¡Los dientes de castor nunca dejan de crecer! Son naranjas porque contienen hierro, haciéndolos más fuertes que la mayoría de los dientes animales."
         ru: "Зубы бобров никогда не перестают расти! Они оранжевые, потому что содержат железо, что делает их прочнее, чем зубы большинства животных."
+      image: "fun-fact-teeth.jpg"
     
     - icon: "🏗️"
       title:
@@ -405,6 +397,7 @@ funFacts:
         en: "The largest beaver dam ever found is in Canada - it's 2,790 feet long and visible from space!"
         es: "¡La presa de castor más grande jamás encontrada está en Canadá - mide 850 metros de largo y es visible desde el espacio!"
         ru: "Самая большая бобровая плотина находится в Канаде - она длиной 850 метров и видна из космоса!"
+      image: "fun-fact-dam-size.jpg"
     
     - icon: "🏊"
       title:
@@ -415,6 +408,7 @@ funFacts:
         en: "Beavers can hold their breath underwater for up to 15 minutes and swim at speeds of 5 mph!"
         es: "¡Los castores pueden contener la respiración bajo el agua hasta 15 minutos y nadar a velocidades de 8 km/h!"
         ru: "Бобры могут задерживать дыхание под водой до 15 минут и плавать со скоростью 8 км/ч!"
+      image: "fun-fact-swimming.jpg"
     
     - icon: "🌙"
       title:
@@ -425,6 +419,7 @@ funFacts:
         en: "Beavers are nocturnal, doing most of their building and foraging work at night when it's safer from predators."
         es: "Los castores son nocturnos, haciendo la mayor parte de su construcción y búsqueda de alimento por la noche cuando es más seguro de los depredadores."
         ru: "Бобры ведут ночной образ жизни, выполняя большую часть строительства и поиска пищи ночью, когда безопаснее от хищников."
+      image: "fun-fact-nocturnal.jpg"
 
 # Image generation instructions
 imageGeneration:
@@ -454,8 +449,6 @@ viewerDetails:
     es: "¿Notaste cómo Bebé Castor usa su cola plana? Sirve como timón para nadar, como apoyo cuando se sienta erguido, ¡y hace un fuerte golpe de advertencia en el agua para alertar a la familia del peligro!"
     ru: "Вы заметили, как Малыш Бобр использует свой плоский хвост? Он служит рулем при плавании, опорой при сидении и издает громкий предупреждающий шлепок по воде, чтобы предупредить семью об опасности!"
   image: "detail-beaver-tail.jpg"
-  referenceImage: "${baby-beaver-portrait.image}"
-  prompt: "Using the baby beaver from the reference image, create a detailed close-up of the beaver's flat paddle-shaped tail. Show the distinctive scaly, leathery texture. The tail should be the same color as the beaver in the reference. Show it being used as a rudder in water or slapping the water surface. Educational photography style, Studio Ghibli warmth."
   
 - title:
     en: "Underwater Entrances"
@@ -466,8 +459,6 @@ viewerDetails:
     es: "¡Mira de cerca la madriguera - todas las entradas están bajo el agua! Este diseño inteligente mantiene a los depredadores fuera mientras permite a los castores entrar y salir con seguridad, incluso cuando el estanque se congela."
     ru: "Посмотрите внимательно на хатку - все входы находятся под водой! Эта умная конструкция не пускает хищников, позволяя бобрам безопасно входить и выходить, даже когда пруд замерзает."
   image: "detail-underwater-entrance.jpg"
-  referenceImage: "${baby-beaver-lodge.image}"
-  prompt: "Using the beaver lodge from the reference image, create a cross-section or underwater view showing the hidden entrance tunnel below the waterline. Show the tunnel leading up into the dry chamber. Clear water should reveal the entrance. Same artistic style as reference. Educational cutaway illustration, Studio Ghibli warmth."
   
 - title:
     en: "Orange Teeth"
@@ -478,8 +469,6 @@ viewerDetails:
     es: "¡Los castores tienen dientes naranjas! El color naranja proviene del hierro en el esmalte dental, lo que hace que sus dientes sean increíblemente fuertes - perfectos para roer madera."
     ru: "У бобров оранжевые зубы! Оранжевый цвет происходит от железа в зубной эмали, что делает их зубы невероятно крепкими - идеальными для прогрызания древесины."
   image: "detail-orange-teeth.jpg"
-  referenceImage: "${baby-beaver-gathering.image}"
-  prompt: "Using the baby beaver from the reference image who is gathering wood, create an extreme close-up of the beaver's mouth showing bright orange front teeth (incisors). The orange color should be vivid, showing iron-rich enamel. Include wood shavings and a branch being gnawed. Same character as reference. Educational macro photography, Studio Ghibli style."
   
 - title:
     en: "Engineering Mathematics"
@@ -490,8 +479,6 @@ viewerDetails:
     es: "¿Notas cómo la presa se curva río arriba? Esta forma de arco distribuye la presión del agua uniformemente, usando el mismo principio que las presas de arco construidas por humanos. ¡Los castores son ingenieros naturales!"
     ru: "Заметили, как плотина изгибается вверх по течению? Эта арочная форма равномерно распределяет давление воды, используя тот же принцип, что и арочные плотины, построенные людьми. Бобры - природные инженеры!"
   image: "detail-dam-curve.jpg"
-  referenceImage: "${baby-beaver-testing.image}"
-  prompt: "Using the completed dam from the reference image, create an aerial or elevated view emphasizing the curved arch shape of the dam. Show how it curves upstream (convex toward water flow). Highlight the intricate stick and mud construction. Water should be pooling behind creating a pond. Educational diagram clarity, Studio Ghibli beauty."
 
 routing:
     openai:
@@ -520,3 +507,7 @@ routing:
       - "detail-underwater-entrance.jpg"
       - "detail-orange-teeth.jpg"
       - "detail-dam-curve.jpg"
+      - "fun-fact-teeth.jpg"
+      - "fun-fact-dam-size.jpg"
+      - "fun-fact-swimming.jpg"
+      - "fun-fact-nocturnal.jpg"

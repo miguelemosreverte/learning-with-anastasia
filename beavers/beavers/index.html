@@ -366,8 +366,8 @@
             }
         }
 
-        /* Hide elements for language switching */
-        [data-lang]:not(.active) {
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
             display: none;
         }
     </style>
@@ -531,7 +531,7 @@
                  alt="Older beaver with grey-tinged fur, wise eyes, and sturdy build" 
                  data-alt-en="Older beaver with grey-tinged fur, wise eyes, and sturdy build"
                  data-alt-es="Castor mayor con pelaje grisáceo, ojos sabios y constitución robusta"
-                 data-alt-ru="Старший бобр с седоватым мехом, мудрыми глазами">
+                 data-alt-ru="Старший бобр с седоватым мехом, мудрыми глазами и крепким телосложением">
         </div>
         <div class="text-content">
             <h2 data-lang="en" class="active">Papa Beaver Arrives</h2>
@@ -541,10 +541,10 @@
                 <p>Papa Beaver, with his grey-tinged fur and years of experience, comes to check on Baby Beaver&#x27;s progress. He&#x27;s built dozens of dams and knows all the tricks!</p>
             </div>
             <div data-lang="es">
-                <p>Papá Castor, con su pelaje grisáceo y años de experiencia, viene a verificar el progreso de Bebé Castor.</p>
+                <p>Papá Castor, con su pelaje grisáceo y años de experiencia, viene a verificar el progreso de Bebé Castor. ¡Ha construido docenas de presas y conoce todos los trucos!</p>
             </div>
             <div data-lang="ru">
-                <p>Папа Бобр, с его седоватым мехом и многолетним опытом, приходит проверить прогресс Малыша Бобра.</p>
+                <p>Папа Бобр, с его седоватым мехом и многолетним опытом, приходит проверить прогресс Малыша Бобра. Он построил десятки плотин и знает все хитрости!</p>
             </div>
         </div>
     </section>
@@ -564,10 +564,10 @@
                 <p>Papa Beaver shows Baby Beaver how two beavers can lift logs that one cannot. Together, they position the biggest logs at the base, making the dam much stronger!</p>
             </div>
             <div data-lang="es">
-                <p>Papá Castor le muestra a Bebé Castor cómo dos castores pueden levantar troncos que uno no puede. ¡Juntos, colocan los troncos más grandes en la base!</p>
+                <p>Papá Castor le muestra a Bebé Castor cómo dos castores pueden levantar troncos que uno no puede. ¡Juntos, colocan los troncos más grandes en la base, haciendo la presa mucho más fuerte!</p>
             </div>
             <div data-lang="ru">
-                <p>Папа Бобр показывает Малышу Бобру, как два бобра могут поднять бревна, которые один не может.</p>
+                <p>Папа Бобр показывает Малышу Бобру, как два бобра могут поднять бревна, которые один не может. Вместе они устанавливают самые большие бревна в основание, делая плотину намного прочнее!</p>
             </div>
         </div>
     </section>
@@ -587,10 +587,10 @@
                 <p>Now comes the messy part! Baby Beaver scoops mud from the river bottom and packs it between the sticks. The mud acts like cement, sealing gaps so water can&#x27;t rush through.</p>
             </div>
             <div data-lang="es">
-                <p>¡Ahora viene la parte sucia! Bebé Castor recoge barro del fondo del río y lo empaca entre los palos.</p>
+                <p>¡Ahora viene la parte sucia! Bebé Castor recoge barro del fondo del río y lo empaca entre los palos. El barro actúa como cemento, sellando los huecos para que el agua no pueda pasar corriendo.</p>
             </div>
             <div data-lang="ru">
-                <p>Теперь наступает грязная часть! Малыш Бобр зачерпывает грязь со дна реки.</p>
+                <p>Теперь наступает грязная часть! Малыш Бобр зачерпывает грязь со дна реки и утрамбовывает её между палками. Грязь действует как цемент, запечатывая щели, чтобы вода не могла прорваться.</p>
             </div>
         </div>
     </section>
@@ -610,10 +610,10 @@
                 <p>Baby Beaver adds stones to the base for extra strength. Each stone is carefully chosen and placed. The dam is getting taller - water is starting to pool behind it!</p>
             </div>
             <div data-lang="es">
-                <p>Bebé Castor agrega piedras a la base para mayor resistencia. Cada piedra es cuidadosamente elegida y colocada.</p>
+                <p>Bebé Castor agrega piedras a la base para mayor resistencia. Cada piedra es cuidadosamente elegida y colocada. ¡La presa se está haciendo más alta - el agua está comenzando a acumularse detrás de ella!</p>
             </div>
             <div data-lang="ru">
-                <p>Малыш Бобр добавляет камни к основанию для дополнительной прочности.</p>
+                <p>Малыш Бобр добавляет камни к основанию для дополнительной прочности. Каждый камень тщательно выбирается и размещается. Плотина становится выше - вода начинает скапливаться за ней!</p>
             </div>
         </div>
     </section>
@@ -633,10 +633,10 @@
                 <p>Mama Beaver arrives with fresh willow bark - beaver&#x27;s favorite food! She&#x27;s proud of Baby Beaver&#x27;s hard work and brings snacks to keep everyone energized.</p>
             </div>
             <div data-lang="es">
-                <p>¡Mamá Castor llega con corteza de sauce fresca - la comida favorita de los castores!</p>
+                <p>¡Mamá Castor llega con corteza de sauce fresca - la comida favorita de los castores! Está orgullosa del trabajo duro de Bebé Castor y trae bocadillos para mantener a todos con energía.</p>
             </div>
             <div data-lang="ru">
-                <p>Мама Бобр приходит со свежей ивовой корой - любимой едой бобров!</p>
+                <p>Мама Бобр приходит со свежей ивовой корой - любимой едой бобров! Она гордится усердной работой Малыша Бобра и приносит закуски, чтобы все оставались полными энергии.</p>
             </div>
         </div>
     </section>
@@ -656,10 +656,10 @@
                 <p>The whole beaver family works together! Papa Beaver positions logs, Mama Beaver weaves branches, and Baby Beaver packs mud. Beaver families are very close - they work, play, and live together.</p>
             </div>
             <div data-lang="es">
-                <p>¡Toda la familia de castores trabaja junta! Papá Castor posiciona troncos, Mamá Castor entrelaza ramas, y Bebé Castor empaca barro.</p>
+                <p>¡Toda la familia de castores trabaja junta! Papá Castor posiciona troncos, Mamá Castor entrelaza ramas, y Bebé Castor empaca barro. Las familias de castores son muy unidas - trabajan, juegan y viven juntos.</p>
             </div>
             <div data-lang="ru">
-                <p>Вся семья бобров работает вместе! Папа Бобр устанавливает бревна, Мама Бобр плетет ветки, а Малыш Бобр утрамбовывает грязь.</p>
+                <p>Вся семья бобров работает вместе! Папа Бобр устанавливает бревна, Мама Бобр плетет ветки, а Малыш Бобр утрамбовывает грязь. Семьи бобров очень близки - они работают, играют и живут вместе.</p>
             </div>
         </div>
     </section>
@@ -679,10 +679,10 @@
                 <p>Baby Beaver swims along the dam, feeling for water currents that show leaks. When he finds one, he quickly patches it with more mud and sticks. Quality control is important!</p>
             </div>
             <div data-lang="es">
-                <p>Bebé Castor nada a lo largo de la presa, sintiendo las corrientes de agua que muestran fugas.</p>
+                <p>Bebé Castor nada a lo largo de la presa, sintiendo las corrientes de agua que muestran fugas. Cuando encuentra una, rápidamente la parchea con más barro y palos. ¡El control de calidad es importante!</p>
             </div>
             <div data-lang="ru">
-                <p>Малыш Бобр плавает вдоль плотины, ощущая водные потоки, которые показывают утечки.</p>
+                <p>Малыш Бобр плавает вдоль плотины, ощущая водные потоки, которые показывают утечки. Когда он находит одну, он быстро залатывает её дополнительной грязью и палками. Контроль качества важен!</p>
             </div>
         </div>
     </section>
@@ -725,10 +725,10 @@
                 <p>Now Baby Beaver builds a lodge - the beaver home! It&#x27;s like an island house made of sticks and mud, with underwater entrances for safety. The living chamber inside stays dry and cozy.</p>
             </div>
             <div data-lang="es">
-                <p>¡Ahora Bebé Castor construye una madriguera - el hogar del castor! Es como una casa isla hecha de palos y barro.</p>
+                <p>¡Ahora Bebé Castor construye una madriguera - el hogar del castor! Es como una casa isla hecha de palos y barro, con entradas subacuáticas para seguridad. La cámara de vivienda interior se mantiene seca y acogedora.</p>
             </div>
             <div data-lang="ru">
-                <p>Теперь Малыш Бобр строит хатку - дом бобра! Это как островной дом из палок и грязи.</p>
+                <p>Теперь Малыш Бобр строит хатку - дом бобра! Это как островной дом из палок и грязи, с подводными входами для безопасности. Жилая камера внутри остаётся сухой и уютной.</p>
             </div>
         </div>
     </section>
@@ -748,10 +748,10 @@
                 <p>The lodge has a secret - you can only enter from underwater! This keeps the beaver family safe from predators. Baby Beaver dives down and swims up into the dry, warm chamber inside.</p>
             </div>
             <div data-lang="es">
-                <p>¡La madriguera tiene un secreto - solo puedes entrar desde debajo del agua!</p>
+                <p>¡La madriguera tiene un secreto - solo puedes entrar desde debajo del agua! Esto mantiene a la familia de castores a salvo de los depredadores. Bebé Castor se sumerge y nada hacia arriba hacia la cámara seca y cálida del interior.</p>
             </div>
             <div data-lang="ru">
-                <p>У хатки есть секрет - войти можно только из-под воды!</p>
+                <p>У хатки есть секрет - войти можно только из-под воды! Это защищает семью бобров от хищников. Малыш Бобр ныряет вниз и всплывает в сухую, тёплую камеру внутри.</p>
             </div>
         </div>
     </section>
@@ -771,10 +771,10 @@
                 <p>The beaver family stores branches underwater near their lodge. In winter, when the pond freezes, they&#x27;ll have food without going outside. Beavers are amazing planners!</p>
             </div>
             <div data-lang="es">
-                <p>La familia de castores almacena ramas bajo el agua cerca de su madriguera.</p>
+                <p>La familia de castores almacena ramas bajo el agua cerca de su madriguera. En invierno, cuando el estanque se congele, tendrán comida sin salir afuera. ¡Los castores son planificadores increíbles!</p>
             </div>
             <div data-lang="ru">
-                <p>Семья бобров хранит ветки под водой возле своей хатки.</p>
+                <p>Семья бобров хранит ветки под водой возле своей хатки. Зимой, когда пруд замёрзнет, у них будет еда без необходимости выходить наружу. Бобры - удивительные планировщики!</p>
             </div>
         </div>
     </section>
@@ -794,10 +794,10 @@
                 <p>Baby Beaver&#x27;s first dam is complete! He celebrates by slapping his tail on the water - SMACK! This sound can be heard half a mile away. It&#x27;s how beavers say &#x27;We did it!&#x27;</p>
             </div>
             <div data-lang="es">
-                <p>¡La primera presa de Bebé Castor está completa! Celebra golpeando su cola en el agua - ¡SMACK!</p>
+                <p>¡La primera presa de Bebé Castor está completa! Celebra golpeando su cola en el agua - ¡SMACK! Este sonido se puede escuchar a media milla de distancia. ¡Es como los castores dicen &#x27;Lo logramos&#x27;!</p>
             </div>
             <div data-lang="ru">
-                <p>Первая плотина Малыша Бобра готова! Он празднует, хлопая хвостом по воде - ШЛЕП!</p>
+                <p>Первая плотина Малыша Бобра готова! Он празднует, хлопая хвостом по воде - ШЛЕП! Этот звук слышно на расстоянии полумили. Так бобры говорят &#x27;Мы сделали это!&#x27;</p>
             </div>
         </div>
     </section>
@@ -817,102 +817,10 @@
                 <p>Thanks to Baby Beaver&#x27;s dam, the whole area has transformed! Fish swim in the deep water, birds nest in the wetlands, and deer come to drink. One beaver family has created a home for hundreds of animals!</p>
             </div>
             <div data-lang="es">
-                <p>¡Gracias a la presa de Bebé Castor, toda el área se ha transformado!</p>
+                <p>¡Gracias a la presa de Bebé Castor, toda el área se ha transformado! Los peces nadan en el agua profunda, los pájaros anidan en los humedales, y los ciervos vienen a beber. ¡Una familia de castores ha creado un hogar para cientos de animales!</p>
             </div>
             <div data-lang="ru">
-                <p>Благодаря плотине Малыша Бобра вся территория преобразилась!</p>
-            </div>
-        </div>
-    </section>
-    <section class="content-section">
-        <div class="image-container">
-            <img src="assets/images/detail-beaver-tail.jpg" 
-                 alt="" 
-                 data-alt-en=""
-                 data-alt-es=""
-                 data-alt-ru="">
-        </div>
-        <div class="text-content">
-            <h2 data-lang="en" class="active">Beaver Tail Detail</h2>
-            <h2 data-lang="es">Detalle de Cola de Castor</h2>
-            <h2 data-lang="ru">Детали хвоста бобра</h2>
-            <div data-lang="en" class="active">
-                <p>Close-up of the beaver&#x27;s paddle-shaped tail</p>
-            </div>
-            <div data-lang="es">
-                <p>Primer plano de la cola en forma de paleta del castor</p>
-            </div>
-            <div data-lang="ru">
-                <p>Крупный план лопатообразного хвоста бобра</p>
-            </div>
-        </div>
-    </section>
-    <section class="content-section">
-        <div class="image-container">
-            <img src="assets/images/detail-underwater-entrance.jpg" 
-                 alt="" 
-                 data-alt-en=""
-                 data-alt-es=""
-                 data-alt-ru="">
-        </div>
-        <div class="text-content">
-            <h2 data-lang="en" class="active">Underwater Lodge Entrance</h2>
-            <h2 data-lang="es">Entrada Subacuática de la Madriguera</h2>
-            <h2 data-lang="ru">Подводный вход в хатку</h2>
-            <div data-lang="en" class="active">
-                <p>Cross-section showing underwater entrance</p>
-            </div>
-            <div data-lang="es">
-                <p>Sección transversal mostrando entrada subacuática</p>
-            </div>
-            <div data-lang="ru">
-                <p>Поперечный разрез, показывающий подводный вход</p>
-            </div>
-        </div>
-    </section>
-    <section class="content-section">
-        <div class="image-container">
-            <img src="assets/images/detail-orange-teeth.jpg" 
-                 alt="" 
-                 data-alt-en=""
-                 data-alt-es=""
-                 data-alt-ru="">
-        </div>
-        <div class="text-content">
-            <h2 data-lang="en" class="active">Orange Iron Teeth</h2>
-            <h2 data-lang="es">Dientes Naranjas de Hierro</h2>
-            <h2 data-lang="ru">Оранжевые железные зубы</h2>
-            <div data-lang="en" class="active">
-                <p>Close-up of beaver&#x27;s distinctive orange teeth</p>
-            </div>
-            <div data-lang="es">
-                <p>Primer plano de los distintivos dientes naranjas del castor</p>
-            </div>
-            <div data-lang="ru">
-                <p>Крупный план характерных оранжевых зубов бобра</p>
-            </div>
-        </div>
-    </section>
-    <section class="content-section">
-        <div class="image-container">
-            <img src="assets/images/detail-dam-curve.jpg" 
-                 alt="" 
-                 data-alt-en=""
-                 data-alt-es=""
-                 data-alt-ru="">
-        </div>
-        <div class="text-content">
-            <h2 data-lang="en" class="active">Dam Engineering</h2>
-            <h2 data-lang="es">Ingeniería de la Presa</h2>
-            <h2 data-lang="ru">Инженерия плотины</h2>
-            <div data-lang="en" class="active">
-                <p>Aerial view showing curved dam structure</p>
-            </div>
-            <div data-lang="es">
-                <p>Vista aérea mostrando la estructura curva de la presa</p>
-            </div>
-            <div data-lang="ru">
-                <p>Вид с воздуха на изогнутую структуру плотины</p>
+                <p>Благодаря плотине Малыша Бобра вся территория преобразилась! Рыбы плавают в глубокой воде, птицы гнездятся на болотах, а олени приходят пить. Одна семья бобров создала дом для сотен животных!</p>
             </div>
         </div>
     </section>
