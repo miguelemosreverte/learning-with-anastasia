@@ -65,10 +65,16 @@ class IndexGenerator {
             return {
                 id: meta.id,
                 title: meta.title || this.formatTitle(meta.id),
+                titleEn: (meta.title && meta.title.en) || this.formatTitle(meta.id),
+                titleEs: (meta.title && meta.title.es) || '',
+                titleRu: (meta.title && meta.title.ru) || '',
                 folderName: meta.folderName,
                 issueNumber: meta.issueNumber || 999,
                 coverImage: meta.coverImage || `${meta.folderName}/assets/images/magazine-cover.jpg`,
-                description: meta.description || {},
+                description: meta.subtitle || meta.description || {},
+                descriptionEn: (meta.subtitle && meta.subtitle.en) || '',
+                descriptionEs: (meta.subtitle && meta.subtitle.es) || '',
+                descriptionRu: (meta.subtitle && meta.subtitle.ru) || '',
                 hasGeneratedContent: meta.hasGeneratedContent !== false,
                 searchContent: this.buildSearchContent(data)
             };
@@ -92,6 +98,16 @@ class IndexGenerator {
 
     buildSearchContent(data) {
         const content = [];
+        
+        // Add meta title and subtitle in all languages
+        if (data.meta) {
+            if (data.meta.title && typeof data.meta.title === 'object') {
+                Object.values(data.meta.title).forEach(title => content.push(title));
+            }
+            if (data.meta.subtitle && typeof data.meta.subtitle === 'object') {
+                Object.values(data.meta.subtitle).forEach(sub => content.push(sub));
+            }
+        }
         
         // Add title and subtitle
         if (data.chapterTitle) {
@@ -197,6 +213,71 @@ class IndexGenerator {
             font-weight: 300;
             letter-spacing: 2px;
             text-transform: uppercase;
+        }
+
+        .language-selector {
+            position: absolute;
+            top: 30px;
+            right: 50px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-selector button {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #FFCC00;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0.6;
+        }
+
+        .language-selector button.active {
+            opacity: 1;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+            transform: scale(1.1);
+        }
+
+        .language-selector button:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        .language-selector button[data-lang="en"] {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30"><rect width="60" height="30" fill="%2300247D"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="white" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="%23CF142B" stroke-width="4"/><path d="M30,0 v30 M0,15 h60" stroke="white" stroke-width="10"/><path d="M30,0 v30 M0,15 h60" stroke="%23CF142B" stroke-width="6"/></svg>');
+        }
+
+        .language-selector button[data-lang="es"] {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height="2" fill="%23c60b1e"/><rect width="3" height="1" y="0.5" fill="%23ffc400"/></svg>');
+        }
+
+        .language-selector button[data-lang="ru"] {
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 2"><rect width="3" height="0.667" fill="white"/><rect width="3" height="0.667" y="0.667" fill="%230039a6"/><rect width="3" height="0.666" y="1.334" fill="%23d52b1e"/></svg>');
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(5deg); }
+            75% { transform: translateY(-10px) rotate(-5deg); }
+        }
+
+        .language-selector button {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .language-selector button:nth-child(2) {
+            animation-delay: 1.3s;
+        }
+
+        .language-selector button:nth-child(3) {
+            animation-delay: 2.6s;
+        }
+
+        .language-selector button:hover {
+            animation-play-state: paused;
         }
 
         .search-container {
@@ -347,12 +428,21 @@ class IndexGenerator {
 <body>
     <div class="header">
         <div class="nat-geo-logo">NG</div>
-        <h1>Learning with Anastasia</h1>
-        <p>Wildlife Magazine Collection</p>
+        <h1 data-en="Learning with Anastasia" data-es="Aprendiendo con Anastasia" data-ru="Учимся с Анастасией">Learning with Anastasia</h1>
+        <p data-en="Wildlife Magazine Collection" data-es="Colección de Revistas de Vida Silvestre" data-ru="Коллекция журналов о дикой природе">Wildlife Magazine Collection</p>
+        <div class="language-selector">
+            <button data-lang="en" class="active" title="English"></button>
+            <button data-lang="es" title="Español"></button>
+            <button data-lang="ru" title="Русский"></button>
+        </div>
     </div>
 
     <div class="search-container">
-        <input type="text" class="search-box" id="searchInput" placeholder="Search for animals, habitats, or topics...">
+        <input type="text" class="search-box" id="searchInput" 
+               placeholder="Search for animals, habitats, or topics..."
+               data-placeholder-en="Search for animals, habitats, or topics..."
+               data-placeholder-es="Buscar animales, hábitats o temas..."
+               data-placeholder-ru="Поиск животных, мест обитания или тем...">
         <span class="search-icon">🔍</span>
     </div>
 
@@ -364,10 +454,8 @@ class IndexGenerator {
                 <img src="{{coverImage}}" alt="{{title}}" onerror="this.src='assets/placeholder-cover.jpg'">
             </div>
             <div class="magazine-info">
-                <h2 class="magazine-title">{{title}}</h2>
-                {{#if description.en}}
-                <p class="magazine-subtitle">{{description.en}}</p>
-                {{/if}}
+                <h2 class="magazine-title" data-en="{{titleEn}}" data-es="{{titleEs}}" data-ru="{{titleRu}}">{{titleEn}}</h2>
+                <p class="magazine-subtitle" data-en="{{descriptionEn}}" data-es="{{descriptionEs}}" data-ru="{{descriptionRu}}">{{descriptionEn}}</p>
             </div>
         </div>
         {{/each}}
@@ -378,6 +466,32 @@ class IndexGenerator {
     </div>
 
     <script>
+        // Language switching
+        let currentLang = 'en';
+        
+        function switchLanguage(lang) {
+            currentLang = lang;
+            
+            // Update active button
+            document.querySelectorAll('.language-selector button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            
+            // Update all text elements
+            document.querySelectorAll('[data-' + lang + ']').forEach(element => {
+                if (element.tagName === 'INPUT' && element.hasAttribute('data-placeholder-' + lang)) {
+                    element.placeholder = element.getAttribute('data-placeholder-' + lang);
+                } else {
+                    element.textContent = element.getAttribute('data-' + lang);
+                }
+            });
+        }
+        
+        // Add language button listeners
+        document.querySelectorAll('.language-selector button').forEach(button => {
+            button.addEventListener('click', () => switchLanguage(button.dataset.lang));
+        });
+        
         // Search functionality
         const searchInput = document.getElementById('searchInput');
         const magazineGrid = document.getElementById('magazineGrid');

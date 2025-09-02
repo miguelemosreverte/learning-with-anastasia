@@ -1244,15 +1244,6 @@ funFacts:
         es: ¡Las nutrias se toman de las manos mientras duermen para no separarse! Estos grupos se llaman 'balsas' y pueden incluir más de 100 nutrias flotando juntas!
         ru: Выдры держатся за лапы во время сна, чтобы не расплыться! Эти группы называются 'плотами' и могут включать более 100 выдр, плавающих вместе!
       image: fun-fact-holding-hands.jpg
-    - title:
-        en: Purple Teeth
-        es: Dientes Púrpuras
-        ru: Пурпурные зубы
-      content:
-        en: Their teeth can turn purple from eating so many purple sea urchins! It's a sign of a healthy otter diet and doesn't hurt them at all.
-        es: ¡Sus dientes pueden volverse púrpuras por comer tantos erizos de mar púrpuras! Es una señal de una dieta saludable de nutria y no les hace daño en absoluto.
-        ru: Их зубы могут стать пурпурными от поедания множества пурпурных морских ежей! Это признак здорового питания выдры и совсем не вредит им.
-      image: fun-fact-purple-teeth.jpg
 viewerDetails:
   - title:
       en: Tool Use Intelligence
@@ -1360,7 +1351,6 @@ routing:
     - fun-fact-fur.jpg
     - fun-fact-eating.jpg
     - fun-fact-holding-hands.jpg
-    - fun-fact-purple-teeth.jpg
     - detail-tool-use.jpg
     - detail-keystone.jpg
     - detail-no-blubber.jpg
