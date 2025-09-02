@@ -1,0 +1,20 @@
+# Iron Snail Chapter Metadata
+meta:
+  id: chrysomallon-squamiferum
+  issueNumber: 2
+  date: "February 2025"
+  folderName: "chrysomallon-squamiferum"
+  title:
+    en: "The Iron Snail"
+    es: "El Caracol de Hierro"
+    ru: "Железная улитка"
+  subtitle:
+    en: "Chrysomallon Squamiferum - The only creature with iron armor from the deep ocean vents"
+    es: "Chrysomallon Squamiferum - La única criatura con armadura de hierro de las fuentes oceánicas profundas"
+    ru: "Chrysomallon Squamiferum - Единственное существо с железной броней из глубоководных источников"
+  magazineText:
+    en: "Journey to the deep ocean vents where a remarkable snail builds its shell from iron. Meet the only known animal that incorporates metal into its body structure."
+    es: "Viaja a las fuentes oceánicas profundas donde un caracol extraordinario construye su caparazón de hierro. Conoce al único animal conocido que incorpora metal en su estructura corporal."
+    ru: "Путешествие к глубоководным источникам, где удивительная улитка строит свою раковину из железа. Познакомьтесь с единственным известным животным, которое включает металл в структуру своего тела."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: false  # This was manually created, not YAML-generated

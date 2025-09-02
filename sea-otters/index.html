@@ -3,190 +3,337 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">Sea Otters: Ocean&#x27;s Playful Engineers</title>
+    <title>Sea Otters: Ocean&#x27;s Playful Engineers - Educational Magazine</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #333;
+        
+        html {
             overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
         }
 
         /* Hero Section */
         .hero-section {
             position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            height: 70vh;
             overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
-
+        
         .hero-image {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 1;
         }
-
+        
         .hero-overlay {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%);
-            z-index: 2;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
-
-        .hero-content {
-            position: relative;
-            z-index: 3;
-            text-align: center;
-            color: white;
-            padding: 2rem;
-        }
-
+        
         .hero-title {
+            font-family: 'Oswald', sans-serif;
             font-size: 4rem;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-            animation: fadeInDown 1s ease-out;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
         }
-
+        
         .hero-subtitle {
+            font-family: 'Merriweather', serif;
             font-size: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            animation: fadeInUp 1s ease-out 0.5s both;
-        }
-
-        /* Magazine Container */
-        .magazine-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            background: white;
-            position: relative;
-            top: -50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            color: #FFCC00;
+            margin-top: 20px;
         }
 
         /* Content Sections */
         .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 4rem 0;
+            gap: 40px;
             align-items: center;
+            overflow: hidden;
         }
-
+        
         .content-section:nth-child(even) {
             direction: rtl;
         }
-
-        .content-section:nth-child(even) > * {
+        
+        .content-section:nth-child(even) .text-content {
             direction: ltr;
         }
-
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
         .image-container {
             position: relative;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
             transition: transform 0.3s ease;
         }
-
-        .image-container:hover {
-            transform: scale(1.02);
+        
+        .image-container:hover img {
+            transform: scale(1.05);
         }
 
-        .image-container img {
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
             width: 100%;
             height: auto;
             display: block;
         }
 
-        .text-content {
-            padding: 2rem;
+        .fact-card-content {
+            padding: 30px;
         }
 
-        .text-content h2 {
-            color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            position: relative;
-            padding-bottom: 0.5rem;
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
         }
 
-        .text-content h2:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
         }
 
-        .text-content p {
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.8;
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
         }
 
-        /* Fun Facts Section */
-        .fun-facts {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 4rem 0;
-        }
-
-        .fun-facts h2 {
-            text-align: center;
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
             font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .fact-card {
-            background: rgba(255,255,255,0.1);
-            padding: 1.5rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-
-        .fact-card:hover {
-            transform: translateY(-5px);
-            background: rgba(255,255,255,0.2);
-        }
-
-        .fact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            display: block;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
             text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
         }
 
         /* Responsive Design */
@@ -207,17 +354,25 @@
                 direction: ltr;
             }
 
-            .magazine-container {
-                padding: 1rem;
-                top: -30px;
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
             }
         }
 
         /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-30px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -228,225 +383,1401 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
     </style>
 </head>
 <body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Sea Otters: Ocean&#x27;s Playful Engineers</h1>
+        <h1 data-lang="es">Nutrias Marinas: Los Ingenieros Juguetones del Océano</h1>
+        <h1 data-lang="ru">Морские выдры: Игривые инженеры океана</h1>
+        <p data-lang="en" class="active">Join Ollie&#x27;s journey through kelp forests and ocean adventures</p>
+        <p data-lang="es">Únete al viaje de Ollie a través de bosques de algas y aventuras oceánicas</p>
+        <p data-lang="ru">Присоединяйтесь к путешествию Олли через леса ламинарии и океанские приключения</p>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero-section">
-        <img src="assets/images/hero-sea-otters.jpg" 
-             alt="Majestic kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among the kelp fronds" 
-             data-i18n-alt="heroImageAlt" 
-             class="hero-image">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1 class="hero-title" data-i18n="heroTitle">Sea Otters</h1>
-            <p class="hero-subtitle" data-i18n="heroSubtitle">The Floating Teddy Bears of the Ocean</p>
+        <img src="assets/images/hero-kelp-forest.jpg" alt="Sea Otters" class="hero-image">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Sea Otters</h2>
+            <h2 class="hero-title" data-lang="es">Nutrias Marinas</h2>
+            <h2 class="hero-title" data-lang="ru">Морские выдры</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">Ocean&#x27;s Floating Treasures</p>
+            <p class="hero-subtitle" data-lang="es">Tesoros Flotantes del Océano</p>
+            <p class="hero-subtitle" data-lang="ru">Плавающие сокровища океана</p>
         </div>
     </section>
 
-    <!-- Magazine Container -->
-    <div class="magazine-container">
-        <section class="content-section">
-            <div class="image-container">
-                <img src="assets/images/otter-portrait.jpg" 
-                     alt="Close-up of a sea otter&#x27;s face showing its whiskers, small ears, and expressive eyes" 
-                     data-i18n-alt="otterPortraitAlt"
->
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/birth-of-ollie.jpg" 
+                 alt="Newborn sea otter pup Ollie resting on his mother&#x27;s belly in calm ocean waters, extremely fluffy baby fur visible" 
+                 data-alt-en="Newborn sea otter pup Ollie resting on his mother&#x27;s belly in calm ocean waters, extremely fluffy baby fur visible"
+                 data-alt-es="Cachorro recién nacido de nutria marina Ollie descansando en el vientre de su madre en aguas oceánicas tranquilas"
+                 data-alt-ru="Новорождённый детёныш морской выдры Олли отдыхает на животе матери в спокойных океанских водах">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Birth of Ollie</h2>
+            <h2 data-lang="es">El Nacimiento de Ollie</h2>
+            <h2 data-lang="ru">Рождение Олли</h2>
+            <div data-lang="en" class="active">
+                <p>In the gentle waters of Monterey Bay, a tiny sea otter pup named Ollie was born. His mother, Mama Otter, cradled him on her warm belly as waves rocked them softly. Ollie&#x27;s fur was so fluffy and thick that he bobbed like a cork - he couldn&#x27;t dive underwater even if he tried!</p>
             </div>
-            <div class="text-content">
-                <h2 data-i18n="meetOtterTitle">Meet the Sea Otter!</h2>
-                <p data-i18n="meetOtterContent">Sea otters are amazing marine mammals that live in the Pacific Ocean. They have the thickest fur of any animal - up to one million hairs per square inch! This incredible fur coat keeps them warm in cold ocean waters. Unlike other marine mammals, sea otters don&#x27;t have blubber for insulation.</p>
+            <div data-lang="es">
+                <p>En las suaves aguas de la Bahía de Monterey, nació una pequeña cría de nutria marina llamada Ollie. Su madre, Mamá Nutria, lo acunaba en su cálido vientre mientras las olas los mecían suavemente. ¡El pelaje de Ollie era tan esponjoso y grueso que flotaba como un corcho - no podía sumergirse aunque lo intentara!</p>
             </div>
-        </section>
-        <section class="content-section">
-            <div class="image-container">
-                <img src="assets/images/otter-floating.jpg" 
-                     alt="Sea otter floating on its back in calm water, wrapped in kelp, holding a sea urchin" 
-                     data-i18n-alt="otterFloatingAlt"
->
+            <div data-lang="ru">
+                <p>В спокойных водах залива Монтерей родился крошечный детёныш морской выдры по имени Олли. Его мама, Мама Выдра, качала его на своём тёплом животе, пока волны мягко укачивали их. Мех Олли был таким пушистым и густым, что он плавал как пробка - он не мог нырнуть, даже если бы попытался!</p>
             </div>
-            <div class="text-content">
-                <h2 data-i18n="floatingTitle">Life on Their Backs</h2>
-                <p data-i18n="floatingContent">Sea otters spend most of their lives floating on their backs! They eat, sleep, and even give birth while floating. They use kelp as an anchor, wrapping themselves in it so they don&#x27;t drift away while sleeping. Groups of otters floating together are called &#x27;rafts&#x27; - sometimes over 100 otters float together!</p>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/mama-otter.jpg" 
+                 alt="Adult female sea otter grooming her pup, showing maternal care and bonding" 
+                 data-alt-en="Adult female sea otter grooming her pup, showing maternal care and bonding"
+                 data-alt-es="Nutria marina adulta hembra acicalando a su cachorro, mostrando cuidado maternal"
+                 data-alt-ru="Взрослая самка морской выдры ухаживает за своим детёнышем">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama&#x27;s Gentle Care</h2>
+            <h2 data-lang="es">El Cuidado Gentil de Mamá</h2>
+            <h2 data-lang="ru">Нежная забота мамы</h2>
+            <div data-lang="en" class="active">
+                <p>Mama Otter was the most caring mother in the bay. She groomed Ollie&#x27;s fur constantly, blowing air into it to keep him warm and floating. &#x27;Your fur is your life jacket, little one,&#x27; she would say, carefully cleaning each tiny whisker and every bit of fluffy fur.</p>
             </div>
-        </section>
-        <section class="content-section">
-            <div class="image-container">
-                <img src="assets/images/otter-using-rock.jpg" 
-                     alt="Sea otter floating on back, using a rock on its chest to crack open a shellfish" 
-                     data-i18n-alt="otterToolUseAlt"
->
+            <div data-lang="es">
+                <p>Mamá Nutria era la madre más cariñosa de la bahía. Acicalaba constantemente el pelaje de Ollie, soplando aire en él para mantenerlo caliente y flotando. &#x27;Tu pelaje es tu chaleco salvavidas, pequeño,&#x27; decía, limpiando cuidadosamente cada pequeño bigote y cada pedacito de pelaje esponjoso.</p>
             </div>
-            <div class="text-content">
-                <h2 data-i18n="toolUseTitle">Ocean&#x27;s Tool Users</h2>
-                <p data-i18n="toolUseContent">Sea otters are one of the few animals that use tools! They use rocks to crack open shellfish like clams and sea urchins. Each otter has a favorite rock that they keep in a pouch of loose skin under their armpit. They place the rock on their chest and smash the shellfish against it - nature&#x27;s dinner table!</p>
+            <div data-lang="ru">
+                <p>Мама Выдра была самой заботливой мамой в заливе. Она постоянно ухаживала за мехом Олли, вдувая в него воздух, чтобы он оставался тёплым и плавучим. &#x27;Твой мех - это твой спасательный жилет, малыш,&#x27; - говорила она, тщательно очищая каждый крошечный ус и каждый кусочек пушистого меха.</p>
             </div>
-        </section>
-        <section class="content-section">
-            <div class="image-container">
-                <img src="assets/images/kelp-forest-ecosystem.jpg" 
-                     alt="Vibrant underwater kelp forest with sunlight filtering through, showing the rich ecosystem with fish and sea otters" 
-                     data-i18n-alt="kelpForestAlt"
->
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/first-floating-lesson.jpg" 
+                 alt="Baby Ollie learning to float on his back with paws spread, supervised by mother" 
+                 data-alt-en="Baby Ollie learning to float on his back with paws spread, supervised by mother"
+                 data-alt-es="Bebé Ollie aprendiendo a flotar de espaldas con las patas extendidas"
+                 data-alt-ru="Малыш Олли учится плавать на спине с расставленными лапками">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Learning to Float</h2>
+            <h2 data-lang="es">Aprendiendo a Flotar</h2>
+            <h2 data-lang="ru">Учимся плавать</h2>
+            <div data-lang="en" class="active">
+                <p>Today was special - Mama was teaching Ollie how to float properly on his back. &#x27;Spread your paws wide, tummy to the sky!&#x27; she instructed. Ollie wiggled and splashed, giggling as he discovered he could balance perfectly on the gentle waves. The secret was in his amazing fur - with up to one million hairs per square inch!</p>
             </div>
-            <div class="text-content">
-                <h2 data-i18n="ecosystemTitle">Kelp Forest Guardians</h2>
-                <p data-i18n="ecosystemContent">Sea otters are ecosystem heroes! By eating sea urchins, they protect kelp forests from being destroyed. Without otters, sea urchins would eat all the kelp, turning vibrant underwater forests into barren areas. Kelp forests provide homes for thousands of species and help fight climate change by absorbing carbon dioxide.</p>
+            <div data-lang="es">
+                <p>Hoy era especial - Mamá estaba enseñando a Ollie cómo flotar correctamente de espaldas. &#x27;¡Extiende tus patas, barriga al cielo!&#x27; instruyó. Ollie se movió y salpicó, riendo mientras descubría que podía balancearse perfectamente en las suaves olas. ¡El secreto estaba en su asombroso pelaje - con hasta un millón de pelos por pulgada cuadrada!</p>
             </div>
-        </section>
-        <section class="content-section">
-            <div class="image-container">
-                <img src="assets/images/mother-and-pup.jpg" 
-                     alt="Mother sea otter floating on her back with a fluffy pup resting on her belly" 
-                     data-i18n-alt="motherPupAlt"
->
+            <div data-lang="ru">
+                <p>Сегодня был особенный день - Мама учила Олли правильно плавать на спине. &#x27;Расставь лапки широко, животик к небу!&#x27; - инструктировала она. Олли извивался и плескался, хихикая, когда обнаружил, что может идеально балансировать на мягких волнах. Секрет был в его удивительном мехе - до миллиона волосков на квадратный дюйм!</p>
             </div>
-            <div class="text-content">
-                <h2 data-i18n="babyOttersTitle">Adorable Otter Pups</h2>
-                <p data-i18n="babyOttersContent">Baby sea otters, called pups, are born in the water and can float immediately! Their fluffy fur is so buoyant they can&#x27;t dive underwater for the first few weeks. Mother otters are incredibly devoted, carrying their pups on their bellies for months, teaching them to swim, dive, and find food. The bond between mother and pup is one of the strongest in the animal kingdom!</p>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/grooming-time.jpg" 
+                 alt="Ollie and Mama Otter grooming their fur, showing detailed grooming behavior" 
+                 data-alt-en="Ollie and Mama Otter grooming their fur, showing detailed grooming behavior"
+                 data-alt-es="Ollie y Mamá Nutria acicalando su pelaje, mostrando comportamiento detallado"
+                 data-alt-ru="Олли и Мама Выдра ухаживают за своим мехом">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Grooming Ritual</h2>
+            <h2 data-lang="es">El Ritual de Acicalamiento</h2>
+            <h2 data-lang="ru">Ритуал ухода за мехом</h2>
+            <div data-lang="en" class="active">
+                <p>Every morning began with grooming time. Ollie watched as Mama demonstrated the proper technique: rubbing, rolling, and blowing air into the fur. &#x27;Clean fur means warm and dry,&#x27; she explained. &#x27;Without our fur, we would freeze in these cold waters. We don&#x27;t have blubber like seals - our fur is everything!&#x27;</p>
             </div>
-        </section>
+            <div data-lang="es">
+                <p>Cada mañana comenzaba con el tiempo de acicalamiento. Ollie observaba mientras Mamá demostraba la técnica adecuada: frotar, rodar y soplar aire en el pelaje. &#x27;Pelaje limpio significa caliente y seco,&#x27; explicó. &#x27;Sin nuestro pelaje, nos congelaríamos en estas aguas frías. No tenemos grasa como las focas - ¡nuestro pelaje lo es todo!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Каждое утро начиналось с ухода за мехом. Олли наблюдал, как Мама демонстрировала правильную технику: потирание, перекатывание и вдувание воздуха в мех. &#x27;Чистый мех означает тепло и сухость,&#x27; - объясняла она. &#x27;Без нашего меха мы бы замёрзли в этих холодных водах. У нас нет жира, как у тюленей - наш мех - это всё!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/kelp-forest-intro.jpg" 
+                 alt="Magnificent kelp forest with sunlight streaming through, creating ethereal underwater atmosphere" 
+                 data-alt-en="Magnificent kelp forest with sunlight streaming through, creating ethereal underwater atmosphere"
+                 data-alt-es="Magnífico bosque de algas con luz solar atravesando, creando atmósfera etérea submarina"
+                 data-alt-ru="Великолепный лес ламинарии с проникающим солнечным светом">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Magical Kelp Forest</h2>
+            <h2 data-lang="es">El Bosque Mágico de Algas</h2>
+            <h2 data-lang="ru">Волшебный лес ламинарии</h2>
+            <div data-lang="en" class="active">
+                <p>One calm morning, Mama took Ollie to see the kelp forest for the first time. Giant kelp fronds towered like underwater trees, swaying in the current. Golden sunlight filtered through the canopy, creating dancing patterns on the water. &#x27;This is our home, Ollie,&#x27; Mama said proudly. &#x27;The kelp forest gives us everything we need.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Una mañana tranquila, Mamá llevó a Ollie a ver el bosque de algas por primera vez. Frondas gigantes de algas se elevaban como árboles submarinos, meciéndose en la corriente. La luz dorada del sol se filtraba a través del dosel, creando patrones danzantes en el agua. &#x27;Este es nuestro hogar, Ollie,&#x27; dijo Mamá con orgullo. &#x27;El bosque de algas nos da todo lo que necesitamos.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Одним спокойным утром Мама взяла Олли посмотреть на лес ламинарии в первый раз. Гигантские водоросли возвышались как подводные деревья, покачиваясь на течении. Золотой солнечный свет проникал сквозь полог, создавая танцующие узоры на воде. &#x27;Это наш дом, Олли,&#x27; - с гордостью сказала Мама. &#x27;Лес ламинарии даёт нам всё необходимое.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/professor-kelp.jpg" 
+                 alt="Elderly wise sea otter with grey whiskers floating near tall kelp, scholarly appearance" 
+                 data-alt-en="Elderly wise sea otter with grey whiskers floating near tall kelp, scholarly appearance"
+                 data-alt-es="Nutria marina anciana y sabia con bigotes grises flotando cerca de algas altas"
+                 data-alt-ru="Пожилая мудрая морская выдра с седыми усами около высокой ламинарии">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meeting Professor Kelp</h2>
+            <h2 data-lang="es">Conociendo al Profesor Kelp</h2>
+            <h2 data-lang="ru">Знакомство с Профессором Келп</h2>
+            <div data-lang="en" class="active">
+                <p>Near a particularly tall kelp frond lived Professor Kelp, the wisest otter in the bay. His whiskers were grey with age, and his eyes sparkled with knowledge. &#x27;Welcome, young Ollie!&#x27; he called out warmly. &#x27;I&#x27;ve been watching the kelp forests for fifty years. Come, let me show you the secrets of our ocean home.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Cerca de una fronda de alga particularmente alta vivía el Profesor Kelp, la nutria más sabia de la bahía. Sus bigotes eran grises por la edad, y sus ojos brillaban con conocimiento. &#x27;¡Bienvenido, joven Ollie!&#x27; llamó calurosamente. &#x27;He estado observando los bosques de algas durante cincuenta años. Ven, déjame mostrarte los secretos de nuestro hogar oceánico.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Около особенно высокой водоросли жил Профессор Келп, самая мудрая выдра в заливе. Его усы были седыми от возраста, а глаза искрились знаниями. &#x27;Добро пожаловать, юный Олли!&#x27; - тепло позвал он. &#x27;Я наблюдаю за лесами ламинарии уже пятьдесят лет. Пойдём, я покажу тебе секреты нашего океанского дома.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/first-rock-tool.jpg" 
+                 alt="Mama Otter demonstrating tool use, cracking sea urchin with rock on her chest" 
+                 data-alt-en="Mama Otter demonstrating tool use, cracking sea urchin with rock on her chest"
+                 data-alt-es="Mamá Nutria demostrando uso de herramientas, rompiendo erizo con roca"
+                 data-alt-ru="Мама Выдра демонстрирует использование инструментов">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Magic of Tools</h2>
+            <h2 data-lang="es">La Magia de las Herramientas</h2>
+            <h2 data-lang="ru">Магия инструментов</h2>
+            <div data-lang="en" class="active">
+                <p>Ollie watched in amazement as Mama pulled out a smooth rock from a pouch of skin under her arm. She placed a spiny sea urchin on her chest, then - CRACK! - she smashed it with the rock. &#x27;We&#x27;re one of the few animals that use tools, Ollie,&#x27; she explained proudly. &#x27;Each otter has their favorite rock. This one has been mine for years!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Ollie observó con asombro mientras Mamá sacaba una roca lisa de una bolsa de piel bajo su brazo. Colocó un erizo de mar espinoso en su pecho, luego - ¡CRACK! - lo aplastó con la roca. &#x27;Somos uno de los pocos animales que usan herramientas, Ollie,&#x27; explicó con orgullo. &#x27;¡Cada nutria tiene su roca favorita. Esta ha sido mía durante años!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Олли с изумлением наблюдал, как Мама достала гладкий камень из кожаного кармана под мышкой. Она положила колючего морского ежа на грудь, затем - ТРАХ! - разбила его камнем. &#x27;Мы одни из немногих животных, которые используют инструменты, Олли,&#x27; - с гордостью объяснила она. &#x27;У каждой выдры есть свой любимый камень. Этот мой уже много лет!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/urchin-hunt.jpg" 
+                 alt="Ollie and Professor Kelp examining purple sea urchins among rocks" 
+                 data-alt-en="Ollie and Professor Kelp examining purple sea urchins among rocks"
+                 data-alt-es="Ollie y Profesor Kelp examinando erizos de mar púrpuras entre rocas"
+                 data-alt-ru="Олли и Профессор Келп изучают пурпурных морских ежей среди скал">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Purple Prize</h2>
+            <h2 data-lang="es">El Premio Púrpura</h2>
+            <h2 data-lang="ru">Пурпурный приз</h2>
+            <div data-lang="en" class="active">
+                <p>Today&#x27;s lesson was finding sea urchins. Professor Kelp showed Ollie how to spot the purple spiny creatures hiding in rock crevices. &#x27;Sea urchins are delicious, but be careful of their spines!&#x27; he warned. &#x27;We eat so many purple urchins that sometimes our teeth turn purple too! But that&#x27;s okay - it shows we&#x27;re healthy eaters!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>La lección de hoy era encontrar erizos de mar. El Profesor Kelp mostró a Ollie cómo detectar las criaturas púrpuras espinosas escondidas en las grietas de las rocas. &#x27;¡Los erizos de mar son deliciosos, pero ten cuidado con sus espinas!&#x27; advirtió. &#x27;¡Comemos tantos erizos púrpuras que a veces nuestros dientes también se vuelven púrpuras! Pero está bien - ¡muestra que somos comedores saludables!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Сегодняшний урок - поиск морских ежей. Профессор Келп показал Олли, как находить пурпурных колючих существ, прячущихся в расщелинах скал. &#x27;Морские ежи вкусные, но будь осторожен с их иглами!&#x27; - предупредил он. &#x27;Мы едим так много пурпурных ежей, что иногда наши зубы тоже становятся пурпурными! Но это нормально - это показывает, что мы здорово питаемся!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/kelp-anchoring.jpg" 
+                 alt="Mama and Ollie wrapped securely in kelp strands, ready for a nap" 
+                 data-alt-en="Mama and Ollie wrapped securely in kelp strands, ready for a nap"
+                 data-alt-es="Mamá y Ollie envueltos de forma segura en hebras de algas, listos para una siesta"
+                 data-alt-ru="Мама и Олли надёжно обёрнуты в пряди ламинарии, готовы ко сну">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Nature&#x27;s Anchor</h2>
+            <h2 data-lang="es">El Ancla de la Naturaleza</h2>
+            <h2 data-lang="ru">Природный якорь</h2>
+            <div data-lang="en" class="active">
+                <p>As naptime approached, Mama showed Ollie a special trick. She grabbed a long strand of kelp and wrapped it around both of them like a blanket. &#x27;This keeps us from drifting away while we sleep,&#x27; she explained. &#x27;The kelp is our anchor, our blanket, and our protection all in one. Always remember to wrap up before you nap!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando se acercaba la hora de la siesta, Mamá le mostró a Ollie un truco especial. Agarró una larga hebra de alga y la envolvió alrededor de ambos como una manta. &#x27;Esto evita que nos alejemos mientras dormimos,&#x27; explicó. &#x27;El alga es nuestro ancla, nuestra manta y nuestra protección, todo en uno. ¡Siempre recuerda envolverte antes de dormir!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда приближалось время сна, Мама показала Олли особый трюк. Она схватила длинную прядь ламинарии и обернула её вокруг них обоих как одеяло. &#x27;Это не даёт нам уплыть, пока мы спим,&#x27; - объяснила она. &#x27;Ламинария - это наш якорь, наше одеяло и наша защита в одном. Всегда помни - оборачивайся перед сном!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/meet-ruby.jpg" 
+                 alt="Tiny baby otter Ruby meeting her big brother Ollie for the first time" 
+                 data-alt-en="Tiny baby otter Ruby meeting her big brother Ollie for the first time"
+                 data-alt-es="Pequeña bebé nutria Ruby conociendo a su hermano mayor Ollie por primera vez"
+                 data-alt-ru="Крошечная малышка выдра Руби встречает своего старшего брата Олли">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Sister Ruby Arrives</h2>
+            <h2 data-lang="es">Llega la Hermana Ruby</h2>
+            <h2 data-lang="ru">Появление сестрёнки Руби</h2>
+            <div data-lang="en" class="active">
+                <p>One sunny morning, Ollie got the best surprise - a baby sister! Ruby was even tinier than Ollie had been, her fur so fluffy she looked like a floating cotton ball. &#x27;You&#x27;re a big brother now, Ollie,&#x27; Mama said gently. &#x27;You can help me teach Ruby everything you&#x27;ve learned.&#x27; Ollie puffed up with pride - he was going to be the best big brother ever!</p>
+            </div>
+            <div data-lang="es">
+                <p>Una mañana soleada, Ollie recibió la mejor sorpresa - ¡una hermanita! Ruby era aún más pequeña de lo que había sido Ollie, su pelaje tan esponjoso que parecía una bola de algodón flotante. &#x27;Ahora eres un hermano mayor, Ollie,&#x27; dijo Mamá suavemente. &#x27;Puedes ayudarme a enseñarle a Ruby todo lo que has aprendido.&#x27; ¡Ollie se hinchó de orgullo - iba a ser el mejor hermano mayor!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Одним солнечным утром Олли получил лучший сюрприз - младшую сестрёнку! Руби была ещё меньше, чем был Олли, её мех был таким пушистым, что она выглядела как плавающий ватный шарик. &#x27;Теперь ты старший брат, Олли,&#x27; - нежно сказала Мама. &#x27;Ты можешь помочь мне научить Руби всему, что узнал сам.&#x27; Олли раздулся от гордости - он будет лучшим старшим братом!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/first-dive-attempt.jpg" 
+                 alt="Ollie trying to dive underwater but popping back up, looking surprised" 
+                 data-alt-en="Ollie trying to dive underwater but popping back up, looking surprised"
+                 data-alt-es="Ollie intentando sumergirse pero saliendo de nuevo, luciendo sorprendido"
+                 data-alt-ru="Олли пытается нырнуть под воду, но выскакивает обратно, выглядя удивлённым">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Brave Dive</h2>
+            <h2 data-lang="es">El Buceo Valiente</h2>
+            <h2 data-lang="ru">Смелое погружение</h2>
+            <div data-lang="en" class="active">
+                <p>Ollie was finally old enough to try diving! He took a deep breath, closed his eyes tight, and... splash! He barely went under before popping back up like a cork. &#x27;Don&#x27;t worry,&#x27; Professor Kelp chuckled. &#x27;Your fluffy baby fur makes you too buoyant. Soon you&#x27;ll grow your adult fur and diving will be easier. For now, enjoy floating!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Ollie finalmente tenía edad suficiente para intentar bucear! Tomó una respiración profunda, cerró los ojos con fuerza, y... ¡splash! Apenas se sumergió antes de saltar de vuelta como un corcho. &#x27;No te preocupes,&#x27; rió el Profesor Kelp. &#x27;Tu pelaje esponjoso de bebé te hace demasiado flotante. Pronto crecerá tu pelaje adulto y bucear será más fácil. ¡Por ahora, disfruta flotando!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Олли наконец-то стал достаточно взрослым, чтобы попробовать нырять! Он глубоко вдохнул, крепко закрыл глаза и... плюх! Он едва погрузился, как тут же выскочил обратно как пробка. &#x27;Не волнуйся,&#x27; - усмехнулся Профессор Келп. &#x27;Твой пушистый детский мех делает тебя слишком плавучим. Скоро вырастет взрослый мех и нырять будет легче. А пока наслаждайся плаванием!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/abalone-discovery.jpg" 
+                 alt="Mama Otter showing Ollie how to carefully remove an abalone from a rock" 
+                 data-alt-en="Mama Otter showing Ollie how to carefully remove an abalone from a rock"
+                 data-alt-es="Mamá Nutria mostrando a Ollie cómo quitar cuidadosamente un abulón de una roca"
+                 data-alt-ru="Мама Выдра показывает Олли, как аккуратно снять морское ушко со скалы">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Hidden Treasure</h2>
+            <h2 data-lang="es">El Tesoro Escondido</h2>
+            <h2 data-lang="ru">Скрытое сокровище</h2>
+            <div data-lang="en" class="active">
+                <p>Mama showed Ollie how to find abalone, the flat shellfish that clung to rocks like natural suction cups. &#x27;These are special treats,&#x27; she explained, using a rock to carefully pry one loose. &#x27;Abalone are getting rare, so we only take what we need. Remember, Ollie - we must always leave some for tomorrow.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Mamá le mostró a Ollie cómo encontrar abulones, los mariscos planos que se aferraban a las rocas como ventosas naturales. &#x27;Estos son golosinas especiales,&#x27; explicó, usando una roca para desprender uno cuidadosamente. &#x27;Los abulones se están volviendo raros, así que solo tomamos lo que necesitamos. Recuerda, Ollie - siempre debemos dejar algo para mañana.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Мама показала Олли, как находить морское ушко, плоских моллюсков, которые прилипали к скалам как природные присоски. &#x27;Это особое лакомство,&#x27; - объяснила она, используя камень, чтобы аккуратно отделить одного. &#x27;Морское ушко становится редким, поэтому мы берём только то, что нам нужно. Помни, Олли - мы всегда должны оставлять что-то на завтра.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/raft-formation.jpg" 
+                 alt="Large group of sea otters floating together holding paws in a raft formation" 
+                 data-alt-en="Large group of sea otters floating together holding paws in a raft formation"
+                 data-alt-es="Gran grupo de nutrias marinas flotando juntas tomadas de las patas en formación de balsa"
+                 data-alt-ru="Большая группа морских выдр плавает вместе, держась за лапы в формации плота">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Floating Community</h2>
+            <h2 data-lang="es">La Comunidad Flotante</h2>
+            <h2 data-lang="ru">Плавучее сообщество</h2>
+            <div data-lang="en" class="active">
+                <p>One afternoon, Ollie experienced something magical - a raft formation! Dozens of otters came together, holding paws to create a floating community. &#x27;This is how we stay safe and social,&#x27; explained an elder otter. &#x27;Sometimes over a hundred of us float together! We share stories, groom each other, and watch for danger. We&#x27;re stronger together!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Una tarde, Ollie experimentó algo mágico - ¡una formación de balsa! Docenas de nutrias se reunieron, tomándose de las patas para crear una comunidad flotante. &#x27;Así es como nos mantenemos seguros y sociales,&#x27; explicó una nutria mayor. &#x27;¡A veces más de cien de nosotros flotamos juntos! Compartimos historias, nos acicalamos mutuamente y vigilamos el peligro. ¡Somos más fuertes juntos!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Однажды днём Олли испытал нечто волшебное - формирование плота! Десятки выдр собрались вместе, держась за лапы, чтобы создать плавучее сообщество. &#x27;Так мы остаёмся в безопасности и общаемся,&#x27; - объяснила пожилая выдра. &#x27;Иногда более сотни нас плавают вместе! Мы делимся историями, ухаживаем друг за другом и следим за опасностью. Вместе мы сильнее!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/storm-survival.jpg" 
+                 alt="Otter family wrapped together in kelp during a storm, waves crashing around them" 
+                 data-alt-en="Otter family wrapped together in kelp during a storm, waves crashing around them"
+                 data-alt-es="Familia de nutrias envueltas juntas en algas durante una tormenta"
+                 data-alt-ru="Семья выдр, обёрнутая вместе в ламинарию во время шторма">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Weathering the Storm</h2>
+            <h2 data-lang="es">Resistiendo la Tormenta</h2>
+            <h2 data-lang="ru">Переживая шторм</h2>
+            <div data-lang="en" class="active">
+                <p>Dark clouds gathered and waves grew fierce. Mama wrapped Ollie and Ruby tightly in kelp as the storm raged. &#x27;The kelp forest protects us,&#x27; she said calmly over the wind. &#x27;It breaks the waves and gives us shelter. Trust the kelp, trust each other, and we&#x27;ll be safe.&#x27; Ollie held Ruby close, feeling brave and protective.</p>
+            </div>
+            <div data-lang="es">
+                <p>Se reunieron nubes oscuras y las olas se volvieron feroces. Mamá envolvió a Ollie y Ruby firmemente en algas mientras la tormenta rugía. &#x27;El bosque de algas nos protege,&#x27; dijo con calma sobre el viento. &#x27;Rompe las olas y nos da refugio. Confía en las algas, confíen el uno en el otro, y estaremos a salvo.&#x27; Ollie abrazó a Ruby, sintiéndose valiente y protector.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Собрались тёмные тучи, и волны стали свирепыми. Мама крепко обернула Олли и Руби в ламинарию, пока бушевал шторм. &#x27;Лес ламинарии защищает нас,&#x27; - спокойно сказала она сквозь ветер. &#x27;Он разбивает волны и даёт нам укрытие. Доверься ламинарии, доверяйте друг другу, и мы будем в безопасности.&#x27; Олли крепко держал Руби, чувствуя себя храбрым и защищающим.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/tool-collection.jpg" 
+                 alt="Ollie proudly displaying his first personal tool rock, perfect size for his paw" 
+                 data-alt-en="Ollie proudly displaying his first personal tool rock, perfect size for his paw"
+                 data-alt-es="Ollie mostrando con orgullo su primera roca herramienta personal"
+                 data-alt-ru="Олли гордо демонстрирует свой первый личный камень-инструмент">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">My Special Rock</h2>
+            <h2 data-lang="es">Mi Roca Especial</h2>
+            <h2 data-lang="ru">Мой особенный камень</h2>
+            <div data-lang="en" class="active">
+                <p>It was time for Ollie to choose his own tool rock! He dove down (he could finally dive a little!) and searched the ocean floor. There it was - a perfectly smooth, flat rock that fit just right in his paw. &#x27;That&#x27;s a fine choice,&#x27; Mama praised. &#x27;Keep it in your pouch under your arm. That rock will be with you for life!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Era hora de que Ollie eligiera su propia roca herramienta! Buceó (¡finalmente podía bucear un poco!) y buscó en el fondo del océano. Ahí estaba - una roca perfectamente lisa y plana que encajaba justo en su pata. &#x27;Esa es una buena elección,&#x27; elogió Mamá. &#x27;¡Guárdala en tu bolsa bajo tu brazo. Esa roca estará contigo de por vida!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пришло время Олли выбрать свой собственный камень-инструмент! Он нырнул (он наконец-то мог немного нырять!) и обыскал океанское дно. Вот он - идеально гладкий, плоский камень, который как раз помещался в его лапе. &#x27;Это прекрасный выбор,&#x27; - похвалила Мама. &#x27;Храни его в кармане под мышкой. Этот камень будет с тобой всю жизнь!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/diving-deeper.jpg" 
+                 alt="Ollie diving through layers of kelp, showing his improved diving ability" 
+                 data-alt-en="Ollie diving through layers of kelp, showing his improved diving ability"
+                 data-alt-es="Ollie buceando a través de capas de algas, mostrando su habilidad mejorada"
+                 data-alt-ru="Олли ныряет через слои ламинарии, показывая улучшенные способности">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Going Deeper</h2>
+            <h2 data-lang="es">Yendo Más Profundo</h2>
+            <h2 data-lang="ru">Погружаясь глубже</h2>
+            <div data-lang="en" class="active">
+                <p>Week by week, Ollie&#x27;s dives got deeper. His baby fluff was slowly being replaced by sleek adult fur. &#x27;I can reach the middle kelp now!&#x27; he announced proudly. Professor Kelp nodded approvingly. &#x27;Soon you&#x27;ll reach the seafloor where the best food hides. Sea otters can dive up to 250 feet deep - that&#x27;s as tall as a 25-story building!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Semana tras semana, los buceos de Ollie se volvían más profundos. Su pelusa de bebé estaba siendo reemplazada lentamente por pelaje adulto elegante. &#x27;¡Ya puedo alcanzar el alga del medio!&#x27; anunció con orgullo. El Profesor Kelp asintió con aprobación. &#x27;Pronto alcanzarás el fondo marino donde se esconde la mejor comida. Las nutrias marinas pueden bucear hasta 250 pies de profundidad - ¡eso es tan alto como un edificio de 25 pisos!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Неделя за неделей погружения Олли становились глубже. Его детский пух медленно заменялся гладким взрослым мехом. &#x27;Я могу достать до средней ламинарии!&#x27; - с гордостью объявил он. Профессор Келп одобрительно кивнул. &#x27;Скоро ты достигнешь морского дна, где прячется лучшая еда. Морские выдры могут нырять на глубину до 250 футов - это высота 25-этажного здания!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/kelp-ecosystem-tour.jpg" 
+                 alt="Professor Kelp showing Ollie the diverse life in the kelp forest ecosystem" 
+                 data-alt-en="Professor Kelp showing Ollie the diverse life in the kelp forest ecosystem"
+                 data-alt-es="Profesor Kelp mostrando a Ollie la vida diversa en el ecosistema del bosque de algas"
+                 data-alt-ru="Профессор Келп показывает Олли разнообразную жизнь в экосистеме леса ламинарии">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Living Forest</h2>
+            <h2 data-lang="es">El Bosque Viviente</h2>
+            <h2 data-lang="ru">Живой лес</h2>
+            <div data-lang="en" class="active">
+                <p>Professor Kelp gave Ollie a tour of the kelp forest ecosystem. &#x27;See those fish hiding in the kelp? The rockfish, the kelp bass? They need the forest for shelter. And those tiny snails cleaning the kelp blades? Everyone has a job here. But we otters have the most important job - we keep the sea urchins from eating all the kelp!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>El Profesor Kelp le dio a Ollie un recorrido por el ecosistema del bosque de algas. &#x27;¿Ves esos peces escondidos en las algas? ¿El pez roca, la lubina de algas? Necesitan el bosque para refugio. ¿Y esos pequeños caracoles limpiando las hojas de algas? Todos tienen un trabajo aquí. ¡Pero nosotras las nutrias tenemos el trabajo más importante - evitamos que los erizos de mar se coman todas las algas!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Профессор Келп провёл для Олли экскурсию по экосистеме леса ламинарии. &#x27;Видишь тех рыб, прячущихся в ламинарии? Морского окуня, ламинариевого окуня? Им нужен лес для укрытия. А те крошечные улитки, чистящие листья ламинарии? У каждого здесь есть работа. Но у нас, выдр, самая важная работа - мы не даём морским ежам съесть всю ламинарию!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/first-solo-hunt.jpg" 
+                 alt="Ollie proudly surfacing with mussels from his first successful solo hunt" 
+                 data-alt-en="Ollie proudly surfacing with mussels from his first successful solo hunt"
+                 data-alt-es="Ollie saliendo orgullosamente con mejillones de su primera caza exitosa en solitario"
+                 data-alt-ru="Олли гордо всплывает с мидиями после первой успешной самостоятельной охоты">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Independence Day</h2>
+            <h2 data-lang="es">Día de Independencia</h2>
+            <h2 data-lang="ru">День независимости</h2>
+            <div data-lang="en" class="active">
+                <p>The big day arrived - Ollie&#x27;s first solo hunt! He dove down confidently, spotted a cluster of mussels, and used his rock to crack them open all by himself. When he surfaced with his prize, Mama, Ruby, and even Professor Kelp cheered. &#x27;You did it, Ollie!&#x27; Mama beamed. &#x27;You&#x27;re becoming a real sea otter now!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Llegó el gran día - ¡la primera caza en solitario de Ollie! Buceó con confianza, vio un grupo de mejillones, y usó su roca para abrirlos completamente solo. Cuando salió a la superficie con su premio, Mamá, Ruby, e incluso el Profesor Kelp vitorearon. &#x27;¡Lo lograste, Ollie!&#x27; Mamá brillaba. &#x27;¡Ahora te estás convirtiendo en una verdadera nutria marina!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Наступил великий день - первая самостоятельная охота Олли! Он уверенно нырнул, заметил скопление мидий и использовал свой камень, чтобы расколоть их самостоятельно. Когда он всплыл со своей добычей, Мама, Руби и даже Профессор Келп зааплодировали. &#x27;Ты сделал это, Олли!&#x27; - сияла Мама. &#x27;Ты становишься настоящей морской выдрой!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/great-white-encounter.jpg" 
+                 alt="Otter family floating motionless as a great white shark shadow passes beneath" 
+                 data-alt-en="Otter family floating motionless as a great white shark shadow passes beneath"
+                 data-alt-es="Familia de nutrias flotando inmóvil mientras pasa la sombra de un tiburón blanco"
+                 data-alt-ru="Семья выдр неподвижно плавает, пока внизу проходит тень белой акулы">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Shadow Below</h2>
+            <h2 data-lang="es">La Sombra Debajo</h2>
+            <h2 data-lang="ru">Тень внизу</h2>
+            <div data-lang="en" class="active">
+                <p>A dark shadow passed beneath the kelp. &#x27;Stay very still,&#x27; Mama whispered urgently. It was a great white shark, gliding silently through their territory. The otters floated motionless, hearts pounding. After what felt like hours, the shark moved on. &#x27;They rarely bother us,&#x27; Mama explained later, &#x27;but we must always be watchful. The ocean has dangers as well as wonders.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Una sombra oscura pasó debajo del alga. &#x27;Quédate muy quieto,&#x27; susurró Mamá urgentemente. Era un gran tiburón blanco, deslizándose silenciosamente por su territorio. Las nutrias flotaron inmóviles, con los corazones latiendo fuerte. Después de lo que parecieron horas, el tiburón siguió adelante. &#x27;Rara vez nos molestan,&#x27; explicó Mamá más tarde, &#x27;pero siempre debemos estar vigilantes. El océano tiene peligros además de maravillas.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Тёмная тень прошла под ламинарией. &#x27;Замри,&#x27; - срочно прошептала Мама. Это была большая белая акула, бесшумно скользящая через их территорию. Выдры неподвижно плавали, сердца колотились. После того, что казалось часами, акула уплыла. &#x27;Они редко нас беспокоят,&#x27; - объяснила Мама позже, &#x27;но мы всегда должны быть бдительными. В океане есть опасности, как и чудеса.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/captain-whiskers.jpg" 
+                 alt="Large male sea otter with scars and commanding presence floating majestically" 
+                 data-alt-en="Large male sea otter with scars and commanding presence floating majestically"
+                 data-alt-es="Gran nutria marina macho con cicatrices y presencia imponente flotando majestuosamente"
+                 data-alt-ru="Крупный самец морской выдры со шрамами и властным присутствием">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Territorial Guardian</h2>
+            <h2 data-lang="es">El Guardián Territorial</h2>
+            <h2 data-lang="ru">Территориальный страж</h2>
+            <div data-lang="en" class="active">
+                <p>Captain Whiskers was the largest male otter in the bay, with battle scars and wise eyes. &#x27;Young Ollie,&#x27; he boomed, &#x27;soon you&#x27;ll need your own territory. Male otters must find and defend their feeding grounds. It&#x27;s not about fighting - it&#x27;s about respect and knowing boundaries. The ocean is big enough for all of us if we&#x27;re smart about it.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>El Capitán Bigotes era la nutria macho más grande de la bahía, con cicatrices de batalla y ojos sabios. &#x27;Joven Ollie,&#x27; retumbó, &#x27;pronto necesitarás tu propio territorio. Las nutrias macho deben encontrar y defender sus zonas de alimentación. No se trata de pelear - se trata de respeto y conocer los límites. El océano es lo suficientemente grande para todos si somos inteligentes al respecto.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Капитан Усач был самым крупным самцом выдры в заливе, с боевыми шрамами и мудрыми глазами. &#x27;Юный Олли,&#x27; - прогремел он, &#x27;скоро тебе понадобится своя территория. Самцы выдр должны найти и защищать свои кормовые угодья. Дело не в драках - дело в уважении и знании границ. Океан достаточно большой для всех нас, если мы будем умными.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/sick-kelp.jpg" 
+                 alt="Ollie and Professor Kelp examining patches of brown, dying kelp" 
+                 data-alt-en="Ollie and Professor Kelp examining patches of brown, dying kelp"
+                 data-alt-es="Ollie y Profesor Kelp examinando parches de algas marrones moribundas"
+                 data-alt-ru="Олли и Профессор Келп изучают участки коричневой умирающей ламинарии">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Dying Forest</h2>
+            <h2 data-lang="es">El Bosque Moribundo</h2>
+            <h2 data-lang="ru">Умирающий лес</h2>
+            <div data-lang="en" class="active">
+                <p>Swimming to a new area, Ollie found patches of brown, dying kelp. Professor Kelp looked worried. &#x27;The water is warming,&#x27; he explained sadly. &#x27;When it gets too warm, the kelp gets sick. Without healthy kelp, our whole world changes. This is why we must protect what we have and help the forest recover where we can.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Nadando hacia una nueva área, Ollie encontró parches de algas marrones y moribundas. El Profesor Kelp parecía preocupado. &#x27;El agua se está calentando,&#x27; explicó tristemente. &#x27;Cuando hace demasiado calor, las algas se enferman. Sin algas sanas, todo nuestro mundo cambia. Por eso debemos proteger lo que tenemos y ayudar al bosque a recuperarse donde podamos.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Плывя в новую область, Олли нашёл участки коричневой, умирающей ламинарии. Профессор Келп выглядел обеспокоенным. &#x27;Вода теплеет,&#x27; - печально объяснил он. &#x27;Когда становится слишком тепло, ламинария болеет. Без здоровой ламинарии весь наш мир меняется. Вот почему мы должны защищать то, что у нас есть, и помогать лесу восстанавливаться там, где можем.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/helping-injured-seal.jpg" 
+                 alt="Ollie and Mama carefully freeing a harbor seal from fishing line" 
+                 data-alt-en="Ollie and Mama carefully freeing a harbor seal from fishing line"
+                 data-alt-es="Ollie y Mamá liberando cuidadosamente una foca de línea de pesca"
+                 data-alt-ru="Олли и Мама осторожно освобождают тюленя от рыболовной лески">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Compassion in the Waves</h2>
+            <h2 data-lang="es">Compasión en las Olas</h2>
+            <h2 data-lang="ru">Сострадание в волнах</h2>
+            <div data-lang="en" class="active">
+                <p>A young harbor seal was tangled in fishing line, struggling weakly. Without hesitation, Ollie and Mama worked together, using their nimble paws and teeth to carefully free the seal. &#x27;We help all ocean creatures when we can,&#x27; Mama said. &#x27;Today we help them, tomorrow they might help us. That&#x27;s how the ocean community works.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Una joven foca común estaba enredada en línea de pesca, luchando débilmente. Sin dudarlo, Ollie y Mamá trabajaron juntos, usando sus ágiles patas y dientes para liberar cuidadosamente a la foca. &#x27;Ayudamos a todas las criaturas del océano cuando podemos,&#x27; dijo Mamá. &#x27;Hoy los ayudamos, mañana podrían ayudarnos. Así funciona la comunidad oceánica.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Молодой тюлень запутался в рыболовной леске, слабо борясь. Без колебаний Олли и Мама работали вместе, используя свои ловкие лапы и зубы, чтобы осторожно освободить тюленя. &#x27;Мы помогаем всем океанским существам, когда можем,&#x27; - сказала Мама. &#x27;Сегодня мы помогаем им, завтра они могут помочь нам. Так работает океанское сообщество.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/advanced-tool-techniques.jpg" 
+                 alt="Captain Whiskers using advanced two-rock technique to open shellfish" 
+                 data-alt-en="Captain Whiskers using advanced two-rock technique to open shellfish"
+                 data-alt-es="Capitán Bigotes usando técnica avanzada de dos rocas para abrir mariscos"
+                 data-alt-ru="Капитан Усач использует продвинутую технику двух камней">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Master of Tools</h2>
+            <h2 data-lang="es">Maestro de Herramientas</h2>
+            <h2 data-lang="ru">Мастер инструментов</h2>
+            <div data-lang="en" class="active">
+                <p>Captain Whiskers demonstrated advanced tool use. He balanced a large clam on his chest, placed a flat rock on top as an anvil, then used another rock as a hammer. CRACK! Perfect technique. &#x27;Some foods need special methods,&#x27; he explained. &#x27;Watch, learn, practice. Our intelligence is what makes us special.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>El Capitán Bigotes demostró el uso avanzado de herramientas. Balanceó una almeja grande en su pecho, colocó una roca plana encima como yunque, luego usó otra roca como martillo. ¡CRACK! Técnica perfecta. &#x27;Algunos alimentos necesitan métodos especiales,&#x27; explicó. &#x27;Observa, aprende, practica. Nuestra inteligencia es lo que nos hace especiales.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Капитан Усач продемонстрировал продвинутое использование инструментов. Он сбалансировал большого моллюска на груди, положил сверху плоский камень как наковальню, затем использовал другой камень как молоток. ТРАХ! Идеальная техника. &#x27;Некоторая еда требует особых методов,&#x27; - объяснил он. &#x27;Смотри, учись, практикуйся. Наш интеллект - вот что делает нас особенными.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/pollution-problem.jpg" 
+                 alt="Ollie and Professor Kelp avoiding dangerous plastic debris in water" 
+                 data-alt-en="Ollie and Professor Kelp avoiding dangerous plastic debris in water"
+                 data-alt-es="Ollie y Profesor Kelp evitando peligrosos desechos plásticos en el agua"
+                 data-alt-ru="Олли и Профессор Келп избегают опасного пластикового мусора в воде">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Dark Waters</h2>
+            <h2 data-lang="es">Aguas Oscuras</h2>
+            <h2 data-lang="ru">Тёмные воды</h2>
+            <div data-lang="en" class="active">
+                <p>Ollie found something strange floating - a plastic bag that looked like jellyfish. &#x27;Don&#x27;t touch that!&#x27; Professor Kelp warned. &#x27;Human trash is dangerous. It can trap us, poison us, or make us sick. If you see oil on the water, swim away immediately. We must be careful of what humans leave in our ocean.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Ollie encontró algo extraño flotando - una bolsa de plástico que parecía una medusa. &#x27;¡No toques eso!&#x27; advirtió el Profesor Kelp. &#x27;La basura humana es peligrosa. Puede atraparnos, envenenarnos o enfermarnos. Si ves aceite en el agua, nada lejos inmediatamente. Debemos tener cuidado con lo que los humanos dejan en nuestro océano.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Олли нашёл что-то странное плавающее - пластиковый пакет, похожий на медузу. &#x27;Не трогай это!&#x27; - предупредил Профессор Келп. &#x27;Человеческий мусор опасен. Он может поймать нас, отравить или вызвать болезнь. Если видишь масло на воде, немедленно уплывай. Мы должны быть осторожны с тем, что люди оставляют в нашем океане.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/meeting-marina.jpg" 
+                 alt="Young female otter Marina meeting Ollie for the first time, both looking happy" 
+                 data-alt-en="Young female otter Marina meeting Ollie for the first time, both looking happy"
+                 data-alt-es="Joven nutria Marina conociendo a Ollie por primera vez, ambos felices"
+                 data-alt-ru="Молодая выдра Марина встречает Олли впервые, оба выглядят счастливыми">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">A New Friend</h2>
+            <h2 data-lang="es">Una Nueva Amiga</h2>
+            <h2 data-lang="ru">Новая подруга</h2>
+            <div data-lang="en" class="active">
+                <p>While exploring, Ollie met Marina, a young female otter from the southern bay. She had bright eyes and a playful spirit. &#x27;Want to practice diving together?&#x27; she asked with a smile. They spent the day diving for sea stars and racing through the kelp. Ollie had never had so much fun with someone his own age!</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras exploraba, Ollie conoció a Marina, una joven nutria hembra de la bahía sur. Tenía ojos brillantes y un espíritu juguetón. &#x27;¿Quieres practicar buceo juntos?&#x27; preguntó con una sonrisa. Pasaron el día buceando por estrellas de mar y corriendo por las algas. ¡Ollie nunca se había divertido tanto con alguien de su edad!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Исследуя окрестности, Олли встретил Марину, молодую самку выдры из южного залива. У неё были яркие глаза и игривый дух. &#x27;Хочешь потренироваться нырять вместе?&#x27; - спросила она с улыбкой. Они провели день, ныряя за морскими звёздами и гоняясь через ламинарию. Олли никогда не было так весело с кем-то своего возраста!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/missing-mother.jpg" 
+                 alt="Emotional reunion as Mama finds Ollie after separation" 
+                 data-alt-en="Emotional reunion as Mama finds Ollie after separation"
+                 data-alt-es="Reunión emocional cuando Mamá encuentra a Ollie después de la separación"
+                 data-alt-ru="Эмоциональная встреча, когда Мама находит Олли после разлуки">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Lost and Found</h2>
+            <h2 data-lang="es">Perdido y Encontrado</h2>
+            <h2 data-lang="ru">Потерялся и нашёлся</h2>
+            <div data-lang="en" class="active">
+                <p>A strong current separated Ollie from Mama during a dive. Panic rose in his chest, but then he remembered her teachings. He surfaced, called out loudly, and wrapped himself in kelp to stay in place. Soon, Mama&#x27;s familiar call echoed back. &#x27;You did exactly right,&#x27; she said, hugging him tightly. &#x27;You used your brain, not your fear.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Una fuerte corriente separó a Ollie de Mamá durante un buceo. El pánico subió en su pecho, pero luego recordó sus enseñanzas. Salió a la superficie, llamó en voz alta y se envolvió en algas para quedarse en su lugar. Pronto, el llamado familiar de Mamá resonó. &#x27;Hiciste exactamente lo correcto,&#x27; dijo, abrazándolo fuertemente. &#x27;Usaste tu cerebro, no tu miedo.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Сильное течение отделило Олли от Мамы во время погружения. Паника поднялась в его груди, но затем он вспомнил её учения. Он всплыл, громко позвал и обернулся в ламинарию, чтобы оставаться на месте. Вскоре знакомый зов Мамы отозвался эхом. &#x27;Ты поступил совершенно правильно,&#x27; - сказала она, крепко обнимая его. &#x27;Ты использовал свой разум, а не страх.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/crab-hunting.jpg" 
+                 alt="Ollie and Marina successfully catching crabs together" 
+                 data-alt-en="Ollie and Marina successfully catching crabs together"
+                 data-alt-es="Ollie y Marina atrapando cangrejos exitosamente juntos"
+                 data-alt-ru="Олли и Марина успешно ловят крабов вместе">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Catching Crabs</h2>
+            <h2 data-lang="es">Atrapando Cangrejos</h2>
+            <h2 data-lang="ru">Ловля крабов</h2>
+            <div data-lang="en" class="active">
+                <p>Marina taught Ollie her family&#x27;s crab-catching technique. &#x27;Crabs are tricky - they pinch and scuttle sideways. You have to be quick!&#x27; She demonstrated flipping a rock and grabbing a crab before it could escape. &#x27;Hold them from behind, avoid the claws, and always check for eggs - we don&#x27;t take mothers with babies.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Marina le enseñó a Ollie la técnica de su familia para atrapar cangrejos. &#x27;¡Los cangrejos son difíciles - pellizcan y se escabullen de lado. Tienes que ser rápido!&#x27; Demostró volteando una roca y agarrando un cangrejo antes de que pudiera escapar. &#x27;Sosténlos desde atrás, evita las pinzas, y siempre revisa si hay huevos - no tomamos madres con bebés.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Марина научила Олли семейной технике ловли крабов. &#x27;Крабы хитрые - они щиплются и убегают боком. Нужно быть быстрым!&#x27; Она продемонстрировала, как перевернуть камень и схватить краба до того, как он сможет убежать. &#x27;Держи их сзади, избегай клешней и всегда проверяй на наличие икры - мы не берём матерей с детёнышами.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/cold-current.jpg" 
+                 alt="Otter family fluffing their fur against cold water conditions" 
+                 data-alt-en="Otter family fluffing their fur against cold water conditions"
+                 data-alt-es="Familia de nutrias esponjando su pelaje contra condiciones de agua fría"
+                 data-alt-ru="Семья выдр распушает мех против холодной воды">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Freezing Stream</h2>
+            <h2 data-lang="es">La Corriente Helada</h2>
+            <h2 data-lang="ru">Ледяной поток</h2>
+            <div data-lang="en" class="active">
+                <p>An unusually cold current swept through the bay. Even with their thick fur, the otters shivered. &#x27;Time for extra grooming!&#x27; Mama announced. The family spent hours fluffing their fur, trapping as much air as possible for insulation. &#x27;Our fur has more hairs than a whole human head - about a billion!&#x27; Ruby giggled at the thought.</p>
+            </div>
+            <div data-lang="es">
+                <p>Una corriente inusualmente fría barrió la bahía. Incluso con su grueso pelaje, las nutrias temblaban. &#x27;¡Hora de acicalamiento extra!&#x27; anunció Mamá. La familia pasó horas esponjando su pelaje, atrapando tanto aire como fuera posible para aislamiento. &#x27;¡Nuestro pelaje tiene más pelos que toda una cabeza humana - cerca de mil millones!&#x27; Ruby rió ante el pensamiento.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Необычно холодное течение пронеслось через залив. Даже с их густым мехом выдры дрожали. &#x27;Время дополнительного ухода!&#x27; - объявила Мама. Семья провела часы, распушая свой мех, захватывая как можно больше воздуха для изоляции. &#x27;В нашем мехе больше волосков, чем на всей человеческой голове - около миллиарда!&#x27; Руби захихикала от этой мысли.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/teaching-ruby.jpg" 
+                 alt="Ollie patiently teaching Ruby diving techniques" 
+                 data-alt-en="Ollie patiently teaching Ruby diving techniques"
+                 data-alt-es="Ollie enseñando pacientemente técnicas de buceo a Ruby"
+                 data-alt-ru="Олли терпеливо учит Руби технике ныряния">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Big Brother Teacher</h2>
+            <h2 data-lang="es">Hermano Mayor Maestro</h2>
+            <h2 data-lang="ru">Старший брат учитель</h2>
+            <div data-lang="en" class="active">
+                <p>Ruby was ready to learn diving, and Ollie was her teacher! &#x27;Remember what Mama taught me,&#x27; he said patiently. &#x27;Take a deep breath, tuck your chin, and push with your tail.&#x27; Ruby&#x27;s first attempts were clumsy, but Ollie encouraged her. &#x27;You&#x27;re doing great! I was worse when I started!&#x27; Being a teacher made Ollie feel grown up and responsible.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Ruby estaba lista para aprender a bucear, y Ollie era su maestro! &#x27;Recuerda lo que Mamá me enseñó,&#x27; dijo pacientemente. &#x27;Toma una respiración profunda, mete la barbilla y empuja con tu cola.&#x27; Los primeros intentos de Ruby fueron torpes, pero Ollie la animó. &#x27;¡Lo estás haciendo genial! ¡Yo era peor cuando empecé!&#x27; Ser maestro hizo que Ollie se sintiera adulto y responsable.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Руби была готова учиться нырять, и Олли был её учителем! &#x27;Помни, чему Мама учила меня,&#x27; - терпеливо сказал он. &#x27;Глубоко вдохни, прижми подбородок и толкайся хвостом.&#x27; Первые попытки Руби были неуклюжими, но Олли подбадривал её. &#x27;У тебя отлично получается! Я был хуже, когда начинал!&#x27; Быть учителем заставляло Олли чувствовать себя взрослым и ответственным.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/human-boat.jpg" 
+                 alt="Otters floating peacefully as tourists photograph them from boat" 
+                 data-alt-en="Otters floating peacefully as tourists photograph them from boat"
+                 data-alt-es="Nutrias flotando pacíficamente mientras turistas las fotografían desde bote"
+                 data-alt-ru="Выдры мирно плавают, пока туристы фотографируют их с лодки">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Watching Humans</h2>
+            <h2 data-lang="es">Los Humanos Observadores</h2>
+            <h2 data-lang="ru">Наблюдающие люди</h2>
+            <div data-lang="en" class="active">
+                <p>A boat full of humans with cameras approached slowly. &#x27;These are the good kind,&#x27; Professor Kelp explained. &#x27;They watch us, learn about us, and help protect us. See how they keep their distance? They respect our space. Some humans work very hard to keep our ocean home safe.&#x27; The otters floated calmly, even posing a little for the cameras.</p>
+            </div>
+            <div data-lang="es">
+                <p>Un bote lleno de humanos con cámaras se acercó lentamente. &#x27;Estos son del tipo bueno,&#x27; explicó el Profesor Kelp. &#x27;Nos observan, aprenden sobre nosotros y ayudan a protegernos. ¿Ves cómo mantienen su distancia? Respetan nuestro espacio. Algunos humanos trabajan muy duro para mantener seguro nuestro hogar oceánico.&#x27; Las nutrias flotaron tranquilamente, incluso posando un poco para las cámaras.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Лодка, полная людей с камерами, медленно приблизилась. &#x27;Это хорошие люди,&#x27; - объяснил Профессор Келп. &#x27;Они наблюдают за нами, изучают нас и помогают защищать нас. Видишь, как они держат дистанцию? Они уважают наше пространство. Некоторые люди очень усердно работают, чтобы сохранить наш океанский дом в безопасности.&#x27; Выдры спокойно плавали, даже немного позируя для камер.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/kelp-restoration.jpg" 
+                 alt="Otters working together to restore damaged kelp forest area" 
+                 data-alt-en="Otters working together to restore damaged kelp forest area"
+                 data-alt-es="Nutrias trabajando juntas para restaurar área dañada del bosque de algas"
+                 data-alt-ru="Выдры работают вместе, чтобы восстановить повреждённую область леса ламинарии">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Healing the Forest</h2>
+            <h2 data-lang="es">Sanando el Bosque</h2>
+            <h2 data-lang="ru">Исцеление леса</h2>
+            <div data-lang="en" class="active">
+                <p>Where the kelp had died, Professor Kelp showed everyone how to help it grow back. &#x27;We eat extra urchins here to give the baby kelp a chance,&#x27; he explained. &#x27;If we all work together, the forest will return. It&#x27;s our responsibility as the guardians of the kelp. Every otter makes a difference!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Donde las algas habían muerto, el Profesor Kelp mostró a todos cómo ayudar a que volvieran a crecer. &#x27;Comemos erizos extra aquí para darle una oportunidad a las algas bebé,&#x27; explicó. &#x27;Si todos trabajamos juntos, el bosque volverá. Es nuestra responsabilidad como guardianes de las algas. ¡Cada nutria hace la diferencia!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Там, где ламинария погибла, Профессор Келп показал всем, как помочь ей вырасти снова. &#x27;Мы едим дополнительных ежей здесь, чтобы дать молодой ламинарии шанс,&#x27; - объяснил он. &#x27;Если мы все будем работать вместе, лес вернётся. Это наша ответственность как хранителей ламинарии. Каждая выдра имеет значение!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/deep-dive-challenge.jpg" 
+                 alt="Ollie at the ocean floor successfully retrieving a large abalone" 
+                 data-alt-en="Ollie at the ocean floor successfully retrieving a large abalone"
+                 data-alt-es="Ollie en el fondo del océano recuperando exitosamente un gran abulón"
+                 data-alt-ru="Олли на океанском дне успешно добывает большое морское ушко">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">To the Ocean Floor</h2>
+            <h2 data-lang="es">Hasta el Fondo del Océano</h2>
+            <h2 data-lang="ru">До океанского дна</h2>
+            <div data-lang="en" class="active">
+                <p>Ollie was ready for the ultimate challenge - diving to the seafloor, 60 feet down! He hyperventilated to load oxygen, then dove. Down, down, down through the kelp forest twilight. His lungs burned, but he reached the bottom! There lay a treasure - a huge abalone! He pried it loose and rocketed to the surface, gasping but triumphant!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Ollie estaba listo para el desafío supremo - bucear hasta el fondo marino, 60 pies abajo! Hiperventiló para cargar oxígeno, luego buceó. Abajo, abajo, abajo a través del crepúsculo del bosque de algas. Sus pulmones ardían, ¡pero alcanzó el fondo! Allí yacía un tesoro - ¡un abulón enorme! Lo desprendió y salió disparado a la superficie, jadeando pero triunfante!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Олли был готов к главному испытанию - нырянию на морское дно, на 60 футов вниз! Он часто дышал, чтобы загрузить кислород, затем нырнул. Вниз, вниз, вниз через сумерки леса ламинарии. Его лёгкие горели, но он достиг дна! Там лежало сокровище - огромное морское ушко! Он оторвал его и взлетел к поверхности, задыхаясь, но торжествуя!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/urchin-explosion.jpg" 
+                 alt="Otters observing overwhelming purple urchin population threatening kelp" 
+                 data-alt-en="Otters observing overwhelming purple urchin population threatening kelp"
+                 data-alt-es="Nutrias observando población abrumadora de erizos púrpuras amenazando algas"
+                 data-alt-ru="Выдры наблюдают подавляющую популяцию пурпурных ежей, угрожающую ламинарии">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Purple Invasion</h2>
+            <h2 data-lang="es">La Invasión Púrpura</h2>
+            <h2 data-lang="ru">Пурпурное вторжение</h2>
+            <div data-lang="en" class="active">
+                <p>One morning, the seafloor was carpeted with purple sea urchins - thousands of them! &#x27;Without enough otters, this happens,&#x27; Professor Kelp said gravely. &#x27;They eat all the kelp and create urchin barrens - underwater deserts. This is why every otter matters. We are the balance keepers. Time to feast and save our forest!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Una mañana, el fondo marino estaba alfombrado con erizos de mar púrpuras - ¡miles de ellos! &#x27;Sin suficientes nutrias, esto sucede,&#x27; dijo el Profesor Kelp gravemente. &#x27;Comen todas las algas y crean desiertos de erizos - desiertos submarinos. Por eso cada nutria importa. Somos los guardianes del equilibrio. ¡Hora de festejar y salvar nuestro bosque!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Однажды утром морское дно было покрыто пурпурными морскими ежами - тысячи их! &#x27;Без достаточного количества выдр это происходит,&#x27; - серьёзно сказал Профессор Келп. &#x27;Они съедают всю ламинарию и создают пустоши ежей - подводные пустыни. Вот почему каждая выдра важна. Мы хранители баланса. Время пировать и спасать наш лес!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/rescue-mission.jpg" 
+                 alt="Ollie, Marina and Captain Whiskers rescuing trapped otter from net" 
+                 data-alt-en="Ollie, Marina and Captain Whiskers rescuing trapped otter from net"
+                 data-alt-es="Ollie, Marina y Capitán Bigotes rescatando nutria atrapada de red"
+                 data-alt-ru="Олли, Марина и Капитан Усач спасают пойманную в сеть выдру">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Tangled in Danger</h2>
+            <h2 data-lang="es">Enredado en Peligro</h2>
+            <h2 data-lang="ru">Запутавшийся в опасности</h2>
+            <div data-lang="en" class="active">
+                <p>A young otter from another raft was trapped in an abandoned fishing net! Ollie, Marina, and Captain Whiskers worked together, gnawing carefully at the ropes. &#x27;Easy does it,&#x27; Captain coached. &#x27;One wrong move could make it worse.&#x27; After tense minutes, the otter swam free! The rescued otter&#x27;s family brought shellfish gifts in gratitude. Heroes of the bay!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Una joven nutria de otra balsa estaba atrapada en una red de pesca abandonada! Ollie, Marina y el Capitán Bigotes trabajaron juntos, royendo cuidadosamente las cuerdas. &#x27;Con calma,&#x27; instruyó el Capitán. &#x27;Un movimiento equivocado podría empeorarlo.&#x27; ¡Después de minutos tensos, la nutria nadó libre! La familia de la nutria rescatada trajo regalos de mariscos en gratitud. ¡Héroes de la bahía!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Молодая выдра из другого плота попала в заброшенную рыболовную сеть! Олли, Марина и Капитан Усач работали вместе, осторожно перегрызая верёвки. &#x27;Осторожно,&#x27; - наставлял Капитан. &#x27;Одно неверное движение может ухудшить ситуацию.&#x27; После напряжённых минут выдра выплыла на свободу! Семья спасённой выдры принесла дары из моллюсков в благодарность. Герои залива!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/seasonal-changes.jpg" 
+                 alt="Otter family enjoying abundant autumn harvest of seafood" 
+                 data-alt-en="Otter family enjoying abundant autumn harvest of seafood"
+                 data-alt-es="Familia de nutrias disfrutando abundante cosecha otoñal de mariscos"
+                 data-alt-ru="Семья выдр наслаждается обильным осенним урожаем морепродуктов">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Autumn Abundance</h2>
+            <h2 data-lang="es">Abundancia de Otoño</h2>
+            <h2 data-lang="ru">Осеннее изобилие</h2>
+            <div data-lang="en" class="active">
+                <p>As autumn arrived, the ocean offered its bounty. Crabs were molting, fish were plentiful, and the kelp was thick with growth. &#x27;This is the time to eat well and build our strength,&#x27; Mama explained. &#x27;Winter will bring storms and cold. We prepare now by eating extra and grooming our fur to perfection. Nature has seasons, and we must respect them all.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando llegó el otoño, el océano ofreció su abundancia. Los cangrejos estaban mudando, los peces eran abundantes y las algas estaban espesas con crecimiento. &#x27;Este es el momento de comer bien y construir nuestra fuerza,&#x27; explicó Mamá. &#x27;El invierno traerá tormentas y frío. Nos preparamos ahora comiendo extra y acicalando nuestro pelaje a la perfección. La naturaleza tiene estaciones, y debemos respetarlas todas.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда пришла осень, океан предложил своё изобилие. Крабы линяли, рыбы было много, а ламинария была густой от роста. &#x27;Это время хорошо питаться и набираться сил,&#x27; - объяснила Мама. &#x27;Зима принесёт штормы и холод. Мы готовимся сейчас, питаясь усиленно и доводя наш мех до совершенства. У природы есть сезоны, и мы должны уважать их все.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/coming-of-age.jpg" 
+                 alt="Grown Ollie standing confidently next to Captain Whiskers" 
+                 data-alt-en="Grown Ollie standing confidently next to Captain Whiskers"
+                 data-alt-es="Ollie crecido parado con confianza junto al Capitán Bigotes"
+                 data-alt-ru="Выросший Олли уверенно стоит рядом с Капитаном Усачом">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Almost Grown</h2>
+            <h2 data-lang="es">Casi Adulto</h2>
+            <h2 data-lang="ru">Почти взрослый</h2>
+            <div data-lang="en" class="active">
+                <p>Ollie had grown strong and skilled. His dive times were impressive, his tool use expert, and he could find food in any condition. &#x27;You&#x27;re almost ready to be on your own,&#x27; Captain Whiskers observed. &#x27;But remember - independence doesn&#x27;t mean alone. Otters always help each other. The ocean is vast, but our community is close.&#x27; Ollie felt proud but also nervous about the future.</p>
+            </div>
+            <div data-lang="es">
+                <p>Ollie había crecido fuerte y hábil. Sus tiempos de buceo eran impresionantes, su uso de herramientas experto, y podía encontrar comida en cualquier condición. &#x27;Casi estás listo para estar solo,&#x27; observó el Capitán Bigotes. &#x27;Pero recuerda - independencia no significa solo. Las nutrias siempre se ayudan entre sí. El océano es vasto, pero nuestra comunidad es cercana.&#x27; Ollie se sintió orgulloso pero también nervioso por el futuro.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Олли вырос сильным и умелым. Его время погружения было впечатляющим, использование инструментов экспертным, и он мог найти еду в любых условиях. &#x27;Ты почти готов быть самостоятельным,&#x27; - заметил Капитан Усач. &#x27;Но помни - независимость не означает одиночество. Выдры всегда помогают друг другу. Океан огромен, но наше сообщество близко.&#x27; Олли чувствовал гордость, но и нервничал о будущем.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/scientists-arrive.jpg" 
+                 alt="Marine biologists carefully observing and documenting otter behavior" 
+                 data-alt-en="Marine biologists carefully observing and documenting otter behavior"
+                 data-alt-es="Biólogos marinos observando y documentando cuidadosamente comportamiento de nutrias"
+                 data-alt-ru="Морские биологи тщательно наблюдают и документируют поведение выдр">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Research Team</h2>
+            <h2 data-lang="es">El Equipo de Investigación</h2>
+            <h2 data-lang="ru">Исследовательская команда</h2>
+            <div data-lang="en" class="active">
+                <p>Scientists in wetsuits arrived with strange equipment. &#x27;Don&#x27;t be afraid,&#x27; Professor Kelp assured everyone. &#x27;These humans study us to help protect us. They count how many we are, watch what we eat, and make sure we&#x27;re healthy. Their research helps create laws that keep us safe. Knowledge is protection!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Científicos en trajes de neopreno llegaron con equipo extraño. &#x27;No tengan miedo,&#x27; aseguró el Profesor Kelp a todos. &#x27;Estos humanos nos estudian para ayudar a protegernos. Cuentan cuántos somos, observan lo que comemos y se aseguran de que estemos sanos. Su investigación ayuda a crear leyes que nos mantienen seguros. ¡El conocimiento es protección!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Учёные в гидрокостюмах прибыли со странным оборудованием. &#x27;Не бойтесь,&#x27; - заверил всех Профессор Келп. &#x27;Эти люди изучают нас, чтобы помочь защитить нас. Они считают, сколько нас, наблюдают, что мы едим, и проверяют наше здоровье. Их исследования помогают создавать законы, которые обеспечивают нашу безопасность. Знание - это защита!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/radio-collar.jpg" 
+                 alt="Captain Whiskers wearing research collar, returning to water" 
+                 data-alt-en="Captain Whiskers wearing research collar, returning to water"
+                 data-alt-es="Capitán Bigotes con collar de investigación, volviendo al agua"
+                 data-alt-ru="Капитан Усач с исследовательским ошейником возвращается в воду">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Tagged for Science</h2>
+            <h2 data-lang="es">Marcado para la Ciencia</h2>
+            <h2 data-lang="ru">Помечен для науки</h2>
+            <div data-lang="en" class="active">
+                <p>The scientists gently caught Captain Whiskers and attached a small radio collar. &#x27;It doesn&#x27;t hurt,&#x27; he called to the worried otters. &#x27;It helps them track where I go and what I do. This information protects our feeding grounds and shows humans where not to fish. I&#x27;m proud to help science understand us better!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Los científicos atraparon suavemente al Capitán Bigotes y le colocaron un pequeño collar de radio. &#x27;No duele,&#x27; llamó a las nutrias preocupadas. &#x27;Les ayuda a rastrear dónde voy y qué hago. Esta información protege nuestras zonas de alimentación y muestra a los humanos dónde no pescar. ¡Estoy orgulloso de ayudar a la ciencia a entendernos mejor!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Учёные осторожно поймали Капитана Усача и прикрепили маленький радио-ошейник. &#x27;Это не больно,&#x27; - крикнул он обеспокоенным выдрам. &#x27;Это помогает им отслеживать, куда я иду и что делаю. Эта информация защищает наши кормовые угодья и показывает людям, где не ловить рыбу. Я горжусь тем, что помогаю науке лучше понимать нас!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/oil-spill.jpg" 
+                 alt="Otters avoiding dangerous oil slick on water surface" 
+                 data-alt-en="Otters avoiding dangerous oil slick on water surface"
+                 data-alt-es="Nutrias evitando peligrosa mancha de petróleo en superficie del agua"
+                 data-alt-ru="Выдры избегают опасного нефтяного пятна на поверхности воды">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Black Tide Terror</h2>
+            <h2 data-lang="es">Terror de Marea Negra</h2>
+            <h2 data-lang="ru">Ужас чёрного прилива</h2>
+            <div data-lang="en" class="active">
+                <p>Terrible news - an oil spill nearby! The water turned black and sticky. &#x27;Everyone stay away from the oil!&#x27; Professor Kelp commanded. &#x27;It destroys our fur&#x27;s insulation. Without our fur working, we can&#x27;t survive the cold.&#x27; Some otters got oiled anyway. Rescue boats arrived quickly, taking affected otters for cleaning. It was scary, but help came fast.</p>
+            </div>
+            <div data-lang="es">
+                <p>Noticias terribles - ¡un derrame de petróleo cerca! El agua se volvió negra y pegajosa. &#x27;¡Todos manténganse alejados del petróleo!&#x27; ordenó el Profesor Kelp. &#x27;Destruye el aislamiento de nuestro pelaje. Sin que nuestro pelaje funcione, no podemos sobrevivir al frío.&#x27; Algunas nutrias se mancharon de todos modos. Los botes de rescate llegaron rápidamente, llevando nutrias afectadas para limpieza. Fue aterrador, pero la ayuda llegó rápido.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Ужасные новости - разлив нефти поблизости! Вода стала чёрной и липкой. &#x27;Все держитесь подальше от нефти!&#x27; - приказал Профессор Келп. &#x27;Она разрушает изоляцию нашего меха. Без работающего меха мы не можем пережить холод.&#x27; Некоторые выдры всё равно испачкались. Спасательные лодки прибыли быстро, забирая пострадавших выдр на очистку. Было страшно, но помощь пришла быстро.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/rescue-rehabilitation.jpg" 
+                 alt="Wildlife rescuers carefully cleaning and caring for oiled otters" 
+                 data-alt-en="Wildlife rescuers carefully cleaning and caring for oiled otters"
+                 data-alt-es="Rescatistas de vida silvestre limpiando y cuidando cuidadosamente nutrias con petróleo"
+                 data-alt-ru="Спасатели дикой природы тщательно очищают и ухаживают за загрязнёнными выдрами">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Heroes in Action</h2>
+            <h2 data-lang="es">Héroes en Acción</h2>
+            <h2 data-lang="ru">Герои в действии</h2>
+            <div data-lang="en" class="active">
+                <p>At the wildlife rescue center, humans worked tirelessly to save oiled otters. They washed them gently with special soap, dried their fur, and fed them fresh seafood. &#x27;These humans dedicate their lives to saving us,&#x27; said a recovering otter. &#x27;They&#x27;re the reason many of us survive disasters. There&#x27;s hope because people care.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>En el centro de rescate de vida silvestre, los humanos trabajaron incansablemente para salvar nutrias con petróleo. Las lavaron suavemente con jabón especial, secaron su pelaje y las alimentaron con mariscos frescos. &#x27;Estos humanos dedican sus vidas a salvarnos,&#x27; dijo una nutria en recuperación. &#x27;Son la razón por la que muchos de nosotros sobrevivimos a desastres. Hay esperanza porque a la gente le importa.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>В центре спасения дикой природы люди неустанно работали, чтобы спасти загрязнённых нефтью выдр. Они мыли их осторожно специальным мылом, сушили их мех и кормили свежими морепродуктами. &#x27;Эти люди посвящают свои жизни нашему спасению,&#x27; - сказала выздоравливающая выдра. &#x27;Они причина, по которой многие из нас выживают после катастроф. Есть надежда, потому что людям не всё равно.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/whiskers-history.jpg" 
+                 alt="Captain Whiskers sharing conservation history with young otters" 
+                 data-alt-en="Captain Whiskers sharing conservation history with young otters"
+                 data-alt-es="Capitán Bigotes compartiendo historia de conservación con nutrias jóvenes"
+                 data-alt-ru="Капитан Усач рассказывает историю сохранения молодым выдрам">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Dark Times</h2>
+            <h2 data-lang="es">Los Tiempos Oscuros</h2>
+            <h2 data-lang="ru">Тёмные времена</h2>
+            <div data-lang="en" class="active">
+                <p>Captain Whiskers gathered the young otters. &#x27;Long ago, humans hunted us for our fur. We nearly disappeared - only 50 otters remained in all of California! But then people realized their mistake. They protected us with laws, and slowly we returned. From 50 to 3,000! Never forget - we survived because humans changed their hearts.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>El Capitán Bigotes reunió a las nutrias jóvenes. &#x27;Hace mucho tiempo, los humanos nos cazaban por nuestro pelaje. Casi desaparecimos - ¡solo quedaron 50 nutrias en toda California! Pero entonces la gente se dio cuenta de su error. Nos protegieron con leyes, y lentamente regresamos. ¡De 50 a 3,000! Nunca olviden - sobrevivimos porque los humanos cambiaron sus corazones.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Капитан Усач собрал молодых выдр. &#x27;Давным-давно люди охотились на нас ради нашего меха. Мы почти исчезли - осталось всего 50 выдр во всей Калифорнии! Но потом люди осознали свою ошибку. Они защитили нас законами, и медленно мы вернулись. От 50 до 3000! Никогда не забывайте - мы выжили, потому что люди изменили свои сердца.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/protected-area.jpg" 
+                 alt="Otters celebrating in their newly protected marine sanctuary" 
+                 data-alt-en="Otters celebrating in their newly protected marine sanctuary"
+                 data-alt-es="Nutrias celebrando en su santuario marino recién protegido"
+                 data-alt-ru="Выдры празднуют в своём недавно защищённом морском заповеднике">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Safe Harbor</h2>
+            <h2 data-lang="es">Puerto Seguro</h2>
+            <h2 data-lang="ru">Безопасная гавань</h2>
+            <div data-lang="en" class="active">
+                <p>Great news arrived - the government declared their bay a Marine Protected Area! &#x27;No more fishing nets here, no boats disturbing our kelp, and strict rules about pollution,&#x27; Professor Kelp announced joyfully. &#x27;This is our sanctuary forever. The humans voted to protect us because they understand we keep the ocean healthy!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Llegaron grandes noticias - el gobierno declaró su bahía un Área Marina Protegida! &#x27;No más redes de pesca aquí, no hay barcos perturbando nuestras algas, y reglas estrictas sobre contaminación,&#x27; anunció el Profesor Kelp con alegría. &#x27;¡Este es nuestro santuario para siempre. Los humanos votaron para protegernos porque entienden que mantenemos el océano saludable!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пришли отличные новости - правительство объявило их залив Морской охраняемой территорией! &#x27;Больше никаких рыболовных сетей здесь, никаких лодок, беспокоящих нашу ламинарию, и строгие правила о загрязнении,&#x27; - радостно объявил Профессор Келп. &#x27;Это наше убежище навсегда. Люди проголосовали за нашу защиту, потому что понимают, что мы поддерживаем океан здоровым!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/eco-tourism.jpg" 
+                 alt="Otters living naturally while eco-tourists watch from safe distance" 
+                 data-alt-en="Otters living naturally while eco-tourists watch from safe distance"
+                 data-alt-es="Nutrias viviendo naturalmente mientras ecoturistas observan desde distancia segura"
+                 data-alt-ru="Выдры живут естественно, пока экотуристы наблюдают с безопасного расстояния">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Visitors Who Care</h2>
+            <h2 data-lang="es">Visitantes que Cuidan</h2>
+            <h2 data-lang="ru">Посетители, которым не всё равно</h2>
+            <div data-lang="en" class="active">
+                <p>More boats came, but these were different - eco-tourism! People paid to see otters in the wild, and that money helped protect the bay. &#x27;When we&#x27;re worth more alive than our fur ever was, we&#x27;re truly safe,&#x27; Mama explained. &#x27;These visitors go home and tell others about us. We&#x27;re ambassadors for the entire ocean!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Vinieron más barcos, pero estos eran diferentes - ¡ecoturismo! La gente pagaba por ver nutrias en la naturaleza, y ese dinero ayudaba a proteger la bahía. &#x27;Cuando valemos más vivos que lo que nuestro pelaje valió alguna vez, estamos verdaderamente seguros,&#x27; explicó Mamá. &#x27;¡Estos visitantes van a casa y cuentan a otros sobre nosotros. Somos embajadores de todo el océano!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Приехало больше лодок, но эти были другими - экотуризм! Люди платили, чтобы увидеть выдр в дикой природе, и эти деньги помогали защищать залив. &#x27;Когда мы стоим больше живыми, чем когда-либо стоил наш мех, мы действительно в безопасности,&#x27; - объяснила Мама. &#x27;Эти посетители идут домой и рассказывают другим о нас. Мы послы всего океана!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/climate-change.jpg" 
+                 alt="Professor Kelp speaking to concerned otter community about changing ocean" 
+                 data-alt-en="Professor Kelp speaking to concerned otter community about changing ocean"
+                 data-alt-es="Profesor Kelp hablando a comunidad de nutrias preocupadas sobre océano cambiante"
+                 data-alt-ru="Профессор Келп говорит с обеспокоенным сообществом выдр об изменяющемся океане">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Warming Waters</h2>
+            <h2 data-lang="es">Las Aguas que se Calientan</h2>
+            <h2 data-lang="ru">Теплеющие воды</h2>
+            <div data-lang="en" class="active">
+                <p>Professor Kelp called a meeting. &#x27;The ocean is changing faster than ever. Warmer water, stronger storms, different currents. We must adapt and help each other more than ever. But remember - if we survived near extinction, we can survive this too. We&#x27;re resilient, we&#x27;re smart, and we have human allies now. Together, we&#x27;ll find a way.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>El Profesor Kelp convocó una reunión. &#x27;El océano está cambiando más rápido que nunca. Agua más cálida, tormentas más fuertes, corrientes diferentes. Debemos adaptarnos y ayudarnos más que nunca. Pero recuerden - si sobrevivimos casi la extinción, podemos sobrevivir esto también. Somos resilientes, somos inteligentes, y ahora tenemos aliados humanos. Juntos, encontraremos un camino.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Профессор Келп созвал собрание. &#x27;Океан меняется быстрее, чем когда-либо. Более тёплая вода, более сильные штормы, другие течения. Мы должны адаптироваться и помогать друг другу больше, чем когда-либо. Но помните - если мы пережили почти вымирание, мы можем пережить и это. Мы стойкие, мы умные, и теперь у нас есть союзники-люди. Вместе мы найдём путь.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/advocacy-lesson.jpg" 
+                 alt="Otters seeing how children around the world learn about them" 
+                 data-alt-en="Otters seeing how children around the world learn about them"
+                 data-alt-es="Nutrias viendo cómo niños alrededor del mundo aprenden sobre ellas"
+                 data-alt-ru="Выдры видят, как дети по всему миру узнают о них">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Voices for the Ocean</h2>
+            <h2 data-lang="es">Voces por el Océano</h2>
+            <h2 data-lang="ru">Голоса за океан</h2>
+            <div data-lang="en" class="active">
+                <p>A conservationist visited, showing the otters pictures of children learning about them in schools. &#x27;You&#x27;re famous!&#x27; Marina laughed. &#x27;Children everywhere learn about sea otters and why you matter. They grow up wanting to protect you. Every child who loves otters becomes an ocean protector. You&#x27;re teaching the next generation!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Un conservacionista visitó, mostrando a las nutrias fotos de niños aprendiendo sobre ellas en las escuelas. &#x27;¡Son famosas!&#x27; rió Marina. &#x27;Niños en todas partes aprenden sobre las nutrias marinas y por qué importan. Crecen queriendo protegerlas. ¡Cada niño que ama a las nutrias se convierte en un protector del océano. Están enseñando a la próxima generación!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Защитник природы посетил, показывая выдрам фотографии детей, изучающих их в школах. &#x27;Вы знамениты!&#x27; - смеялась Марина. &#x27;Дети везде узнают о морских выдрах и почему вы важны. Они растут, желая защитить вас. Каждый ребёнок, который любит выдр, становится защитником океана. Вы учите следующее поколение!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/teaching-next-gen.jpg" 
+                 alt="Ollie as teacher instructing eager young otter pups" 
+                 data-alt-en="Ollie as teacher instructing eager young otter pups"
+                 data-alt-es="Ollie como maestro instruyendo ansiosos cachorros de nutria"
+                 data-alt-ru="Олли как учитель обучает eager молодых щенков выдры">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Passing the Wisdom</h2>
+            <h2 data-lang="es">Pasando la Sabiduría</h2>
+            <h2 data-lang="ru">Передавая мудрость</h2>
+            <div data-lang="en" class="active">
+                <p>Ollie was now teaching a group of young pups, just as Professor Kelp had taught him. &#x27;Remember,&#x27; he said patiently, &#x27;we&#x27;re not just otters - we&#x27;re ecosystem engineers. Every urchin we eat, every kelp forest we protect, makes the ocean healthier. You carry a great responsibility, little ones. But also great joy!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Ollie ahora estaba enseñando a un grupo de cachorros jóvenes, tal como el Profesor Kelp le había enseñado. &#x27;Recuerden,&#x27; dijo pacientemente, &#x27;no somos solo nutrias - somos ingenieros del ecosistema. Cada erizo que comemos, cada bosque de algas que protegemos, hace el océano más saludable. Llevan una gran responsabilidad, pequeños. ¡Pero también gran alegría!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Олли теперь учил группу молодых щенков, так же как Профессор Келп учил его. &#x27;Помните,&#x27; - терпеливо сказал он, &#x27;мы не просто выдры - мы инженеры экосистемы. Каждый ёж, которого мы едим, каждый лес ламинарии, который мы защищаем, делает океан здоровее. Вы несёте большую ответственность, малыши. Но также и большую радость!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/kelp-revival.jpg" 
+                 alt="Otters swimming through beautifully restored kelp forest" 
+                 data-alt-en="Otters swimming through beautifully restored kelp forest"
+                 data-alt-es="Nutrias nadando a través del bosque de algas bellamente restaurado"
+                 data-alt-ru="Выдры плавают через красиво восстановленный лес ламинарии">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Forest Returns</h2>
+            <h2 data-lang="es">El Bosque Regresa</h2>
+            <h2 data-lang="ru">Лес возвращается</h2>
+            <div data-lang="en" class="active">
+                <p>Where once was barren seafloor, young kelp now swayed in the current. The restoration worked! Fish returned, seals visited, and the water sparkled with life. &#x27;We did this,&#x27; Professor Kelp said with tears in his eyes. &#x27;Otters, humans, working together. This is what&#x27;s possible when everyone cares. The forest is alive again!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Donde una vez hubo fondo marino estéril, las algas jóvenes ahora se mecían en la corriente. ¡La restauración funcionó! Los peces regresaron, las focas visitaron, y el agua brillaba con vida. &#x27;Hicimos esto,&#x27; dijo el Profesor Kelp con lágrimas en los ojos. &#x27;Nutrias, humanos, trabajando juntos. Esto es lo que es posible cuando a todos les importa. ¡El bosque está vivo de nuevo!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Там, где когда-то было бесплодное морское дно, молодая ламинария теперь покачивалась на течении. Восстановление сработало! Рыба вернулась, тюлени посещали, и вода искрилась жизнью. &#x27;Мы сделали это,&#x27; - сказал Профессор Келп со слезами на глазах. &#x27;Выдры, люди, работающие вместе. Вот что возможно, когда всем не всё равно. Лес снова жив!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/building-bridges.jpg" 
+                 alt="Enormous raft formation of united otter communities" 
+                 data-alt-en="Enormous raft formation of united otter communities"
+                 data-alt-es="Enorme formación de balsa de comunidades de nutrias unidas"
+                 data-alt-ru="Огромная формация плота объединённых сообществ выдр">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">United We Float</h2>
+            <h2 data-lang="es">Unidos Flotamos</h2>
+            <h2 data-lang="ru">Вместе мы плаваем</h2>
+            <div data-lang="en" class="active">
+                <p>The northern and southern otter groups decided to join forces. More otters meant better protection, shared knowledge, and stronger community. &#x27;Boundaries are human ideas,&#x27; Captain Whiskers declared. &#x27;The ocean connects us all. When we work together, we&#x27;re unstoppable!&#x27; The mega-raft of over 200 otters was a sight to behold!</p>
+            </div>
+            <div data-lang="es">
+                <p>Los grupos de nutrias del norte y del sur decidieron unir fuerzas. Más nutrias significaban mejor protección, conocimiento compartido y comunidad más fuerte. &#x27;¡Las fronteras son ideas humanas,&#x27; declaró el Capitán Bigotes. &#x27;El océano nos conecta a todos. Cuando trabajamos juntos, somos imparables!&#x27; ¡La mega-balsa de más de 200 nutrias era un espectáculo para contemplar!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Северные и южные группы выдр решили объединить силы. Больше выдр означало лучшую защиту, общие знания и более сильное сообщество. &#x27;Границы - это человеческие идеи,&#x27; - заявил Капитан Усач. &#x27;Океан соединяет нас всех. Когда мы работаем вместе, мы неостановимы!&#x27; Мега-плот из более чем 200 выдр был зрелищем!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/conservation-hero.jpg" 
+                 alt="Marine biologist Dr. Ocean making promise to otter community" 
+                 data-alt-en="Marine biologist Dr. Ocean making promise to otter community"
+                 data-alt-es="Bióloga marina Dra. Océano haciendo promesa a comunidad de nutrias"
+                 data-alt-ru="Морской биолог доктор Океан даёт обещание сообществу выдр">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Dr. Ocean&#x27;s Promise</h2>
+            <h2 data-lang="es">La Promesa de la Dra. Océano</h2>
+            <h2 data-lang="ru">Обещание доктора Океан</h2>
+            <div data-lang="en" class="active">
+                <p>Dr. Ocean, the marine biologist who&#x27;d studied them for years, made a promise: &#x27;I&#x27;ll spend my life making sure sea otters thrive. You saved the kelp forests, now we&#x27;ll save you.&#x27; She showed them plans for more protected areas, otter crossing bridges over roads, and pollution cleanup projects. Hope floated on every wave!</p>
+            </div>
+            <div data-lang="es">
+                <p>La Dra. Océano, la bióloga marina que los había estudiado durante años, hizo una promesa: &#x27;Pasaré mi vida asegurándome de que las nutrias marinas prosperen. Ustedes salvaron los bosques de algas, ahora los salvaremos a ustedes.&#x27; Les mostró planes para más áreas protegidas, puentes de cruce para nutrias sobre carreteras, y proyectos de limpieza de contaminación. ¡La esperanza flotaba en cada ola!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Доктор Океан, морской биолог, изучавший их годами, дала обещание: &#x27;Я проведу свою жизнь, обеспечивая процветание морских выдр. Вы спасли леса ламинарии, теперь мы спасём вас.&#x27; Она показала им планы для большего количества охраняемых территорий, мостов для выдр над дорогами и проектов по очистке от загрязнения. Надежда плавала на каждой волне!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/ollies-promise.jpg" 
+                 alt="Ollie standing majestically on rock making his conservation promise" 
+                 data-alt-en="Ollie standing majestically on rock making his conservation promise"
+                 data-alt-es="Ollie parado majestuosamente en roca haciendo su promesa de conservación"
+                 data-alt-ru="Олли величественно стоит на скале, давая своё обещание сохранения">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Guardian of Tomorrow</h2>
+            <h2 data-lang="es">Guardián del Mañana</h2>
+            <h2 data-lang="ru">Хранитель завтрашнего дня</h2>
+            <div data-lang="en" class="active">
+                <p>Standing on his favorite rock, Ollie made a vow to the setting sun: &#x27;I promise to protect this ocean for Ruby&#x27;s pups and their pups after. I&#x27;ll teach them everything - how to use tools, protect kelp, and work with humans who care. The ocean gave us life; we&#x27;ll give it our protection. This is my promise!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>De pie en su roca favorita, Ollie hizo un voto al sol poniente: &#x27;Prometo proteger este océano para los cachorros de Ruby y sus cachorros después. Les enseñaré todo - cómo usar herramientas, proteger algas y trabajar con humanos que se preocupan. El océano nos dio vida; le daremos nuestra protección. ¡Esta es mi promesa!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Стоя на своём любимом камне, Олли дал клятву заходящему солнцу: &#x27;Я обещаю защищать этот океан для щенков Руби и их щенков после. Я научу их всему - как использовать инструменты, защищать ламинарию и работать с людьми, которым не всё равно. Океан дал нам жизнь; мы дадим ему нашу защиту. Это моё обещание!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img src="assets/images/new-life.jpg" 
+                 alt="Marina with her newborn pups while Ollie watches with joy" 
+                 data-alt-en="Marina with her newborn pups while Ollie watches with joy"
+                 data-alt-es="Marina con sus cachorros recién nacidos mientras Ollie observa con alegría"
+                 data-alt-ru="Марина со своими новорождёнными щенками, пока Олли наблюдает с радостью">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Circle Continues</h2>
+            <h2 data-lang="es">El Círculo Continúa</h2>
+            <h2 data-lang="ru">Круг продолжается</h2>
+            <div data-lang="en" class="active">
+                <p>Marina had pups! Two tiny otters, as fluffy as dandelions, floated on her belly. Ollie watched with joy as the next generation began their journey. &#x27;Welcome to the ocean, little ones,&#x27; he whispered. &#x27;You&#x27;re born into a time of hope. The kelp is growing, humans are helping, and our family is strong. Your adventure is just beginning!&#x27; The cycle of life continued, eternal as the tides.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Marina tuvo cachorros! Dos pequeñas nutrias, tan esponjosas como dientes de león, flotaban en su vientre. Ollie observó con alegría mientras la próxima generación comenzaba su viaje. &#x27;Bienvenidos al océano, pequeños,&#x27; susurró. &#x27;Nacen en un tiempo de esperanza. Las algas están creciendo, los humanos están ayudando, y nuestra familia es fuerte. ¡Su aventura apenas comienza!&#x27; El ciclo de vida continuó, eterno como las mareas.</p>
+            </div>
+            <div data-lang="ru">
+                <p>У Марины появились щенки! Два крошечных выдрёнка, пушистых как одуванчики, плавали на её животе. Олли с радостью наблюдал, как следующее поколение начинает своё путешествие. &#x27;Добро пожаловать в океан, малыши,&#x27; - прошептал он. &#x27;Вы родились во время надежды. Ламинария растёт, люди помогают, и наша семья сильна. Ваше приключение только начинается!&#x27; Круг жизни продолжался, вечный как приливы.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- Fun Facts Section -->
-        <section class="fun-facts">
-            <h2 data-i18n="funFactsTitle">Amazing Otter Facts!</h2>
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card">
+                <img src="assets/images/detail-tool-use.jpg" alt="Tool Use Intelligence">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Tool Use Intelligence</h3>
+                    <h3 data-lang="es">Inteligencia en Uso de Herramientas</h3>
+                    <h3 data-lang="ru">Интеллект использования инструментов</h3>
+                    <p data-lang="en" class="active">Sea otters are one of the few animals that use tools! Each otter has a favorite rock they keep in a pouch under their arm. Some otters have been observed using the same rock for over 8 years!</p>
+                    <p data-lang="es">¡Las nutrias marinas son uno de los pocos animales que usan herramientas! Cada nutria tiene una roca favorita que guarda en una bolsa bajo su brazo. ¡Se ha observado que algunas nutrias usan la misma roca durante más de 8 años!</p>
+                    <p data-lang="ru">Морские выдры - одни из немногих животных, использующих инструменты! У каждой выдры есть любимый камень, который она хранит в кармане под мышкой. Наблюдали, как некоторые выдры используют один и тот же камень более 8 лет!</p>
+                </div>
+            </div>
+            <div class="detail-card">
+                <img src="assets/images/detail-keystone.jpg" alt="Keystone Species">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Keystone Species</h3>
+                    <h3 data-lang="es">Especie Clave</h3>
+                    <h3 data-lang="ru">Ключевой вид</h3>
+                    <p data-lang="en" class="active">Sea otters are a keystone species - without them, entire ecosystems collapse. By eating sea urchins, they prevent the destruction of kelp forests, which provide homes for thousands of species and help fight climate change.</p>
+                    <p data-lang="es">Las nutrias marinas son una especie clave - sin ellas, ecosistemas enteros colapsan. Al comer erizos de mar, previenen la destrucción de los bosques de algas, que proporcionan hogares para miles de especies y ayudan a combatir el cambio climático.</p>
+                    <p data-lang="ru">Морские выдры - ключевой вид - без них рушатся целые экосистемы. Поедая морских ежей, они предотвращают уничтожение лесов ламинарии, которые обеспечивают дома для тысяч видов и помогают бороться с изменением климата.</p>
+                </div>
+            </div>
+            <div class="detail-card">
+                <img src="assets/images/detail-no-blubber.jpg" alt="No Blubber, Just Fur">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">No Blubber, Just Fur</h3>
+                    <h3 data-lang="es">Sin Grasa, Solo Pelaje</h3>
+                    <h3 data-lang="ru">Без жира, только мех</h3>
+                    <p data-lang="en" class="active">Unlike other marine mammals, sea otters don&#x27;t have blubber for insulation. They rely entirely on their incredibly dense fur and high metabolism to stay warm. They must groom constantly to maintain their fur&#x27;s insulating properties.</p>
+                    <p data-lang="es">A diferencia de otros mamíferos marinos, las nutrias marinas no tienen grasa para aislamiento. Dependen completamente de su pelaje increíblemente denso y alto metabolismo para mantenerse calientes. Deben acicalarse constantemente para mantener las propiedades aislantes de su pelaje.</p>
+                    <p data-lang="ru">В отличие от других морских млекопитающих, у морских выдр нет жира для изоляции. Они полностью полагаются на свой невероятно густой мех и высокий метаболизм, чтобы согреться. Они должны постоянно ухаживать за собой, чтобы поддерживать изолирующие свойства меха.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Otter Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos de las Nutrias!</h2>
+            <h2 data-lang="ru">Удивительные факты о выдрах!</h2>
             <div class="facts-grid">
                 <div class="fact-card">
-                    <span class="fact-icon">🍽️</span>
-                    <p data-i18n="funFact1">Sea otters eat 25% of their body weight every day - that&#x27;s like a kid eating 40 hamburgers!</p>
+                    <img src="assets/images/fun-fact-fur.jpg" alt="Super Dense Fur" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Super Dense Fur</h3>
+                        <h3 data-lang="es">Pelaje Súper Denso</h3>
+                        <h3 data-lang="ru">Супер густой мех</h3>
+                        <p data-lang="en" class="active">Sea otters have the densest fur of any animal - up to 1 million hairs per square inch! That&#x27;s more hair in one square inch than a human has on their entire head!</p>
+                        <p data-lang="es">¡Las nutrias marinas tienen el pelaje más denso de cualquier animal - hasta 1 millón de pelos por pulgada cuadrada! ¡Eso es más pelo en una pulgada cuadrada que el que un humano tiene en toda su cabeza!</p>
+                        <p data-lang="ru">У морских выдр самый густой мех среди всех животных - до 1 миллиона волосков на квадратный дюйм! Это больше волос на одном квадратном дюйме, чем у человека на всей голове!</p>
+                    </div>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">🤝</span>
-                    <p data-i18n="funFact2">Otters hold hands while sleeping so they don&#x27;t drift apart!</p>
+                    <img src="assets/images/fun-fact-eating.jpg" alt="Eating Machines" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Eating Machines</h3>
+                        <h3 data-lang="es">Máquinas de Comer</h3>
+                        <h3 data-lang="ru">Машины для еды</h3>
+                        <p data-lang="en" class="active">Sea otters eat 25% of their body weight every day! For a 60-pound otter, that&#x27;s 15 pounds of food daily - like a human eating 40 hamburgers!</p>
+                        <p data-lang="es">¡Las nutrias marinas comen el 25% de su peso corporal cada día! Para una nutria de 60 libras, eso es 15 libras de comida diaria - ¡como un humano comiendo 40 hamburguesas!</p>
+                        <p data-lang="ru">Морские выдры съедают 25% своего веса каждый день! Для выдры весом 60 фунтов это 15 фунтов еды ежедневно - как если бы человек съедал 40 гамбургеров!</p>
+                    </div>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">🦷</span>
-                    <p data-i18n="funFact3">Their teeth are purple! The purple color comes from eating so many purple sea urchins.</p>
+                    <img src="assets/images/fun-fact-holding-hands.jpg" alt="Holding Hands" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Holding Hands</h3>
+                        <h3 data-lang="es">Tomados de las Manos</h3>
+                        <h3 data-lang="ru">Держась за лапы</h3>
+                        <p data-lang="en" class="active">Otters hold hands while sleeping so they don&#x27;t drift apart! These groups are called &#x27;rafts&#x27; and can include over 100 otters floating together!</p>
+                        <p data-lang="es">¡Las nutrias se toman de las manos mientras duermen para no separarse! Estos grupos se llaman &#x27;balsas&#x27; y pueden incluir más de 100 nutrias flotando juntas!</p>
+                        <p data-lang="ru">Выдры держатся за лапы во время сна, чтобы не расплыться! Эти группы называются &#x27;плотами&#x27; и могут включать более 100 выдр, плавающих вместе!</p>
+                    </div>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">💨</span>
-                    <p data-i18n="funFact4">They can blow air into their fur to stay extra floaty - like wearing a life jacket!</p>
+                    <img src="assets/images/fun-fact-purple-teeth.jpg" alt="Purple Teeth" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Purple Teeth</h3>
+                        <h3 data-lang="es">Dientes Púrpuras</h3>
+                        <h3 data-lang="ru">Пурпурные зубы</h3>
+                        <p data-lang="en" class="active">Their teeth can turn purple from eating so many purple sea urchins! It&#x27;s a sign of a healthy otter diet and doesn&#x27;t hurt them at all.</p>
+                        <p data-lang="es">¡Sus dientes pueden volverse púrpuras por comer tantos erizos de mar púrpuras! Es una señal de una dieta saludable de nutria y no les hace daño en absoluto.</p>
+                        <p data-lang="ru">Их зубы могут стать пурпурными от поедания множества пурпурных морских ежей! Это признак здорового питания выдры и совсем не вредит им.</p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <!-- Language Switcher -->
-    <script src="../language-switcher.js"></script>
-    
-    <!-- Translations -->
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Protecting ocean ecosystems through education and wonder</p>
+        <p data-lang="es" style="margin-top: 10px;">Protegiendo los ecosistemas oceánicos a través de la educación y el asombro</p>
+        <p data-lang="ru" style="margin-top: 10px;">Защищаем океанские экосистемы через образование и восхищение</p>
+    </footer>
+
     <script>
-        const translations = {
-            en: {
-                pageTitle: "Sea Otters: Ocean&#x27;s Playful Engineers",
-                heroTitle: "Sea Otters",
-                heroSubtitle: "The Floating Teddy Bears of the Ocean",
-                heroImageAlt: "Majestic kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among the kelp fronds",
-                meetOtterTitle: "Meet the Sea Otter!",
-                meetOtterContent: "Sea otters are amazing marine mammals that live in the Pacific Ocean. They have the thickest fur of any animal - up to one million hairs per square inch! This incredible fur coat keeps them warm in cold ocean waters. Unlike other marine mammals, sea otters don&#x27;t have blubber for insulation.",
-                otterPortraitAlt: "Close-up of a sea otter&#x27;s face showing its whiskers, small ears, and expressive eyes",
-                floatingTitle: "Life on Their Backs",
-                floatingContent: "Sea otters spend most of their lives floating on their backs! They eat, sleep, and even give birth while floating. They use kelp as an anchor, wrapping themselves in it so they don&#x27;t drift away while sleeping. Groups of otters floating together are called &#x27;rafts&#x27; - sometimes over 100 otters float together!",
-                otterFloatingAlt: "Sea otter floating on its back in calm water, wrapped in kelp, holding a sea urchin",
-                toolUseTitle: "Ocean&#x27;s Tool Users",
-                toolUseContent: "Sea otters are one of the few animals that use tools! They use rocks to crack open shellfish like clams and sea urchins. Each otter has a favorite rock that they keep in a pouch of loose skin under their armpit. They place the rock on their chest and smash the shellfish against it - nature&#x27;s dinner table!",
-                otterToolUseAlt: "Sea otter floating on back, using a rock on its chest to crack open a shellfish",
-                ecosystemTitle: "Kelp Forest Guardians",
-                ecosystemContent: "Sea otters are ecosystem heroes! By eating sea urchins, they protect kelp forests from being destroyed. Without otters, sea urchins would eat all the kelp, turning vibrant underwater forests into barren areas. Kelp forests provide homes for thousands of species and help fight climate change by absorbing carbon dioxide.",
-                kelpForestAlt: "Vibrant underwater kelp forest with sunlight filtering through, showing the rich ecosystem with fish and sea otters",
-                babyOttersTitle: "Adorable Otter Pups",
-                babyOttersContent: "Baby sea otters, called pups, are born in the water and can float immediately! Their fluffy fur is so buoyant they can&#x27;t dive underwater for the first few weeks. Mother otters are incredibly devoted, carrying their pups on their bellies for months, teaching them to swim, dive, and find food. The bond between mother and pup is one of the strongest in the animal kingdom!",
-                motherPupAlt: "Mother sea otter floating on her back with a fluffy pup resting on her belly",
-                funFactsTitle: "Amazing Otter Facts!",
-                funFact1: "Sea otters eat 25% of their body weight every day - that&#x27;s like a kid eating 40 hamburgers!",
-                funFact2: "Otters hold hands while sleeping so they don&#x27;t drift apart!",
-                funFact3: "Their teeth are purple! The purple color comes from eating so many purple sea urchins.",
-                funFact4: "They can blow air into their fur to stay extra floaty - like wearing a life jacket!",
-            },
-            es: {
-                pageTitle: "Nutrias Marinas: Ingenieros Juguetones del Océano",
-                heroTitle: "Nutrias Marinas",
-                heroSubtitle: "Los Ositos de Peluche Flotantes del Océano",
-                heroImageAlt: "Majestuoso bosque de algas con luz dorada atravesando el agua, nutrias marinas flotando pacíficamente entre las frondas de algas",
-                meetOtterTitle: "¡Conoce a la Nutria Marina!",
-                meetOtterContent: "Las nutrias marinas son increíbles mamíferos marinos que viven en el Océano Pacífico. ¡Tienen el pelaje más grueso de cualquier animal - hasta un millón de pelos por pulgada cuadrada! Este increíble abrigo de piel las mantiene calientes en las frías aguas del océano.",
-                otterPortraitAlt: "Primer plano de la cara de una nutria marina mostrando sus bigotes, orejas pequeñas y ojos expresivos",
-                floatingTitle: "Vida de Espaldas",
-                floatingContent: "¡Las nutrias marinas pasan la mayor parte de su vida flotando de espaldas! Comen, duermen e incluso dan a luz mientras flotan. Usan las algas como ancla, envolviéndose en ellas para no alejarse mientras duermen.",
-                otterFloatingAlt: "Nutria marina flotando de espaldas en agua tranquila, envuelta en algas, sosteniendo un erizo de mar",
-                toolUseTitle: "Usuarios de Herramientas del Océano",
-                toolUseContent: "¡Las nutrias marinas son uno de los pocos animales que usan herramientas! Usan rocas para abrir mariscos como almejas y erizos de mar. Cada nutria tiene una roca favorita que guarda en una bolsa de piel suelta bajo su axila.",
-                otterToolUseAlt: "Nutria marina flotando de espaldas, usando una roca en su pecho para abrir un marisco",
-                ecosystemTitle: "Guardianes del Bosque de Algas",
-                ecosystemContent: "¡Las nutrias marinas son héroes del ecosistema! Al comer erizos de mar, protegen los bosques de algas de ser destruidos. Sin nutrias, los erizos de mar comerían todas las algas, convirtiendo los vibrantes bosques submarinos en áreas estériles.",
-                kelpForestAlt: "Vibrante bosque submarino de algas con luz solar filtrándose, mostrando el rico ecosistema con peces y nutrias marinas",
-                babyOttersTitle: "Adorables Cachorros de Nutria",
-                babyOttersContent: "¡Los bebés nutria marina, llamados cachorros, nacen en el agua y pueden flotar inmediatamente! Su pelaje esponjoso es tan flotante que no pueden sumergirse durante las primeras semanas. Las madres nutria son increíblemente devotas.",
-                motherPupAlt: "Madre nutria marina flotando de espaldas con un cachorro esponjoso descansando en su vientre",
-                funFactsTitle: "¡Datos Asombrosos de las Nutrias!",
-                funFact1: "Las nutrias marinas comen el 25% de su peso corporal cada día - ¡es como si un niño comiera 40 hamburguesas!",
-                funFact2: "¡Las nutrias se toman de las manos mientras duermen para no separarse!",
-                funFact3: "¡Sus dientes son morados! El color morado viene de comer tantos erizos de mar morados.",
-                funFact4: "¡Pueden soplar aire en su pelaje para flotar más - como usar un chaleco salvavidas!",
-            },
-            ru: {
-                pageTitle: "Морские выдры: Игривые инженеры океана",
-                heroTitle: "Морские выдры",
-                heroSubtitle: "Плавающие плюшевые мишки океана",
-                heroImageAlt: "Величественный лес ламинарии с золотым солнечным светом, проникающим сквозь воду, морские выдры мирно плавают среди водорослей",
-                meetOtterTitle: "Познакомьтесь с морской выдрой!",
-                meetOtterContent: "Морские выдры - удивительные морские млекопитающие, обитающие в Тихом океане. У них самый густой мех среди всех животных - до миллиона волосков на квадратный дюйм! Эта невероятная шуба согревает их в холодных океанских водах.",
-                otterPortraitAlt: "Крупный план морды морской выдры с усами, маленькими ушами и выразительными глазами",
-                floatingTitle: "Жизнь на спине",
-                floatingContent: "Морские выдры проводят большую часть жизни, плавая на спине! Они едят, спят и даже рожают, плавая на воде. Они используют ламинарию как якорь, обматываясь в неё, чтобы не уплыть во время сна.",
-                otterFloatingAlt: "Морская выдра плавает на спине в спокойной воде, обернутая в ламинарию, держит морского ежа",
-                toolUseTitle: "Пользователи инструментов океана",
-                toolUseContent: "Морские выдры - одни из немногих животных, использующих инструменты! Они используют камни, чтобы раскалывать моллюсков и морских ежей. У каждой выдры есть любимый камень, который она хранит в кожаном кармане под мышкой.",
-                otterToolUseAlt: "Морская выдра плавает на спине, используя камень на груди, чтобы расколоть моллюска",
-                ecosystemTitle: "Хранители леса ламинарии",
-                ecosystemContent: "Морские выдры - герои экосистемы! Поедая морских ежей, они защищают леса ламинарии от уничтожения. Без выдр морские ежи съели бы всю ламинарию, превратив яркие подводные леса в пустоши.",
-                kelpForestAlt: "Яркий подводный лес ламинарии с проникающим солнечным светом, показывающий богатую экосистему с рыбами и морскими выдрами",
-                babyOttersTitle: "Очаровательные детёныши выдры",
-                babyOttersContent: "Детёныши морских выдр рождаются в воде и сразу могут плавать! Их пушистый мех настолько плавучий, что они не могут нырять первые несколько недель. Матери-выдры невероятно преданны.",
-                motherPupAlt: "Мать-выдра плавает на спине с пушистым детёнышем на животе",
-                funFactsTitle: "Удивительные факты о выдрах!",
-                funFact1: "Морские выдры съедают 25% своего веса каждый день - это как если бы ребёнок съел 40 гамбургеров!",
-                funFact2: "Выдры держатся за лапы во время сна, чтобы не расплыться!",
-                funFact3: "Их зубы фиолетовые! Фиолетовый цвет появляется от поедания морских ежей.",
-                funFact4: "Они могут надувать воздухом свой мех для лучшей плавучести - как спасательный жилет!",
-            }
-        };
-
-        function updateContent(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
                 }
             });
-
-            document.querySelectorAll('[data-i18n-alt]').forEach(element => {
-                const key = element.getAttribute('data-i18n-alt');
-                if (translations[lang] && translations[lang][key]) {
-                    element.alt = translations[lang][key];
-                }
+            
+            // Hide all language elements
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
             });
-
-            document.documentElement.lang = lang;
+            
+            // Show selected language elements
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Update image alt texts
+            document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                img.alt = img.getAttribute('data-alt-' + lang);
+            });
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
         }
 
-        // Initialize with stored language or default
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('selectedLanguage') || 'en';
-            updateContent(savedLang);
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
         });
     </script>
+</div>
 </body>
 </html>

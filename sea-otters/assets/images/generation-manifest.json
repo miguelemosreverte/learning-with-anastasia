@@ -1,115 +1,528 @@
 {
   "chapter": "sea-otters",
   "style": {
-    "global": "Studio Ghibli warmth, Pixar quality, Van Gogh atmospheric effects, child-friendly, vibrant colors"
+    "global": "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, underwater and surface scenes with beautiful lighting"
   },
-  "routing": {
-    "openai": [
-      "hero-sea-otters.jpg",
-      "kelp-forest-ecosystem.jpg"
-    ],
-    "gemini": [
-      "otter-portrait.jpg",
-      "otter-floating.jpg",
-      "otter-using-rock.jpg",
-      "mother-and-pup.jpg"
-    ]
-  },
-  "characters": {
-    "ollie": {
-      "name": "Ollie the Otter",
-      "reference": "references/ollie-otter.jpg",
-      "description": "Main character - young sea otter with distinctive white chest marking"
-    },
-    "mama": {
-      "name": "Mama Otter",
-      "reference": "references/mama-otter.jpg",
-      "description": "Ollie's mother - larger otter with gentle expression"
-    },
-    "professor": {
-      "name": "Professor Kelp",
-      "reference": "references/professor-kelp.jpg",
-      "description": "Wise old otter with grey whiskers who teaches about the ecosystem"
-    }
-  },
-  "actions": [
-    {
-      "image": "otter-using-rock.jpg",
-      "character": "ollie",
-      "action": "using a rock to crack open a sea urchin while floating on back"
-    },
-    {
-      "image": "mother-and-pup.jpg",
-      "characters": [
-        "mama",
-        "ollie"
-      ],
-      "action": "mama floating with baby Ollie resting on her belly"
-    },
-    {
-      "image": "otter-floating.jpg",
-      "character": "ollie",
-      "action": "wrapped in kelp, sleeping peacefully on the water"
-    }
-  ],
+  "routing": {},
+  "characters": {},
+  "actions": [],
   "images": [
     {
-      "filename": "hero-sea-otters.jpg",
+      "filename": "hero-kelp-forest.jpg",
       "type": "landscape",
       "alt": {
-        "en": "Majestic kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among the kelp fronds",
-        "es": "Majestuoso bosque de algas con luz dorada atravesando el agua, nutrias marinas flotando pacíficamente entre las frondas de algas",
-        "ru": "Величественный лес ламинарии с золотым солнечным светом, проникающим сквозь воду, морские выдры мирно плавают среди водорослей"
+        "en": "Majestic underwater kelp forest with golden sunlight streaming through the water, sea otters floating peacefully among towering kelp fronds",
+        "es": "Majestuoso bosque submarino de algas con luz dorada atravesando el agua, nutrias marinas flotando pacíficamente entre imponentes frondas de algas",
+        "ru": "Величественный подводный лес ламинарии с золотым солнечным светом, проникающим сквозь воду, морские выдры мирно плавают среди возвышающихся водорослей"
       }
     },
     {
-      "filename": "otter-portrait.jpg",
-      "type": "specific-animal",
+      "filename": "birth-of-ollie.jpg",
+      "type": "content",
       "alt": {
-        "en": "Close-up of a sea otter's face showing its whiskers, small ears, and expressive eyes",
-        "es": "Primer plano de la cara de una nutria marina mostrando sus bigotes, orejas pequeñas y ojos expresivos",
-        "ru": "Крупный план морды морской выдры с усами, маленькими ушами и выразительными глазами"
-      },
-      "reference": "references/sea-otter-face.jpg",
-      "needsTranslations": false
-    },
-    {
-      "filename": "otter-floating.jpg",
-      "type": "behavior",
-      "alt": {
-        "en": "Sea otter floating on its back in calm water, wrapped in kelp, holding a sea urchin",
-        "es": "Nutria marina flotando de espaldas en agua tranquila, envuelta en algas, sosteniendo un erizo de mar",
-        "ru": "Морская выдра плавает на спине в спокойной воде, обернутая в ламинарию, держит морского ежа"
+        "en": "Newborn sea otter pup Ollie resting on his mother's belly in calm ocean waters, extremely fluffy baby fur visible",
+        "es": "Cachorro recién nacido de nutria marina Ollie descansando en el vientre de su madre en aguas oceánicas tranquilas",
+        "ru": "Новорождённый детёныш морской выдры Олли отдыхает на животе матери в спокойных океанских водах"
       },
       "needsTranslations": false
     },
     {
-      "filename": "otter-using-rock.jpg",
-      "type": "specific-behavior",
+      "filename": "mama-otter.jpg",
+      "type": "content",
       "alt": {
-        "en": "Sea otter floating on back, using a rock on its chest to crack open a shellfish",
-        "es": "Nutria marina flotando de espaldas, usando una roca en su pecho para abrir un marisco",
-        "ru": "Морская выдра плавает на спине, используя камень на груди, чтобы расколоть моллюска"
+        "en": "Adult female sea otter grooming her pup, showing maternal care and bonding",
+        "es": "Nutria marina adulta hembra acicalando a su cachorro, mostrando cuidado maternal",
+        "ru": "Взрослая самка морской выдры ухаживает за своим детёнышем"
       },
       "needsTranslations": false
     },
     {
-      "filename": "kelp-forest-ecosystem.jpg",
-      "type": "landscape",
+      "filename": "first-floating-lesson.jpg",
+      "type": "content",
       "alt": {
-        "en": "Vibrant underwater kelp forest with sunlight filtering through, showing the rich ecosystem with fish and sea otters",
-        "es": "Vibrante bosque submarino de algas con luz solar filtrándose, mostrando el rico ecosistema con peces y nutrias marinas",
-        "ru": "Яркий подводный лес ламинарии с проникающим солнечным светом, показывающий богатую экосистему с рыбами и морскими выдрами"
+        "en": "Baby Ollie learning to float on his back with paws spread, supervised by mother",
+        "es": "Bebé Ollie aprendiendo a flotar de espaldas con las patas extendidas",
+        "ru": "Малыш Олли учится плавать на спине с расставленными лапками"
       },
       "needsTranslations": false
     },
     {
-      "filename": "mother-and-pup.jpg",
-      "type": "specific-animal",
+      "filename": "grooming-time.jpg",
+      "type": "content",
       "alt": {
-        "en": "Mother sea otter floating on her back with a fluffy pup resting on her belly",
-        "es": "Madre nutria marina flotando de espaldas con un cachorro esponjoso descansando en su vientre",
-        "ru": "Мать-выдра плавает на спине с пушистым детёнышем на животе"
+        "en": "Ollie and Mama Otter grooming their fur, showing detailed grooming behavior",
+        "es": "Ollie y Mamá Nutria acicalando su pelaje, mostrando comportamiento detallado",
+        "ru": "Олли и Мама Выдра ухаживают за своим мехом"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kelp-forest-intro.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magnificent kelp forest with sunlight streaming through, creating ethereal underwater atmosphere",
+        "es": "Magnífico bosque de algas con luz solar atravesando, creando atmósfera etérea submarina",
+        "ru": "Великолепный лес ламинарии с проникающим солнечным светом"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "professor-kelp.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Elderly wise sea otter with grey whiskers floating near tall kelp, scholarly appearance",
+        "es": "Nutria marina anciana y sabia con bigotes grises flotando cerca de algas altas",
+        "ru": "Пожилая мудрая морская выдра с седыми усами около высокой ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-rock-tool.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Mama Otter demonstrating tool use, cracking sea urchin with rock on her chest",
+        "es": "Mamá Nutria demostrando uso de herramientas, rompiendo erizo con roca",
+        "ru": "Мама Выдра демонстрирует использование инструментов"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "urchin-hunt.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie and Professor Kelp examining purple sea urchins among rocks",
+        "es": "Ollie y Profesor Kelp examinando erizos de mar púrpuras entre rocas",
+        "ru": "Олли и Профессор Келп изучают пурпурных морских ежей среди скал"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kelp-anchoring.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Mama and Ollie wrapped securely in kelp strands, ready for a nap",
+        "es": "Mamá y Ollie envueltos de forma segura en hebras de algas, listos para una siesta",
+        "ru": "Мама и Олли надёжно обёрнуты в пряди ламинарии, готовы ко сну"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "meet-ruby.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Tiny baby otter Ruby meeting her big brother Ollie for the first time",
+        "es": "Pequeña bebé nutria Ruby conociendo a su hermano mayor Ollie por primera vez",
+        "ru": "Крошечная малышка выдра Руби встречает своего старшего брата Олли"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-dive-attempt.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie trying to dive underwater but popping back up, looking surprised",
+        "es": "Ollie intentando sumergirse pero saliendo de nuevo, luciendo sorprendido",
+        "ru": "Олли пытается нырнуть под воду, но выскакивает обратно, выглядя удивлённым"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "abalone-discovery.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Mama Otter showing Ollie how to carefully remove an abalone from a rock",
+        "es": "Mamá Nutria mostrando a Ollie cómo quitar cuidadosamente un abulón de una roca",
+        "ru": "Мама Выдра показывает Олли, как аккуратно снять морское ушко со скалы"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "raft-formation.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Large group of sea otters floating together holding paws in a raft formation",
+        "es": "Gran grupo de nutrias marinas flotando juntas tomadas de las patas en formación de balsa",
+        "ru": "Большая группа морских выдр плавает вместе, держась за лапы в формации плота"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "storm-survival.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otter family wrapped together in kelp during a storm, waves crashing around them",
+        "es": "Familia de nutrias envueltas juntas en algas durante una tormenta",
+        "ru": "Семья выдр, обёрнутая вместе в ламинарию во время шторма"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tool-collection.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie proudly displaying his first personal tool rock, perfect size for his paw",
+        "es": "Ollie mostrando con orgullo su primera roca herramienta personal",
+        "ru": "Олли гордо демонстрирует свой первый личный камень-инструмент"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "diving-deeper.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie diving through layers of kelp, showing his improved diving ability",
+        "es": "Ollie buceando a través de capas de algas, mostrando su habilidad mejorada",
+        "ru": "Олли ныряет через слои ламинарии, показывая улучшенные способности"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kelp-ecosystem-tour.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp showing Ollie the diverse life in the kelp forest ecosystem",
+        "es": "Profesor Kelp mostrando a Ollie la vida diversa en el ecosistema del bosque de algas",
+        "ru": "Профессор Келп показывает Олли разнообразную жизнь в экосистеме леса ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-solo-hunt.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie proudly surfacing with mussels from his first successful solo hunt",
+        "es": "Ollie saliendo orgullosamente con mejillones de su primera caza exitosa en solitario",
+        "ru": "Олли гордо всплывает с мидиями после первой успешной самостоятельной охоты"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "great-white-encounter.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otter family floating motionless as a great white shark shadow passes beneath",
+        "es": "Familia de nutrias flotando inmóvil mientras pasa la sombra de un tiburón blanco",
+        "ru": "Семья выдр неподвижно плавает, пока внизу проходит тень белой акулы"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "captain-whiskers.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Large male sea otter with scars and commanding presence floating majestically",
+        "es": "Gran nutria marina macho con cicatrices y presencia imponente flotando majestuosamente",
+        "ru": "Крупный самец морской выдры со шрамами и властным присутствием"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "sick-kelp.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie and Professor Kelp examining patches of brown, dying kelp",
+        "es": "Ollie y Profesor Kelp examinando parches de algas marrones moribundas",
+        "ru": "Олли и Профессор Келп изучают участки коричневой умирающей ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "helping-injured-seal.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie and Mama carefully freeing a harbor seal from fishing line",
+        "es": "Ollie y Mamá liberando cuidadosamente una foca de línea de pesca",
+        "ru": "Олли и Мама осторожно освобождают тюленя от рыболовной лески"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "advanced-tool-techniques.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Captain Whiskers using advanced two-rock technique to open shellfish",
+        "es": "Capitán Bigotes usando técnica avanzada de dos rocas para abrir mariscos",
+        "ru": "Капитан Усач использует продвинутую технику двух камней"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "pollution-problem.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie and Professor Kelp avoiding dangerous plastic debris in water",
+        "es": "Ollie y Profesor Kelp evitando peligrosos desechos plásticos en el agua",
+        "ru": "Олли и Профессор Келп избегают опасного пластикового мусора в воде"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "meeting-marina.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Young female otter Marina meeting Ollie for the first time, both looking happy",
+        "es": "Joven nutria Marina conociendo a Ollie por primera vez, ambos felices",
+        "ru": "Молодая выдра Марина встречает Олли впервые, оба выглядят счастливыми"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "missing-mother.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Emotional reunion as Mama finds Ollie after separation",
+        "es": "Reunión emocional cuando Mamá encuentra a Ollie después de la separación",
+        "ru": "Эмоциональная встреча, когда Мама находит Олли после разлуки"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "crab-hunting.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie and Marina successfully catching crabs together",
+        "es": "Ollie y Marina atrapando cangrejos exitosamente juntos",
+        "ru": "Олли и Марина успешно ловят крабов вместе"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "cold-current.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otter family fluffing their fur against cold water conditions",
+        "es": "Familia de nutrias esponjando su pelaje contra condiciones de agua fría",
+        "ru": "Семья выдр распушает мех против холодной воды"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "teaching-ruby.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie patiently teaching Ruby diving techniques",
+        "es": "Ollie enseñando pacientemente técnicas de buceo a Ruby",
+        "ru": "Олли терпеливо учит Руби технике ныряния"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "human-boat.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters floating peacefully as tourists photograph them from boat",
+        "es": "Nutrias flotando pacíficamente mientras turistas las fotografían desde bote",
+        "ru": "Выдры мирно плавают, пока туристы фотографируют их с лодки"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kelp-restoration.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters working together to restore damaged kelp forest area",
+        "es": "Nutrias trabajando juntas para restaurar área dañada del bosque de algas",
+        "ru": "Выдры работают вместе, чтобы восстановить повреждённую область леса ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "deep-dive-challenge.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie at the ocean floor successfully retrieving a large abalone",
+        "es": "Ollie en el fondo del océano recuperando exitosamente un gran abulón",
+        "ru": "Олли на океанском дне успешно добывает большое морское ушко"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "urchin-explosion.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters observing overwhelming purple urchin population threatening kelp",
+        "es": "Nutrias observando población abrumadora de erizos púrpuras amenazando algas",
+        "ru": "Выдры наблюдают подавляющую популяцию пурпурных ежей, угрожающую ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "rescue-mission.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie, Marina and Captain Whiskers rescuing trapped otter from net",
+        "es": "Ollie, Marina y Capitán Bigotes rescatando nutria atrapada de red",
+        "ru": "Олли, Марина и Капитан Усач спасают пойманную в сеть выдру"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "seasonal-changes.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otter family enjoying abundant autumn harvest of seafood",
+        "es": "Familia de nutrias disfrutando abundante cosecha otoñal de mariscos",
+        "ru": "Семья выдр наслаждается обильным осенним урожаем морепродуктов"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "coming-of-age.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Grown Ollie standing confidently next to Captain Whiskers",
+        "es": "Ollie crecido parado con confianza junto al Capitán Bigotes",
+        "ru": "Выросший Олли уверенно стоит рядом с Капитаном Усачом"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "scientists-arrive.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Marine biologists carefully observing and documenting otter behavior",
+        "es": "Biólogos marinos observando y documentando cuidadosamente comportamiento de nutrias",
+        "ru": "Морские биологи тщательно наблюдают и документируют поведение выдр"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "radio-collar.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Captain Whiskers wearing research collar, returning to water",
+        "es": "Capitán Bigotes con collar de investigación, volviendo al agua",
+        "ru": "Капитан Усач с исследовательским ошейником возвращается в воду"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "oil-spill.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters avoiding dangerous oil slick on water surface",
+        "es": "Nutrias evitando peligrosa mancha de petróleo en superficie del agua",
+        "ru": "Выдры избегают опасного нефтяного пятна на поверхности воды"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "rescue-rehabilitation.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Wildlife rescuers carefully cleaning and caring for oiled otters",
+        "es": "Rescatistas de vida silvestre limpiando y cuidando cuidadosamente nutrias con petróleo",
+        "ru": "Спасатели дикой природы тщательно очищают и ухаживают за загрязнёнными выдрами"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "whiskers-history.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Captain Whiskers sharing conservation history with young otters",
+        "es": "Capitán Bigotes compartiendo historia de conservación con nutrias jóvenes",
+        "ru": "Капитан Усач рассказывает историю сохранения молодым выдрам"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "protected-area.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters celebrating in their newly protected marine sanctuary",
+        "es": "Nutrias celebrando en su santuario marino recién protegido",
+        "ru": "Выдры празднуют в своём недавно защищённом морском заповеднике"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "eco-tourism.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters living naturally while eco-tourists watch from safe distance",
+        "es": "Nutrias viviendo naturalmente mientras ecoturistas observan desde distancia segura",
+        "ru": "Выдры живут естественно, пока экотуристы наблюдают с безопасного расстояния"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "climate-change.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Professor Kelp speaking to concerned otter community about changing ocean",
+        "es": "Profesor Kelp hablando a comunidad de nutrias preocupadas sobre océano cambiante",
+        "ru": "Профессор Келп говорит с обеспокоенным сообществом выдр об изменяющемся океане"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "advocacy-lesson.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters seeing how children around the world learn about them",
+        "es": "Nutrias viendo cómo niños alrededor del mundo aprenden sobre ellas",
+        "ru": "Выдры видят, как дети по всему миру узнают о них"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "teaching-next-gen.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie as teacher instructing eager young otter pups",
+        "es": "Ollie como maestro instruyendo ansiosos cachorros de nutria",
+        "ru": "Олли как учитель обучает eager молодых щенков выдры"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kelp-revival.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Otters swimming through beautifully restored kelp forest",
+        "es": "Nutrias nadando a través del bosque de algas bellamente restaurado",
+        "ru": "Выдры плавают через красиво восстановленный лес ламинарии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "building-bridges.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Enormous raft formation of united otter communities",
+        "es": "Enorme formación de balsa de comunidades de nutrias unidas",
+        "ru": "Огромная формация плота объединённых сообществ выдр"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "conservation-hero.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Marine biologist Dr. Ocean making promise to otter community",
+        "es": "Bióloga marina Dra. Océano haciendo promesa a comunidad de nutrias",
+        "ru": "Морской биолог доктор Океан даёт обещание сообществу выдр"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "ollies-promise.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ollie standing majestically on rock making his conservation promise",
+        "es": "Ollie parado majestuosamente en roca haciendo su promesa de conservación",
+        "ru": "Олли величественно стоит на скале, давая своё обещание сохранения"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "new-life.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Marina with her newborn pups while Ollie watches with joy",
+        "es": "Marina con sus cachorros recién nacidos mientras Ollie observa con alegría",
+        "ru": "Марина со своими новорождёнными щенками, пока Олли наблюдает с радостью"
       },
       "needsTranslations": false
     }

@@ -14,12 +14,12 @@ async function runRecursiveGeneration() {
         process.exit(1);
     }
     
-    console.log('\n🦫 Starting Recursive Beaver Story Generation');
+    console.log('\n🦦 Starting Recursive Sea Otter Story Generation');
     console.log('=' .repeat(60));
     
     // Load chapter definition
-    const yamlPath = path.join(__dirname, 'chapters', 'beavers.yaml');
-    const outputDir = path.join(__dirname, 'beavers');
+    const yamlPath = path.join(__dirname, 'chapters', 'sea-otters.yaml');
+    const outputDir = path.join(__dirname, 'sea-otters');
     
     console.log(`📖 Loading chapter: ${yamlPath}`);
     console.log(`📁 Output directory: ${outputDir}`);
@@ -53,6 +53,8 @@ async function runRecursiveGeneration() {
             // Show sample commands to open
             console.log('\n📖 To view the generated chapter:');
             console.log(`   open "${path.join(outputDir, 'index.html')}"`);
+            console.log('\n📖 To view the magazine collection:');
+            console.log(`   open "${path.join(process.cwd(), 'index.html')}"`);
         } else {
             console.error('\n❌ No images were generated successfully');
         }

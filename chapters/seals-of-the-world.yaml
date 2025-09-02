@@ -1,0 +1,20 @@
+# Seals of the World Chapter Metadata
+meta:
+  id: seals-of-the-world
+  issueNumber: 3
+  date: "March 2025"
+  folderName: "seals-of-the-world"
+  title:
+    en: "Seals of the World"
+    es: "Focas del Mundo"
+    ru: "Тюлени мира"
+  subtitle:
+    en: "From elephant seals to sea lions - exploring all types of pinnipeds across the globe"
+    es: "Desde elefantes marinos hasta leones marinos - explorando todos los tipos de pinnípedos alrededor del mundo"
+    ru: "От морских слонов до морских львов - исследуем все виды ластоногих по всему миру"
+  magazineText:
+    en: "Dive into the world of seals, sea lions, and walruses. Explore how these marine mammals have adapted to life both in water and on land across all oceans."
+    es: "Sumérgete en el mundo de las focas, leones marinos y morsas. Explora cómo estos mamíferos marinos se han adaptado a la vida tanto en el agua como en tierra a través de todos los océanos."
+    ru: "Погрузитесь в мир тюленей, морских львов и моржей. Узнайте, как эти морские млекопитающие приспособились к жизни как в воде, так и на суше во всех океанах."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: false  # This was manually created, not YAML-generated

@@ -1,6 +1,9 @@
 # Beavers Chapter Definition - Progressive Dam Building Story
 meta:
   id: beavers
+  issueNumber: 4
+  date: "April 2025"
+  folderName: "beavers"
   title:
     en: "Beavers: Nature's Master Engineers"
     es: "Castores: Los Maestros Ingenieros de la Naturaleza"
@@ -9,6 +12,12 @@ meta:
     en: "An Educational Journey into Nature's Architecture"
     es: "Un Viaje Educativo hacia la Arquitectura de la Naturaleza"
     ru: "Образовательное путешествие в архитектуру природы"
+  magazineText:
+    en: "Join Baby Beaver on an epic engineering adventure! Learn how nature's master builders create dams, lodges, and entire ecosystems with nothing but sticks, mud, and teamwork."
+    es: "¡Únete a Bebé Castor en una épica aventura de ingeniería! Aprende cómo los maestros constructores de la naturaleza crean presas, refugios y ecosistemas enteros con solo palos, barro y trabajo en equipo."
+    ru: "Присоединяйтесь к Малышу Бобру в эпическом инженерном приключении! Узнайте, как мастера-строители природы создают плотины, хатки и целые экосистемы, используя только палки, грязь и командную работу."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true  # This was YAML-generated
   footerSubtitle:
     en: "Teaching nature's engineering through storytelling"
     es: "Enseñando la ingeniería de la naturaleza a través de cuentos"
@@ -374,6 +383,21 @@ sections:
     referenceImage: "${family-building.image}"
     prompt: "Using the beaver family from reference, show the same family working on their dam at night under moonlight and stars. Magical nighttime atmosphere. Same characters and dam from reference."
     hidden: true
+    
+  # Magazine Cover - Uses reference to maintain character consistency  
+  - id: magazine-cover
+    hidden: true  # Don't show in chapter content
+    isMagazineCover: true  # Flag for special handling
+    prompt: "Create a charming, illustrated magazine cover featuring all three beaver characters from our story. Show the baby beaver prominently in the center foreground, looking up with bright, curious eyes. Papa beaver on the left and mama beaver on the right, all three working together on their magnificent dam. The scene should capture the warm family bond, with golden sunset light filtering through forest trees. Behind them, show their impressive dam creating a peaceful pond with perfect reflections. Style: Studio Ghibli warmth meets Pixar quality - whimsical, heartwarming, child-friendly illustration with rich, vibrant colors. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:  # This is the correct field name for multiple references
+      - "${meet-baby-beaver.image}"  # Baby beaver as main character
+      - "${papa-beaver-arrives.image}"  # Papa beaver - correct section ID
+      - "${mama-beaver-arrives.image}"  # Mama beaver - correct section ID
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Baby Beaver featured on magazine cover with dam and family in background"
+      es: "Bebé Castor en la portada de la revista con presa y familia al fondo"
+      ru: "Малыш Бобёр на обложке журнала с плотиной и семьей на заднем плане"
 
 funFacts:
   title:
@@ -511,3 +535,4 @@ routing:
       - "fun-fact-dam-size.jpg"
       - "fun-fact-swimming.jpg"
       - "fun-fact-nocturnal.jpg"
+      - "magazine-cover.jpg"

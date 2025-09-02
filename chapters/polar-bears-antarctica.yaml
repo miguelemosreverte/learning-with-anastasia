@@ -1,0 +1,20 @@
+# Polar Bears & Antarctica Chapter Metadata
+meta:
+  id: polar-bears-antarctica
+  issueNumber: 1
+  date: "January 2025"
+  folderName: "polar-bears-antarctica"
+  title:
+    en: "Polar Bears & Antarctica"
+    es: "Osos Polares y la Antártida"
+    ru: "Белые медведи и Антарктида"
+  subtitle:
+    en: "An exploration of Arctic wildlife and the icy continent at the bottom of the world"
+    es: "Una exploración de la vida silvestre ártica y el continente helado en el fondo del mundo"
+    ru: "Исследование арктической дикой природы и ледяного континента на дне мира"
+  magazineText:
+    en: "Discover the majestic polar bears of the Arctic and the mysterious frozen world of Antarctica. Learn about survival in Earth's most extreme environments."
+    es: "Descubre los majestuosos osos polares del Ártico y el misterioso mundo congelado de la Antártida. Aprende sobre la supervivencia en los ambientes más extremos de la Tierra."
+    ru: "Откройте для себя величественных белых медведей Арктики и таинственный замерзший мир Антарктиды. Узнайте о выживании в самых экстремальных условиях Земли."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: false  # This was manually created, not YAML-generated
