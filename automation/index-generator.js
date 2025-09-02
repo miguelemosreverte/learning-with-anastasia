@@ -447,7 +447,10 @@ class IndexGenerator {
         <div class="magazine-card" data-search="{{searchContent}}" onclick="window.location.href='{{folderName}}/index.html'">
             <div class="issue-number">Issue #{{issueNumber}}</div>
             <div class="magazine-cover">
-                <img src="{{coverImage}}" alt="{{title}}" onerror="this.src='assets/placeholder-cover.jpg'">
+                <img data-src="{{coverImage}}" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 350 500'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="{{titleEn}}" 
+                     loading="lazy">
             </div>
             <div class="magazine-info">
                 <h2 class="magazine-title" data-en="{{titleEn}}" data-es="{{titleEs}}" data-ru="{{titleRu}}">{{titleEn}}</h2>
@@ -584,6 +587,7 @@ class IndexGenerator {
             });
         });
     </script>
+    <script src="assets/lazy-loading.js"></script>
 </body>
 </html>`;
 

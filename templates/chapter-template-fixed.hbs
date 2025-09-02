@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{meta.title.en}} - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
         
@@ -467,7 +469,10 @@
     <!-- Hero Section -->
     {{#if hero}}
     <section class="hero-section">
-        <img src="assets/images/{{hero.image}}" alt="{{hero.title.en}}" class="hero-image">
+        <img src="assets/images/{{hero.image}}" 
+             alt="{{hero.title.en}}" 
+             class="hero-image critical"
+             loading="eager">
         <div class="hero-overlay">
             <h2 class="hero-title" data-lang="en" class="active">{{hero.title.en}}</h2>
             <h2 class="hero-title" data-lang="es">{{hero.title.es}}</h2>
@@ -483,11 +488,13 @@
     {{#each sections}}
     <section class="content-section{{#if isActionSequence}} action-sequence{{/if}}">
         <div class="image-container">
-            <img src="assets/images/{{image}}" 
+            <img data-src="assets/images/{{image}}" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
                  alt="{{imageAlt.en}}" 
                  data-alt-en="{{imageAlt.en}}"
                  data-alt-es="{{imageAlt.es}}"
-                 data-alt-ru="{{imageAlt.ru}}">
+                 data-alt-ru="{{imageAlt.ru}}"
+                 loading="lazy">
         </div>
         <div class="text-content">
             <h2 data-lang="en" class="active">{{title.en}}</h2>
@@ -516,7 +523,10 @@
             {{#each viewerDetails}}
             <div class="detail-card">
                 {{#if image}}
-                <img src="assets/images/{{image}}" alt="{{title.en}}">
+                <img data-src="assets/images/{{image}}" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="{{title.en}}"
+                     loading="lazy">
                 {{/if}}
                 <div class="detail-content">
                     <h3 data-lang="en" class="active">{{title.en}}</h3>
@@ -543,7 +553,11 @@
                 {{#each funFacts.facts}}
                 <div class="fact-card">
                     {{#if image}}
-                    <img src="assets/images/{{image}}" alt="{{title.en}}" class="fact-card-image">
+                    <img data-src="assets/images/{{image}}" 
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="{{title.en}}" 
+                         class="fact-card-image"
+                         loading="lazy">
                     {{/if}}
                     <div class="fact-card-content">
                         <h3 data-lang="en" class="active">{{title.en}}</h3>
@@ -798,5 +812,12 @@
         });
     </script>
 </div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
 </body>
 </html>
