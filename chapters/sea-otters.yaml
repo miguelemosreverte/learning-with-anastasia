@@ -1028,8 +1028,7 @@ sections:
       en: 'Standing on his favorite rock, Ollie made a vow to the setting sun: ''I promise to protect this ocean for Ruby''s pups and their pups after. I''ll teach them everything - how to use tools, protect kelp, and work with humans who care. The ocean gave us life; we''ll give it our protection. This is my promise!'''
       es: 'De pie en su roca favorita, Ollie hizo un voto al sol poniente: ''Prometo proteger este océano para los cachorros de Ruby y sus cachorros después. Les enseñaré todo - cómo usar herramientas, proteger algas y trabajar con humanos que se preocupan. El océano nos dio vida; le daremos nuestra protección. ¡Esta es mi promesa!'''
       ru: 'Стоя на своём любимом камне, Олли дал клятву заходящему солнцу: ''Я обещаю защищать этот океан для щенков Руби и их щенков после. Я научу их всему - как использовать инструменты, защищать ламинарию и работать с людьми, которым не всё равно. Океан дал нам жизнь; мы дадим ему нашу защиту. Это моё обещание!'''
-    use_character: ${birth-of-ollie.image}
-    action: Adult Ollie standing proudly on rock at sunset making his vow
+    action: Adult sea otter standing proudly on rock at sunset making his vow
     image: ollies-promise.jpg
     imageAlt:
       en: Ollie standing majestically on rock making his conservation promise
@@ -1151,6 +1150,7 @@ routing:
     - protected-area.jpg
     - kelp-revival.jpg
     - building-bridges.jpg
+    - ollies-promise.jpg
   gemini:
     - birth-of-ollie.jpg
     - mama-otter.jpg
@@ -1202,7 +1202,6 @@ routing:
     - advocacy-lesson.jpg
     - teaching-next-gen.jpg
     - conservation-hero.jpg
-    - ollies-promise.jpg
     - new-life.jpg
     - magazine-cover.jpg
     - fun-fact-fur.jpg
