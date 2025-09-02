@@ -211,15 +211,25 @@
 
         .fact-card {
             background: #fff;
-            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             border-left: 4px solid #FFCC00;
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
 
         .fact-card:hover {
             transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .fact-card-content {
+            padding: 30px;
         }
 
         .fact-icon {
@@ -886,40 +896,52 @@
             <h2 data-lang="ru">Удивительные факты о бобрах!</h2>
             <div class="facts-grid">
                 <div class="fact-card">
-                    <span class="fact-icon">🦷</span>
-                    <h3 data-lang="en" class="active">Iron Teeth</h3>
-                    <h3 data-lang="es">Dientes de Hierro</h3>
-                    <h3 data-lang="ru">Железные зубы</h3>
-                    <p data-lang="en" class="active">Beaver teeth never stop growing! They&#x27;re orange because they contain iron, making them stronger than most animal teeth.</p>
-                    <p data-lang="es">¡Los dientes de castor nunca dejan de crecer! Son naranjas porque contienen hierro, haciéndolos más fuertes que la mayoría de los dientes animales.</p>
-                    <p data-lang="ru">Зубы бобров никогда не перестают расти! Они оранжевые, потому что содержат железо, что делает их прочнее, чем зубы большинства животных.</p>
+                    <img src="assets/images/fun-fact-teeth.jpg" alt="Iron Teeth" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <span class="fact-icon">🦷</span>
+                        <h3 data-lang="en" class="active">Iron Teeth</h3>
+                        <h3 data-lang="es">Dientes de Hierro</h3>
+                        <h3 data-lang="ru">Железные зубы</h3>
+                        <p data-lang="en" class="active">Beaver teeth never stop growing! They&#x27;re orange because they contain iron, making them stronger than most animal teeth.</p>
+                        <p data-lang="es">¡Los dientes de castor nunca dejan de crecer! Son naranjas porque contienen hierro, haciéndolos más fuertes que la mayoría de los dientes animales.</p>
+                        <p data-lang="ru">Зубы бобров никогда не перестают расти! Они оранжевые, потому что содержат железо, что делает их прочнее, чем зубы большинства животных.</p>
+                    </div>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">🏗️</span>
-                    <h3 data-lang="en" class="active">Master Builders</h3>
-                    <h3 data-lang="es">Constructores Maestros</h3>
-                    <h3 data-lang="ru">Мастера-строители</h3>
-                    <p data-lang="en" class="active">The largest beaver dam ever found is in Canada - it&#x27;s 2,790 feet long and visible from space!</p>
-                    <p data-lang="es">¡La presa de castor más grande jamás encontrada está en Canadá - mide 850 metros de largo y es visible desde el espacio!</p>
-                    <p data-lang="ru">Самая большая бобровая плотина находится в Канаде - она длиной 850 метров и видна из космоса!</p>
+                    <img src="assets/images/fun-fact-dam-size.jpg" alt="Master Builders" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <span class="fact-icon">🏗️</span>
+                        <h3 data-lang="en" class="active">Master Builders</h3>
+                        <h3 data-lang="es">Constructores Maestros</h3>
+                        <h3 data-lang="ru">Мастера-строители</h3>
+                        <p data-lang="en" class="active">The largest beaver dam ever found is in Canada - it&#x27;s 2,790 feet long and visible from space!</p>
+                        <p data-lang="es">¡La presa de castor más grande jamás encontrada está en Canadá - mide 850 metros de largo y es visible desde el espacio!</p>
+                        <p data-lang="ru">Самая большая бобровая плотина находится в Канаде - она длиной 850 метров и видна из космоса!</p>
+                    </div>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">🏊</span>
-                    <h3 data-lang="en" class="active">Swimming Champions</h3>
-                    <h3 data-lang="es">Campeones de Natación</h3>
-                    <h3 data-lang="ru">Чемпионы по плаванию</h3>
-                    <p data-lang="en" class="active">Beavers can hold their breath underwater for up to 15 minutes and swim at speeds of 5 mph!</p>
-                    <p data-lang="es">¡Los castores pueden contener la respiración bajo el agua hasta 15 minutos y nadar a velocidades de 8 km/h!</p>
-                    <p data-lang="ru">Бобры могут задерживать дыхание под водой до 15 минут и плавать со скоростью 8 км/ч!</p>
+                    <img src="assets/images/fun-fact-swimming.jpg" alt="Swimming Champions" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <span class="fact-icon">🏊</span>
+                        <h3 data-lang="en" class="active">Swimming Champions</h3>
+                        <h3 data-lang="es">Campeones de Natación</h3>
+                        <h3 data-lang="ru">Чемпионы по плаванию</h3>
+                        <p data-lang="en" class="active">Beavers can hold their breath underwater for up to 15 minutes and swim at speeds of 5 mph!</p>
+                        <p data-lang="es">¡Los castores pueden contener la respiración bajo el agua hasta 15 minutos y nadar a velocidades de 8 km/h!</p>
+                        <p data-lang="ru">Бобры могут задерживать дыхание под водой до 15 минут и плавать со скоростью 8 км/ч!</p>
+                    </div>
                 </div>
                 <div class="fact-card">
-                    <span class="fact-icon">🌙</span>
-                    <h3 data-lang="en" class="active">Night Workers</h3>
-                    <h3 data-lang="es">Trabajadores Nocturnos</h3>
-                    <h3 data-lang="ru">Ночные работники</h3>
-                    <p data-lang="en" class="active">Beavers are nocturnal, doing most of their building and foraging work at night when it&#x27;s safer from predators.</p>
-                    <p data-lang="es">Los castores son nocturnos, haciendo la mayor parte de su construcción y búsqueda de alimento por la noche cuando es más seguro de los depredadores.</p>
-                    <p data-lang="ru">Бобры ведут ночной образ жизни, выполняя большую часть строительства и поиска пищи ночью, когда безопаснее от хищников.</p>
+                    <img src="assets/images/fun-fact-nocturnal.jpg" alt="Night Workers" class="fact-card-image">
+                    <div class="fact-card-content">
+                        <span class="fact-icon">🌙</span>
+                        <h3 data-lang="en" class="active">Night Workers</h3>
+                        <h3 data-lang="es">Trabajadores Nocturnos</h3>
+                        <h3 data-lang="ru">Ночные работники</h3>
+                        <p data-lang="en" class="active">Beavers are nocturnal, doing most of their building and foraging work at night when it&#x27;s safer from predators.</p>
+                        <p data-lang="es">Los castores son nocturnos, haciendo la mayor parte de su construcción y búsqueda de alimento por la noche cuando es más seguro de los depredadores.</p>
+                        <p data-lang="ru">Бобры ведут ночной образ жизни, выполняя большую часть строительства и поиска пищи ночью, когда безопаснее от хищников.</p>
+                    </div>
                 </div>
             </div>
         </div>

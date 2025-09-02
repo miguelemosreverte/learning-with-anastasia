@@ -211,15 +211,25 @@
 
         .fact-card {
             background: #fff;
-            padding: 30px;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             border-left: 4px solid #FFCC00;
             transition: transform 0.3s ease;
+            overflow: hidden;
         }
 
         .fact-card:hover {
             transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .fact-card-content {
+            padding: 30px;
         }
 
         .fact-icon {
@@ -474,13 +484,18 @@
             <div class="facts-grid">
                 {{#each funFacts.facts}}
                 <div class="fact-card">
-                    <span class="fact-icon">{{icon}}</span>
-                    <h3 data-lang="en" class="active">{{title.en}}</h3>
-                    <h3 data-lang="es">{{title.es}}</h3>
-                    <h3 data-lang="ru">{{title.ru}}</h3>
-                    <p data-lang="en" class="active">{{content.en}}</p>
-                    <p data-lang="es">{{content.es}}</p>
-                    <p data-lang="ru">{{content.ru}}</p>
+                    {{#if image}}
+                    <img src="assets/images/{{image}}" alt="{{title.en}}" class="fact-card-image">
+                    {{/if}}
+                    <div class="fact-card-content">
+                        <span class="fact-icon">{{icon}}</span>
+                        <h3 data-lang="en" class="active">{{title.en}}</h3>
+                        <h3 data-lang="es">{{title.es}}</h3>
+                        <h3 data-lang="ru">{{title.ru}}</h3>
+                        <p data-lang="en" class="active">{{content.en}}</p>
+                        <p data-lang="es">{{content.es}}</p>
+                        <p data-lang="ru">{{content.ru}}</p>
+                    </div>
                 </div>
                 {{/each}}
             </div>
