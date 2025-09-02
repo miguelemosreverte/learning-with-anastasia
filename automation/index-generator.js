@@ -141,8 +141,9 @@ class IndexGenerator {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wildlife Magazine Collection</title>
+    <title>Learning with Anastasia - Magazine Collection</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
         * {
             margin: 0;
             padding: 0;
@@ -150,81 +151,115 @@ class IndexGenerator {
         }
 
         body {
-            font-family: 'Georgia', serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #000;
+            color: #fff;
             min-height: 100vh;
-            padding: 20px;
         }
 
         .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
             text-align: center;
-            color: white;
-            margin-bottom: 40px;
-            animation: fadeIn 1s ease-in;
+            border-bottom: 3px solid #FFCC00;
+            position: relative;
+        }
+        
+        .nat-geo-logo {
+            position: absolute;
+            top: 30px;
+            left: 50px;
+            width: 60px;
+            height: 60px;
+            border: 3px solid #FFCC00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #FFCC00;
+            font-size: 24px;
+            font-family: 'Oswald', sans-serif;
         }
 
         .header h1 {
-            font-size: 3rem;
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #FFCC00;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .header p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            color: #ccc;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .search-container {
-            max-width: 600px;
-            margin: 0 auto 40px;
+            max-width: 800px;
+            margin: 40px auto;
             position: relative;
+            padding: 0 40px;
         }
 
         .search-box {
             width: 100%;
             padding: 15px 20px;
             font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
+            border: 2px solid #FFCC00;
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
         .search-box:focus {
             outline: none;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            background: #222;
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+        }
+
+        .search-box::placeholder {
+            color: #888;
         }
 
         .search-icon {
             position: absolute;
-            right: 20px;
+            right: 60px;
             top: 50%;
             transform: translateY(-50%);
-            color: #999;
+            color: #FFCC00;
             pointer-events: none;
         }
 
         .magazine-grid {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
         }
 
         .magazine-card {
-            background: white;
-            border-radius: 15px;
+            background: #111;
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             position: relative;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .magazine-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 204, 0, 0.3);
         }
 
         .magazine-card.hidden {
@@ -232,42 +267,61 @@ class IndexGenerator {
         }
 
         .magazine-cover {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+        
+        .magazine-cover img {
             width: 100%;
-            height: 350px;
+            height: 100%;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .magazine-card:hover .magazine-cover img {
+            transform: scale(1.1);
         }
 
         .magazine-info {
-            padding: 20px;
+            padding: 30px;
+            background: linear-gradient(to bottom, #1a1a1a, #111);
         }
 
         .issue-number {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(255,255,255,0.9);
-            color: #333;
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 0.9rem;
+            top: 20px;
+            right: 20px;
+            background: #FFCC00;
+            color: #000;
+            padding: 8px 16px;
+            font-family: 'Oswald', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
         }
 
         .magazine-title {
-            font-size: 1.3rem;
-            color: #333;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #FFCC00;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        .magazine-description {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.4;
+        .magazine-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1rem;
+            color: #aaa;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
         .no-results {
             text-align: center;
-            color: white;
+            color: #FFCC00;
             font-size: 1.2rem;
             margin-top: 50px;
             display: none;
@@ -284,16 +338,17 @@ class IndexGenerator {
             }
             
             .magazine-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 20px;
+                grid-template-columns: 1fr;
+                padding: 0 20px;
             }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🌊 Wildlife Magazine Collection</h1>
-        <p>Explore amazing stories from the natural world</p>
+        <div class="nat-geo-logo">NG</div>
+        <h1>Learning with Anastasia</h1>
+        <p>Wildlife Magazine Collection</p>
     </div>
 
     <div class="search-container">
@@ -305,11 +360,13 @@ class IndexGenerator {
         {{#each chapters}}
         <div class="magazine-card" data-search="{{searchContent}}" onclick="window.location.href='{{folderName}}/index.html'">
             <div class="issue-number">Issue #{{issueNumber}}</div>
-            <img src="{{coverImage}}" alt="{{title}}" class="magazine-cover" onerror="this.src='assets/placeholder-cover.jpg'">
+            <div class="magazine-cover">
+                <img src="{{coverImage}}" alt="{{title}}" onerror="this.src='assets/placeholder-cover.jpg'">
+            </div>
             <div class="magazine-info">
                 <h2 class="magazine-title">{{title}}</h2>
                 {{#if description.en}}
-                <p class="magazine-description">{{description.en}}</p>
+                <p class="magazine-subtitle">{{description.en}}</p>
                 {{/if}}
             </div>
         </div>

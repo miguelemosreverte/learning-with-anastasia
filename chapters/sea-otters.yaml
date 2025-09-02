@@ -89,39 +89,113 @@ sections:
       es: "Nutria marina adulta hembra acicalando a su cachorro, mostrando cuidado maternal"
       ru: "Взрослая самка морской выдры ухаживает за своим детёнышем"
 
-  - id: first-floating-lesson
+  - id: first-floating-attempt
     title:
-      en: "Learning to Float"
-      es: "Aprendiendo a Flotar"
-      ru: "Учимся плавать"
+      en: "First Try at Floating"
+      es: "Primer Intento de Flotar"
+      ru: "Первая попытка плавать"
     content:
-      en: "Today was special - Mama was teaching Ollie how to float properly on his back. 'Spread your paws wide, tummy to the sky!' she instructed. Ollie wiggled and splashed, giggling as he discovered he could balance perfectly on the gentle waves. The secret was in his amazing fur - with up to one million hairs per square inch!"
-      es: "Hoy era especial - Mamá estaba enseñando a Ollie cómo flotar correctamente de espaldas. '¡Extiende tus patas, barriga al cielo!' instruyó. Ollie se movió y salpicó, riendo mientras descubría que podía balancearse perfectamente en las suaves olas. ¡El secreto estaba en su asombroso pelaje - con hasta un millón de pelos por pulgada cuadrada!"
-      ru: "Сегодня был особенный день - Мама учила Олли правильно плавать на спине. 'Расставь лапки широко, животик к небу!' - инструктировала она. Олли извивался и плескался, хихикая, когда обнаружил, что может идеально балансировать на мягких волнах. Секрет был в его удивительном мехе - до миллиона волосков на квадратный дюйм!"
+      en: "Today was special - Mama was going to teach Ollie how to float properly on his back. 'Spread your paws wide, tummy to the sky!' she instructed. Ollie tried his best but kept rolling sideways, getting water in his nose. 'Don't worry, little one,' Mama said gently. 'Every otter starts this way. Your amazing fur will help you - you just need to trust it!'"
+      es: "Hoy era especial - Mamá iba a enseñar a Ollie cómo flotar correctamente de espaldas. '¡Extiende tus patas, barriga al cielo!' instruyó. Ollie hizo su mejor esfuerzo pero siguió rodando hacia los lados, metiéndose agua en la nariz. 'No te preocupes, pequeño,' dijo Mamá suavemente. '¡Cada nutria comienza así. Tu pelaje increíble te ayudará - solo necesitas confiar en él!'"
+      ru: "Сегодня был особенный день - Мама собиралась научить Олли правильно плавать на спине. 'Расставь лапки широко, животик к небу!' - инструктировала она. Олли старался изо всех сил, но продолжал переворачиваться на бок, попадая водой в нос. 'Не волнуйся, малыш,' - нежно сказала Мама. 'Каждая выдра начинает именно так. Твой удивительный мех поможет тебе - просто нужно ему довериться!'"
     use_character: "${birth-of-ollie.image}"
-    action: "Baby otter learning to float on his back with paws spread wide"
-    image: "first-floating-lesson.jpg"
+    action: "Baby otter making first clumsy attempts at floating"
+    image: "first-floating-attempt.jpg"
     imageAlt:
-      en: "Baby Ollie learning to float on his back with paws spread, supervised by mother"
-      es: "Bebé Ollie aprendiendo a flotar de espaldas con las patas extendidas"
-      ru: "Малыш Олли учится плавать на спине с расставленными лапками"
+      en: "Baby Ollie struggling with his first floating attempts, rolling sideways"
+      es: "Bebé Ollie luchando con sus primeros intentos de flotar, rodando hacia los lados"
+      ru: "Малыш Олли борется с первыми попытками плавать, переворачиваясь на бок"
 
-  - id: grooming-time
+  - id: first-floating-struggle
     title:
-      en: "The Grooming Ritual"
-      es: "El Ritual de Acicalamiento"
-      ru: "Ритуал ухода за мехом"
+      en: "Finding His Balance"
+      es: "Encontrando Su Equilibrio"
+      ru: "Поиск равновесия"
     content:
-      en: "Every morning began with grooming time. Ollie watched as Mama demonstrated the proper technique: rubbing, rolling, and blowing air into the fur. 'Clean fur means warm and dry,' she explained. 'Without our fur, we would freeze in these cold waters. We don't have blubber like seals - our fur is everything!'"
-      es: "Cada mañana comenzaba con el tiempo de acicalamiento. Ollie observaba mientras Mamá demostraba la técnica adecuada: frotar, rodar y soplar aire en el pelaje. 'Pelaje limpio significa caliente y seco,' explicó. 'Sin nuestro pelaje, nos congelaríamos en estas aguas frías. No tenemos grasa como las focas - ¡nuestro pelaje lo es todo!'"
-      ru: "Каждое утро начиналось с ухода за мехом. Олли наблюдал, как Мама демонстрировала правильную технику: потирание, перекатывание и вдувание воздуха в мех. 'Чистый мех означает тепло и сухость,' - объясняла она. 'Без нашего меха мы бы замёрзли в этих холодных водах. У нас нет жира, как у тюленей - наш мех - это всё!'"
+      en: "Ollie kept trying, his little paws working hard to find the right position. Sometimes he'd float for a few seconds before tipping over with a splash! Mama stayed close, ready to help but letting him learn. 'Feel the water supporting you,' she encouraged. 'Your fur has up to one million hairs per square inch - it's nature's perfect life jacket!'"
+      es: "¡Ollie siguió intentando, sus pequeñas patas trabajando duro para encontrar la posición correcta. A veces flotaba por unos segundos antes de volcarse con un chapoteo! Mamá se mantuvo cerca, lista para ayudar pero dejándolo aprender. 'Siente el agua sosteniéndote,' lo alentó. '¡Tu pelaje tiene hasta un millón de pelos por pulgada cuadrada - es el chaleco salvavidas perfecto de la naturaleza!'"
+      ru: "Олли продолжал попытки, его маленькие лапки усердно работали, чтобы найти правильное положение. Иногда он плавал несколько секунд, прежде чем перевернуться с всплеском! Мама оставалась рядом, готовая помочь, но позволяя ему учиться. 'Почувствуй, как вода поддерживает тебя,' - подбодрила она. 'В твоём мехе до миллиона волосков на квадратный дюйм - это идеальный спасательный жилет природы!'"
     use_character: "${birth-of-ollie.image}"
-    action: "Baby otter and mother engaged in grooming ritual"
-    image: "grooming-time.jpg"
+    action: "Baby otter practicing floating with determined effort"
+    image: "first-floating-struggle.jpg"
     imageAlt:
-      en: "Ollie and Mama Otter grooming their fur, showing detailed grooming behavior"
-      es: "Ollie y Mamá Nutria acicalando su pelaje, mostrando comportamiento detallado"
-      ru: "Олли и Мама Выдра ухаживают за своим мехом"
+      en: "Baby Ollie concentrating hard while learning to balance on the water"
+      es: "Bebé Ollie concentrándose mucho mientras aprende a equilibrarse en el agua"
+      ru: "Малыш Олли усердно сосредотачивается, изучая равновесие на воде"
+
+  - id: first-floating-success
+    title:
+      en: "Perfect Balance!"
+      es: "¡Equilibrio Perfecto!"
+      ru: "Идеальный баланс!"
+    content:
+      en: "Suddenly, it clicked! Ollie spread his paws wide, relaxed his body, and found himself floating perfectly on his back. He giggled with pure joy as he discovered he could balance on the gentle waves like a natural. 'I'm doing it, Mama! I'm really floating!' The water felt warm and safe, and his fluffy fur kept him bobbing like a cork. It was magical!"
+      es: "¡De repente, lo logró! Ollie extendió sus patas ampliamente, relajó su cuerpo, y se encontró flotando perfectamente de espaldas. Se rió de pura alegría mientras descubría que podía balancearse en las suaves olas como un natural. '¡Lo estoy haciendo, Mamá! ¡Realmente estoy flotando!' El agua se sentía cálida y segura, y su pelaje esponjoso lo mantenía flotando como un corcho. ¡Era mágico!"
+      ru: "Внезапно получилось! Олли широко расставил лапки, расслабил тело и обнаружил, что идеально плавает на спине. Он хихикал от чистой радости, обнаруживая, что может балансировать на мягких волнах как настоящий. 'Я делаю это, Мама! Я действительно плаваю!' Вода была тёплой и безопасной, а его пушистый мех держал его на плаву как пробку. Это было волшебно!"
+    use_character: "${birth-of-ollie.image}"
+    action: "Baby otter successfully floating with joy and accomplishment"
+    image: "first-floating-success.jpg"
+    imageAlt:
+      en: "Baby Ollie floating perfectly on his back with pure happiness"
+      es: "Bebé Ollie flotando perfectamente de espaldas con pura felicidad"
+      ru: "Малыш Олли идеально плавает на спине с чистой радостью"
+
+  - id: grooming-preparation
+    title:
+      en: "Getting Ready for the Day"
+      es: "Preparándose para el Día"
+      ru: "Готовимся к дню"
+    content:
+      en: "Every morning began with the most important ritual - grooming time! 'Come here, little one,' Mama called gently. 'We need to prepare your fur for the day ahead.' Ollie swam over eagerly, knowing this special time with Mama was crucial. 'Our fur is our life jacket, our warmth, and our home,' she explained as they found a calm spot floating together."
+      es: "¡Cada mañana comenzaba con el ritual más importante - tiempo de acicalamiento! 'Ven aquí, pequeño,' llamó Mamá suavemente. 'Necesitamos preparar tu pelaje para el día que viene.' Ollie nadó ansiosamente, sabiendo que este tiempo especial con Mamá era crucial. 'Nuestro pelaje es nuestro chaleco salvavidas, nuestro calor y nuestro hogar,' explicó mientras encontraban un lugar tranquilo flotando juntos."
+      ru: "Каждое утро начиналось с самого важного ритуала - времени ухода за мехом! 'Иди сюда, малыш,' - нежно позвала Мама. 'Нам нужно подготовить твой мех к предстоящему дню.' Олли охотно подплыл, зная, что это особенное время с Мамой было крайне важным. 'Наш мех - это наш спасательный жилет, наше тепло и наш дом,' - объяснила она, когда они нашли спокойное место, плавая вместе."
+    use_characters:
+      - "${birth-of-ollie.image}"
+      - "${mama-otter.image}"
+    action: "Mama and Ollie preparing for their morning grooming ritual"
+    image: "grooming-preparation.jpg"
+    imageAlt:
+      en: "Mama Otter and Ollie floating together, preparing to start their grooming routine"
+      es: "Mamá Nutria y Ollie flotando juntos, preparándose para comenzar su rutina de acicalamiento"
+      ru: "Мама Выдра и Олли плавают вместе, готовясь начать свою процедуру ухода за мехом"
+
+  - id: grooming-deep-clean
+    title:
+      en: "The Deep Cleaning"
+      es: "La Limpieza Profunda"
+      ru: "Глубокая чистка"
+    content:
+      en: "Mama showed Ollie the proper technique: first, vigorous rubbing with their paws to work up the natural oils. Then, rolling and twisting in the water to reach every spot. 'Now the most important part,' she said, taking a deep breath and blowing air into Ollie's fur. 'This traps warm air between your hairs. Without our fur being properly fluffed, we would freeze in these cold waters!'"
+      es: "Mamá le mostró a Ollie la técnica adecuada: primero, frotado vigoroso con sus patas para producir los aceites naturales. Luego, rodar y girar en el agua para alcanzar cada punto. 'Ahora la parte más importante,' dijo, tomando una respiración profunda y soplando aire en el pelaje de Ollie. '¡Esto atrapa aire caliente entre tus pelos. Sin que nuestro pelaje esté adecuadamente esponjado, nos congelaríamos en estas aguas frías!'"
+      ru: "Мама показала Олли правильную технику: сначала энергичное потирание лапками для выработки натуральных масел. Затем перекатывание и кручение в воде, чтобы добраться до каждого места. 'Теперь самая важная часть,' - сказала она, глубоко вдохнув и вдувая воздух в мех Олли. 'Это задерживает тёплый воздух между волосками. Без правильно распушенного меха мы бы замёрзли в этих холодных водах!'"
+    use_characters:
+      - "${birth-of-ollie.image}"
+      - "${mama-otter.image}"
+    action: "Mama demonstrating thorough fur grooming techniques to Ollie"
+    image: "grooming-deep-clean.jpg"
+    imageAlt:
+      en: "Mama Otter showing Ollie detailed grooming techniques, blowing air into fur"
+      es: "Mamá Nutria mostrando a Ollie técnicas detalladas de acicalamiento, soplando aire en el pelaje"
+      ru: "Мама Выдра показывает Олли детальные техники ухода за мехом, вдувая воздух в мех"
+
+  - id: grooming-complete
+    title:
+      en: "Fluffy and Ready!"
+      es: "¡Esponjoso y Listo!"
+      ru: "Пушистый и готов!"
+    content:
+      en: "After the thorough grooming, Ollie's fur was perfectly fluffed and waterproof! He felt incredibly light and warm, floating like the softest cloud on the ocean. 'Look at you now!' Mama beamed proudly. 'Your fur is so clean and full of air - you're ready for any adventure the day might bring!' Ollie spun in a happy circle, feeling cozy and confident in his beautiful, well-groomed coat."
+      es: "¡Después del acicalamiento completo, el pelaje de Ollie estaba perfectamente esponjado e impermeable! Se sentía increíblemente ligero y cálido, flotando como la nube más suave en el océano. '¡Mírate ahora!' sonrió Mamá orgullosamente. '¡Tu pelaje está tan limpio y lleno de aire - estás listo para cualquier aventura que el día pueda traer!' Ollie giró en un círculo feliz, sintiéndose cómodo y confiado en su hermoso y bien cuidado pelaje."
+      ru: "После тщательного ухода мех Олли был идеально распушен и водонепроницаем! Он чувствовал себя невероятно лёгким и тёплым, плавая как самое мягкое облако в океане. 'Посмотри на себя!' - гордо улыбнулась Мама. 'Твой мех такой чистый и полный воздуха - ты готов к любому приключению, которое может принести день!' Олли закружился в счастливом кружке, чувствуя себя уютно и уверенно в своей красивой, ухоженной шубке."
+    use_characters:
+      - "${birth-of-ollie.image}"
+      - "${mama-otter.image}"
+    action: "Ollie with perfectly groomed, fluffy fur floating happily"
+    image: "grooming-complete.jpg"
+    imageAlt:
+      en: "Ollie with beautifully groomed, fluffy fur looking happy and ready for the day"
+      es: "Ollie con pelaje hermosamente acicalado y esponjoso luciendo feliz y listo para el día"
+      ru: "Олли с красиво ухоженным, пушистым мехом выглядит счастливым и готовым к дню"
 
   - id: kelp-forest-intro
     title:
@@ -182,7 +256,7 @@ sections:
       ru: "Сегодняшний урок - поиск морских ежей. Профессор Келп показал Олли, как находить пурпурных колючих существ, прячущихся в расщелинах скал. 'Морские ежи вкусные, но будь осторожен с их иглами!' - предупредил он. 'Мы едим так много пурпурных ежей, что иногда наши зубы тоже становятся пурпурными! Но это нормально - это показывает, что мы здорово питаемся!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
+      - "${professor-kelp-intro.image}"
     action: "Young otter and elder learning to identify purple sea urchins"
     image: "urchin-hunt.jpg"
     imageAlt:
@@ -339,7 +413,7 @@ sections:
       ru: "Профессор Келп провёл для Олли экскурсию по экосистеме леса ламинарии. 'Видишь тех рыб, прячущихся в ламинарии? Морского окуня, ламинариевого окуня? Им нужен лес для укрытия. А те крошечные улитки, чистящие листья ламинарии? У каждого здесь есть работа. Но у нас, выдр, самая важная работа - мы не даём морским ежам съесть всю ламинарию!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
+      - "${professor-kelp-intro.image}"
     action: "Elder otter teaching young otter about kelp forest ecosystem"
     image: "kelp-ecosystem-tour.jpg"
     imageAlt:
@@ -401,43 +475,43 @@ sections:
       es: "Gran nutria marina macho con cicatrices y presencia imponente flotando majestuosamente"
       ru: "Крупный самец морской выдры со шрамами и властным присутствием"
 
-  - id: sick-kelp
+  - id: healthy-kelp-garden
     title:
-      en: "The Dying Forest"
-      es: "El Bosque Moribundo"
-      ru: "Умирающий лес"
+      en: "The Golden Garden"
+      es: "El Jardín Dorado"
+      ru: "Золотой сад"
     content:
-      en: "Swimming to a new area, Ollie found patches of brown, dying kelp. Professor Kelp looked worried. 'The water is warming,' he explained sadly. 'When it gets too warm, the kelp gets sick. Without healthy kelp, our whole world changes. This is why we must protect what we have and help the forest recover where we can.'"
-      es: "Nadando hacia una nueva área, Ollie encontró parches de algas marrones y moribundas. El Profesor Kelp parecía preocupado. 'El agua se está calentando,' explicó tristemente. 'Cuando hace demasiado calor, las algas se enferman. Sin algas sanas, todo nuestro mundo cambia. Por eso debemos proteger lo que tenemos y ayudar al bosque a recuperarse donde podamos.'"
-      ru: "Плывя в новую область, Олли нашёл участки коричневой, умирающей ламинарии. Профессор Келп выглядел обеспокоенным. 'Вода теплеет,' - печально объяснил он. 'Когда становится слишком тепло, ламинария болеет. Без здоровой ламинарии весь наш мир меняется. Вот почему мы должны защищать то, что у нас есть, и помогать лесу восстанавливаться там, где можем.'"
+      en: "Swimming to a new area, Ollie discovered the most beautiful kelp garden he'd ever seen! Golden kelp fronds swayed gracefully, creating underwater cathedrals of light. Professor Kelp's eyes sparkled with joy. 'Look how healthy and strong these kelp forests are!' he exclaimed. 'Each frond reaches toward the sunlight, creating homes for thousands of creatures. This is what our ocean looks like when everything is in perfect balance!'"
+      es: "¡Nadando hacia una nueva área, Ollie descubrió el jardín de algas más hermoso que había visto! Las frondas doradas de algas se balanceaban elegantemente, creando catedrales submarinas de luz. Los ojos del Profesor Kelp brillaron de alegría. '¡Mira qué saludables y fuertes están estos bosques de algas!' exclamó. 'Cada fronda se extiende hacia la luz del sol, creando hogares para miles de criaturas. ¡Así es como se ve nuestro océano cuando todo está en perfecto equilibrio!'"
+      ru: "Плывя в новую область, Олли открыл самый красивый сад ламинарии, который когда-либо видел! Золотые листья ламинарии грациозно качались, создавая подводные соборы света. Глаза Профессора Келпа искрились от радости. 'Посмотри, какие здоровые и крепкие эти леса ламинарии!' - воскликнул он. 'Каждый лист тянется к солнечному свету, создавая дома для тысяч существ. Вот как выглядит наш океан, когда всё находится в идеальном балансе!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
-    action: "Otters examining diseased brown kelp with concern"
-    image: "sick-kelp.jpg"
+      - "${professor-kelp-intro.image}"
+    action: "Otters marveling at beautiful healthy golden kelp forest"
+    image: "healthy-kelp-garden.jpg"
     imageAlt:
-      en: "Ollie and Professor Kelp examining patches of brown, dying kelp"
-      es: "Ollie y Profesor Kelp examinando parches de algas marrones moribundas"
-      ru: "Олли и Профессор Келп изучают участки коричневой умирающей ламинарии"
+      en: "Ollie and Professor Kelp admiring golden, healthy kelp forest with sunlight streaming through"
+      es: "Ollie y Profesor Kelp admirando un bosque dorado y saludable de algas con luz solar atravesando"
+      ru: "Олли и Профессор Келп любуются золотым, здоровым лесом ламинарии с проникающим солнечным светом"
 
-  - id: helping-injured-seal
+  - id: playing-with-seal-friends
     title:
-      en: "Compassion in the Waves"
-      es: "Compasión en las Olas"
-      ru: "Сострадание в волнах"
+      en: "New Friends in the Waves"
+      es: "Nuevos Amigos en las Olas"
+      ru: "Новые друзья в волнах"
     content:
-      en: "A young harbor seal was tangled in fishing line, struggling weakly. Without hesitation, Ollie and Mama worked together, using their nimble paws and teeth to carefully free the seal. 'We help all ocean creatures when we can,' Mama said. 'Today we help them, tomorrow they might help us. That's how the ocean community works.'"
-      es: "Una joven foca común estaba enredada en línea de pesca, luchando débilmente. Sin dudarlo, Ollie y Mamá trabajaron juntos, usando sus ágiles patas y dientes para liberar cuidadosamente a la foca. 'Ayudamos a todas las criaturas del océano cuando podemos,' dijo Mamá. 'Hoy los ayudamos, mañana podrían ayudarnos. Así funciona la comunidad oceánica.'"
-      ru: "Молодой тюлень запутался в рыболовной леске, слабо борясь. Без колебаний Олли и Мама работали вместе, используя свои ловкие лапы и зубы, чтобы осторожно освободить тюленя. 'Мы помогаем всем океанским существам, когда можем,' - сказала Мама. 'Сегодня мы помогаем им, завтра они могут помочь нам. Так работает океанское сообщество.'"
+      en: "A young harbor seal appeared, looking playful and curious! Without hesitation, Ollie and the seal began an underwater game of tag, spiraling and diving together. Mama smiled warmly as she watched. 'Different species can be the best of friends,' she said. 'We all share the same beautiful ocean home. Playing together makes us all stronger and happier!'"
+      es: "¡Una joven foca común apareció, luciendo juguetona y curiosa! Sin dudarlo, Ollie y la foca comenzaron un juego submarino de persecución, girando y buceando juntos. Mamá sonrió cálidamente mientras observaba. 'Diferentes especies pueden ser los mejores amigos,' dijo. '¡Todos compartimos el mismo hermoso hogar oceánico. Jugar juntos nos hace más fuertes y felices!'"
+      ru: "Молодой тюлень появился, выглядя игриво и любопытно! Без колебаний Олли и тюлень начали подводную игру в догонялки, кружась и ныряя вместе. Мама тепло улыбнулась, наблюдая. 'Разные виды могут быть лучшими друзьями,' - сказала она. 'Мы все делим один прекрасный океанский дом. Игры вместе делают нас сильнее и счастливее!'"
     use_characters:
       - "${birth-of-ollie.image}"
       - "${mama-otter.image}"
-    action: "Otters helping free a seal tangled in fishing line"
-    image: "helping-injured-seal.jpg"
+    action: "Otters playing joyfully with friendly harbor seal"
+    image: "playing-with-seal-friends.jpg"
     imageAlt:
-      en: "Ollie and Mama carefully freeing a harbor seal from fishing line"
-      es: "Ollie y Mamá liberando cuidadosamente una foca de línea de pesca"
-      ru: "Олли и Мама осторожно освобождают тюленя от рыболовной лески"
+      en: "Ollie playing underwater games with a young harbor seal while Mama watches"
+      es: "Ollie jugando juegos submarinos con una joven foca mientras Mamá observa"
+      ru: "Олли играет в подводные игры с молодым тюленем, пока Мама наблюдает"
 
   - id: advanced-tool-techniques
     title:
@@ -456,40 +530,78 @@ sections:
       es: "Capitán Bigotes usando técnica avanzada de dos rocas para abrir mariscos"
       ru: "Капитан Усач использует продвинутую технику двух камней"
 
-  - id: pollution-problem
+  - id: crystal-clear-waters
     title:
-      en: "Dark Waters"
-      es: "Aguas Oscuras"
-      ru: "Тёмные воды"
+      en: "Waters of Pure Light"
+      es: "Aguas de Luz Pura"
+      ru: "Воды чистого света"
     content:
-      en: "Ollie found something strange floating - a plastic bag that looked like jellyfish. 'Don't touch that!' Professor Kelp warned. 'Human trash is dangerous. It can trap us, poison us, or make us sick. If you see oil on the water, swim away immediately. We must be careful of what humans leave in our ocean.'"
-      es: "Ollie encontró algo extraño flotando - una bolsa de plástico que parecía una medusa. '¡No toques eso!' advirtió el Profesor Kelp. 'La basura humana es peligrosa. Puede atraparnos, envenenarnos o enfermarnos. Si ves aceite en el agua, nada lejos inmediatamente. Debemos tener cuidado con lo que los humanos dejan en nuestro océano.'"
-      ru: "Олли нашёл что-то странное плавающее - пластиковый пакет, похожий на медузу. 'Не трогай это!' - предупредил Профессор Келп. 'Человеческий мусор опасен. Он может поймать нас, отравить или вызвать болезнь. Если видишь масло на воде, немедленно уплывай. Мы должны быть осторожны с тем, что люди оставляют в нашем океане.'"
+      en: "Ollie discovered the most pristine waters he'd ever seen - so clear he could see every grain of sand on the bottom! Real jellyfish danced gracefully like living rainbows. 'Look at this perfect clarity!' Professor Kelp exclaimed joyfully. 'When waters are this pure, every creature thrives. The jellyfish glow with health, the kelp sparkles, and even the sunlight seems brighter as it dances through our crystal home.'"
+      es: "¡Ollie descubrió las aguas más prístinas que había visto - tan claras que podía ver cada grano de arena en el fondo! Verdaderas medusas bailaban elegantemente como arcoíris vivientes. '¡Mira esta claridad perfecta!' exclamó el Profesor Kelp con alegría. 'Cuando las aguas están tan puras, cada criatura prospera. Las medusas brillan de salud, las algas centellean, y hasta la luz del sol parece más brillante mientras baila a través de nuestro hogar de cristal.'"
+      ru: "Олли открыл самые чистые воды, которые когда-либо видел - настолько прозрачные, что можно было видеть каждую песчинку на дне! Настоящие медузы танцевали грациозно, как живые радуги. 'Посмотри на эту совершенную прозрачность!' - радостно воскликнул Профессор Келп. 'Когда воды такие чистые, каждое существо процветает. Медузы светятся здоровьем, ламинария сверкает, и даже солнечный свет кажется ярче, танцуя через наш хрустальный дом.'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
-    action: "Otters encountering plastic pollution in the water"
-    image: "pollution-problem.jpg"
+      - "${professor-kelp-intro.image}"
+    action: "Otters marveling at pristine clear waters with jellyfish"
+    image: "crystal-clear-waters.jpg"
     imageAlt:
-      en: "Ollie and Professor Kelp avoiding dangerous plastic debris in water"
-      es: "Ollie y Profesor Kelp evitando peligrosos desechos plásticos en el agua"
-      ru: "Олли и Профессор Келп избегают опасного пластикового мусора в воде"
+      en: "Ollie and Professor Kelp swimming in crystal clear waters with beautiful jellyfish"
+      es: "Ollie y Profesor Kelp nadando en aguas cristalinas con hermosas medusas"
+      ru: "Олли и Профессор Келп плывут в кристально чистых водах с красивыми медузами"
 
-  - id: meeting-marina
+  - id: marina-first-glimpse
     generate_character: true  # Generate Marina
     title:
-      en: "A New Friend"
-      es: "Una Nueva Amiga"
-      ru: "Новая подруга"
+      en: "A Stranger in the Distance"
+      es: "Una Extraña en la Distancia"
+      ru: "Незнакомка вдали"
     content:
-      en: "While exploring, Ollie met Marina, a young female otter from the southern bay. She had bright eyes and a playful spirit. 'Want to practice diving together?' she asked with a smile. They spent the day diving for sea stars and racing through the kelp. Ollie had never had so much fun with someone his own age!"
-      es: "Mientras exploraba, Ollie conoció a Marina, una joven nutria hembra de la bahía sur. Tenía ojos brillantes y un espíritu juguetón. '¿Quieres practicar buceo juntos?' preguntó con una sonrisa. Pasaron el día buceando por estrellas de mar y corriendo por las algas. ¡Ollie nunca se había divertido tanto con alguien de su edad!"
-      ru: "Исследуя окрестности, Олли встретил Марину, молодую самку выдры из южного залива. У неё были яркие глаза и игривый дух. 'Хочешь потренироваться нырять вместе?' - спросила она с улыбкой. Они провели день, ныряя за морскими звёздами и гоняясь через ламинарию. Олли никогда не было так весело с кем-то своего возраста!"
-    image: "meeting-marina.jpg"
+      en: "While exploring beyond his usual kelp forest home, Ollie spotted something unusual - another young otter floating gracefully near a distant reef. She had beautiful sleek fur that gleamed in the filtered sunlight, and she moved through the water with amazing skill. 'Who could that be?' Ollie wondered, his curiosity growing as he watched her dive and surface with perfect technique."
+      es: "Mientras exploraba más allá de su hogar habitual en el bosque de algas, Ollie vio algo inusual - otra nutria joven flotando con gracia cerca de un arrecife distante. Tenía hermoso pelaje lustroso que brillaba con la luz solar filtrada, y se movía por el agua con increíble habilidad. '¿Quién podría ser?' se preguntó Ollie, su curiosidad creciendo mientras la observaba bucear y salir a la superficie con técnica perfecta."
+      ru: "Исследуя территорию за пределами своего обычного дома в лесу ламинарии, Олли заметил что-то необычное - другую молодую выдру, грациозно плавающую около далёкого рифа. У неё был красивый гладкий мех, который блестел в фильтрованном солнечном свете, и она двигалась по воде с удивительным мастерством. 'Кто это может быть?' - задался вопросом Олли, его любопытство росло, пока он наблюдал, как она ныряет и всплывает с совершенной техникой."
+    image: "marina-first-glimpse.jpg"
     imageAlt:
-      en: "Young female otter Marina meeting Ollie for the first time, both looking happy"
-      es: "Joven nutria Marina conociendo a Ollie por primera vez, ambos felices"
-      ru: "Молодая выдра Марина встречает Олли впервые, оба выглядят счастливыми"
+      en: "Ollie spotting Marina from a distance, both otters in separate areas of the kelp forest"
+      es: "Ollie viendo a Marina desde la distancia, ambas nutrias en áreas separadas del bosque de algas"
+      ru: "Олли замечает Марину издалека, обе выдры в разных частях леса ламинарии"
+
+  - id: marina-introduction
+    title:
+      en: "A New Friend Appears"
+      es: "Aparece una Nueva Amiga"
+      ru: "Появляется новая подруга"
+    content:
+      en: "Gathering his courage, Ollie swam closer to the mysterious otter. 'Hello!' he called out shyly. The young female turned with bright, friendly eyes and a warm smile. 'Hi there! I'm Marina from the southern bay,' she replied cheerfully. 'I've never seen this part of the kelp forest before - it's absolutely beautiful!' Ollie felt his nervousness melt away as Marina's playful spirit shined through."
+      es: "Armándose de valor, Ollie nadó más cerca de la nutria misteriosa. '¡Hola!' gritó tímidamente. La joven hembra se volteó con ojos brillantes y amigables y una sonrisa cálida. '¡Hola! Soy Marina de la bahía sur,' respondió alegremente. '¡Nunca había visto esta parte del bosque de algas antes - es absolutamente hermosa!' Ollie sintió que su nerviosismo se desvanecía mientras el espíritu juguetón de Marina brillaba."
+      ru: "Набравшись храбрости, Олли подплыл ближе к загадочной выдре. 'Привет!' - застенчиво позвал он. Молодая самка обернулась с яркими, дружелюбными глазами и теплой улыбкой. 'Привет! Я Марина из южного залива,' - весело ответила она. 'Я никогда не видела эту часть леса ламинарии раньше - она совершенно прекрасна!' Олли почувствовал, как его нервозность исчезает, когда игривый дух Марины засиял."
+    use_characters:
+      - "${birth-of-ollie.image}"
+      - "${marina-first-glimpse.image}"
+    action: "Young otters Ollie and Marina meeting and introducing themselves"
+    image: "marina-introduction.jpg"
+    imageAlt:
+      en: "Ollie and Marina meeting face to face, both looking excited and friendly"
+      es: "Ollie y Marina encontrándose cara a cara, ambos luciendo emocionados y amigables"
+      ru: "Олли и Марина встречаются лицом к лицу, оба выглядят взволнованными и дружелюбными"
+
+  - id: marina-playing-together
+    title:
+      en: "Racing Through the Kelp"
+      es: "Corriendo por las Algas"
+      ru: "Гонки через ламинарию"
+    content:
+      en: "'Want to practice diving together?' Marina asked with sparkling eyes. 'I know some fun games!' They spent the most wonderful day diving for colorful sea stars, playing hide-and-seek among the kelp fronds, and racing through underwater tunnels. Marina taught Ollie new swimming tricks, and he showed her the best spots for finding tasty sea urchins. Ollie had never had so much fun with someone his own age!"
+      es: "'¿Quieres practicar buceo juntos?' preguntó Marina con ojos centelleantes. '¡Conozco algunos juegos divertidos!' Pasaron el día más maravilloso buceando por coloridas estrellas de mar, jugando al escondite entre las frondas de algas, y corriendo por túneles submarinos. Marina le enseñó nuevos trucos de natación a Ollie, y él le mostró los mejores lugares para encontrar erizos de mar sabrosos. ¡Ollie nunca se había divertido tanto con alguien de su edad!"
+      ru: "'Хочешь потренироваться нырять вместе?' - спросила Марина с искрящимися глазами. 'Я знаю несколько весёлых игр!' Они провели самый чудесный день, ныряя за разноцветными морскими звёздами, играя в прятки среди водорослей и гоняясь по подводным туннелям. Марина научила Олли новым плавательным трюкам, а он показал ей лучшие места для поиска вкусных морских ежей. Олли никогда не было так весело с кем-то своего возраста!"
+    use_characters:
+      - "${birth-of-ollie.image}"
+      - "${marina-first-glimpse.image}"
+    action: "Ollie and Marina playing together, racing through kelp forest"
+    image: "marina-playing-together.jpg"
+    imageAlt:
+      en: "Ollie and Marina racing joyfully through the kelp forest, playing together"
+      es: "Ollie y Marina corriendo alegremente por el bosque de algas, jugando juntos"
+      ru: "Олли и Марина радостно гоняются по лесу ламинарии, играя вместе"
 
   - id: missing-mother
     title:
@@ -521,7 +633,7 @@ sections:
       ru: "Марина научила Олли семейной технике ловли крабов. 'Крабы хитрые - они щиплются и убегают боком. Нужно быть быстрым!' Она продемонстрировала, как перевернуть камень и схватить краба до того, как он сможет убежать. 'Держи их сзади, избегай клешней и всегда проверяй на наличие икры - мы не берём матерей с детёнышами.'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${meeting-marina.image}"
+      - "${marina-first-glimpse.image}"
     action: "Two young otters working together to catch crabs"
     image: "crab-hunting.jpg"
     imageAlt:
@@ -531,12 +643,12 @@ sections:
 
   - id: cold-current
     title:
-      en: "The Freezing Stream"
-      es: "La Corriente Helada"
-      ru: "Ледяной поток"
+      en: "The Perfect Current"
+      es: "La Corriente Perfecta"
+      ru: "Идеальное течение"
     content:
-      en: "An unusually cold current swept through the bay. Even with their thick fur, the otters shivered. 'Time for extra grooming!' Mama announced. The family spent hours fluffing their fur, trapping as much air as possible for insulation. 'Our fur has more hairs than a whole human head - about a billion!' Ruby giggled at the thought."
-      es: "Una corriente inusualmente fría barrió la bahía. Incluso con su grueso pelaje, las nutrias temblaban. '¡Hora de acicalamiento extra!' anunció Mamá. La familia pasó horas esponjando su pelaje, atrapando tanto aire como fuera posible para aislamiento. '¡Nuestro pelaje tiene más pelos que toda una cabeza humana - cerca de mil millones!' Ruby rió ante el pensamiento."
+      en: "A refreshing cool current swept through the bay, bringing perfect swimming conditions. The otters celebrated by having extra grooming sessions! 'Time for the best grooming ever!' Mama announced. The family spent hours luxuriously fluffing their fur, trapping air for perfect buoyancy. 'Our fur is absolutely amazing - nearly a billion individual hairs!' Ruby giggled with delight."
+      es: "Una corriente fresca y refrescante barrió la bahía, trayendo condiciones perfectas para nadar. ¡Las nutrias celebraron teniendo sesiones extra de acicalamiento! '¡Hora del mejor acicalamiento jamás!' anunció Mamá. La familia pasó horas lujosamente esponjando su pelaje, atrapando aire para flotabilidad perfecta. '¡Nuestro pelaje es absolutamente increíble - casi mil millones de pelos individuales!' Ruby se rió de deleite."
       ru: "Необычно холодное течение пронеслось через залив. Даже с их густым мехом выдры дрожали. 'Время дополнительного ухода!' - объявила Мама. Семья провела часы, распушая свой мех, захватывая как можно больше воздуха для изоляции. 'В нашем мехе больше волосков, чем на всей человеческой голове - около миллиарда!' Руби захихикала от этой мысли."
     use_characters:
       - "${birth-of-ollie.image}"
@@ -549,43 +661,82 @@ sections:
       es: "Familia de nutrias esponjando su pelaje contra condiciones de agua fría"
       ru: "Семья выдр распушает мех против холодной воды"
 
-  - id: teaching-ruby
+  - id: ruby-teaching-basics
     title:
       en: "Big Brother Teacher"
       es: "Hermano Mayor Maestro"
       ru: "Старший брат учитель"
     content:
-      en: "Ruby was ready to learn diving, and Ollie was her teacher! 'Remember what Mama taught me,' he said patiently. 'Take a deep breath, tuck your chin, and push with your tail.' Ruby's first attempts were clumsy, but Ollie encouraged her. 'You're doing great! I was worse when I started!' Being a teacher made Ollie feel grown up and responsible."
-      es: "¡Ruby estaba lista para aprender a bucear, y Ollie era su maestro! 'Recuerda lo que Mamá me enseñó,' dijo pacientemente. 'Toma una respiración profunda, mete la barbilla y empuja con tu cola.' Los primeros intentos de Ruby fueron torpes, pero Ollie la animó. '¡Lo estás haciendo genial! ¡Yo era peor cuando empecé!' Ser maestro hizo que Ollie se sintiera adulto y responsable."
-      ru: "Руби была готова учиться нырять, и Олли был её учителем! 'Помни, чему Мама учила меня,' - терпеливо сказал он. 'Глубоко вдохни, прижми подбородок и толкайся хвостом.' Первые попытки Руби были неуклюжими, но Олли подбадривал её. 'У тебя отлично получается! Я был хуже, когда начинал!' Быть учителем заставляло Олли чувствовать себя взрослым и ответственным."
+      en: "Ruby was ready to learn diving, and Ollie was excited to be her teacher! 'Remember what Mama taught me,' he said patiently, positioning himself next to his little sister. 'First, take a deep breath and hold it tight. Then tuck your chin and push down with your tail.' Ollie demonstrated the perfect diving technique, disappearing beneath the surface gracefully. Being a teacher made Ollie feel grown up and responsible."
+      es: "¡Ruby estaba lista para aprender a bucear, y Ollie estaba emocionado de ser su maestro! 'Recuerda lo que Mamá me enseñó,' dijo pacientemente, posicionándose junto a su hermanita. 'Primero, toma una respiración profunda y mantenla. Luego mete la barbilla y empuja hacia abajo con tu cola.' Ollie demostró la técnica de buceo perfecta, desapareciendo bajo la superficie con gracia. Ser maestro hizo que Ollie se sintiera adulto y responsable."
+      ru: "Руби была готова учиться нырять, и Олли был рад быть её учителем! 'Помни, чему Мама учила меня,' - терпеливо сказал он, расположившись рядом со своей младшей сестрёнкой. 'Сначала глубоко вдохни и задержи дыхание. Затем прижми подбородок и толкайся хвостом вниз.' Олли продемонстрировал идеальную технику ныряния, грациозно исчезнув под поверхностью. Быть учителем заставляло Олли чувствовать себя взрослым и ответственным."
     use_characters:
       - "${birth-of-ollie.image}"
       - "${meet-ruby.image}"
-    action: "Ollie teaching his little sister Ruby how to dive"
-    image: "teaching-ruby.jpg"
+    action: "Ollie demonstrating diving technique to Ruby"
+    image: "ruby-teaching-basics.jpg"
     imageAlt:
-      en: "Ollie patiently teaching Ruby diving techniques"
-      es: "Ollie enseñando pacientemente técnicas de buceo a Ruby"
-      ru: "Олли терпеливо учит Руби технике ныряния"
+      en: "Ollie demonstrating proper diving form to his little sister Ruby"
+      es: "Ollie demostrando la forma correcta de bucear a su hermanita Ruby"
+      ru: "Олли демонстрирует правильную технику ныряния своей сестрёнке Руби"
 
-  - id: human-boat
+  - id: ruby-practicing
     title:
-      en: "The Watching Humans"
-      es: "Los Humanos Observadores"
-      ru: "Наблюдающие люди"
+      en: "Ruby's First Tries"
+      es: "Los Primeros Intentos de Ruby"
+      ru: "Первые попытки Руби"
     content:
-      en: "A boat full of humans with cameras approached slowly. 'These are the good kind,' Professor Kelp explained. 'They watch us, learn about us, and help protect us. See how they keep their distance? They respect our space. Some humans work very hard to keep our ocean home safe.' The otters floated calmly, even posing a little for the cameras."
-      es: "Un bote lleno de humanos con cámaras se acercó lentamente. 'Estos son del tipo bueno,' explicó el Profesor Kelp. 'Nos observan, aprenden sobre nosotros y ayudan a protegernos. ¿Ves cómo mantienen su distancia? Respetan nuestro espacio. Algunos humanos trabajan muy duro para mantener seguro nuestro hogar oceánico.' Las nutrias flotaron tranquilamente, incluso posando un poco para las cámaras."
-      ru: "Лодка, полная людей с камерами, медленно приблизилась. 'Это хорошие люди,' - объяснил Профессор Келп. 'Они наблюдают за нами, изучают нас и помогают защищать нас. Видишь, как они держат дистанцию? Они уважают наше пространство. Некоторые люди очень усердно работают, чтобы сохранить наш океанский дом в безопасности.' Выдры спокойно плавали, даже немного позируя для камер."
+      en: "Ruby took a big breath and attempted her first dive, but instead of going down smoothly, she flopped sideways and came up sputtering! 'That's okay!' Ollie encouraged warmly. 'I was much worse when I started - I once got so confused I tried to dive upward!' Ruby giggled and tried again, this time managing to get partway down before bobbing back up like a cork. 'Almost there!' Ollie cheered."
+      es: "Ruby tomó una gran respiración e intentó su primer buceo, ¡pero en lugar de bajar suavemente, se volcó hacia un lado y salió farfullando! '¡Está bien!' animó Ollie cálidamente. '¡Yo era mucho peor cuando empecé - una vez me confundí tanto que traté de bucear hacia arriba!' Ruby se rió y lo intentó de nuevo, esta vez logrando bajar a medias antes de volver a subir como un corcho. '¡Casi lo logras!' gritó Ollie."
+      ru: "Руби глубоко вдохнула и попыталась совершить первое погружение, но вместо плавного спуска вниз, она перевернулась на бок и всплыла, фыркая! 'Ничего страшного!' - тепло подбодрил Олли. 'Я был намного хуже, когда начинал - однажды я так запутался, что попытался нырнуть вверх!' Руби хихикнула и попробовала снова, на этот раз ей удалось погрузиться наполовину, прежде чем снова всплыть как пробка. 'Почти получилось!' - ободрил Олли."
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
-    action: "Otters calmly floating while eco-tourists photograph from respectful distance"
-    image: "human-boat.jpg"
+      - "${meet-ruby.image}"
+    action: "Ruby making clumsy but determined diving attempts"
+    image: "ruby-practicing.jpg"
     imageAlt:
-      en: "Otters floating peacefully as tourists photograph them from boat"
-      es: "Nutrias flotando pacíficamente mientras turistas las fotografían desde bote"
-      ru: "Выдры мирно плавают, пока туристы фотографируют их с лодки"
+      en: "Ruby struggling with her first diving attempts while Ollie encourages her"
+      es: "Ruby luchando con sus primeros intentos de buceo mientras Ollie la anima"
+      ru: "Руби борется с первыми попытками ныряния, пока Олли её подбадривает"
+
+  - id: ruby-success
+    title:
+      en: "Perfect Dive!"
+      es: "¡Buceo Perfecto!"
+      ru: "Идеальное погружение!"
+    content:
+      en: "On her fifth try, something magical happened - Ruby took a deep breath, tucked perfectly, and dove straight down like a natural! She stayed underwater for several seconds before popping up with the biggest smile ever. 'I did it! I really did it!' she squealed with joy. Ollie was so proud he did a happy somersault. 'You're the best student ever, Ruby!' Mama watched from nearby, beaming with pride at both her children."
+      es: "¡En su quinto intento, algo mágico pasó - Ruby tomó una respiración profunda, se posicionó perfectamente, y se zambulló directamente como una natural! Se mantuvo bajo el agua por varios segundos antes de salir con la sonrisa más grande. '¡Lo hice! ¡Realmente lo hice!' chilló de alegría. Ollie estaba tan orgulloso que hizo una voltereta feliz. '¡Eres la mejor estudiante, Ruby!' Mamá observaba desde cerca, radiante de orgullo por ambos hijos."
+      ru: "На пятой попытке произошло что-то волшебное - Руби глубоко вдохнула, идеально сгруппировалась и нырнула прямо вниз как настоящая! Она оставалась под водой несколько секунд, прежде чем всплыть с самой большой улыбкой. 'Я сделала это! Я действительно сделала это!' - визжала она от радости. Олли был так горд, что сделал радостное сальто. 'Ты лучшая ученица, Руби!' Мама наблюдала поблизости, сияя от гордости за обоих детей."
+    use_characters:
+      - "${birth-of-ollie.image}"
+      - "${meet-ruby.image}"
+      - "${mama-otter.image}"
+    action: "Ruby successfully diving while Ollie and Mama celebrate"
+    image: "ruby-success.jpg"
+    imageAlt:
+      en: "Ruby diving perfectly while Ollie cheers and Mama watches proudly"
+      es: "Ruby buceando perfectamente mientras Ollie la celebra y Mamá observa orgullosa"
+      ru: "Руби ныряет идеально, пока Олли радуется, а Мама гордо наблюдает"
+
+  - id: whale-watching
+    title:
+      en: "Giants of the Deep"
+      es: "Gigantes del Abismo"
+      ru: "Гиганты глубин"
+    content:
+      en: "A magnificent humpback whale surfaced nearby, breathing misty spouts into the morning air! From a safe distance, Ollie and the otters watched in awe as the gentle giant glided gracefully through the water. 'These ancient ones travel across entire oceans,' Professor Kelp whispered respectfully. 'We share the sea with the most magnificent creatures on Earth. Their songs can travel for miles underwater!'"
+      es: "¡Una magnífica ballena jorobada emergió cerca, respirando chorros brumosos en el aire matutino! Desde una distancia segura, Ollie y las nutrias observaron con asombro mientras el gentil gigante se deslizaba elegantemente por el agua. 'Estos ancianos viajan a través de océanos enteros,' susurró el Profesor Kelp respetuosamente. '¡Compartimos el mar con las criaturas más magníficas de la Tierra. Sus cantos pueden viajar por millas bajo el agua!'"
+      ru: "Великолепный горбатый кит всплыл рядом, выдыхая туманные фонтаны в утренний воздух! С безопасного расстояния Олли и выдры наблюдали с благоговением, как нежный гигант грациозно скользил по воде. 'Эти древние путешествуют через целые океаны,' - почтительно прошептал Профессор Келп. 'Мы делим море с самыми великолепными существами на Земле. Их песни могут путешествовать на мили под водой!'"
+    use_characters:
+      - "${birth-of-ollie.image}"
+      - "${professor-kelp-intro.image}"
+    action: "Otters watching magnificent humpback whale from safe distance"
+    image: "whale-watching.jpg"
+    imageAlt:
+      en: "Otters observing a humpback whale surfacing nearby with water spouts"
+      es: "Nutrias observando una ballena jorobada emergiendo cerca con chorros de agua"
+      ru: "Выдры наблюдают за горбатым китом, всплывающим рядом с водяными фонтанами"
 
   # Continue Act II sections (31-35)
   - id: kelp-restoration
@@ -599,8 +750,8 @@ sections:
       ru: "Там, где ламинария погибла, Профессор Келп показал всем, как помочь ей вырасти снова. 'Мы едим дополнительных ежей здесь, чтобы дать молодой ламинарии шанс,' - объяснил он. 'Если мы все будем работать вместе, лес вернётся. Это наша ответственность как хранителей ламинарии. Каждая выдра имеет значение!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
-      - "${meeting-marina.image}"
+      - "${professor-kelp-intro.image}"
+      - "${marina-first-glimpse.image}"
     action: "Group of otters working together to clear urchins from recovering kelp area"
     image: "kelp-restoration.jpg"
     imageAlt:
@@ -636,7 +787,7 @@ sections:
       ru: "Однажды утром морское дно было покрыто пурпурными морскими ежами - тысячи их! 'Без достаточного количества выдр это происходит,' - серьёзно сказал Профессор Келп. 'Они съедают всю ламинарию и создают пустоши ежей - подводные пустыни. Вот почему каждая выдра важна. Мы хранители баланса. Время пировать и спасать наш лес!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
+      - "${professor-kelp-intro.image}"
     action: "Otters looking at massive purple sea urchin population covering seafloor"
     image: "urchin-explosion.jpg"
     imageAlt:
@@ -644,25 +795,25 @@ sections:
       es: "Nutrias observando población abrumadora de erizos púrpuras amenazando algas"
       ru: "Выдры наблюдают подавляющую популяцию пурпурных ежей, угрожающую ламинарии"
 
-  - id: rescue-mission
+  - id: raft-building-mission
     title:
-      en: "Tangled in Danger"
-      es: "Enredado en Peligro"
-      ru: "Запутавшийся в опасности"
+      en: "Building Together"
+      es: "Construyendo Juntos"
+      ru: "Строим вместе"
     content:
-      en: "A young otter from another raft was trapped in an abandoned fishing net! Ollie, Marina, and Captain Whiskers worked together, gnawing carefully at the ropes. 'Easy does it,' Captain coached. 'One wrong move could make it worse.' After tense minutes, the otter swam free! The rescued otter's family brought shellfish gifts in gratitude. Heroes of the bay!"
-      es: "¡Una joven nutria de otra balsa estaba atrapada en una red de pesca abandonada! Ollie, Marina y el Capitán Bigotes trabajaron juntos, royendo cuidadosamente las cuerdas. 'Con calma,' instruyó el Capitán. 'Un movimiento equivocado podría empeorarlo.' ¡Después de minutos tensos, la nutria nadó libre! La familia de la nutria rescatada trajo regalos de mariscos en gratitud. ¡Héroes de la bahía!"
-      ru: "Молодая выдра из другого плота попала в заброшенную рыболовную сеть! Олли, Марина и Капитан Усач работали вместе, осторожно перегрызая верёвки. 'Осторожно,' - наставлял Капитан. 'Одно неверное движение может ухудшить ситуацию.' После напряжённых минут выдра выплыла на свободу! Семья спасённой выдры принесла дары из моллюсков в благодарность. Герои залива!"
+      en: "A young otter from another raft wanted to join their community! Ollie, Marina, and Captain Whiskers worked together to help him build his perfect sleeping spot in the kelp. 'Easy does it,' Captain coached. 'Each otter needs just the right kelp arrangement.' After patient work, the new otter had a cozy spot! His family brought shellfish gifts in gratitude. Builders of the bay!"
+      es: "¡Una joven nutria de otra balsa quería unirse a su comunidad! Ollie, Marina y el Capitán Bigotes trabajaron juntos para ayudarla a construir su lugar perfecto para dormir en las algas. 'Con calma,' instruyó el Capitán. 'Cada nutria necesita el arreglo justo de algas.' ¡Después de trabajo paciente, la nueva nutria tenía un lugar acogedor! Su familia trajo regalos de mariscos en gratitud. ¡Constructores de la bahía!"
+      ru: "Молодая выдра из другого плота хотела присоединиться к их сообществу! Олли, Марина и Капитан Усач работали вместе, чтобы помочь ей построить идеальное место для сна в ламинарии. 'Осторожно,' - наставлял Капитан. 'Каждой выдре нужно особое расположение ламинарии.' После терпеливой работы у новой выдры было уютное место! Её семья принесла дары из моллюсков в благодарность. Строители залива!"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${meeting-marina.image}"
+      - "${marina-first-glimpse.image}"
       - "${captain-whiskers.image}"
-    action: "Three otters working together to free trapped otter from fishing net"
-    image: "rescue-mission.jpg"
+    action: "Three otters working together to help newcomer build kelp sleeping spot"
+    image: "raft-building-mission.jpg"
     imageAlt:
-      en: "Ollie, Marina and Captain Whiskers rescuing trapped otter from net"
-      es: "Ollie, Marina y Capitán Bigotes rescatando nutria atrapada de red"
-      ru: "Олли, Марина и Капитан Усач спасают пойманную в сеть выдру"
+      en: "Ollie, Marina and Captain Whiskers helping new otter arrange kelp sleeping area"
+      es: "Ollie, Marina y Capitán Bigotes ayudando a nueva nutria arreglar área de dormir en algas"
+      ru: "Олли, Марина и Капитан Усач помогают новой выдре устроить место для сна в ламинарии"
 
   - id: seasonal-changes
     title:
@@ -704,71 +855,71 @@ sections:
       ru: "Выросший Олли уверенно стоит рядом с Капитаном Усачом"
 
   # ACT III: Conservation and Future (36-50)
-  - id: scientists-arrive
+  - id: natural-otter-behaviors
     title:
-      en: "The Research Team"
-      es: "El Equipo de Investigación"
-      ru: "Исследовательская команда"
+      en: "Secret Otter Skills"
+      es: "Habilidades Secretas de las Nutrias"
+      ru: "Секретные навыки выдр"
     content:
-      en: "Scientists in wetsuits arrived with strange equipment. 'Don't be afraid,' Professor Kelp assured everyone. 'These humans study us to help protect us. They count how many we are, watch what we eat, and make sure we're healthy. Their research helps create laws that keep us safe. Knowledge is protection!'"
-      es: "Científicos en trajes de neopreno llegaron con equipo extraño. 'No tengan miedo,' aseguró el Profesor Kelp a todos. 'Estos humanos nos estudian para ayudar a protegernos. Cuentan cuántos somos, observan lo que comemos y se aseguran de que estemos sanos. Su investigación ayuda a crear leyes que nos mantienen seguros. ¡El conocimiento es protección!'"
-      ru: "Учёные в гидрокостюмах прибыли со странным оборудованием. 'Не бойтесь,' - заверил всех Профессор Келп. 'Эти люди изучают нас, чтобы помочь защитить нас. Они считают, сколько нас, наблюдают, что мы едим, и проверяют наше здоровье. Их исследования помогают создавать законы, которые обеспечивают нашу безопасность. Знание - это защита!'"
+      en: "Professor Kelp revealed amazing otter secrets! 'Watch closely,' he whispered. Some otters could somersault underwater, others could balance three shells at once, and the most talented could even swim backward while grooming! 'Every otter family has special skills passed down through generations. These natural behaviors make us unique and help us thrive in ways no one expects!'"
+      es: "¡El Profesor Kelp reveló increíbles secretos de las nutrias! 'Observen atentamente,' susurró. Algunas nutrias podían hacer volteretas bajo el agua, otras podían equilibrar tres conchas a la vez, ¡y las más talentosas incluso podían nadar hacia atrás mientras se acicalaban! 'Cada familia de nutrias tiene habilidades especiales transmitidas a través de generaciones. ¡Estos comportamientos naturales nos hacen únicos y nos ayudan a prosperar de maneras que nadie espera!'"
+      ru: "Профессор Келп раскрыл удивительные секреты выдр! 'Наблюдайте внимательно,' - прошептал он. Некоторые выдры могли делать кувырки под водой, другие могли балансировать тремя ракушками одновременно, а самые талантливые даже могли плавать назад, ухаживая за собой! 'Каждая семья выдр имеет особые навыки, передаваемые через поколения. Эти естественные поведения делают нас уникальными и помогают процветать способами, которых никто не ожидает!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
-    action: "Scientists in water observing otters with research equipment"
-    image: "scientists-arrive.jpg"
+      - "${professor-kelp-intro.image}"
+    action: "Otters demonstrating amazing natural swimming and balancing skills"
+    image: "natural-otter-behaviors.jpg"
     imageAlt:
-      en: "Marine biologists carefully observing and documenting otter behavior"
-      es: "Biólogos marinos observando y documentando cuidadosamente comportamiento de nutrias"
-      ru: "Морские биологи тщательно наблюдают и документируют поведение выдр"
+      en: "Otters showing off special underwater tricks and balancing skills"
+      es: "Nutrias mostrando trucos submarinos especiales y habilidades de equilibrio"
+      ru: "Выдры демонстрируют особые подводные трюки и навыки баланса"
 
-  - id: radio-collar
+  - id: distinctive-natural-markings
     title:
-      en: "Tagged for Science"
-      es: "Marcado para la Ciencia"
-      ru: "Помечен для науки"
+      en: "Nature's Identification"
+      es: "Identificación de la Naturaleza"
+      ru: "Природная идентификация"
     content:
-      en: "The scientists gently caught Captain Whiskers and attached a small radio collar. 'It doesn't hurt,' he called to the worried otters. 'It helps them track where I go and what I do. This information protects our feeding grounds and shows humans where not to fish. I'm proud to help science understand us better!'"
-      es: "Los científicos atraparon suavemente al Capitán Bigotes y le colocaron un pequeño collar de radio. 'No duele,' llamó a las nutrias preocupadas. 'Les ayuda a rastrear dónde voy y qué hago. Esta información protege nuestras zonas de alimentación y muestra a los humanos dónde no pescar. ¡Estoy orgulloso de ayudar a la ciencia a entendernos mejor!'"
-      ru: "Учёные осторожно поймали Капитана Усача и прикрепили маленький радио-ошейник. 'Это не больно,' - крикнул он обеспокоенным выдрам. 'Это помогает им отслеживать, куда я иду и что делаю. Эта информация защищает наши кормовые угодья и показывает людям, где не ловить рыбу. Я горжусь тем, что помогаю науке лучше понимать нас!'"
+      en: "Captain Whiskers showed off his distinctive natural markings - unique scars and fur patterns that told his life story! 'Look closely,' he said proudly. 'Every otter has different markings, just like fingerprints. My scar from a kelp tangle, Marina's white patch, Ollie's distinctive whisker pattern - nature gives us each a unique identity. We can recognize each other from great distances!'"
+      es: "¡El Capitán Bigotes mostró sus marcas naturales distintivas - cicatrices únicas y patrones de pelaje que contaban la historia de su vida! 'Miren atentamente,' dijo orgullosamente. 'Cada nutria tiene diferentes marcas, como huellas dactilares. Mi cicatriz de un enredo de algas, la mancha blanca de Marina, el patrón distintivo de bigotes de Ollie - la naturaleza nos da a cada uno una identidad única. ¡Podemos reconocernos desde grandes distancias!'"
+      ru: "Капитан Усач продемонстрировал свои отличительные природные отметины - уникальные шрамы и узоры меха, которые рассказывали историю его жизни! 'Смотрите внимательно,' - гордо сказал он. 'У каждой выдры разные отметины, как отпечатки пальцев. Мой шрам от запутывания в ламинарии, белое пятно Марины, отличительный узор усов Олли - природа даёт каждому из нас уникальную личность. Мы можем узнавать друг друга с больших расстояний!'"
     use_character: "${captain-whiskers.image}"
-    action: "Captain Whiskers with radio collar being released by scientists"
-    image: "radio-collar.jpg"
+    action: "Captain Whiskers displaying his distinctive natural scars and markings"
+    image: "distinctive-natural-markings.jpg"
     imageAlt:
-      en: "Captain Whiskers wearing research collar, returning to water"
-      es: "Capitán Bigotes con collar de investigación, volviendo al agua"
-      ru: "Капитан Усач с исследовательским ошейником возвращается в воду"
+      en: "Captain Whiskers showing his unique scars and fur patterns for identification"
+      es: "Capitán Bigotes mostrando sus cicatrices únicas y patrones de pelaje para identificación"
+      ru: "Капитан Усач показывает свои уникальные шрамы и узоры меха для идентификации"
 
-  - id: oil-spill
+  - id: abundant-natural-feast
     title:
-      en: "Black Tide Terror"
-      es: "Terror de Marea Negra"
-      ru: "Ужас чёрного прилива"
+      en: "Nature's Bounty"
+      es: "La Abundancia de la Naturaleza"
+      ru: "Природное изобилие"
     content:
-      en: "Terrible news - an oil spill nearby! The water turned black and sticky. 'Everyone stay away from the oil!' Professor Kelp commanded. 'It destroys our fur's insulation. Without our fur working, we can't survive the cold.' Some otters got oiled anyway. Rescue boats arrived quickly, taking affected otters for cleaning. It was scary, but help came fast."
-      es: "Noticias terribles - ¡un derrame de petróleo cerca! El agua se volvió negra y pegajosa. '¡Todos manténganse alejados del petróleo!' ordenó el Profesor Kelp. 'Destruye el aislamiento de nuestro pelaje. Sin que nuestro pelaje funcione, no podemos sobrevivir al frío.' Algunas nutrias se mancharon de todos modos. Los botes de rescate llegaron rápidamente, llevando nutrias afectadas para limpieza. Fue aterrador, pero la ayuda llegó rápido."
-      ru: "Ужасные новости - разлив нефти поблизости! Вода стала чёрной и липкой. 'Все держитесь подальше от нефти!' - приказал Профессор Келп. 'Она разрушает изоляцию нашего меха. Без работающего меха мы не можем пережить холод.' Некоторые выдры всё равно испачкались. Спасательные лодки прибыли быстро, забирая пострадавших выдр на очистку. Было страшно, но помощь пришла быстро."
-    image: "oil-spill.jpg"
+      en: "Amazing news - the kelp forests were bursting with life! The water sparkled with abundance. 'Look at this incredible feast!' Professor Kelp exclaimed joyfully. 'Sea urchins, crabs, mussels, and clams everywhere! When the ocean is healthy, it provides everything we need. Our fur stays perfectly clean and insulated. This is what paradise looks like!'"
+      es: "¡Noticias increíbles - los bosques de algas estaban rebosando de vida! El agua brillaba con abundancia. '¡Miren esta increíble fiesta!' exclamó el Profesor Kelp con alegría. '¡Erizos de mar, cangrejos, mejillones y almejas por todas partes! Cuando el océano está saludable, nos proporciona todo lo que necesitamos. Nuestro pelaje se mantiene perfectamente limpio y aislado. ¡Así se ve el paraíso!'"
+      ru: "Удивительные новости - леса ламинарии кишели жизнью! Вода сверкала изобилием. 'Посмотрите на этот невероятный пир!' - радостно воскликнул Профессор Келп. 'Морские ежи, крабы, мидии и моллюски повсюду! Когда океан здоров, он обеспечивает нас всем необходимым. Наш мех остается идеально чистым и изолированным. Вот как выглядит рай!'"
+    image: "abundant-natural-feast.jpg"
     imageAlt:
-      en: "Otters avoiding dangerous oil slick on water surface"
-      es: "Nutrias evitando peligrosa mancha de petróleo en superficie del agua"
-      ru: "Выдры избегают опасного нефтяного пятна на поверхности воды"
+      en: "Otters surrounded by abundant seafood in pristine kelp forest waters"
+      es: "Nutrias rodeadas de abundantes mariscos en aguas prístinas del bosque de algas"
+      ru: "Выдры, окружённые обилием морепродуктов в чистых водах леса ламинарии"
 
-  - id: rescue-rehabilitation
+  - id: family-reunion
     title:
-      en: "Heroes in Action"
-      es: "Héroes en Acción"
-      ru: "Герои в действии"
+      en: "Joyful Gatherings"
+      es: "Reuniones Alegres"
+      ru: "Радостные собрания"
     content:
-      en: "At the wildlife rescue center, humans worked tirelessly to save oiled otters. They washed them gently with special soap, dried their fur, and fed them fresh seafood. 'These humans dedicate their lives to saving us,' said a recovering otter. 'They're the reason many of us survive disasters. There's hope because people care.'"
-      es: "En el centro de rescate de vida silvestre, los humanos trabajaron incansablemente para salvar nutrias con petróleo. Las lavaron suavemente con jabón especial, secaron su pelaje y las alimentaron con mariscos frescos. 'Estos humanos dedican sus vidas a salvarnos,' dijo una nutria en recuperación. 'Son la razón por la que muchos de nosotros sobrevivimos a desastres. Hay esperanza porque a la gente le importa.'"
-      ru: "В центре спасения дикой природы люди неустанно работали, чтобы спасти загрязнённых нефтью выдр. Они мыли их осторожно специальным мылом, сушили их мех и кормили свежими морепродуктами. 'Эти люди посвящают свои жизни нашему спасению,' - сказала выздоравливающая выдра. 'Они причина, по которой многие из нас выживают после катастроф. Есть надежда, потому что людям не всё равно.'"
-    image: "rescue-rehabilitation.jpg"
+      en: "The most wonderful surprise - long-lost family members returned to the raft! Cousins, aunts, and uncles who had been exploring distant waters came back with amazing stories. They groomed each other's fur lovingly, shared their finest catch, and told tales of adventures. 'Family is everything,' Mama said tearfully. 'No matter how far we roam, home is where our hearts connect.'"
+      es: "¡La sorpresa más maravillosa - miembros de la familia perdidos hace tiempo regresaron a la balsa! Primos, tías y tíos que habían estado explorando aguas distantes volvieron con historias increíbles. Se acicalaron el pelaje amorosamente, compartieron sus mejores capturas y contaron cuentos de aventuras. 'La familia es todo,' dijo Mamá con lágrimas. 'No importa cuán lejos vaguemos, el hogar es donde nuestros corazones se conectan.'"
+      ru: "Самый чудесный сюрприз - давно потерянные члены семьи вернулись к плоту! Кузены, тёти и дяди, которые исследовали далёкие воды, вернулись с удивительными историями. Они любовно чистили мех друг друга, делились лучшим уловом и рассказывали сказки о приключениях. 'Семья - это всё,' - сказала Мама со слезами. 'Не важно, как далеко мы бродим, дом там, где соединяются наши сердца.'"
+    image: "family-reunion.jpg"
     imageAlt:
-      en: "Wildlife rescuers carefully cleaning and caring for oiled otters"
-      es: "Rescatistas de vida silvestre limpiando y cuidando cuidadosamente nutrias con petróleo"
-      ru: "Спасатели дикой природы тщательно очищают и ухаживают за загрязнёнными выдрами"
+      en: "Extended otter family joyfully reuniting and grooming together on the water"
+      es: "Familia extendida de nutrias reuniéndose alegremente y acicalándose juntos en el agua"
+      ru: "Большая семья выдр радостно воссоединяется и ухаживает друг за другом на воде"
 
   - id: whiskers-history
     title:
@@ -793,13 +944,13 @@ sections:
       es: "Puerto Seguro"
       ru: "Безопасная гавань"
     content:
-      en: "Great news arrived - the government declared their bay a Marine Protected Area! 'No more fishing nets here, no boats disturbing our kelp, and strict rules about pollution,' Professor Kelp announced joyfully. 'This is our sanctuary forever. The humans voted to protect us because they understand we keep the ocean healthy!'"
-      es: "¡Llegaron grandes noticias - el gobierno declaró su bahía un Área Marina Protegida! 'No más redes de pesca aquí, no hay barcos perturbando nuestras algas, y reglas estrictas sobre contaminación,' anunció el Profesor Kelp con alegría. '¡Este es nuestro santuario para siempre. Los humanos votaron para protegernos porque entienden que mantenemos el océano saludable!'"
-      ru: "Пришли отличные новости - правительство объявило их залив Морской охраняемой территорией! 'Больше никаких рыболовных сетей здесь, никаких лодок, беспокоящих нашу ламинарию, и строгие правила о загрязнении,' - радостно объявил Профессор Келп. 'Это наше убежище навсегда. Люди проголосовали за нашу защиту, потому что понимают, что мы поддерживаем океан здоровым!'"
+      en: "Great news arrived - nature had blessed their bay with perfect conditions! 'Look at this pristine sanctuary around us - the kelp thriving, the waters crystal clear, and natural balance everywhere,' Professor Kelp announced joyfully. 'This is our paradise home. Nature has provided us with everything we need because we've learned to live in harmony with the ocean!'"
+      es: "¡Llegaron grandes noticias - la naturaleza había bendecido su bahía con condiciones perfectas! 'Miren este santuario prístino a nuestro alrededor - las algas prosperando, las aguas cristalinas, y equilibrio natural en todas partes,' anunció el Profesor Kelp con alegría. '¡Este es nuestro hogar paradisíaco. La naturaleza nos ha proporcionado todo lo que necesitamos porque hemos aprendido a vivir en armonía con el océano!'"
+      ru: "Пришли отличные новости - природа благословила их залив идеальными условиями! 'Посмотрите на это чистое святилище вокруг нас - ламинария процветает, воды кристально чисты, и естественный баланс везде,' - радостно объявил Профессор Келп. 'Это наш райский дом. Природа обеспечила нас всем необходимым, потому что мы научились жить в гармонии с океаном!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
-      - "${meeting-marina.image}"
+      - "${professor-kelp-intro.image}"
+      - "${marina-first-glimpse.image}"
     action: "Otters celebrating in pristine protected marine sanctuary"
     image: "protected-area.jpg"
     imageAlt:
@@ -807,41 +958,41 @@ sections:
       es: "Nutrias celebrando en su santuario marino recién protegido"
       ru: "Выдры празднуют в своём недавно защищённом морском заповеднике"
 
-  - id: eco-tourism
+  - id: otter-games-and-play
     title:
-      en: "Visitors Who Care"
-      es: "Visitantes que Cuidan"
-      ru: "Посетители, которым не всё равно"
+      en: "Ocean Playground"
+      es: "Patio de Juegos Oceánico"
+      ru: "Океанская игровая площадка"
     content:
-      en: "More boats came, but these were different - eco-tourism! People paid to see otters in the wild, and that money helped protect the bay. 'When we're worth more alive than our fur ever was, we're truly safe,' Mama explained. 'These visitors go home and tell others about us. We're ambassadors for the entire ocean!'"
-      es: "Vinieron más barcos, pero estos eran diferentes - ¡ecoturismo! La gente pagaba por ver nutrias en la naturaleza, y ese dinero ayudaba a proteger la bahía. 'Cuando valemos más vivos que lo que nuestro pelaje valió alguna vez, estamos verdaderamente seguros,' explicó Mamá. '¡Estos visitantes van a casa y cuentan a otros sobre nosotros. Somos embajadores de todo el océano!'"
-      ru: "Приехало больше лодок, но эти были другими - экотуризм! Люди платили, чтобы увидеть выдр в дикой природе, и эти деньги помогали защищать залив. 'Когда мы стоим больше живыми, чем когда-либо стоил наш мех, мы действительно в безопасности,' - объяснила Мама. 'Эти посетители идут домой и рассказывают другим о нас. Мы послы всего океана!'"
+      en: "The entire otter community gathered for the most amazing games! They played kelp-frond volleyball, had underwater somersault contests, and racing competitions through the forest. 'Play is how we stay strong and happy,' Mama laughed as she joined a game of kelp-tag. 'When we play together, we learn, we bond, and we celebrate the joy of being alive in this magnificent ocean!'"
+      es: "¡Toda la comunidad de nutrias se reunió para los juegos más increíbles! Jugaron vóley con frondas de algas, tuvieron concursos de volteretas submarinas y competiciones de carreras a través del bosque. 'El juego es cómo nos mantenemos fuertes y felices,' rió Mamá mientras se unía a un juego de persecución con algas. '¡Cuando jugamos juntos, aprendemos, nos vinculamos y celebramos la alegría de estar vivos en este magnífico océano!'"
+      ru: "Всё сообщество выдр собралось на самые удивительные игры! Они играли в волейбол листьями ламинарии, устраивали соревнования по подводным кувыркам и гонкам через лес. 'Игра - это то, как мы остаёмся сильными и счастливыми,' - смеялась Мама, присоединяясь к игре в догонялки с ламинарией. 'Когда мы играем вместе, мы учимся, связываемся и празднуем радость быть живыми в этом великолепном океане!'"
     use_characters:
       - "${birth-of-ollie.image}"
       - "${mama-otter.image}"
-    action: "Otters posing naturally while eco-tourists observe respectfully"
-    image: "eco-tourism.jpg"
+    action: "Otters playing various fun games together in kelp forest"
+    image: "otter-games-and-play.jpg"
     imageAlt:
-      en: "Otters living naturally while eco-tourists watch from safe distance"
-      es: "Nutrias viviendo naturalmente mientras ecoturistas observan desde distancia segura"
-      ru: "Выдры живут естественно, пока экотуристы наблюдают с безопасного расстояния"
+      en: "Otter community playing kelp volleyball and underwater games together"
+      es: "Comunidad de nutrias jugando vóley con algas y juegos submarinos juntos"
+      ru: "Сообщество выдр играет в волейбол с ламинарией и подводные игры вместе"
 
-  - id: climate-change
+  - id: seasonal-changes
     title:
-      en: "The Warming Waters"
-      es: "Las Aguas que se Calientan"
-      ru: "Теплеющие воды"
+      en: "Nature's Beautiful Cycles"
+      es: "Los Hermosos Ciclos de la Naturaleza"
+      ru: "Прекрасные циклы природы"
     content:
-      en: "Professor Kelp called a meeting. 'The ocean is changing faster than ever. Warmer water, stronger storms, different currents. We must adapt and help each other more than ever. But remember - if we survived near extinction, we can survive this too. We're resilient, we're smart, and we have human allies now. Together, we'll find a way.'"
-      es: "El Profesor Kelp convocó una reunión. 'El océano está cambiando más rápido que nunca. Agua más cálida, tormentas más fuertes, corrientes diferentes. Debemos adaptarnos y ayudarnos más que nunca. Pero recuerden - si sobrevivimos casi la extinción, podemos sobrevivir esto también. Somos resilientes, somos inteligentes, y ahora tenemos aliados humanos. Juntos, encontraremos un camino.'"
-      ru: "Профессор Келп созвал собрание. 'Океан меняется быстрее, чем когда-либо. Более тёплая вода, более сильные штормы, другие течения. Мы должны адаптироваться и помогать друг другу больше, чем когда-либо. Но помните - если мы пережили почти вымирание, мы можем пережить и это. Мы стойкие, мы умные, и теперь у нас есть союзники-люди. Вместе мы найдём путь.'"
-    use_character: "${professor-kelp.image}"
-    action: "Professor Kelp addressing gathered otters about climate change"
-    image: "climate-change.jpg"
+      en: "Professor Kelp gathered everyone to celebrate the changing seasons! 'Look how beautiful each season brings new gifts - spring brings baby kelp, summer warms our waters perfectly, autumn brings the richest harvests, and winter shows us the most spectacular storms from a safe distance. Nature's cycles have repeated for millions of years, and we've learned to dance with every change!'"
+      es: "¡El Profesor Kelp reunió a todos para celebrar las estaciones cambiantes! 'Miren qué hermoso cada estación trae nuevos regalos - la primavera trae algas bebé, el verano calienta nuestras aguas perfectamente, el otoño trae las cosechas más ricas, y el invierno nos muestra las tormentas más espectaculares desde una distancia segura. Los ciclos de la naturaleza se han repetido durante millones de años, ¡y hemos aprendido a bailar con cada cambio!'"
+      ru: "Профессор Келп собрал всех, чтобы отметить смену сезонов! 'Посмотрите, как красиво каждый сезон приносит новые подарки - весна приносит молодую ламинарию, лето идеально обогревает наши воды, осень приносит самые богатые урожаи, а зима показывает нам самые зрелищные штормы с безопасного расстояния. Природные циклы повторяются миллионы лет, и мы научились танцевать с каждым изменением!'"
+    use_character: "${professor-kelp-intro.image}"
+    action: "Professor Kelp celebrating seasonal changes with otter community"
+    image: "seasonal-changes.jpg"
     imageAlt:
-      en: "Professor Kelp speaking to concerned otter community about changing ocean"
-      es: "Profesor Kelp hablando a comunidad de nutrias preocupadas sobre océano cambiante"
-      ru: "Профессор Келп говорит с обеспокоенным сообществом выдр об изменяющемся океане"
+      en: "Professor Kelp and otters enjoying the beauty of changing seasons in kelp forest"
+      es: "Profesor Kelp y nutrias disfrutando la belleza de las estaciones cambiantes en bosque de algas"
+      ru: "Профессор Келп и выдры наслаждаются красотой смены сезонов в лесу ламинарии"
 
   - id: advocacy-lesson
     title:
@@ -854,7 +1005,7 @@ sections:
       ru: "Защитник природы посетил, показывая выдрам фотографии детей, изучающих их в школах. 'Вы знамениты!' - смеялась Марина. 'Дети везде узнают о морских выдрах и почему вы важны. Они растут, желая защитить вас. Каждый ребёнок, который любит выдр, становится защитником океана. Вы учите следующее поколение!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${meeting-marina.image}"
+      - "${marina-first-glimpse.image}"
     action: "Otters looking at photos of children learning about them"
     image: "advocacy-lesson.jpg"
     imageAlt:
@@ -890,8 +1041,8 @@ sections:
       ru: "Там, где когда-то было бесплодное морское дно, молодая ламинария теперь покачивалась на течении. Восстановление сработало! Рыба вернулась, тюлени посещали, и вода искрилась жизнью. 'Мы сделали это,' - сказал Профессор Келп со слезами на глазах. 'Выдры, люди, работающие вместе. Вот что возможно, когда всем не всё равно. Лес снова жив!'"
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${professor-kelp.image}"
-      - "${meeting-marina.image}"
+      - "${professor-kelp-intro.image}"
+      - "${marina-first-glimpse.image}"
     action: "Otters celebrating in restored, thriving kelp forest"
     image: "kelp-revival.jpg"
     imageAlt:
@@ -911,7 +1062,7 @@ sections:
     use_characters:
       - "${birth-of-ollie.image}"
       - "${captain-whiskers.image}"
-      - "${meeting-marina.image}"
+      - "${marina-first-glimpse.image}"
     action: "Massive raft of 200+ otters floating together in unity"
     image: "building-bridges.jpg"
     imageAlt:
@@ -925,9 +1076,9 @@ sections:
       es: "La Promesa de la Dra. Océano"
       ru: "Обещание доктора Океан"
     content:
-      en: "Dr. Ocean, the marine biologist who'd studied them for years, made a promise: 'I'll spend my life making sure sea otters thrive. You saved the kelp forests, now we'll save you.' She showed them plans for more protected areas, otter crossing bridges over roads, and pollution cleanup projects. Hope floated on every wave!"
-      es: "La Dra. Océano, la bióloga marina que los había estudiado durante años, hizo una promesa: 'Pasaré mi vida asegurándome de que las nutrias marinas prosperen. Ustedes salvaron los bosques de algas, ahora los salvaremos a ustedes.' Les mostró planes para más áreas protegidas, puentes de cruce para nutrias sobre carreteras, y proyectos de limpieza de contaminación. ¡La esperanza flotaba en cada ola!"
-      ru: "Доктор Океан, морской биолог, изучавший их годами, дала обещание: 'Я проведу свою жизнь, обеспечивая процветание морских выдр. Вы спасли леса ламинарии, теперь мы спасём вас.' Она показала им планы для большего количества охраняемых территорий, мостов для выдр над дорогами и проектов по очистке от загрязнения. Надежда плавала на каждой волне!"
+      en: "Dr. Ocean, the marine biologist who'd studied them for years, made a promise: 'I'll spend my life making sure sea otters thrive. You saved the kelp forests, now we'll celebrate your success!' She showed them plans for expanding natural habitats, beautiful otter crossing bridges, and marine sanctuary programs. Joy and hope floated on every wave!"
+      es: "La Dra. Océano, la bióloga marina que los había estudiado durante años, hizo una promesa: 'Pasaré mi vida asegurándome de que las nutrias marinas prosperen. Ustedes salvaron los bosques de algas, ¡ahora celebraremos su éxito!' Les mostró planes para expandir hábitats naturales, hermosos puentes para nutrias y programas de santuarios marinos. ¡La alegría y la esperanza flotaban en cada ola!"
+      ru: "Доктор Океан, морской биолог, изучавший их годами, дала обещание: 'Я проведу свою жизнь, обеспечивая процветание морских выдр. Вы спасли леса ламинарии, теперь мы отпразднуем ваш успех!' Она показала им планы расширения естественных местообитаний, красивых мостов для выдр и программ морских заповедников. Радость и надежда плавали на каждой волне!"
     image: "conservation-hero.jpg"
     imageAlt:
       en: "Marine biologist Dr. Ocean making promise to otter community"
@@ -962,7 +1113,7 @@ sections:
       ru: "У Марины появились щенки! Два крошечных выдрёнка, пушистых как одуванчики, плавали на её животе. Олли с радостью наблюдал, как следующее поколение начинает своё путешествие. 'Добро пожаловать в океан, малыши,' - прошептал он. 'Вы родились во время надежды. Ламинария растёт, люди помогают, и наша семья сильна. Ваше приключение только начинается!' Круг жизни продолжался, вечный как приливы."
     use_characters:
       - "${birth-of-ollie.image}"
-      - "${meeting-marina.image}"
+      - "${marina-first-glimpse.image}"
     action: "Marina with newborn pups as Ollie watches proudly"
     image: "new-life.jpg"
     imageAlt:
@@ -978,8 +1129,8 @@ sections:
     use_characters:
       - "${birth-of-ollie.image}"
       - "${mama-otter.image}"
-      - "${professor-kelp.image}"
-      - "${meeting-marina.image}"
+      - "${professor-kelp-intro.image}"
+      - "${marina-first-glimpse.image}"
       - "${meet-ruby.image}"
     image: "magazine-cover.jpg"
     imageAlt:
@@ -987,82 +1138,93 @@ sections:
       es: "Ollie la nutria marina en la portada con familia y bosque de algas"
       ru: "Олли морская выдра на обложке журнала с семьёй и лесом ламинарии"
 
-funFacts:
-  title:
-    en: "Amazing Otter Facts!"
-    es: "¡Datos Asombrosos de las Nutrias!"
-    ru: "Удивительные факты о выдрах!"
-  facts:
-    - title:
-        en: "Super Dense Fur"
-        es: "Pelaje Súper Denso"
-        ru: "Супер густой мех"
-      content:
-        en: "Sea otters have the densest fur of any animal - up to 1 million hairs per square inch! That's more hair in one square inch than a human has on their entire head!"
-        es: "¡Las nutrias marinas tienen el pelaje más denso de cualquier animal - hasta 1 millón de pelos por pulgada cuadrada! ¡Eso es más pelo en una pulgada cuadrada que el que un humano tiene en toda su cabeza!"
-        ru: "У морских выдр самый густой мех среди всех животных - до 1 миллиона волосков на квадратный дюйм! Это больше волос на одном квадратном дюйме, чем у человека на всей голове!"
-      image: "fun-fact-fur.jpg"
-      
-    - title:
-        en: "Eating Machines"
-        es: "Máquinas de Comer"
-        ru: "Машины для еды"
-      content:
-        en: "Sea otters eat 25% of their body weight every day! For a 60-pound otter, that's 15 pounds of food daily - like a human eating 40 hamburgers!"
-        es: "¡Las nutrias marinas comen el 25% de su peso corporal cada día! Para una nutria de 60 libras, eso es 15 libras de comida diaria - ¡como un humano comiendo 40 hamburguesas!"
-        ru: "Морские выдры съедают 25% своего веса каждый день! Для выдры весом 60 фунтов это 15 фунтов еды ежедневно - как если бы человек съедал 40 гамбургеров!"
-      image: "fun-fact-eating.jpg"
-      
-    - title:
-        en: "Holding Hands"
-        es: "Tomados de las Manos"
-        ru: "Держась за лапы"
-      content:
-        en: "Otters hold hands while sleeping so they don't drift apart! These groups are called 'rafts' and can include over 100 otters floating together!"
-        es: "¡Las nutrias se toman de las manos mientras duermen para no separarse! Estos grupos se llaman 'balsas' y pueden incluir más de 100 nutrias flotando juntas!"
-        ru: "Выдры держатся за лапы во время сна, чтобы не расплыться! Эти группы называются 'плотами' и могут включать более 100 выдр, плавающих вместе!"
-      image: "fun-fact-holding-hands.jpg"
-      
-    - title:
-        en: "Purple Teeth"
-        es: "Dientes Púrpuras"
-        ru: "Пурпурные зубы"
-      content:
-        en: "Their teeth can turn purple from eating so many purple sea urchins! It's a sign of a healthy otter diet and doesn't hurt them at all."
-        es: "¡Sus dientes pueden volverse púrpuras por comer tantos erizos de mar púrpuras! Es una señal de una dieta saludable de nutria y no les hace daño en absoluto."
-        ru: "Их зубы могут стать пурпурными от поедания множества пурпурных морских ежей! Это признак здорового питания выдры и совсем не вредит им."
-      image: "fun-fact-purple-teeth.jpg"
+  # Fun Facts section
+  - id: fun-facts
+    title:
+      en: "Amazing Otter Facts!"
+      es: "¡Datos Asombrosos de las Nutrias!"
+      ru: "Удивительные факты о выдрах!"
+    content:
+      en: "Did you know that sea otters have some of the most amazing abilities in the animal kingdom? Let's discover some incredible facts about these playful ocean engineers that will amaze you!"
+      es: "¿Sabías que las nutrias marinas tienen algunas de las habilidades más increíbles del reino animal? ¡Descubramos algunos hechos increíbles sobre estos ingenieros oceánicos juguetones que te asombrarán!"
+      ru: "Знали ли вы, что у морских выдр есть одни из самых удивительных способностей в животном царстве? Давайте откроем некоторые невероятные факты об этих игривых океанских инженерах, которые вас поразят!"
+    facts:
+      - title:
+          en: "Super Dense Fur"
+          es: "Pelaje Súper Denso"
+          ru: "Супер густой мех"
+        content:
+          en: "Sea otters have the densest fur of any animal - up to 1 million hairs per square inch! That's more hair in one tiny area than most animals have on their entire body!"
+          es: "¡Las nutrias marinas tienen el pelaje más denso de cualquier animal - hasta 1 millón de pelos por pulgada cuadrada! ¡Eso es más pelo en un área pequeña que el que la mayoría de los animales tienen en todo su cuerpo!"
+          ru: "У морских выдр самый густой мех среди всех животных - до 1 миллиона волосков на квадратный дюйм! Это больше волос на одном квадратном дюйме, чем у человека на всей голове!"
+        image: "fun-fact-fur.jpg"
+      - title:
+          en: "Eating Machines"
+          es: "Máquinas de Comer"
+          ru: "Машины для еды"
+        content:
+          en: "Sea otters eat 25% of their body weight every day! For a 60-pound otter, that's 15 pounds of food daily - imagine eating that much seafood every single day!"
+          es: "¡Las nutrias marinas comen el 25% de su peso corporal cada día! Para una nutria de 60 libras, eso es 15 libras de comida diaria - ¡imaginen comer tanto marisco todos los días!"
+          ru: "Морские выдры съедают 25% своего веса каждый день! Для выдры весом 60 фунтов это 15 фунтов еды ежедневно - как если бы человек съедал 40 гамбургеров!"
+        image: "fun-fact-eating.jpg"
+      - title:
+          en: "Holding Hands"
+          es: "Tomados de las Manos"
+          ru: "Держась за лапы"
+        content:
+          en: "Otters hold hands while sleeping so they don't drift apart! These groups are called 'rafts' and can include over 100 otters floating together!"
+          es: "¡Las nutrias se toman de las manos mientras duermen para no separarse! Estos grupos se llaman 'balsas' y pueden incluir más de 100 nutrias flotando juntas!"
+          ru: "Выдры держатся за лапы во время сна, чтобы не расплыться! Эти группы называются 'плотами' и могут включать более 100 выдр, плавающих вместе!"
+        image: "fun-fact-holding-hands.jpg"
+      - title:
+          en: "Purple Teeth"
+          es: "Dientes Púrpuras"
+          ru: "Пурпурные зубы"
+        content:
+          en: "Their teeth can turn purple from eating so many purple sea urchins! It's a sign of a healthy otter diet and doesn't hurt them at all."
+          es: "¡Sus dientes pueden volverse púrpuras por comer tantos erizos de mar púrpuras! Es una señal de una dieta saludable de nutria y no les hace daño en absoluto."
+          ru: "Их зубы могут стать пурпурными от поедания множества пурпурных морских ежей! Это признак здорового питания выдры и совсем не вредит им."
+        image: "fun-fact-purple-teeth.jpg"
 
-viewerDetails:
-- title:
-    en: "Tool Use Intelligence"
-    es: "Inteligencia en Uso de Herramientas"
-    ru: "Интеллект использования инструментов"
-  description:
-    en: "Sea otters are one of the few animals that use tools! Each otter has a favorite rock they keep in a pouch under their arm. Some otters have been observed using the same rock for over 8 years!"
-    es: "¡Las nutrias marinas son uno de los pocos animales que usan herramientas! Cada nutria tiene una roca favorita que guarda en una bolsa bajo su brazo. ¡Se ha observado que algunas nutrias usan la misma roca durante más de 8 años!"
-    ru: "Морские выдры - одни из немногих животных, использующих инструменты! У каждой выдры есть любимый камень, который она хранит в кармане под мышкой. Наблюдали, как некоторые выдры используют один и тот же камень более 8 лет!"
-  image: "detail-tool-use.jpg"
-  
-- title:
-    en: "Keystone Species"
-    es: "Especie Clave"
-    ru: "Ключевой вид"
-  description:
-    en: "Sea otters are a keystone species - without them, entire ecosystems collapse. By eating sea urchins, they prevent the destruction of kelp forests, which provide homes for thousands of species and help fight climate change."
-    es: "Las nutrias marinas son una especie clave - sin ellas, ecosistemas enteros colapsan. Al comer erizos de mar, previenen la destrucción de los bosques de algas, que proporcionan hogares para miles de especies y ayudan a combatir el cambio climático."
-    ru: "Морские выдры - ключевой вид - без них рушатся целые экосистемы. Поедая морских ежей, они предотвращают уничтожение лесов ламинарии, которые обеспечивают дома для тысяч видов и помогают бороться с изменением климата."
-  image: "detail-keystone.jpg"
-  
-- title:
-    en: "No Blubber, Just Fur"
-    es: "Sin Grasa, Solo Pelaje"
-    ru: "Без жира, только мех"
-  description:
-    en: "Unlike other marine mammals, sea otters don't have blubber for insulation. They rely entirely on their incredibly dense fur and high metabolism to stay warm. They must groom constantly to maintain their fur's insulating properties."
-    es: "A diferencia de otros mamíferos marinos, las nutrias marinas no tienen grasa para aislamiento. Dependen completamente de su pelaje increíblemente denso y alto metabolismo para mantenerse calientes. Deben acicalarse constantemente para mantener las propiedades aislantes de su pelaje."
-    ru: "В отличие от других морских млекопитающих, у морских выдр нет жира для изоляции. Они полностью полагаются на свой невероятно густой мех и высокий метаболизм, чтобы согреться. Они должны постоянно ухаживать за собой, чтобы поддерживать изолирующие свойства меха."
-  image: "detail-no-blubber.jpg"
+  # Viewer Details section
+  - id: viewer-details
+    title:
+      en: "Amazing Otter Details!"
+      es: "¡Detalles Asombrosos de las Nutrias!"
+      ru: "Удивительные детали о выдрах!"
+    content:
+      en: "Let's take a closer look at some of the most fascinating aspects of sea otter behavior and biology. These incredible creatures have evolved amazing adaptations to thrive in their ocean home!"
+      es: "¡Echemos un vistazo más de cerca a algunos de los aspectos más fascinantes del comportamiento y la biología de las nutrias marinas! ¡Estas criaturas increíbles han desarrollado adaptaciones sorprendentes para prosperar en su hogar oceánico!"
+      ru: "Давайте внимательнее посмотрим на некоторые из самых увлекательных аспектов поведения и биологии морских выдр. Эти невероятные существа развили удивительные приспособления для процветания в своём океанском доме!"
+    details:
+      - title:
+          en: "Tool Use Intelligence"
+          es: "Inteligencia en Uso de Herramientas"
+          ru: "Интеллект использования инструментов"
+        description:
+          en: "Sea otters are one of the few animals that use tools! Each otter has a favorite rock they keep in a pouch under their arm. Some otters have been observed using the same rock for over 8 years!"
+          es: "¡Las nutrias marinas son uno de los pocos animales que usan herramientas! Cada nutria tiene una roca favorita que guarda en una bolsa bajo su brazo. ¡Se ha observado que algunas nutrias usan la misma roca durante más de 8 años!"
+          ru: "Морские выдры - одни из немногих животных, использующих инструменты! У каждой выдры есть любимый камень, который она хранит в кармане под мышкой. Наблюдали, как некоторые выдры используют один и тот же камень более 8 лет!"
+        image: "detail-tool-use.jpg"
+      - title:
+          en: "Keystone Species"
+          es: "Especie Clave"
+          ru: "Ключевой вид"
+        description:
+          en: "Sea otters are a keystone species - without them, entire ecosystems collapse. By eating sea urchins, they prevent the destruction of kelp forests, which provide homes for thousands of species and help fight climate change."
+          es: "Las nutrias marinas son una especie clave - sin ellas, ecosistemas enteros colapsan. Al comer erizos de mar, previenen la destrucción de los bosques de algas, que proporcionan hogares para miles de especies y ayudan a combatir el cambio climático."
+          ru: "Морские выдры - ключевой вид - без них рушатся целые экосистемы. Поедая морских ежей, они предотвращают уничтожение лесов ламинарии, которые обеспечивают дома для тысяч видов и помогают бороться с изменением климата."
+        image: "detail-keystone.jpg"
+      - title:
+          en: "No Blubber, Just Fur"
+          es: "Sin Grasa, Solo Pelaje"
+          ru: "Без жира, только мех"
+        description:
+          en: "Unlike other marine mammals, sea otters don't have blubber for insulation. They rely entirely on their incredibly dense fur and high metabolism to stay warm. They must groom constantly to maintain their fur's insulating properties."
+          es: "A diferencia de otros mamíferos marinos, las nutrias marinas no tienen grasa para aislamiento. Dependen completamente de su pelaje increíblemente denso y alto metabolismo para mantenerse calientes. Deben acicalarse constantemente para mantener las propiedades aislantes de su pelaje."
+          ru: "В отличие от других морских млекопитающих, у морских выдр нет жира для изоляции. Они полностью полагаются на свой невероятно густой мех и высокий метаболизм, чтобы согреться. Они должны постоянно ухаживать за собой, чтобы поддерживать изолирующие свойства меха."
+        image: "detail-no-blubber.jpg"
+
 
 imageGeneration:
   style:
@@ -1073,8 +1235,8 @@ routing:
     - "hero-kelp-forest.jpg"
     - "kelp-forest-intro.jpg"
     - "raft-formation.jpg"
-    - "oil-spill.jpg"
-    - "rescue-rehabilitation.jpg"
+    - "abundant-natural-feast.jpg"
+    - "family-reunion.jpg"
     - "protected-area.jpg"
     - "kelp-revival.jpg"
     - "building-bridges.jpg"
@@ -1083,8 +1245,12 @@ routing:
     # All character-specific and action scenes using references
     - "birth-of-ollie.jpg"
     - "mama-otter.jpg"
-    - "first-floating-lesson.jpg"
-    - "grooming-time.jpg"
+    - "first-floating-attempt.jpg"
+    - "first-floating-struggle.jpg"
+    - "first-floating-success.jpg"
+    - "grooming-preparation.jpg"
+    - "grooming-deep-clean.jpg"
+    - "grooming-complete.jpg"
     - "professor-kelp.jpg"
     - "first-rock-tool.jpg"
     - "urchin-hunt.jpg"
@@ -1099,27 +1265,31 @@ routing:
     - "first-solo-hunt.jpg"
     - "great-white-encounter.jpg"
     - "captain-whiskers.jpg"
-    - "sick-kelp.jpg"
-    - "helping-injured-seal.jpg"
+    - "healthy-kelp-garden.jpg"
+    - "playing-with-seal-friends.jpg"
     - "advanced-tool-techniques.jpg"
-    - "pollution-problem.jpg"
-    - "meeting-marina.jpg"
+    - "crystal-clear-waters.jpg"
+    - "marina-first-glimpse.jpg"
+    - "marina-introduction.jpg"
+    - "marina-playing-together.jpg"
     - "missing-mother.jpg"
     - "crab-hunting.jpg"
     - "cold-current.jpg"
-    - "teaching-ruby.jpg"
-    - "human-boat.jpg"
+    - "ruby-teaching-basics.jpg"
+    - "ruby-practicing.jpg"
+    - "ruby-success.jpg"
+    - "whale-watching.jpg"
     - "kelp-restoration.jpg"
     - "deep-dive-challenge.jpg"
     - "urchin-explosion.jpg"
-    - "rescue-mission.jpg"
+    - "raft-building-mission.jpg"
     - "seasonal-changes.jpg"
     - "coming-of-age.jpg"
-    - "scientists-arrive.jpg"
-    - "radio-collar.jpg"
+    - "natural-otter-behaviors.jpg"
+    - "distinctive-natural-markings.jpg"
     - "whiskers-history.jpg"
-    - "eco-tourism.jpg"
-    - "climate-change.jpg"
+    - "otter-games-and-play.jpg"
+    - "seasonal-changes.jpg"
     - "advocacy-lesson.jpg"
     - "teaching-next-gen.jpg"
     - "conservation-hero.jpg"

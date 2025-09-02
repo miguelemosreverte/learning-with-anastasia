@@ -37,12 +37,32 @@
       "needsTranslations": false
     },
     {
-      "filename": "first-floating-lesson.jpg",
+      "filename": "first-floating-attempt.jpg",
       "type": "content",
       "alt": {
-        "en": "Baby Ollie learning to float on his back with paws spread, supervised by mother",
-        "es": "Bebé Ollie aprendiendo a flotar de espaldas con las patas extendidas",
-        "ru": "Малыш Олли учится плавать на спине с расставленными лапками"
+        "en": "Baby Ollie struggling with his first floating attempts, rolling sideways",
+        "es": "Bebé Ollie luchando con sus primeros intentos de flotar, rodando hacia los lados",
+        "ru": "Малыш Олли борется с первыми попытками плавать, переворачиваясь на бок"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-floating-struggle.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Baby Ollie concentrating hard while learning to balance on the water",
+        "es": "Bebé Ollie concentrándose mucho mientras aprende a equilibrarse en el agua",
+        "ru": "Малыш Олли усердно сосредотачивается, изучая равновесие на воде"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-floating-success.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Baby Ollie floating perfectly on his back with pure happiness",
+        "es": "Bebé Ollie flotando perfectamente de espaldas con pura felicidad",
+        "ru": "Малыш Олли идеально плавает на спине с чистой радостью"
       },
       "needsTranslations": false
     },
@@ -217,22 +237,22 @@
       "needsTranslations": false
     },
     {
-      "filename": "sick-kelp.jpg",
+      "filename": "healthy-kelp-garden.jpg",
       "type": "content",
       "alt": {
-        "en": "Ollie and Professor Kelp examining patches of brown, dying kelp",
-        "es": "Ollie y Profesor Kelp examinando parches de algas marrones moribundas",
-        "ru": "Олли и Профессор Келп изучают участки коричневой умирающей ламинарии"
+        "en": "Ollie and Professor Kelp admiring golden, healthy kelp forest with sunlight streaming through",
+        "es": "Ollie y Profesor Kelp admirando un bosque dorado y saludable de algas con luz solar atravesando",
+        "ru": "Олли и Профессор Келп любуются золотым, здоровым лесом ламинарии с проникающим солнечным светом"
       },
       "needsTranslations": false
     },
     {
-      "filename": "helping-injured-seal.jpg",
+      "filename": "playing-with-seal-friends.jpg",
       "type": "content",
       "alt": {
-        "en": "Ollie and Mama carefully freeing a harbor seal from fishing line",
-        "es": "Ollie y Mamá liberando cuidadosamente una foca de línea de pesca",
-        "ru": "Олли и Мама осторожно освобождают тюленя от рыболовной лески"
+        "en": "Ollie playing underwater games with a young harbor seal while Mama watches",
+        "es": "Ollie jugando juegos submarinos con una joven foca mientras Mamá observa",
+        "ru": "Олли играет в подводные игры с молодым тюленем, пока Мама наблюдает"
       },
       "needsTranslations": false
     },
@@ -247,12 +267,12 @@
       "needsTranslations": false
     },
     {
-      "filename": "pollution-problem.jpg",
+      "filename": "crystal-clear-waters.jpg",
       "type": "content",
       "alt": {
-        "en": "Ollie and Professor Kelp avoiding dangerous plastic debris in water",
-        "es": "Ollie y Profesor Kelp evitando peligrosos desechos plásticos en el agua",
-        "ru": "Олли и Профессор Келп избегают опасного пластикового мусора в воде"
+        "en": "Ollie and Professor Kelp swimming in crystal clear waters with beautiful jellyfish",
+        "es": "Ollie y Profesor Kelp nadando en aguas cristalinas con hermosas medusas",
+        "ru": "Олли и Профессор Келп плывут в кристально чистых водах с красивыми медузами"
       },
       "needsTranslations": false
     },
@@ -307,12 +327,12 @@
       "needsTranslations": false
     },
     {
-      "filename": "human-boat.jpg",
+      "filename": "whale-watching.jpg",
       "type": "content",
       "alt": {
-        "en": "Otters floating peacefully as tourists photograph them from boat",
-        "es": "Nutrias flotando pacíficamente mientras turistas las fotografían desde bote",
-        "ru": "Выдры мирно плавают, пока туристы фотографируют их с лодки"
+        "en": "Otters observing a humpback whale surfacing nearby with water spouts",
+        "es": "Nutrias observando una ballena jorobada emergiendo cerca con chorros de agua",
+        "ru": "Выдры наблюдают за горбатым китом, всплывающим рядом с водяными фонтанами"
       },
       "needsTranslations": false
     },
@@ -347,12 +367,12 @@
       "needsTranslations": false
     },
     {
-      "filename": "rescue-mission.jpg",
+      "filename": "raft-building-mission.jpg",
       "type": "content",
       "alt": {
-        "en": "Ollie, Marina and Captain Whiskers rescuing trapped otter from net",
-        "es": "Ollie, Marina y Capitán Bigotes rescatando nutria atrapada de red",
-        "ru": "Олли, Марина и Капитан Усач спасают пойманную в сеть выдру"
+        "en": "Ollie, Marina and Captain Whiskers helping new otter arrange kelp sleeping area",
+        "es": "Ollie, Marina y Capitán Bigotes ayudando a nueva nutria arreglar área de dormir en algas",
+        "ru": "Олли, Марина и Капитан Усач помогают новой выдре устроить место для сна в ламинарии"
       },
       "needsTranslations": false
     },
@@ -377,42 +397,42 @@
       "needsTranslations": false
     },
     {
-      "filename": "scientists-arrive.jpg",
+      "filename": "natural-otter-behaviors.jpg",
       "type": "content",
       "alt": {
-        "en": "Marine biologists carefully observing and documenting otter behavior",
-        "es": "Biólogos marinos observando y documentando cuidadosamente comportamiento de nutrias",
-        "ru": "Морские биологи тщательно наблюдают и документируют поведение выдр"
+        "en": "Otters showing off special underwater tricks and balancing skills",
+        "es": "Nutrias mostrando trucos submarinos especiales y habilidades de equilibrio",
+        "ru": "Выдры демонстрируют особые подводные трюки и навыки баланса"
       },
       "needsTranslations": false
     },
     {
-      "filename": "radio-collar.jpg",
+      "filename": "distinctive-natural-markings.jpg",
       "type": "content",
       "alt": {
-        "en": "Captain Whiskers wearing research collar, returning to water",
-        "es": "Capitán Bigotes con collar de investigación, volviendo al agua",
-        "ru": "Капитан Усач с исследовательским ошейником возвращается в воду"
+        "en": "Captain Whiskers showing his unique scars and fur patterns for identification",
+        "es": "Capitán Bigotes mostrando sus cicatrices únicas y patrones de pelaje para identificación",
+        "ru": "Капитан Усач показывает свои уникальные шрамы и узоры меха для идентификации"
       },
       "needsTranslations": false
     },
     {
-      "filename": "oil-spill.jpg",
+      "filename": "abundant-natural-feast.jpg",
       "type": "content",
       "alt": {
-        "en": "Otters avoiding dangerous oil slick on water surface",
-        "es": "Nutrias evitando peligrosa mancha de petróleo en superficie del agua",
-        "ru": "Выдры избегают опасного нефтяного пятна на поверхности воды"
+        "en": "Otters surrounded by abundant seafood in pristine kelp forest waters",
+        "es": "Nutrias rodeadas de abundantes mariscos en aguas prístinas del bosque de algas",
+        "ru": "Выдры, окружённые обилием морепродуктов в чистых водах леса ламинарии"
       },
       "needsTranslations": false
     },
     {
-      "filename": "rescue-rehabilitation.jpg",
+      "filename": "family-reunion.jpg",
       "type": "content",
       "alt": {
-        "en": "Wildlife rescuers carefully cleaning and caring for oiled otters",
-        "es": "Rescatistas de vida silvestre limpiando y cuidando cuidadosamente nutrias con petróleo",
-        "ru": "Спасатели дикой природы тщательно очищают и ухаживают за загрязнёнными выдрами"
+        "en": "Extended otter family joyfully reuniting and grooming together on the water",
+        "es": "Familia extendida de nutrias reuniéndose alegremente y acicalándose juntos en el agua",
+        "ru": "Большая семья выдр радостно воссоединяется и ухаживает друг за другом на воде"
       },
       "needsTranslations": false
     },
@@ -437,22 +457,22 @@
       "needsTranslations": false
     },
     {
-      "filename": "eco-tourism.jpg",
+      "filename": "otter-games-and-play.jpg",
       "type": "content",
       "alt": {
-        "en": "Otters living naturally while eco-tourists watch from safe distance",
-        "es": "Nutrias viviendo naturalmente mientras ecoturistas observan desde distancia segura",
-        "ru": "Выдры живут естественно, пока экотуристы наблюдают с безопасного расстояния"
+        "en": "Otter community playing kelp volleyball and underwater games together",
+        "es": "Comunidad de nutrias jugando vóley con algas y juegos submarinos juntos",
+        "ru": "Сообщество выдр играет в волейбол с ламинарией и подводные игры вместе"
       },
       "needsTranslations": false
     },
     {
-      "filename": "climate-change.jpg",
+      "filename": "seasonal-changes.jpg",
       "type": "content",
       "alt": {
-        "en": "Professor Kelp speaking to concerned otter community about changing ocean",
-        "es": "Profesor Kelp hablando a comunidad de nutrias preocupadas sobre océano cambiante",
-        "ru": "Профессор Келп говорит с обеспокоенным сообществом выдр об изменяющемся океане"
+        "en": "Professor Kelp and otters enjoying the beauty of changing seasons in kelp forest",
+        "es": "Profesor Kelp y nutrias disfrutando la belleza de las estaciones cambiantes en bosque de algas",
+        "ru": "Профессор Келп и выдры наслаждаются красотой смены сезонов в лесу ламинарии"
       },
       "needsTranslations": false
     },
