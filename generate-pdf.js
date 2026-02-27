@@ -3,21 +3,25 @@
 const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
+const sharp = require('sharp');
 
 const ROOT_DIR = __dirname;
 const DEFAULT_OUTPUT_DIR = path.join(ROOT_DIR, 'pdfs');
 const LANGUAGES = ['en', 'es', 'ru'];
 
+// A4 aspect ratio: 297mm / 210mm
+const A4_ASPECT = 297 / 210;
+// Search flexibility for finding safe cut points (in screenshot pixels, at 2x DPI)
+// 800px at 2x = 400 CSS pixels — enough room to skip past a typical image
+const CUT_FLEXIBILITY = 800;
+
 function parseArgs(argv) {
-    const args = { chapter: null, lang: 'en', allLangs: false, size: 'A4', landscape: false, outputDir: DEFAULT_OUTPUT_DIR, density: 2 };
+    const args = { chapter: null, lang: 'en', allLangs: false, outputDir: DEFAULT_OUTPUT_DIR };
     for (let i = 0; i < argv.length; i++) {
         const arg = argv[i];
         if (arg === '--lang' && argv[i + 1]) { args.lang = argv[++i]; }
         else if (arg === '--all-langs') { args.allLangs = true; }
-        else if (arg === '--size' && argv[i + 1]) { args.size = argv[++i]; }
-        else if (arg === '--landscape') { args.landscape = true; }
         else if (arg === '--output' && argv[i + 1]) { args.outputDir = argv[++i]; }
-        else if (arg === '--density' && argv[i + 1]) { args.density = parseInt(argv[++i], 10); }
         else if (arg === '--help') {
             console.log(`
 Usage: node generate-pdf.js [chapter] [options]
@@ -27,20 +31,16 @@ Arguments:
                        If omitted, generates for ALL chapters
 
 Options:
-  --density <n>        Sections per page: 1, 2, or 4 (default: 2)
   --lang <code>        Language: en, es, ru (default: en)
   --all-langs          Generate PDFs for all languages
-  --size <format>      Page size: A4, Letter (default: A4)
-  --landscape          Landscape orientation (default: portrait)
   --output <dir>       Output directory (default: ./pdfs/)
   --help               Show this help
 
 Examples:
-  node generate-pdf.js beavers
-  node generate-pdf.js beavers --density 1    # Large images, 1 section/page
-  node generate-pdf.js beavers --density 4    # Compact, 4 sections/page
-  node generate-pdf.js beavers --lang es
-  node generate-pdf.js beavers --all-langs
+  node generate-pdf.js bears
+  node generate-pdf.js bears --lang ru
+  node generate-pdf.js bears --all-langs
+  node generate-pdf.js                    # All chapters, English
 `);
             process.exit(0);
         }
@@ -57,323 +57,77 @@ function discoverChapters() {
     });
 }
 
-// Density presets: sizing values for 1, 2, or 4 sections per page
-const DENSITY_PRESETS = {
-    1: {
-        sectionMargin: '20px',
-        sectionPadding: '20px',
-        sectionGap: '25px',
-        imageMaxHeight: '400px',
-        headingSize: '1.8rem',
-        headingMargin: '10px',
-        bodySize: '1.05rem',
-        bodyLineHeight: '1.6',
-        factGridCols: '250px 1fr',
-        factGap: '20px',
-        factImgHeight: '200px',
-        factTitleSize: '1.2rem',
-        factBodySize: '0.95rem',
-        headerPadding: '30px',
-        headerH1Size: '2.4rem',
-    },
-    2: {
-        sectionMargin: '5px',
-        sectionPadding: '5px',
-        sectionGap: '10px',
-        imageMaxHeight: '915px',
-        headingSize: '1.3rem',
-        headingMargin: '5px',
-        bodySize: '0.85rem',
-        bodyLineHeight: '1.4',
-        factGridCols: '480px 1fr',
-        factGap: '12px',
-        factImgHeight: '520px',
-        factTitleSize: '1rem',
-        factBodySize: '0.8rem',
-        headerPadding: '15px',
-        headerH1Size: '2rem',
-    },
-    4: {
-        sectionMargin: '6px',
-        sectionPadding: '8px',
-        sectionGap: '12px',
-        imageMaxHeight: '180px',
-        headingSize: '1.2rem',
-        headingMargin: '4px',
-        bodySize: '0.78rem',
-        bodyLineHeight: '1.4',
-        factGridCols: '160px 1fr',
-        factGap: '10px',
-        factImgHeight: '120px',
-        factTitleSize: '0.95rem',
-        factBodySize: '0.75rem',
-        headerPadding: '15px',
-        headerH1Size: '1.7rem',
-    },
-};
-
-function getPrintCSS(density) {
-    // Snap to nearest valid density
-    const validDensity = density <= 1 ? 1 : density <= 2 ? 2 : 4;
-    const d = DENSITY_PRESETS[validDensity];
-
-    return `
-        @page {
-            size: A4 portrait;
-            margin: 10mm 10mm 15mm 10mm;
-        }
-
-        /* Hide web-only elements */
-        .language-switcher {
-            display: none !important;
-        }
-
-        /* Reset body for print */
-        body {
-            background: white !important;
-            overflow: visible !important;
-            max-width: none !important;
-            position: static !important;
-        }
-
-        .main-wrapper {
-            overflow: visible !important;
-            max-width: none !important;
-        }
-
-        /* Remove all transitions and animations */
-        * {
-            transition: none !important;
-            animation: none !important;
-        }
-
-        /* === HEADER === */
-        .header {
-            padding: ${d.headerPadding} 0 !important;
-        }
-
-        .header h1 {
-            font-size: ${d.headerH1Size} !important;
-        }
-
-        /* === HERO SECTION — always its own page === */
-        .hero-section {
-            height: 500px !important;
-            max-height: 500px !important;
-            break-after: page !important;
-            page-break-after: always !important;
-        }
-
-        /* === CONTENT SECTIONS — side-by-side grid, never split === */
-        .content-section {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: ${d.sectionGap} !important;
-            align-items: center !important;
-            direction: ltr !important;
-            margin: ${d.sectionMargin} auto !important;
-            padding: ${d.sectionPadding} !important;
-            max-width: 100% !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-        }
-
-        .content-section:nth-child(even) {
-            direction: rtl !important;
-        }
-
-        /* Image containers */
-        .image-container {
-            max-width: 100% !important;
-            overflow: hidden !important;
-            margin-bottom: 0 !important;
-            box-shadow: none !important;
-            border-radius: 8px !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-            display: flex !important;
-            align-items: center !important;
-        }
-
-        .image-container img {
-            max-height: ${d.imageMaxHeight} !important;
-            width: 100% !important;
-            height: auto !important;
-            object-fit: cover !important;
-            border-radius: 8px !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-        }
-
-        /* Text content */
-        .text-content {
-            padding: 0 !important;
-            direction: ltr !important;
-        }
-
-        .text-content h2 {
-            font-size: ${d.headingSize} !important;
-            margin-bottom: ${d.headingMargin} !important;
-        }
-
-        .text-content p {
-            font-size: ${d.bodySize} !important;
-            line-height: ${d.bodyLineHeight} !important;
-        }
-
-        p {
-            orphans: 3 !important;
-            widows: 3 !important;
-        }
-
-        /* === FUN FACTS SECTION === */
-        .fun-facts-section {
-            background: #f5f5f5 !important;
-            padding: ${d.sectionPadding} !important;
-        }
-
-        .fun-facts-section h2,
-        .fun-facts-section .section-title {
-            color: #333 !important;
-            font-size: ${d.headingSize} !important;
-            margin-bottom: ${d.headingMargin} !important;
-        }
-
-        .fact-card {
-            display: grid !important;
-            grid-template-columns: ${d.factGridCols} !important;
-            gap: ${d.factGap} !important;
-            align-items: center !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-            margin-bottom: ${d.sectionMargin} !important;
-            box-shadow: none !important;
-            border: 1px solid #ddd !important;
-            padding: ${d.sectionPadding} !important;
-            border-radius: 6px !important;
-        }
-
-        .fact-card-image {
-            max-height: ${d.factImgHeight} !important;
-            width: 100% !important;
-            height: auto !important;
-            object-fit: cover !important;
-            border-radius: 6px !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-        }
-
-        .fact-card-content {
-            padding: 0 !important;
-        }
-
-        .fact-card-content h3 {
-            font-size: ${d.factTitleSize} !important;
-            margin-bottom: 4px !important;
-        }
-
-        .fact-card-content p {
-            font-size: ${d.factBodySize} !important;
-            line-height: ${d.bodyLineHeight} !important;
-        }
-
-        /* === VIEWER DETAILS === */
-        .viewer-details {
-            padding: ${d.sectionPadding} !important;
-        }
-
-        .viewer-details h2 {
-            font-size: ${d.headingSize} !important;
-            margin-bottom: ${d.headingMargin} !important;
-        }
-
-        .detail-card {
-            display: grid !important;
-            grid-template-columns: ${d.factGridCols} !important;
-            gap: ${d.factGap} !important;
-            align-items: center !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-            margin-bottom: ${d.sectionMargin} !important;
-            box-shadow: none !important;
-            border: 1px solid #ddd !important;
-            padding: ${d.sectionPadding} !important;
-            border-radius: 6px !important;
-        }
-
-        .detail-card img {
-            max-height: ${d.factImgHeight} !important;
-            width: 100% !important;
-            height: auto !important;
-            object-fit: cover !important;
-            border-radius: 6px !important;
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-        }
-
-        .detail-card h3 {
-            font-size: ${d.factTitleSize} !important;
-            margin-bottom: 4px !important;
-        }
-
-        .detail-card p {
-            font-size: ${d.factBodySize} !important;
-            line-height: ${d.bodyLineHeight} !important;
-        }
-
-        /* === ACTION SEQUENCES === */
-        .content-section.action-sequence {
-            border-left: 3px solid #FFCC00 !important;
-            background: transparent !important;
-            padding-left: ${d.sectionPadding} !important;
-            max-width: 100% !important;
-        }
-
-        /* === FOOTER === */
-        .footer {
-            break-before: avoid !important;
-            margin-top: 10px !important;
-            padding: 15px 0 !important;
-        }
-
-        /* Remove hover effects */
-        .content-section:hover .image-container img,
-        .image-container:hover img,
-        .fact-card:hover,
-        .detail-card:hover {
-            transform: none !important;
-        }
-
-        /* Hide inactive languages — no leftover space */
-        [data-lang]:not(.active):not(.lang-btn) {
-            display: none !important;
-            height: 0 !important;
-            overflow: hidden !important;
-        }
-
-        /* Preface section */
-        .preface-section {
-            break-inside: avoid !important;
-            page-break-inside: avoid !important;
-        }
-    `;
+/**
+ * Calculate A4 page height in pixels based on image width
+ */
+function calculatePageHeight(imageWidth) {
+    return Math.round(imageWidth * A4_ASPECT);
 }
 
-async function generatePDF(browser, chapterName, lang, options) {
-    const htmlPath = path.join(ROOT_DIR, chapterName, 'index.html');
-
-    if (!fs.existsSync(htmlPath)) {
-        console.error(`  ❌ Not found: ${htmlPath}`);
-        return null;
-    }
-
+/**
+ * Prepare the page for screenshot: render all sections, resolve images, switch language
+ */
+async function preparePage(page, htmlPath, lang) {
     const fileUrl = `file://${htmlPath}`;
-    const page = await browser.newPage();
 
-    await page.setViewport({ width: 1200, height: 800 });
+    await page.setViewport({ width: 1200, height: 800, deviceScaleFactor: 2 });
+
+    // BEFORE navigating: inject script that blocks VirtualRenderer's scroll listener
+    // from being registered. evaluateOnNewDocument runs before any page scripts,
+    // so the VirtualRenderer's window.addEventListener('scroll', ...) becomes a no-op.
+    await page.evaluateOnNewDocument(() => {
+        const origAddEventListener = window.addEventListener.bind(window);
+        window.addEventListener = function(type, handler, options) {
+            if (type === 'scroll') return; // Block scroll listeners on window
+            return origAddEventListener(type, handler, options);
+        };
+    });
+
     await page.goto(fileUrl, { waitUntil: 'networkidle0', timeout: 60000 });
 
-    // Force-render all virtualized sections (VirtualRenderer hides off-screen ones)
+    // IMMEDIATELY disable all animations, transitions, and lazy-loading effects.
+    // This must happen before anything else to prevent partial animations in screenshots.
+    await page.evaluate(() => {
+        const style = document.createElement('style');
+        style.textContent = `
+            *, *::before, *::after {
+                transition: none !important;
+                animation: none !important;
+                animation-delay: 0s !important;
+                transition-delay: 0s !important;
+            }
+            /* Force all images to fully visible, no blur, no scale, no borders */
+            img {
+                opacity: 1 !important;
+                filter: none !important;
+                transform: none !important;
+                border: none !important;
+                outline: none !important;
+            }
+            /* Hide inactive languages */
+            [data-lang]:not(.active):not(.lang-btn) {
+                display: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Kill all IntersectionObservers to prevent lazy-loading from firing during scroll
+        if (window.IntersectionObserver) {
+            const origIO = window.IntersectionObserver;
+            window.IntersectionObserver = function() {
+                return { observe() {}, unobserve() {}, disconnect() {} };
+            };
+        }
+
+        // Hide language switcher
+        const switcher = document.querySelector('.language-switcher');
+        if (switcher) switcher.style.display = 'none';
+    });
+
+    // Force-render all virtualized sections.
+    // The VirtualRenderer's initial updateVisibleSections() ran during page load
+    // and only rendered sections near the 800px viewport. We re-render ALL sections.
+    // Since the scroll listener was blocked above, nothing can unrender them.
     await page.evaluate(() => {
         document.querySelectorAll('.content-section').forEach(section => {
             if (section.dataset.originalHtml && section.dataset.rendered === 'false') {
@@ -383,7 +137,7 @@ async function generatePDF(browser, chapterName, lang, options) {
         });
     });
 
-    // Resolve lazy-loaded images
+    // Resolve lazy-loaded images: data-src → src, remove all lazy-loading classes
     await page.evaluate(() => {
         document.querySelectorAll('img[data-src]').forEach(img => {
             img.src = img.getAttribute('data-src');
@@ -393,30 +147,36 @@ async function generatePDF(browser, chapterName, lang, options) {
         document.querySelectorAll('img[loading="lazy"]').forEach(img => {
             img.removeAttribute('loading');
         });
+        // Force all images to their final loaded state
+        document.querySelectorAll('img').forEach(img => {
+            img.classList.remove('lazy-placeholder');
+            img.classList.add('lazy-loaded');
+            img.style.opacity = '1';
+            img.style.filter = 'none';
+            img.style.transform = 'none';
+            img.style.animation = 'none';
+        });
     });
 
-    // Activate target language across ALL elements (header, hero, content, facts, details, footer)
+    // Activate target language
     await page.evaluate((lang) => {
-        // Remove active from ALL data-lang elements (except language buttons)
         document.querySelectorAll('[data-lang]').forEach(el => {
             if (!el.classList.contains('lang-btn')) {
                 el.classList.remove('active');
             }
         });
-        // Add active to the target language everywhere
         document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
             if (!el.classList.contains('lang-btn')) {
                 el.classList.add('active');
             }
         });
-        // Update image alt texts
         document.querySelectorAll('img').forEach(img => {
             const alt = img.getAttribute(`data-alt-${lang}`);
             if (alt) img.alt = alt;
         });
     }, lang);
 
-    // Wait for all images to load
+    // Wait for all images to fully load
     await page.evaluate(() => {
         return Promise.all(
             Array.from(document.querySelectorAll('img')).map(img => {
@@ -424,53 +184,352 @@ async function generatePDF(browser, chapterName, lang, options) {
                 return new Promise(resolve => {
                     img.addEventListener('load', resolve);
                     img.addEventListener('error', resolve);
-                    setTimeout(resolve, 5000);
+                    setTimeout(resolve, 10000);
                 });
             })
         );
     });
 
-    // Inject print CSS with density setting
-    await page.addStyleTag({ content: getPrintCSS(options.density) });
+    // Wait for fonts to be ready
+    await page.evaluate(() => document.fonts.ready);
 
-    // Brief pause for CSS reflow
-    await new Promise(r => setTimeout(r, 800));
+    // Allow all images and layout to fully settle
+    await new Promise(r => setTimeout(r, 1500));
+}
 
-    // Generate PDF
-    const outputPath = path.join(options.outputDir, `${chapterName}-${lang}.pdf`);
+/**
+ * Take a full-page screenshot by scrolling through the page in viewport-sized
+ * segments and stitching raw pixel data. This avoids Chromium's ~16384px GPU
+ * texture limit which causes content to wrap in single fullPage screenshots.
+ *
+ * Key design choices:
+ * - Viewport stays at original 1200x800 to preserve CSS layout exactly
+ * - Raw pixel concatenation (no Sharp composite) avoids alpha/color artifacts
+ * - VirtualRenderer scroll listener is already blocked via evaluateOnNewDocument
+ */
+async function captureFullPage(page) {
+    const dimensions = await page.evaluate(() => ({
+        width: document.documentElement.scrollWidth,
+        height: document.documentElement.scrollHeight
+    }));
+
+    const scale = 2;
+    const vpWidth = 1200;
+    const vpHeight = 800; // Keep original viewport to preserve layout
+    const pixelWidth = vpWidth * scale;
+    const pixelVPHeight = vpHeight * scale;
+    const totalPixelHeight = Math.round(dimensions.height * scale);
+
+    // Ensure viewport matches what was used during page load
+    await page.setViewport({ width: vpWidth, height: vpHeight, deviceScaleFactor: scale });
+    await new Promise(r => setTimeout(r, 100));
+
+    const rawChunks = [];
+    let pixelsCaptured = 0;
+    let cssY = 0;
+
+    while (pixelsCaptured < totalPixelHeight) {
+        await page.evaluate(y => window.scrollTo(0, y), cssY);
+        await new Promise(r => setTimeout(r, 150));
+
+        // Browser may not scroll as far as requested near the bottom
+        const actualCSSY = await page.evaluate(() => window.scrollY);
+
+        const buf = await page.screenshot({ type: 'png' });
+
+        // Screenshot covers actualCSSY → actualCSSY + vpHeight in CSS coords.
+        // We want content starting from cssY, so skip any overlap at the top.
+        const topSkipPx = Math.round((cssY - actualCSSY) * scale);
+        const remainingPx = totalPixelHeight - pixelsCaptured;
+        const availablePx = pixelVPHeight - topSkipPx;
+        const usePx = Math.min(availablePx, remainingPx);
+
+        if (usePx <= 0) break;
+
+        // Extract raw pixel data for the usable portion (no compositing, no alpha blending)
+        const { data } = await sharp(buf)
+            .extract({ left: 0, top: topSkipPx, width: pixelWidth, height: usePx })
+            .raw()
+            .toBuffer({ resolveWithObject: true });
+
+        rawChunks.push(data);
+        pixelsCaptured += usePx;
+        cssY += usePx / scale;
+    }
+
+    // Build final image from concatenated raw pixel data (pixel-perfect, no compositing)
+    const fullRaw = Buffer.concat(rawChunks);
+    const channels = Math.round(fullRaw.length / (pixelWidth * pixelsCaptured));
+
+    const buffer = await sharp(fullRaw, {
+        raw: { width: pixelWidth, height: pixelsCaptured, channels }
+    }).png().toBuffer();
+
+    return { buffer, width: pixelWidth, height: pixelsCaptured };
+}
+
+/**
+ * Find the row with lowest luminance variance in a horizontal band.
+ * Low variance = uniform background color = safe place to cut.
+ * Returns { row, variance } so callers can decide if the cut is clean enough.
+ */
+async function findMostUniformRow(screenshotBuffer, imageWidth, searchStart, searchEnd) {
+    const bandHeight = searchEnd - searchStart;
+    if (bandHeight <= 0) return { row: searchStart, variance: Infinity };
+
+    const { data, info } = await sharp(screenshotBuffer)
+        .extract({ left: 0, top: searchStart, width: imageWidth, height: bandHeight })
+        .raw()
+        .toBuffer({ resolveWithObject: true });
+
+    const channels = info.channels;
+    const bytesPerRow = imageWidth * channels;
+
+    let bestRow = 0;
+    let bestScore = Infinity;
+
+    for (let row = 0; row < bandHeight; row++) {
+        const rowOffset = row * bytesPerRow;
+
+        // Sample every 10th pixel for speed
+        const samples = [];
+        for (let x = 0; x < imageWidth; x += 10) {
+            const pixelOffset = rowOffset + (x * channels);
+            const r = data[pixelOffset];
+            const g = data[pixelOffset + 1];
+            const b = data[pixelOffset + 2];
+            samples.push(0.299 * r + 0.587 * g + 0.114 * b);
+        }
+
+        const mean = samples.reduce((a, b) => a + b, 0) / samples.length;
+        const variance = samples.reduce((a, b) => a + (b - mean) ** 2, 0) / samples.length;
+
+        if (variance < bestScore) {
+            bestScore = variance;
+            bestRow = row;
+        }
+    }
+
+    return { row: searchStart + bestRow, variance: bestScore };
+}
+
+/**
+ * Find optimal page cut points throughout the screenshot.
+ * Uses progressive search: if the standard range lands inside an image
+ * (high variance), widens the search up to 3x to find a clean gap.
+ */
+async function findSafeCutPoints(screenshotBuffer, imageWidth, imageHeight) {
+    const pageHeight = calculatePageHeight(imageWidth);
+    // Minimum page height to prevent tiny pages (40% of full A4 height)
+    const minPageHeight = Math.round(pageHeight * 0.4);
+    const cutPoints = [0];
+    let currentY = 0;
+
+    while (currentY + pageHeight < imageHeight) {
+        const targetY = currentY + pageHeight;
+
+        // Progressively widen search until we find a clean cut (low variance)
+        let bestCut = targetY;
+        let bestVariance = Infinity;
+        const maxFlexibility = CUT_FLEXIBILITY * 3;
+
+        for (let flex = CUT_FLEXIBILITY; flex <= maxFlexibility; flex += CUT_FLEXIBILITY) {
+            const searchStart = Math.max(targetY - flex, currentY + minPageHeight);
+            const searchEnd = Math.min(targetY + flex, imageHeight - 100);
+
+            if (searchStart >= searchEnd) break;
+
+            const { row, variance } = await findMostUniformRow(screenshotBuffer, imageWidth, searchStart, searchEnd);
+
+            if (variance < bestVariance) {
+                bestVariance = variance;
+                bestCut = row;
+            }
+
+            // Variance < 50 means a very uniform row (solid background) — good enough
+            if (bestVariance < 50) break;
+        }
+
+        cutPoints.push(bestCut);
+        currentY = bestCut;
+    }
+
+    cutPoints.push(imageHeight);
+    return cutPoints;
+}
+
+/**
+ * Sample the background color from a specific row in the screenshot.
+ * Used at cut points (which have near-zero variance = uniform color).
+ */
+async function sampleRowColor(screenshotBuffer, imageWidth, y) {
+    const { data } = await sharp(screenshotBuffer)
+        .extract({ left: 0, top: y, width: imageWidth, height: 1 })
+        .raw()
+        .toBuffer({ resolveWithObject: true });
+
+    // Average the center pixels to get the background color
+    const channels = data.length / imageWidth;
+    const mid = Math.floor(imageWidth / 2);
+    const offset = mid * channels;
+    return { r: data[offset], g: data[offset + 1], b: data[offset + 2] };
+}
+
+/**
+ * Extract page-sized image chunks from the full screenshot
+ */
+async function extractPageImages(screenshotBuffer, cutPoints, imageWidth, imageHeight) {
+    const pageHeight = calculatePageHeight(imageWidth);
+    const pages = [];
+
+    for (let i = 0; i < cutPoints.length - 1; i++) {
+        const top = cutPoints[i];
+        const bottom = cutPoints[i + 1];
+        const chunkHeight = bottom - top;
+
+        let pageBuffer = await sharp(screenshotBuffer)
+            .extract({ left: 0, top, width: imageWidth, height: chunkHeight })
+            .toBuffer();
+
+        // Pad short pages to full A4 height, using the actual background color
+        // from the bottom edge of this page chunk (the cut point row)
+        if (chunkHeight < pageHeight) {
+            const bgColor = await sampleRowColor(screenshotBuffer, imageWidth, Math.min(bottom - 1, imageHeight - 1));
+            pageBuffer = await sharp(pageBuffer)
+                .extend({
+                    top: 0,
+                    bottom: pageHeight - chunkHeight,
+                    left: 0,
+                    right: 0,
+                    background: bgColor
+                })
+                .toBuffer();
+        }
+
+        // Compress to JPEG for smaller file size
+        pageBuffer = await sharp(pageBuffer)
+            .jpeg({ quality: 90, mozjpeg: true })
+            .toBuffer();
+
+        pages.push(pageBuffer);
+    }
+
+    return pages;
+}
+
+/**
+ * Assemble page images into a final PDF using Puppeteer
+ */
+async function assemblePDF(browser, pageImages, outputPath) {
+    const page = await browser.newPage();
+
+    const imgTags = pageImages.map((buf, i) => {
+        const dataUri = `data:image/jpeg;base64,${buf.toString('base64')}`;
+        return `
+            <div class="pdf-page" ${i > 0 ? 'style="page-break-before: always;"' : ''}>
+                <img src="${dataUri}" />
+                <div class="page-number">${i + 1} / ${pageImages.length}</div>
+            </div>
+        `;
+    }).join('\n');
+
+    const html = `<!DOCTYPE html>
+    <html>
+    <head>
+        <style>
+            @page { size: A4 portrait; margin: 0; }
+            * { margin: 0; padding: 0; }
+            body { margin: 0; }
+            .pdf-page {
+                width: 210mm;
+                height: 297mm;
+                position: relative;
+                overflow: hidden;
+            }
+            .pdf-page img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: fill;
+            }
+            .page-number {
+                position: absolute;
+                bottom: 5mm;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-family: 'Source Sans Pro', Arial, sans-serif;
+                font-size: 9pt;
+                color: rgba(150, 150, 150, 0.7);
+            }
+        </style>
+    </head>
+    <body>
+        ${imgTags}
+    </body>
+    </html>`;
+
+    await page.setContent(html, { waitUntil: 'networkidle0' });
+
     await page.pdf({
         path: outputPath,
-        format: options.size || 'A4',
-        landscape: options.landscape || false,
+        format: 'A4',
         printBackground: true,
-        preferCSSPageSize: false,
-        margin: { top: '10mm', bottom: '15mm', left: '10mm', right: '10mm' },
-        displayHeaderFooter: true,
-        headerTemplate: '<div></div>',
-        footerTemplate: `
-            <div style="font-size: 9px; color: #999; text-align: center; width: 100%; padding: 5px 0;">
-                <span class="pageNumber"></span> / <span class="totalPages"></span>
-            </div>
-        `,
+        preferCSSPageSize: true,
+        margin: { top: 0, bottom: 0, left: 0, right: 0 }
     });
+
+    await page.close();
+}
+
+/**
+ * Main PDF generation pipeline for a single chapter+language
+ */
+async function generatePDF(browser, chapterName, lang, options) {
+    const htmlPath = path.join(ROOT_DIR, chapterName, 'index.html');
+    if (!fs.existsSync(htmlPath)) {
+        console.error(`  Not found: ${htmlPath}`);
+        return null;
+    }
+
+    const page = await browser.newPage();
+
+    // Step 1: Prepare the page (render, load images, switch language)
+    await preparePage(page, htmlPath, lang);
+
+    // Step 2: Full-page screenshot
+    const screenshot = await captureFullPage(page);
+    // Debug: save screenshot to inspect
+    const debugPath = path.join(options.outputDir, `${chapterName}-${lang}-debug.png`);
+    fs.writeFileSync(debugPath, screenshot.buffer);
+    console.log(`\n   Debug screenshot: ${screenshot.width}x${screenshot.height}px → ${debugPath}`);
+    await page.close();
+
+    // Step 3: Find safe cut points
+    const cutPoints = await findSafeCutPoints(screenshot.buffer, screenshot.width, screenshot.height);
+
+    // Step 4: Extract page images
+    const pageImages = await extractPageImages(screenshot.buffer, cutPoints, screenshot.width, screenshot.height);
+
+    // Step 5: Assemble PDF
+    const outputPath = path.join(options.outputDir, `${chapterName}-${lang}.pdf`);
+    await assemblePDF(browser, pageImages, outputPath);
 
     const stats = fs.statSync(outputPath);
     const sizeMB = (stats.size / 1024 / 1024).toFixed(1);
 
-    await page.close();
-    return { path: outputPath, size: sizeMB };
+    return { path: outputPath, size: sizeMB, pages: pageImages.length };
 }
 
 async function main() {
     const args = parseArgs(process.argv.slice(2));
-
     const chapters = args.chapter ? [args.chapter] : discoverChapters();
     const languages = args.allLangs ? LANGUAGES : [args.lang];
 
     for (const ch of chapters) {
         const htmlPath = path.join(ROOT_DIR, ch, 'index.html');
         if (!fs.existsSync(htmlPath)) {
-            console.error(`❌ Chapter "${ch}" not found (no ${ch}/index.html)`);
+            console.error(`Chapter "${ch}" not found (no ${ch}/index.html)`);
             console.error('   Available chapters:', discoverChapters().join(', '));
             process.exit(1);
         }
@@ -480,14 +539,11 @@ async function main() {
         fs.mkdirSync(args.outputDir, { recursive: true });
     }
 
-    const densityLabel = { 1: 'spacious (1/page)', 2: 'balanced (2/page)', 4: 'compact (4/page)' };
-
-    console.log('\n📄 PDF Generation Tool');
+    console.log('\n📄 PDF Generation Tool (Screenshot Mode)');
     console.log('='.repeat(50));
     console.log(`   Chapters:  ${chapters.join(', ')}`);
     console.log(`   Languages: ${languages.join(', ')}`);
-    console.log(`   Density:   ${densityLabel[args.density] || args.density + '/page'}`);
-    console.log(`   Page size: ${args.size} ${args.landscape ? 'landscape' : 'portrait'}`);
+    console.log(`   Mode:      Pixel-perfect screenshot → A4 pages`);
     console.log(`   Output:    ${args.outputDir}`);
     console.log();
 
@@ -505,7 +561,7 @@ async function main() {
             try {
                 const result = await generatePDF(browser, chapter, lang, args);
                 if (result) {
-                    console.log(`✅ ${result.size} MB`);
+                    console.log(`✅ ${result.pages} pages, ${result.size} MB`);
                     results.push(result);
                 }
             } catch (err) {
