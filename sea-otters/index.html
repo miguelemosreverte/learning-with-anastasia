@@ -2210,6 +2210,10 @@
                             // Re-apply language setting
                             const currentLang = localStorage.getItem('preferredLanguage') || 'en';
                             this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
                         }
                     } else {
                         // Unrender section but keep placeholder

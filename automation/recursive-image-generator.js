@@ -238,54 +238,72 @@ class RecursiveImageGenerator {
      */
     async generateWithGeminiReference(section, outputPath) {
         const { GoogleGenAI } = require("@google/genai");
-        
-        // Handle use_character field (with ${} syntax)
+
+        // Use the already-resolved reference path from resolveReferences()
         let referenceImage;
-        if (section.use_character) {
-            // Extract the image ID from ${id.image} format
-            const match = section.use_character.match(/\$\{(.+?)\.image\}/);
-            if (match) {
-                const characterId = match[1];
-                referenceImage = path.join(path.dirname(outputPath), `${characterId}.jpg`);
-            } else {
-                referenceImage = section.use_character;
-            }
+        if (section.characterReference) {
+            referenceImage = section.characterReference;
+        } else if (section.characterReferences && section.characterReferences.length > 0) {
+            referenceImage = section.characterReferences[0].path;
         } else {
-            referenceImage = section.characterReference || section.characterReferences[0].path;
+            throw new Error(`No resolved character reference found for section ${section.id}`);
         }
-        
+
+        console.log(`   📎 Reference image: ${path.basename(referenceImage)}`);
+
         const ai = new GoogleGenAI({
             apiKey: this.geminiKey
         });
-        
+
         const referenceData = fs.readFileSync(referenceImage);
         const base64Reference = referenceData.toString("base64");
-        
-        const prompt = [
-            {
-                text: `Create a cheerful, child-friendly illustration. Using the cute otter character from the reference image, create a heartwarming scene: ${section.action || section.prompt || section.content?.en || 'Generate image'}
-                
-                Keep the otter character looking exactly the same as in the reference - same fur color, same cute features.
-                ${section.title && section.title.en ? 'Context: ' + section.title.en : ''}
-                
-                Style: Animated movie quality, bright cheerful colors, wholesome and positive atmosphere.
-                Absolutely NO text or words in the image.`
-            },
-            {
-                inlineData: {
-                    mimeType: "image/jpeg",
-                    data: base64Reference
+
+        // Build prompt contents - include multiple reference images if available
+        const contents = [];
+
+        contents.push({
+            text: `Create a cheerful, child-friendly illustration. Using the character(s) from the reference image(s), create a heartwarming scene: ${section.action || section.prompt || section.content?.en || 'Generate image'}
+
+            Keep the characters looking exactly the same as in the reference - same fur color, same features, same style.
+            ${section.title && section.title.en ? 'Context: ' + section.title.en : ''}
+
+            Style: Studio Ghibli warmth, Pixar quality, vibrant colors, magical lighting, child-friendly.
+            Absolutely NO text or words in the image.`
+        });
+
+        // Add primary reference image
+        contents.push({
+            inlineData: {
+                mimeType: "image/jpeg",
+                data: base64Reference
+            }
+        });
+
+        // Add additional reference images if multiple characters
+        if (section.characterReferences && section.characterReferences.length > 1) {
+            for (let i = 1; i < section.characterReferences.length; i++) {
+                try {
+                    const additionalData = fs.readFileSync(section.characterReferences[i].path);
+                    contents.push({
+                        inlineData: {
+                            mimeType: "image/jpeg",
+                            data: additionalData.toString("base64")
+                        }
+                    });
+                    console.log(`   📎 Additional ref: ${path.basename(section.characterReferences[i].path)}`);
+                } catch (e) {
+                    console.log(`   ⚠️ Could not load additional ref: ${section.characterReferences[i].path}`);
                 }
             }
-        ];
-        
+        }
+
         let retries = 3;
         while (retries > 0) {
             try {
                 console.log("   🔄 Calling Gemini API with reference image...");
                 const response = await ai.models.generateContent({
-                    model: "gemini-2.5-flash-image-preview",
-                    contents: prompt
+                    model: "gemini-2.5-flash-image",
+                    contents: contents
                 });
                 
                 // Debug response structure
@@ -405,9 +423,9 @@ const requestData = JSON.stringify({
     model: 'dall-e-3',
     prompt: \`${prompt}
     
-    Style: Studio Ghibli warmth, Pixar quality, Van Gogh atmospheric effects.
-    Child-friendly, vibrant colors, magical lighting.
-    NO TEXT in the image.\`,
+    Style: Studio Ghibli warmth, Pixar quality, child-friendly illustration.
+    Vibrant colors, magical lighting, cozy atmosphere.
+    Absolutely NO text, words, letters, numbers, labels, or captions in the image.\`,
     n: 1,
     size: '1792x1024',
     quality: 'hd'
@@ -535,6 +553,8 @@ req.end();
                 title: chapterData.hero.title,
                 subtitle: chapterData.hero.subtitle,
                 image: chapterData.hero.image,
+                imageAlt: chapterData.hero.imageAlt,
+                prompt: chapterData.hero.imageAlt?.en,
                 isHero: true
             });
         }

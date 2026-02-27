@@ -108,7 +108,7 @@ sections:
       en: "Mama Bear is the heart of the family. She's been keeping her cubs warm and safe all winter long, curled around them like a living blanket. Even while resting, she stays alert — one ear always listening for sounds outside. Her deep, rumbling purr tells the cubs that everything is safe and sound."
       es: "Mamá Osa es el corazón de la familia. Ha mantenido a sus cachorros cálidos y seguros durante todo el invierno, acurrucada alrededor de ellos como una manta viviente. Incluso mientras descansa, se mantiene alerta — siempre con un oído escuchando los sonidos del exterior. Su profundo ronroneo les dice a los cachorros que todo está seguro y en orden."
       ru: "Мама Медведица — сердце семьи. Всю зиму она согревала и оберегала своих медвежат, свернувшись вокруг них живым одеялом. Даже отдыхая, она остаётся начеку — одно ухо всегда прислушивается к звукам снаружи. Её глубокое, мурчащее урчание говорит медвежатам, что всё в безопасности."
-    action: "mother brown bear that looks like parent of the reference bear cub, warm gentle expression, larger and protective, curled around in a cozy den"
+    action: "a large, clearly adult mother brown bear, much bigger than the reference bear cub, with a warm gentle nurturing expression, soft rounded body showing she is well-fed for winter, lovingly curled around her small cubs in a cozy den, clearly showing the size difference between mother and babies"
     image: "mama-bear-portrait.jpg"
     imageAlt:
       en: "Large gentle mother brown bear with warm eyes and protective expression, in a cozy den"
@@ -329,20 +329,20 @@ sections:
   - id: "detail-thick-fur"
     image: "detail-thick-fur.jpg"
     referenceImage: "${mama-bear-watching.image}"
-    prompt: "Using the mama bear from the reference image, create a detailed close-up of this bear's thick winter fur showing the two layers — dense soft underfur and longer guard hairs. Educational illustration showing insulation properties. Same character and art style as reference."
+    prompt: "Using the mama bear from the reference image, show mama bear in snowy weather looking warm and cozy, with a visual close-up detail of her thick fluffy fur layers visible — dense soft underfur beneath longer outer guard hairs. Snowflakes landing on her fur without melting. Same character and art style as reference. Absolutely NO text, words, labels, or captions."
     hidden: true
 
   - id: "detail-seasonal-diet"
     image: "detail-seasonal-diet.jpg"
     referenceImage: "${papa-story-berries.image}"
-    prompt: "Using the art style from the reference image, create an educational illustration showing a bear's seasonal diet cycle: spring (roots, grasses), summer (berries, insects), autumn (salmon, nuts), winter (stored fat). Circular diagram with the same warm illustration style as reference."
+    prompt: "Using the art style from the reference image, create a warm illustration showing four scenes of a bear eating different foods across the seasons — digging roots in spring, eating berries in summer, catching salmon in autumn, sleeping in winter. Show the scenes as a natural landscape transitioning through seasons. Same warm illustration style as reference. Absolutely NO text, words, labels, or captions."
     hidden: true
 
   # Fun fact reference images
   - id: "fun-fact-hibernation"
     image: "fun-fact-hibernation.jpg"
     referenceImage: "${mama-lullaby.image}"
-    prompt: "Using the sleeping bear family from reference, show the same family in deep hibernation with a magical educational overlay showing slowed heartbeat (8 bpm), lowered body temperature, and months of sleep. Same cozy den and characters as reference."
+    prompt: "Using the sleeping bear family from reference, show the same family in deep hibernation, peacefully curled up in their cozy den with soft golden light. Snow falling gently outside the den entrance. A dreamy magical glow surrounds the sleeping bears suggesting deep peaceful slumber. Same cozy den and characters as reference. Absolutely NO text, words, numbers, labels, or captions."
     hidden: true
 
   - id: "fun-fact-tiny-cubs"
