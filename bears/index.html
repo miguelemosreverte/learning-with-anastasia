@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brown Bears: The Promise of Spring - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Brown Bears: The Promise of Spring</h1>
+        <h1 data-lang="es">Osos Pardos: La Promesa de la Primavera</h1>
+        <h1 data-lang="ru">Бурые Медведи: Обещание Весны</h1>
+        <p data-lang="en" class="active">A Cozy Winter Tale of Family and Hope</p>
+        <p data-lang="es">Un Acogedor Cuento Invernal de Familia y Esperanza</p>
+        <p data-lang="ru">Уютная зимняя сказка о семье и надежде</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <img src="assets/images/hero-winter-den-landscape.jpg" 
+             alt="Brown Bears" 
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Brown Bears</h2>
+            <h2 class="hero-title" data-lang="es">Osos Pardos</h2>
+            <h2 class="hero-title" data-lang="ru">Бурые Медведи</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Promise of Spring</p>
+            <p class="hero-subtitle" data-lang="es">La Promesa de la Primavera</p>
+            <p class="hero-subtitle" data-lang="ru">Обещание Весны</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/baby-bear-portrait.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Adorable fluffy brown bear cub with big curious eyes, round ears, and soft brown fur, sitting in a cozy den" 
+                 data-alt-en="Adorable fluffy brown bear cub with big curious eyes, round ears, and soft brown fur, sitting in a cozy den"
+                 data-alt-es="Adorable cachorro de oso pardo esponjoso con grandes ojos curiosos, orejas redondas y suave pelaje marrón, sentado en una guarida acogedora"
+                 data-alt-ru="Очаровательный пушистый бурый медвежонок с большими любопытными глазами, круглыми ушами и мягкой коричневой шерстью, сидящий в уютной берлоге"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Baby Bear</h2>
+            <h2 data-lang="es">Conoce a Bebé Oso</h2>
+            <h2 data-lang="ru">Знакомьтесь: Малыш Медвежонок</h2>
+            <div data-lang="en" class="active">
+                <p>Baby Bear is a fluffy brown bear cub with the biggest, most curious eyes you&#x27;ve ever seen! He was born in the den during the coldest part of winter, no bigger than a squirrel. Now he&#x27;s grown into an adventurous little cub who can&#x27;t wait to see the world outside!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Bebé Oso es un esponjoso cachorro de oso pardo con los ojos más grandes y curiosos que hayas visto! Nació en la guarida durante la parte más fría del invierno, no más grande que una ardilla. ¡Ahora ha crecido hasta convertirse en un pequeño cachorro aventurero que no puede esperar para ver el mundo exterior!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Малыш Медвежонок — пушистый бурый медвежонок с самыми большими и любопытными глазами, которые вы когда-либо видели! Он родился в берлоге в самую холодную часть зимы, размером не больше белки. Теперь он вырос в маленького авантюрного медвежонка, который не может дождаться, чтобы увидеть мир снаружи!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/sister-bear-portrait.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Cute fluffy bear cub slightly smaller than Baby Bear, with a star-shaped light patch on chest, playful expression" 
+                 data-alt-en="Cute fluffy bear cub slightly smaller than Baby Bear, with a star-shaped light patch on chest, playful expression"
+                 data-alt-es="Lindo cachorro de oso esponjoso ligeramente más pequeño que Bebé Oso, con una mancha clara en forma de estrella en el pecho, expresión juguetona"
+                 data-alt-ru="Милый пушистый медвежонок, чуть меньше Малыша, со светлым пятнышком в форме звёздочки на груди, игривое выражение"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Sister Bear</h2>
+            <h2 data-lang="es">Conoce a Hermana Osa</h2>
+            <h2 data-lang="ru">Знакомьтесь: Сестрёнка Медвежонок</h2>
+            <div data-lang="en" class="active">
+                <p>Sister Bear is Baby Bear&#x27;s twin! She&#x27;s just a tiny bit smaller, with a lighter patch of fur on her chest shaped like a little star. She loves to tumble and play-wrestle with her brother in the warm den. Together, they make the perfect pair of curious cubs!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Hermana Osa es la gemela de Bebé Oso! Es solo un poquito más pequeña, con una mancha de pelaje más claro en su pecho con forma de estrellita. Le encanta rodar y jugar a luchar con su hermano en la cálida guarida. ¡Juntos, forman la pareja perfecta de cachorros curiosos!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Сестрёнка Медвежонок — близняшка Малыша Медвежонка! Она совсем чуточку меньше, со светлым пятнышком на груди в форме маленькой звёздочки. Она обожает кувыркаться и шутливо бороться с братиком в тёплой берлоге. Вместе они — идеальная парочка любопытных медвежат!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/mama-bear-portrait.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Large gentle mother brown bear with warm eyes and protective expression, in a cozy den" 
+                 data-alt-en="Large gentle mother brown bear with warm eyes and protective expression, in a cozy den"
+                 data-alt-es="Gran y gentil madre osa parda con ojos cálidos y expresión protectora, en una guarida acogedora"
+                 data-alt-ru="Большая нежная мама-медведица с тёплыми глазами и заботливым выражением, в уютной берлоге"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama Bear Keeps Watch</h2>
+            <h2 data-lang="es">Mamá Osa Vigila</h2>
+            <h2 data-lang="ru">Мама Медведица Сторожит</h2>
+            <div data-lang="en" class="active">
+                <p>Mama Bear is the heart of the family. She&#x27;s been keeping her cubs warm and safe all winter long, curled around them like a living blanket. Even while resting, she stays alert — one ear always listening for sounds outside. Her deep, rumbling purr tells the cubs that everything is safe and sound.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mamá Osa es el corazón de la familia. Ha mantenido a sus cachorros cálidos y seguros durante todo el invierno, acurrucada alrededor de ellos como una manta viviente. Incluso mientras descansa, se mantiene alerta — siempre con un oído escuchando los sonidos del exterior. Su profundo ronroneo les dice a los cachorros que todo está seguro y en orden.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Мама Медведица — сердце семьи. Всю зиму она согревала и оберегала своих медвежат, свернувшись вокруг них живым одеялом. Даже отдыхая, она остаётся начеку — одно ухо всегда прислушивается к звукам снаружи. Её глубокое, мурчащее урчание говорит медвежатам, что всё в безопасности.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/papa-bear-portrait.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Large strong Papa Bear with thick dark brown fur dusted with snowflakes, entering den with berries" 
+                 data-alt-en="Large strong Papa Bear with thick dark brown fur dusted with snowflakes, entering den with berries"
+                 data-alt-es="Gran y fuerte Papá Oso con grueso pelaje marrón oscuro espolvoreado con copos de nieve, entrando a la guarida con bayas"
+                 data-alt-ru="Большой сильный Папа Медведь с густой тёмно-коричневой шерстью, припорошённой снежинками, входит в берлогу с ягодами"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa Bear Returns!</h2>
+            <h2 data-lang="es">¡Papá Oso Regresa!</h2>
+            <h2 data-lang="ru">Папа Медведь Возвращается!</h2>
+            <div data-lang="en" class="active">
+                <p>The cubs hear heavy footsteps in the snow — Papa Bear is back! He&#x27;s the biggest, strongest bear in the valley, with thick dark brown fur dusted with snowflakes. He squeezes through the den entrance, shaking off the cold, and brings with him a bundle of frozen berries and roots he found under the snow.</p>
+            </div>
+            <div data-lang="es">
+                <p>Los cachorros escuchan pasos pesados en la nieve — ¡Papá Oso ha vuelto! Es el oso más grande y fuerte del valle, con grueso pelaje marrón oscuro espolvoreado con copos de nieve. Se mete por la entrada de la guarida, sacudiéndose el frío, y trae consigo un manojo de bayas y raíces congeladas que encontró bajo la nieve.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Медвежата слышат тяжёлые шаги в снегу — Папа Медведь вернулся! Он самый большой и сильный медведь в долине, с густой тёмно-коричневой шерстью, припорошённой снежинками. Он протискивается через вход в берлогу, стряхивая холод, и приносит с собой пучок замороженных ягод и корешков, которые нашёл под снегом.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/family-winter-feast.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">A Winter Feast</h2>
+            <h2 data-lang="es">Un Festín Invernal</h2>
+            <h2 data-lang="ru">Зимнее Угощение</h2>
+            <div data-lang="en" class="active">
+                <p>The whole family gathers around as Papa Bear shares his treasures. The frozen berries taste like little popsicles! Baby Bear and Sister Bear munch happily while Mama Bear nuzzles Papa&#x27;s cheek. &#x27;Eat up, little ones,&#x27; Papa says with a warm smile. &#x27;And I&#x27;ll tell you about something wonderful that&#x27;s coming soon...&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Toda la familia se reúne mientras Papá Oso comparte sus tesoros. ¡Las bayas congeladas saben como pequeñas paletas! Bebé Oso y Hermana Osa mastican felizmente mientras Mamá Osa acaricia la mejilla de Papá. &#x27;Coman bien, pequeños,&#x27; dice Papá con una cálida sonrisa. &#x27;Y les contaré sobre algo maravilloso que viene pronto...&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Вся семья собирается вместе, когда Папа Медведь делится своими сокровищами. Замороженные ягоды на вкус как маленькие леденцы! Малыш Медвежонок и Сестрёнка жуют радостно, пока Мама Медведица нежно прижимается к щеке Папы. &#x27;Кушайте, малыши,&#x27; говорит Папа с тёплой улыбкой. &#x27;А я расскажу вам о чём-то чудесном, что скоро наступит...&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/papa-story-melting-snow.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Story: When the Snow Melts</h2>
+            <h2 data-lang="es">La Historia de Papá: Cuando la Nieve se Derrite</h2>
+            <h2 data-lang="ru">Рассказ Папы: Когда Снег Тает</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Soon,&#x27; Papa Bear begins, his deep voice warm and soothing, &#x27;the sun will grow stronger. The snow on the mountains will start to melt, and tiny streams will trickle down, growing bigger and bigger until they become rushing rivers! The sound is like nature&#x27;s own music — a gentle symphony of water and birdsong.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Pronto,&#x27; comienza Papá Oso, su voz profunda cálida y reconfortante, &#x27;el sol se hará más fuerte. La nieve en las montañas comenzará a derretirse, y pequeños arroyos gotearán, haciéndose cada vez más grandes hasta convertirse en ríos caudalosos. ¡El sonido es como la propia música de la naturaleza — una suave sinfonía de agua y canto de pájaros!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Скоро,&#x27; начинает Папа Медведь, его глубокий голос тёплый и успокаивающий, &#x27;солнце станет сильнее. Снег на горах начнёт таять, и маленькие ручейки потекут вниз, становясь всё больше и больше, пока не превратятся в бурные реки! Звук — как собственная музыка природы — нежная симфония воды и птичьего пения.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/papa-story-wildflowers.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Story: A Carpet of Flowers</h2>
+            <h2 data-lang="es">La Historia de Papá: Una Alfombra de Flores</h2>
+            <h2 data-lang="ru">Рассказ Папы: Ковёр из Цветов</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;And then,&#x27; Papa continues, his eyes sparkling, &#x27;the meadows will explode with color! Purple lupines, yellow buttercups, and red paintbrush flowers will cover every hillside like a rainbow carpet. Butterflies will dance from flower to flower, and the air will smell sweeter than honey!&#x27; Sister Bear&#x27;s eyes grow wide with wonder.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Y entonces,&#x27; continúa Papá, sus ojos brillando, &#x27;¡los prados explotarán de color! Lupinos morados, ranúnculos amarillos y flores rojas cubrirán cada ladera como una alfombra arcoíris. ¡Las mariposas bailarán de flor en flor, y el aire olerá más dulce que la miel!&#x27; Los ojos de Hermana Osa se abren grandes de asombro.</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;А потом,&#x27; продолжает Папа, его глаза сверкают, &#x27;луга взорвутся красками! Фиолетовые люпины, жёлтые лютики и красные цветы покроют каждый склон, как радужный ковёр. Бабочки будут танцевать от цветка к цветку, а воздух будет пахнуть слаще мёда!&#x27; Глаза Сестрёнки Медвежонка широко раскрываются от восторга.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/papa-story-fishing.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Story: The Great Salmon Run</h2>
+            <h2 data-lang="es">La Historia de Papá: La Gran Carrera del Salmón</h2>
+            <h2 data-lang="ru">Рассказ Папы: Великий Ход Лосося</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Best of all,&#x27; Papa says with a big grin, &#x27;I&#x27;m going to teach you how to catch fish! The salmon swim upstream, leaping over waterfalls — and we bears stand in the river, waiting with our big paws ready. SPLASH! You&#x27;ll catch your very first fish!&#x27; Baby Bear bounces with excitement, already practicing his fishing stance.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Lo mejor de todo,&#x27; dice Papá con una gran sonrisa, &#x27;¡les voy a enseñar a atrapar peces! Los salmones nadan río arriba, saltando cascadas — y nosotros los osos nos paramos en el río, esperando con nuestras grandes patas listas. ¡SPLASH! ¡Atraparás tu primer pez!&#x27; Bebé Oso brinca de emoción, ya practicando su postura de pesca.</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;А самое лучшее,&#x27; говорит Папа с широкой улыбкой, &#x27;я научу вас ловить рыбу! Лосось плывёт вверх по течению, перепрыгивая через водопады — а мы, медведи, стоим в реке, с готовыми большими лапами. ПЛЕСК! Ты поймаешь свою самую первую рыбу!&#x27; Малыш Медвежонок подпрыгивает от волнения, уже тренируя свою рыболовную стойку.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/papa-story-berries.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Story: Berry Paradise</h2>
+            <h2 data-lang="es">La Historia de Papá: Paraíso de Bayas</h2>
+            <h2 data-lang="ru">Рассказ Папы: Ягодный Рай</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;And the berries!&#x27; Papa&#x27;s voice rises with delight. &#x27;Bushes so full of blueberries and raspberries that they bend under the weight! You&#x27;ll eat so many that your little noses will turn purple!&#x27; The cubs giggle. &#x27;We&#x27;ll fill our bellies until we&#x27;re round as boulders,&#x27; Papa laughs, patting his own big tummy.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;¡Y las bayas!&#x27; la voz de Papá se eleva con deleite. &#x27;¡Arbustos tan llenos de arándanos y frambuesas que se doblan bajo el peso! ¡Comerán tantas que sus naricitas se pondrán moradas!&#x27; Los cachorros se ríen. &#x27;Llenaremos nuestras barrigas hasta estar redondos como rocas,&#x27; se ríe Papá, palmeando su propia gran barriga.</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;А ягоды!&#x27; голос Папы поднимается от восторга. &#x27;Кусты, настолько полные черники и малины, что гнутся под тяжестью! Вы съедите столько, что ваши носики станут фиолетовыми!&#x27; Медвежата хихикают. &#x27;Мы наедимся так, что станем круглыми, как валуны,&#x27; смеётся Папа, похлопывая свой собственный большой животик.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/papa-story-playing.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Story: Playing Together</h2>
+            <h2 data-lang="es">La Historia de Papá: Jugando Juntos</h2>
+            <h2 data-lang="ru">Рассказ Папы: Играем Вместе</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;But my favorite part,&#x27; Papa says softly, pulling both cubs close, &#x27;is that we&#x27;ll do everything together. We&#x27;ll roll down grassy hills, splash in warm streams, chase butterflies, and watch the sunset paint the sky in oranges and pinks. As a family.&#x27; Mama Bear nods, her eyes glistening. &#x27;Together,&#x27; she whispers.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Pero mi parte favorita,&#x27; dice Papá suavemente, acercando a ambos cachorros, &#x27;es que haremos todo juntos. Rodaremos por colinas de hierba, salpicaremos en arroyos cálidos, perseguiremos mariposas y veremos cómo el atardecer pinta el cielo de naranjas y rosas. Como familia.&#x27; Mamá Osa asiente, con los ojos brillantes. &#x27;Juntos,&#x27; susurra ella.</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Но мой любимый момент,&#x27; говорит Папа тихо, притягивая обоих медвежат ближе, &#x27;это то, что мы будем делать всё вместе. Мы будем кататься по травянистым холмам, плескаться в тёплых ручьях, гоняться за бабочками и смотреть, как закат раскрашивает небо в оранжевые и розовые тона. Всей семьёй.&#x27; Мама Медведица кивает, её глаза блестят. &#x27;Вместе,&#x27; шепчет она.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/mama-lullaby.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama&#x27;s Lullaby</h2>
+            <h2 data-lang="es">La Canción de Cuna de Mamá</h2>
+            <h2 data-lang="ru">Мамина Колыбельная</h2>
+            <div data-lang="en" class="active">
+                <p>As the cubs&#x27; eyes grow heavy with sleep, Mama Bear begins to hum a soft, rumbling lullaby. It sounds like distant thunder mixed with purring — a sound only bear cubs know. &#x27;Sleep now, my little ones,&#x27; she murmurs. &#x27;Dream of flowers and fish and sunshine. When you wake, spring will be one day closer.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras los ojos de los cachorros se vuelven pesados de sueño, Mamá Osa comienza a tararear una suave y ronroneante canción de cuna. Suena como truenos lejanos mezclados con ronroneo — un sonido que solo los cachorros de oso conocen. &#x27;Duerman ahora, mis pequeños,&#x27; murmura. &#x27;Sueñen con flores, peces y sol. Cuando despierten, la primavera estará un día más cerca.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда глаза медвежат тяжелеют от сна, Мама Медведица начинает напевать тихую, мурлыкающую колыбельную. Она звучит как далёкий гром, смешанный с мурчанием — звук, который знают только медвежата. &#x27;Спите, мои маленькие,&#x27; шепчет она. &#x27;Мечтайте о цветах, рыбках и солнышке. Когда проснётесь, весна будет на один день ближе.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/first-signs-spring.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The First Signs</h2>
+            <h2 data-lang="es">Las Primeras Señales</h2>
+            <h2 data-lang="ru">Первые Признаки</h2>
+            <div data-lang="en" class="active">
+                <p>One morning, Baby Bear wakes to a new sound — drip, drip, drip! Water is trickling down the den walls. Icicles at the entrance are melting! A beam of bright, warm sunlight reaches all the way inside. Baby Bear&#x27;s heart leaps. Could it be? Is Papa&#x27;s promise coming true?</p>
+            </div>
+            <div data-lang="es">
+                <p>Una mañana, Bebé Oso despierta con un nuevo sonido — ¡goteo, goteo, goteo! El agua está goteando por las paredes de la guarida. ¡Los carámbanos en la entrada se están derritiendo! Un rayo de luz solar brillante y cálida llega hasta el interior. El corazón de Bebé Oso salta. ¿Podría ser? ¿La promesa de Papá se está haciendo realidad?</p>
+            </div>
+            <div data-lang="ru">
+                <p>Однажды утром Малыш Медвежонок просыпается от нового звука — кап, кап, кап! Вода стекает по стенам берлоги. Сосульки у входа тают! Луч яркого, тёплого солнечного света проникает вглубь берлоги. Сердце Малыша Медвежонка замирает. Неужели? Папино обещание сбывается?</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/cubs-peek-outside.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">First Glimpse of the World</h2>
+            <h2 data-lang="es">Primera Vista del Mundo</h2>
+            <h2 data-lang="ru">Первый Взгляд на Мир</h2>
+            <div data-lang="en" class="active">
+                <p>Baby Bear and Sister Bear creep to the den entrance and peer outside. Their little eyes go wide as saucers! The world is enormous — bigger than anything they imagined! Snow is melting everywhere, green shoots are pushing through the ground, and birds are singing in the trees. &#x27;It&#x27;s... it&#x27;s beautiful!&#x27; Sister Bear whispers.</p>
+            </div>
+            <div data-lang="es">
+                <p>Bebé Oso y Hermana Osa se arrastran hasta la entrada de la guarida y miran afuera. ¡Sus ojitos se abren como platos! El mundo es enorme — ¡más grande de lo que jamás imaginaron! La nieve se derrite por todas partes, brotes verdes empujan a través del suelo y los pájaros cantan en los árboles. &#x27;¡Es... es hermoso!&#x27; susurra Hermana Osa.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Малыш Медвежонок и Сестрёнка подкрадываются к входу в берлогу и выглядывают наружу. Их маленькие глазки становятся большими, как блюдца! Мир огромный — больше, чем всё, что они себе представляли! Снег тает повсюду, зелёные ростки пробиваются сквозь землю, а птицы поют на деревьях. &#x27;Это... это прекрасно!&#x27; шепчет Сестрёнка.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/family-emerges.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Together Into the Light</h2>
+            <h2 data-lang="es">Juntos Hacia la Luz</h2>
+            <h2 data-lang="ru">Вместе Навстречу Свету</h2>
+            <div data-lang="en" class="active">
+                <p>Papa Bear leads the way, with Mama Bear guiding the cubs from behind. Step by step, the whole family walks out of the den into the warm spring sunshine. The cubs blink in the bright light, feeling the warm breeze ruffle their fur for the very first time. Papa Bear smiles down at them. &#x27;Welcome to spring, little ones.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Papá Oso abre el camino, con Mamá Osa guiando a los cachorros desde atrás. Paso a paso, toda la familia sale de la guarida hacia el cálido sol primaveral. Los cachorros parpadean con la luz brillante, sintiendo la cálida brisa acariciar su pelaje por primera vez. Papá Oso les sonríe. &#x27;Bienvenidos a la primavera, pequeños.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Папа Медведь идёт первым, а Мама Медведица направляет медвежат сзади. Шаг за шагом вся семья выходит из берлоги на тёплое весеннее солнышко. Медвежата моргают от яркого света, впервые чувствуя, как тёплый ветерок ерошит их шёрстку. Папа Медведь улыбается им. &#x27;Добро пожаловать в весну, малыши.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <img data-src="assets/images/spring-arrived-landscape.jpg" 
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="" 
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Spring Is Here!</h2>
+            <h2 data-lang="es">¡La Primavera Está Aquí!</h2>
+            <h2 data-lang="ru">Весна Пришла!</h2>
+            <div data-lang="en" class="active">
+                <p>Everything Papa Bear promised has come true! The meadows are alive with wildflowers, the rivers sparkle with salmon, and the berry bushes are bursting with fruit. Baby Bear and Sister Bear tumble through the grass, chasing butterflies and splashing in puddles. And they do it all together — as a family. Just as Papa promised.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Todo lo que Papá Oso prometió se ha hecho realidad! Los prados están llenos de flores silvestres, los ríos brillan con salmones y los arbustos de bayas están repletos de fruta. Bebé Oso y Hermana Osa ruedan por la hierba, persiguiendo mariposas y chapoteando en charcos. Y lo hacen todo juntos — como familia. Tal como Papá prometió.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Всё, что обещал Папа Медведь, сбылось! Луга полны полевых цветов, реки сверкают лососем, а кусты усыпаны ягодами. Малыш Медвежонок и Сестрёнка кувыркаются по траве, гоняясь за бабочками и плескаясь в лужах. И они делают всё это вместе — всей семьёй. Как и обещал Папа.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card">
+                <img data-src="assets/images/detail-den-structure.jpg" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Winter Den"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Winter Den</h3>
+                    <h3 data-lang="es">La Guarida Invernal</h3>
+                    <h3 data-lang="ru">Зимняя Берлога</h3>
+                    <p data-lang="en" class="active">Look at the cozy den! Brown bears dig their dens under tree roots, in hillsides, or even in caves. The entrance is small to keep heat in, and the main chamber is lined with dried grass and leaves. It stays a comfortable temperature even when it&#x27;s freezing outside!</p>
+                    <p data-lang="es">¡Mira la acogedora guarida! Los osos pardos cavan sus guaridas bajo raíces de árboles, en laderas o incluso en cuevas. La entrada es pequeña para mantener el calor, y la cámara principal está forrada con hierba seca y hojas. ¡Se mantiene a una temperatura cómoda incluso cuando afuera está helando!</p>
+                    <p data-lang="ru">Посмотрите на уютную берлогу! Бурые медведи роют берлоги под корнями деревьев, на склонах холмов или даже в пещерах. Вход маленький, чтобы сохранять тепло, а основная камера выстлана сухой травой и листьями. Там сохраняется комфортная температура, даже когда снаружи мороз!</p>
+                </div>
+            </div>
+            <div class="detail-card">
+                <img data-src="assets/images/detail-bear-paws.jpg" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Built-In Snowshoes"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Built-In Snowshoes</h3>
+                    <h3 data-lang="es">Raquetas de Nieve Incorporadas</h3>
+                    <h3 data-lang="ru">Встроенные Снегоступы</h3>
+                    <p data-lang="en" class="active">Did you notice Papa Bear&#x27;s huge paws? Brown bear paws can be over 12 inches wide! The thick pads and fur between the toes spread their weight over a larger area, working like natural snowshoes. Their long claws — up to 4 inches — help them dig for roots and catch fish.</p>
+                    <p data-lang="es">¿Notaste las enormes patas de Papá Oso? ¡Las patas de oso pardo pueden medir más de 30 centímetros de ancho! Las gruesas almohadillas y el pelaje entre los dedos distribuyen su peso sobre una área más grande, funcionando como raquetas de nieve naturales. Sus largas garras — hasta 10 centímetros — les ayudan a cavar raíces y atrapar peces.</p>
+                    <p data-lang="ru">Заметили огромные лапы Папы Медведя? Лапы бурого медведя могут быть более 30 сантиметров в ширину! Толстые подушечки и мех между пальцами распределяют вес на большую площадь, работая как естественные снегоступы. Их длинные когти — до 10 сантиметров — помогают им копать корни и ловить рыбу.</p>
+                </div>
+            </div>
+            <div class="detail-card">
+                <img data-src="assets/images/detail-thick-fur.jpg" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Nature&#x27;s Best Coat"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Nature&#x27;s Best Coat</h3>
+                    <h3 data-lang="es">El Mejor Abrigo de la Naturaleza</h3>
+                    <h3 data-lang="ru">Лучшая Шуба Природы</h3>
+                    <p data-lang="en" class="active">Mama Bear&#x27;s thick fur has a secret — it&#x27;s actually two layers! A dense, soft underfur traps warm air close to the skin, while longer guard hairs on top shed water and snow. This double coat keeps bears warm in temperatures as low as -40 degrees!</p>
+                    <p data-lang="es">El grueso pelaje de Mamá Osa tiene un secreto — ¡en realidad son dos capas! Un denso y suave subpelaje atrapa aire cálido cerca de la piel, mientras que los pelos de guardia más largos en la parte superior repelen el agua y la nieve. ¡Este doble abrigo mantiene a los osos calientes en temperaturas tan bajas como -40 grados!</p>
+                    <p data-lang="ru">У густого меха Мамы Медведицы есть секрет — на самом деле это два слоя! Плотный, мягкий подшёрсток удерживает тёплый воздух у кожи, а более длинные остевые волосы сверху отталкивают воду и снег. Эта двойная шуба согревает медведей при температуре до -40 градусов!</p>
+                </div>
+            </div>
+            <div class="detail-card">
+                <img data-src="assets/images/detail-seasonal-diet.jpg" 
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="A Bear&#x27;s Changing Menu"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">A Bear&#x27;s Changing Menu</h3>
+                    <h3 data-lang="es">El Menú Cambiante del Oso</h3>
+                    <h3 data-lang="ru">Меняющееся Меню Медведя</h3>
+                    <p data-lang="en" class="active">Brown bears are omnivores — they eat both plants and animals! Their diet changes with the seasons: in spring, they munch on roots and fresh grass. In summer, it&#x27;s berries and insects. In autumn, they feast on salmon to build fat for winter. One bear can eat 90 pounds of food per day before hibernation!</p>
+                    <p data-lang="es">¡Los osos pardos son omnívoros — comen tanto plantas como animales! Su dieta cambia con las estaciones: en primavera, comen raíces y hierba fresca. En verano, son bayas e insectos. En otoño, se dan festines de salmón para acumular grasa para el invierno. ¡Un oso puede comer 40 kilos de comida por día antes de la hibernación!</p>
+                    <p data-lang="ru">Бурые медведи всеядны — они едят и растения, и животных! Их рацион меняется со сменой времён года: весной они грызут корни и свежую траву. Летом — ягоды и насекомые. Осенью они пируют лососем, чтобы накопить жир на зиму. Один медведь может съедать до 40 кг пищи в день перед спячкой!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Brown Bear Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Osos Pardos!</h2>
+            <h2 data-lang="ru">Удивительные факты о бурых медведях!</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <img data-src="assets/images/fun-fact-hibernation.jpg" 
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Super Sleepers!" 
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Super Sleepers!</h3>
+                        <h3 data-lang="es">¡Súper Dormilones!</h3>
+                        <h3 data-lang="ru">Супер Сони!</h3>
+                        <p data-lang="en" class="active">Brown bears can hibernate for 5 to 7 months without eating, drinking, or going to the bathroom! Their heart rate drops from 40 beats per minute to just 8, and their body temperature drops only slightly — they&#x27;re not fully asleep, just in a deep rest called torpor.</p>
+                        <p data-lang="es">¡Los osos pardos pueden hibernar de 5 a 7 meses sin comer, beber ni ir al baño! Su ritmo cardíaco baja de 40 latidos por minuto a solo 8, y su temperatura corporal baja solo ligeramente — no están completamente dormidos, solo en un descanso profundo llamado torpor.</p>
+                        <p data-lang="ru">Бурые медведи могут впадать в спячку на 5-7 месяцев без еды, воды и посещения туалета! Их пульс падает с 40 ударов в минуту до всего 8, а температура тела снижается лишь незначительно — они не полностью спят, а находятся в глубоком отдыхе, называемом торпор.</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <img data-src="assets/images/fun-fact-tiny-cubs.jpg" 
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Tiny at Birth!" 
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Tiny at Birth!</h3>
+                        <h3 data-lang="es">¡Diminutos al Nacer!</h3>
+                        <h3 data-lang="ru">Крошечные при Рождении!</h3>
+                        <p data-lang="en" class="active">A newborn brown bear cub weighs only about 1 pound (450 grams) — that&#x27;s smaller than a squirrel! But by the time they leave the den in spring, they weigh about 15 pounds. An adult brown bear can weigh up to 1,500 pounds!</p>
+                        <p data-lang="es">¡Un cachorro de oso pardo recién nacido pesa solo alrededor de 450 gramos — eso es más pequeño que una ardilla! Pero para cuando salen de la guarida en primavera, pesan alrededor de 7 kilos. ¡Un oso pardo adulto puede pesar hasta 680 kilos!</p>
+                        <p data-lang="ru">Новорождённый бурый медвежонок весит всего около 450 граммов — это меньше белки! Но к моменту выхода из берлоги весной он весит около 7 кг. Взрослый бурый медведь может весить до 680 кг!</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <img data-src="assets/images/fun-fact-swimming.jpg" 
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Amazing Swimmers!" 
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Amazing Swimmers!</h3>
+                        <h3 data-lang="es">¡Increíbles Nadadores!</h3>
+                        <h3 data-lang="ru">Удивительные Пловцы!</h3>
+                        <p data-lang="en" class="active">Brown bears are powerful swimmers! They can swim for miles across lakes and rivers. They use swimming to catch fish, cool off in summer, and even travel between islands. Their thick fur keeps them warm in cold water.</p>
+                        <p data-lang="es">¡Los osos pardos son poderosos nadadores! Pueden nadar kilómetros a través de lagos y ríos. Usan la natación para atrapar peces, refrescarse en verano e incluso viajar entre islas. Su grueso pelaje los mantiene calientes en agua fría.</p>
+                        <p data-lang="ru">Бурые медведи — мощные пловцы! Они могут проплывать километры через озёра и реки. Они используют плавание для ловли рыбы, охлаждения летом и даже путешествий между островами. Их густой мех согревает их в холодной воде.</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <img data-src="assets/images/fun-fact-speed.jpg" 
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Speedy Giants!" 
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Speedy Giants!</h3>
+                        <h3 data-lang="es">¡Gigantes Veloces!</h3>
+                        <h3 data-lang="ru">Быстрые Гиганты!</h3>
+                        <p data-lang="en" class="active">Despite their size, brown bears can run at speeds up to 35 miles per hour (56 km/h) — that&#x27;s faster than a horse! They can sprint this fast to catch prey or escape danger. Never try to outrun a bear!</p>
+                        <p data-lang="es">¡A pesar de su tamaño, los osos pardos pueden correr a velocidades de hasta 56 km/h — eso es más rápido que un caballo! Pueden correr así de rápido para atrapar presas o escapar del peligro. ¡Nunca intentes superar a un oso corriendo!</p>
+                        <p data-lang="ru">Несмотря на свой размер, бурые медведи могут бегать со скоростью до 56 км/ч — это быстрее лошади! Они могут бежать так быстро, чтобы поймать добычу или спастись от опасности. Никогда не пытайтесь убежать от медведя!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Discovering nature&#x27;s rhythms through a bear family&#x27;s love</p>
+        <p data-lang="es" style="margin-top: 10px;">Descubriendo los ritmos de la naturaleza a través del amor de una familia de osos</p>
+        <p data-lang="ru" style="margin-top: 10px;">Открывая ритмы природы через любовь медвежьей семьи</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

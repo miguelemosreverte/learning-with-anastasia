@@ -8,7 +8,9 @@
     "generate-missing": "node generate-images.js --missing",
     "generate-specific": "node generate-images.js --specific",
     "serve": "python3 -m http.server 8000",
-    "open": "open http://localhost:8000"
+    "open": "open http://localhost:8000",
+    "pdf": "node generate-pdf.js",
+    "pdf:all": "node generate-pdf.js --all-langs"
   },
   "keywords": [
     "education",
@@ -26,6 +28,7 @@
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
+    "puppeteer": "^24.37.5",
     "sharp": "^0.34.3"
   }
 }

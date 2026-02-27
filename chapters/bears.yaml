@@ -1,0 +1,518 @@
+# Brown Bears Chapter Definition - The Promise of Spring
+meta:
+  id: bears
+  issueNumber: 6
+  date: "February 2026"
+  folderName: "bears"
+  title:
+    en: "Brown Bears: The Promise of Spring"
+    es: "Osos Pardos: La Promesa de la Primavera"
+    ru: "Бурые Медведи: Обещание Весны"
+  subtitle:
+    en: "A Cozy Winter Tale of Family and Hope"
+    es: "Un Acogedor Cuento Invernal de Familia y Esperanza"
+    ru: "Уютная зимняя сказка о семье и надежде"
+  magazineText:
+    en: "Snuggle into the cozy winter den with Baby Bear and his family! Papa Bear returns with food and shares wonderful stories about the magical spring that's coming — wildflowers, fishing, berries, and playing together in the sunshine."
+    es: "¡Acurrúcate en la acogedora guarida invernal con Bebé Oso y su familia! Papá Oso regresa con comida y comparte maravillosas historias sobre la mágica primavera que se acerca — flores silvestres, pesca, bayas y jugar juntos bajo el sol."
+    ru: "Устройтесь поуютнее в зимней берлоге с Малышом Медвежонком и его семьёй! Папа Медведь возвращается с едой и рассказывает чудесные истории о волшебной весне, которая скоро придёт — полевые цветы, рыбалка, ягоды и игры вместе на солнышке."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Discovering nature's rhythms through a bear family's love"
+    es: "Descubriendo los ritmos de la naturaleza a través del amor de una familia de osos"
+    ru: "Открывая ритмы природы через любовь медвежьей семьи"
+  description: "Follow a brown bear family through winter hibernation as Papa Bear tells his cubs about the beautiful spring to come"
+  preface:
+    en:
+      - "Welcome to the warm, cozy world of brown bears! In this special issue, we'll curl up inside a winter den with a loving bear family as they wait for spring to arrive."
+      - "Brown bears are one of nature's most fascinating creatures. They spend months in hibernation, their hearts beating just 8 times per minute, while their cubs grow safe and warm in the darkness of the den."
+      - "Through Papa Bear's beautiful stories about spring, you'll learn about the incredible cycle of seasons, how bears survive winter, and the magical world that awaits when the snow finally melts. It's a story about patience, family, and the promise that warmer days are always coming!"
+    es:
+      - "¡Bienvenidos al cálido y acogedor mundo de los osos pardos! En esta edición especial, nos acurrucaremos dentro de una guarida invernal con una amorosa familia de osos mientras esperan la llegada de la primavera."
+      - "Los osos pardos son una de las criaturas más fascinantes de la naturaleza. Pasan meses en hibernación, con sus corazones latiendo solo 8 veces por minuto, mientras sus cachorros crecen seguros y cálidos en la oscuridad de la guarida."
+      - "A través de las hermosas historias de Papá Oso sobre la primavera, aprenderás sobre el increíble ciclo de las estaciones, cómo los osos sobreviven al invierno y el mundo mágico que espera cuando la nieve finalmente se derrite. ¡Es una historia sobre paciencia, familia y la promesa de que los días más cálidos siempre están por llegar!"
+    ru:
+      - "Добро пожаловать в тёплый, уютный мир бурых медведей! В этом специальном выпуске мы свернёмся калачиком в зимней берлоге с любящей медвежьей семьёй, ожидающей прихода весны."
+      - "Бурые медведи — одни из самых удивительных созданий природы. Они проводят месяцы в спячке, их сердце бьётся всего 8 раз в минуту, а медвежата растут в тепле и безопасности в темноте берлоги."
+      - "Через прекрасные истории Папы Медведя о весне вы узнаете об удивительном цикле времён года, о том, как медведи переживают зиму, и о волшебном мире, который ждёт, когда снег наконец растает. Это история о терпении, семье и обещании, что тёплые дни всегда впереди!"
+
+hero:
+  title:
+    en: "Brown Bears"
+    es: "Osos Pardos"
+    ru: "Бурые Медведи"
+  subtitle:
+    en: "The Promise of Spring"
+    es: "La Promesa de la Primavera"
+    ru: "Обещание Весны"
+  image: "hero-winter-den-landscape.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Snowy forest landscape at twilight with a cozy bear den entrance visible beneath snow-covered roots of a great old tree, warm golden light glowing from inside"
+    es: "Paisaje de bosque nevado al atardecer con la entrada de una acogedora guarida de oso visible bajo las raíces cubiertas de nieve de un gran árbol viejo, con cálida luz dorada brillando desde el interior"
+    ru: "Заснеженный лесной пейзаж в сумерках с уютным входом в берлогу медведя, видимым под заснеженными корнями большого старого дерева, с тёплым золотистым светом, льющимся изнутри"
+
+sections:
+  # First, establish Baby Bear (main character)
+  - id: meet-baby-bear
+    generate_character: true
+    titleKey: "meetBabyBearTitle"
+    contentKey: "meetBabyBearContent"
+    title:
+      en: "Meet Baby Bear"
+      es: "Conoce a Bebé Oso"
+      ru: "Знакомьтесь: Малыш Медвежонок"
+    content:
+      en: "Baby Bear is a fluffy brown bear cub with the biggest, most curious eyes you've ever seen! He was born in the den during the coldest part of winter, no bigger than a squirrel. Now he's grown into an adventurous little cub who can't wait to see the world outside!"
+      es: "¡Bebé Oso es un esponjoso cachorro de oso pardo con los ojos más grandes y curiosos que hayas visto! Nació en la guarida durante la parte más fría del invierno, no más grande que una ardilla. ¡Ahora ha crecido hasta convertirse en un pequeño cachorro aventurero que no puede esperar para ver el mundo exterior!"
+      ru: "Малыш Медвежонок — пушистый бурый медвежонок с самыми большими и любопытными глазами, которые вы когда-либо видели! Он родился в берлоге в самую холодную часть зимы, размером не больше белки. Теперь он вырос в маленького авантюрного медвежонка, который не может дождаться, чтобы увидеть мир снаружи!"
+    image: "baby-bear-portrait.jpg"
+    imageAlt:
+      en: "Adorable fluffy brown bear cub with big curious eyes, round ears, and soft brown fur, sitting in a cozy den"
+      es: "Adorable cachorro de oso pardo esponjoso con grandes ojos curiosos, orejas redondas y suave pelaje marrón, sentado en una guarida acogedora"
+      ru: "Очаровательный пушистый бурый медвежонок с большими любопытными глазами, круглыми ушами и мягкой коричневой шерстью, сидящий в уютной берлоге"
+
+  # Sister Bear - Baby Bear's sibling
+  - id: meet-sister-bear
+    generate_character: true
+    use_character: "${meet-baby-bear.image}"
+    titleKey: "meetSisterBearTitle"
+    contentKey: "meetSisterBearContent"
+    title:
+      en: "Meet Sister Bear"
+      es: "Conoce a Hermana Osa"
+      ru: "Знакомьтесь: Сестрёнка Медвежонок"
+    content:
+      en: "Sister Bear is Baby Bear's twin! She's just a tiny bit smaller, with a lighter patch of fur on her chest shaped like a little star. She loves to tumble and play-wrestle with her brother in the warm den. Together, they make the perfect pair of curious cubs!"
+      es: "¡Hermana Osa es la gemela de Bebé Oso! Es solo un poquito más pequeña, con una mancha de pelaje más claro en su pecho con forma de estrellita. Le encanta rodar y jugar a luchar con su hermano en la cálida guarida. ¡Juntos, forman la pareja perfecta de cachorros curiosos!"
+      ru: "Сестрёнка Медвежонок — близняшка Малыша Медвежонка! Она совсем чуточку меньше, со светлым пятнышком на груди в форме маленькой звёздочки. Она обожает кувыркаться и шутливо бороться с братиком в тёплой берлоге. Вместе они — идеальная парочка любопытных медвежат!"
+    action: "slightly smaller female bear cub that looks like sibling of the reference bear cub, lighter fur patch on chest shaped like a star, playful expression"
+    image: "sister-bear-portrait.jpg"
+    imageAlt:
+      en: "Cute fluffy bear cub slightly smaller than Baby Bear, with a star-shaped light patch on chest, playful expression"
+      es: "Lindo cachorro de oso esponjoso ligeramente más pequeño que Bebé Oso, con una mancha clara en forma de estrella en el pecho, expresión juguetona"
+      ru: "Милый пушистый медвежонок, чуть меньше Малыша, со светлым пятнышком в форме звёздочки на груди, игривое выражение"
+
+  # Mama Bear
+  - id: mama-bear-watching
+    generate_character: true
+    use_character: "${meet-baby-bear.image}"
+    titleKey: "mamaBearTitle"
+    contentKey: "mamaBearContent"
+    title:
+      en: "Mama Bear Keeps Watch"
+      es: "Mamá Osa Vigila"
+      ru: "Мама Медведица Сторожит"
+    content:
+      en: "Mama Bear is the heart of the family. She's been keeping her cubs warm and safe all winter long, curled around them like a living blanket. Even while resting, she stays alert — one ear always listening for sounds outside. Her deep, rumbling purr tells the cubs that everything is safe and sound."
+      es: "Mamá Osa es el corazón de la familia. Ha mantenido a sus cachorros cálidos y seguros durante todo el invierno, acurrucada alrededor de ellos como una manta viviente. Incluso mientras descansa, se mantiene alerta — siempre con un oído escuchando los sonidos del exterior. Su profundo ronroneo les dice a los cachorros que todo está seguro y en orden."
+      ru: "Мама Медведица — сердце семьи. Всю зиму она согревала и оберегала своих медвежат, свернувшись вокруг них живым одеялом. Даже отдыхая, она остаётся начеку — одно ухо всегда прислушивается к звукам снаружи. Её глубокое, мурчащее урчание говорит медвежатам, что всё в безопасности."
+    action: "mother brown bear that looks like parent of the reference bear cub, warm gentle expression, larger and protective, curled around in a cozy den"
+    image: "mama-bear-portrait.jpg"
+    imageAlt:
+      en: "Large gentle mother brown bear with warm eyes and protective expression, in a cozy den"
+      es: "Gran y gentil madre osa parda con ojos cálidos y expresión protectora, en una guarida acogedora"
+      ru: "Большая нежная мама-медведица с тёплыми глазами и заботливым выражением, в уютной берлоге"
+
+  # Papa Bear returns!
+  - id: papa-returns
+    generate_character: true
+    use_character: "${meet-baby-bear.image}"
+    titleKey: "papaReturnsTitle"
+    contentKey: "papaReturnsContent"
+    title:
+      en: "Papa Bear Returns!"
+      es: "¡Papá Oso Regresa!"
+      ru: "Папа Медведь Возвращается!"
+    content:
+      en: "The cubs hear heavy footsteps in the snow — Papa Bear is back! He's the biggest, strongest bear in the valley, with thick dark brown fur dusted with snowflakes. He squeezes through the den entrance, shaking off the cold, and brings with him a bundle of frozen berries and roots he found under the snow."
+      es: "Los cachorros escuchan pasos pesados en la nieve — ¡Papá Oso ha vuelto! Es el oso más grande y fuerte del valle, con grueso pelaje marrón oscuro espolvoreado con copos de nieve. Se mete por la entrada de la guarida, sacudiéndose el frío, y trae consigo un manojo de bayas y raíces congeladas que encontró bajo la nieve."
+      ru: "Медвежата слышат тяжёлые шаги в снегу — Папа Медведь вернулся! Он самый большой и сильный медведь в долине, с густой тёмно-коричневой шерстью, припорошённой снежинками. Он протискивается через вход в берлогу, стряхивая холод, и приносит с собой пучок замороженных ягод и корешков, которые нашёл под снегом."
+    action: "large father brown bear that looks like parent of the reference bear cub, thick dark brown fur with snowflakes, strong and wise, entering a den carrying berries"
+    image: "papa-bear-portrait.jpg"
+    imageAlt:
+      en: "Large strong Papa Bear with thick dark brown fur dusted with snowflakes, entering den with berries"
+      es: "Gran y fuerte Papá Oso con grueso pelaje marrón oscuro espolvoreado con copos de nieve, entrando a la guarida con bayas"
+      ru: "Большой сильный Папа Медведь с густой тёмно-коричневой шерстью, припорошённой снежинками, входит в берлогу с ягодами"
+
+  # Papa shares food with the family
+  - id: papa-shares-food
+    use_characters: ["${meet-baby-bear.image}", "${meet-sister-bear.image}", "${papa-returns.image}", "${mama-bear-watching.image}"]
+    action: "bear family gathered together in cozy den, papa bear sharing berries and roots with excited cubs while mama watches warmly"
+    titleKey: "papaSharesFoodTitle"
+    contentKey: "papaSharesFoodContent"
+    title:
+      en: "A Winter Feast"
+      es: "Un Festín Invernal"
+      ru: "Зимнее Угощение"
+    content:
+      en: "The whole family gathers around as Papa Bear shares his treasures. The frozen berries taste like little popsicles! Baby Bear and Sister Bear munch happily while Mama Bear nuzzles Papa's cheek. 'Eat up, little ones,' Papa says with a warm smile. 'And I'll tell you about something wonderful that's coming soon...'"
+      es: "Toda la familia se reúne mientras Papá Oso comparte sus tesoros. ¡Las bayas congeladas saben como pequeñas paletas! Bebé Oso y Hermana Osa mastican felizmente mientras Mamá Osa acaricia la mejilla de Papá. 'Coman bien, pequeños,' dice Papá con una cálida sonrisa. 'Y les contaré sobre algo maravilloso que viene pronto...'"
+      ru: "Вся семья собирается вместе, когда Папа Медведь делится своими сокровищами. Замороженные ягоды на вкус как маленькие леденцы! Малыш Медвежонок и Сестрёнка жуют радостно, пока Мама Медведица нежно прижимается к щеке Папы. 'Кушайте, малыши,' говорит Папа с тёплой улыбкой. 'А я расскажу вам о чём-то чудесном, что скоро наступит...'"
+    image: "family-winter-feast.jpg"
+
+  # Papa's stories about spring begin!
+  - id: papa-story-melting-snow
+    use_characters: ["${papa-returns.image}", "${meet-baby-bear.image}"]
+    action: "papa bear sitting with baby bear cub on his lap, gesturing grandly as if telling a story, magical light showing an imagined vision of snow melting and rivers flowing"
+    titleKey: "meltingSnowTitle"
+    contentKey: "meltingSnowContent"
+    title:
+      en: "Papa's Story: When the Snow Melts"
+      es: "La Historia de Papá: Cuando la Nieve se Derrite"
+      ru: "Рассказ Папы: Когда Снег Тает"
+    content:
+      en: "'Soon,' Papa Bear begins, his deep voice warm and soothing, 'the sun will grow stronger. The snow on the mountains will start to melt, and tiny streams will trickle down, growing bigger and bigger until they become rushing rivers! The sound is like nature's own music — a gentle symphony of water and birdsong.'"
+      es: "'Pronto,' comienza Papá Oso, su voz profunda cálida y reconfortante, 'el sol se hará más fuerte. La nieve en las montañas comenzará a derretirse, y pequeños arroyos gotearán, haciéndose cada vez más grandes hasta convertirse en ríos caudalosos. ¡El sonido es como la propia música de la naturaleza — una suave sinfonía de agua y canto de pájaros!'"
+      ru: "'Скоро,' начинает Папа Медведь, его глубокий голос тёплый и успокаивающий, 'солнце станет сильнее. Снег на горах начнёт таять, и маленькие ручейки потекут вниз, становясь всё больше и больше, пока не превратятся в бурные реки! Звук — как собственная музыка природы — нежная симфония воды и птичьего пения.'"
+    image: "papa-story-melting-snow.jpg"
+
+  # Wildflowers story
+  - id: papa-story-wildflowers
+    use_characters: ["${papa-returns.image}", "${meet-sister-bear.image}"]
+    action: "papa bear telling a story to sister bear cub, magical dreamy vision showing meadows bursting with colorful wildflowers, butterflies everywhere"
+    titleKey: "wildflowersTitle"
+    contentKey: "wildflowersContent"
+    title:
+      en: "Papa's Story: A Carpet of Flowers"
+      es: "La Historia de Papá: Una Alfombra de Flores"
+      ru: "Рассказ Папы: Ковёр из Цветов"
+    content:
+      en: "'And then,' Papa continues, his eyes sparkling, 'the meadows will explode with color! Purple lupines, yellow buttercups, and red paintbrush flowers will cover every hillside like a rainbow carpet. Butterflies will dance from flower to flower, and the air will smell sweeter than honey!' Sister Bear's eyes grow wide with wonder."
+      es: "'Y entonces,' continúa Papá, sus ojos brillando, '¡los prados explotarán de color! Lupinos morados, ranúnculos amarillos y flores rojas cubrirán cada ladera como una alfombra arcoíris. ¡Las mariposas bailarán de flor en flor, y el aire olerá más dulce que la miel!' Los ojos de Hermana Osa se abren grandes de asombro."
+      ru: "'А потом,' продолжает Папа, его глаза сверкают, 'луга взорвутся красками! Фиолетовые люпины, жёлтые лютики и красные цветы покроют каждый склон, как радужный ковёр. Бабочки будут танцевать от цветка к цветку, а воздух будет пахнуть слаще мёда!' Глаза Сестрёнки Медвежонка широко раскрываются от восторга."
+    image: "papa-story-wildflowers.jpg"
+
+  # Fishing story
+  - id: papa-story-fishing
+    use_characters: ["${papa-returns.image}", "${meet-baby-bear.image}"]
+    action: "papa bear telling an exciting story to baby bear, magical vision showing bears catching leaping salmon in a rushing river, splashing water"
+    titleKey: "fishingTitle"
+    contentKey: "fishingContent"
+    title:
+      en: "Papa's Story: The Great Salmon Run"
+      es: "La Historia de Papá: La Gran Carrera del Salmón"
+      ru: "Рассказ Папы: Великий Ход Лосося"
+    content:
+      en: "'Best of all,' Papa says with a big grin, 'I'm going to teach you how to catch fish! The salmon swim upstream, leaping over waterfalls — and we bears stand in the river, waiting with our big paws ready. SPLASH! You'll catch your very first fish!' Baby Bear bounces with excitement, already practicing his fishing stance."
+      es: "'Lo mejor de todo,' dice Papá con una gran sonrisa, '¡les voy a enseñar a atrapar peces! Los salmones nadan río arriba, saltando cascadas — y nosotros los osos nos paramos en el río, esperando con nuestras grandes patas listas. ¡SPLASH! ¡Atraparás tu primer pez!' Bebé Oso brinca de emoción, ya practicando su postura de pesca."
+      ru: "'А самое лучшее,' говорит Папа с широкой улыбкой, 'я научу вас ловить рыбу! Лосось плывёт вверх по течению, перепрыгивая через водопады — а мы, медведи, стоим в реке, с готовыми большими лапами. ПЛЕСК! Ты поймаешь свою самую первую рыбу!' Малыш Медвежонок подпрыгивает от волнения, уже тренируя свою рыболовную стойку."
+    image: "papa-story-fishing.jpg"
+
+  # Berry picking story
+  - id: papa-story-berries
+    use_characters: ["${papa-returns.image}", "${meet-baby-bear.image}", "${meet-sister-bear.image}"]
+    action: "papa bear telling story to both cubs, magical dreamy vision showing bears picking berries from bushes heavy with blueberries and raspberries"
+    titleKey: "berriesTitle"
+    contentKey: "berriesContent"
+    title:
+      en: "Papa's Story: Berry Paradise"
+      es: "La Historia de Papá: Paraíso de Bayas"
+      ru: "Рассказ Папы: Ягодный Рай"
+    content:
+      en: "'And the berries!' Papa's voice rises with delight. 'Bushes so full of blueberries and raspberries that they bend under the weight! You'll eat so many that your little noses will turn purple!' The cubs giggle. 'We'll fill our bellies until we're round as boulders,' Papa laughs, patting his own big tummy."
+      es: "'¡Y las bayas!' la voz de Papá se eleva con deleite. '¡Arbustos tan llenos de arándanos y frambuesas que se doblan bajo el peso! ¡Comerán tantas que sus naricitas se pondrán moradas!' Los cachorros se ríen. 'Llenaremos nuestras barrigas hasta estar redondos como rocas,' se ríe Papá, palmeando su propia gran barriga."
+      ru: "'А ягоды!' голос Папы поднимается от восторга. 'Кусты, настолько полные черники и малины, что гнутся под тяжестью! Вы съедите столько, что ваши носики станут фиолетовыми!' Медвежата хихикают. 'Мы наедимся так, что станем круглыми, как валуны,' смеётся Папа, похлопывая свой собственный большой животик."
+    image: "papa-story-berries.jpg"
+
+  # Playing in the meadow story
+  - id: papa-story-playing
+    use_characters: ["${meet-baby-bear.image}", "${meet-sister-bear.image}", "${papa-returns.image}", "${mama-bear-watching.image}"]
+    action: "all four bears playing together in a beautiful sunlit spring meadow, cubs tumbling and wrestling, parents watching lovingly, flowers and butterflies everywhere"
+    titleKey: "playingTitle"
+    contentKey: "playingContent"
+    title:
+      en: "Papa's Story: Playing Together"
+      es: "La Historia de Papá: Jugando Juntos"
+      ru: "Рассказ Папы: Играем Вместе"
+    content:
+      en: "'But my favorite part,' Papa says softly, pulling both cubs close, 'is that we'll do everything together. We'll roll down grassy hills, splash in warm streams, chase butterflies, and watch the sunset paint the sky in oranges and pinks. As a family.' Mama Bear nods, her eyes glistening. 'Together,' she whispers."
+      es: "'Pero mi parte favorita,' dice Papá suavemente, acercando a ambos cachorros, 'es que haremos todo juntos. Rodaremos por colinas de hierba, salpicaremos en arroyos cálidos, perseguiremos mariposas y veremos cómo el atardecer pinta el cielo de naranjas y rosas. Como familia.' Mamá Osa asiente, con los ojos brillantes. 'Juntos,' susurra ella."
+      ru: "'Но мой любимый момент,' говорит Папа тихо, притягивая обоих медвежат ближе, 'это то, что мы будем делать всё вместе. Мы будем кататься по травянистым холмам, плескаться в тёплых ручьях, гоняться за бабочками и смотреть, как закат раскрашивает небо в оранжевые и розовые тона. Всей семьёй.' Мама Медведица кивает, её глаза блестят. 'Вместе,' шепчет она."
+    image: "papa-story-playing.jpg"
+
+  # Mama's lullaby
+  - id: mama-lullaby
+    use_characters: ["${mama-bear-watching.image}", "${meet-baby-bear.image}", "${meet-sister-bear.image}"]
+    action: "mama bear curled around two sleeping bear cubs in cozy den, gentle moonlight filtering in, peaceful and warm atmosphere"
+    titleKey: "lullabyTitle"
+    contentKey: "lullabyContent"
+    title:
+      en: "Mama's Lullaby"
+      es: "La Canción de Cuna de Mamá"
+      ru: "Мамина Колыбельная"
+    content:
+      en: "As the cubs' eyes grow heavy with sleep, Mama Bear begins to hum a soft, rumbling lullaby. It sounds like distant thunder mixed with purring — a sound only bear cubs know. 'Sleep now, my little ones,' she murmurs. 'Dream of flowers and fish and sunshine. When you wake, spring will be one day closer.'"
+      es: "Mientras los ojos de los cachorros se vuelven pesados de sueño, Mamá Osa comienza a tararear una suave y ronroneante canción de cuna. Suena como truenos lejanos mezclados con ronroneo — un sonido que solo los cachorros de oso conocen. 'Duerman ahora, mis pequeños,' murmura. 'Sueñen con flores, peces y sol. Cuando despierten, la primavera estará un día más cerca.'"
+      ru: "Когда глаза медвежат тяжелеют от сна, Мама Медведица начинает напевать тихую, мурлыкающую колыбельную. Она звучит как далёкий гром, смешанный с мурчанием — звук, который знают только медвежата. 'Спите, мои маленькие,' шепчет она. 'Мечтайте о цветах, рыбках и солнышке. Когда проснётесь, весна будет на один день ближе.'"
+    image: "mama-lullaby.jpg"
+
+  # First signs of spring
+  - id: first-signs-spring
+    use_character: "${meet-baby-bear.image}"
+    action: "baby bear cub waking up in den, looking toward the entrance where bright sunlight and dripping water icicles show spring is coming"
+    titleKey: "firstSignsTitle"
+    contentKey: "firstSignsContent"
+    title:
+      en: "The First Signs"
+      es: "Las Primeras Señales"
+      ru: "Первые Признаки"
+    content:
+      en: "One morning, Baby Bear wakes to a new sound — drip, drip, drip! Water is trickling down the den walls. Icicles at the entrance are melting! A beam of bright, warm sunlight reaches all the way inside. Baby Bear's heart leaps. Could it be? Is Papa's promise coming true?"
+      es: "Una mañana, Bebé Oso despierta con un nuevo sonido — ¡goteo, goteo, goteo! El agua está goteando por las paredes de la guarida. ¡Los carámbanos en la entrada se están derritiendo! Un rayo de luz solar brillante y cálida llega hasta el interior. El corazón de Bebé Oso salta. ¿Podría ser? ¿La promesa de Papá se está haciendo realidad?"
+      ru: "Однажды утром Малыш Медвежонок просыпается от нового звука — кап, кап, кап! Вода стекает по стенам берлоги. Сосульки у входа тают! Луч яркого, тёплого солнечного света проникает вглубь берлоги. Сердце Малыша Медвежонка замирает. Неужели? Папино обещание сбывается?"
+    image: "first-signs-spring.jpg"
+
+  # Cubs peek outside
+  - id: cubs-peek-outside
+    use_characters: ["${meet-baby-bear.image}", "${meet-sister-bear.image}"]
+    action: "two bear cubs cautiously peeking out of den entrance for the first time, snow melting around them, bright spring sunlight, wide-eyed wonder"
+    titleKey: "cubsPeekTitle"
+    contentKey: "cubsPeekContent"
+    title:
+      en: "First Glimpse of the World"
+      es: "Primera Vista del Mundo"
+      ru: "Первый Взгляд на Мир"
+    content:
+      en: "Baby Bear and Sister Bear creep to the den entrance and peer outside. Their little eyes go wide as saucers! The world is enormous — bigger than anything they imagined! Snow is melting everywhere, green shoots are pushing through the ground, and birds are singing in the trees. 'It's... it's beautiful!' Sister Bear whispers."
+      es: "Bebé Oso y Hermana Osa se arrastran hasta la entrada de la guarida y miran afuera. ¡Sus ojitos se abren como platos! El mundo es enorme — ¡más grande de lo que jamás imaginaron! La nieve se derrite por todas partes, brotes verdes empujan a través del suelo y los pájaros cantan en los árboles. '¡Es... es hermoso!' susurra Hermana Osa."
+      ru: "Малыш Медвежонок и Сестрёнка подкрадываются к входу в берлогу и выглядывают наружу. Их маленькие глазки становятся большими, как блюдца! Мир огромный — больше, чем всё, что они себе представляли! Снег тает повсюду, зелёные ростки пробиваются сквозь землю, а птицы поют на деревьях. 'Это... это прекрасно!' шепчет Сестрёнка."
+    image: "cubs-peek-outside.jpg"
+
+  # Family emerges together
+  - id: family-emerges
+    use_characters: ["${meet-baby-bear.image}", "${meet-sister-bear.image}", "${papa-returns.image}", "${mama-bear-watching.image}"]
+    action: "whole bear family stepping out of den together into spring sunshine, cubs between parents, forest coming alive with green buds and melting snow"
+    titleKey: "familyEmergesTitle"
+    contentKey: "familyEmergesContent"
+    title:
+      en: "Together Into the Light"
+      es: "Juntos Hacia la Luz"
+      ru: "Вместе Навстречу Свету"
+    content:
+      en: "Papa Bear leads the way, with Mama Bear guiding the cubs from behind. Step by step, the whole family walks out of the den into the warm spring sunshine. The cubs blink in the bright light, feeling the warm breeze ruffle their fur for the very first time. Papa Bear smiles down at them. 'Welcome to spring, little ones.'"
+      es: "Papá Oso abre el camino, con Mamá Osa guiando a los cachorros desde atrás. Paso a paso, toda la familia sale de la guarida hacia el cálido sol primaveral. Los cachorros parpadean con la luz brillante, sintiendo la cálida brisa acariciar su pelaje por primera vez. Papá Oso les sonríe. 'Bienvenidos a la primavera, pequeños.'"
+      ru: "Папа Медведь идёт первым, а Мама Медведица направляет медвежат сзади. Шаг за шагом вся семья выходит из берлоги на тёплое весеннее солнышко. Медвежата моргают от яркого света, впервые чувствуя, как тёплый ветерок ерошит их шёрстку. Папа Медведь улыбается им. 'Добро пожаловать в весну, малыши.'"
+    image: "family-emerges.jpg"
+
+  # Spring has arrived - grand finale
+  - id: spring-arrived
+    use_characters: ["${meet-baby-bear.image}", "${meet-sister-bear.image}", "${papa-returns.image}", "${mama-bear-watching.image}"]
+    action: "bear family playing joyfully in a beautiful spring meadow, cubs tumbling in wildflowers, parents watching happily, mountains with last snow in background, golden sunlight"
+    titleKey: "springArrivedTitle"
+    contentKey: "springArrivedContent"
+    title:
+      en: "Spring Is Here!"
+      es: "¡La Primavera Está Aquí!"
+      ru: "Весна Пришла!"
+    content:
+      en: "Everything Papa Bear promised has come true! The meadows are alive with wildflowers, the rivers sparkle with salmon, and the berry bushes are bursting with fruit. Baby Bear and Sister Bear tumble through the grass, chasing butterflies and splashing in puddles. And they do it all together — as a family. Just as Papa promised."
+      es: "¡Todo lo que Papá Oso prometió se ha hecho realidad! Los prados están llenos de flores silvestres, los ríos brillan con salmones y los arbustos de bayas están repletos de fruta. Bebé Oso y Hermana Osa ruedan por la hierba, persiguiendo mariposas y chapoteando en charcos. Y lo hacen todo juntos — como familia. Tal como Papá prometió."
+      ru: "Всё, что обещал Папа Медведь, сбылось! Луга полны полевых цветов, реки сверкают лососем, а кусты усыпаны ягодами. Малыш Медвежонок и Сестрёнка кувыркаются по траве, гоняясь за бабочками и плескаясь в лужах. И они делают всё это вместе — всей семьёй. Как и обещал Папа."
+    image: "spring-arrived-landscape.jpg"
+    imageType: "landscape"
+
+  # Hidden detail sections for viewer details (with references)
+  - id: "detail-den-structure"
+    image: "detail-den-structure.jpg"
+    referenceImage: "${first-signs-spring.image}"
+    prompt: "Using the bear den from the reference image, create a cross-section educational illustration showing the interior structure of a brown bear hibernation den. Show the entrance tunnel, main chamber with dried grass bedding, thick walls of earth and roots providing insulation. Same cozy warmth and art style as reference."
+    hidden: true
+
+  - id: "detail-bear-paws"
+    image: "detail-bear-paws.jpg"
+    referenceImage: "${papa-returns.image}"
+    prompt: "Using the papa bear from the reference image, create a close-up detailed view of this bear's large paws showing the thick padded soles, long curved claws, and dense fur between the toes. Educational style showing how these paws work as snowshoes. Same character and art style as reference."
+    hidden: true
+
+  - id: "detail-thick-fur"
+    image: "detail-thick-fur.jpg"
+    referenceImage: "${mama-bear-watching.image}"
+    prompt: "Using the mama bear from the reference image, create a detailed close-up of this bear's thick winter fur showing the two layers — dense soft underfur and longer guard hairs. Educational illustration showing insulation properties. Same character and art style as reference."
+    hidden: true
+
+  - id: "detail-seasonal-diet"
+    image: "detail-seasonal-diet.jpg"
+    referenceImage: "${papa-story-berries.image}"
+    prompt: "Using the art style from the reference image, create an educational illustration showing a bear's seasonal diet cycle: spring (roots, grasses), summer (berries, insects), autumn (salmon, nuts), winter (stored fat). Circular diagram with the same warm illustration style as reference."
+    hidden: true
+
+  # Fun fact reference images
+  - id: "fun-fact-hibernation"
+    image: "fun-fact-hibernation.jpg"
+    referenceImage: "${mama-lullaby.image}"
+    prompt: "Using the sleeping bear family from reference, show the same family in deep hibernation with a magical educational overlay showing slowed heartbeat (8 bpm), lowered body temperature, and months of sleep. Same cozy den and characters as reference."
+    hidden: true
+
+  - id: "fun-fact-tiny-cubs"
+    image: "fun-fact-tiny-cubs.jpg"
+    referenceImage: "${meet-baby-bear.image}"
+    prompt: "Using the baby bear character from reference, create a heartwarming educational scene showing a comparison: a newborn bear cub the size of a squirrel next to the same character grown up. Show the amazing size difference. Same art style as reference."
+    hidden: true
+
+  - id: "fun-fact-swimming"
+    image: "fun-fact-swimming.jpg"
+    referenceImage: "${papa-story-fishing.image}"
+    prompt: "Using the bears from the reference image, show them swimming powerfully across a wide river, demonstrating that brown bears are excellent swimmers. Splashing water, strong strokes. Same characters and art style as reference."
+    hidden: true
+
+  - id: "fun-fact-speed"
+    image: "fun-fact-speed.jpg"
+    referenceImage: "${cubs-peek-outside.image}"
+    prompt: "Using the bear cubs from reference, show them racing playfully across a meadow, with motion lines suggesting incredible speed. Educational style showing that bears can run 35 mph. Same characters and art style as reference."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a heartwarming, illustrated magazine cover featuring a brown bear family. Show baby bear and sister bear cub prominently in the center foreground, looking up with wonder at falling cherry blossom petals. Papa bear stands protectively behind them, large and strong with kind eyes. Mama bear beside him, gentle and warm. The background transitions from a snowy winter den on the left to a blooming spring meadow on the right, symbolizing the promise of spring. Golden warm light, soft falling petals. Style: Studio Ghibli warmth meets Pixar quality — whimsical, heartwarming, child-friendly illustration with rich, vibrant colors. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${meet-baby-bear.image}"
+      - "${meet-sister-bear.image}"
+      - "${papa-returns.image}"
+      - "${mama-bear-watching.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Bear family on magazine cover with winter-to-spring transition background, cherry blossoms falling"
+      es: "Familia de osos en la portada de la revista con transición de invierno a primavera, pétalos de cerezo cayendo"
+      ru: "Медвежья семья на обложке журнала с переходом от зимы к весне, падающие лепестки сакуры"
+
+funFacts:
+  title:
+    en: "Amazing Brown Bear Facts!"
+    es: "¡Datos Asombrosos sobre Osos Pardos!"
+    ru: "Удивительные факты о бурых медведях!"
+  facts:
+    - title:
+        en: "Super Sleepers!"
+        es: "¡Súper Dormilones!"
+        ru: "Супер Сони!"
+      content:
+        en: "Brown bears can hibernate for 5 to 7 months without eating, drinking, or going to the bathroom! Their heart rate drops from 40 beats per minute to just 8, and their body temperature drops only slightly — they're not fully asleep, just in a deep rest called torpor."
+        es: "¡Los osos pardos pueden hibernar de 5 a 7 meses sin comer, beber ni ir al baño! Su ritmo cardíaco baja de 40 latidos por minuto a solo 8, y su temperatura corporal baja solo ligeramente — no están completamente dormidos, solo en un descanso profundo llamado torpor."
+        ru: "Бурые медведи могут впадать в спячку на 5-7 месяцев без еды, воды и посещения туалета! Их пульс падает с 40 ударов в минуту до всего 8, а температура тела снижается лишь незначительно — они не полностью спят, а находятся в глубоком отдыхе, называемом торпор."
+      image: "fun-fact-hibernation.jpg"
+
+    - title:
+        en: "Tiny at Birth!"
+        es: "¡Diminutos al Nacer!"
+        ru: "Крошечные при Рождении!"
+      content:
+        en: "A newborn brown bear cub weighs only about 1 pound (450 grams) — that's smaller than a squirrel! But by the time they leave the den in spring, they weigh about 15 pounds. An adult brown bear can weigh up to 1,500 pounds!"
+        es: "¡Un cachorro de oso pardo recién nacido pesa solo alrededor de 450 gramos — eso es más pequeño que una ardilla! Pero para cuando salen de la guarida en primavera, pesan alrededor de 7 kilos. ¡Un oso pardo adulto puede pesar hasta 680 kilos!"
+        ru: "Новорождённый бурый медвежонок весит всего около 450 граммов — это меньше белки! Но к моменту выхода из берлоги весной он весит около 7 кг. Взрослый бурый медведь может весить до 680 кг!"
+      image: "fun-fact-tiny-cubs.jpg"
+
+    - title:
+        en: "Amazing Swimmers!"
+        es: "¡Increíbles Nadadores!"
+        ru: "Удивительные Пловцы!"
+      content:
+        en: "Brown bears are powerful swimmers! They can swim for miles across lakes and rivers. They use swimming to catch fish, cool off in summer, and even travel between islands. Their thick fur keeps them warm in cold water."
+        es: "¡Los osos pardos son poderosos nadadores! Pueden nadar kilómetros a través de lagos y ríos. Usan la natación para atrapar peces, refrescarse en verano e incluso viajar entre islas. Su grueso pelaje los mantiene calientes en agua fría."
+        ru: "Бурые медведи — мощные пловцы! Они могут проплывать километры через озёра и реки. Они используют плавание для ловли рыбы, охлаждения летом и даже путешествий между островами. Их густой мех согревает их в холодной воде."
+      image: "fun-fact-swimming.jpg"
+
+    - title:
+        en: "Speedy Giants!"
+        es: "¡Gigantes Veloces!"
+        ru: "Быстрые Гиганты!"
+      content:
+        en: "Despite their size, brown bears can run at speeds up to 35 miles per hour (56 km/h) — that's faster than a horse! They can sprint this fast to catch prey or escape danger. Never try to outrun a bear!"
+        es: "¡A pesar de su tamaño, los osos pardos pueden correr a velocidades de hasta 56 km/h — eso es más rápido que un caballo! Pueden correr así de rápido para atrapar presas o escapar del peligro. ¡Nunca intentes superar a un oso corriendo!"
+        ru: "Несмотря на свой размер, бурые медведи могут бегать со скоростью до 56 км/ч — это быстрее лошади! Они могут бежать так быстро, чтобы поймать добычу или спастись от опасности. Никогда не пытайтесь убежать от медведя!"
+      image: "fun-fact-speed.jpg"
+
+imageGeneration:
+  characters:
+    baby-bear:
+      name: "Baby Bear"
+      description: "Fluffy brown bear cub with big curious eyes, round ears, soft brown fur"
+
+    sister-bear:
+      name: "Sister Bear"
+      description: "Slightly smaller bear cub with star-shaped light patch on chest, playful expression"
+
+    papa-bear:
+      name: "Papa Bear"
+      description: "Large strong brown bear with thick dark brown fur, wise kind eyes, sturdy build"
+
+    mama-bear:
+      name: "Mama Bear"
+      description: "Gentle mother brown bear with warm eyes, nurturing expression, protective demeanor"
+
+  style:
+    global: "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes, cozy winter atmosphere transitioning to bright spring"
+
+viewerDetails:
+- title:
+    en: "The Winter Den"
+    es: "La Guarida Invernal"
+    ru: "Зимняя Берлога"
+  description:
+    en: "Look at the cozy den! Brown bears dig their dens under tree roots, in hillsides, or even in caves. The entrance is small to keep heat in, and the main chamber is lined with dried grass and leaves. It stays a comfortable temperature even when it's freezing outside!"
+    es: "¡Mira la acogedora guarida! Los osos pardos cavan sus guaridas bajo raíces de árboles, en laderas o incluso en cuevas. La entrada es pequeña para mantener el calor, y la cámara principal está forrada con hierba seca y hojas. ¡Se mantiene a una temperatura cómoda incluso cuando afuera está helando!"
+    ru: "Посмотрите на уютную берлогу! Бурые медведи роют берлоги под корнями деревьев, на склонах холмов или даже в пещерах. Вход маленький, чтобы сохранять тепло, а основная камера выстлана сухой травой и листьями. Там сохраняется комфортная температура, даже когда снаружи мороз!"
+  image: "detail-den-structure.jpg"
+
+- title:
+    en: "Built-In Snowshoes"
+    es: "Raquetas de Nieve Incorporadas"
+    ru: "Встроенные Снегоступы"
+  description:
+    en: "Did you notice Papa Bear's huge paws? Brown bear paws can be over 12 inches wide! The thick pads and fur between the toes spread their weight over a larger area, working like natural snowshoes. Their long claws — up to 4 inches — help them dig for roots and catch fish."
+    es: "¿Notaste las enormes patas de Papá Oso? ¡Las patas de oso pardo pueden medir más de 30 centímetros de ancho! Las gruesas almohadillas y el pelaje entre los dedos distribuyen su peso sobre una área más grande, funcionando como raquetas de nieve naturales. Sus largas garras — hasta 10 centímetros — les ayudan a cavar raíces y atrapar peces."
+    ru: "Заметили огромные лапы Папы Медведя? Лапы бурого медведя могут быть более 30 сантиметров в ширину! Толстые подушечки и мех между пальцами распределяют вес на большую площадь, работая как естественные снегоступы. Их длинные когти — до 10 сантиметров — помогают им копать корни и ловить рыбу."
+  image: "detail-bear-paws.jpg"
+
+- title:
+    en: "Nature's Best Coat"
+    es: "El Mejor Abrigo de la Naturaleza"
+    ru: "Лучшая Шуба Природы"
+  description:
+    en: "Mama Bear's thick fur has a secret — it's actually two layers! A dense, soft underfur traps warm air close to the skin, while longer guard hairs on top shed water and snow. This double coat keeps bears warm in temperatures as low as -40 degrees!"
+    es: "El grueso pelaje de Mamá Osa tiene un secreto — ¡en realidad son dos capas! Un denso y suave subpelaje atrapa aire cálido cerca de la piel, mientras que los pelos de guardia más largos en la parte superior repelen el agua y la nieve. ¡Este doble abrigo mantiene a los osos calientes en temperaturas tan bajas como -40 grados!"
+    ru: "У густого меха Мамы Медведицы есть секрет — на самом деле это два слоя! Плотный, мягкий подшёрсток удерживает тёплый воздух у кожи, а более длинные остевые волосы сверху отталкивают воду и снег. Эта двойная шуба согревает медведей при температуре до -40 градусов!"
+  image: "detail-thick-fur.jpg"
+
+- title:
+    en: "A Bear's Changing Menu"
+    es: "El Menú Cambiante del Oso"
+    ru: "Меняющееся Меню Медведя"
+  description:
+    en: "Brown bears are omnivores — they eat both plants and animals! Their diet changes with the seasons: in spring, they munch on roots and fresh grass. In summer, it's berries and insects. In autumn, they feast on salmon to build fat for winter. One bear can eat 90 pounds of food per day before hibernation!"
+    es: "¡Los osos pardos son omnívoros — comen tanto plantas como animales! Su dieta cambia con las estaciones: en primavera, comen raíces y hierba fresca. En verano, son bayas e insectos. En otoño, se dan festines de salmón para acumular grasa para el invierno. ¡Un oso puede comer 40 kilos de comida por día antes de la hibernación!"
+    ru: "Бурые медведи всеядны — они едят и растения, и животных! Их рацион меняется со сменой времён года: весной они грызут корни и свежую траву. Летом — ягоды и насекомые. Осенью они пируют лососем, чтобы накопить жир на зиму. Один медведь может съедать до 40 кг пищи в день перед спячкой!"
+  image: "detail-seasonal-diet.jpg"
+
+routing:
+    openai:
+      - "hero-winter-den-landscape.jpg"
+      - "spring-arrived-landscape.jpg"
+
+    gemini:
+      - "baby-bear-portrait.jpg"
+      - "sister-bear-portrait.jpg"
+      - "mama-bear-portrait.jpg"
+      - "papa-bear-portrait.jpg"
+      - "family-winter-feast.jpg"
+      - "papa-story-melting-snow.jpg"
+      - "papa-story-wildflowers.jpg"
+      - "papa-story-fishing.jpg"
+      - "papa-story-berries.jpg"
+      - "papa-story-playing.jpg"
+      - "mama-lullaby.jpg"
+      - "first-signs-spring.jpg"
+      - "cubs-peek-outside.jpg"
+      - "family-emerges.jpg"
+      - "detail-den-structure.jpg"
+      - "detail-bear-paws.jpg"
+      - "detail-thick-fur.jpg"
+      - "detail-seasonal-diet.jpg"
+      - "fun-fact-hibernation.jpg"
+      - "fun-fact-tiny-cubs.jpg"
+      - "fun-fact-swimming.jpg"
+      - "fun-fact-speed.jpg"
+      - "magazine-cover.jpg"

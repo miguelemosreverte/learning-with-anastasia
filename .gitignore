@@ -17,6 +17,9 @@ npm-debug.log
 *.swp
 *~
 
+# Generated PDFs
+pdfs/
+
 # Keep images since they're generated
 # Uncomment below if you want to exclude generated images from git
 # */assets/images/*.jpg

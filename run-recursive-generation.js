@@ -6,20 +6,33 @@ const yaml = require('js-yaml');
 const RecursiveImageGenerator = require('./automation/recursive-image-generator');
 const ChapterBuilder = require('./automation/chapter-builder');
 
-async function runRecursiveGeneration() {
+async function runRecursiveGeneration(chapterName) {
     // Check for API keys
     if (!process.env.OPENAI_API_KEY || !process.env.GEMINI_API_KEY) {
         console.error('❌ Missing API keys!');
         console.error('   Please set both OPENAI_API_KEY and GEMINI_API_KEY environment variables');
         process.exit(1);
     }
-    
-    console.log('\n🦦 Starting Recursive Sea Otter Story Generation');
+
+    // Get chapter name from argument, CLI, or default
+    const chapter = chapterName || process.argv[2] || 'sea-otters';
+
+    console.log(`\n🐻 Starting Recursive Chapter Generation: ${chapter}`);
     console.log('=' .repeat(60));
-    
+
     // Load chapter definition
-    const yamlPath = path.join(__dirname, 'chapters', 'sea-otters.yaml');
-    const outputDir = path.join(__dirname, 'sea-otters');
+    const yamlPath = path.join(__dirname, 'chapters', `${chapter}.yaml`);
+    const outputDir = path.join(__dirname, chapter);
+
+    if (!fs.existsSync(yamlPath)) {
+        console.error(`❌ Chapter file not found: ${yamlPath}`);
+        console.error('   Available chapters:');
+        const chapters = fs.readdirSync(path.join(__dirname, 'chapters'))
+            .filter(f => f.endsWith('.yaml'))
+            .map(f => f.replace('.yaml', ''));
+        chapters.forEach(c => console.error(`     - ${c}`));
+        process.exit(1);
+    }
     
     console.log(`📖 Loading chapter: ${yamlPath}`);
     console.log(`📁 Output directory: ${outputDir}`);
@@ -67,7 +80,16 @@ async function runRecursiveGeneration() {
 
 // Handle script execution
 if (require.main === module) {
-    runRecursiveGeneration().catch(error => {
+    const chapter = process.argv[2];
+    if (process.argv.includes('--list')) {
+        const chapters = fs.readdirSync(path.join(__dirname, 'chapters'))
+            .filter(f => f.endsWith('.yaml'))
+            .map(f => f.replace('.yaml', ''));
+        console.log('Available chapters:');
+        chapters.forEach(c => console.log(`  - ${c}`));
+        process.exit(0);
+    }
+    runRecursiveGeneration(chapter).catch(error => {
         console.error('Fatal error:', error);
         process.exit(1);
     });

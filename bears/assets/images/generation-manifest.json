@@ -1,0 +1,132 @@
+{
+  "chapter": "bears",
+  "style": {
+    "global": "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes, cozy winter atmosphere transitioning to bright spring"
+  },
+  "routing": {},
+  "characters": {
+    "baby-bear": {
+      "name": "Baby Bear",
+      "description": "Fluffy brown bear cub with big curious eyes, round ears, soft brown fur"
+    },
+    "sister-bear": {
+      "name": "Sister Bear",
+      "description": "Slightly smaller bear cub with star-shaped light patch on chest, playful expression"
+    },
+    "papa-bear": {
+      "name": "Papa Bear",
+      "description": "Large strong brown bear with thick dark brown fur, wise kind eyes, sturdy build"
+    },
+    "mama-bear": {
+      "name": "Mama Bear",
+      "description": "Gentle mother brown bear with warm eyes, nurturing expression, protective demeanor"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-winter-den-landscape.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Snowy forest landscape at twilight with a cozy bear den entrance visible beneath snow-covered roots of a great old tree, warm golden light glowing from inside",
+        "es": "Paisaje de bosque nevado al atardecer con la entrada de una acogedora guarida de oso visible bajo las raíces cubiertas de nieve de un gran árbol viejo, con cálida luz dorada brillando desde el interior",
+        "ru": "Заснеженный лесной пейзаж в сумерках с уютным входом в берлогу медведя, видимым под заснеженными корнями большого старого дерева, с тёплым золотистым светом, льющимся изнутри"
+      }
+    },
+    {
+      "filename": "baby-bear-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Adorable fluffy brown bear cub with big curious eyes, round ears, and soft brown fur, sitting in a cozy den",
+        "es": "Adorable cachorro de oso pardo esponjoso con grandes ojos curiosos, orejas redondas y suave pelaje marrón, sentado en una guarida acogedora",
+        "ru": "Очаровательный пушистый бурый медвежонок с большими любопытными глазами, круглыми ушами и мягкой коричневой шерстью, сидящий в уютной берлоге"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "sister-bear-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Cute fluffy bear cub slightly smaller than Baby Bear, with a star-shaped light patch on chest, playful expression",
+        "es": "Lindo cachorro de oso esponjoso ligeramente más pequeño que Bebé Oso, con una mancha clara en forma de estrella en el pecho, expresión juguetona",
+        "ru": "Милый пушистый медвежонок, чуть меньше Малыша, со светлым пятнышком в форме звёздочки на груди, игривое выражение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "mama-bear-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Large gentle mother brown bear with warm eyes and protective expression, in a cozy den",
+        "es": "Gran y gentil madre osa parda con ojos cálidos y expresión protectora, en una guarida acogedora",
+        "ru": "Большая нежная мама-медведица с тёплыми глазами и заботливым выражением, в уютной берлоге"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "papa-bear-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Large strong Papa Bear with thick dark brown fur dusted with snowflakes, entering den with berries",
+        "es": "Gran y fuerte Papá Oso con grueso pelaje marrón oscuro espolvoreado con copos de nieve, entrando a la guarida con bayas",
+        "ru": "Большой сильный Папа Медведь с густой тёмно-коричневой шерстью, припорошённой снежинками, входит в берлогу с ягодами"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "family-winter-feast.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papa-story-melting-snow.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papa-story-wildflowers.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papa-story-fishing.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papa-story-berries.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papa-story-playing.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "mama-lullaby.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-signs-spring.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "cubs-peek-outside.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "family-emerges.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "spring-arrived-landscape.jpg",
+      "type": "landscape",
+      "needsTranslations": false
+    }
+  ]
+}
