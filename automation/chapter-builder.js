@@ -8,6 +8,10 @@ class ChapterBuilder {
         // Load the template - using the fixed version
         const templatePath = path.join(__dirname, '../templates/chapter-template-fixed.hbs');
         const templateSource = fs.readFileSync(templatePath, 'utf8');
+
+        // Register helpers
+        Handlebars.registerHelper('add', function(a, b) { return a + b; });
+
         this.template = Handlebars.compile(templateSource);
     }
 

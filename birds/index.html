@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birds: Nature&#x27;s Master Builders - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Birds: Nature&#x27;s Master Builders</h1>
+        <h1 data-lang="es">Aves: Maestras Constructoras de la Naturaleza</h1>
+        <h1 data-lang="ru">Птицы: Мастера-строители природы</h1>
+        <p data-lang="en" class="active">An Educational Journey into Nature&#x27;s Architecture</p>
+        <p data-lang="es">Un Viaje Educativo hacia la Arquitectura de la Naturaleza</p>
+        <p data-lang="ru">Образовательное путешествие в архитектуру природы</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-acacia-landscape.jpg"
+             alt="Birds"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Birds</h2>
+            <h2 class="hero-title" data-lang="es">Aves</h2>
+            <h2 class="hero-title" data-lang="ru">Птицы</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">Weaving Wonders, One Thread at a Time</p>
+            <p class="hero-subtitle" data-lang="es">Tejiendo Maravillas, Un Hilo a la Vez</p>
+            <p class="hero-subtitle" data-lang="ru">Плетём чудеса, нить за нитью</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/zuri-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Beautiful young golden-yellow village weaver bird with bright curious eyes, perched on an acacia branch"
+                 data-alt-en="Beautiful young golden-yellow village weaver bird with bright curious eyes, perched on an acacia branch"
+                 data-alt-es="Hermosa joven ave tejedora de aldea amarillo-dorada con brillantes ojos curiosos, posada en una rama de acacia"
+                 data-alt-ru="Красивая молодая птица-ткач золотисто-жёлтого цвета с яркими любопытными глазами, сидящая на ветке акации"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Zuri the Weaver Bird</h2>
+            <h2 data-lang="es">Conoce a Zuri, la Ave Tejedora</h2>
+            <h2 data-lang="ru">Знакомьтесь с Зури, птицей-ткачом</h2>
+            <div data-lang="en" class="active">
+                <p>Zuri is a young village weaver bird with brilliant golden-yellow feathers and bright, curious eyes. She lives in the African savanna, where her colony of weavers fills a great acacia tree with dozens of hanging nests. Today is a special day — Zuri is ready to build her very first nest!</p>
+            </div>
+            <div data-lang="es">
+                <p>Zuri es una joven ave tejedora con brillantes plumas amarillo-doradas y ojos curiosos y brillantes. Vive en la sabana africana, donde su colonia de tejedoras llena un gran árbol de acacia con docenas de nidos colgantes. Hoy es un día especial — ¡Zuri está lista para construir su primer nido!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Зури — молодая птица-ткач с великолепным золотисто-жёлтым оперением и яркими любопытными глазами. Она живёт в африканской саванне, где её колония ткачей заполняет большое дерево акации десятками подвесных гнёзд. Сегодня особенный день — Зури готова построить своё самое первое гнездо!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/zuri-surveying.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Step 1: Choosing the Perfect Branch</h2>
+            <h2 data-lang="es">Paso 1: Eligiendo la Rama Perfecta</h2>
+            <h2 data-lang="ru">Шаг 1: Выбор идеальной ветки</h2>
+            <div data-lang="en" class="active">
+                <p>Zuri hops along the acacia branches, studying each one carefully. She needs a branch that hangs over open space — this way, snakes can&#x27;t easily reach her nest! The branch must be flexible enough to sway in the wind but strong enough to hold a nest.</p>
+            </div>
+            <div data-lang="es">
+                <p>Zuri salta por las ramas de la acacia, estudiando cada una cuidadosamente. Necesita una rama que cuelgue sobre un espacio abierto — ¡de esta forma, las serpientes no pueden alcanzar fácilmente su nido! La rama debe ser lo suficientemente flexible para mecerse con el viento pero lo suficientemente fuerte para sostener un nido.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Зури прыгает по веткам акации, внимательно изучая каждую. Ей нужна ветка, нависающая над открытым пространством — так змеи не смогут легко добраться до её гнезда! Ветка должна быть достаточно гибкой, чтобы качаться на ветру, но достаточно крепкой, чтобы удержать гнездо.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/zuri-gathering-grass.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Step 2: Gathering Grass Strips</h2>
+            <h2 data-lang="es">Paso 2: Recolectando Tiras de Hierba</h2>
+            <h2 data-lang="ru">Шаг 2: Сбор травинок</h2>
+            <div data-lang="en" class="active">
+                <p>Zuri flies down to the meadow and carefully tears long strips of fresh green grass. She uses her beak like scissors, pulling the grass apart lengthwise to make thin, flexible strips. Fresh grass is easier to weave than dry grass because it bends without breaking!</p>
+            </div>
+            <div data-lang="es">
+                <p>Zuri vuela hacia el prado y cuidadosamente arranca largas tiras de hierba verde fresca. Usa su pico como tijeras, separando la hierba a lo largo para hacer tiras finas y flexibles. ¡La hierba fresca es más fácil de tejer que la seca porque se dobla sin romperse!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Зури спускается на луг и аккуратно отрывает длинные полоски свежей зелёной травы. Она использует клюв как ножницы, разделяя траву вдоль на тонкие гибкие полоски. Свежая трава легче плетётся, чем сухая, потому что гнётся, не ломаясь!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/zuri-first-knot.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Step 3: The First Knot</h2>
+            <h2 data-lang="es">Paso 3: El Primer Nudo</h2>
+            <h2 data-lang="ru">Шаг 3: Первый узел</h2>
+            <div data-lang="en" class="active">
+                <p>This is the trickiest part! Zuri wraps a grass strip around the branch and ties a loop knot, using only her beak and one foot. She hangs upside down, weaving the strip over and under until it holds tight. This single knot will support the entire nest!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Esta es la parte más complicada! Zuri envuelve una tira de hierba alrededor de la rama y ata un nudo de lazo, usando solo su pico y una pata. Se cuelga boca abajo, tejiendo la tira por encima y por debajo hasta que queda firme. ¡Este único nudo sostendrá todo el nido!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Это самая сложная часть! Зури обматывает травинку вокруг ветки и завязывает петлевой узел, используя только клюв и одну лапку. Она висит вниз головой, протягивая полоску сверху и снизу, пока та не держится крепко. Этот единственный узел будет поддерживать всё гнездо!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/elder-weaver-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Wise elderly olive-brown weaver bird with experienced eyes, inspecting a nest alongside a young golden weaver"
+                 data-alt-en="Wise elderly olive-brown weaver bird with experienced eyes, inspecting a nest alongside a young golden weaver"
+                 data-alt-es="Sabio tejedor anciano marrón oliva con ojos experimentados, inspeccionando un nido junto a un joven tejedor dorado"
+                 data-alt-ru="Мудрая пожилая птица-ткач оливково-коричневого цвета с опытным взглядом, осматривающая гнездо рядом с молодым золотистым ткачом"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Elder Weaver&#x27;s Wisdom</h2>
+            <h2 data-lang="es">La Sabiduría del Tejedor Mayor</h2>
+            <h2 data-lang="ru">Мудрость Старого Ткача</h2>
+            <div data-lang="en" class="active">
+                <p>Elder Weaver, the oldest and most experienced builder in the colony, swings by to check on Zuri&#x27;s progress. His feathers have faded to a warm olive-brown, and his nests are famous throughout the savanna — perfectly round, beautifully woven, and so strong they last through the rainy season.</p>
+            </div>
+            <div data-lang="es">
+                <p>El Tejedor Mayor, el constructor más viejo y experimentado de la colonia, pasa a revisar el progreso de Zuri. Sus plumas se han desvanecido a un cálido marrón oliva, y sus nidos son famosos en toda la sabana — perfectamente redondos, hermosamente tejidos y tan fuertes que duran toda la temporada de lluvias.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Старый Ткач, самый опытный строитель колонии, заглядывает проверить успехи Зури. Его перья выцвели до тёплого оливково-коричневого цвета, а его гнёзда знамениты по всей саванне — идеально круглые, красиво сплетённые и настолько прочные, что выдерживают сезон дождей.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/weaving-lesson.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Step 4: Learning to Weave</h2>
+            <h2 data-lang="es">Paso 4: Aprendiendo a Tejer</h2>
+            <h2 data-lang="ru">Шаг 4: Учимся плести</h2>
+            <div data-lang="en" class="active">
+                <p>Elder Weaver shows Zuri the secret: push a grass strip through with your beak, reach around with one foot, pull it through, then push the next one the opposite way. Over-under-over-under — just like weaving cloth! Each strip locks the others in place.</p>
+            </div>
+            <div data-lang="es">
+                <p>El Tejedor Mayor le muestra a Zuri el secreto: empuja una tira de hierba con tu pico, alcanza con una pata, tira de ella, luego empuja la siguiente en dirección opuesta. ¡Por encima-por debajo-por encima-por debajo — igual que tejer tela! Cada tira bloquea a las demás en su lugar.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Старый Ткач показывает Зури секрет: протолкни травинку клювом, обхвати лапкой, вытяни, затем протолкни следующую в обратном направлении. Сверху-снизу-сверху-снизу — точно как плетение ткани! Каждая полоска фиксирует остальные на месте.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/nest-taking-shape.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Step 5: The Nest Takes Shape</h2>
+            <h2 data-lang="es">Paso 5: El Nido Toma Forma</h2>
+            <h2 data-lang="ru">Шаг 5: Гнездо обретает форму</h2>
+            <div data-lang="en" class="active">
+                <p>After hours of patient weaving, Zuri&#x27;s nest is beginning to look like a round ball hanging from the branch! She weaves from the inside, pushing strips outward. The entrance faces downward — this keeps rain out and makes it harder for predators to peek inside.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Después de horas de tejido paciente, el nido de Zuri empieza a parecer una bola redonda colgando de la rama! Teje desde el interior, empujando las tiras hacia afuera. La entrada mira hacia abajo — esto mantiene la lluvia fuera y dificulta que los depredadores miren adentro.</p>
+            </div>
+            <div data-lang="ru">
+                <p>После часов терпеливого плетения гнездо Зури начинает выглядеть как круглый шар, свисающий с ветки! Она плетёт изнутри, выталкивая полоски наружу. Вход направлен вниз — это не даёт дождю попадать внутрь и затрудняет хищникам заглянуть внутрь.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/rosie-hummingbird-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Tiny iridescent green hummingbird carefully building a walnut-sized nest from spider silk and lichen"
+                 data-alt-en="Tiny iridescent green hummingbird carefully building a walnut-sized nest from spider silk and lichen"
+                 data-alt-es="Diminuto colibrí verde iridiscente construyendo cuidadosamente un nido del tamaño de una nuez con seda de araña y liquen"
+                 data-alt-ru="Крошечная переливающаяся зелёная колибри аккуратно строит гнездо размером с грецкий орех из паутины и лишайника"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Rosie&#x27;s Tiny Masterpiece</h2>
+            <h2 data-lang="es">La Pequeña Obra Maestra de Rosie</h2>
+            <h2 data-lang="ru">Крошечный шедевр Рози</h2>
+            <div data-lang="en" class="active">
+                <p>While taking a break, Zuri spots Rosie the hummingbird building the tiniest nest imaginable — no bigger than a walnut! Rosie uses spider silk as thread and decorates with bits of lichen for camouflage. Her nest is so small it could fit in a teaspoon, but it stretches as her babies grow!</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras toma un descanso, Zuri ve a Rosie la colibrí construyendo el nido más diminuto imaginable — ¡no más grande que una nuez! Rosie usa seda de araña como hilo y decora con trozos de liquen para camuflaje. ¡Su nido es tan pequeño que cabría en una cucharita, pero se estira a medida que sus bebés crecen!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Во время перерыва Зури замечает колибри Рози, строящую самое крошечное гнёздышко, какое только можно представить — не больше грецкого ореха! Рози использует паутину как нить и украшает его кусочками лишайника для маскировки. Её гнездо настолько маленькое, что поместится в чайной ложке, но оно растягивается по мере роста птенцов!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/swallow-mud-builders.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Barn swallows building cup-shaped mud nests under farmhouse eaves, mid-construction with mud pellets visible"
+                 data-alt-en="Barn swallows building cup-shaped mud nests under farmhouse eaves, mid-construction with mud pellets visible"
+                 data-alt-es="Golondrinas construyendo nidos de barro en forma de copa bajo los aleros de una granja, en medio de la construcción con bolitas de barro visibles"
+                 data-alt-ru="Деревенские ласточки строят чашеобразные глиняные гнёзда под карнизом фермы, в процессе строительства с видимыми комочками глины"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Swallows: The Mud Engineers</h2>
+            <h2 data-lang="es">Golondrinas: Las Ingenieras del Barro</h2>
+            <h2 data-lang="ru">Ласточки: Инженеры из глины</h2>
+            <div data-lang="en" class="active">
+                <p>Near a farmhouse, Zuri watches barn swallows build their nests from mud! Each swallow collects tiny mud pellets in her beak, then stacks them one by one to form a cup-shaped nest under the eaves. They make over a thousand trips to finish one nest — that&#x27;s true dedication!</p>
+            </div>
+            <div data-lang="es">
+                <p>Cerca de una granja, Zuri observa cómo las golondrinas construyen sus nidos con barro. Cada golondrina recoge pequeñas bolitas de barro en su pico, luego las apila una por una para formar un nido en forma de copa bajo los aleros. ¡Hacen más de mil viajes para terminar un nido — eso es verdadera dedicación!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Около фермы Зури наблюдает, как деревенские ласточки строят гнёзда из глины! Каждая ласточка собирает крошечные комочки глины в клюве, затем укладывает их один за другим, формируя гнездо в форме чашечки под карнизом. Они совершают более тысячи рейсов, чтобы закончить одно гнездо — вот это настоящая преданность!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/boris-bowerbird-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Glossy dark blue-black satin bowerbird proudly displaying his bower decorated with blue flowers and objects"
+                 data-alt-en="Glossy dark blue-black satin bowerbird proudly displaying his bower decorated with blue flowers and objects"
+                 data-alt-es="Ave del emparrado satinada azul oscuro brillante mostrando orgullosamente su glorieta decorada con flores y objetos azules"
+                 data-alt-ru="Блестящий тёмный сине-чёрный атласный шалашник гордо демонстрирует свою беседку, украшенную синими цветами и предметами"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Boris the Decorator</h2>
+            <h2 data-lang="es">Boris el Decorador</h2>
+            <h2 data-lang="ru">Борис-Декоратор</h2>
+            <div data-lang="en" class="active">
+                <p>Zuri discovers Boris the satin bowerbird, who takes building to a whole new level — he&#x27;s an artist! Boris doesn&#x27;t just build a nest; he constructs an elaborate bower of sticks and decorates it with blue objects: flowers, berries, bottle caps, even shiny plastic. He paints the walls with berry juice using a bark brush!</p>
+            </div>
+            <div data-lang="es">
+                <p>Zuri descubre a Boris, el ave del emparrado satinada, que lleva la construcción a otro nivel — ¡es un artista! Boris no solo construye un nido; construye una glorieta elaborada de palos y la decora con objetos azules: flores, bayas, tapas de botellas, incluso plástico brillante. ¡Pinta las paredes con jugo de bayas usando un pincel de corteza!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Зури встречает Бориса, атласного шалашника, который выводит строительство на совершенно новый уровень — он настоящий художник! Борис не просто строит гнездо; он возводит изысканную беседку из веточек и украшает её синими предметами: цветами, ягодами, крышечками от бутылок, даже блестящим пластиком. Он красит стены соком ягод, используя кисточку из коры!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/eagles-engineering.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Magnificent bald eagle pair working on their massive stick nest high in a pine tree, enormous nest dwarfing the birds"
+                 data-alt-en="Magnificent bald eagle pair working on their massive stick nest high in a pine tree, enormous nest dwarfing the birds"
+                 data-alt-es="Magnífica pareja de águilas calvas trabajando en su enorme nido de palos en lo alto de un pino, el enorme nido empequeñeciendo a las aves"
+                 data-alt-ru="Великолепная пара белоголовых орланов работает над своим огромным гнездом из веток высоко на сосне, гигантское гнездо затмевает самих птиц"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Eagles: Engineering Giants</h2>
+            <h2 data-lang="es">Águilas: Gigantes de la Ingeniería</h2>
+            <h2 data-lang="ru">Орлы: Гиганты инженерии</h2>
+            <div data-lang="en" class="active">
+                <p>On her journey, Zuri looks up in awe at a bald eagle pair adding sticks to their massive nest high in a pine tree. Eagle nests are the biggest of any bird — they can be 10 feet wide, 20 feet deep, and weigh over 2 tons! Eagles add to the same nest year after year, sometimes for decades.</p>
+            </div>
+            <div data-lang="es">
+                <p>En su viaje, Zuri mira hacia arriba asombrada a una pareja de águilas calvas agregando palos a su enorme nido en lo alto de un pino. Los nidos de águila son los más grandes de cualquier ave — ¡pueden tener 3 metros de ancho, 6 metros de profundidad y pesar más de 2 toneladas! Las águilas agregan al mismo nido año tras año, a veces durante décadas.</p>
+            </div>
+            <div data-lang="ru">
+                <p>В своём путешествии Зури с восхищением смотрит вверх на пару белоголовых орланов, добавляющих ветки к своему огромному гнезду высоко на сосне. Гнёзда орлов — самые большие среди всех птиц: они могут достигать 3 метров в ширину, 6 метров в глубину и весить более 2 тонн! Орлы добавляют к одному гнезду год за годом, иногда десятилетиями.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <span class="img-ref">#12</span>
+            <img data-src="assets/images/zuri-nest-complete.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Zuri&#x27;s Nest Is Complete!</h2>
+            <h2 data-lang="es">¡El Nido de Zuri Está Completo!</h2>
+            <h2 data-lang="ru">Гнездо Зури готово!</h2>
+            <div data-lang="en" class="active">
+                <p>After two days of hard work, Zuri&#x27;s pendant nest hangs perfectly from the branch — a beautiful golden-green sphere with a neat round entrance at the bottom. She lines the inside with soft feathers and downy grass. It&#x27;s cozy, sturdy, and safe. Zuri chirps with pride — she&#x27;s built her first home!</p>
+            </div>
+            <div data-lang="es">
+                <p>Después de dos días de arduo trabajo, el nido colgante de Zuri pende perfectamente de la rama — una hermosa esfera verde-dorada con una entrada redonda y ordenada en la parte inferior. Forra el interior con suaves plumas y hierba sedosa. Es acogedor, resistente y seguro. ¡Zuri canta con orgullo — ha construido su primer hogar!</p>
+            </div>
+            <div data-lang="ru">
+                <p>После двух дней усердной работы подвесное гнездо Зури идеально свисает с ветки — красивая золотисто-зелёная сфера с аккуратным круглым входом внизу. Она выстилает внутреннюю часть мягкими пёрышками и пушистой травой. Уютное, крепкое и безопасное. Зури радостно щебечет — она построила свой первый дом!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#13</span>
+            <img data-src="assets/images/colony-thriving-landscape.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Colony Thrives</h2>
+            <h2 data-lang="es">La Colonia Prospera</h2>
+            <h2 data-lang="ru">Колония процветает</h2>
+            <div data-lang="en" class="active">
+                <p>The acacia tree is alive with activity! Dozens of pendant nests hang from every branch, each one a unique work of art. Male weavers flutter between nests, females inspect the craftsmanship, and chicks peek out from finished nests. The weaver colony is a bustling neighborhood where every bird is both architect and neighbor!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡El árbol de acacia está lleno de actividad! Docenas de nidos colgantes penden de cada rama, cada uno una obra de arte única. Los tejedores machos revolotean entre nidos, las hembras inspeccionan la artesanía, y los polluelos se asoman desde los nidos terminados. ¡La colonia de tejedoras es un vecindario bullicioso donde cada ave es tanto arquitecta como vecina!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Дерево акации полно жизни! Десятки подвесных гнёзд свисают с каждой ветки, каждое — уникальное произведение искусства. Самцы-ткачи порхают между гнёздами, самки проверяют мастерство, а птенцы выглядывают из готовых гнёзд. Колония ткачей — это оживлённый квартал, где каждая птица одновременно и архитектор, и сосед!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-weaving-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Weaving Technique"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Weaving Technique</h3>
+                    <h3 data-lang="es">Técnica de Tejido</h3>
+                    <h3 data-lang="ru">Техника плетения</h3>
+                    <p data-lang="en" class="active">Look closely at the nest wall — each grass strip goes over one strip and under the next, just like weaving fabric! This interlocking pattern makes the nest incredibly strong despite being made of simple grass.</p>
+                    <p data-lang="es">¡Mira de cerca la pared del nido — cada tira de hierba pasa por encima de una tira y por debajo de la siguiente, igual que tejer tela! Este patrón entrelazado hace que el nido sea increíblemente fuerte a pesar de estar hecho de hierba simple.</p>
+                    <p data-lang="ru">Присмотритесь к стенке гнезда — каждая травинка проходит поверх одной полоски и под следующей, точно как плетение ткани! Этот переплетённый узор делает гнездо невероятно прочным, несмотря на то что оно сделано из простой травы.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-entrance-tube.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Entrance Tube"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Entrance Tube</h3>
+                    <h3 data-lang="es">El Tubo de Entrada</h3>
+                    <h3 data-lang="ru">Входная трубка</h3>
+                    <p data-lang="en" class="active">The nest entrance points downward like a tube — this is brilliant engineering! Rain rolls off instead of dripping in, and predators like snakes have a very hard time climbing up into the nest.</p>
+                    <p data-lang="es">La entrada del nido apunta hacia abajo como un tubo — ¡esto es ingeniería brillante! La lluvia se escurre en lugar de gotear adentro, y los depredadores como las serpientes tienen mucha dificultad para trepar al nido.</p>
+                    <p data-lang="ru">Вход в гнездо направлен вниз, как трубка — это гениальная инженерия! Дождь стекает, а не капает внутрь, и хищникам, таким как змеи, очень сложно забраться в гнездо.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-spider-silk.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Spider Silk Magic"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Spider Silk Magic</h3>
+                    <h3 data-lang="es">Magia de la Seda de Araña</h3>
+                    <h3 data-lang="ru">Магия паутины</h3>
+                    <p data-lang="en" class="active">Rosie&#x27;s hummingbird nest uses spider silk as both glue and thread — and it&#x27;s stretchy! As her chicks grow bigger, the silk stretches so the nest expands. It&#x27;s like a nest that grows with the babies!</p>
+                    <p data-lang="es">¡El nido de colibrí de Rosie usa seda de araña como pegamento e hilo — y es elástica! A medida que sus polluelos crecen, la seda se estira para que el nido se expanda. ¡Es como un nido que crece con los bebés!</p>
+                    <p data-lang="ru">Гнездо колибри Рози использует паутину как клей и нить — и она эластичная! По мере роста птенцов паутина растягивается, и гнездо расширяется. Это как гнездо, которое растёт вместе с малышами!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-bower-decoration.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Boris&#x27;s Blue Collection"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Boris&#x27;s Blue Collection</h3>
+                    <h3 data-lang="es">La Colección Azul de Boris</h3>
+                    <h3 data-lang="ru">Синяя коллекция Бориса</h3>
+                    <p data-lang="en" class="active">Boris collects ONLY blue objects for his bower — he&#x27;s very particular! Blue flowers, blue berries, blue bottle caps, blue feathers. Scientists think this shows females how good he is at finding rare things.</p>
+                    <p data-lang="es">¡Boris colecciona SOLO objetos azules para su glorieta — es muy particular! Flores azules, bayas azules, tapas de botellas azules, plumas azules. Los científicos creen que esto muestra a las hembras lo bueno que es encontrando cosas raras.</p>
+                    <p data-lang="ru">Борис собирает ТОЛЬКО синие предметы для своей беседки — он очень избирательный! Синие цветы, синие ягоды, синие крышечки от бутылок, синие перья. Учёные считают, что так он показывает самкам, как хорошо он умеет находить редкие вещи.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Bird Builder Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Aves Constructoras!</h2>
+            <h2 data-lang="ru">Удивительные факты о птицах-строителях!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-weaving-speed.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Speed Builders"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Speed Builders</h3>
+                        <h3 data-lang="es">Constructoras Veloces</h3>
+                        <h3 data-lang="ru">Скоростные строители</h3>
+                        <p data-lang="en" class="active">A village weaver bird can build an entire nest in just 9 to 14 hours! They weave over 300 individual grass strips, making thousands of precise movements with their beak and feet.</p>
+                        <p data-lang="es">¡Un ave tejedora puede construir un nido entero en solo 9 a 14 horas! Tejen más de 300 tiras individuales de hierba, haciendo miles de movimientos precisos con su pico y patas.</p>
+                        <p data-lang="ru">Птица-ткач может построить целое гнездо всего за 9-14 часов! Они вплетают более 300 отдельных травинок, совершая тысячи точных движений клювом и лапками.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-nest-rejection.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Quality Control"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Quality Control</h3>
+                        <h3 data-lang="es">Control de Calidad</h3>
+                        <h3 data-lang="ru">Контроль качества</h3>
+                        <p data-lang="en" class="active">Female weavers are very picky! They inspect the male&#x27;s nest carefully, tugging at the weave to test its strength. If the nest isn&#x27;t good enough, they tear it apart and the male must start over!</p>
+                        <p data-lang="es">¡Las hembras tejedoras son muy exigentes! Inspeccionan el nido del macho cuidadosamente, tirando del tejido para probar su resistencia. ¡Si el nido no es lo suficientemente bueno, lo deshacen y el macho debe empezar de nuevo!</p>
+                        <p data-lang="ru">Самки-ткачи очень придирчивы! Они тщательно осматривают гнездо самца, дёргая за плетение, чтобы проверить его прочность. Если гнездо недостаточно хорошее, они его разрывают, и самец должен начать заново!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-sociable-weaver.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Bird Apartments"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Bird Apartments</h3>
+                        <h3 data-lang="es">Apartamentos de Aves</h3>
+                        <h3 data-lang="ru">Птичьи квартиры</h3>
+                        <p data-lang="en" class="active">Sociable weaver birds build the largest nests of any bird — communal structures up to 20 feet long that house over 500 birds! These &#x27;apartment buildings&#x27; can last over 100 years.</p>
+                        <p data-lang="es">¡Las aves tejedoras sociables construyen los nidos más grandes de cualquier ave — estructuras comunales de hasta 6 metros de largo que albergan a más de 500 aves! Estos &#x27;edificios de apartamentos&#x27; pueden durar más de 100 años.</p>
+                        <p data-lang="ru">Общественные ткачи строят самые большие гнёзда среди всех птиц — общие сооружения до 6 метров длиной, в которых живут более 500 птиц! Эти «многоквартирные дома» могут простоять более 100 лет.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-tailorbird.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="The Tailor Bird"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">The Tailor Bird</h3>
+                        <h3 data-lang="es">El Ave Costurera</h3>
+                        <h3 data-lang="ru">Птица-портной</h3>
+                        <p data-lang="en" class="active">The common tailorbird literally sews its nest! It pierces holes in large leaves with its sharp beak, then stitches them together with plant fibers or spider silk to create a cozy leaf cradle.</p>
+                        <p data-lang="es">¡El ave costurera literalmente cose su nido! Perfora agujeros en hojas grandes con su pico afilado, luego las cose con fibras vegetales o seda de araña para crear una acogedora cuna de hojas.</p>
+                        <p data-lang="ru">Птица-портной буквально сшивает своё гнездо! Она прокалывает отверстия в больших листьях острым клювом, затем сшивает их растительными волокнами или паутиной, создавая уютную колыбельку из листьев.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Teaching nature&#x27;s architecture through storytelling</p>
+        <p data-lang="es" style="margin-top: 10px;">Enseñando la arquitectura de la naturaleza a través de cuentos</p>
+        <p data-lang="ru" style="margin-top: 10px;">Обучение природной архитектуре через рассказы</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

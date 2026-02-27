@@ -439,6 +439,23 @@
             overflow-x: hidden;
             position: relative;
         }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -469,8 +486,9 @@
     <!-- Hero Section -->
     {{#if hero}}
     <section class="hero-section">
-        <img src="assets/images/{{hero.image}}" 
-             alt="{{hero.title.en}}" 
+        <span class="img-ref">H</span>
+        <img src="assets/images/{{hero.image}}"
+             alt="{{hero.title.en}}"
              class="hero-image critical"
              loading="eager">
         <div class="hero-overlay">
@@ -488,9 +506,10 @@
     {{#each sections}}
     <section class="content-section{{#if isActionSequence}} action-sequence{{/if}}">
         <div class="image-container">
-            <img data-src="assets/images/{{image}}" 
+            <span class="img-ref">#{{add @index 1}}</span>
+            <img data-src="assets/images/{{image}}"
                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
-                 alt="{{imageAlt.en}}" 
+                 alt="{{imageAlt.en}}"
                  data-alt-en="{{imageAlt.en}}"
                  data-alt-es="{{imageAlt.es}}"
                  data-alt-ru="{{imageAlt.ru}}"
@@ -521,9 +540,10 @@
         <h2 data-lang="ru">Вы Заметили?</h2>
         <div class="details-grid">
             {{#each viewerDetails}}
-            <div class="detail-card">
+            <div class="detail-card" style="position: relative;">
                 {{#if image}}
-                <img data-src="assets/images/{{image}}" 
+                <span class="img-ref">V{{add @index 1}}</span>
+                <img data-src="assets/images/{{image}}"
                      src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
                      alt="{{title.en}}"
                      loading="lazy">
@@ -551,11 +571,12 @@
             <h2 data-lang="ru">{{funFacts.title.ru}}</h2>
             <div class="facts-grid">
                 {{#each funFacts.facts}}
-                <div class="fact-card">
+                <div class="fact-card" style="position: relative;">
                     {{#if image}}
-                    <img data-src="assets/images/{{image}}" 
+                    <span class="img-ref">F{{add @index 1}}</span>
+                    <img data-src="assets/images/{{image}}"
                          src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
-                         alt="{{title.en}}" 
+                         alt="{{title.en}}"
                          class="fact-card-image"
                          loading="lazy">
                     {{/if}}

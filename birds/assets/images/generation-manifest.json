@@ -1,0 +1,132 @@
+{
+  "chapter": "birds",
+  "style": {
+    "global": "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes, African savanna warmth with lush greens"
+  },
+  "routing": {},
+  "characters": {
+    "zuri": {
+      "name": "Zuri",
+      "description": "Young golden-yellow village weaver bird with bright curious eyes"
+    },
+    "elder-weaver": {
+      "name": "Elder Weaver",
+      "description": "Old olive-brown weaver bird with experienced wise eyes, faded plumage"
+    },
+    "rosie": {
+      "name": "Rosie",
+      "description": "Tiny iridescent green hummingbird, delicate and precise"
+    },
+    "boris": {
+      "name": "Boris",
+      "description": "Glossy dark blue-black satin bowerbird, proud and artistic"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-acacia-landscape.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Stunning African savanna at golden hour with a massive acacia tree filled with dozens of hanging weaver bird nests, warm light filtering through branches",
+        "es": "Impresionante sabana africana a la hora dorada con un enorme árbol de acacia lleno de docenas de nidos colgantes de aves tejedoras, luz cálida filtrándose entre las ramas",
+        "ru": "Потрясающая африканская саванна в золотой час с огромным деревом акации, полным десятков подвесных гнёзд птиц-ткачей, тёплый свет проникает сквозь ветви"
+      }
+    },
+    {
+      "filename": "zuri-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Beautiful young golden-yellow village weaver bird with bright curious eyes, perched on an acacia branch",
+        "es": "Hermosa joven ave tejedora de aldea amarillo-dorada con brillantes ojos curiosos, posada en una rama de acacia",
+        "ru": "Красивая молодая птица-ткач золотисто-жёлтого цвета с яркими любопытными глазами, сидящая на ветке акации"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "zuri-surveying.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "zuri-gathering-grass.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "zuri-first-knot.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "elder-weaver-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Wise elderly olive-brown weaver bird with experienced eyes, inspecting a nest alongside a young golden weaver",
+        "es": "Sabio tejedor anciano marrón oliva con ojos experimentados, inspeccionando un nido junto a un joven tejedor dorado",
+        "ru": "Мудрая пожилая птица-ткач оливково-коричневого цвета с опытным взглядом, осматривающая гнездо рядом с молодым золотистым ткачом"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "weaving-lesson.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "nest-taking-shape.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "rosie-hummingbird-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Tiny iridescent green hummingbird carefully building a walnut-sized nest from spider silk and lichen",
+        "es": "Diminuto colibrí verde iridiscente construyendo cuidadosamente un nido del tamaño de una nuez con seda de araña y liquen",
+        "ru": "Крошечная переливающаяся зелёная колибри аккуратно строит гнездо размером с грецкий орех из паутины и лишайника"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "swallow-mud-builders.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Barn swallows building cup-shaped mud nests under farmhouse eaves, mid-construction with mud pellets visible",
+        "es": "Golondrinas construyendo nidos de barro en forma de copa bajo los aleros de una granja, en medio de la construcción con bolitas de barro visibles",
+        "ru": "Деревенские ласточки строят чашеобразные глиняные гнёзда под карнизом фермы, в процессе строительства с видимыми комочками глины"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "boris-bowerbird-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Glossy dark blue-black satin bowerbird proudly displaying his bower decorated with blue flowers and objects",
+        "es": "Ave del emparrado satinada azul oscuro brillante mostrando orgullosamente su glorieta decorada con flores y objetos azules",
+        "ru": "Блестящий тёмный сине-чёрный атласный шалашник гордо демонстрирует свою беседку, украшенную синими цветами и предметами"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "eagles-engineering.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magnificent bald eagle pair working on their massive stick nest high in a pine tree, enormous nest dwarfing the birds",
+        "es": "Magnífica pareja de águilas calvas trabajando en su enorme nido de palos en lo alto de un pino, el enorme nido empequeñeciendo a las aves",
+        "ru": "Великолепная пара белоголовых орланов работает над своим огромным гнездом из веток высоко на сосне, гигантское гнездо затмевает самих птиц"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "zuri-nest-complete.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "colony-thriving-landscape.jpg",
+      "type": "landscape",
+      "needsTranslations": false
+    }
+  ]
+}

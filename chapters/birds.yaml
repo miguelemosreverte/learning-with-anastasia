@@ -1,0 +1,482 @@
+# Birds Chapter Definition - Nest-Building Birds Story
+meta:
+  id: birds
+  issueNumber: 5
+  date: "May 2025"
+  folderName: "birds"
+  title:
+    en: "Birds: Nature's Master Builders"
+    es: "Aves: Maestras Constructoras de la Naturaleza"
+    ru: "Птицы: Мастера-строители природы"
+  subtitle:
+    en: "An Educational Journey into Nature's Architecture"
+    es: "Un Viaje Educativo hacia la Arquitectura de la Naturaleza"
+    ru: "Образовательное путешествие в архитектуру природы"
+  magazineText:
+    en: "Join Zuri the young weaver bird on an amazing building adventure! Discover how different birds create incredible nests using grass, mud, spider silk, and even decorations."
+    es: "¡Únete a Zuri, la joven ave tejedora, en una increíble aventura constructora! Descubre cómo diferentes aves crean nidos increíbles usando hierba, barro, seda de araña e incluso decoraciones."
+    ru: "Присоединяйтесь к Зури, молодой птице-ткачу, в удивительном строительном приключении! Узнайте, как разные птицы создают невероятные гнёзда, используя траву, глину, паутину и даже украшения."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Teaching nature's architecture through storytelling"
+    es: "Enseñando la arquitectura de la naturaleza a través de cuentos"
+    ru: "Обучение природной архитектуре через рассказы"
+  description: "Follow Zuri the weaver bird as she builds her first nest, meeting other amazing bird builders along the way"
+  preface:
+    en:
+      - "Welcome to the wonderful world of bird builders! In this adventure, we'll follow Zuri, a young village weaver bird, as she learns to build her very first nest high in an acacia tree."
+      - "Birds are some of nature's most creative architects. From tiny hummingbird nests the size of a walnut to massive eagle nests weighing over a ton, each species has developed its own unique building technique passed down through generations."
+      - "Through Zuri's journey, you'll discover the incredible variety of nest designs in the bird world — woven pendants, mud cups, decorated bowers, and more. Join us as we explore how these feathered engineers build homes that protect their families!"
+    es:
+      - "¡Bienvenidos al maravilloso mundo de las aves constructoras! En esta aventura, seguiremos a Zuri, una joven ave tejedora, mientras aprende a construir su primer nido en lo alto de un árbol de acacia."
+      - "Las aves son algunos de los arquitectos más creativos de la naturaleza. Desde diminutos nidos de colibrí del tamaño de una nuez hasta enormes nidos de águila que pesan más de una tonelada, cada especie ha desarrollado su propia técnica de construcción única transmitida de generación en generación."
+      - "A través del viaje de Zuri, descubrirás la increíble variedad de diseños de nidos en el mundo de las aves — colgantes tejidos, copas de barro, glorietas decoradas y más. ¡Únete a nosotros mientras exploramos cómo estos ingenieros emplumados construyen hogares que protegen a sus familias!"
+    ru:
+      - "Добро пожаловать в удивительный мир птиц-строителей! В этом приключении мы последуем за Зури, молодой птицей-ткачом, которая учится строить своё первое гнездо высоко на дереве акации."
+      - "Птицы — одни из самых креативных архитекторов природы. От крошечных гнёзд колибри размером с грецкий орех до огромных гнёзд орлов весом более тонны — каждый вид разработал свою уникальную технику строительства, передаваемую из поколения в поколение."
+      - "Через путешествие Зури вы откроете невероятное разнообразие конструкций гнёзд в мире птиц — плетёные подвески, глиняные чашечки, украшенные беседки и многое другое. Присоединяйтесь к нам, пока мы исследуем, как эти пернатые инженеры строят дома, защищающие их семьи!"
+
+hero:
+  title:
+    en: "Birds"
+    es: "Aves"
+    ru: "Птицы"
+  subtitle:
+    en: "Weaving Wonders, One Thread at a Time"
+    es: "Tejiendo Maravillas, Un Hilo a la Vez"
+    ru: "Плетём чудеса, нить за нитью"
+  image: "hero-acacia-landscape.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Stunning African savanna at golden hour with a massive acacia tree filled with dozens of hanging weaver bird nests, warm light filtering through branches"
+    es: "Impresionante sabana africana a la hora dorada con un enorme árbol de acacia lleno de docenas de nidos colgantes de aves tejedoras, luz cálida filtrándose entre las ramas"
+    ru: "Потрясающая африканская саванна в золотой час с огромным деревом акации, полным десятков подвесных гнёзд птиц-ткачей, тёплый свет проникает сквозь ветви"
+
+sections:
+  # First, establish Zuri (main character)
+  - id: meet-zuri
+    generate_character: true
+    titleKey: "meetZuriTitle"
+    contentKey: "meetZuriContent"
+    title:
+      en: "Meet Zuri the Weaver Bird"
+      es: "Conoce a Zuri, la Ave Tejedora"
+      ru: "Знакомьтесь с Зури, птицей-ткачом"
+    content:
+      en: "Zuri is a young village weaver bird with brilliant golden-yellow feathers and bright, curious eyes. She lives in the African savanna, where her colony of weavers fills a great acacia tree with dozens of hanging nests. Today is a special day — Zuri is ready to build her very first nest!"
+      es: "Zuri es una joven ave tejedora con brillantes plumas amarillo-doradas y ojos curiosos y brillantes. Vive en la sabana africana, donde su colonia de tejedoras llena un gran árbol de acacia con docenas de nidos colgantes. Hoy es un día especial — ¡Zuri está lista para construir su primer nido!"
+      ru: "Зури — молодая птица-ткач с великолепным золотисто-жёлтым оперением и яркими любопытными глазами. Она живёт в африканской саванне, где её колония ткачей заполняет большое дерево акации десятками подвесных гнёзд. Сегодня особенный день — Зури готова построить своё самое первое гнездо!"
+    image: "zuri-portrait.jpg"
+    imageAlt:
+      en: "Beautiful young golden-yellow village weaver bird with bright curious eyes, perched on an acacia branch"
+      es: "Hermosa joven ave tejedora de aldea amarillo-dorada con brillantes ojos curiosos, posada en una rama de acacia"
+      ru: "Красивая молодая птица-ткач золотисто-жёлтого цвета с яркими любопытными глазами, сидящая на ветке акации"
+
+  # Zuri surveys the tree for the perfect branch
+  - id: surveying-the-tree
+    use_character: "${meet-zuri.image}"
+    action: "golden weaver bird hopping along acacia branches, looking carefully at different spots, evaluating where to build her nest"
+    titleKey: "surveyingTreeTitle"
+    contentKey: "surveyingTreeContent"
+    title:
+      en: "Step 1: Choosing the Perfect Branch"
+      es: "Paso 1: Eligiendo la Rama Perfecta"
+      ru: "Шаг 1: Выбор идеальной ветки"
+    content:
+      en: "Zuri hops along the acacia branches, studying each one carefully. She needs a branch that hangs over open space — this way, snakes can't easily reach her nest! The branch must be flexible enough to sway in the wind but strong enough to hold a nest."
+      es: "Zuri salta por las ramas de la acacia, estudiando cada una cuidadosamente. Necesita una rama que cuelgue sobre un espacio abierto — ¡de esta forma, las serpientes no pueden alcanzar fácilmente su nido! La rama debe ser lo suficientemente flexible para mecerse con el viento pero lo suficientemente fuerte para sostener un nido."
+      ru: "Зури прыгает по веткам акации, внимательно изучая каждую. Ей нужна ветка, нависающая над открытым пространством — так змеи не смогут легко добраться до её гнезда! Ветка должна быть достаточно гибкой, чтобы качаться на ветру, но достаточно крепкой, чтобы удержать гнездо."
+    image: "zuri-surveying.jpg"
+
+  # Gathering grass strips
+  - id: gathering-grass
+    use_character: "${meet-zuri.image}"
+    action: "golden weaver bird on the ground tearing long strips of green grass with her beak, collecting nest-building materials"
+    titleKey: "gatheringGrassTitle"
+    contentKey: "gatheringGrassContent"
+    title:
+      en: "Step 2: Gathering Grass Strips"
+      es: "Paso 2: Recolectando Tiras de Hierba"
+      ru: "Шаг 2: Сбор травинок"
+    content:
+      en: "Zuri flies down to the meadow and carefully tears long strips of fresh green grass. She uses her beak like scissors, pulling the grass apart lengthwise to make thin, flexible strips. Fresh grass is easier to weave than dry grass because it bends without breaking!"
+      es: "Zuri vuela hacia el prado y cuidadosamente arranca largas tiras de hierba verde fresca. Usa su pico como tijeras, separando la hierba a lo largo para hacer tiras finas y flexibles. ¡La hierba fresca es más fácil de tejer que la seca porque se dobla sin romperse!"
+      ru: "Зури спускается на луг и аккуратно отрывает длинные полоски свежей зелёной травы. Она использует клюв как ножницы, разделяя траву вдоль на тонкие гибкие полоски. Свежая трава легче плетётся, чем сухая, потому что гнётся, не ломаясь!"
+    image: "zuri-gathering-grass.jpg"
+
+  # Tying the first knot
+  - id: first-knot
+    use_character: "${meet-zuri.image}"
+    action: "golden weaver bird hanging upside down from a branch, carefully tying a grass strip in a loop knot with her beak and feet"
+    titleKey: "firstKnotTitle"
+    contentKey: "firstKnotContent"
+    title:
+      en: "Step 3: The First Knot"
+      es: "Paso 3: El Primer Nudo"
+      ru: "Шаг 3: Первый узел"
+    content:
+      en: "This is the trickiest part! Zuri wraps a grass strip around the branch and ties a loop knot, using only her beak and one foot. She hangs upside down, weaving the strip over and under until it holds tight. This single knot will support the entire nest!"
+      es: "¡Esta es la parte más complicada! Zuri envuelve una tira de hierba alrededor de la rama y ata un nudo de lazo, usando solo su pico y una pata. Se cuelga boca abajo, tejiendo la tira por encima y por debajo hasta que queda firme. ¡Este único nudo sostendrá todo el nido!"
+      ru: "Это самая сложная часть! Зури обматывает травинку вокруг ветки и завязывает петлевой узел, используя только клюв и одну лапку. Она висит вниз головой, протягивая полоску сверху и снизу, пока та не держится крепко. Этот единственный узел будет поддерживать всё гнездо!"
+    image: "zuri-first-knot.jpg"
+
+  # Elder Weaver arrives
+  - id: elder-weaver-arrives
+    generate_character: true
+    use_character: "${meet-zuri.image}"
+    titleKey: "elderWeaverTitle"
+    contentKey: "elderWeaverContent"
+    title:
+      en: "The Elder Weaver's Wisdom"
+      es: "La Sabiduría del Tejedor Mayor"
+      ru: "Мудрость Старого Ткача"
+    content:
+      en: "Elder Weaver, the oldest and most experienced builder in the colony, swings by to check on Zuri's progress. His feathers have faded to a warm olive-brown, and his nests are famous throughout the savanna — perfectly round, beautifully woven, and so strong they last through the rainy season."
+      es: "El Tejedor Mayor, el constructor más viejo y experimentado de la colonia, pasa a revisar el progreso de Zuri. Sus plumas se han desvanecido a un cálido marrón oliva, y sus nidos son famosos en toda la sabana — perfectamente redondos, hermosamente tejidos y tan fuertes que duran toda la temporada de lluvias."
+      ru: "Старый Ткач, самый опытный строитель колонии, заглядывает проверить успехи Зури. Его перья выцвели до тёплого оливково-коричневого цвета, а его гнёзда знамениты по всей саванне — идеально круглые, красиво сплетённые и настолько прочные, что выдерживают сезон дождей."
+    action: "older olive-brown weaver bird with wise eyes inspecting a young golden weaver bird's first knot on a branch, mentoring scene"
+    image: "elder-weaver-portrait.jpg"
+    imageAlt:
+      en: "Wise elderly olive-brown weaver bird with experienced eyes, inspecting a nest alongside a young golden weaver"
+      es: "Sabio tejedor anciano marrón oliva con ojos experimentados, inspeccionando un nido junto a un joven tejedor dorado"
+      ru: "Мудрая пожилая птица-ткач оливково-коричневого цвета с опытным взглядом, осматривающая гнездо рядом с молодым золотистым ткачом"
+
+  # Weaving lesson
+  - id: weaving-lesson
+    use_characters: ["${meet-zuri.image}", "${elder-weaver-arrives.image}"]
+    action: "two weaver birds working on a nest together, the older olive-brown bird demonstrating weaving technique while the young golden bird watches closely"
+    titleKey: "weavingLessonTitle"
+    contentKey: "weavingLessonContent"
+    title:
+      en: "Step 4: Learning to Weave"
+      es: "Paso 4: Aprendiendo a Tejer"
+      ru: "Шаг 4: Учимся плести"
+    content:
+      en: "Elder Weaver shows Zuri the secret: push a grass strip through with your beak, reach around with one foot, pull it through, then push the next one the opposite way. Over-under-over-under — just like weaving cloth! Each strip locks the others in place."
+      es: "El Tejedor Mayor le muestra a Zuri el secreto: empuja una tira de hierba con tu pico, alcanza con una pata, tira de ella, luego empuja la siguiente en dirección opuesta. ¡Por encima-por debajo-por encima-por debajo — igual que tejer tela! Cada tira bloquea a las demás en su lugar."
+      ru: "Старый Ткач показывает Зури секрет: протолкни травинку клювом, обхвати лапкой, вытяни, затем протолкни следующую в обратном направлении. Сверху-снизу-сверху-снизу — точно как плетение ткани! Каждая полоска фиксирует остальные на месте."
+    image: "weaving-lesson.jpg"
+
+  # Nest taking shape
+  - id: nest-taking-shape
+    use_character: "${meet-zuri.image}"
+    action: "golden weaver bird working on a half-finished pendant-shaped nest hanging from a branch, the round chamber taking shape"
+    titleKey: "nestShapeTitle"
+    contentKey: "nestShapeContent"
+    title:
+      en: "Step 5: The Nest Takes Shape"
+      es: "Paso 5: El Nido Toma Forma"
+      ru: "Шаг 5: Гнездо обретает форму"
+    content:
+      en: "After hours of patient weaving, Zuri's nest is beginning to look like a round ball hanging from the branch! She weaves from the inside, pushing strips outward. The entrance faces downward — this keeps rain out and makes it harder for predators to peek inside."
+      es: "¡Después de horas de tejido paciente, el nido de Zuri empieza a parecer una bola redonda colgando de la rama! Teje desde el interior, empujando las tiras hacia afuera. La entrada mira hacia abajo — esto mantiene la lluvia fuera y dificulta que los depredadores miren adentro."
+      ru: "После часов терпеливого плетения гнездо Зури начинает выглядеть как круглый шар, свисающий с ветки! Она плетёт изнутри, выталкивая полоски наружу. Вход направлен вниз — это не даёт дождю попадать внутрь и затрудняет хищникам заглянуть внутрь."
+    image: "nest-taking-shape.jpg"
+
+  # Meet Rosie the hummingbird
+  - id: meet-rosie-hummingbird
+    generate_character: true
+    titleKey: "meetRosieTitle"
+    contentKey: "meetRosieContent"
+    title:
+      en: "Rosie's Tiny Masterpiece"
+      es: "La Pequeña Obra Maestra de Rosie"
+      ru: "Крошечный шедевр Рози"
+    content:
+      en: "While taking a break, Zuri spots Rosie the hummingbird building the tiniest nest imaginable — no bigger than a walnut! Rosie uses spider silk as thread and decorates with bits of lichen for camouflage. Her nest is so small it could fit in a teaspoon, but it stretches as her babies grow!"
+      es: "Mientras toma un descanso, Zuri ve a Rosie la colibrí construyendo el nido más diminuto imaginable — ¡no más grande que una nuez! Rosie usa seda de araña como hilo y decora con trozos de liquen para camuflaje. ¡Su nido es tan pequeño que cabría en una cucharita, pero se estira a medida que sus bebés crecen!"
+      ru: "Во время перерыва Зури замечает колибри Рози, строящую самое крошечное гнёздышко, какое только можно представить — не больше грецкого ореха! Рози использует паутину как нить и украшает его кусочками лишайника для маскировки. Её гнездо настолько маленькое, что поместится в чайной ложке, но оно растягивается по мере роста птенцов!"
+    action: "tiny iridescent green hummingbird building a walnut-sized nest from spider silk and lichen on a thin branch, extreme detail"
+    image: "rosie-hummingbird-portrait.jpg"
+    imageAlt:
+      en: "Tiny iridescent green hummingbird carefully building a walnut-sized nest from spider silk and lichen"
+      es: "Diminuto colibrí verde iridiscente construyendo cuidadosamente un nido del tamaño de una nuez con seda de araña y liquen"
+      ru: "Крошечная переливающаяся зелёная колибри аккуратно строит гнездо размером с грецкий орех из паутины и лишайника"
+
+  # Barn swallows building mud nests
+  - id: swallow-mud-builders
+    titleKey: "swallowMudTitle"
+    contentKey: "swallowMudContent"
+    title:
+      en: "Swallows: The Mud Engineers"
+      es: "Golondrinas: Las Ingenieras del Barro"
+      ru: "Ласточки: Инженеры из глины"
+    content:
+      en: "Near a farmhouse, Zuri watches barn swallows build their nests from mud! Each swallow collects tiny mud pellets in her beak, then stacks them one by one to form a cup-shaped nest under the eaves. They make over a thousand trips to finish one nest — that's true dedication!"
+      es: "Cerca de una granja, Zuri observa cómo las golondrinas construyen sus nidos con barro. Cada golondrina recoge pequeñas bolitas de barro en su pico, luego las apila una por una para formar un nido en forma de copa bajo los aleros. ¡Hacen más de mil viajes para terminar un nido — eso es verdadera dedicación!"
+      ru: "Около фермы Зури наблюдает, как деревенские ласточки строят гнёзда из глины! Каждая ласточка собирает крошечные комочки глины в клюве, затем укладывает их один за другим, формируя гнездо в форме чашечки под карнизом. Они совершают более тысячи рейсов, чтобы закончить одно гнездо — вот это настоящая преданность!"
+    image: "swallow-mud-builders.jpg"
+    imageAlt:
+      en: "Barn swallows building cup-shaped mud nests under farmhouse eaves, mid-construction with mud pellets visible"
+      es: "Golondrinas construyendo nidos de barro en forma de copa bajo los aleros de una granja, en medio de la construcción con bolitas de barro visibles"
+      ru: "Деревенские ласточки строят чашеобразные глиняные гнёзда под карнизом фермы, в процессе строительства с видимыми комочками глины"
+
+  # Meet Boris the bowerbird
+  - id: meet-boris-bowerbird
+    generate_character: true
+    titleKey: "meetBorisTitle"
+    contentKey: "meetBorisContent"
+    title:
+      en: "Boris the Decorator"
+      es: "Boris el Decorador"
+      ru: "Борис-Декоратор"
+    content:
+      en: "Zuri discovers Boris the satin bowerbird, who takes building to a whole new level — he's an artist! Boris doesn't just build a nest; he constructs an elaborate bower of sticks and decorates it with blue objects: flowers, berries, bottle caps, even shiny plastic. He paints the walls with berry juice using a bark brush!"
+      es: "Zuri descubre a Boris, el ave del emparrado satinada, que lleva la construcción a otro nivel — ¡es un artista! Boris no solo construye un nido; construye una glorieta elaborada de palos y la decora con objetos azules: flores, bayas, tapas de botellas, incluso plástico brillante. ¡Pinta las paredes con jugo de bayas usando un pincel de corteza!"
+      ru: "Зури встречает Бориса, атласного шалашника, который выводит строительство на совершенно новый уровень — он настоящий художник! Борис не просто строит гнездо; он возводит изысканную беседку из веточек и украшает её синими предметами: цветами, ягодами, крышечками от бутылок, даже блестящим пластиком. Он красит стены соком ягод, используя кисточку из коры!"
+    action: "glossy dark blue-black satin bowerbird proudly standing in his elaborate stick bower decorated with blue flowers, blue berries, and blue objects"
+    image: "boris-bowerbird-portrait.jpg"
+    imageAlt:
+      en: "Glossy dark blue-black satin bowerbird proudly displaying his bower decorated with blue flowers and objects"
+      es: "Ave del emparrado satinada azul oscuro brillante mostrando orgullosamente su glorieta decorada con flores y objetos azules"
+      ru: "Блестящий тёмный сине-чёрный атласный шалашник гордо демонстрирует свою беседку, украшенную синими цветами и предметами"
+
+  # Eagles' massive nest
+  - id: eagles-engineering
+    titleKey: "eaglesTitle"
+    contentKey: "eaglesContent"
+    title:
+      en: "Eagles: Engineering Giants"
+      es: "Águilas: Gigantes de la Ingeniería"
+      ru: "Орлы: Гиганты инженерии"
+    content:
+      en: "On her journey, Zuri looks up in awe at a bald eagle pair adding sticks to their massive nest high in a pine tree. Eagle nests are the biggest of any bird — they can be 10 feet wide, 20 feet deep, and weigh over 2 tons! Eagles add to the same nest year after year, sometimes for decades."
+      es: "En su viaje, Zuri mira hacia arriba asombrada a una pareja de águilas calvas agregando palos a su enorme nido en lo alto de un pino. Los nidos de águila son los más grandes de cualquier ave — ¡pueden tener 3 metros de ancho, 6 metros de profundidad y pesar más de 2 toneladas! Las águilas agregan al mismo nido año tras año, a veces durante décadas."
+      ru: "В своём путешествии Зури с восхищением смотрит вверх на пару белоголовых орланов, добавляющих ветки к своему огромному гнезду высоко на сосне. Гнёзда орлов — самые большие среди всех птиц: они могут достигать 3 метров в ширину, 6 метров в глубину и весить более 2 тонн! Орлы добавляют к одному гнезду год за годом, иногда десятилетиями."
+    image: "eagles-engineering.jpg"
+    imageAlt:
+      en: "Magnificent bald eagle pair working on their massive stick nest high in a pine tree, enormous nest dwarfing the birds"
+      es: "Magnífica pareja de águilas calvas trabajando en su enorme nido de palos en lo alto de un pino, el enorme nido empequeñeciendo a las aves"
+      ru: "Великолепная пара белоголовых орланов работает над своим огромным гнездом из веток высоко на сосне, гигантское гнездо затмевает самих птиц"
+
+  # Zuri completes her nest
+  - id: zuri-nest-complete
+    use_character: "${meet-zuri.image}"
+    action: "golden weaver bird proudly perched on a beautifully finished pendant-shaped woven nest, the nest perfectly round with a downward-facing entrance"
+    titleKey: "zuriCompleteTitle"
+    contentKey: "zuriCompleteContent"
+    title:
+      en: "Zuri's Nest Is Complete!"
+      es: "¡El Nido de Zuri Está Completo!"
+      ru: "Гнездо Зури готово!"
+    content:
+      en: "After two days of hard work, Zuri's pendant nest hangs perfectly from the branch — a beautiful golden-green sphere with a neat round entrance at the bottom. She lines the inside with soft feathers and downy grass. It's cozy, sturdy, and safe. Zuri chirps with pride — she's built her first home!"
+      es: "Después de dos días de arduo trabajo, el nido colgante de Zuri pende perfectamente de la rama — una hermosa esfera verde-dorada con una entrada redonda y ordenada en la parte inferior. Forra el interior con suaves plumas y hierba sedosa. Es acogedor, resistente y seguro. ¡Zuri canta con orgullo — ha construido su primer hogar!"
+      ru: "После двух дней усердной работы подвесное гнездо Зури идеально свисает с ветки — красивая золотисто-зелёная сфера с аккуратным круглым входом внизу. Она выстилает внутреннюю часть мягкими пёрышками и пушистой травой. Уютное, крепкое и безопасное. Зури радостно щебечет — она построила свой первый дом!"
+    image: "zuri-nest-complete.jpg"
+
+  # Colony panorama
+  - id: colony-thriving
+    titleKey: "colonyTitle"
+    contentKey: "colonyContent"
+    title:
+      en: "The Colony Thrives"
+      es: "La Colonia Prospera"
+      ru: "Колония процветает"
+    content:
+      en: "The acacia tree is alive with activity! Dozens of pendant nests hang from every branch, each one a unique work of art. Male weavers flutter between nests, females inspect the craftsmanship, and chicks peek out from finished nests. The weaver colony is a bustling neighborhood where every bird is both architect and neighbor!"
+      es: "¡El árbol de acacia está lleno de actividad! Docenas de nidos colgantes penden de cada rama, cada uno una obra de arte única. Los tejedores machos revolotean entre nidos, las hembras inspeccionan la artesanía, y los polluelos se asoman desde los nidos terminados. ¡La colonia de tejedoras es un vecindario bullicioso donde cada ave es tanto arquitecta como vecina!"
+      ru: "Дерево акации полно жизни! Десятки подвесных гнёзд свисают с каждой ветки, каждое — уникальное произведение искусства. Самцы-ткачи порхают между гнёздами, самки проверяют мастерство, а птенцы выглядывают из готовых гнёзд. Колония ткачей — это оживлённый квартал, где каждая птица одновременно и архитектор, и сосед!"
+    image: "colony-thriving-landscape.jpg"
+    imageType: "landscape"
+
+  # Hidden sections for viewer details and fun facts
+  - id: "detail-weaving-closeup-v2"
+    image: "detail-weaving-closeup.jpg"
+    referenceImage: "${nest-taking-shape.image}"
+    prompt: "Using the weaver nest from the reference image, create an extreme close-up showing the intricate over-under weaving pattern of the grass strips. Show how each strip locks into the others. Same art style and nest design as reference."
+    hidden: true
+
+  - id: "detail-entrance-tube-v2"
+    image: "detail-entrance-tube.jpg"
+    referenceImage: "${zuri-nest-complete.image}"
+    prompt: "Using the completed pendant nest from the reference image, create a view from below looking up at the nest entrance tube. Show the circular opening and neat woven tunnel. Same art style as reference."
+    hidden: true
+
+  - id: "detail-spider-silk-v2"
+    image: "detail-spider-silk.jpg"
+    referenceImage: "${meet-rosie-hummingbird.image}"
+    prompt: "Using the hummingbird nest from the reference image, create a close-up showing spider silk threads stretching and binding the tiny nest together. Show the lichen camouflage decoration. Same art style."
+    hidden: true
+
+  - id: "detail-bower-v2"
+    image: "detail-bower-decoration.jpg"
+    referenceImage: "${meet-boris-bowerbird.image}"
+    prompt: "Using the bowerbird bower from the reference image, create a close-up of the blue decorations arranged around the bower entrance — blue flowers, berries, and found objects. Same art style."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-weaving-speed"
+    image: "fun-fact-weaving-speed.jpg"
+    referenceImage: "${first-knot.image}"
+    prompt: "Using the weaver bird from reference, show this character at high speed weaving strips into a nest, motion blur on wings. Dynamic action scene showing the speed of construction. Same character and art style."
+    hidden: true
+
+  - id: "fun-fact-nest-rejection"
+    image: "fun-fact-nest-rejection.jpg"
+    referenceImage: "${zuri-nest-complete.image}"
+    prompt: "Show a weaver bird looking sadly at a torn-apart nest that has been rejected and dismantled. A few grass strips hanging from the branch where a nest used to be. Same art style as reference."
+    hidden: true
+
+  - id: "fun-fact-sociable-weaver"
+    image: "fun-fact-sociable-weaver.jpg"
+    prompt: "A massive communal nest of sociable weaver birds covering an entire tree, like an apartment building made of grass. Hundreds of entrance holes visible. African savanna setting. Studio Ghibli warmth, Pixar quality, child-friendly."
+    hidden: true
+
+  - id: "fun-fact-tailorbird"
+    image: "fun-fact-tailorbird.jpg"
+    prompt: "A tiny common tailorbird stitching two large leaves together with plant fibers to create a cradle-shaped nest. Show the sewing action clearly. Tropical forest setting. Studio Ghibli warmth, Pixar quality, child-friendly."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming, illustrated magazine cover featuring a golden-yellow weaver bird proudly sitting on her beautiful pendant nest. Include a tiny hummingbird with a walnut-sized nest nearby, and a dark blue bowerbird in the background with his decorated bower. The acacia tree is full of colorful hanging nests. Warm golden sunset light, African savanna landscape in background. Style: Studio Ghibli warmth meets Pixar quality - whimsical, heartwarming, child-friendly illustration with rich, vibrant colors. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${meet-zuri.image}"
+      - "${meet-rosie-hummingbird.image}"
+      - "${meet-boris-bowerbird.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Zuri the weaver bird on her completed nest with Rosie and Boris in background, magazine cover"
+      es: "Zuri la tejedora en su nido completado con Rosie y Boris al fondo, portada de revista"
+      ru: "Зури-ткач на своём готовом гнезде с Рози и Борисом на заднем плане, обложка журнала"
+
+funFacts:
+  title:
+    en: "Amazing Bird Builder Facts!"
+    es: "¡Datos Asombrosos sobre Aves Constructoras!"
+    ru: "Удивительные факты о птицах-строителях!"
+  facts:
+    - title:
+        en: "Speed Builders"
+        es: "Constructoras Veloces"
+        ru: "Скоростные строители"
+      content:
+        en: "A village weaver bird can build an entire nest in just 9 to 14 hours! They weave over 300 individual grass strips, making thousands of precise movements with their beak and feet."
+        es: "¡Un ave tejedora puede construir un nido entero en solo 9 a 14 horas! Tejen más de 300 tiras individuales de hierba, haciendo miles de movimientos precisos con su pico y patas."
+        ru: "Птица-ткач может построить целое гнездо всего за 9-14 часов! Они вплетают более 300 отдельных травинок, совершая тысячи точных движений клювом и лапками."
+      image: "fun-fact-weaving-speed.jpg"
+
+    - title:
+        en: "Quality Control"
+        es: "Control de Calidad"
+        ru: "Контроль качества"
+      content:
+        en: "Female weavers are very picky! They inspect the male's nest carefully, tugging at the weave to test its strength. If the nest isn't good enough, they tear it apart and the male must start over!"
+        es: "¡Las hembras tejedoras son muy exigentes! Inspeccionan el nido del macho cuidadosamente, tirando del tejido para probar su resistencia. ¡Si el nido no es lo suficientemente bueno, lo deshacen y el macho debe empezar de nuevo!"
+        ru: "Самки-ткачи очень придирчивы! Они тщательно осматривают гнездо самца, дёргая за плетение, чтобы проверить его прочность. Если гнездо недостаточно хорошее, они его разрывают, и самец должен начать заново!"
+      image: "fun-fact-nest-rejection.jpg"
+
+    - title:
+        en: "Bird Apartments"
+        es: "Apartamentos de Aves"
+        ru: "Птичьи квартиры"
+      content:
+        en: "Sociable weaver birds build the largest nests of any bird — communal structures up to 20 feet long that house over 500 birds! These 'apartment buildings' can last over 100 years."
+        es: "¡Las aves tejedoras sociables construyen los nidos más grandes de cualquier ave — estructuras comunales de hasta 6 metros de largo que albergan a más de 500 aves! Estos 'edificios de apartamentos' pueden durar más de 100 años."
+        ru: "Общественные ткачи строят самые большие гнёзда среди всех птиц — общие сооружения до 6 метров длиной, в которых живут более 500 птиц! Эти «многоквартирные дома» могут простоять более 100 лет."
+      image: "fun-fact-sociable-weaver.jpg"
+
+    - title:
+        en: "The Tailor Bird"
+        es: "El Ave Costurera"
+        ru: "Птица-портной"
+      content:
+        en: "The common tailorbird literally sews its nest! It pierces holes in large leaves with its sharp beak, then stitches them together with plant fibers or spider silk to create a cozy leaf cradle."
+        es: "¡El ave costurera literalmente cose su nido! Perfora agujeros en hojas grandes con su pico afilado, luego las cose con fibras vegetales o seda de araña para crear una acogedora cuna de hojas."
+        ru: "Птица-портной буквально сшивает своё гнездо! Она прокалывает отверстия в больших листьях острым клювом, затем сшивает их растительными волокнами или паутиной, создавая уютную колыбельку из листьев."
+      image: "fun-fact-tailorbird.jpg"
+
+# Image generation instructions
+imageGeneration:
+  characters:
+    zuri:
+      name: "Zuri"
+      description: "Young golden-yellow village weaver bird with bright curious eyes"
+
+    elder-weaver:
+      name: "Elder Weaver"
+      description: "Old olive-brown weaver bird with experienced wise eyes, faded plumage"
+
+    rosie:
+      name: "Rosie"
+      description: "Tiny iridescent green hummingbird, delicate and precise"
+
+    boris:
+      name: "Boris"
+      description: "Glossy dark blue-black satin bowerbird, proud and artistic"
+
+  style:
+    global: "Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors, detailed nature scenes, African savanna warmth with lush greens"
+
+viewerDetails:
+- title:
+    en: "Weaving Technique"
+    es: "Técnica de Tejido"
+    ru: "Техника плетения"
+  description:
+    en: "Look closely at the nest wall — each grass strip goes over one strip and under the next, just like weaving fabric! This interlocking pattern makes the nest incredibly strong despite being made of simple grass."
+    es: "¡Mira de cerca la pared del nido — cada tira de hierba pasa por encima de una tira y por debajo de la siguiente, igual que tejer tela! Este patrón entrelazado hace que el nido sea increíblemente fuerte a pesar de estar hecho de hierba simple."
+    ru: "Присмотритесь к стенке гнезда — каждая травинка проходит поверх одной полоски и под следующей, точно как плетение ткани! Этот переплетённый узор делает гнездо невероятно прочным, несмотря на то что оно сделано из простой травы."
+  image: "detail-weaving-closeup.jpg"
+
+- title:
+    en: "The Entrance Tube"
+    es: "El Tubo de Entrada"
+    ru: "Входная трубка"
+  description:
+    en: "The nest entrance points downward like a tube — this is brilliant engineering! Rain rolls off instead of dripping in, and predators like snakes have a very hard time climbing up into the nest."
+    es: "La entrada del nido apunta hacia abajo como un tubo — ¡esto es ingeniería brillante! La lluvia se escurre en lugar de gotear adentro, y los depredadores como las serpientes tienen mucha dificultad para trepar al nido."
+    ru: "Вход в гнездо направлен вниз, как трубка — это гениальная инженерия! Дождь стекает, а не капает внутрь, и хищникам, таким как змеи, очень сложно забраться в гнездо."
+  image: "detail-entrance-tube.jpg"
+
+- title:
+    en: "Spider Silk Magic"
+    es: "Magia de la Seda de Araña"
+    ru: "Магия паутины"
+  description:
+    en: "Rosie's hummingbird nest uses spider silk as both glue and thread — and it's stretchy! As her chicks grow bigger, the silk stretches so the nest expands. It's like a nest that grows with the babies!"
+    es: "¡El nido de colibrí de Rosie usa seda de araña como pegamento e hilo — y es elástica! A medida que sus polluelos crecen, la seda se estira para que el nido se expanda. ¡Es como un nido que crece con los bebés!"
+    ru: "Гнездо колибри Рози использует паутину как клей и нить — и она эластичная! По мере роста птенцов паутина растягивается, и гнездо расширяется. Это как гнездо, которое растёт вместе с малышами!"
+  image: "detail-spider-silk.jpg"
+
+- title:
+    en: "Boris's Blue Collection"
+    es: "La Colección Azul de Boris"
+    ru: "Синяя коллекция Бориса"
+  description:
+    en: "Boris collects ONLY blue objects for his bower — he's very particular! Blue flowers, blue berries, blue bottle caps, blue feathers. Scientists think this shows females how good he is at finding rare things."
+    es: "¡Boris colecciona SOLO objetos azules para su glorieta — es muy particular! Flores azules, bayas azules, tapas de botellas azules, plumas azules. Los científicos creen que esto muestra a las hembras lo bueno que es encontrando cosas raras."
+    ru: "Борис собирает ТОЛЬКО синие предметы для своей беседки — он очень избирательный! Синие цветы, синие ягоды, синие крышечки от бутылок, синие перья. Учёные считают, что так он показывает самкам, как хорошо он умеет находить редкие вещи."
+  image: "detail-bower-decoration.jpg"
+
+routing:
+    openai:
+      - "hero-acacia-landscape.jpg"
+      - "colony-thriving-landscape.jpg"
+      - "eagles-engineering.jpg"
+      - "swallow-mud-builders.jpg"
+
+    gemini:
+      - "zuri-portrait.jpg"
+      - "elder-weaver-portrait.jpg"
+      - "rosie-hummingbird-portrait.jpg"
+      - "boris-bowerbird-portrait.jpg"
+      - "zuri-surveying.jpg"
+      - "zuri-gathering-grass.jpg"
+      - "zuri-first-knot.jpg"
+      - "weaving-lesson.jpg"
+      - "nest-taking-shape.jpg"
+      - "zuri-nest-complete.jpg"
+      - "detail-weaving-closeup.jpg"
+      - "detail-entrance-tube.jpg"
+      - "detail-spider-silk.jpg"
+      - "detail-bower-decoration.jpg"
+      - "fun-fact-weaving-speed.jpg"
+      - "fun-fact-nest-rejection.jpg"
+      - "fun-fact-sociable-weaver.jpg"
+      - "fun-fact-tailorbird.jpg"
+      - "magazine-cover.jpg"
