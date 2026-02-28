@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elephants: Giants with Big Hearts - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Elephants: Giants with Big Hearts</h1>
+        <h1 data-lang="es">Elefantes: Gigantes con Gran Corazón</h1>
+        <h1 data-lang="ru">Слоны: Гиганты с большим сердцем</h1>
+        <p data-lang="en" class="active">A Journey Through Tembo&#x27;s First Year</p>
+        <p data-lang="es">Un Viaje a Través del Primer Año de Tembo</p>
+        <p data-lang="ru">Путешествие через первый год жизни Тембо</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-savanna-sunrise.jpg"
+             alt="Elephants"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Elephants</h2>
+            <h2 class="hero-title" data-lang="es">Elefantes</h2>
+            <h2 class="hero-title" data-lang="ru">Слоны</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">Giants with Big Hearts</p>
+            <p class="hero-subtitle" data-lang="es">Gigantes con Gran Corazón</p>
+            <p class="hero-subtitle" data-lang="ru">Гиганты с большим сердцем</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/tembo-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Adorable young grey African elephant calf with big curious eyes, oversized floppy ears, and a playful expression, standing on golden savanna grass"
+                 data-alt-en="Adorable young grey African elephant calf with big curious eyes, oversized floppy ears, and a playful expression, standing on golden savanna grass"
+                 data-alt-es="Adorable joven elefante africano gris con grandes ojos curiosos, enormes orejas caídas y una expresión juguetona, de pie sobre hierba dorada de la sabana"
+                 data-alt-ru="Очаровательный молодой серый африканский слонёнок с большими любопытными глазами, огромными висячими ушами и игривым выражением, стоящий на золотой траве саванны"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Tembo</h2>
+            <h2 data-lang="es">Conoce a Tembo</h2>
+            <h2 data-lang="ru">Знакомьтесь: Тембо</h2>
+            <div data-lang="en" class="active">
+                <p>Tembo is a young African elephant calf with the biggest, most curious eyes on the savanna! His oversized ears flap like sails in the wind, and his tiny trunk wiggles in every direction as he tries to figure out how to use it. Born just weeks ago under the shade of an ancient baobab tree during the late dry season, Tembo has never seen rain — but everyone keeps talking about it!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Tembo es un joven elefante africano con los ojos más grandes y curiosos de la sabana! Sus enormes orejas se agitan como velas al viento, y su pequeña trompa se mueve en todas direcciones mientras intenta descifrar cómo usarla. Nacido hace apenas semanas bajo la sombra de un antiguo baobab, ¡Tembo está listo para explorar el mundo!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Тембо — молодой африканский слонёнок с самыми большими и любопытными глазами во всей саванне! Его огромные уши хлопают, как паруса на ветру, а маленький хобот крутится во все стороны, пока он пытается понять, как им пользоваться. Рождённый всего несколько недель назад под тенью древнего баобаба, Тембо готов исследовать мир!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/tembo-first-steps.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">First Steps on the Savanna</h2>
+            <h2 data-lang="es">Primeros Pasos en la Sabana</h2>
+            <h2 data-lang="ru">Первые шаги по саванне</h2>
+            <div data-lang="en" class="active">
+                <p>Tembo&#x27;s legs are still a bit wobbly as he takes his first steps across the golden grass. Mama Amara walks right beside him, her strong trunk gently guiding him whenever he stumbles. Each step is an adventure — the ground is warm, the grass tickles his belly, and there are so many interesting smells!</p>
+            </div>
+            <div data-lang="es">
+                <p>Las piernas de Tembo aún están un poco tambaleantes mientras da sus primeros pasos por la hierba dorada. Mamá Amara camina justo a su lado, su fuerte trompa guiándolo suavemente cada vez que tropieza. ¡Cada paso es una aventura — el suelo está cálido, la hierba le hace cosquillas en la barriga, y hay tantos olores interesantes!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Ножки Тембо ещё немного дрожат, когда он делает первые шаги по золотой траве. Мама Амара идёт рядом, её сильный хобот нежно направляет его, когда он спотыкается. Каждый шаг — приключение: земля тёплая, трава щекочет животик, и вокруг столько интересных запахов!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/tembo-watering-hole.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Watering Hole</h2>
+            <h2 data-lang="es">El Abrevadero</h2>
+            <h2 data-lang="ru">Водопой</h2>
+            <div data-lang="en" class="active">
+                <p>At the watering hole, Tembo discovers his trunk has a very important job — drinking! But it&#x27;s harder than it looks. He dips his little trunk in the water, tries to suck it up, and... splashes himself right in the face! Mama Amara shows him how: curl the trunk, fill it up, then lift it to your mouth. &#x27;Mama, where does the water come from?&#x27; asks Tembo. &#x27;From the rain, little one,&#x27; she smiles. &#x27;You&#x27;ll see it soon.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡En el abrevadero, Tembo descubre que su trompa tiene un trabajo muy importante — beber! Pero es más difícil de lo que parece. Mete su pequeña trompa en el agua, intenta absorberla y... ¡se salpica en la cara! Mamá Amara le muestra cómo: enrolla la trompa, llénala y luego levántala hasta la boca. ¡Requiere práctica!</p>
+            </div>
+            <div data-lang="ru">
+                <p>У водопоя Тембо обнаруживает, что у его хобота очень важная работа — пить! Но это сложнее, чем кажется. Он опускает маленький хобот в воду, пытается набрать её и... брызгает себе прямо в лицо! Мама Амара показывает как: сверни хобот, набери воду, затем подними ко рту. Нужна практика!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/grandmother-nyota-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Wise elderly African elephant matriarch with deep wrinkled grey skin, one broken tusk, and kind wise eyes, standing majestically on the savanna"
+                 data-alt-en="Wise elderly African elephant matriarch with deep wrinkled grey skin, one broken tusk, and kind wise eyes, standing majestically on the savanna"
+                 data-alt-es="Sabia matriarca elefante africana anciana con piel gris profundamente arrugada, un colmillo roto y ojos sabios y amables, de pie majestuosamente en la sabana"
+                 data-alt-ru="Мудрая пожилая матриарх африканских слонов с глубоко морщинистой серой кожей, одним сломанным бивнем и добрыми мудрыми глазами, величественно стоящая в саванне"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Grandmother Nyota, the Matriarch</h2>
+            <h2 data-lang="es">Abuela Nyota, la Matriarca</h2>
+            <h2 data-lang="ru">Бабушка Ньота, матриарх</h2>
+            <div data-lang="en" class="active">
+                <p>Grandmother Nyota is the oldest and wisest elephant in the herd. Her weathered grey skin tells stories of sixty years on the savanna. One of her tusks broke long ago in a drought, when she dug deep into dry riverbeds to find water for the family. Every elephant in the herd trusts her — when Nyota walks, everyone follows. She looks at little Tembo and rumbles softly: &#x27;Come, little one. It is time I taught you the Memory Map.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>La abuela Nyota es la elefante más vieja y sabia de la manada. Su piel gris curtida cuenta historias de sesenta años en la sabana. Uno de sus colmillos se rompió hace mucho tiempo durante una sequía, cuando cavó profundamente en lechos de ríos secos para encontrar agua para la familia. Cada elefante de la manada confía en ella — cuando Nyota camina, todos la siguen.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Бабушка Ньота — старейшая и мудрейшая слониха в стаде. Её обветренная серая кожа хранит истории шестидесяти лет в саванне. Один из её бивней сломался давным-давно во время засухи, когда она копала глубоко в высохших руслах рек, чтобы найти воду для семьи. Каждый слон в стаде доверяет ей — когда Ньота идёт, все следуют за ней.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/memory-map-lesson.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Memory Map</h2>
+            <h2 data-lang="es">El Mapa de la Memoria</h2>
+            <h2 data-lang="ru">Карта памяти</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;What is a Memory Map?&#x27; asks Tembo, his big eyes wide with wonder. Grandmother Nyota touches her forehead with her trunk. &#x27;It lives right here, little one. My grandmother taught it to my mother, and my mother taught it to me. Every path, every watering hole, every safe place — all stored inside our heads. And now, I will teach it to you.&#x27; Tembo stands very still. This feels important.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;¿Qué es un Mapa de la Memoria?&#x27; pregunta Tembo, con sus grandes ojos muy abiertos de asombro. La abuela Nyota se toca la frente con su trompa. &#x27;Vive justo aquí, pequeño. Mi abuela se lo enseñó a mi madre, y mi madre me lo enseñó a mí. Cada camino, cada abrevadero, cada lugar seguro — todo guardado dentro de nuestras cabezas. Y ahora, te lo enseñaré a ti.&#x27; Tembo se queda muy quieto. Esto se siente importante.</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Что такое Карта Памяти?&#x27; спрашивает Тембо, широко раскрыв большие глаза от удивления. Бабушка Ньота касается лба хоботом. &#x27;Она живёт прямо здесь, малыш. Моя бабушка научила мою маму, а мама научила меня. Каждая тропа, каждый водопой, каждое безопасное место — всё хранится внутри наших голов. И теперь я научу тебя.&#x27; Тембо стоит очень тихо. Это кажется важным.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/tembo-trunk-lessons.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Lesson 1: Your Trunk Remembers</h2>
+            <h2 data-lang="es">Lección 1: Tu Trompa Recuerda</h2>
+            <h2 data-lang="ru">Урок 1: Твой хобот помнит</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;First lesson,&#x27; says Grandmother. &#x27;Your trunk can smell water from very far away. It remembers every flower, every fruit, every friend.&#x27; Tembo&#x27;s trunk has over 40,000 muscles — more than a human&#x27;s entire body! He practices sniffing wildflowers (and sneezes!), grasping tiny sticks (and drops them), and spraying water (mostly on himself). &#x27;One day,&#x27; Grandmother promises, &#x27;your trunk will remember the smell of rain before it arrives.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡La trompa de Tembo tiene más de 40,000 músculos — más que todo el cuerpo humano! Pero controlar todos esos músculos lleva tiempo. Practica agarrando pequeños palos (y los deja caer), olfateando flores silvestres (¡y estornuda!), y rociando agua (sobre todo sobre sí mismo). Cada día, su trompa se vuelve un poco más obediente.</p>
+            </div>
+            <div data-lang="ru">
+                <p>В хоботе Тембо более 40 000 мышц — больше, чем во всём человеческом теле! Но научиться управлять всеми этими мышцами нужно время. Он практикуется хватать маленькие палочки (и роняет их), нюхать полевые цветы (и чихает!), и брызгать водой (в основном на себя). Каждый день его хобот становится чуточку послушнее.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/kippy-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Playful young elephant calf slightly bigger than Tembo, covered in dried mud, with a mischievous expression, standing on savanna grass"
+                 data-alt-en="Playful young elephant calf slightly bigger than Tembo, covered in dried mud, with a mischievous expression, standing on savanna grass"
+                 data-alt-es="Juguetón joven elefante un poco más grande que Tembo, cubierto de barro seco, con una expresión traviesa, de pie sobre hierba de sabana"
+                 data-alt-ru="Игривый молодой слонёнок чуть крупнее Тембо, покрытый засохшей грязью, с озорным выражением, стоящий на траве саванны"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Kippy, the Mud Champion</h2>
+            <h2 data-lang="es">Conoce a Kippy, el Campeón del Barro</h2>
+            <h2 data-lang="ru">Знакомьтесь: Киппи, чемпион по грязи</h2>
+            <div data-lang="en" class="active">
+                <p>Kippy is Tembo&#x27;s best friend — a slightly older calf who is ALWAYS covered in mud. &#x27;You&#x27;ve NEVER seen rain?!&#x27; Kippy gasps. &#x27;Rain turns everything into MUD! Glorious, wonderful, splashy MUD!&#x27; Kippy discovered early that mud is the greatest invention in the world: it keeps you cool, protects from sunburn, and makes you look absolutely magnificent (at least Kippy thinks so). When Kippy charges at Tembo for a play-wrestle, mud flies everywhere!</p>
+            </div>
+            <div data-lang="es">
+                <p>Kippy es el mejor amigo de Tembo — un elefantito un poco mayor que SIEMPRE está cubierto de barro. Kippy descubrió pronto que el barro es el mayor invento del mundo: te mantiene fresco, protege de las quemaduras solares y te hace lucir absolutamente magnífico (al menos Kippy piensa así). ¡Cuando Kippy carga contra Tembo para jugar a luchar, el barro vuela por todas partes!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Киппи — лучший друг Тембо, слонёнок чуть постарше, который ВСЕГДА покрыт грязью. Киппи рано обнаружил, что грязь — величайшее изобретение в мире: она охлаждает, защищает от солнечных ожогов и делает тебя абсолютно великолепным (по крайней мере, Киппи так считает). Когда Киппи бросается на Тембо поиграть в борьбу, грязь летит во все стороны!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/tembo-kippy-dust-bath.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Great Dust Bath</h2>
+            <h2 data-lang="es">El Gran Baño de Polvo</h2>
+            <h2 data-lang="ru">Великое пылевое купание</h2>
+            <div data-lang="en" class="active">
+                <p>Today&#x27;s lesson: sun protection, elephant-style! Tembo and Kippy scoop up trunkfuls of fine red dust and toss it over their backs. The dust sticks to their skin and acts like natural sunscreen, protecting them from the fierce African sun. Plus, it feels amazing — like a full-body tickle!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡La lección de hoy: protección solar, al estilo elefante! Tembo y Kippy recogen trompadas de fino polvo rojo y lo lanzan sobre sus espaldas. El polvo se adhiere a su piel y actúa como protector solar natural, protegiéndolos del feroz sol africano. Además, se siente increíble — ¡como un cosquilleo en todo el cuerpo!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Сегодняшний урок: защита от солнца по-слоновьи! Тембо и Киппи набирают хоботами мелкую красную пыль и подбрасывают её на спины. Пыль прилипает к коже и действует как натуральный солнцезащитный крем, защищая их от палящего африканского солнца. К тому же, это потрясающе приятно — как щекотка по всему телу!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/feet-listening.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Lesson 2: Your Feet Hear the Earth</h2>
+            <h2 data-lang="es">Lección 2: Tus Patas Escuchan la Tierra</h2>
+            <h2 data-lang="ru">Урок 2: Твои ноги слышат землю</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Lesson two,&#x27; says Grandmother Nyota. &#x27;Stand very still.&#x27; Tembo freezes. &#x27;Now close your eyes. Can you feel that?&#x27; Tembo concentrates hard. Through the soles of his feet, he feels something... a tiny rumble. &#x27;That is your Auntie Zara, calling from beyond the hill,&#x27; says Grandmother. &#x27;Elephants can hear through the earth itself. Our feet catch messages from far, far away. This is how the Memory Map talks to us.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Lección dos,&#x27; dice la abuela Nyota. &#x27;¡Quédate muy quieto!&#x27; Tembo se congela. &#x27;Ahora cierra los ojos. ¿Puedes sentir eso?&#x27; Tembo se concentra mucho. A través de las suelas de sus patas, siente algo... un pequeño retumbo. &#x27;Esa es tu tía Zara, llamando desde más allá de la colina,&#x27; dice la abuela. &#x27;Los elefantes pueden escuchar a través de la tierra misma. Nuestras patas captan mensajes de muy, muy lejos.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Урок второй,&#x27; говорит бабушка Ньота. &#x27;Стой совсем тихо.&#x27; Тембо замирает. &#x27;Теперь закрой глаза. Чувствуешь?&#x27; Тембо очень сосредоточен. Через подошвы своих ног он чувствует что-то... лёгкую вибрацию. &#x27;Это твоя тётя Зара, зовёт из-за холма,&#x27; говорит бабушка. &#x27;Слоны могут слышать через саму землю. Наши ноги ловят послания издалека. Так Карта Памяти говорит с нами.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/migration-landscape.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Majestic elephant herd walking in a long line across a lush green savanna at golden hour, adults flanking calves in the center, green vegetation and acacia trees lining the path, warm golden sky"
+                 data-alt-en="Majestic elephant herd walking in a long line across a lush green savanna at golden hour, adults flanking calves in the center, green vegetation and acacia trees lining the path, warm golden sky"
+                 data-alt-es="Majestuosa manada de elefantes caminando en una larga fila a través de la sabana dorada al atardecer, adultos flanqueando a los bebés en el centro, cielo dramático con cálidos colores naranja y púrpura"
+                 data-alt-ru="Величественное стадо слонов, идущее длинной цепочкой по золотой саванне на закате, взрослые по бокам, малыши в центре, драматичное небо в тёплых оранжево-фиолетовых тонах"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Lesson 3: The Herd Walks as One</h2>
+            <h2 data-lang="es">Lección 3: La Manada Camina Como Una</h2>
+            <h2 data-lang="ru">Урок 3: Стадо идёт как одно целое</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Lesson three,&#x27; says Grandmother, &#x27;is the biggest lesson of all.&#x27; When the dry season comes, she leads the herd on an ancient path her own grandmother showed her decades ago. Dozens of elephants walk in a long line, their massive silhouettes painting shadows on the earth. &#x27;Watch carefully, Tembo. This path is now part of YOUR Memory Map. One day, you will lead this walk.&#x27; Tembo tries to memorize every tree, every hill, every bend in the trail.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Lección tres,&#x27; dice la abuela, &#x27;es la lección más grande de todas.&#x27; Cuando llega la estación seca, guía a la manada por un camino antiguo que su propia abuela le mostró hace décadas. Docenas de elefantes caminan en una larga fila, sus enormes siluetas pintando sombras en la tierra. &#x27;¡Observa con cuidado, Tembo! Este camino ahora es parte de TU Mapa de la Memoria.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Урок третий,&#x27; говорит бабушка, &#x27;самый важный урок из всех.&#x27; Когда наступает сухой сезон, она ведёт стадо по древней тропе, которую ей показала собственная бабушка десятилетия назад. Десятки слонов идут длинной цепочкой, их массивные силуэты рисуют тени на земле. &#x27;Смотри внимательно, Тембо. Эта тропа теперь часть ТВОЕЙ Карты Памяти.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/nyota-finding-water.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Memory Map in Action</h2>
+            <h2 data-lang="es">El Mapa de la Memoria en Acción</h2>
+            <h2 data-lang="ru">Карта Памяти в действии</h2>
+            <div data-lang="en" class="active">
+                <p>The rivers have dried up, but Grandmother Nyota closes her eyes and remembers. &#x27;This is why we keep the Memory Map,&#x27; she tells Tembo. She leads the herd to a sandy riverbed and begins digging with her powerful feet and trunk. Deeper and deeper she digs, until — miracle! — water begins seeping up from underground. &#x27;My grandmother showed me this spot during a drought forty years ago,&#x27; she says. Tembo&#x27;s eyes go wide. The Memory Map just saved the entire herd!</p>
+            </div>
+            <div data-lang="es">
+                <p>Los ríos se han secado, pero la abuela Nyota cierra los ojos y recuerda. &#x27;Por esto guardamos el Mapa de la Memoria,&#x27; le dice a Tembo. Guía a la manada hacia un lecho de río arenoso y comienza a cavar con sus poderosas patas y trompa. Cada vez más profundo cava, hasta que — ¡milagro! — el agua comienza a brotar del subsuelo. &#x27;Mi abuela me mostró este lugar durante una sequía hace cuarenta años,&#x27; dice.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Реки высохли, но бабушка Ньота закрывает глаза и вспоминает. &#x27;Вот зачем мы храним Карту Памяти,&#x27; говорит она Тембо. Она ведёт стадо к песчаному руслу реки и начинает копать своими мощными ногами и хоботом. Всё глубже и глубже она копает, пока — чудо! — вода не начинает просачиваться из-под земли. &#x27;Моя бабушка показала мне это место во время засухи сорок лет назад,&#x27; говорит она.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#12</span>
+            <img data-src="assets/images/tree-pushers.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="African elephants pushing against a large tree trunk, creating a clearing, with smaller animals like zebras grazing in a lush green area nearby, abundant vegetation and warm golden light"
+                 data-alt-en="African elephants pushing against a large tree trunk, creating a clearing, with smaller animals like zebras grazing in a lush green area nearby, abundant vegetation and warm golden light"
+                 data-alt-es="Elefantes africanos empujando un gran tronco de árbol, creando un claro, con animales más pequeños como cebras pastando en un área ya despejada cercana, cálida luz de sabana"
+                 data-alt-ru="Африканские слоны толкают большой ствол дерева, создавая поляну, рядом в уже расчищенной зоне пасутся более мелкие животные, такие как зебры, тёплый свет саванны"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Lesson 4: We Shape the Land</h2>
+            <h2 data-lang="es">Lección 4: Nosotros Moldeamos la Tierra</h2>
+            <h2 data-lang="ru">Урок 4: Мы создаём ландшафт</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Last lesson,&#x27; says Grandmother. &#x27;We don&#x27;t just live on the land — we shape it.&#x27; Elephants are nature&#x27;s landscape architects! By pushing over old trees, they create open clearings where grass can grow — feeding zebras, wildebeest, and antelopes. The fallen trees become homes for lizards, insects, and small mammals. &#x27;Even your footprints matter, Tembo. They fill with rainwater and become tiny ponds for frogs!&#x27; Tembo looks down at his own feet with new wonder.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Última lección,&#x27; dice la abuela. &#x27;¡No solo vivimos en la tierra — la moldeamos!&#x27; ¡Los elefantes son los arquitectos paisajistas de la naturaleza! Al empujar árboles viejos, crean claros abiertos donde puede crecer hierba — alimentando cebras, ñus y antílopes. Los árboles caídos se convierten en hogares para lagartijas, insectos y pequeños mamíferos. &#x27;¡Incluso tus huellas importan, Tembo!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Последний урок,&#x27; говорит бабушка. &#x27;Мы не просто живём на этой земле — мы формируем её.&#x27; Слоны — ландшафтные архитекторы природы! Толкая старые деревья, они создают открытые поляны, где может расти трава — кормя зебр, антилоп гну и газелей. Упавшие деревья становятся домами для ящериц, насекомых и мелких млекопитающих. &#x27;Даже твои следы важны, Тембо!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#13</span>
+            <img data-src="assets/images/tembo-night-watch.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Thunder in the Night</h2>
+            <h2 data-lang="es">Truenos en la Noche</h2>
+            <h2 data-lang="ru">Гром в ночи</h2>
+            <div data-lang="en" class="active">
+                <p>That night, Tembo curls up against Mama Amara&#x27;s huge leg. Above them, millions of stars sparkle. Then — BOOM! A deep rumble shakes the sky. Tembo jumps up, trembling. &#x27;What was THAT?!&#x27; &#x27;That is the rain talking,&#x27; Mama whispers. &#x27;It is far away now, but it is coming.&#x27; On the horizon, lightning flickers behind purple clouds. Tembo&#x27;s heart pounds. The rain is coming. He can almost feel it in his feet.</p>
+            </div>
+            <div data-lang="es">
+                <p>Esa noche, Tembo se acurruca contra la enorme pierna de Mamá Amara. Sobre ellos, millones de estrellas brillan. Entonces — ¡BOOM! Un profundo retumbo sacude el cielo. Tembo salta, temblando. &#x27;¡¿Qué fue ESO?!&#x27; &#x27;Esa es la lluvia hablando,&#x27; susurra Mamá. &#x27;Está lejos ahora, pero viene.&#x27; En el horizonte, los relámpagos parpadean detrás de nubes moradas.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Той ночью Тембо прижимается к огромной ноге Мамы Амары. Над ними сверкают миллионы звёзд. И вдруг — БУМ! Глубокий гул сотрясает небо. Тембо вскакивает, дрожа. &#x27;Что это БЫЛО?!&#x27; &#x27;Это дождь разговаривает,&#x27; шепчет Мама. &#x27;Он далеко сейчас, но он идёт.&#x27; На горизонте молнии мерцают за фиолетовыми облаками. Сердце Тембо колотится.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#14</span>
+            <img data-src="assets/images/clouds-gathering.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Sky Changes</h2>
+            <h2 data-lang="es">El Cielo Cambia</h2>
+            <h2 data-lang="ru">Небо меняется</h2>
+            <div data-lang="en" class="active">
+                <p>The next morning, the wind changes. Grandmother Nyota lifts her trunk high and breathes in deeply. Her eyes twinkle. &#x27;Can you smell it, Tembo?&#x27; Tembo raises his little trunk. There IS something different in the air — something cool, something fresh, something he has never smelled before. The sky is turning grey and purple. The grass bends in the wind. &#x27;It&#x27;s coming,&#x27; whispers Grandmother, and she smiles the biggest smile Tembo has ever seen.</p>
+            </div>
+            <div data-lang="es">
+                <p>A la mañana siguiente, el viento cambia. La abuela Nyota levanta su trompa y respira profundamente. Sus ojos brillan. &#x27;¿Puedes olerlo, Tembo?&#x27; Tembo levanta su pequeña trompa. HAY algo diferente en el aire — algo fresco, algo nuevo, algo que nunca antes ha olido. El cielo se está poniendo gris y morado. &#x27;¡Viene!&#x27; susurra la abuela, con la sonrisa más grande que Tembo ha visto jamás.</p>
+            </div>
+            <div data-lang="ru">
+                <p>На следующее утро ветер меняется. Бабушка Ньота поднимает хобот высоко и глубоко вдыхает. Её глаза сверкают. &#x27;Чувствуешь, Тембо?&#x27; Тембо поднимает свой маленький хобот. В воздухе ДЕЙСТВИТЕЛЬНО что-то новое — прохладное, свежее, то, чего он никогда раньше не ощущал. Небо становится серым и фиолетовым. &#x27;Идёт!&#x27; шепчет бабушка с самой широкой улыбкой, которую Тембо когда-либо видел.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#15</span>
+            <img data-src="assets/images/first-rain-dance.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Baby elephant calf dancing joyfully in the rain with trunk raised high, another calf splashing in puddles, lush green savanna transforming with fresh growth, rainbow in background"
+                 data-alt-en="Baby elephant calf dancing joyfully in the rain with trunk raised high, another calf splashing in puddles, lush green savanna transforming with fresh growth, rainbow in background"
+                 data-alt-es="Elefantito bailando alegremente bajo la lluvia con la trompa levantada, otro elefantito salpicando en charcos, sabana verde transformándose con crecimiento fresco, arcoíris al fondo"
+                 data-alt-ru="Слонёнок радостно танцует под дождём с поднятым хоботом, другой слонёнок плещется в лужах, зелёная саванна преображается свежей растительностью, радуга на фоне"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Tembo&#x27;s First Rain!</h2>
+            <h2 data-lang="es">¡La Primera Lluvia de Tembo!</h2>
+            <h2 data-lang="ru">Первый дождь Тембо!</h2>
+            <div data-lang="en" class="active">
+                <p>And then it comes. The first drop lands on Tembo&#x27;s nose. Then another. Then ten. Then a THOUSAND! The sky opens up and warm, beautiful rain pours down over the savanna. Tembo stands frozen for one perfect moment — and then he DANCES! He spins, he splashes, he raises his trunk to catch the drops! Kippy charges through the puddles screaming &#x27;MUD! GLORIOUS MUD!&#x27; The whole herd rumbles with joy. The grass turns green before their eyes. Flowers spring up overnight. Tembo&#x27;s trunk remembers this smell forever.</p>
+            </div>
+            <div data-lang="es">
+                <p>Y entonces llega. La primera gota cae en la nariz de Tembo. Luego otra. Luego diez. ¡Luego MIL! El cielo se abre y una lluvia cálida y hermosa cae sobre la sabana. Tembo se queda congelado por un momento perfecto — ¡y luego BAILA! ¡Gira, salpica, levanta su trompa para atrapar las gotas! Kippy corre por los charcos gritando &#x27;¡BARRO! ¡GLORIOSO BARRO!&#x27; Toda la manada retumba de alegría.</p>
+            </div>
+            <div data-lang="ru">
+                <p>И вот он идёт. Первая капля падает на нос Тембо. Потом ещё одна. Потом десять. Потом ТЫСЯЧА! Небо раскрывается и тёплый, прекрасный дождь льётся на саванну. Тембо застывает на один идеальный момент — а потом ТАНЦУЕТ! Он кружится, плещется, поднимает хобот, ловя капли! Киппи мчится по лужам крича &#x27;ГРЯЗЬ! ВЕЛИКОЛЕПНАЯ ГРЯЗЬ!&#x27; Всё стадо гудит от радости.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#16</span>
+            <img data-src="assets/images/carry-the-map.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Carry the Map</h2>
+            <h2 data-lang="es">Lleva el Mapa</h2>
+            <h2 data-lang="ru">Неси Карту</h2>
+            <div data-lang="en" class="active">
+                <p>After the rain, the world sparkles. Grandmother Nyota touches her trunk to Tembo&#x27;s forehead, very gently. &#x27;You smelled it before it came,&#x27; she says proudly. &#x27;The rain, the paths, the water — it is all inside you now.&#x27; She looks at the tiny newborn calf peeking out from behind Tembo&#x27;s legs. &#x27;And one day, little Tembo, you will teach the Memory Map to someone new.&#x27; Tembo stands tall. He is ready.</p>
+            </div>
+            <div data-lang="es">
+                <p>Después de la lluvia, el mundo brilla. La abuela Nyota toca su trompa a la frente de Tembo, muy suavemente. &#x27;Lo oliste antes de que llegara,&#x27; dice con orgullo. &#x27;La lluvia, los caminos, el agua — todo está dentro de ti ahora.&#x27; Ella mira al pequeño recién nacido espiando detrás de las piernas de Tembo. &#x27;Y un día, pequeño Tembo, tú enseñarás el Mapa de la Memoria a alguien nuevo.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>После дождя мир сверкает. Бабушка Ньота касается хоботом лба Тембо, очень нежно. &#x27;Ты почувствовал его до того, как он пришёл,&#x27; говорит она с гордостью. &#x27;Дождь, тропы, вода — всё это теперь внутри тебя.&#x27; Она смотрит на крошечного новорождённого, выглядывающего из-за ног Тембо. &#x27;И однажды, маленький Тембо, ты научишь Карте Памяти кого-то нового.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#17</span>
+            <img data-src="assets/images/tembo-grows-up.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Tembo Grows Up</h2>
+            <h2 data-lang="es">Tembo Crece</h2>
+            <h2 data-lang="ru">Тембо взрослеет</h2>
+            <div data-lang="en" class="active">
+                <p>A year has passed, and Tembo is no longer the littlest calf in the herd! He&#x27;s grown strong and confident. The Memory Map lives inside his head now — every path, every watering hole, every safe place. And when the tiny newborn stumbles on the wet grass, Tembo is right there, guiding her gently with his trunk, just as Mama Amara once guided him. The circle of life continues.</p>
+            </div>
+            <div data-lang="es">
+                <p>Ha pasado un año, ¡y Tembo ya no es el bebé más pequeño de la manada! Ha crecido fuerte y seguro. El Mapa de la Memoria vive dentro de su cabeza ahora — cada camino, cada abrevadero, cada lugar seguro. Y cuando la pequeña recién nacida tropieza en la hierba mojada, Tembo está ahí, guiándola suavemente con su trompa, tal como Mamá Amara lo guió a él.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Прошёл год, и Тембо больше не самый маленький в стаде! Он вырос сильным и уверенным. Карта Памяти живёт внутри его головы — каждая тропа, каждый водопой, каждое безопасное место. И когда крошечная новорождённая спотыкается на мокрой траве, Тембо тут как тут, нежно направляя её хоботом, точно так же, как когда-то Мама Амара направляла его.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <span class="img-ref">#18</span>
+            <img data-src="assets/images/family-together-panorama.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Full elephant herd gathered at a watering hole during golden hour, elderly matriarch in center, calves playing at water&#x27;s edge, lush green panoramic savanna with abundant vegetation"
+                 data-alt-en="Full elephant herd gathered at a watering hole during golden hour, elderly matriarch in center, calves playing at water&#x27;s edge, lush green panoramic savanna with abundant vegetation"
+                 data-alt-es="Manada completa de elefantes reunida en un abrevadero durante la hora dorada, matriarca anciana en el centro, bebés jugando al borde del agua, cálida escena panorámica de sabana"
+                 data-alt-ru="Полное стадо слонов, собравшееся у водопоя в золотой час, пожилая матриарх в центре, малыши играют у кромки воды, тёплая панорамная сцена саванны"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Herd Together</h2>
+            <h2 data-lang="es">La Manada Unida</h2>
+            <h2 data-lang="ru">Стадо вместе</h2>
+            <div data-lang="en" class="active">
+                <p>As the sun breaks through the last rain clouds, painting the sky in shades of gold and amber, the entire herd gathers at the overflowing watering hole. Grandmother Nyota stands tall at the center, surrounded by three generations of her family. Tembo, Kippy, and the other calves splash joyfully at the water&#x27;s edge. The savanna is green and alive, flowers blooming everywhere. Grandmother rumbles a deep, contented call — and thirty elephants answer back. The Memory Map is safe. The rain has come. And tomorrow, there will be new paths to learn.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras el sol atraviesa las últimas nubes de lluvia, pintando el cielo en tonos de oro y ámbar, toda la manada se reúne en el abrevadero desbordante. La abuela Nyota se mantiene erguida en el centro, rodeada por tres generaciones de su familia. Tembo, Kippy y los otros bebés salpican alegremente al borde del agua. La sabana está verde y viva, flores brotando por todas partes.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда солнце пробивается сквозь последние дождевые облака, окрашивая небо в оттенки золота и янтаря, всё стадо собирается у переполненного водопоя. Бабушка Ньота стоит высоко в центре, окружённая тремя поколениями своей семьи. Тембо, Киппи и другие малыши радостно плещутся у кромки воды. Саванна зелёная и живая, цветы распускаются повсюду.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-trunk-anatomy.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Amazing Trunk"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Amazing Trunk</h3>
+                    <h3 data-lang="es">La Increíble Trompa</h3>
+                    <h3 data-lang="ru">Удивительный хобот</h3>
+                    <p data-lang="en" class="active">Look at Tembo&#x27;s trunk tip — see those two finger-like projections? African elephants have two &#x27;fingers&#x27; at the tip of their trunk (Asian elephants have just one). With over 40,000 muscles, the trunk can pick up something as tiny as a single blade of grass or as heavy as a tree branch!</p>
+                    <p data-lang="es">¡Mira la punta de la trompa de Tembo — ves esas dos proyecciones como dedos? Los elefantes africanos tienen dos &#x27;dedos&#x27; en la punta de su trompa (los elefantes asiáticos tienen solo uno). ¡Con más de 40,000 músculos, la trompa puede recoger algo tan pequeño como una brizna de hierba o tan pesado como una rama de árbol!</p>
+                    <p data-lang="ru">Посмотрите на кончик хобота Тембо — видите два пальцеобразных выроста? У африканских слонов два &#x27;пальца&#x27; на кончике хобота (у азиатских — только один). С более чем 40 000 мышц хобот может поднять нечто крошечное, как одна травинка, или тяжёлое, как ветка дерева!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-foot-pad.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Shock-Absorbing Feet"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Shock-Absorbing Feet</h3>
+                    <h3 data-lang="es">Patas Amortiguadoras</h3>
+                    <h3 data-lang="ru">Амортизирующие ноги</h3>
+                    <p data-lang="en" class="active">An elephant&#x27;s foot hides a remarkable secret — a thick, spongy pad of fatty tissue that acts like a natural shock absorber! This pad spreads their enormous weight evenly and lets them walk almost silently despite weighing up to 6 tons. That&#x27;s why elephants can sneak up on you!</p>
+                    <p data-lang="es">¡El pie de un elefante esconde un secreto notable — una gruesa y esponjosa almohadilla de tejido graso que actúa como un amortiguador natural! Esta almohadilla distribuye su enorme peso uniformemente y les permite caminar casi en silencio a pesar de pesar hasta 6 toneladas. ¡Por eso los elefantes pueden acercarse sigilosamente!</p>
+                    <p data-lang="ru">Нога слона скрывает замечательный секрет — толстую, губчатую подушечку из жировой ткани, которая действует как натуральный амортизатор! Эта подушечка равномерно распределяет их огромный вес и позволяет им ходить почти бесшумно, несмотря на вес до 6 тонн. Вот почему слоны могут подкрасться незаметно!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-ear-vessels.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Built-In Air Conditioning"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Built-In Air Conditioning</h3>
+                    <h3 data-lang="es">Aire Acondicionado Incorporado</h3>
+                    <h3 data-lang="ru">Встроенный кондиционер</h3>
+                    <p data-lang="en" class="active">See the network of blood vessels in Tembo&#x27;s ears? An elephant&#x27;s ears are filled with a web of blood vessels just beneath the thin skin. When it&#x27;s hot, blood flows through these vessels and heat radiates out through the large ear surface. By flapping their ears, elephants can cool their blood by up to 5°C!</p>
+                    <p data-lang="es">¿Ves la red de vasos sanguíneos en las orejas de Tembo? Las orejas de un elefante están llenas de una red de vasos sanguíneos justo debajo de la delgada piel. Cuando hace calor, la sangre fluye a través de estos vasos y el calor se irradia por la gran superficie de la oreja. ¡Al agitar sus orejas, los elefantes pueden enfriar su sangre hasta 5°C!</p>
+                    <p data-lang="ru">Видите сеть кровеносных сосудов в ушах Тембо? Уши слона пронизаны сетью кровеносных сосудов прямо под тонкой кожей. Когда жарко, кровь проходит через эти сосуды и тепло излучается через большую поверхность уха. Хлопая ушами, слоны могут охладить свою кровь на 5°C!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-tusk-rings.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Tusk Growth Rings"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Tusk Growth Rings</h3>
+                    <h3 data-lang="es">Anillos de Crecimiento de Colmillos</h3>
+                    <h3 data-lang="ru">Кольца роста бивней</h3>
+                    <p data-lang="en" class="active">Just like trees have growth rings, elephant tusks have rings too! By studying these rings, scientists can learn an elephant&#x27;s age, health, and even what food was available in different years. Grandmother Nyota&#x27;s broken tusk shows rings from sixty years of savanna life.</p>
+                    <p data-lang="es">¡Al igual que los árboles tienen anillos de crecimiento, los colmillos de los elefantes también los tienen! Al estudiar estos anillos, los científicos pueden conocer la edad, la salud e incluso qué alimentos estaban disponibles en diferentes años. El colmillo roto de la Abuela Nyota muestra anillos de sesenta años de vida en la sabana.</p>
+                    <p data-lang="ru">Как и у деревьев есть годовые кольца, у бивней слонов тоже! Изучая эти кольца, учёные могут узнать возраст, здоровье слона и даже какая пища была доступна в разные годы. Сломанный бивень Бабушки Ньоты показывает кольца шестидесяти лет жизни в саванне.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Elephant Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Elefantes!</h2>
+            <h2 data-lang="ru">Удивительные факты о слонах!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-seismic-hearing.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Hearing Through Their Feet"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Hearing Through Their Feet</h3>
+                        <h3 data-lang="es">Escuchando a Través de sus Patas</h3>
+                        <h3 data-lang="ru">Слышат через ноги</h3>
+                        <p data-lang="en" class="active">Elephants can detect seismic vibrations through the ground using special sensors in their feet! They can &#x27;hear&#x27; other elephants&#x27; calls from up to 10 miles away through the earth, long before the sound reaches their ears through the air.</p>
+                        <p data-lang="es">¡Los elefantes pueden detectar vibraciones sísmicas a través del suelo usando sensores especiales en sus patas! Pueden &#x27;escuchar&#x27; las llamadas de otros elefantes desde hasta 16 kilómetros de distancia a través de la tierra, mucho antes de que el sonido llegue a sus oídos por el aire.</p>
+                        <p data-lang="ru">Слоны могут улавливать сейсмические вибрации через землю с помощью специальных рецепторов в ногах! Они могут &#x27;слышать&#x27; зовы других слонов на расстоянии до 16 километров через землю, задолго до того, как звук достигнет их ушей по воздуху.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-elephant-hugs.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Elephant Hugs"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Elephant Hugs</h3>
+                        <h3 data-lang="es">Abrazos de Elefante</h3>
+                        <h3 data-lang="ru">Слоновьи обнимашки</h3>
+                        <p data-lang="en" class="active">Elephants hug each other with their trunks! When two elephants meet, they wrap their trunks together in a warm greeting — just like people shaking hands or giving a hug. Baby elephants even hold their mama&#x27;s tail with their trunk while walking, like a toddler holding their parent&#x27;s hand!</p>
+                        <p data-lang="es">¡Los elefantes se abrazan con sus trompas! Cuando dos elefantes se encuentran, entrelazan sus trompas en un cálido saludo — igual que las personas que se dan la mano o un abrazo. ¡Los elefantitos incluso sostienen la cola de su mamá con su trompa al caminar, como un niño pequeño agarrando la mano de su padre!</p>
+                        <p data-lang="ru">Слоны обнимаются хоботами! Когда два слона встречаются, они обвивают хоботы друг друга в тёплом приветствии — как люди пожимают руки или обнимаются. Слонята даже держатся хоботом за хвост мамы во время ходьбы, как малыш держит за руку родителя!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-thumb-sucking.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Trunk-Sucking Babies"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Trunk-Sucking Babies</h3>
+                        <h3 data-lang="es">Bebés que Chupan su Trompa</h3>
+                        <h3 data-lang="ru">Малыши, сосущие хобот</h3>
+                        <p data-lang="en" class="active">Just like human babies suck their thumbs for comfort, baby elephants suck on the tips of their trunks! It calms them down and helps them feel safe. They usually grow out of this habit by age two, just like human toddlers stop sucking their thumbs.</p>
+                        <p data-lang="es">¡Al igual que los bebés humanos se chupan el pulgar para tranquilizarse, los elefantitos chupan las puntas de sus trompas! Los calma y les ayuda a sentirse seguros. Generalmente superan este hábito a los dos años, igual que los niños humanos dejan de chuparse el pulgar.</p>
+                        <p data-lang="ru">Как человеческие младенцы сосут палец для успокоения, слонята сосут кончики своих хоботов! Это их успокаивает и помогает чувствовать себя в безопасности. Обычно они перерастают эту привычку к двум годам, так же как человеческие малыши перестают сосать палец.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-swimming.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Swimming Champions"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Swimming Champions</h3>
+                        <h3 data-lang="es">Campeones de Natación</h3>
+                        <h3 data-lang="ru">Чемпионы по плаванию</h3>
+                        <p data-lang="en" class="active">Did you know elephants are amazing swimmers? They can swim for hours without stopping, using their trunk as a snorkel to breathe while their body is completely underwater! Baby elephants learn to swim when they are very young, and they love splashing in deep water with their families. Some elephants have even been spotted swimming between islands!</p>
+                        <p data-lang="es">¿Sabías que los elefantes son increíbles nadadores? ¡Pueden nadar durante horas sin parar, usando su trompa como esnórquel para respirar mientras su cuerpo está completamente bajo el agua! Los elefantitos aprenden a nadar cuando son muy pequeños, y les encanta chapotear en aguas profundas con sus familias.</p>
+                        <p data-lang="ru">Знали ли вы, что слоны — потрясающие пловцы? Они могут плавать часами без остановки, используя хобот как трубку для дыхания, пока тело полностью под водой! Слонята учатся плавать с раннего возраста и обожают плескаться в глубокой воде со своими семьями.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the gentle giants who shape the African savanna</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando a los gigantes gentiles que moldean la sabana africana</p>
+        <p data-lang="ru" style="margin-top: 10px;">Celebrating нежных гигантов, формирующих африканскую саванну</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

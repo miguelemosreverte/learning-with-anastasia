@@ -9,6 +9,9 @@
  * Can optionally use a "style reference" image so the result matches
  * the look of another image in the chapter.
  *
+ * All attempts are preserved in attempts/ for forensic review.
+ * Every run is logged to the chapter changelog (JSON + MD + HTML).
+ *
  * Usage:
  *   node restyle-image.js <chapter> <image> "<direction>"
  *   node restyle-image.js <chapter> <image> --like <ref-image> "<direction>"
@@ -23,6 +26,7 @@
  */
 
 const fs = require('fs');
+const path = require('path');
 const {
     resolveImagePaths,
     resolveImageFilename,
@@ -31,8 +35,8 @@ const {
     geminiVerify,
     ROOT
 } = require('./automation/image-utils');
-const path = require('path');
 const { GoogleGenAI } = require('@google/genai');
+const ChangeLog = require('./automation/changelog');
 
 /**
  * Generate with both a source image and a style-reference image
@@ -93,13 +97,14 @@ async function geminiRestyleSolo(ai, sourceImagePath, prompt) {
 }
 
 async function restyleImage(chapterName, identifier, direction, options = {}) {
-    const { likeRef = null, maxRetries = 3 } = options;
+    const { likeRef = null, maxRetries = 3, automated = false, type = 'style-restyle' } = options;
 
     const { filename, imagePath, attemptsDir } = resolveImagePaths(chapterName, identifier);
 
     if (!fs.existsSync(imagePath)) {
         console.error(`❌ Image not found: ${imagePath}`);
-        process.exit(1);
+        if (require.main === module) process.exit(1);
+        return false;
     }
 
     // Resolve style reference if provided
@@ -109,7 +114,8 @@ async function restyleImage(chapterName, identifier, direction, options = {}) {
         refImagePath = path.join(ROOT, chapterName, 'assets', 'images', refFilename);
         if (!fs.existsSync(refImagePath)) {
             console.error(`❌ Reference image not found: ${refImagePath}`);
-            process.exit(1);
+            if (require.main === module) process.exit(1);
+            return false;
         }
     }
 
@@ -119,7 +125,12 @@ async function restyleImage(chapterName, identifier, direction, options = {}) {
         console.log(`   Style ref: ${path.basename(refImagePath)}`);
     }
 
-    backupImage(imagePath, attemptsDir);
+    // Back up original — this is the "before" image
+    const initialVersion = backupImage(imagePath, attemptsDir);
+    const baseName = path.basename(filename, '.jpg');
+    const beforeImage = `assets/images/attempts/${baseName}-v${initialVersion}.jpg`;
+    const afterImage = `assets/images/${filename}`;
+    const attemptImages = [beforeImage];
 
     const ai = createGeminiClient();
 
@@ -177,11 +188,28 @@ RULES:
 
             if (verdict.pass) {
                 console.log(`   ✅ Verified: ${verdict.reason}`);
+                const changelog = new ChangeLog(chapterName);
+                changelog.log({
+                    image: filename,
+                    tag: identifier,
+                    type,
+                    tool: 'restyle-image',
+                    description: direction,
+                    attempts: attempt,
+                    verified: true,
+                    automated,
+                    beforeImage,
+                    afterImage,
+                    attemptImages
+                });
+                changelog.save();
                 return true;
             } else {
                 console.log(`   ⚠️  Issue: ${verdict.reason}`);
                 if (attempt < maxRetries) {
-                    backupImage(imagePath, attemptsDir);
+                    // Back up this failed attempt too — forensic evidence
+                    const ver = backupImage(imagePath, attemptsDir);
+                    attemptImages.push(`assets/images/attempts/${baseName}-v${ver}.jpg`);
                     console.log(`   🔁 Retrying...`);
                 }
             }
@@ -194,6 +222,21 @@ RULES:
     }
 
     console.error(`   ❌ Failed after ${maxRetries} attempts`);
+    const changelog = new ChangeLog(chapterName);
+    changelog.log({
+        image: filename,
+        tag: identifier,
+        type,
+        tool: 'restyle-image',
+        description: direction,
+        attempts: maxRetries,
+        verified: false,
+        automated,
+        beforeImage,
+        afterImage,
+        attemptImages
+    });
+    changelog.save();
     return false;
 }
 

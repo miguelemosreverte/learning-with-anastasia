@@ -29,6 +29,51 @@ class RecursiveImageGenerator {
 
         // Global style description (set by processChapter)
         this.styleDescription = '';
+
+        // Pre-production references (loaded by processChapter if available)
+        this.preproduction = null;
+        this.preproCharacterSheets = {};
+        this.preproStyleRef = null;
+    }
+
+    /**
+     * Load pre-production character sheets and style reference if available.
+     * Returns true if pre-production assets were found.
+     */
+    loadPreproduction(chapterDir) {
+        const manifestPath = path.join(chapterDir, 'preproduction', 'approved', 'preproduction-manifest.json');
+        if (!fs.existsSync(manifestPath)) return false;
+
+        try {
+            const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf8'));
+            this.preproduction = manifest;
+            const approvedDir = path.join(chapterDir, 'preproduction', 'approved');
+
+            // Load character sheets
+            for (const [sectionId, filename] of Object.entries(manifest.characterSheets || {})) {
+                const sheetPath = path.join(approvedDir, filename);
+                if (fs.existsSync(sheetPath)) {
+                    this.preproCharacterSheets[sectionId] = sheetPath;
+                }
+            }
+
+            // Load style reference
+            if (manifest.styleReference) {
+                const stylePath = path.join(approvedDir, manifest.styleReference);
+                if (fs.existsSync(stylePath)) {
+                    this.preproStyleRef = stylePath;
+                }
+            }
+
+            // Override style description with chosen style
+            if (manifest.chosenStyle && manifest.chosenStyle.description) {
+                this.styleDescription = manifest.chosenStyle.description;
+            }
+
+            return true;
+        } catch {
+            return false;
+        }
     }
 
     /**
@@ -62,37 +107,39 @@ class RecursiveImageGenerator {
      */
     resolveReferences(section, allSections) {
         const resolved = { ...section };
-        
+
         // Check if this section has a referenceImage field
         if (section.referenceImage) {
             const refId = this.parseReference(section.referenceImage);
             if (refId) {
-                // Always set that we WANT a reference, even if not generated yet
                 resolved.characterId = refId;
-                if (this.generatedImages[refId]) {
+                // Pre-production sheet takes priority
+                if (this.preproCharacterSheets[refId]) {
+                    resolved.characterReference = this.preproCharacterSheets[refId];
+                } else if (this.generatedImages[refId]) {
                     resolved.characterReference = this.generatedImages[refId];
                 } else {
-                    // Mark that we need this reference but don't have it yet
                     resolved.missingCharacterRef = refId;
                 }
             }
         }
-        
+
         // Check if this section uses a character from a previous section
         if (section.use_character) {
             const refId = this.parseReference(section.use_character);
             if (refId) {
-                // Always set that we WANT a reference, even if not generated yet
                 resolved.characterId = refId;
-                if (this.generatedImages[refId]) {
+                // Pre-production sheet takes priority
+                if (this.preproCharacterSheets[refId]) {
+                    resolved.characterReference = this.preproCharacterSheets[refId];
+                } else if (this.generatedImages[refId]) {
                     resolved.characterReference = this.generatedImages[refId];
                 } else {
-                    // Mark that we need this reference but don't have it yet
                     resolved.missingCharacterRef = refId;
                 }
             }
         }
-        
+
         // Check if this section uses multiple characters
         if (section.use_characters) {
             resolved.characterReferences = [];
@@ -100,7 +147,13 @@ class RecursiveImageGenerator {
             section.use_characters.forEach(ref => {
                 const refId = this.parseReference(ref);
                 if (refId) {
-                    if (this.generatedImages[refId]) {
+                    // Pre-production sheet takes priority
+                    if (this.preproCharacterSheets[refId]) {
+                        resolved.characterReferences.push({
+                            id: refId,
+                            path: this.preproCharacterSheets[refId]
+                        });
+                    } else if (this.generatedImages[refId]) {
                         resolved.characterReferences.push({
                             id: refId,
                             path: this.generatedImages[refId]
@@ -111,7 +164,7 @@ class RecursiveImageGenerator {
                 }
             });
         }
-        
+
         return resolved;
     }
 
@@ -241,10 +294,18 @@ class RecursiveImageGenerator {
             return { success: true, path: outputPath, skipped: true };
         }
 
+        // If this is a character portrait and we have a pre-production sheet, use it as reference
+        if (section.generate_character && !section.characterReference) {
+            if (this.preproCharacterSheets[section.id]) {
+                section.characterReference = this.preproCharacterSheets[section.id];
+                console.log(`   🎬 Using preproduction sheet as reference for character portrait`);
+            }
+        }
+
         // Determine service based on whether this section WANTS references
         const wantsReference = section.use_character || section.use_characters ||
                                section.characterId || section.missingCharacterRef ||
-                               section.referenceImage ||
+                               section.referenceImage || section.characterReference ||
                                (section.characterReferences && section.characterReferences.length > 0) ||
                                (section.missingCharacterRefs && section.missingCharacterRefs.length > 0);
         const service = wantsReference ? 'gemini' : 'openai';
@@ -428,13 +489,17 @@ class RecursiveImageGenerator {
         // Build prompt contents - include multiple reference images if available
         const contents = [];
 
+        const styleInstruction = this.preproStyleRef
+            ? `Match the art style shown in the style reference image (the last reference image provided). ${this.styleDescription}`
+            : `Style: ${this.styleDescription || 'Studio Ghibli warmth, Pixar quality, vibrant colors, magical lighting, child-friendly.'}`;
+
         contents.push({
             text: `Create a cheerful, child-friendly illustration. Using the character(s) from the reference image(s), create a heartwarming scene: ${section.action || section.prompt || section.content?.en || 'Generate image'}
 
-            Keep the characters looking exactly the same as in the reference - same fur color, same features, same style.
+            Keep the characters looking exactly the same as in the reference - same proportions, same features, same distinguishing marks.
             ${section.title && section.title.en ? 'Context: ' + section.title.en : ''}
 
-            Style: Studio Ghibli warmth, Pixar quality, vibrant colors, magical lighting, child-friendly.
+            ${styleInstruction}
             Absolutely NO text or words in the image.`
         });
 
@@ -461,6 +526,22 @@ class RecursiveImageGenerator {
                 } catch (e) {
                     console.log(`   ⚠️ Could not load additional ref: ${section.characterReferences[i].path}`);
                 }
+            }
+        }
+
+        // Add pre-production style reference if available
+        if (this.preproStyleRef) {
+            try {
+                const styleData = fs.readFileSync(this.preproStyleRef);
+                contents.push({
+                    inlineData: {
+                        mimeType: "image/jpeg",
+                        data: styleData.toString("base64")
+                    }
+                });
+                console.log(`   🎨 Style ref: ${path.basename(this.preproStyleRef)}`);
+            } catch (e) {
+                console.log(`   ⚠️ Could not load style reference`);
             }
         }
 
@@ -684,6 +765,15 @@ req.end();
             this.styleDescription = chapterData.imageGeneration.style.global || '';
         } else {
             this.styleDescription = 'Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors';
+        }
+
+        // Load pre-production references if available
+        const hasPreproduction = this.loadPreproduction(outputDir);
+        if (hasPreproduction) {
+            console.log(`   🎬 Pre-production loaded: ${Object.keys(this.preproCharacterSheets).length} character sheets`);
+            if (this.preproStyleRef) {
+                console.log(`   🎨 Style: ${this.preproduction.chosenStyle?.name || 'custom'}`);
+            }
         }
 
         // Check Claude availability once at the start

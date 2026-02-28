@@ -1,0 +1,162 @@
+{
+  "chapter": "elephants",
+  "style": {
+    "global": "Pixar-quality 3D rendering. Smooth rounded forms with subsurface scattering. Cinematic lighting with warm key light and cool fill. Rich saturated colors. Photorealistic textures with stylized proportions. Lush green African savanna with abundant vegetation, tropical plants, green grass, and scattered wildflowers. Warm golden-hour light. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "tembo": {
+      "name": "Tembo",
+      "description": "Young grey African elephant calf with big curious eyes and oversized floppy ears"
+    },
+    "mama-amara": {
+      "name": "Mama Amara",
+      "description": "Large gentle mother elephant with kind eyes and dusty tusks, warm nurturing presence"
+    },
+    "grandmother-nyota": {
+      "name": "Grandmother Nyota",
+      "description": "Elderly matriarch elephant with weathered grey skin, one broken tusk, deep wise eyes"
+    },
+    "kippy": {
+      "name": "Kippy",
+      "description": "Playful young elephant calf slightly older than Tembo, always covered in dried mud, mischievous"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-savanna-sunrise.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Breathtaking lush green African savanna at golden sunrise with a majestic elephant herd, acacia trees and tropical vegetation dotting the landscape, warm golden light flooding the green plains",
+        "es": "Impresionante sabana africana al amanecer dorado con una majestuosa manada de elefantes en silueta contra el cielo, árboles de acacia salpicando el paisaje, cálida luz naranja y dorada inundando las llanuras",
+        "ru": "Захватывающая африканская саванна на золотом рассвете с величественным стадом слонов в силуэте на фоне неба, акации, раскинувшиеся по ландшафту, тёплый оранжево-золотой свет, заливающий равнины"
+      }
+    },
+    {
+      "filename": "tembo-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Adorable young grey African elephant calf with big curious eyes, oversized floppy ears, and a playful expression, standing on golden savanna grass",
+        "es": "Adorable joven elefante africano gris con grandes ojos curiosos, enormes orejas caídas y una expresión juguetona, de pie sobre hierba dorada de la sabana",
+        "ru": "Очаровательный молодой серый африканский слонёнок с большими любопытными глазами, огромными висячими ушами и игривым выражением, стоящий на золотой траве саванны"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tembo-first-steps.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "tembo-watering-hole.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "grandmother-nyota-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Wise elderly African elephant matriarch with deep wrinkled grey skin, one broken tusk, and kind wise eyes, standing majestically on the savanna",
+        "es": "Sabia matriarca elefante africana anciana con piel gris profundamente arrugada, un colmillo roto y ojos sabios y amables, de pie majestuosamente en la sabana",
+        "ru": "Мудрая пожилая матриарх африканских слонов с глубоко морщинистой серой кожей, одним сломанным бивнем и добрыми мудрыми глазами, величественно стоящая в саванне"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "memory-map-lesson.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "tembo-trunk-lessons.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "kippy-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Playful young elephant calf slightly bigger than Tembo, covered in dried mud, with a mischievous expression, standing on savanna grass",
+        "es": "Juguetón joven elefante un poco más grande que Tembo, cubierto de barro seco, con una expresión traviesa, de pie sobre hierba de sabana",
+        "ru": "Игривый молодой слонёнок чуть крупнее Тембо, покрытый засохшей грязью, с озорным выражением, стоящий на траве саванны"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tembo-kippy-dust-bath.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "feet-listening.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "migration-landscape.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Majestic elephant herd walking in a long line across a lush green savanna at golden hour, adults flanking calves in the center, green vegetation and acacia trees lining the path, warm golden sky",
+        "es": "Majestuosa manada de elefantes caminando en una larga fila a través de la sabana dorada al atardecer, adultos flanqueando a los bebés en el centro, cielo dramático con cálidos colores naranja y púrpura",
+        "ru": "Величественное стадо слонов, идущее длинной цепочкой по золотой саванне на закате, взрослые по бокам, малыши в центре, драматичное небо в тёплых оранжево-фиолетовых тонах"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "nyota-finding-water.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "tree-pushers.jpg",
+      "type": "content",
+      "alt": {
+        "en": "African elephants pushing against a large tree trunk, creating a clearing, with smaller animals like zebras grazing in a lush green area nearby, abundant vegetation and warm golden light",
+        "es": "Elefantes africanos empujando un gran tronco de árbol, creando un claro, con animales más pequeños como cebras pastando en un área ya despejada cercana, cálida luz de sabana",
+        "ru": "Африканские слоны толкают большой ствол дерева, создавая поляну, рядом в уже расчищенной зоне пасутся более мелкие животные, такие как зебры, тёплый свет саванны"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tembo-night-watch.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "clouds-gathering.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-rain-dance.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Baby elephant calf dancing joyfully in the rain with trunk raised high, another calf splashing in puddles, lush green savanna transforming with fresh growth, rainbow in background",
+        "es": "Elefantito bailando alegremente bajo la lluvia con la trompa levantada, otro elefantito salpicando en charcos, sabana verde transformándose con crecimiento fresco, arcoíris al fondo",
+        "ru": "Слонёнок радостно танцует под дождём с поднятым хоботом, другой слонёнок плещется в лужах, зелёная саванна преображается свежей растительностью, радуга на фоне"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "carry-the-map.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "tembo-grows-up.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "family-together-panorama.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Full elephant herd gathered at a watering hole during golden hour, elderly matriarch in center, calves playing at water's edge, lush green panoramic savanna with abundant vegetation",
+        "es": "Manada completa de elefantes reunida en un abrevadero durante la hora dorada, matriarca anciana en el centro, bebés jugando al borde del agua, cálida escena panorámica de sabana",
+        "ru": "Полное стадо слонов, собравшееся у водопоя в золотой час, пожилая матриарх в центре, малыши играют у кромки воды, тёплая панорамная сцена саванны"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

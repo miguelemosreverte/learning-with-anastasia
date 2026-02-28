@@ -6,6 +6,9 @@
  * to regenerate with the specified fix applied. Verifies the fix
  * actually took before accepting (up to 3 attempts).
  *
+ * All attempts are preserved in attempts/ for forensic review.
+ * Every run is logged to the chapter changelog (JSON + MD + HTML).
+ *
  * Usage:
  *   node fix-image.js <chapter> <image> "<fix description>"
  *
@@ -19,6 +22,7 @@
  */
 
 const fs = require('fs');
+const path = require('path');
 const {
     resolveImagePaths,
     backupImage,
@@ -26,19 +30,27 @@ const {
     geminiImageGenerate,
     geminiVerify
 } = require('./automation/image-utils');
+const ChangeLog = require('./automation/changelog');
 
-async function fixImage(chapterName, identifier, fixDescription, maxRetries = 3) {
+async function fixImage(chapterName, identifier, fixDescription, options = {}) {
+    const { maxRetries = 3, automated = false, type = 'anatomical-fix' } = options;
     const { filename, imagePath, attemptsDir } = resolveImagePaths(chapterName, identifier);
 
     if (!fs.existsSync(imagePath)) {
         console.error(`❌ Image not found: ${imagePath}`);
-        process.exit(1);
+        if (require.main === module) process.exit(1);
+        return false;
     }
 
     console.log(`\n🔧 Fixing: ${filename}`);
     console.log(`   Issue: ${fixDescription}`);
 
-    backupImage(imagePath, attemptsDir);
+    // Back up original — this is the "before" image
+    const initialVersion = backupImage(imagePath, attemptsDir);
+    const baseName = path.basename(filename, '.jpg');
+    const beforeImage = `assets/images/attempts/${baseName}-v${initialVersion}.jpg`;
+    const afterImage = `assets/images/${filename}`;
+    const attemptImages = [beforeImage]; // Start with the original
 
     const ai = createGeminiClient();
 
@@ -75,11 +87,28 @@ CRITICAL RULES:
 
             if (verdict.pass) {
                 console.log(`   ✅ Verified: ${verdict.reason}`);
+                const changelog = new ChangeLog(chapterName);
+                changelog.log({
+                    image: filename,
+                    tag: identifier,
+                    type,
+                    tool: 'fix-image',
+                    description: fixDescription,
+                    attempts: attempt,
+                    verified: true,
+                    automated,
+                    beforeImage,
+                    afterImage,
+                    attemptImages
+                });
+                changelog.save();
                 return true;
             } else {
                 console.log(`   ❌ Still broken: ${verdict.reason}`);
                 if (attempt < maxRetries) {
-                    backupImage(imagePath, attemptsDir);
+                    // Back up this failed attempt too — forensic evidence
+                    const ver = backupImage(imagePath, attemptsDir);
+                    attemptImages.push(`assets/images/attempts/${baseName}-v${ver}.jpg`);
                     console.log(`   🔁 Retrying...`);
                 }
             }
@@ -92,6 +121,21 @@ CRITICAL RULES:
     }
 
     console.error(`   ❌ Failed verification after ${maxRetries} attempts`);
+    const changelog = new ChangeLog(chapterName);
+    changelog.log({
+        image: filename,
+        tag: identifier,
+        type,
+        tool: 'fix-image',
+        description: fixDescription,
+        attempts: maxRetries,
+        verified: false,
+        automated,
+        beforeImage,
+        afterImage,
+        attemptImages
+    });
+    changelog.save();
     return false;
 }
 
@@ -122,7 +166,7 @@ Tags map to section images in order:
     const [chapterName, identifier, ...fixParts] = args;
     const fixDescription = fixParts.join(' ');
 
-    fixImage(chapterName, identifier, fixDescription).then(success => {
+    fixImage(chapterName, identifier, fixDescription, { automated: false }).then(success => {
         if (success) {
             console.log('\n✨ Done! Refresh the browser to see the fix.');
         } else {

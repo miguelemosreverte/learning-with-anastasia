@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Bible — Elephants: Giants with Big Hearts</title>
+<style>
+    :root {
+        --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d;
+        --text: #e6edf3; --text-dim: #8b949e; --accent: #58a6ff; --green: #3fb950;
+        --orange: #d29922; --red: #f85149; --purple: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero-header { text-align: center; padding: 48px 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .hero-header h1 { font-size: 2.5em; margin-bottom: 8px; }
+    .hero-header .subtitle { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+    .hero-header .meta-line { color: var(--text-dim); font-size: 0.9em; }
+    .hero-header .description { max-width: 700px; margin: 16px auto; color: var(--text-dim); }
+    .hero-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-top: 24px; border: 1px solid var(--border); }
+    h2 { font-size: 1.5em; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+    h3 { font-size: 1.2em; margin: 24px 0 12px; color: var(--accent); }
+    .preface { background: var(--surface); border-radius: 8px; padding: 24px; border-left: 4px solid var(--accent); margin-bottom: 32px; }
+    .preface p { margin-bottom: 12px; color: var(--text-dim); }
+    .preface p:last-child { margin-bottom: 0; }
+    .style-banner { background: linear-gradient(135deg, #1a1e2e, #1e2636); border-radius: 8px; padding: 20px 24px; border: 1px solid var(--purple); margin-bottom: 32px; }
+    .style-banner strong { color: var(--purple); }
+    .characters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .character-profile { display: flex; gap: 16px; background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .character-thumb { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+    .character-thumb-placeholder { width: 100px; height: 100px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2em; color: var(--text-dim); flex-shrink: 0; }
+    .character-info h4 { margin-bottom: 4px; }
+    .character-info p { color: var(--text-dim); font-size: 0.9em; }
+    .small-text { color: var(--text-dim); font-size: 0.75em; font-family: monospace; }
+    .sections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .section-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .section-card.character-card { border-color: var(--green); }
+    .section-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+    .section-id { font-family: monospace; color: var(--text-dim); font-size: 0.8em; }
+    .section-image { width: 100%; border-radius: 6px; margin: 12px 0; max-height: 300px; object-fit: cover; }
+    .section-content { color: var(--text-dim); font-size: 0.9em; margin: 8px 0; max-height: 80px; overflow: hidden; }
+    .prompt-block { background: var(--surface2); padding: 8px 12px; border-radius: 4px; font-size: 0.8em; margin: 8px 0; color: var(--text-dim); border-left: 3px solid var(--orange); }
+    .refs { font-size: 0.8em; color: var(--purple); margin-top: 4px; }
+    .image-filename { font-family: monospace; font-size: 0.75em; color: var(--text-dim); margin-top: 8px; }
+    .missing-image { background: var(--surface2); border: 2px dashed var(--red); border-radius: 6px; padding: 40px; text-align: center; color: var(--red); margin: 12px 0; }
+    .missing-thumb { background: var(--surface2); border: 1px dashed var(--red); border-radius: 4px; padding: 12px; text-align: center; color: var(--red); font-size: 0.8em; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; font-weight: 600; text-transform: uppercase; }
+    .badge-gemini { background: #1a3a2a; color: var(--green); }
+    .badge-openai { background: #2a2a1a; color: var(--orange); }
+    .badge-unknown { background: var(--surface2); color: var(--text-dim); }
+    .badge-character { background: #1a2a1a; color: var(--green); }
+    .details-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .detail-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .detail-image { width: 100%; border-radius: 6px; margin-bottom: 12px; max-height: 200px; object-fit: cover; }
+    .detail-card h4 { margin-bottom: 8px; }
+    .detail-card p { color: var(--text-dim); font-size: 0.85em; }
+    .hidden-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hidden-section-card { background: var(--surface); border-radius: 6px; padding: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .thumb { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; }
+    .small-prompt { font-size: 0.75em; color: var(--text-dim); }
+    .prepro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .prepro-step { background: var(--surface); border-radius: 8px; padding: 20px; border: 2px solid var(--border); text-align: center; }
+    .prepro-step h4 { margin-bottom: 8px; }
+    .prepro-step p { color: var(--text-dim); font-size: 0.9em; margin-bottom: 8px; }
+    .step-approved { border-color: var(--green); }
+    .step-pending { border-color: var(--orange); }
+    .check { color: var(--green); font-weight: 600; }
+    .pending { color: var(--orange); font-weight: 600; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .prepro-image-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .prepro-image-grid .grid-item img { height: 280px; }
+    .grid-item { background: var(--surface); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
+    .grid-item img { width: 100%; height: 160px; object-fit: cover; }
+    .grid-item span { display: block; padding: 4px 8px; font-size: 0.7em; color: var(--text-dim); font-family: monospace; }
+    .approved-item { border-color: var(--green); border-width: 2px; }
+    .approved-item span { color: var(--green); }
+    .cover-section { text-align: center; margin-bottom: 32px; }
+    .cover-image { max-width: 400px; border-radius: 8px; border: 2px solid var(--accent); }
+    .stats-bar { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 20px; background: var(--surface); border-radius: 8px; margin-bottom: 32px; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 0.8em; color: var(--text-dim); }
+    footer { text-align: center; padding: 32px; color: var(--text-dim); font-size: 0.8em; border-top: 1px solid var(--border); margin-top: 40px; }
+    @media (max-width: 768px) {
+        .prepro-grid { grid-template-columns: 1fr; }
+        .sections-grid { grid-template-columns: 1fr; }
+        .hero-header h1 { font-size: 1.8em; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-header">
+        <h1>Elephants: Giants with Big Hearts</h1>
+        <div class="subtitle">A Journey Through Tembo's First Year</div>
+        <div class="meta-line">February 2026 &bull; Issue #8 &bull; Chapter: elephants</div>
+        <p class="description">Follow Tembo the young elephant calf through his first year learning from his mother and the matriarch of the herd</p>
+        <img src="../assets/images/magazine-cover.jpg" alt="Magazine Cover" class="hero-image" />
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat"><div class="num">4</div><div class="label">Characters</div></div>
+        <div class="stat"><div class="num">18</div><div class="label">Scenes</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Viewer Details</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Fun Facts</div></div>
+        <div class="stat"><div class="num">28</div><div class="label">Total Images</div></div>
+        <div class="stat"><div class="num">22 / 6</div><div class="label">Gemini / OpenAI</div></div>
+    </div>
+
+    <h2>Preface</h2>
+    <div class="preface">
+        <p>Welcome to the magnificent world of African elephants! In this adventure, we'll follow Tembo, a curious young elephant calf, as he takes his first wobbly steps on the golden savanna and learns everything from his loving family.</p>
+<p>Elephants are among the most intelligent animals on Earth. They mourn their dead, use tools, communicate over vast distances, and form family bonds that last a lifetime. Their herds are led by wise matriarchs who remember water sources from decades past.</p>
+<p>Through Tembo's first year, you'll discover how elephants shape entire landscapes by pushing trees and digging for water, how they protect each other through the darkest nights, and why these gentle giants truly deserve to be called nature's greatest engineers!</p>
+    </div>
+
+    <h2>Art Direction</h2>
+    <div class="style-banner">
+        <strong>Global Style:</strong> Pixar-quality 3D rendering. Smooth rounded forms with subsurface scattering. Cinematic lighting with warm key light and cool fill. Rich saturated colors. Photorealistic textures with stylized proportions. Lush green African savanna with abundant vegetation, tropical plants, green grass, and scattered wildflowers. Warm golden-hour light. Child-friendly and inviting.
+    </div>
+
+    <h2>Pre-Production Pipeline</h2>
+    
+        <div class="prepro-grid">
+            <div class="prepro-step step-approved">
+                <h4>Step 1: Unified Cast Sheet</h4>
+                <p>approved (1 attempts)</p>
+                <span class="check">Approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 2: Character Sheets</h4>
+                <p>approved</p>
+                <span class="check">Tembo: approved</span><br><span class="check">Mama Amara: approved</span><br><span class="check">Grandmother Nyota: approved</span><br><span class="check">Kippy: approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 3: Style Proposals</h4>
+                <p>approved</p>
+                <span class="check">Chosen: pixar</span>
+            </div>
+        </div>
+    <h3>Step 1: Unified Cast Sheets</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step1-unified/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>approved.jpg (APPROVED)</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step1-unified/unified-cast-v1.jpg" alt="unified-cast-v1.jpg" loading="lazy" />
+                        <span>unified-cast-v1.jpg</span>
+                    </div></div><h3>Step 2: Tembo Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/tembo/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/tembo/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Mama Amara Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/mama-amara/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/mama-amara/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Grandmother Nyota Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/grandmother-nyota/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/grandmother-nyota/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Kippy Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/kippy/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/kippy/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 3: Style Proposals</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step3-style/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>APPROVED</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-1-pixar.jpg" alt="proposal-1-pixar.jpg" loading="lazy" />
+                        <span>1-pixar</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-2-ghibli.jpg" alt="proposal-2-ghibli.jpg" loading="lazy" />
+                        <span>2-ghibli</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-3-classic.jpg" alt="proposal-3-classic.jpg" loading="lazy" />
+                        <span>3-classic</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-4-cel-shaded.jpg" alt="proposal-4-cel-shaded.jpg" loading="lazy" />
+                        <span>4-cel-shaded</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-5-pbr.jpg" alt="proposal-5-pbr.jpg" loading="lazy" />
+                        <span>5-pbr</span>
+                    </div></div>
+
+    <h2>Character Cast</h2>
+    <div class="characters-grid">
+            <div class="character-profile">
+                <img src="../assets/images/tembo-portrait.jpg" alt="Tembo" class="character-thumb" loading="lazy" />
+                <div class="character-info">
+                    <h4>Tembo</h4>
+                    <p>Young grey African elephant calf with big curious eyes and oversized floppy ears</p>
+                    <span class="small-text">tembo-portrait.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">M</div>
+                <div class="character-info">
+                    <h4>Mama Amara</h4>
+                    <p>Large gentle mother elephant with kind eyes and dusty tusks, warm nurturing presence</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">G</div>
+                <div class="character-info">
+                    <h4>Grandmother Nyota</h4>
+                    <p>Elderly matriarch elephant with weathered grey skin, one broken tusk, deep wise eyes</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <img src="../assets/images/kippy-portrait.jpg" alt="Kippy" class="character-thumb" loading="lazy" />
+                <div class="character-info">
+                    <h4>Kippy</h4>
+                    <p>Playful young elephant calf slightly older than Tembo, always covered in dried mud, mischievous</p>
+                    <span class="small-text">kippy-portrait.jpg</span>
+                </div>
+            </div></div>
+
+    <h2>Scene Plan (18 scenes)</h2>
+    <div class="sections-grid">
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-tembo</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Tembo</h3>
+                <img src="../assets/images/tembo-portrait.jpg" alt="Adorable young grey African elephant calf with big curious eyes, oversized floppy ears, and a playful expression, standing on golden savanna grass" class="section-image" loading="lazy" />
+                <p class="section-content">Tembo is a young African elephant calf with the biggest, most curious eyes on the savanna! His oversized ears flap like sails in the wind, and his tiny trunk wiggles in every direction as he tries to figure out how to use it. Born just weeks ago under the shade of an ancient baobab tree during the late dry season, Tembo has never seen rain — but everyone keeps talking about it!</p>
+                
+                
+                <div class="image-filename">tembo-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">first-steps</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>First Steps on the Savanna</h3>
+                <img src="../assets/images/tembo-first-steps.jpg" alt="First Steps on the Savanna" class="section-image" loading="lazy" />
+                <p class="section-content">Tembo's legs are still a bit wobbly as he takes his first steps across the golden grass. Mama Amara walks right beside him, her strong trunk gently guiding him whenever he stumbles. Each step is an adventure — the ground is warm, the grass tickles his belly, and there are so many interesting smells!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> baby elephant calf taking wobbly first steps on lush green savanna grass surrounded by tropical plants and wildflowers, legs slightly unsteady, a large gentle mother elephant guiding him with her trunk, warm morning light filtering through acacia leaves</div>
+                <div class="refs">References: meet-tembo</div>
+                <div class="image-filename">tembo-first-steps.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-watering-hole</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Watering Hole</h3>
+                <img src="../assets/images/tembo-watering-hole.jpg" alt="The Watering Hole" class="section-image" loading="lazy" />
+                <p class="section-content">At the watering hole, Tembo discovers his trunk has a very important job — drinking! But it's harder than it looks. He dips his little trunk in the water, tries to suck it up, and... splashes himself right in the face! Mama Amara shows him how: curl the trunk, fill it up, then lift it to your mouth. 'Mama, where does the water come from?' asks Tembo. 'From the rain, little one,' she smiles. 'You'll see it soon.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> baby elephant calf at a sparkling watering hole surrounded by lush green reeds and lily pads, trying to drink with his short trunk, splashing water, mother elephant standing nearby watching lovingly, verdant African landscape with green trees and plants reflected in the water</div>
+                <div class="refs">References: meet-tembo</div>
+                <div class="image-filename">tembo-watering-hole.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-grandmother</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Grandmother Nyota, the Matriarch</h3>
+                <img src="../assets/images/grandmother-nyota-portrait.jpg" alt="Wise elderly African elephant matriarch with deep wrinkled grey skin, one broken tusk, and kind wise eyes, standing majestically on the savanna" class="section-image" loading="lazy" />
+                <p class="section-content">Grandmother Nyota is the oldest and wisest elephant in the herd. Her weathered grey skin tells stories of sixty years on the savanna. One of her tusks broke long ago in a drought, when she dug deep into dry riverbeds to find water for the family. Every elephant in the herd trusts her — when Nyota walks, everyone follows. She looks at little Tembo and rumbles softly: 'Come, little one. It is time I taught you the Memory Map.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> elderly African elephant matriarch with weathered grey skin, one broken tusk, and deep wise eyes, gently touching trunks with a small elephant calf in greeting, herd visible in lush green background with tall grass, scattered trees, and flowering bushes</div>
+                <div class="refs">References: meet-tembo</div>
+                <div class="image-filename">grandmother-nyota-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-memory-map</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Memory Map</h3>
+                <img src="../assets/images/memory-map-lesson.jpg" alt="The Memory Map" class="section-image" loading="lazy" />
+                <p class="section-content">'What is a Memory Map?' asks Tembo, his big eyes wide with wonder. Grandmother Nyota touches her forehead with her trunk. 'It lives right here, little one. My grandmother taught it to my mother, and my mother taught it to me. Every path, every watering hole, every safe place — all stored inside our heads. And now, I will teach it to you.' Tembo stands very still. This feels important.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> elderly elephant matriarch standing beside a small elephant calf under a massive ancient baobab tree, the matriarch's trunk gently pointing toward the horizon as if teaching, warm golden light, lush green savanna with paths visible stretching into the distance</div>
+                <div class="refs">References: meet-tembo, meet-grandmother</div>
+                <div class="image-filename">memory-map-lesson.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">trunk-lessons</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Lesson 1: Your Trunk Remembers</h3>
+                <img src="../assets/images/tembo-trunk-lessons.jpg" alt="Lesson 1: Your Trunk Remembers" class="section-image" loading="lazy" />
+                <p class="section-content">'First lesson,' says Grandmother. 'Your trunk can smell water from very far away. It remembers every flower, every fruit, every friend.' Tembo's trunk has over 40,000 muscles — more than a human's entire body! He practices sniffing wildflowers (and sneezes!), grasping tiny sticks (and drops them), and spraying water (mostly on himself). 'One day,' Grandmother promises, 'your trunk will remember the smell of rain before it arrives.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> baby elephant calf practicing with his trunk — trying to grasp a small stick, sniffing colorful wildflowers, spraying a little water from his trunk, playful learning moments on a lush green meadow with abundant vegetation and tropical plants</div>
+                <div class="refs">References: meet-tembo</div>
+                <div class="image-filename">tembo-trunk-lessons.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-kippy</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Kippy, the Mud Champion</h3>
+                <img src="../assets/images/kippy-portrait.jpg" alt="Playful young elephant calf slightly bigger than Tembo, covered in dried mud, with a mischievous expression, standing on savanna grass" class="section-image" loading="lazy" />
+                <p class="section-content">Kippy is Tembo's best friend — a slightly older calf who is ALWAYS covered in mud. 'You've NEVER seen rain?!' Kippy gasps. 'Rain turns everything into MUD! Glorious, wonderful, splashy MUD!' Kippy discovered early that mud is the greatest invention in the world: it keeps you cool, protects from sunburn, and makes you look absolutely magnificent (at least Kippy thinks so). When Kippy charges at Tembo for a play-wrestle, mud flies everywhere!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two young elephant calves playing together in shallow mud near a green riverbank, one slightly bigger than the other, splashing and pushing each other playfully, joyful scene surrounded by lush green vegetation and tropical plants</div>
+                <div class="refs">References: meet-tembo</div>
+                <div class="image-filename">kippy-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">dust-bath</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Great Dust Bath</h3>
+                <img src="../assets/images/tembo-kippy-dust-bath.jpg" alt="The Great Dust Bath" class="section-image" loading="lazy" />
+                <p class="section-content">Today's lesson: sun protection, elephant-style! Tembo and Kippy scoop up trunkfuls of fine red dust and toss it over their backs. The dust sticks to their skin and acts like natural sunscreen, protecting them from the fierce African sun. Plus, it feels amazing — like a full-body tickle!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two young elephant calves throwing dust over their backs with their trunks for sun protection, playful dust bath scene, golden dust clouds in warm sunlight, surrounded by lush green savanna with green grass and scattered bushes</div>
+                <div class="refs">References: meet-tembo, meet-kippy</div>
+                <div class="image-filename">tembo-kippy-dust-bath.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">lesson-feet-hear</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Lesson 2: Your Feet Hear the Earth</h3>
+                <img src="../assets/images/feet-listening.jpg" alt="Lesson 2: Your Feet Hear the Earth" class="section-image" loading="lazy" />
+                <p class="section-content">'Lesson two,' says Grandmother Nyota. 'Stand very still.' Tembo freezes. 'Now close your eyes. Can you feel that?' Tembo concentrates hard. Through the soles of his feet, he feels something... a tiny rumble. 'That is your Auntie Zara, calling from beyond the hill,' says Grandmother. 'Elephants can hear through the earth itself. Our feet catch messages from far, far away. This is how the Memory Map talks to us.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> elderly elephant matriarch and small elephant calf standing very still on open green savanna, both with eyes closed and one foot slightly lifted, feeling vibrations through the ground, subtle golden ripple lines emanating from the earth beneath their feet, warm golden light, lush green landscape</div>
+                <div class="refs">References: meet-tembo, meet-grandmother</div>
+                <div class="image-filename">feet-listening.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-migration</span>
+                    
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Lesson 3: The Herd Walks as One</h3>
+                <img src="../assets/images/migration-landscape.jpg" alt="Majestic elephant herd walking in a long line across a lush green savanna at golden hour, adults flanking calves in the center, green vegetation and acacia trees lining the path, warm golden sky" class="section-image" loading="lazy" />
+                <p class="section-content">'Lesson three,' says Grandmother, 'is the biggest lesson of all.' When the dry season comes, she leads the herd on an ancient path her own grandmother showed her decades ago. Dozens of elephants walk in a long line, their massive silhouettes painting shadows on the earth. 'Watch carefully, Tembo. This path is now part of YOUR Memory Map. One day, you will lead this walk.' Tembo tries to memorize every tree, every hill, every bend in the trail.</p>
+                
+                
+                <div class="image-filename">migration-landscape.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">finding-water</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Memory Map in Action</h3>
+                <img src="../assets/images/nyota-finding-water.jpg" alt="The Memory Map in Action" class="section-image" loading="lazy" />
+                <p class="section-content">The rivers have dried up, but Grandmother Nyota closes her eyes and remembers. 'This is why we keep the Memory Map,' she tells Tembo. She leads the herd to a sandy riverbed and begins digging with her powerful feet and trunk. Deeper and deeper she digs, until — miracle! — water begins seeping up from underground. 'My grandmother showed me this spot during a drought forty years ago,' she says. Tembo's eyes go wide. The Memory Map just saved the entire herd!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> elderly elephant matriarch with broken tusk digging in a sandy riverbed with her foot and trunk, water starting to seep up from underground, small elephant calf watching in amazement, other elephants waiting hopefully behind her, riverbanks lined with green vegetation and overhanging trees</div>
+                <div class="refs">References: meet-grandmother</div>
+                <div class="image-filename">nyota-finding-water.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">tree-pushers</span>
+                    
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Lesson 4: We Shape the Land</h3>
+                <img src="../assets/images/tree-pushers.jpg" alt="African elephants pushing against a large tree trunk, creating a clearing, with smaller animals like zebras grazing in a lush green area nearby, abundant vegetation and warm golden light" class="section-image" loading="lazy" />
+                <p class="section-content">'Last lesson,' says Grandmother. 'We don't just live on the land — we shape it.' Elephants are nature's landscape architects! By pushing over old trees, they create open clearings where grass can grow — feeding zebras, wildebeest, and antelopes. The fallen trees become homes for lizards, insects, and small mammals. 'Even your footprints matter, Tembo. They fill with rainwater and become tiny ponds for frogs!' Tembo looks down at his own feet with new wonder.</p>
+                
+                
+                <div class="image-filename">tree-pushers.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">night-watch</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Thunder in the Night</h3>
+                <img src="../assets/images/tembo-night-watch.jpg" alt="Thunder in the Night" class="section-image" loading="lazy" />
+                <p class="section-content">That night, Tembo curls up against Mama Amara's huge leg. Above them, millions of stars sparkle. Then — BOOM! A deep rumble shakes the sky. Tembo jumps up, trembling. 'What was THAT?!' 'That is the rain talking,' Mama whispers. 'It is far away now, but it is coming.' On the horizon, lightning flickers behind purple clouds. Tembo's heart pounds. The rain is coming. He can almost feel it in his feet.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> baby elephant calf pressing close against mother elephant's leg on green grass under a dramatic night sky, distant lightning bolt illuminating purple-grey storm clouds on the horizon, starry sky above, warm protective scene, lush green foliage glowing in moonlight</div>
+                <div class="refs">References: meet-tembo</div>
+                <div class="image-filename">tembo-night-watch.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">clouds-gather</span>
+                    
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>The Sky Changes</h3>
+                <img src="../assets/images/clouds-gathering.jpg" alt="The Sky Changes" class="section-image" loading="lazy" />
+                <p class="section-content">The next morning, the wind changes. Grandmother Nyota lifts her trunk high and breathes in deeply. Her eyes twinkle. 'Can you smell it, Tembo?' Tembo raises his little trunk. There IS something different in the air — something cool, something fresh, something he has never smelled before. The sky is turning grey and purple. The grass bends in the wind. 'It's coming,' whispers Grandmother, and she smiles the biggest smile Tembo has ever seen.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> elephant herd on a lush green savanna looking up at a dramatic sky where massive dark rain clouds are building on the horizon, wind blowing the grass and trees, elderly matriarch elephant standing tall with trunk raised sniffing the wind, small elephant calf beside her looking up excitedly, golden light breaking through cloud edges</div>
+                <div class="refs">References: meet-tembo, meet-grandmother</div>
+                <div class="image-filename">clouds-gathering.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-first-rain</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Tembo's First Rain!</h3>
+                <img src="../assets/images/first-rain-dance.jpg" alt="Baby elephant calf dancing joyfully in the rain with trunk raised high, another calf splashing in puddles, lush green savanna transforming with fresh growth, rainbow in background" class="section-image" loading="lazy" />
+                <p class="section-content">And then it comes. The first drop lands on Tembo's nose. Then another. Then ten. Then a THOUSAND! The sky opens up and warm, beautiful rain pours down over the savanna. Tembo stands frozen for one perfect moment — and then he DANCES! He spins, he splashes, he raises his trunk to catch the drops! Kippy charges through the puddles screaming 'MUD! GLORIOUS MUD!' The whole herd rumbles with joy. The grass turns green before their eyes. Flowers spring up overnight. Tembo's trunk remembers this smell forever.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> baby elephant calf dancing joyfully in the rain with trunk raised high catching raindrops, another mud-covered elephant calf splashing in fresh puddles beside him, heavy warm rain falling on the lush green savanna transforming the landscape, fresh green grass springing up, wildflowers blooming, rainbow forming in background, pure joy and wonder, cinematic golden rain light</div>
+                <div class="refs">References: meet-tembo, meet-kippy</div>
+                <div class="image-filename">first-rain-dance.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">carry-the-map</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Carry the Map</h3>
+                <img src="../assets/images/carry-the-map.jpg" alt="Carry the Map" class="section-image" loading="lazy" />
+                <p class="section-content">After the rain, the world sparkles. Grandmother Nyota touches her trunk to Tembo's forehead, very gently. 'You smelled it before it came,' she says proudly. 'The rain, the paths, the water — it is all inside you now.' She looks at the tiny newborn calf peeking out from behind Tembo's legs. 'And one day, little Tembo, you will teach the Memory Map to someone new.' Tembo stands tall. He is ready.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> elderly elephant matriarch gently touching trunks with a young elephant calf in a tender moment after the rain, wet lush green savanna glistening in fresh sunlight, puddles reflecting golden sky, wildflowers blooming everywhere, a tiny newborn calf peeking from behind the young elephant, warm emotional scene</div>
+                <div class="refs">References: meet-tembo, meet-grandmother</div>
+                <div class="image-filename">carry-the-map.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">tembo-grows</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Tembo Grows Up</h3>
+                <img src="../assets/images/tembo-grows-up.jpg" alt="Tembo Grows Up" class="section-image" loading="lazy" />
+                <p class="section-content">A year has passed, and Tembo is no longer the littlest calf in the herd! He's grown strong and confident. The Memory Map lives inside his head now — every path, every watering hole, every safe place. And when the tiny newborn stumbles on the wet grass, Tembo is right there, guiding her gently with his trunk, just as Mama Amara once guided him. The circle of life continues.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> young elephant calf, now visibly bigger and more confident than before, gently guiding an even smaller newborn calf with his trunk across a lush green rain-washed savanna, showing leadership, fresh puddles and blooming wildflowers everywhere, warm golden light after the rain</div>
+                <div class="refs">References: meet-tembo</div>
+                <div class="image-filename">tembo-grows-up.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">family-together</span>
+                    
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>The Herd Together</h3>
+                <img src="../assets/images/family-together-panorama.jpg" alt="Full elephant herd gathered at a watering hole during golden hour, elderly matriarch in center, calves playing at water's edge, lush green panoramic savanna with abundant vegetation" class="section-image" loading="lazy" />
+                <p class="section-content">As the sun breaks through the last rain clouds, painting the sky in shades of gold and amber, the entire herd gathers at the overflowing watering hole. Grandmother Nyota stands tall at the center, surrounded by three generations of her family. Tembo, Kippy, and the other calves splash joyfully at the water's edge. The savanna is green and alive, flowers blooming everywhere. Grandmother rumbles a deep, contented call — and thirty elephants answer back. The Memory Map is safe. The rain has come. And tomorrow, there will be new paths to learn.</p>
+                
+                
+                <div class="image-filename">family-together-panorama.jpg</div>
+            </div></div>
+
+    <h2>Viewer Details</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <img src="../assets/images/detail-trunk-anatomy.jpg" alt="The Amazing Trunk" class="detail-image" loading="lazy" />
+                <h4>The Amazing Trunk</h4>
+                <p>Look at Tembo's trunk tip — see those two finger-like projections? African elephants have two 'fingers' at the tip of their trunk (Asian elephants have just one). With over 40,000 muscles, the trunk can pick up something as tiny as a single blade of grass or as heavy as a tree branch!</p>
+            </div>
+            <div class="detail-card">
+                <img src="../assets/images/detail-foot-pad.jpg" alt="Shock-Absorbing Feet" class="detail-image" loading="lazy" />
+                <h4>Shock-Absorbing Feet</h4>
+                <p>An elephant's foot hides a remarkable secret — a thick, spongy pad of fatty tissue that acts like a natural shock absorber! This pad spreads their enormous weight evenly and lets them walk almost silently despite weighing up to 6 tons. That's why elephants can sneak up on you!</p>
+            </div>
+            <div class="detail-card">
+                <img src="../assets/images/detail-ear-vessels.jpg" alt="Built-In Air Conditioning" class="detail-image" loading="lazy" />
+                <h4>Built-In Air Conditioning</h4>
+                <p>See the network of blood vessels in Tembo's ears? An elephant's ears are filled with a web of blood vessels just beneath the thin skin. When it's hot, blood flows through these vessels and heat radiates out through the large ear surface. By flapping their ears, elephants can cool their blood by up to 5°C!</p>
+            </div>
+            <div class="detail-card">
+                <img src="../assets/images/detail-tusk-rings.jpg" alt="Tusk Growth Rings" class="detail-image" loading="lazy" />
+                <h4>Tusk Growth Rings</h4>
+                <p>Just like trees have growth rings, elephant tusks have rings too! By studying these rings, scientists can learn an elephant's age, health, and even what food was available in different years. Grandmother Nyota's broken tusk shows rings from sixty years of savanna life.</p>
+            </div></div>
+
+    <h2>Fun Facts</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <img src="../assets/images/fun-fact-seismic-hearing.jpg" alt="Hearing Through Their Feet" class="detail-image" loading="lazy" />
+                <h4>Hearing Through Their Feet</h4>
+                <p>Elephants can detect seismic vibrations through the ground using special sensors in their feet! They can 'hear' other elephants' calls from up to 10 miles away through the earth, long before the sound reaches their ears through the air.</p>
+            </div>
+            <div class="detail-card">
+                <img src="../assets/images/fun-fact-elephant-hugs.jpg" alt="Elephant Hugs" class="detail-image" loading="lazy" />
+                <h4>Elephant Hugs</h4>
+                <p>Elephants hug each other with their trunks! When two elephants meet, they wrap their trunks together in a warm greeting — just like people shaking hands or giving a hug. Baby elephants even hold their mama's tail with their trunk while walking, like a toddler holding their parent's hand!</p>
+            </div>
+            <div class="detail-card">
+                <img src="../assets/images/fun-fact-thumb-sucking.jpg" alt="Trunk-Sucking Babies" class="detail-image" loading="lazy" />
+                <h4>Trunk-Sucking Babies</h4>
+                <p>Just like human babies suck their thumbs for comfort, baby elephants suck on the tips of their trunks! It calms them down and helps them feel safe. They usually grow out of this habit by age two, just like human toddlers stop sucking their thumbs.</p>
+            </div>
+            <div class="detail-card">
+                <img src="../assets/images/fun-fact-swimming.jpg" alt="Swimming Champions" class="detail-image" loading="lazy" />
+                <h4>Swimming Champions</h4>
+                <p>Did you know elephants are amazing swimmers? They can swim for hours without stopping, using their trunk as a snorkel to breathe while their body is completely underwater! Baby elephants learn to swim when they are very young, and they love splashing in deep water with their families. Some elephants have even been spotted swimming between islands!</p>
+            </div></div>
+
+    <h2>Hidden Generation Sections</h2>
+    <div class="hidden-grid">
+            <div class="hidden-section-card">
+                <span class="section-id">detail-trunk-anatomy-v1</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <img src="../assets/images/detail-trunk-anatomy.jpg" alt="detail-trunk-anatomy-v1" class="thumb" loading="lazy" />
+                <p class="small-prompt">Using the elephant from the reference image, create an extreme close-up of an elephant's trunk tip showing the two finge...</p>
+                <span class="refs">Ref: trunk-lessons</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-foot-pad-v2</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <img src="../assets/images/detail-foot-pad.jpg" alt="detail-foot-pad-v2" class="thumb" loading="lazy" />
+                <p class="small-prompt">Close-up illustration of an African elephant's foot pad from below, showing the spongy shock-absorbing pad structure, th...</p>
+                
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-ear-vessels-v3</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <img src="../assets/images/detail-ear-vessels.jpg" alt="detail-ear-vessels-v3" class="thumb" loading="lazy" />
+                <p class="small-prompt">Using the elephant from the reference image, create a close-up of an elephant's ear showing the intricate network of blo...</p>
+                <span class="refs">Ref: meet-tembo</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-tusk-rings-v4</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <img src="../assets/images/detail-tusk-rings.jpg" alt="detail-tusk-rings-v4" class="thumb" loading="lazy" />
+                <p class="small-prompt">Using the elephant from the reference image, create a close-up of an elephant's tusk showing growth rings and texture, s...</p>
+                <span class="refs">Ref: meet-grandmother</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-seismic-hearing</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <img src="../assets/images/fun-fact-seismic-hearing.jpg" alt="fun-fact-seismic-hearing" class="thumb" loading="lazy" />
+                <p class="small-prompt">Using the elephant from reference, show this character standing very still on the savanna with one foot slightly raised,...</p>
+                <span class="refs">Ref: meet-tembo</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-elephant-hugs</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <img src="../assets/images/fun-fact-elephant-hugs.jpg" alt="fun-fact-elephant-hugs" class="thumb" loading="lazy" />
+                <p class="small-prompt">Using the elephant calf from reference, show two elephants wrapping their trunks together in a warm loving hug greeting,...</p>
+                <span class="refs">Ref: meet-tembo</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-thumb-sucking</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <img src="../assets/images/fun-fact-thumb-sucking.jpg" alt="fun-fact-thumb-sucking" class="thumb" loading="lazy" />
+                <p class="small-prompt">Using the elephant calf from reference, show this baby elephant adorably sucking on the tip of his own trunk, just like ...</p>
+                <span class="refs">Ref: meet-tembo</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-swimming</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <img src="../assets/images/fun-fact-swimming.jpg" alt="fun-fact-swimming" class="thumb" loading="lazy" />
+                <p class="small-prompt">Using the elephant calf from reference, show a baby elephant happily swimming in a deep river with only its trunk sticki...</p>
+                <span class="refs">Ref: meet-tembo</span>
+            </div></div>
+
+    
+    <h2>Magazine Cover</h2>
+    <div class="cover-section">
+        <img src="../assets/images/magazine-cover.jpg" alt="Magazine Cover" class="cover-image" />
+    </div>
+
+    <h2>All Images — Visual Consistency Check</h2>
+    <div class="image-grid">
+                <div class="grid-item">
+                    <img src="../assets/images/carry-the-map.jpg" alt="carry-the-map.jpg" loading="lazy" />
+                    <span>carry-the-map.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/clouds-gathering.jpg" alt="clouds-gathering.jpg" loading="lazy" />
+                    <span>clouds-gathering.jpg</span>
+                    <span class="badge badge-openai" style="font-size:10px">openai</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/detail-ear-vessels.jpg" alt="detail-ear-vessels.jpg" loading="lazy" />
+                    <span>detail-ear-vessels.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/detail-foot-pad.jpg" alt="detail-foot-pad.jpg" loading="lazy" />
+                    <span>detail-foot-pad.jpg</span>
+                    <span class="badge badge-openai" style="font-size:10px">openai</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/detail-trunk-anatomy.jpg" alt="detail-trunk-anatomy.jpg" loading="lazy" />
+                    <span>detail-trunk-anatomy.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/detail-tusk-rings.jpg" alt="detail-tusk-rings.jpg" loading="lazy" />
+                    <span>detail-tusk-rings.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/family-together-panorama.jpg" alt="family-together-panorama.jpg" loading="lazy" />
+                    <span>family-together-panorama.jpg</span>
+                    <span class="badge badge-openai" style="font-size:10px">openai</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/feet-listening.jpg" alt="feet-listening.jpg" loading="lazy" />
+                    <span>feet-listening.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/first-rain-dance.jpg" alt="first-rain-dance.jpg" loading="lazy" />
+                    <span>first-rain-dance.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/fun-fact-elephant-hugs.jpg" alt="fun-fact-elephant-hugs.jpg" loading="lazy" />
+                    <span>fun-fact-elephant-hugs.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/fun-fact-seismic-hearing.jpg" alt="fun-fact-seismic-hearing.jpg" loading="lazy" />
+                    <span>fun-fact-seismic-hearing.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/fun-fact-swimming.jpg" alt="fun-fact-swimming.jpg" loading="lazy" />
+                    <span>fun-fact-swimming.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/fun-fact-thumb-sucking.jpg" alt="fun-fact-thumb-sucking.jpg" loading="lazy" />
+                    <span>fun-fact-thumb-sucking.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/grandmother-nyota-portrait.jpg" alt="grandmother-nyota-portrait.jpg" loading="lazy" />
+                    <span>grandmother-nyota-portrait.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/hero-savanna-sunrise.jpg" alt="hero-savanna-sunrise.jpg" loading="lazy" />
+                    <span>hero-savanna-sunrise.jpg</span>
+                    <span class="badge badge-openai" style="font-size:10px">openai</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/kippy-portrait.jpg" alt="kippy-portrait.jpg" loading="lazy" />
+                    <span>kippy-portrait.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/magazine-cover.jpg" alt="magazine-cover.jpg" loading="lazy" />
+                    <span>magazine-cover.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/memory-map-lesson.jpg" alt="memory-map-lesson.jpg" loading="lazy" />
+                    <span>memory-map-lesson.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/migration-landscape.jpg" alt="migration-landscape.jpg" loading="lazy" />
+                    <span>migration-landscape.jpg</span>
+                    <span class="badge badge-openai" style="font-size:10px">openai</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/nyota-finding-water.jpg" alt="nyota-finding-water.jpg" loading="lazy" />
+                    <span>nyota-finding-water.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tembo-first-steps.jpg" alt="tembo-first-steps.jpg" loading="lazy" />
+                    <span>tembo-first-steps.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tembo-grows-up.jpg" alt="tembo-grows-up.jpg" loading="lazy" />
+                    <span>tembo-grows-up.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tembo-kippy-dust-bath.jpg" alt="tembo-kippy-dust-bath.jpg" loading="lazy" />
+                    <span>tembo-kippy-dust-bath.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tembo-night-watch.jpg" alt="tembo-night-watch.jpg" loading="lazy" />
+                    <span>tembo-night-watch.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tembo-portrait.jpg" alt="tembo-portrait.jpg" loading="lazy" />
+                    <span>tembo-portrait.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tembo-trunk-lessons.jpg" alt="tembo-trunk-lessons.jpg" loading="lazy" />
+                    <span>tembo-trunk-lessons.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tembo-watering-hole.jpg" alt="tembo-watering-hole.jpg" loading="lazy" />
+                    <span>tembo-watering-hole.jpg</span>
+                    <span class="badge badge-gemini" style="font-size:10px">gemini</span>
+                </div>
+                <div class="grid-item">
+                    <img src="../assets/images/tree-pushers.jpg" alt="tree-pushers.jpg" loading="lazy" />
+                    <span>tree-pushers.jpg</span>
+                    <span class="badge badge-openai" style="font-size:10px">openai</span>
+                </div></div>
+
+    <footer>
+        Production Bible &bull; Generated 2026-02-28 &bull; Elephants: Giants with Big Hearts
+    </footer>
+</div>
+</body>
+</html>

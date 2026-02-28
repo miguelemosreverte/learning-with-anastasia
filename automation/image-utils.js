@@ -193,6 +193,60 @@ Respond with ONLY valid JSON, no markdown:
     }
 }
 
+/**
+ * Send multiple reference images + prompt to Gemini image model
+ * @param {GoogleGenAI} ai - Gemini client
+ * @param {string[]} referenceImagePaths - Array of reference image file paths
+ * @param {string} prompt - Text prompt
+ * @returns {Promise<Buffer|null>} - Generated image buffer or null
+ */
+async function geminiMultiRefGenerate(ai, referenceImagePaths, prompt) {
+    const parts = [];
+
+    for (const refPath of referenceImagePaths) {
+        const refBuffer = fs.readFileSync(refPath);
+        parts.push({
+            inlineData: { mimeType: 'image/jpeg', data: refBuffer.toString('base64') }
+        });
+    }
+
+    parts.push({ text: prompt });
+
+    const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash-image',
+        contents: [{ role: 'user', parts }]
+    });
+
+    const responseParts = response.candidates[0].content.parts;
+    for (const part of responseParts) {
+        if (part.inlineData) {
+            return Buffer.from(part.inlineData.data, 'base64');
+        }
+    }
+    return null;
+}
+
+/**
+ * Send a text-only prompt to Gemini image model (no reference images)
+ * @param {GoogleGenAI} ai - Gemini client
+ * @param {string} prompt - Text prompt
+ * @returns {Promise<Buffer|null>} - Generated image buffer or null
+ */
+async function geminiTextToImage(ai, prompt) {
+    const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash-image',
+        contents: [{ role: 'user', parts: [{ text: prompt }] }]
+    });
+
+    const parts = response.candidates[0].content.parts;
+    for (const part of parts) {
+        if (part.inlineData) {
+            return Buffer.from(part.inlineData.data, 'base64');
+        }
+    }
+    return null;
+}
+
 module.exports = {
     loadChapterImages,
     resolveImageFilename,
@@ -200,6 +254,8 @@ module.exports = {
     backupImage,
     createGeminiClient,
     geminiImageGenerate,
+    geminiMultiRefGenerate,
+    geminiTextToImage,
     geminiVerify,
     ROOT
 };

@@ -1,0 +1,17 @@
+{
+  "chapter": "elephants",
+  "completedAt": "2026-02-28T02:03:27.432Z",
+  "unifiedCast": "unified-cast.jpg",
+  "characterSheets": {
+    "meet-tembo": "tembo-sheet.jpg",
+    "mama-amara": "mama-amara-sheet.jpg",
+    "grandmother-nyota": "grandmother-nyota-sheet.jpg",
+    "meet-kippy": "kippy-sheet.jpg"
+  },
+  "styleReference": "style-reference.jpg",
+  "chosenStyle": {
+    "id": "pixar",
+    "name": "Pixar / 3D Render Quality",
+    "description": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Dramatic cinematic lighting with warm key light and cool fill. Rich saturated colors. Photorealistic textures but stylized proportions. Depth of field with bokeh. The look of a Pixar feature film still."
+  }
+}

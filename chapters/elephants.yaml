@@ -1,0 +1,535 @@
+# Elephants Chapter Definition - Tembo's First Year
+meta:
+  id: elephants
+  issueNumber: 8
+  date: "February 2026"
+  folderName: "elephants"
+  title:
+    en: "Elephants: Giants with Big Hearts"
+    es: "Elefantes: Gigantes con Gran Corazón"
+    ru: "Слоны: Гиганты с большим сердцем"
+  subtitle:
+    en: "A Journey Through Tembo's First Year"
+    es: "Un Viaje a Través del Primer Año de Tembo"
+    ru: "Путешествие через первый год жизни Тембо"
+  magazineText:
+    en: "Follow Tembo, a young African elephant calf, through his first year of wonder! Discover the remarkable intelligence, unbreakable family bonds, and incredible ecosystem engineering of the world's largest land animals."
+    es: "¡Sigue a Tembo, un joven elefante africano, a través de su primer año de maravillas! Descubre la notable inteligencia, los lazos familiares inquebrantables y la increíble ingeniería ecosistémica de los animales terrestres más grandes del mundo."
+    ru: "Следуйте за Тембо, молодым африканским слонёнком, через его первый год чудес! Откройте замечательный интеллект, нерушимые семейные узы и невероятную экосистемную инженерию крупнейших наземных животных мира."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Celebrating the gentle giants who shape the African savanna"
+    es: "Celebrando a los gigantes gentiles que moldean la sabana africana"
+    ru: "Celebrating нежных гигантов, формирующих африканскую саванну"
+  description: "Follow Tembo the young elephant calf through his first year learning from his mother and the matriarch of the herd"
+  preface:
+    en:
+      - "Welcome to the magnificent world of African elephants! In this adventure, we'll follow Tembo, a curious young elephant calf, as he takes his first wobbly steps on the golden savanna and learns everything from his loving family."
+      - "Elephants are among the most intelligent animals on Earth. They mourn their dead, use tools, communicate over vast distances, and form family bonds that last a lifetime. Their herds are led by wise matriarchs who remember water sources from decades past."
+      - "Through Tembo's first year, you'll discover how elephants shape entire landscapes by pushing trees and digging for water, how they protect each other through the darkest nights, and why these gentle giants truly deserve to be called nature's greatest engineers!"
+    es:
+      - "¡Bienvenidos al magnífico mundo de los elefantes africanos! En esta aventura, seguiremos a Tembo, un curioso elefante bebé, mientras da sus primeros pasos tambaleantes en la dorada sabana y aprende todo de su amorosa familia."
+      - "Los elefantes están entre los animales más inteligentes de la Tierra. Lloran a sus muertos, usan herramientas, se comunican a través de vastas distancias y forman lazos familiares que duran toda la vida. Sus manadas son lideradas por sabias matriarcas que recuerdan fuentes de agua de hace décadas."
+      - "A través del primer año de Tembo, descubrirás cómo los elefantes moldean paisajes enteros empujando árboles y cavando en busca de agua, cómo se protegen mutuamente durante las noches más oscuras, y por qué estos gigantes gentiles verdaderamente merecen ser llamados los mayores ingenieros de la naturaleza."
+    ru:
+      - "Добро пожаловать в величественный мир африканских слонов! В этом приключении мы последуем за Тембо, любопытным маленьким слонёнком, когда он делает свои первые неуверенные шаги по золотой саванне и учится всему у своей любящей семьи."
+      - "Слоны — одни из самых умных животных на Земле. Они оплакивают умерших, используют орудия, общаются на огромных расстояниях и создают семейные связи, которые длятся всю жизнь. Их стадами руководят мудрые матриархи, помнящие источники воды десятилетней давности."
+      - "Через первый год Тембо вы узнаете, как слоны формируют целые ландшафты, толкая деревья и копая в поисках воды, как они защищают друг друга в самые тёмные ночи, и почему эти нежные гиганты по праву заслуживают звания величайших инженеров природы!"
+
+hero:
+  title:
+    en: "Elephants"
+    es: "Elefantes"
+    ru: "Слоны"
+  subtitle:
+    en: "Giants with Big Hearts"
+    es: "Gigantes con Gran Corazón"
+    ru: "Гиганты с большим сердцем"
+  image: "hero-savanna-sunrise.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Breathtaking lush green African savanna at golden sunrise with a majestic elephant herd, acacia trees and tropical vegetation dotting the landscape, warm golden light flooding the green plains"
+    es: "Impresionante sabana africana al amanecer dorado con una majestuosa manada de elefantes en silueta contra el cielo, árboles de acacia salpicando el paisaje, cálida luz naranja y dorada inundando las llanuras"
+    ru: "Захватывающая африканская саванна на золотом рассвете с величественным стадом слонов в силуэте на фоне неба, акации, раскинувшиеся по ландшафту, тёплый оранжево-золотой свет, заливающий равнины"
+
+sections:
+  # Meet Tembo — main character
+  - id: meet-tembo
+    generate_character: true
+    title:
+      en: "Meet Tembo"
+      es: "Conoce a Tembo"
+      ru: "Знакомьтесь: Тембо"
+    content:
+      en: "Tembo is a young African elephant calf with the biggest, most curious eyes on the savanna! His oversized ears flap like sails in the wind, and his tiny trunk wiggles in every direction as he tries to figure out how to use it. Born just weeks ago under the shade of an ancient baobab tree during the late dry season, Tembo has never seen rain — but everyone keeps talking about it!"
+      es: "¡Tembo es un joven elefante africano con los ojos más grandes y curiosos de la sabana! Sus enormes orejas se agitan como velas al viento, y su pequeña trompa se mueve en todas direcciones mientras intenta descifrar cómo usarla. Nacido hace apenas semanas bajo la sombra de un antiguo baobab, ¡Tembo está listo para explorar el mundo!"
+      ru: "Тембо — молодой африканский слонёнок с самыми большими и любопытными глазами во всей саванне! Его огромные уши хлопают, как паруса на ветру, а маленький хобот крутится во все стороны, пока он пытается понять, как им пользоваться. Рождённый всего несколько недель назад под тенью древнего баобаба, Тембо готов исследовать мир!"
+    image: "tembo-portrait.jpg"
+    imageAlt:
+      en: "Adorable young grey African elephant calf with big curious eyes, oversized floppy ears, and a playful expression, standing on golden savanna grass"
+      es: "Adorable joven elefante africano gris con grandes ojos curiosos, enormes orejas caídas y una expresión juguetona, de pie sobre hierba dorada de la sabana"
+      ru: "Очаровательный молодой серый африканский слонёнок с большими любопытными глазами, огромными висячими ушами и игривым выражением, стоящий на золотой траве саванны"
+
+  # First steps with Mama
+  - id: first-steps
+    use_character: "${meet-tembo.image}"
+    action: "baby elephant calf taking wobbly first steps on lush green savanna grass surrounded by tropical plants and wildflowers, legs slightly unsteady, a large gentle mother elephant guiding him with her trunk, warm morning light filtering through acacia leaves"
+    title:
+      en: "First Steps on the Savanna"
+      es: "Primeros Pasos en la Sabana"
+      ru: "Первые шаги по саванне"
+    content:
+      en: "Tembo's legs are still a bit wobbly as he takes his first steps across the golden grass. Mama Amara walks right beside him, her strong trunk gently guiding him whenever he stumbles. Each step is an adventure — the ground is warm, the grass tickles his belly, and there are so many interesting smells!"
+      es: "Las piernas de Tembo aún están un poco tambaleantes mientras da sus primeros pasos por la hierba dorada. Mamá Amara camina justo a su lado, su fuerte trompa guiándolo suavemente cada vez que tropieza. ¡Cada paso es una aventura — el suelo está cálido, la hierba le hace cosquillas en la barriga, y hay tantos olores interesantes!"
+      ru: "Ножки Тембо ещё немного дрожат, когда он делает первые шаги по золотой траве. Мама Амара идёт рядом, её сильный хобот нежно направляет его, когда он спотыкается. Каждый шаг — приключение: земля тёплая, трава щекочет животик, и вокруг столько интересных запахов!"
+    image: "tembo-first-steps.jpg"
+
+  # The watering hole
+  - id: the-watering-hole
+    use_characters: ["${meet-tembo.image}"]
+    action: "baby elephant calf at a sparkling watering hole surrounded by lush green reeds and lily pads, trying to drink with his short trunk, splashing water, mother elephant standing nearby watching lovingly, verdant African landscape with green trees and plants reflected in the water"
+    title:
+      en: "The Watering Hole"
+      es: "El Abrevadero"
+      ru: "Водопой"
+    content:
+      en: "At the watering hole, Tembo discovers his trunk has a very important job — drinking! But it's harder than it looks. He dips his little trunk in the water, tries to suck it up, and... splashes himself right in the face! Mama Amara shows him how: curl the trunk, fill it up, then lift it to your mouth. 'Mama, where does the water come from?' asks Tembo. 'From the rain, little one,' she smiles. 'You'll see it soon.'"
+      es: "¡En el abrevadero, Tembo descubre que su trompa tiene un trabajo muy importante — beber! Pero es más difícil de lo que parece. Mete su pequeña trompa en el agua, intenta absorberla y... ¡se salpica en la cara! Mamá Amara le muestra cómo: enrolla la trompa, llénala y luego levántala hasta la boca. ¡Requiere práctica!"
+      ru: "У водопоя Тембо обнаруживает, что у его хобота очень важная работа — пить! Но это сложнее, чем кажется. Он опускает маленький хобот в воду, пытается набрать её и... брызгает себе прямо в лицо! Мама Амара показывает как: сверни хобот, набери воду, затем подними ко рту. Нужна практика!"
+    image: "tembo-watering-hole.jpg"
+
+  # Meet Grandmother Nyota
+  - id: meet-grandmother
+    generate_character: true
+    use_character: "${meet-tembo.image}"
+    action: "elderly African elephant matriarch with weathered grey skin, one broken tusk, and deep wise eyes, gently touching trunks with a small elephant calf in greeting, herd visible in lush green background with tall grass, scattered trees, and flowering bushes"
+    title:
+      en: "Grandmother Nyota, the Matriarch"
+      es: "Abuela Nyota, la Matriarca"
+      ru: "Бабушка Ньота, матриарх"
+    content:
+      en: "Grandmother Nyota is the oldest and wisest elephant in the herd. Her weathered grey skin tells stories of sixty years on the savanna. One of her tusks broke long ago in a drought, when she dug deep into dry riverbeds to find water for the family. Every elephant in the herd trusts her — when Nyota walks, everyone follows. She looks at little Tembo and rumbles softly: 'Come, little one. It is time I taught you the Memory Map.'"
+      es: "La abuela Nyota es la elefante más vieja y sabia de la manada. Su piel gris curtida cuenta historias de sesenta años en la sabana. Uno de sus colmillos se rompió hace mucho tiempo durante una sequía, cuando cavó profundamente en lechos de ríos secos para encontrar agua para la familia. Cada elefante de la manada confía en ella — cuando Nyota camina, todos la siguen."
+      ru: "Бабушка Ньота — старейшая и мудрейшая слониха в стаде. Её обветренная серая кожа хранит истории шестидесяти лет в саванне. Один из её бивней сломался давным-давно во время засухи, когда она копала глубоко в высохших руслах рек, чтобы найти воду для семьи. Каждый слон в стаде доверяет ей — когда Ньота идёт, все следуют за ней."
+    image: "grandmother-nyota-portrait.jpg"
+    imageAlt:
+      en: "Wise elderly African elephant matriarch with deep wrinkled grey skin, one broken tusk, and kind wise eyes, standing majestically on the savanna"
+      es: "Sabia matriarca elefante africana anciana con piel gris profundamente arrugada, un colmillo roto y ojos sabios y amables, de pie majestuosamente en la sabana"
+      ru: "Мудрая пожилая матриарх африканских слонов с глубоко морщинистой серой кожей, одним сломанным бивнем и добрыми мудрыми глазами, величественно стоящая в саванне"
+
+  # The Memory Map
+  - id: the-memory-map
+    use_characters: ["${meet-tembo.image}", "${meet-grandmother.image}"]
+    action: "elderly elephant matriarch standing beside a small elephant calf under a massive ancient baobab tree, the matriarch's trunk gently pointing toward the horizon as if teaching, warm golden light, lush green savanna with paths visible stretching into the distance"
+    title:
+      en: "The Memory Map"
+      es: "El Mapa de la Memoria"
+      ru: "Карта памяти"
+    content:
+      en: "'What is a Memory Map?' asks Tembo, his big eyes wide with wonder. Grandmother Nyota touches her forehead with her trunk. 'It lives right here, little one. My grandmother taught it to my mother, and my mother taught it to me. Every path, every watering hole, every safe place — all stored inside our heads. And now, I will teach it to you.' Tembo stands very still. This feels important."
+      es: "'¿Qué es un Mapa de la Memoria?' pregunta Tembo, con sus grandes ojos muy abiertos de asombro. La abuela Nyota se toca la frente con su trompa. 'Vive justo aquí, pequeño. Mi abuela se lo enseñó a mi madre, y mi madre me lo enseñó a mí. Cada camino, cada abrevadero, cada lugar seguro — todo guardado dentro de nuestras cabezas. Y ahora, te lo enseñaré a ti.' Tembo se queda muy quieto. Esto se siente importante."
+      ru: "'Что такое Карта Памяти?' спрашивает Тембо, широко раскрыв большие глаза от удивления. Бабушка Ньота касается лба хоботом. 'Она живёт прямо здесь, малыш. Моя бабушка научила мою маму, а мама научила меня. Каждая тропа, каждый водопой, каждое безопасное место — всё хранится внутри наших голов. И теперь я научу тебя.' Тембо стоит очень тихо. Это кажется важным."
+    image: "memory-map-lesson.jpg"
+
+  # Trunk lessons — Lesson 1
+  - id: trunk-lessons
+    use_character: "${meet-tembo.image}"
+    action: "baby elephant calf practicing with his trunk — trying to grasp a small stick, sniffing colorful wildflowers, spraying a little water from his trunk, playful learning moments on a lush green meadow with abundant vegetation and tropical plants"
+    title:
+      en: "Lesson 1: Your Trunk Remembers"
+      es: "Lección 1: Tu Trompa Recuerda"
+      ru: "Урок 1: Твой хобот помнит"
+    content:
+      en: "'First lesson,' says Grandmother. 'Your trunk can smell water from very far away. It remembers every flower, every fruit, every friend.' Tembo's trunk has over 40,000 muscles — more than a human's entire body! He practices sniffing wildflowers (and sneezes!), grasping tiny sticks (and drops them), and spraying water (mostly on himself). 'One day,' Grandmother promises, 'your trunk will remember the smell of rain before it arrives.'"
+      es: "¡La trompa de Tembo tiene más de 40,000 músculos — más que todo el cuerpo humano! Pero controlar todos esos músculos lleva tiempo. Practica agarrando pequeños palos (y los deja caer), olfateando flores silvestres (¡y estornuda!), y rociando agua (sobre todo sobre sí mismo). Cada día, su trompa se vuelve un poco más obediente."
+      ru: "В хоботе Тембо более 40 000 мышц — больше, чем во всём человеческом теле! Но научиться управлять всеми этими мышцами нужно время. Он практикуется хватать маленькие палочки (и роняет их), нюхать полевые цветы (и чихает!), и брызгать водой (в основном на себя). Каждый день его хобот становится чуточку послушнее."
+    image: "tembo-trunk-lessons.jpg"
+
+  # Meet Kippy
+  - id: meet-kippy
+    generate_character: true
+    use_character: "${meet-tembo.image}"
+    action: "two young elephant calves playing together in shallow mud near a green riverbank, one slightly bigger than the other, splashing and pushing each other playfully, joyful scene surrounded by lush green vegetation and tropical plants"
+    title:
+      en: "Meet Kippy, the Mud Champion"
+      es: "Conoce a Kippy, el Campeón del Barro"
+      ru: "Знакомьтесь: Киппи, чемпион по грязи"
+    content:
+      en: "Kippy is Tembo's best friend — a slightly older calf who is ALWAYS covered in mud. 'You've NEVER seen rain?!' Kippy gasps. 'Rain turns everything into MUD! Glorious, wonderful, splashy MUD!' Kippy discovered early that mud is the greatest invention in the world: it keeps you cool, protects from sunburn, and makes you look absolutely magnificent (at least Kippy thinks so). When Kippy charges at Tembo for a play-wrestle, mud flies everywhere!"
+      es: "Kippy es el mejor amigo de Tembo — un elefantito un poco mayor que SIEMPRE está cubierto de barro. Kippy descubrió pronto que el barro es el mayor invento del mundo: te mantiene fresco, protege de las quemaduras solares y te hace lucir absolutamente magnífico (al menos Kippy piensa así). ¡Cuando Kippy carga contra Tembo para jugar a luchar, el barro vuela por todas partes!"
+      ru: "Киппи — лучший друг Тембо, слонёнок чуть постарше, который ВСЕГДА покрыт грязью. Киппи рано обнаружил, что грязь — величайшее изобретение в мире: она охлаждает, защищает от солнечных ожогов и делает тебя абсолютно великолепным (по крайней мере, Киппи так считает). Когда Киппи бросается на Тембо поиграть в борьбу, грязь летит во все стороны!"
+    image: "kippy-portrait.jpg"
+    imageAlt:
+      en: "Playful young elephant calf slightly bigger than Tembo, covered in dried mud, with a mischievous expression, standing on savanna grass"
+      es: "Juguetón joven elefante un poco más grande que Tembo, cubierto de barro seco, con una expresión traviesa, de pie sobre hierba de sabana"
+      ru: "Игривый молодой слонёнок чуть крупнее Тембо, покрытый засохшей грязью, с озорным выражением, стоящий на траве саванны"
+
+  # Dust bath
+  - id: dust-bath
+    use_characters: ["${meet-tembo.image}", "${meet-kippy.image}"]
+    action: "two young elephant calves throwing dust over their backs with their trunks for sun protection, playful dust bath scene, golden dust clouds in warm sunlight, surrounded by lush green savanna with green grass and scattered bushes"
+    title:
+      en: "The Great Dust Bath"
+      es: "El Gran Baño de Polvo"
+      ru: "Великое пылевое купание"
+    content:
+      en: "Today's lesson: sun protection, elephant-style! Tembo and Kippy scoop up trunkfuls of fine red dust and toss it over their backs. The dust sticks to their skin and acts like natural sunscreen, protecting them from the fierce African sun. Plus, it feels amazing — like a full-body tickle!"
+      es: "¡La lección de hoy: protección solar, al estilo elefante! Tembo y Kippy recogen trompadas de fino polvo rojo y lo lanzan sobre sus espaldas. El polvo se adhiere a su piel y actúa como protector solar natural, protegiéndolos del feroz sol africano. Además, se siente increíble — ¡como un cosquilleo en todo el cuerpo!"
+      ru: "Сегодняшний урок: защита от солнца по-слоновьи! Тембо и Киппи набирают хоботами мелкую красную пыль и подбрасывают её на спины. Пыль прилипает к коже и действует как натуральный солнцезащитный крем, защищая их от палящего африканского солнца. К тому же, это потрясающе приятно — как щекотка по всему телу!"
+    image: "tembo-kippy-dust-bath.jpg"
+
+  # Lesson 2: Your Feet Hear the Earth
+  - id: lesson-feet-hear
+    use_characters: ["${meet-tembo.image}", "${meet-grandmother.image}"]
+    action: "elderly elephant matriarch and small elephant calf standing very still on open green savanna, both with eyes closed and one foot slightly lifted, feeling vibrations through the ground, subtle golden ripple lines emanating from the earth beneath their feet, warm golden light, lush green landscape"
+    title:
+      en: "Lesson 2: Your Feet Hear the Earth"
+      es: "Lección 2: Tus Patas Escuchan la Tierra"
+      ru: "Урок 2: Твои ноги слышат землю"
+    content:
+      en: "'Lesson two,' says Grandmother Nyota. 'Stand very still.' Tembo freezes. 'Now close your eyes. Can you feel that?' Tembo concentrates hard. Through the soles of his feet, he feels something... a tiny rumble. 'That is your Auntie Zara, calling from beyond the hill,' says Grandmother. 'Elephants can hear through the earth itself. Our feet catch messages from far, far away. This is how the Memory Map talks to us.'"
+      es: "'Lección dos,' dice la abuela Nyota. '¡Quédate muy quieto!' Tembo se congela. 'Ahora cierra los ojos. ¿Puedes sentir eso?' Tembo se concentra mucho. A través de las suelas de sus patas, siente algo... un pequeño retumbo. 'Esa es tu tía Zara, llamando desde más allá de la colina,' dice la abuela. 'Los elefantes pueden escuchar a través de la tierra misma. Nuestras patas captan mensajes de muy, muy lejos.'"
+      ru: "'Урок второй,' говорит бабушка Ньота. 'Стой совсем тихо.' Тембо замирает. 'Теперь закрой глаза. Чувствуешь?' Тембо очень сосредоточен. Через подошвы своих ног он чувствует что-то... лёгкую вибрацию. 'Это твоя тётя Зара, зовёт из-за холма,' говорит бабушка. 'Слоны могут слышать через саму землю. Наши ноги ловят послания издалека. Так Карта Памяти говорит с нами.'"
+    image: "feet-listening.jpg"
+
+  # The migration — Lesson 3
+  - id: the-migration
+    title:
+      en: "Lesson 3: The Herd Walks as One"
+      es: "Lección 3: La Manada Camina Como Una"
+      ru: "Урок 3: Стадо идёт как одно целое"
+    content:
+      en: "'Lesson three,' says Grandmother, 'is the biggest lesson of all.' When the dry season comes, she leads the herd on an ancient path her own grandmother showed her decades ago. Dozens of elephants walk in a long line, their massive silhouettes painting shadows on the earth. 'Watch carefully, Tembo. This path is now part of YOUR Memory Map. One day, you will lead this walk.' Tembo tries to memorize every tree, every hill, every bend in the trail."
+      es: "'Lección tres,' dice la abuela, 'es la lección más grande de todas.' Cuando llega la estación seca, guía a la manada por un camino antiguo que su propia abuela le mostró hace décadas. Docenas de elefantes caminan en una larga fila, sus enormes siluetas pintando sombras en la tierra. '¡Observa con cuidado, Tembo! Este camino ahora es parte de TU Mapa de la Memoria.'"
+      ru: "'Урок третий,' говорит бабушка, 'самый важный урок из всех.' Когда наступает сухой сезон, она ведёт стадо по древней тропе, которую ей показала собственная бабушка десятилетия назад. Десятки слонов идут длинной цепочкой, их массивные силуэты рисуют тени на земле. 'Смотри внимательно, Тембо. Эта тропа теперь часть ТВОЕЙ Карты Памяти.'"
+    image: "migration-landscape.jpg"
+    imageAlt:
+      en: "Majestic elephant herd walking in a long line across a lush green savanna at golden hour, adults flanking calves in the center, green vegetation and acacia trees lining the path, warm golden sky"
+      es: "Majestuosa manada de elefantes caminando en una larga fila a través de la sabana dorada al atardecer, adultos flanqueando a los bebés en el centro, cielo dramático con cálidos colores naranja y púrpura"
+      ru: "Величественное стадо слонов, идущее длинной цепочкой по золотой саванне на закате, взрослые по бокам, малыши в центре, драматичное небо в тёплых оранжево-фиолетовых тонах"
+
+  # Finding water — The Memory Map in action
+  - id: finding-water
+    use_character: "${meet-grandmother.image}"
+    action: "elderly elephant matriarch with broken tusk digging in a sandy riverbed with her foot and trunk, water starting to seep up from underground, small elephant calf watching in amazement, other elephants waiting hopefully behind her, riverbanks lined with green vegetation and overhanging trees"
+    title:
+      en: "The Memory Map in Action"
+      es: "El Mapa de la Memoria en Acción"
+      ru: "Карта Памяти в действии"
+    content:
+      en: "The rivers have dried up, but Grandmother Nyota closes her eyes and remembers. 'This is why we keep the Memory Map,' she tells Tembo. She leads the herd to a sandy riverbed and begins digging with her powerful feet and trunk. Deeper and deeper she digs, until — miracle! — water begins seeping up from underground. 'My grandmother showed me this spot during a drought forty years ago,' she says. Tembo's eyes go wide. The Memory Map just saved the entire herd!"
+      es: "Los ríos se han secado, pero la abuela Nyota cierra los ojos y recuerda. 'Por esto guardamos el Mapa de la Memoria,' le dice a Tembo. Guía a la manada hacia un lecho de río arenoso y comienza a cavar con sus poderosas patas y trompa. Cada vez más profundo cava, hasta que — ¡milagro! — el agua comienza a brotar del subsuelo. 'Mi abuela me mostró este lugar durante una sequía hace cuarenta años,' dice."
+      ru: "Реки высохли, но бабушка Ньота закрывает глаза и вспоминает. 'Вот зачем мы храним Карту Памяти,' говорит она Тембо. Она ведёт стадо к песчаному руслу реки и начинает копать своими мощными ногами и хоботом. Всё глубже и глубже она копает, пока — чудо! — вода не начинает просачиваться из-под земли. 'Моя бабушка показала мне это место во время засухи сорок лет назад,' говорит она."
+    image: "nyota-finding-water.jpg"
+
+  # Tree pushers — Lesson 4
+  - id: tree-pushers
+    title:
+      en: "Lesson 4: We Shape the Land"
+      es: "Lección 4: Nosotros Moldeamos la Tierra"
+      ru: "Урок 4: Мы создаём ландшафт"
+    content:
+      en: "'Last lesson,' says Grandmother. 'We don't just live on the land — we shape it.' Elephants are nature's landscape architects! By pushing over old trees, they create open clearings where grass can grow — feeding zebras, wildebeest, and antelopes. The fallen trees become homes for lizards, insects, and small mammals. 'Even your footprints matter, Tembo. They fill with rainwater and become tiny ponds for frogs!' Tembo looks down at his own feet with new wonder."
+      es: "'Última lección,' dice la abuela. '¡No solo vivimos en la tierra — la moldeamos!' ¡Los elefantes son los arquitectos paisajistas de la naturaleza! Al empujar árboles viejos, crean claros abiertos donde puede crecer hierba — alimentando cebras, ñus y antílopes. Los árboles caídos se convierten en hogares para lagartijas, insectos y pequeños mamíferos. '¡Incluso tus huellas importan, Tembo!'"
+      ru: "'Последний урок,' говорит бабушка. 'Мы не просто живём на этой земле — мы формируем её.' Слоны — ландшафтные архитекторы природы! Толкая старые деревья, они создают открытые поляны, где может расти трава — кормя зебр, антилоп гну и газелей. Упавшие деревья становятся домами для ящериц, насекомых и мелких млекопитающих. 'Даже твои следы важны, Тембо!'"
+    image: "tree-pushers.jpg"
+    imageAlt:
+      en: "African elephants pushing against a large tree trunk, creating a clearing, with smaller animals like zebras grazing in a lush green area nearby, abundant vegetation and warm golden light"
+      es: "Elefantes africanos empujando un gran tronco de árbol, creando un claro, con animales más pequeños como cebras pastando en un área ya despejada cercana, cálida luz de sabana"
+      ru: "Африканские слоны толкают большой ствол дерева, создавая поляну, рядом в уже расчищенной зоне пасутся более мелкие животные, такие как зебры, тёплый свет саванны"
+
+  # Night watch — First Thunder
+  - id: night-watch
+    use_characters: ["${meet-tembo.image}"]
+    action: "baby elephant calf pressing close against mother elephant's leg on green grass under a dramatic night sky, distant lightning bolt illuminating purple-grey storm clouds on the horizon, starry sky above, warm protective scene, lush green foliage glowing in moonlight"
+    title:
+      en: "Thunder in the Night"
+      es: "Truenos en la Noche"
+      ru: "Гром в ночи"
+    content:
+      en: "That night, Tembo curls up against Mama Amara's huge leg. Above them, millions of stars sparkle. Then — BOOM! A deep rumble shakes the sky. Tembo jumps up, trembling. 'What was THAT?!' 'That is the rain talking,' Mama whispers. 'It is far away now, but it is coming.' On the horizon, lightning flickers behind purple clouds. Tembo's heart pounds. The rain is coming. He can almost feel it in his feet."
+      es: "Esa noche, Tembo se acurruca contra la enorme pierna de Mamá Amara. Sobre ellos, millones de estrellas brillan. Entonces — ¡BOOM! Un profundo retumbo sacude el cielo. Tembo salta, temblando. '¡¿Qué fue ESO?!' 'Esa es la lluvia hablando,' susurra Mamá. 'Está lejos ahora, pero viene.' En el horizonte, los relámpagos parpadean detrás de nubes moradas."
+      ru: "Той ночью Тембо прижимается к огромной ноге Мамы Амары. Над ними сверкают миллионы звёзд. И вдруг — БУМ! Глубокий гул сотрясает небо. Тембо вскакивает, дрожа. 'Что это БЫЛО?!' 'Это дождь разговаривает,' шепчет Мама. 'Он далеко сейчас, но он идёт.' На горизонте молнии мерцают за фиолетовыми облаками. Сердце Тембо колотится."
+    image: "tembo-night-watch.jpg"
+
+  # Clouds Gather — the rain approaches
+  - id: clouds-gather
+    use_characters: ["${meet-tembo.image}", "${meet-grandmother.image}"]
+    action: "elephant herd on a lush green savanna looking up at a dramatic sky where massive dark rain clouds are building on the horizon, wind blowing the grass and trees, elderly matriarch elephant standing tall with trunk raised sniffing the wind, small elephant calf beside her looking up excitedly, golden light breaking through cloud edges"
+    title:
+      en: "The Sky Changes"
+      es: "El Cielo Cambia"
+      ru: "Небо меняется"
+    content:
+      en: "The next morning, the wind changes. Grandmother Nyota lifts her trunk high and breathes in deeply. Her eyes twinkle. 'Can you smell it, Tembo?' Tembo raises his little trunk. There IS something different in the air — something cool, something fresh, something he has never smelled before. The sky is turning grey and purple. The grass bends in the wind. 'It's coming,' whispers Grandmother, and she smiles the biggest smile Tembo has ever seen."
+      es: "A la mañana siguiente, el viento cambia. La abuela Nyota levanta su trompa y respira profundamente. Sus ojos brillan. '¿Puedes olerlo, Tembo?' Tembo levanta su pequeña trompa. HAY algo diferente en el aire — algo fresco, algo nuevo, algo que nunca antes ha olido. El cielo se está poniendo gris y morado. '¡Viene!' susurra la abuela, con la sonrisa más grande que Tembo ha visto jamás."
+      ru: "На следующее утро ветер меняется. Бабушка Ньота поднимает хобот высоко и глубоко вдыхает. Её глаза сверкают. 'Чувствуешь, Тембо?' Тембо поднимает свой маленький хобот. В воздухе ДЕЙСТВИТЕЛЬНО что-то новое — прохладное, свежее, то, чего он никогда раньше не ощущал. Небо становится серым и фиолетовым. 'Идёт!' шепчет бабушка с самой широкой улыбкой, которую Тембо когда-либо видел."
+    image: "clouds-gathering.jpg"
+
+  # The First Rain — CLIMAX
+  - id: the-first-rain
+    use_characters: ["${meet-tembo.image}", "${meet-kippy.image}"]
+    action: "baby elephant calf dancing joyfully in the rain with trunk raised high catching raindrops, another mud-covered elephant calf splashing in fresh puddles beside him, heavy warm rain falling on the lush green savanna transforming the landscape, fresh green grass springing up, wildflowers blooming, rainbow forming in background, pure joy and wonder, cinematic golden rain light"
+    title:
+      en: "Tembo's First Rain!"
+      es: "¡La Primera Lluvia de Tembo!"
+      ru: "Первый дождь Тембо!"
+    content:
+      en: "And then it comes. The first drop lands on Tembo's nose. Then another. Then ten. Then a THOUSAND! The sky opens up and warm, beautiful rain pours down over the savanna. Tembo stands frozen for one perfect moment — and then he DANCES! He spins, he splashes, he raises his trunk to catch the drops! Kippy charges through the puddles screaming 'MUD! GLORIOUS MUD!' The whole herd rumbles with joy. The grass turns green before their eyes. Flowers spring up overnight. Tembo's trunk remembers this smell forever."
+      es: "Y entonces llega. La primera gota cae en la nariz de Tembo. Luego otra. Luego diez. ¡Luego MIL! El cielo se abre y una lluvia cálida y hermosa cae sobre la sabana. Tembo se queda congelado por un momento perfecto — ¡y luego BAILA! ¡Gira, salpica, levanta su trompa para atrapar las gotas! Kippy corre por los charcos gritando '¡BARRO! ¡GLORIOSO BARRO!' Toda la manada retumba de alegría."
+      ru: "И вот он идёт. Первая капля падает на нос Тембо. Потом ещё одна. Потом десять. Потом ТЫСЯЧА! Небо раскрывается и тёплый, прекрасный дождь льётся на саванну. Тембо застывает на один идеальный момент — а потом ТАНЦУЕТ! Он кружится, плещется, поднимает хобот, ловя капли! Киппи мчится по лужам крича 'ГРЯЗЬ! ВЕЛИКОЛЕПНАЯ ГРЯЗЬ!' Всё стадо гудит от радости."
+    image: "first-rain-dance.jpg"
+    imageAlt:
+      en: "Baby elephant calf dancing joyfully in the rain with trunk raised high, another calf splashing in puddles, lush green savanna transforming with fresh growth, rainbow in background"
+      es: "Elefantito bailando alegremente bajo la lluvia con la trompa levantada, otro elefantito salpicando en charcos, sabana verde transformándose con crecimiento fresco, arcoíris al fondo"
+      ru: "Слонёнок радостно танцует под дождём с поднятым хоботом, другой слонёнок плещется в лужах, зелёная саванна преображается свежей растительностью, радуга на фоне"
+
+  # Carry the Map — passing the knowledge
+  - id: carry-the-map
+    use_characters: ["${meet-tembo.image}", "${meet-grandmother.image}"]
+    action: "elderly elephant matriarch gently touching trunks with a young elephant calf in a tender moment after the rain, wet lush green savanna glistening in fresh sunlight, puddles reflecting golden sky, wildflowers blooming everywhere, a tiny newborn calf peeking from behind the young elephant, warm emotional scene"
+    title:
+      en: "Carry the Map"
+      es: "Lleva el Mapa"
+      ru: "Неси Карту"
+    content:
+      en: "After the rain, the world sparkles. Grandmother Nyota touches her trunk to Tembo's forehead, very gently. 'You smelled it before it came,' she says proudly. 'The rain, the paths, the water — it is all inside you now.' She looks at the tiny newborn calf peeking out from behind Tembo's legs. 'And one day, little Tembo, you will teach the Memory Map to someone new.' Tembo stands tall. He is ready."
+      es: "Después de la lluvia, el mundo brilla. La abuela Nyota toca su trompa a la frente de Tembo, muy suavemente. 'Lo oliste antes de que llegara,' dice con orgullo. 'La lluvia, los caminos, el agua — todo está dentro de ti ahora.' Ella mira al pequeño recién nacido espiando detrás de las piernas de Tembo. 'Y un día, pequeño Tembo, tú enseñarás el Mapa de la Memoria a alguien nuevo.'"
+      ru: "После дождя мир сверкает. Бабушка Ньота касается хоботом лба Тембо, очень нежно. 'Ты почувствовал его до того, как он пришёл,' говорит она с гордостью. 'Дождь, тропы, вода — всё это теперь внутри тебя.' Она смотрит на крошечного новорождённого, выглядывающего из-за ног Тембо. 'И однажды, маленький Тембо, ты научишь Карте Памяти кого-то нового.'"
+    image: "carry-the-map.jpg"
+
+  # Tembo grows up — post-rain
+  - id: tembo-grows
+    use_character: "${meet-tembo.image}"
+    action: "young elephant calf, now visibly bigger and more confident than before, gently guiding an even smaller newborn calf with his trunk across a lush green rain-washed savanna, showing leadership, fresh puddles and blooming wildflowers everywhere, warm golden light after the rain"
+    title:
+      en: "Tembo Grows Up"
+      es: "Tembo Crece"
+      ru: "Тембо взрослеет"
+    content:
+      en: "A year has passed, and Tembo is no longer the littlest calf in the herd! He's grown strong and confident. The Memory Map lives inside his head now — every path, every watering hole, every safe place. And when the tiny newborn stumbles on the wet grass, Tembo is right there, guiding her gently with his trunk, just as Mama Amara once guided him. The circle of life continues."
+      es: "Ha pasado un año, ¡y Tembo ya no es el bebé más pequeño de la manada! Ha crecido fuerte y seguro. El Mapa de la Memoria vive dentro de su cabeza ahora — cada camino, cada abrevadero, cada lugar seguro. Y cuando la pequeña recién nacida tropieza en la hierba mojada, Tembo está ahí, guiándola suavemente con su trompa, tal como Mamá Amara lo guió a él."
+      ru: "Прошёл год, и Тембо больше не самый маленький в стаде! Он вырос сильным и уверенным. Карта Памяти живёт внутри его головы — каждая тропа, каждый водопой, каждое безопасное место. И когда крошечная новорождённая спотыкается на мокрой траве, Тембо тут как тут, нежно направляя её хоботом, точно так же, как когда-то Мама Амара направляла его."
+    image: "tembo-grows-up.jpg"
+
+  # Family together — celebration after the rain
+  - id: family-together
+    title:
+      en: "The Herd Together"
+      es: "La Manada Unida"
+      ru: "Стадо вместе"
+    content:
+      en: "As the sun breaks through the last rain clouds, painting the sky in shades of gold and amber, the entire herd gathers at the overflowing watering hole. Grandmother Nyota stands tall at the center, surrounded by three generations of her family. Tembo, Kippy, and the other calves splash joyfully at the water's edge. The savanna is green and alive, flowers blooming everywhere. Grandmother rumbles a deep, contented call — and thirty elephants answer back. The Memory Map is safe. The rain has come. And tomorrow, there will be new paths to learn."
+      es: "Mientras el sol atraviesa las últimas nubes de lluvia, pintando el cielo en tonos de oro y ámbar, toda la manada se reúne en el abrevadero desbordante. La abuela Nyota se mantiene erguida en el centro, rodeada por tres generaciones de su familia. Tembo, Kippy y los otros bebés salpican alegremente al borde del agua. La sabana está verde y viva, flores brotando por todas partes."
+      ru: "Когда солнце пробивается сквозь последние дождевые облака, окрашивая небо в оттенки золота и янтаря, всё стадо собирается у переполненного водопоя. Бабушка Ньота стоит высоко в центре, окружённая тремя поколениями своей семьи. Тембо, Киппи и другие малыши радостно плещутся у кромки воды. Саванна зелёная и живая, цветы распускаются повсюду."
+    image: "family-together-panorama.jpg"
+    imageAlt:
+      en: "Full elephant herd gathered at a watering hole during golden hour, elderly matriarch in center, calves playing at water's edge, lush green panoramic savanna with abundant vegetation"
+      es: "Manada completa de elefantes reunida en un abrevadero durante la hora dorada, matriarca anciana en el centro, bebés jugando al borde del agua, cálida escena panorámica de sabana"
+      ru: "Полное стадо слонов, собравшееся у водопоя в золотой час, пожилая матриарх в центре, малыши играют у кромки воды, тёплая панорамная сцена саванны"
+
+  # Hidden sections for viewer detail and fun fact image generation
+  - id: "detail-trunk-anatomy-v1"
+    image: "detail-trunk-anatomy.jpg"
+    referenceImage: "${trunk-lessons.image}"
+    prompt: "Using the elephant from the reference image, create an extreme close-up of an elephant's trunk tip showing the two finger-like projections at the end. Show the incredible flexibility and texture of the skin. Same Pixar-quality 3D rendering style with lush green environment."
+    hidden: true
+
+  - id: "detail-foot-pad-v2"
+    image: "detail-foot-pad.jpg"
+    prompt: "Close-up illustration of an African elephant's foot pad from below, showing the spongy shock-absorbing pad structure, the toenails visible at the front, cracked weathered skin texture. Warm educational illustration style, child-friendly. Pixar-quality 3D rendering, lush green vegetation."
+    hidden: true
+
+  - id: "detail-ear-vessels-v3"
+    image: "detail-ear-vessels.jpg"
+    referenceImage: "${meet-tembo.image}"
+    prompt: "Using the elephant from the reference image, create a close-up of an elephant's ear showing the intricate network of blood vessels visible through the thin skin, backlit by warm sunlight showing the pink vascular network. Same Pixar-quality 3D rendering style."
+    hidden: true
+
+  - id: "detail-tusk-rings-v4"
+    image: "detail-tusk-rings.jpg"
+    referenceImage: "${meet-grandmother.image}"
+    prompt: "Using the elephant from the reference image, create a close-up of an elephant's tusk showing growth rings and texture, similar to tree rings, with the base where it meets the skull visible. Same Pixar-quality 3D rendering style with lush green environment."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-seismic-hearing"
+    image: "fun-fact-seismic-hearing.jpg"
+    referenceImage: "${meet-tembo.image}"
+    prompt: "Using the elephant from reference, show this character standing very still on the savanna with one foot slightly raised, as if listening through the ground. Subtle vibration waves emanating from the earth below. Same character and Pixar-quality 3D rendering style with lush green environment."
+    hidden: true
+
+  - id: "fun-fact-elephant-hugs"
+    image: "fun-fact-elephant-hugs.jpg"
+    referenceImage: "${meet-tembo.image}"
+    prompt: "Using the elephant calf from reference, show two elephants wrapping their trunks together in a warm loving hug greeting, a baby elephant holding its mama's tail with its trunk while walking. Warm, heartwarming scene. Same character and Pixar-quality 3D rendering style with lush green environment."
+    hidden: true
+
+  - id: "fun-fact-thumb-sucking"
+    image: "fun-fact-thumb-sucking.jpg"
+    referenceImage: "${meet-tembo.image}"
+    prompt: "Using the elephant calf from reference, show this baby elephant adorably sucking on the tip of his own trunk, just like a human baby sucking a thumb. Cozy, cute, heartwarming scene. Same character and Pixar-quality 3D rendering style with lush green environment."
+    hidden: true
+
+  - id: "fun-fact-swimming"
+    image: "fun-fact-swimming.jpg"
+    referenceImage: "${meet-tembo.image}"
+    prompt: "Using the elephant calf from reference, show a baby elephant happily swimming in a deep river with only its trunk sticking out above the water like a snorkel, adult elephants swimming alongside. Joyful, playful water scene. Same character and Pixar-quality 3D rendering style with lush green riverbanks."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming magazine cover featuring a young grey elephant calf with big curious eyes in the foreground, playfully spraying water from his trunk. Behind him, an elderly matriarch elephant with one broken tusk watches proudly. A mud-covered young elephant plays nearby. The background shows a stunning lush green African savanna at golden hour with acacia trees, tropical plants, green grass, and a watering hole surrounded by vegetation. Style: Pixar-quality 3D rendering — smooth rounded forms, subsurface scattering, cinematic lighting, rich vibrant colors, photorealistic textures with stylized proportions. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${meet-tembo.image}"
+      - "${meet-grandmother.image}"
+      - "${meet-kippy.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Tembo spraying water playfully with Grandmother Nyota and Kippy in background, African savanna at golden hour"
+      es: "Tembo rociando agua juguetonamente con Abuela Nyota y Kippy al fondo, sabana africana a la hora dorada"
+      ru: "Тембо игриво брызгает водой, бабушка Ньота и Киппи на заднем плане, африканская саванна в золотой час"
+
+funFacts:
+  title:
+    en: "Amazing Elephant Facts!"
+    es: "¡Datos Asombrosos sobre Elefantes!"
+    ru: "Удивительные факты о слонах!"
+  facts:
+    - title:
+        en: "Hearing Through Their Feet"
+        es: "Escuchando a Través de sus Patas"
+        ru: "Слышат через ноги"
+      content:
+        en: "Elephants can detect seismic vibrations through the ground using special sensors in their feet! They can 'hear' other elephants' calls from up to 10 miles away through the earth, long before the sound reaches their ears through the air."
+        es: "¡Los elefantes pueden detectar vibraciones sísmicas a través del suelo usando sensores especiales en sus patas! Pueden 'escuchar' las llamadas de otros elefantes desde hasta 16 kilómetros de distancia a través de la tierra, mucho antes de que el sonido llegue a sus oídos por el aire."
+        ru: "Слоны могут улавливать сейсмические вибрации через землю с помощью специальных рецепторов в ногах! Они могут 'слышать' зовы других слонов на расстоянии до 16 километров через землю, задолго до того, как звук достигнет их ушей по воздуху."
+      image: "fun-fact-seismic-hearing.jpg"
+
+    - title:
+        en: "Elephant Hugs"
+        es: "Abrazos de Elefante"
+        ru: "Слоновьи обнимашки"
+      content:
+        en: "Elephants hug each other with their trunks! When two elephants meet, they wrap their trunks together in a warm greeting — just like people shaking hands or giving a hug. Baby elephants even hold their mama's tail with their trunk while walking, like a toddler holding their parent's hand!"
+        es: "¡Los elefantes se abrazan con sus trompas! Cuando dos elefantes se encuentran, entrelazan sus trompas en un cálido saludo — igual que las personas que se dan la mano o un abrazo. ¡Los elefantitos incluso sostienen la cola de su mamá con su trompa al caminar, como un niño pequeño agarrando la mano de su padre!"
+        ru: "Слоны обнимаются хоботами! Когда два слона встречаются, они обвивают хоботы друг друга в тёплом приветствии — как люди пожимают руки или обнимаются. Слонята даже держатся хоботом за хвост мамы во время ходьбы, как малыш держит за руку родителя!"
+      image: "fun-fact-elephant-hugs.jpg"
+
+    - title:
+        en: "Trunk-Sucking Babies"
+        es: "Bebés que Chupan su Trompa"
+        ru: "Малыши, сосущие хобот"
+      content:
+        en: "Just like human babies suck their thumbs for comfort, baby elephants suck on the tips of their trunks! It calms them down and helps them feel safe. They usually grow out of this habit by age two, just like human toddlers stop sucking their thumbs."
+        es: "¡Al igual que los bebés humanos se chupan el pulgar para tranquilizarse, los elefantitos chupan las puntas de sus trompas! Los calma y les ayuda a sentirse seguros. Generalmente superan este hábito a los dos años, igual que los niños humanos dejan de chuparse el pulgar."
+        ru: "Как человеческие младенцы сосут палец для успокоения, слонята сосут кончики своих хоботов! Это их успокаивает и помогает чувствовать себя в безопасности. Обычно они перерастают эту привычку к двум годам, так же как человеческие малыши перестают сосать палец."
+      image: "fun-fact-thumb-sucking.jpg"
+
+    - title:
+        en: "Swimming Champions"
+        es: "Campeones de Natación"
+        ru: "Чемпионы по плаванию"
+      content:
+        en: "Did you know elephants are amazing swimmers? They can swim for hours without stopping, using their trunk as a snorkel to breathe while their body is completely underwater! Baby elephants learn to swim when they are very young, and they love splashing in deep water with their families. Some elephants have even been spotted swimming between islands!"
+        es: "¿Sabías que los elefantes son increíbles nadadores? ¡Pueden nadar durante horas sin parar, usando su trompa como esnórquel para respirar mientras su cuerpo está completamente bajo el agua! Los elefantitos aprenden a nadar cuando son muy pequeños, y les encanta chapotear en aguas profundas con sus familias."
+        ru: "Знали ли вы, что слоны — потрясающие пловцы? Они могут плавать часами без остановки, используя хобот как трубку для дыхания, пока тело полностью под водой! Слонята учатся плавать с раннего возраста и обожают плескаться в глубокой воде со своими семьями."
+      image: "fun-fact-swimming.jpg"
+
+imageGeneration:
+  characters:
+    tembo:
+      name: "Tembo"
+      description: "Young grey African elephant calf with big curious eyes and oversized floppy ears"
+
+    mama-amara:
+      name: "Mama Amara"
+      description: "Large gentle mother elephant with kind eyes and dusty tusks, warm nurturing presence"
+
+    grandmother-nyota:
+      name: "Grandmother Nyota"
+      description: "Elderly matriarch elephant with weathered grey skin, one broken tusk, deep wise eyes"
+
+    kippy:
+      name: "Kippy"
+      description: "Playful young elephant calf slightly older than Tembo, always covered in dried mud, mischievous"
+
+  style:
+    global: "Pixar-quality 3D rendering. Smooth rounded forms with subsurface scattering. Cinematic lighting with warm key light and cool fill. Rich saturated colors. Photorealistic textures with stylized proportions. Lush green African savanna with abundant vegetation, tropical plants, green grass, and scattered wildflowers. Warm golden-hour light. Child-friendly and inviting."
+
+viewerDetails:
+- title:
+    en: "The Amazing Trunk"
+    es: "La Increíble Trompa"
+    ru: "Удивительный хобот"
+  description:
+    en: "Look at Tembo's trunk tip — see those two finger-like projections? African elephants have two 'fingers' at the tip of their trunk (Asian elephants have just one). With over 40,000 muscles, the trunk can pick up something as tiny as a single blade of grass or as heavy as a tree branch!"
+    es: "¡Mira la punta de la trompa de Tembo — ves esas dos proyecciones como dedos? Los elefantes africanos tienen dos 'dedos' en la punta de su trompa (los elefantes asiáticos tienen solo uno). ¡Con más de 40,000 músculos, la trompa puede recoger algo tan pequeño como una brizna de hierba o tan pesado como una rama de árbol!"
+    ru: "Посмотрите на кончик хобота Тембо — видите два пальцеобразных выроста? У африканских слонов два 'пальца' на кончике хобота (у азиатских — только один). С более чем 40 000 мышц хобот может поднять нечто крошечное, как одна травинка, или тяжёлое, как ветка дерева!"
+  image: "detail-trunk-anatomy.jpg"
+
+- title:
+    en: "Shock-Absorbing Feet"
+    es: "Patas Amortiguadoras"
+    ru: "Амортизирующие ноги"
+  description:
+    en: "An elephant's foot hides a remarkable secret — a thick, spongy pad of fatty tissue that acts like a natural shock absorber! This pad spreads their enormous weight evenly and lets them walk almost silently despite weighing up to 6 tons. That's why elephants can sneak up on you!"
+    es: "¡El pie de un elefante esconde un secreto notable — una gruesa y esponjosa almohadilla de tejido graso que actúa como un amortiguador natural! Esta almohadilla distribuye su enorme peso uniformemente y les permite caminar casi en silencio a pesar de pesar hasta 6 toneladas. ¡Por eso los elefantes pueden acercarse sigilosamente!"
+    ru: "Нога слона скрывает замечательный секрет — толстую, губчатую подушечку из жировой ткани, которая действует как натуральный амортизатор! Эта подушечка равномерно распределяет их огромный вес и позволяет им ходить почти бесшумно, несмотря на вес до 6 тонн. Вот почему слоны могут подкрасться незаметно!"
+  image: "detail-foot-pad.jpg"
+
+- title:
+    en: "Built-In Air Conditioning"
+    es: "Aire Acondicionado Incorporado"
+    ru: "Встроенный кондиционер"
+  description:
+    en: "See the network of blood vessels in Tembo's ears? An elephant's ears are filled with a web of blood vessels just beneath the thin skin. When it's hot, blood flows through these vessels and heat radiates out through the large ear surface. By flapping their ears, elephants can cool their blood by up to 5°C!"
+    es: "¿Ves la red de vasos sanguíneos en las orejas de Tembo? Las orejas de un elefante están llenas de una red de vasos sanguíneos justo debajo de la delgada piel. Cuando hace calor, la sangre fluye a través de estos vasos y el calor se irradia por la gran superficie de la oreja. ¡Al agitar sus orejas, los elefantes pueden enfriar su sangre hasta 5°C!"
+    ru: "Видите сеть кровеносных сосудов в ушах Тембо? Уши слона пронизаны сетью кровеносных сосудов прямо под тонкой кожей. Когда жарко, кровь проходит через эти сосуды и тепло излучается через большую поверхность уха. Хлопая ушами, слоны могут охладить свою кровь на 5°C!"
+  image: "detail-ear-vessels.jpg"
+
+- title:
+    en: "Tusk Growth Rings"
+    es: "Anillos de Crecimiento de Colmillos"
+    ru: "Кольца роста бивней"
+  description:
+    en: "Just like trees have growth rings, elephant tusks have rings too! By studying these rings, scientists can learn an elephant's age, health, and even what food was available in different years. Grandmother Nyota's broken tusk shows rings from sixty years of savanna life."
+    es: "¡Al igual que los árboles tienen anillos de crecimiento, los colmillos de los elefantes también los tienen! Al estudiar estos anillos, los científicos pueden conocer la edad, la salud e incluso qué alimentos estaban disponibles en diferentes años. El colmillo roto de la Abuela Nyota muestra anillos de sesenta años de vida en la sabana."
+    ru: "Как и у деревьев есть годовые кольца, у бивней слонов тоже! Изучая эти кольца, учёные могут узнать возраст, здоровье слона и даже какая пища была доступна в разные годы. Сломанный бивень Бабушки Ньоты показывает кольца шестидесяти лет жизни в саванне."
+  image: "detail-tusk-rings.jpg"
+
+routing:
+    openai:
+      - "hero-savanna-sunrise.jpg"
+      - "migration-landscape.jpg"
+      - "tree-pushers.jpg"
+      - "family-together-panorama.jpg"
+      - "detail-foot-pad.jpg"
+      - "clouds-gathering.jpg"
+
+    gemini:
+      - "tembo-portrait.jpg"
+      - "tembo-first-steps.jpg"
+      - "tembo-watering-hole.jpg"
+      - "grandmother-nyota-portrait.jpg"
+      - "memory-map-lesson.jpg"
+      - "tembo-trunk-lessons.jpg"
+      - "kippy-portrait.jpg"
+      - "tembo-kippy-dust-bath.jpg"
+      - "feet-listening.jpg"
+      - "nyota-finding-water.jpg"
+      - "tembo-night-watch.jpg"
+      - "first-rain-dance.jpg"
+      - "carry-the-map.jpg"
+      - "tembo-grows-up.jpg"
+      - "detail-trunk-anatomy.jpg"
+      - "detail-ear-vessels.jpg"
+      - "detail-tusk-rings.jpg"
+      - "fun-fact-seismic-hearing.jpg"
+      - "fun-fact-elephant-hugs.jpg"
+      - "fun-fact-thumb-sucking.jpg"
+      - "fun-fact-swimming.jpg"
+      - "magazine-cover.jpg"

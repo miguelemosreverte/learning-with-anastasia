@@ -1,0 +1,64 @@
+{
+  "chapter": "elephants",
+  "createdAt": "2026-02-28T01:58:50.790Z",
+  "characters": [
+    {
+      "id": "tembo",
+      "name": "Tembo",
+      "description": "Young grey African elephant calf with big curious eyes and oversized floppy ears"
+    },
+    {
+      "id": "mama-amara",
+      "name": "Mama Amara",
+      "description": "Large gentle mother elephant with kind eyes and dusty tusks, warm nurturing presence"
+    },
+    {
+      "id": "grandmother-nyota",
+      "name": "Grandmother Nyota",
+      "description": "Elderly matriarch elephant with weathered grey skin, one broken tusk, deep wise eyes"
+    },
+    {
+      "id": "kippy",
+      "name": "Kippy",
+      "description": "Playful young elephant calf slightly older than Tembo, always covered in dried mud, mischievous"
+    }
+  ],
+  "step1": {
+    "status": "approved",
+    "attempts": 1,
+    "feedback": [],
+    "approvedVersion": 1
+  },
+  "step2": {
+    "status": "approved",
+    "characters": {
+      "tembo": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "mama-amara": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "grandmother-nyota": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "kippy": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      }
+    }
+  },
+  "step3": {
+    "status": "approved",
+    "chosenStyle": 1,
+    "styleName": "pixar",
+    "styleDescription": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Dramatic cinematic lighting with warm key light and cool fill. Rich saturated colors. Photorealistic textures but stylized proportions. Depth of field with bokeh. The look of a Pixar feature film still."
+  },
+  "updatedAt": "2026-02-28T03:12:25.101Z"
+}
