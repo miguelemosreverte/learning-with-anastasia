@@ -1,0 +1,471 @@
+# Frogs Chapter Definition - Luna's Great Leap
+meta:
+  id: frogs
+  issueNumber: 10
+  date: "February 2026"
+  folderName: "frogs"
+  title:
+    en: "Frogs: The Great Transformation"
+    es: "Ranas: La Gran Transformación"
+    ru: "Лягушки: Великое превращение"
+  subtitle:
+    en: "Luna's Magical Journey from Tiny Egg to Leaping Frog"
+    es: "El Viaje Mágico de Luna de Huevito a Rana Saltarina"
+    ru: "Волшебное путешествие Луны от крошечного яйца до прыгающей лягушки"
+  magazineText:
+    en: "Follow Luna, a tiny red-eyed tree frog, on the most amazing transformation in nature! Watch her grow from a little egg on a leaf to a swimming tadpole to a beautiful leaping frog, guided every step by her loving Mama and Papa in their magical rainforest home."
+    es: "¡Sigue a Luna, una pequeña rana arbórea de ojos rojos, en la transformación más asombrosa de la naturaleza! Mírala crecer de un huevito en una hoja a un renacuajo nadador a una hermosa rana saltarina, guiada en cada paso por su amorosa Mamá y Papá en su mágico hogar de la selva."
+    ru: "Следуйте за Луной, крошечной красноглазой древесной лягушкой, через самое удивительное превращение в природе! Смотрите, как она растёт от маленького яйца на листике до плавающего головастика и прекрасной прыгающей лягушки, направляемая на каждом шагу любящими Мамой и Папой в их волшебном доме в тропическом лесу."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Celebrating the most magical transformation in the animal kingdom"
+    es: "Celebrando la transformación más mágica del reino animal"
+    ru: "Celebrating самое волшебное превращение в животном мире"
+  description: "Follow Luna the red-eyed tree frog through her incredible metamorphosis from egg to tadpole to frog, guided by her loving family in the tropical rainforest"
+  preface:
+    en:
+      - "Welcome to the magical tropical rainforest, where one of nature's greatest miracles happens every day — a tiny egg becomes a swimming tadpole, and then transforms into a beautiful leaping frog! In this adventure, we'll follow Luna through her incredible metamorphosis."
+      - "Red-eyed tree frogs are one of the most beautiful creatures on Earth. Their bright green bodies, stunning red eyes, blue-striped sides, and bright orange feet make them look like living jewels of the rainforest. And both Mama and Papa work together to keep their babies safe!"
+      - "Through Luna's journey, you'll discover how tadpoles breathe underwater with gills, how legs magically appear, how tails disappear, and how sticky toe pads let tree frogs climb anything. Get ready for the most amazing transformation you've ever seen!"
+    es:
+      - "¡Bienvenidos a la mágica selva tropical, donde uno de los mayores milagros de la naturaleza ocurre cada día — un diminuto huevo se convierte en un renacuajo nadador, y luego se transforma en una hermosa rana saltarina! En esta aventura, seguiremos a Luna a través de su increíble metamorfosis."
+      - "Las ranas arbóreas de ojos rojos son una de las criaturas más hermosas de la Tierra. Sus cuerpos verdes brillantes, impresionantes ojos rojos, costados rayados de azul y patas naranjas las hacen parecer joyas vivientes de la selva. ¡Y tanto Mamá como Papá trabajan juntos para mantener seguros a sus bebés!"
+      - "A través del viaje de Luna, descubrirás cómo los renacuajos respiran bajo el agua con branquias, cómo las patas aparecen mágicamente, cómo las colas desaparecen y cómo las almohadillas pegajosas de los dedos permiten a las ranas trepar por cualquier cosa. ¡Prepárate para la transformación más asombrosa que hayas visto!"
+    ru:
+      - "Добро пожаловать в волшебный тропический лес, где каждый день происходит одно из величайших чудес природы — крошечное яйцо становится плавающим головастиком, а затем превращается в прекрасную прыгающую лягушку! В этом приключении мы последуем за Луной через её невероятный метаморфоз."
+      - "Красноглазые древесные лягушки — одни из самых красивых созданий на Земле. Их ярко-зелёные тела, потрясающие красные глаза, голубые полоски на боках и ярко-оранжевые лапки делают их живыми драгоценностями тропического леса. И Мама, и Папа вместе заботятся о своих малышах!"
+      - "Через путешествие Луны вы узнаете, как головастики дышат под водой жабрами, как волшебно появляются ножки, как исчезают хвосты и как липкие подушечки на пальцах позволяют лягушкам карабкаться по чему угодно. Приготовьтесь к самому удивительному превращению!"
+
+hero:
+  title:
+    en: "Frogs"
+    es: "Ranas"
+    ru: "Лягушки"
+  subtitle:
+    en: "The Great Transformation"
+    es: "La Gran Transformación"
+    ru: "Великое превращение"
+  image: "hero-rainforest.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Lush magical tropical rainforest at dawn with golden light filtering through enormous green leaves, colorful flowers, sparkling water droplets, bromeliads, and a small crystal-clear pond visible below"
+    es: "Exuberante selva tropical mágica al amanecer con luz dorada filtrándose a través de enormes hojas verdes, flores coloridas, gotas de agua brillantes, bromelias y un pequeño estanque cristalino visible abajo"
+    ru: "Пышный волшебный тропический лес на рассвете с золотистым светом, проникающим сквозь огромные зелёные листья, яркие цветы, сверкающие капли воды, бромелии и маленький кристально чистый пруд внизу"
+
+sections:
+  # Meet Papa Verde
+  - id: meet-papa
+    generate_character: true
+    mood: [lush-botanical, translucency]
+    title:
+      en: "Meet Papa Verde"
+      es: "Conoce a Papá Verde"
+      ru: "Знакомьтесь: Папа Верде"
+    content:
+      en: "Papa Verde is the most handsome frog in the entire rainforest! His body is a brilliant, shining green — like a living emerald. His enormous red eyes glow like rubies in the moonlight. His sides are striped with beautiful blue and yellow, and his feet are the brightest orange you've ever seen. Tonight, Papa has the most important job: he is guarding the eggs that he and Mama laid together on a big green leaf hanging over the pond. 'I'll watch over you all night,' he promises."
+      es: "¡Papá Verde es la rana más apuesta de toda la selva! Su cuerpo es de un verde brillante y reluciente — como una esmeralda viviente. Sus enormes ojos rojos brillan como rubíes a la luz de la luna. Sus costados tienen rayas de hermoso azul y amarillo, y sus patas son del naranja más brillante que hayas visto. Esta noche, Papá tiene el trabajo más importante: está guardando los huevos que él y Mamá pusieron juntos en una gran hoja verde colgando sobre el estanque."
+      ru: "Папа Верде — самая красивая лягушка во всём тропическом лесу! Его тело — ярко-зелёное, сверкающее — как живой изумруд. Его огромные красные глаза сияют как рубины в лунном свете. Бока украшены полосками прекрасного голубого и жёлтого, а лапки — самого яркого оранжевого цвета. Сегодня ночью у Папы самая важная работа: он охраняет яйца, которые они с Мамой вместе отложили на большом зелёном листе над прудом."
+    image: "papa-verde-portrait.jpg"
+    imageAlt:
+      en: "Stunning red-eyed tree frog with brilliant green body, huge glowing red eyes, blue-and-yellow striped sides, and bright orange feet, perched on a green leaf in the moonlit rainforest"
+      es: "Impresionante rana arbórea de ojos rojos con brillante cuerpo verde, enormes ojos rojos brillantes, costados rayados de azul y amarillo, y patas naranjas brillantes, posada en una hoja verde en la selva iluminada por la luna"
+      ru: "Потрясающая красноглазая древесная лягушка с блестящим зелёным телом, огромными сияющими красными глазами, голубо-жёлтыми полосками на боках и ярко-оранжевыми лапками, сидящая на зелёном листе в лунном тропическом лесу"
+
+  # Meet Mama Hoja
+  - id: meet-mama
+    generate_character: true
+    mood: [soft-intimate, lush-botanical]
+    use_character: "${meet-papa.image}"
+    action: "two beautiful red-eyed tree frogs sitting close together on a large green leaf over a pond, one slightly smaller and more delicate with softer green coloring, both looking lovingly at a cluster of tiny transparent eggs on the leaf, moonlit rainforest, warm tender scene"
+    title:
+      en: "Mama Hoja and the Tiny Eggs"
+      es: "Mamá Hoja y los Huevitos"
+      ru: "Мама Хоха и крошечные яйца"
+    content:
+      en: "Mama Hoja chose the perfect leaf — big, strong, and hanging right over the safest pond in the rainforest. Together, she and Papa Verde carefully placed their tiny eggs on the leaf. The eggs look like little transparent pearls, and inside each one, you can already see a tiny black dot — a baby frog waiting to begin! 'Look, Papa,' Mama whispers, 'they're already wiggling!' Papa puts his arm around Mama. 'Our little family is beginning,' he says softly."
+      es: "Mamá Hoja eligió la hoja perfecta — grande, fuerte, y colgando justo sobre el estanque más seguro de la selva. Juntos, ella y Papá Verde colocaron cuidadosamente sus huevitos en la hoja. Los huevos parecen pequeñas perlas transparentes, y dentro de cada uno, ya puedes ver un puntito negro — ¡un bebé rana esperando a comenzar! 'Mira, Papá,' susurra Mamá, '¡ya se están moviendo!' Papá rodea a Mamá con su brazo. 'Nuestra pequeña familia está comenzando,' dice suavemente."
+      ru: "Мама Хоха выбрала идеальный лист — большой, крепкий, свисающий прямо над самым безопасным прудом в тропическом лесу. Вместе с Папой Верде они аккуратно разместили крошечные яйца на листе. Яйца похожи на маленькие прозрачные жемчужинки, и внутри каждого уже видна крошечная чёрная точка — малыш-лягушонок, ждущий начала! 'Смотри, Папа,' шепчет Мама, 'они уже шевелятся!' Папа обнимает Маму. 'Наша маленькая семья начинается,' говорит он тихо."
+    image: "mama-hoja-portrait.jpg"
+    imageAlt:
+      en: "Beautiful red-eyed tree frog mother with soft green coloring sitting beside a cluster of transparent eggs on a leaf, gentle moonlit rainforest setting"
+      es: "Hermosa rana arbórea de ojos rojos madre con suave coloración verde sentada junto a un grupo de huevos transparentes en una hoja, suave escenario de selva iluminada por la luna"
+      ru: "Красивая мама красноглазая древесная лягушка с мягкой зелёной окраской, сидящая рядом с кучкой прозрачных яиц на листе, мягкое лунное освещение тропического леса"
+
+  # Luna Drops In
+  - id: luna-drops-in
+    generate_character: true
+    mood: [translucency, golden-hour]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}"]
+    action: "tiny black tadpole dropping from a green leaf into a crystal-clear rainforest pond, splash of water, two adult red-eyed tree frogs watching from the leaf above with proud expressions, golden morning light, lush green tropical plants surrounding the pond"
+    title:
+      en: "Splash! Luna Drops In!"
+      es: "¡Splash! ¡Luna se Deja Caer!"
+      ru: "Плюх! Луна падает!"
+    content:
+      en: "One golden morning — PLOP! A tiny black tadpole wiggles out of her egg and drops off the leaf right into the pond below! SPLASH! 'She did it!' Papa cheers from the leaf. 'Our first baby!' Mama watches with tears of joy. Little Luna is only as big as a grain of rice, with a round head and a wiggly tail. She looks up through the water and sees Mama and Papa's happy faces peering down at her. Luna swishes her tail and zooms across the pond. She can SWIM!"
+      es: "¡Una dorada mañana — PLOP! Un diminuto renacuajo negro se menea fuera de su huevo y cae de la hoja directo al estanque — ¡SPLASH! '¡Lo logró!' anima Papá desde la hoja. '¡Nuestra primera bebé!' Mamá observa con lágrimas de alegría. La pequeña Luna es solo del tamaño de un grano de arroz, con una cabeza redonda y una colita movediza. Mira hacia arriba a través del agua y ve las caras felices de Mamá y Papá mirándola. Luna agita su cola y cruza el estanque. ¡Puede NADAR!"
+      ru: "Одним золотым утром — ПЛЮХ! Крошечный чёрный головастик выбирается из яйца и падает с листа прямо в пруд! ВСПЛЕСК! 'Получилось!' радуется Папа с листа. 'Наш первый малыш!' Мама смотрит со слезами радости. Маленькая Луна размером всего с рисовое зёрнышко, с круглой головкой и виляющим хвостиком. Она смотрит вверх сквозь воду и видит счастливые лица Мамы и Папы. Луна взмахивает хвостом и мчится через пруд. Она умеет ПЛАВАТЬ!"
+    image: "luna-tadpole.jpg"
+    imageAlt:
+      en: "Tiny black tadpole in crystal-clear rainforest pond water, two colorful red-eyed tree frogs watching from a leaf above, golden morning light, lush tropical setting"
+      es: "Diminuto renacuajo negro en agua cristalina de estanque de selva, dos coloridas ranas arbóreas de ojos rojos observando desde una hoja arriba, luz dorada matutina"
+      ru: "Крошечный чёрный головастик в кристально чистой воде пруда тропического леса, две красноглазые древесные лягушки наблюдают с листа сверху, золотистый утренний свет"
+
+  # Meet Brio
+  - id: meet-brio
+    generate_character: true
+    use_character: "${luna-drops-in.image}"
+    action: "two tadpoles in a clear rainforest pond — one small and black, one slightly bigger and green-brown with tiny developing back legs visible, swimming together playfully among water plants and lily pads, warm golden underwater light"
+    title:
+      en: "Meet Brio, Big Brother!"
+      es: "¡Conoce a Brio, el Hermano Mayor!"
+      ru: "Знакомьтесь: Брио, старший брат!"
+    content:
+      en: "In the pond, Luna meets Brio — her big brother from the season before! Brio is a bit bigger and has already started his transformation — he has two tiny back legs growing behind his tail! 'Don't worry, little sister,' Brio says. 'The legs feel weird at first, but wait until you can JUMP! It's the best feeling ever!' Brio shows Luna the best spots for eating algae and the coziest hiding places under lily pads. He is the best big brother a tadpole could wish for."
+      es: "'¡En el estanque, Luna conoce a Brio — su hermano mayor de la temporada anterior! Brio es un poco más grande y ya ha comenzado su transformación — ¡tiene dos pequeñas patas traseras creciendo detrás de su cola! 'No te preocupes, hermanita,' dice Brio. 'Las patas se sienten raras al principio, pero espera hasta que puedas SALTAR! ¡Es la mejor sensación!' Brio le muestra a Luna los mejores lugares para comer algas y los escondites más acogedores bajo los nenúfares."
+      ru: "В пруду Луна встречает Брио — своего старшего брата из прошлого сезона! Брио немного крупнее и уже начал превращение — у него растут две крошечные задние лапки позади хвоста! 'Не волнуйся, сестрёнка,' говорит Брио. 'Лапки поначалу кажутся странными, но подожди, пока сможешь ПРЫГАТЬ! Это лучшее ощущение!' Брио показывает Луне лучшие места для поедания водорослей и самые уютные укрытия под листьями кувшинок."
+    image: "brio-portrait.jpg"
+    imageAlt:
+      en: "Two tadpoles swimming together in a clear pond — one small and black, one bigger and green-brown with tiny developing back legs, among lily pads and water plants"
+      es: "Dos renacuajos nadando juntos en un estanque claro — uno pequeño y negro, otro más grande y verde-marrón con pequeñas patas traseras en desarrollo, entre nenúfares y plantas acuáticas"
+      ru: "Два головастика плавают вместе в чистом пруду — один маленький и чёрный, другой побольше и зелёно-коричневый с крошечными развивающимися задними лапками, среди кувшинок и водных растений"
+
+  # Back Legs Appear
+  - id: back-legs-appear
+    use_characters: ["${luna-drops-in.image}"]
+    action: "cute tadpole in clear pond water, now green-colored and slightly bigger, with two small but visible back legs growing, the tadpole looks surprised and delighted at its own legs, colorful underwater scene with water plants and pebbles, warm golden light filtering through water"
+    title:
+      en: "Something is Growing!"
+      es: "¡Algo Está Creciendo!"
+      ru: "Что-то растёт!"
+    content:
+      en: "One morning, Luna feels something tickly behind her tail. She looks back and — 'PAPA! MAMA! I HAVE LEGS!' Two tiny green back legs are growing right out of her body! They're small and wobbly, but they're REAL LEGS! Papa hops down to the pond edge, beaming. 'Your transformation has begun, my little one!' Mama adds, 'I remember when my legs grew in. I couldn't stop kicking!' Luna kicks her new legs experimentally — SPLASH! She does three somersaults. This is AMAZING!"
+      es: "Una mañana, Luna siente algo que le hace cosquillas detrás de la cola. Mira hacia atrás y — '¡PAPÁ! ¡MAMÁ! ¡TENGO PATAS!' ¡Dos pequeñas patas traseras verdes están creciendo de su cuerpo! Son pequeñas y tambaleantes, pero ¡son PATAS DE VERDAD! Papá salta al borde del estanque, radiante. '¡Tu transformación ha comenzado, mi pequeña!' Mamá agrega, '¡Recuerdo cuando me crecieron las patas! ¡No podía parar de patear!' Luna patea sus nuevas patas experimentalmente — ¡SPLASH!"
+      ru: "Однажды утром Луна чувствует что-то щекотное позади хвоста. Она оглядывается и — 'ПАПА! МАМА! У МЕНЯ НОЖКИ!' Две крошечные зелёные задние лапки растут прямо из её тела! Они маленькие и шаткие, но они НАСТОЯЩИЕ НОЖКИ! Папа прыгает к краю пруда, сияя. 'Твоё превращение началось, моя маленькая!' Мама добавляет, 'Я помню, когда у меня выросли лапки. Я не могла перестать брыкаться!' Луна экспериментально пинает новыми лапками — ВСПЛЕСК!"
+    image: "luna-back-legs.jpg"
+
+  # Front Legs Appear
+  - id: front-legs-appear
+    use_characters: ["${luna-drops-in.image}"]
+    action: "tadpole transforming into a froglet — now has four legs (back legs bigger, front legs tiny and new), tail still present but shorter, body turning green, sitting on a lily pad half in half out of water, looking at its own tiny new front legs with amazement, lush rainforest pond setting with warm golden light"
+    title:
+      en: "Four Legs! A Froglet!"
+      es: "¡Cuatro Patas! ¡Una Ranita!"
+      ru: "Четыре ножки! Лягушонок!"
+    content:
+      en: "The magic keeps going! Now Luna has FOUR legs — her strong back legs for jumping, and two adorable tiny front legs for landing and climbing. Her tail is getting shorter every day. Her round tadpole head is becoming a frog-shaped head. Her skin is turning the most beautiful shade of green! 'You're becoming a frog!' Brio cheers. Luna climbs onto a lily pad for the first time — half in the water, half out. She takes her very first breath of AIR. The world smells incredible!"
+      es: "¡La magia continúa! Ahora Luna tiene CUATRO patas — sus fuertes patas traseras para saltar, y dos adorables patitas delanteras para aterrizar y trepar. Su cola se acorta cada día. Su cabeza redonda de renacuajo se está convirtiendo en cabeza de rana. ¡Su piel se está volviendo del verde más hermoso! '¡Te estás convirtiendo en rana!' anima Brio. Luna trepa a un nenúfar por primera vez. Toma su primera respiración de AIRE. ¡El mundo huele increíble!"
+      ru: "Волшебство продолжается! Теперь у Луны ЧЕТЫРЕ лапки — сильные задние для прыжков и две очаровательные крошечные передние для приземления и лазания. Хвост становится короче с каждым днём. Круглая головастиковая головка превращается в лягушачью. Кожа становится самого красивого оттенка зелёного! 'Ты становишься лягушкой!' радуется Брио. Луна забирается на лист кувшинки впервые. Она делает свой первый вдох ВОЗДУХА. Мир пахнет невероятно!"
+    image: "luna-froglet.jpg"
+
+  # First Climb
+  - id: first-climb
+    mood: [lush-botanical, translucency]
+    use_characters: ["${luna-drops-in.image}", "${meet-papa.image}"]
+    action: "tiny bright green froglet with red eyes climbing up a wet tropical plant stem for the very first time using sticky toe pads, an adult red-eyed tree frog watching from a branch above encouraging the climb, rainforest leaves glistening with dewdrops, warm golden light, the froglet looks determined and excited"
+    title:
+      en: "Sticky Toes!"
+      es: "¡Dedos Pegajosos!"
+      ru: "Липкие пальчики!"
+    content:
+      en: "Luna's tail is completely gone now, and she is a real frog! But the best surprise is on her toes — STICKY PADS! Papa teaches her how to use them. 'Press gently, and you can climb anything,' he shows her, walking straight up a wet leaf like it's nothing. Luna presses her orange toes against a stem and — she STICKS! She climbs up, up, up, higher than she's ever been. 'I can see the whole pond from up here!' she squeals. 'Welcome to the trees, my little climber,' Papa smiles."
+      es: "¡La cola de Luna ha desaparecido por completo, y es una rana de verdad! Pero la mejor sorpresa está en sus dedos — ¡ALMOHADILLAS PEGAJOSAS! Papá le enseña a usarlas. 'Presiona suavemente, y puedes trepar cualquier cosa,' le muestra, caminando directamente por una hoja mojada como si nada. Luna presiona sus dedos naranjas contra un tallo y — ¡se PEGA! Trepa arriba, arriba, arriba, más alto de lo que ha estado jamás. '¡Puedo ver todo el estanque desde aquí!' chilla."
+      ru: "Хвост Луны полностью исчез, и она — настоящая лягушка! Но лучший сюрприз — на её пальчиках — ЛИПКИЕ ПОДУШЕЧКИ! Папа учит её пользоваться ими. 'Нажми нежно, и ты сможешь залезть на что угодно,' показывает он, шагая прямо вверх по мокрому листу как ни в чём не бывало. Луна прижимает оранжевые пальчики к стеблю и — она ПРИЛИПАЕТ! Она карабкается вверх, вверх, вверх, выше, чем когда-либо. 'Я вижу весь пруд отсюда!' визжит она."
+    image: "luna-first-climb.jpg"
+
+  # Flash the Red Eyes
+  - id: flash-red-eyes
+    mood: [translucency, soft-intimate]
+    use_characters: ["${luna-drops-in.image}", "${meet-mama.image}"]
+    action: "small bright green frog with huge wide-open glowing red eyes on a green leaf, eyes opened dramatically wide in a startle display, the red eyes seeming to glow in the dim rainforest light, adult frog nearby demonstrating the same pose, playful and dramatic scene, lush rainforest setting"
+    title:
+      en: "The Red Eye Trick!"
+      es: "¡El Truco de los Ojos Rojos!"
+      ru: "Фокус с красными глазами!"
+    content:
+      en: "'Time for the best trick in the rainforest,' says Mama with a wink. 'When someone sneaks up on you — FLASH!' Mama opens her huge red eyes as wide as they'll go. The sudden burst of bright red is startling! 'It surprises them so much, they forget what they were doing!' Luna practices in front of a dewdrop mirror. She opens her eyes wide — FLASH! 'Wow!' says Brio, genuinely startled. 'You're a natural!' Luna giggles. Having red eyes is the COOLEST thing ever."
+      es: "'Hora del mejor truco de la selva,' dice Mamá con un guiño. 'Cuando alguien se acerca sigilosamente — ¡FLASH!' Mamá abre sus enormes ojos rojos lo más que puede. ¡El repentino destello de rojo brillante es sorprendente! '¡Los sorprende tanto que olvidan lo que estaban haciendo!' Luna practica frente a un espejo de gota de rocío. Abre los ojos bien grandes — ¡FLASH! '¡Wow!' dice Brio, genuinamente sorprendido. '¡Eres una natural!'"
+      ru: "'Время для лучшего фокуса в тропическом лесу,' говорит Мама с подмигиванием. 'Когда кто-то подкрадывается — ВСПЫШКА!' Мама широко раскрывает свои огромные красные глаза. Внезапная вспышка ярко-красного поражает! 'Это так удивляет их, что они забывают, что делали!' Луна практикуется перед зеркалом из капельки росы. Она широко раскрывает глаза — ВСПЫШКА! 'Ого!' говорит Брио, по-настоящему удивлённый. 'Ты прирождённая!'"
+    image: "luna-red-eye-flash.jpg"
+
+  # First Bug Catch
+  - id: first-bug-catch
+    use_characters: ["${luna-drops-in.image}"]
+    action: "small bright green red-eyed tree frog on a branch catching a tiny fly with its long sticky pink tongue, tongue extended in mid-catch, the frog looks triumphant and delighted, lush rainforest setting with flowers and butterflies in background, warm golden light"
+    title:
+      en: "The Sticky Tongue!"
+      es: "¡La Lengua Pegajosa!"
+      ru: "Липкий язычок!"
+    content:
+      en: "Luna is hungry, and Papa says it's time for a VERY important lesson. 'See that little fly?' Papa points. 'Watch this.' His tongue SHOOTS out like a pink lightning bolt — ZAP! — and the fly is gone. 'YOUR TURN!' Papa says. Luna focuses hard. She sees a tiny gnat land on a flower. She takes aim and — THWAP! Her sticky tongue zaps out and catches it! Her very first bug! It's delicious! 'THAT WAS AMAZING!' Luna bounces up and down. Papa beams. 'That's my girl.'"
+      es: "Luna tiene hambre, y Papá dice que es hora de una lección MUY importante. '¿Ves esa mosquita?' señala Papá. 'Mira esto.' Su lengua SALE disparada como un rayo rosa — ¡ZAP! — y la mosca desaparece. '¡TU TURNO!' dice Papá. Luna se concentra mucho. Ve un pequeño mosquito posarse en una flor. Apunta y — ¡THWAP! ¡Su lengua pegajosa sale disparada y lo atrapa! ¡Su primer bichito! ¡Está delicioso! '¡ESO FUE INCREÍBLE!' Luna salta de arriba abajo."
+      ru: "Луна голодна, и Папа говорит, что пришло время ОЧЕНЬ важного урока. 'Видишь ту мушку?' показывает Папа. 'Смотри.' Его язык ВЫСТРЕЛИВАЕТ как розовая молния — ЗАП! — и мушки нет. 'ТВОЯ ОЧЕРЕДЬ!' говорит Папа. Луна сосредотачивается. Она видит крошечного комарика на цветке. Прицеливается и — ШЛ-ЛЁП! Её липкий язычок выстреливает и ловит его! Её самый первый жучок! Он вкусный! 'ЭТО БЫЛО ПОТРЯСАЮЩЕ!' Луна прыгает от радости."
+    image: "luna-tongue-catch.jpg"
+
+  # The Great Leap
+  - id: the-great-leap
+    mood: [epic-skies, golden-hour]
+    use_characters: ["${luna-drops-in.image}", "${meet-papa.image}", "${meet-mama.image}", "${meet-brio.image}"]
+    action: "small bright green red-eyed tree frog making a magnificent leap between two branches high in the rainforest canopy, legs fully extended, caught mid-air, adult frog family watching from branches with proud expressions, golden sunset light streaming through leaves, magical triumphant moment"
+    title:
+      en: "Luna's Great Leap!"
+      es: "¡El Gran Salto de Luna!"
+      ru: "Великий прыжок Луны!"
+    content:
+      en: "The moment has come — Luna's GREAT LEAP! She stands on a branch high up in the canopy. The next branch is FAR away. Mama, Papa, and Brio all watch. 'You can do it, Luna!' they cheer. Luna crouches, feels the power in her strong back legs, and — LEAPS! She SOARS through the golden sunset air, legs outstretched like she's flying, and — STICK! She lands perfectly on the far branch! 'I DID IT! I DID IT!' The whole family cheers. Luna went from a tiny egg to the greatest leaper in the rainforest. And it all started on one perfect leaf."
+      es: "¡Ha llegado el momento — el GRAN SALTO de Luna! Está de pie en una rama alta en la copa de los árboles. La siguiente rama está LEJOS. Mamá, Papá y Brio observan. '¡Tú puedes, Luna!' animan. Luna se agacha, siente el poder en sus fuertes patas traseras, y — ¡SALTA! ¡VUELA por el aire dorado del atardecer, con las patas extendidas como si volara, y — ¡STICK! ¡Aterriza perfectamente en la rama lejana! '¡LO LOGRÉ! ¡LO LOGRÉ!' Toda la familia celebra."
+      ru: "Момент настал — ВЕЛИКИЙ ПРЫЖОК Луны! Она стоит на ветке высоко в кроне. Следующая ветка ДАЛЕКО. Мама, Папа и Брио смотрят. 'Ты сможешь, Луна!' подбадривают они. Луна приседает, чувствует силу в своих крепких задних лапках, и — ПРЫГАЕТ! Она ПАРИТ сквозь золотой закатный воздух, лапки вытянуты, будто она летит, и — ПРИЛИП! Она идеально приземляется на дальнюю ветку! 'Я СДЕЛАЛА ЭТО!' Вся семья ликует."
+    image: "luna-great-leap.jpg"
+    imageAlt:
+      en: "Small bright green red-eyed tree frog leaping magnificently between branches in golden sunset light, family of frogs watching proudly, magical rainforest canopy"
+      es: "Pequeña rana arbórea verde de ojos rojos saltando magníficamente entre ramas en la luz dorada del atardecer, familia de ranas observando con orgullo, mágica copa de la selva"
+      ru: "Маленькая ярко-зелёная красноглазая древесная лягушка великолепно прыгающая между ветвями в золотистом закатном свете, семья лягушек гордо наблюдает, волшебная крона тропического леса"
+
+  # The Rainforest Chorus
+  - id: rainforest-chorus
+    mood: [epic-skies, lush-botanical, translucency]
+    use_characters: ["${luna-drops-in.image}", "${meet-papa.image}", "${meet-mama.image}", "${meet-brio.image}"]
+    action: "a family of four red-eyed tree frogs sitting together on a large branch in the moonlit rainforest, all with mouths open singing their frog chorus together, dewdrops sparkling on leaves around them, warm moonlight, fireflies glowing nearby, magical and cozy nighttime scene, the whole family together and happy"
+    title:
+      en: "Our Family Song"
+      es: "Nuestra Canción Familiar"
+      ru: "Наша семейная песня"
+    content:
+      en: "As the moon rises over the rainforest, Luna joins the greatest concert on Earth — the frog chorus! Papa's voice is a deep, warm 'CROCK-CROCK.' Mama's voice is a gentle, silvery 'PEEP-PEEP.' Brio's is a bouncy 'RIBBIT-RIBBIT.' And Luna? Luna has her very own special voice — a bright, happy 'KREEE-KREEE!' Together, the four of them sit on their favorite branch, singing to the moon. Around them, a hundred different frog voices join in. The rainforest is alive with music. And Luna knows: this is exactly where she belongs."
+      es: "Cuando la luna se eleva sobre la selva, Luna se une al mayor concierto de la Tierra — ¡el coro de ranas! La voz de Papá es un profundo y cálido 'CROAC-CROAC.' La voz de Mamá es un suave y plateado 'PIP-PIP.' La de Brio es un alegre 'RIBBIT-RIBBIT.' ¿Y Luna? Luna tiene su propia voz especial — un brillante y feliz '¡CRIIII-CRIIII!' Juntos, los cuatro se sientan en su rama favorita, cantándole a la luna. A su alrededor, cien voces diferentes de ranas se unen. La selva está viva con música."
+      ru: "Когда луна поднимается над тропическим лесом, Луна присоединяется к величайшему концерту на Земле — лягушачьему хору! Голос Папы — глубокий, тёплый 'КВАА-КВАА.' Голос Мамы — нежный, серебристый 'ПИП-ПИП.' У Брио — весёлый 'РИБИТ-РИБИТ.' А Луна? У Луны свой особенный голос — яркий, счастливый 'КРИИ-КРИИ!' Вчетвером они сидят на своей любимой ветке и поют луне. Вокруг сотня разных лягушачьих голосов присоединяются. Тропический лес полон музыки."
+    image: "family-chorus.jpg"
+
+  # Hidden sections for viewer detail and fun fact image generation
+  - id: "detail-sticky-toes"
+    image: "detail-sticky-toes.jpg"
+    referenceImage: "${luna-drops-in.image}"
+    prompt: "Extreme close-up of a red-eyed tree frog's orange toe pads showing the sticky disc-like structure, the toe gripping a wet leaf surface. Classic hand-drawn Disney animation style, warm educational illustration, child-friendly."
+    hidden: true
+
+  - id: "detail-skin-texture"
+    image: "detail-skin-texture.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the frog from reference, close-up of red-eyed tree frog's brilliant green skin showing the smooth, moist texture and the transition to blue-yellow striped sides. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-eye-closeup"
+    image: "detail-eye-closeup.jpg"
+    referenceImage: "${luna-drops-in.image}"
+    prompt: "Using the frog from reference, extreme close-up of a red-eyed tree frog's stunning red eye showing the vertical pupil and golden iris details, the eye reflecting the rainforest. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-tongue-anatomy"
+    image: "detail-tongue-anatomy.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the frog from reference, illustration showing a tree frog's tongue extended, showing the sticky tip and the speed of the catch, a small fly being caught. Same character and classic hand-drawn Disney animation style, educational."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-metamorphosis-img"
+    image: "fun-fact-metamorphosis.jpg"
+    prompt: "Educational illustration showing the stages of frog metamorphosis in a circular diagram: egg cluster on leaf, tiny tadpole, tadpole with back legs, tadpole with four legs and shrinking tail, froglet, adult red-eyed tree frog. Warm classic hand-drawn Disney style, child-friendly, colorful rainforest pond background."
+    hidden: true
+
+  - id: "fun-fact-breathing-img"
+    image: "fun-fact-breathing.jpg"
+    referenceImage: "${luna-drops-in.image}"
+    prompt: "Using the tadpole from reference, educational illustration showing a tadpole breathing through gills underwater versus a frog breathing through lungs and skin on land, side-by-side comparison. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-jumping-img"
+    image: "fun-fact-jumping.jpg"
+    referenceImage: "${luna-drops-in.image}"
+    prompt: "Using the frog from reference, show a red-eyed tree frog making an incredible leap, with motion lines showing the distance — 20 times its own body length. Same character and classic hand-drawn Disney animation style, dynamic and joyful."
+    hidden: true
+
+  - id: "fun-fact-colors-img"
+    image: "fun-fact-colors.jpg"
+    prompt: "Collection of different colorful frog species arranged beautifully: red-eyed tree frog (green with red eyes), blue poison dart frog, strawberry poison frog (red), golden poison frog (yellow), glass frog (transparent). Each looks like a living jewel. Classic hand-drawn Disney animation style, vibrant colors, child-friendly."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming magazine cover featuring a small bright green red-eyed tree frog with huge glowing red eyes sitting on a colorful flower in the foreground, looking directly at the viewer with a friendly expression. Behind, a slightly larger adult frog watches from a leaf. The background shows a magical tropical rainforest with golden light, dewdrops, and a crystal-clear pond below. A tiny tadpole is visible in the water. Style: Classic hand-drawn Disney animation — warm organic lines, soulful expressive eyes, painterly brushwork, vintage animation warmth. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${luna-drops-in.image}"
+      - "${meet-papa.image}"
+      - "${meet-mama.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Bright green red-eyed tree frog on a flower, parents on a nearby leaf, magical rainforest with sparkling pond below"
+      es: "Rana arbórea de ojos rojos verde brillante en una flor, padres en una hoja cercana, selva mágica con estanque brillante abajo"
+      ru: "Ярко-зелёная красноглазая древесная лягушка на цветке, родители на соседнем листе, волшебный тропический лес со сверкающим прудом внизу"
+
+funFacts:
+  title:
+    en: "Amazing Frog Facts!"
+    es: "¡Datos Asombrosos sobre Ranas!"
+    ru: "Удивительные факты о лягушках!"
+  facts:
+    - title:
+        en: "The Great Metamorphosis"
+        es: "La Gran Metamorfosis"
+        ru: "Великий метаморфоз"
+      content:
+        en: "Frogs go through one of nature's most amazing transformations! They start as eggs, hatch into tadpoles that breathe water through gills, then slowly grow legs, absorb their tails, develop lungs, and become air-breathing frogs. The whole process takes about 12 to 16 weeks — that's like becoming a completely different animal in just three months!"
+        es: "¡Las ranas pasan por una de las transformaciones más asombrosas de la naturaleza! Comienzan como huevos, nacen como renacuajos que respiran agua a través de branquias, luego lentamente les crecen patas, absorben sus colas, desarrollan pulmones y se convierten en ranas que respiran aire. ¡Todo el proceso toma de 12 a 16 semanas — es como convertirse en un animal completamente diferente en solo tres meses!"
+        ru: "Лягушки проходят через одно из самых удивительных превращений в природе! Начинают как яйца, вылупляются в головастиков, дышащих жабрами, потом постепенно отращивают лапки, впитывают хвосты, развивают лёгкие и становятся лягушками, дышащими воздухом. Весь процесс занимает 12-16 недель — это как стать совершенно другим животным всего за три месяца!"
+      image: "fun-fact-metamorphosis.jpg"
+
+    - title:
+        en: "Breathing Through Skin!"
+        es: "¡Respirando a Través de la Piel!"
+        ru: "Дышат через кожу!"
+      content:
+        en: "Frogs can breathe through their skin! Their moist, thin skin allows oxygen to pass right through. This means frogs can breathe underwater through their skin (though tadpoles use gills). That's why frogs always need to stay moist — their skin is like a second pair of lungs! Some frogs don't even have lungs at all and breathe entirely through their skin."
+        es: "¡Las ranas pueden respirar a través de su piel! Su piel húmeda y delgada permite que el oxígeno pase directamente. Esto significa que las ranas pueden respirar bajo el agua a través de su piel (aunque los renacuajos usan branquias). ¡Por eso las ranas siempre necesitan mantenerse húmedas — su piel es como un segundo par de pulmones!"
+        ru: "Лягушки могут дышать через кожу! Их влажная, тонкая кожа позволяет кислороду проходить прямо через неё. Это значит, что лягушки могут дышать под водой через кожу (хотя головастики используют жабры). Вот почему лягушки всегда должны оставаться влажными — их кожа как вторая пара лёгких!"
+      image: "fun-fact-breathing.jpg"
+
+    - title:
+        en: "Super Jumpers"
+        es: "Súper Saltadores"
+        ru: "Суперпрыгуны"
+      content:
+        en: "Some frogs can jump over 20 times their own body length in a single leap! That would be like a human jumping the length of a basketball court. Their powerful back legs work like springs, storing energy and releasing it all at once. Red-eyed tree frogs are especially good jumpers — they leap from branch to branch high up in the rainforest canopy!"
+        es: "¡Algunas ranas pueden saltar más de 20 veces la longitud de su cuerpo en un solo salto! Eso sería como si un humano saltara la longitud de una cancha de baloncesto. Sus poderosas patas traseras funcionan como resortes, almacenando energía y liberándola de golpe. ¡Las ranas arbóreas de ojos rojos son especialmente buenas saltadoras!"
+        ru: "Некоторые лягушки могут прыгнуть на расстояние более 20 длин своего тела за один прыжок! Это как если бы человек перепрыгнул баскетбольную площадку. Их мощные задние лапы работают как пружины, накапливая энергию и высвобождая её разом. Красноглазые древесные лягушки — особенно хорошие прыгуны!"
+      image: "fun-fact-jumping.jpg"
+
+    - title:
+        en: "Rainbow of Frogs"
+        es: "Arcoíris de Ranas"
+        ru: "Радуга лягушек"
+      content:
+        en: "Frogs come in every color of the rainbow! There are bright blue poison dart frogs, strawberry-red frogs, golden yellow frogs, and even see-through glass frogs where you can see their organs! The bright colors often mean 'don't eat me!' — warning that the frog might not taste very nice. Red-eyed tree frogs use their colors to startle anyone who bothers them — surprise!"
+        es: "¡Las ranas vienen en todos los colores del arcoíris! Hay ranas dardo venenosas azul brillante, ranas rojo fresa, ranas amarillo dorado, ¡e incluso ranas de cristal transparentes donde puedes ver sus órganos! Los colores brillantes a menudo significan '¡no me comas!' — advirtiendo que la rana podría no saber muy bien."
+        ru: "Лягушки бывают всех цветов радуги! Есть ярко-голубые ядовитые лягушки-дротики, клубнично-красные лягушки, золотисто-жёлтые лягушки и даже прозрачные стеклянные лягушки, сквозь которых видны органы! Яркие цвета часто означают 'не ешь меня!' — предупреждая, что лягушка может быть невкусной."
+      image: "fun-fact-colors.jpg"
+
+imageGeneration:
+  characters:
+    papa-verde:
+      name: "Papa Verde"
+      description: "Handsome red-eyed tree frog father with brilliant green body, huge glowing red eyes, blue-yellow striped sides, bright orange feet"
+      uniqueFeatures:
+        - "LARGEST frog character — visibly bigger and more muscular than Mama"
+        - "BRILLIANT emerald green — the most saturated, vivid green of all characters"
+        - "HUGE glowing red eyes — the biggest eyes proportionally, like burning rubies"
+        - "Bold BLUE AND YELLOW striped sides — thick, vivid stripes"
+        - "BRIGHT ORANGE feet — like wearing orange gloves"
+        - "Wide, confident stance with toes splayed out"
+      personality: "Proud and watchful — sits tall and upright, chest puffed out, always alert and guarding"
+      notLike: "NOT soft or delicate like Mama Hoja, NOT tiny like Luna or Brio"
+
+    mama-hoja:
+      name: "Mama Hoja"
+      description: "Beautiful red-eyed tree frog mother with soft green coloring, gentle red eyes, slightly smaller and more delicate than Papa"
+      uniqueFeatures:
+        - "SMALLER and more DELICATE than Papa — slimmer build, more graceful"
+        - "SOFT SAGE GREEN coloring — noticeably lighter and less saturated than Papa's emerald"
+        - "Gentler, SOFTER red eyes — more orange-red than Papa's ruby-red"
+        - "Thinner, more delicate blue-yellow side stripes — pastel compared to Papa's bold"
+        - "Lighter PEACH-ORANGE feet — not as bright as Papa's vivid orange"
+        - "Rounder face with a sweeter expression"
+      personality: "Gentle and nurturing — often leaning down toward the little ones, soft caring posture"
+      notLike: "NOT as vibrant or bold-colored as Papa Verde, NOT tiny like the young ones"
+
+    luna:
+      name: "Luna"
+      description: "Starts as tiny black tadpole, transforms through stages into a small bright green red-eyed tree frog with huge curious red eyes"
+      uniqueFeatures:
+        - "TINIEST character — half the size of Mama Hoja"
+        - "As tadpole: COMPLETELY BLACK with a round head and wiggly tail"
+        - "As frog: bright green but LIGHTER than Papa, with disproportionately HUGE curious eyes"
+        - "As frog: smaller and rounder than Mama — baby proportions with oversized head"
+        - "Signature look of WONDER — eyes always wide open, head tilted with curiosity"
+        - "Legs are shorter and chubbier than adult frogs"
+      personality: "Curious and amazed — always looking at something with wide eyes, head tilted to one side"
+      notLike: "NOT as vibrant as Papa, NOT as graceful as Mama, much SMALLER than both parents"
+
+    brio:
+      name: "Brio"
+      description: "Luna's older brother, slightly bigger green-brown tadpole with developing legs, later a young red-eyed tree frog"
+      uniqueFeatures:
+        - "As tadpole: GREEN-BROWN coloring — distinctly different from Luna's pure black"
+        - "As tadpole: BIGGER than Luna with visible developing back legs"
+        - "As frog: slightly BIGGER than Luna but still smaller than parents"
+        - "As frog: GREEN-BROWN tint — muddier, less pure green than Luna or parents"
+        - "WIDER body than Luna — stockier, less delicate build"
+        - "Slightly lopsided grin — one side of mouth curves up more"
+      personality: "Adventurous and bold — always leaping first, chest forward, ready for action"
+      notLike: "NOT pure black like Luna-tadpole, NOT pure green like Luna-frog, NOT as big as parents"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in skin, leaves, and water. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Lush magical tropical rainforest setting with rich greens, golden light, dewdrops, and colorful flowers. Child-friendly and inviting."
+
+viewerDetails:
+- title:
+    en: "Super Sticky Toes"
+    es: "Dedos Súper Pegajosos"
+    ru: "Суперлипкие пальчики"
+  description:
+    en: "Look at Luna's orange toes — see those round discs at the tips? Those are sticky toe pads! Each pad works like a tiny suction cup, creating wet adhesion that lets tree frogs climb smooth leaves, wet bark, and even glass. The pads produce a thin layer of mucus that fills every tiny bump on a surface, creating an incredibly strong grip. That's how Luna can sleep upside down!"
+    es: "¡Mira los dedos naranjas de Luna — ves esos discos redondos en las puntas? ¡Esas son almohadillas pegajosas! Cada almohadilla funciona como una pequeña ventosa, creando adhesión húmeda que permite a las ranas arbóreas trepar hojas lisas, corteza mojada e incluso vidrio. Las almohadillas producen una fina capa de mucosa que llena cada pequeño bulto en una superficie."
+    ru: "Посмотрите на оранжевые пальчики Луны — видите круглые диски на кончиках? Это липкие подушечки! Каждая работает как крошечная присоска, создавая влажную адгезию, которая позволяет древесным лягушкам карабкаться по гладким листьям, мокрой коре и даже стеклу. Подушечки выделяют тонкий слой слизи, заполняющий каждую неровность поверхности."
+  image: "detail-sticky-toes.jpg"
+
+- title:
+    en: "Living Jewel Skin"
+    es: "Piel de Joya Viviente"
+    ru: "Кожа-драгоценность"
+  description:
+    en: "Papa Verde's brilliant green skin isn't just beautiful — it's alive with special abilities! The green color comes from a combination of blue and yellow pigments layered in the skin. During the day, red-eyed tree frogs close their eyes and tuck in their legs, showing only green — perfect camouflage among the leaves. Their blue-and-yellow striped sides are hidden until they jump!"
+    es: "¡La brillante piel verde de Papá Verde no es solo hermosa — está viva con habilidades especiales! El color verde proviene de una combinación de pigmentos azules y amarillos en capas de la piel. Durante el día, las ranas de ojos rojos cierran los ojos y recogen las patas, mostrando solo verde — perfecto camuflaje entre las hojas."
+    ru: "Блестящая зелёная кожа Папы Верде не просто красива — она обладает особыми способностями! Зелёный цвет образуется из комбинации синих и жёлтых пигментов, расположенных слоями в коже. Днём красноглазые древесные лягушки закрывают глаза и поджимают лапки, показывая только зелёное — идеальный камуфляж среди листьев."
+  image: "detail-skin-texture.jpg"
+
+- title:
+    en: "Ruby Red Eyes"
+    es: "Ojos Rojo Rubí"
+    ru: "Рубиновые глаза"
+  description:
+    en: "Luna's stunning red eyes serve an important purpose — they're a defense mechanism called 'startle coloration.' When a sleeping frog opens its eyes suddenly, the flash of bright red confuses predators, giving the frog time to escape. The vertical slit pupil can open wide in darkness for excellent night vision, since these frogs are nocturnal — they're most active at night!"
+    es: "¡Los impresionantes ojos rojos de Luna tienen un propósito importante — son un mecanismo de defensa llamado 'coloración de sobresalto'! Cuando una rana dormida abre los ojos de repente, el destello de rojo brillante confunde a los depredadores, dando tiempo a la rana para escapar. La pupila vertical puede abrirse en la oscuridad para una excelente visión nocturna."
+    ru: "Потрясающие красные глаза Луны служат важной цели — это защитный механизм, называемый 'окраска вспугивания.' Когда спящая лягушка внезапно открывает глаза, вспышка ярко-красного сбивает с толку хищников, давая лягушке время убежать. Вертикальный зрачок может широко раскрываться в темноте для отличного ночного зрения."
+  image: "detail-eye-closeup.jpg"
+
+- title:
+    en: "Lightning Tongue"
+    es: "Lengua Relámpago"
+    ru: "Молниеносный язык"
+  description:
+    en: "A frog's tongue is one of the fastest muscles in the animal kingdom! It can extend and retract in just 0.07 seconds — faster than you can blink! The tongue is attached at the front of the mouth (not the back like ours), so it can flip out extra far. The tip is covered in super-sticky mucus that's 50 times stickier than anything humans have made. Once a bug lands on that tongue, there's no escape!"
+    es: "¡La lengua de una rana es uno de los músculos más rápidos del reino animal! Puede extenderse y retractarse en solo 0.07 segundos — ¡más rápido de lo que puedes parpadear! La lengua está pegada en la parte delantera de la boca (no atrás como la nuestra), así que puede salir extra lejos. La punta está cubierta de una mucosa súper pegajosa que es 50 veces más pegajosa que cualquier cosa hecha por humanos."
+    ru: "Язык лягушки — одна из самых быстрых мышц в животном мире! Он может выдвигаться и втягиваться всего за 0.07 секунды — быстрее, чем вы моргаете! Язык прикреплён к передней части рта (не к задней, как наш), поэтому может выбрасываться очень далеко. Кончик покрыт суперлипкой слизью, которая в 50 раз липче всего, что создали люди."
+  image: "detail-tongue-anatomy.jpg"
+
+routing:
+    openai:
+      - "hero-rainforest.jpg"
+      - "fun-fact-metamorphosis.jpg"
+      - "fun-fact-colors.jpg"
+      - "detail-skin-texture.jpg"
+
+    gemini:
+      - "papa-verde-portrait.jpg"
+      - "mama-hoja-portrait.jpg"
+      - "luna-tadpole.jpg"
+      - "brio-portrait.jpg"
+      - "luna-back-legs.jpg"
+      - "luna-froglet.jpg"
+      - "luna-first-climb.jpg"
+      - "luna-red-eye-flash.jpg"
+      - "luna-tongue-catch.jpg"
+      - "luna-great-leap.jpg"
+      - "family-chorus.jpg"
+      - "detail-sticky-toes.jpg"
+      - "detail-eye-closeup.jpg"
+      - "detail-tongue-anatomy.jpg"
+      - "fun-fact-breathing.jpg"
+      - "fun-fact-jumping.jpg"
+      - "magazine-cover.jpg"

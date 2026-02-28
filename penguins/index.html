@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguins: The Warmest Family on Ice - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Penguins: The Warmest Family on Ice</h1>
+        <h1 data-lang="es">Pingüinos: La Familia Más Cálida del Hielo</h1>
+        <h1 data-lang="ru">Пингвины: Самая тёплая семья на льду</h1>
+        <p data-lang="en" class="active">Kaia&#x27;s Cozy Winter Adventure</p>
+        <p data-lang="es">La Acogedora Aventura Invernal de Kaia</p>
+        <p data-lang="ru">Уютное зимнее приключение Кайи</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-antarctica-dawn.jpg"
+             alt="Penguins"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Penguins</h2>
+            <h2 class="hero-title" data-lang="es">Pingüinos</h2>
+            <h2 class="hero-title" data-lang="ru">Пингвины</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Warmest Family on Ice</p>
+            <p class="hero-subtitle" data-lang="es">La Familia Más Cálida del Hielo</p>
+            <p class="hero-subtitle" data-lang="ru">Самая тёплая семья на льду</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/papa-frost-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Proud tall emperor penguin father with golden-orange chest patch, standing on ice with an egg balanced on his feet, warm gentle expression, soft Antarctic light"
+                 data-alt-en="Proud tall emperor penguin father with golden-orange chest patch, standing on ice with an egg balanced on his feet, warm gentle expression, soft Antarctic light"
+                 data-alt-es="Orgulloso y alto pingüino emperador padre con parche dorado-anaranjado en el pecho, de pie sobre el hielo con un huevo equilibrado en sus patas, expresión cálida y gentil, suave luz antártica"
+                 data-alt-ru="Гордый высокий отец-пингвин с золотисто-оранжевым пятном на груди, стоящий на льду с яйцом на лапах, тёплое нежное выражение, мягкий антарктический свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Papa Frost</h2>
+            <h2 data-lang="es">Conoce a Papá Frost</h2>
+            <h2 data-lang="ru">Знакомьтесь: Папа Фрост</h2>
+            <div data-lang="en" class="active">
+                <p>Papa Frost is the proudest penguin in all of Antarctica! He is tall and handsome, with a sleek black-and-white tuxedo and a beautiful golden-orange patch on his chest that glows like sunshine. Right now, Papa has the most important job in the world — he is keeping a very special egg warm on top of his feet, tucked snugly under his belly pouch. &#x27;Don&#x27;t worry, little one,&#x27; he whispers to the egg. &#x27;I&#x27;ll keep you warm until Mama comes home.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Papá Frost es el pingüino más orgulloso de toda la Antártida! Es alto y apuesto, con un elegante esmoquin blanco y negro y un hermoso parche dorado-anaranjado en el pecho que brilla como el sol. Ahora mismo, Papá tiene el trabajo más importante del mundo — está manteniendo un huevo muy especial caliente sobre sus patas, acurrucado bajo el bolsillo de su barriga. &#x27;No te preocupes, pequeño,&#x27; le susurra al huevo. &#x27;Te mantendré caliente hasta que Mamá vuelva a casa.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Папа Фрост — самый гордый пингвин во всей Антарктиде! Он высокий и красивый, в элегантном чёрно-белом фраке с прекрасным золотисто-оранжевым пятном на груди, которое светится как солнышко. Сейчас у Папы самая важная работа в мире — он согревает очень особенное яйцо на своих лапах, уютно спрятанное под складкой на животе. &#x27;Не волнуйся, малышка,&#x27; шепчет он яйцу. &#x27;Я буду греть тебя, пока Мама не вернётся домой.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/great-huddle.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Cozy Huddle</h2>
+            <h2 data-lang="es">El Acogedor Grupo</h2>
+            <h2 data-lang="ru">Уютное сплочение</h2>
+            <div data-lang="en" class="active">
+                <p>When the wind blows cold, the penguin papas have a brilliant idea — they huddle together! Hundreds of penguins press close, sharing their warmth like one enormous feathery blanket. They take turns — the ones on the outside slowly shuffle to the warm center, and the warm ones move out to take their turn. &#x27;We take care of each other,&#x27; Papa tells the egg. &#x27;That&#x27;s what families do.&#x27; Together, they are warmer than any house!</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando el viento sopla frío, los papás pingüinos tienen una idea brillante — ¡se acurrucan juntos! Cientos de pingüinos se aprietan, compartiendo su calor como una enorme manta de plumas. Se turnan — los de afuera se mueven lentamente al centro cálido, y los calientes salen a tomar su turno. &#x27;¡Nos cuidamos unos a otros,&#x27; le dice Papá al huevo. &#x27;Eso hacen las familias.&#x27; ¡Juntos son más cálidos que cualquier casa!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда ветер дует холодный, папы-пингвины придумывают блестящую идею — они жмутся друг к другу! Сотни пингвинов прижимаются, делясь теплом как одно огромное пуховое одеяло. Они чередуются — те, кто снаружи, медленно перемещаются в тёплый центр, а согретые выходят наружу. &#x27;Мы заботимся друг о друге,&#x27; говорит Папа яйцу. &#x27;Вот что делают семьи.&#x27; Вместе они теплее любого дома!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/mama-pearl-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Beautiful female emperor penguin with soft silver-white chest and gentle eyes, standing on sparkling ice, warm and loving expression"
+                 data-alt-en="Beautiful female emperor penguin with soft silver-white chest and gentle eyes, standing on sparkling ice, warm and loving expression"
+                 data-alt-es="Hermosa pingüino emperador hembra con pecho blanco-plateado suave y ojos dulces, de pie sobre hielo brillante, expresión cálida y amorosa"
+                 data-alt-ru="Красивая самка императорского пингвина с мягкой серебристо-белой грудкой и нежными глазами, стоящая на сверкающем льду, тёплое и любящее выражение"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama Pearl Comes Home!</h2>
+            <h2 data-lang="es">¡Mamá Pearl Vuelve a Casa!</h2>
+            <h2 data-lang="ru">Мама Перл возвращается домой!</h2>
+            <div data-lang="en" class="active">
+                <p>One beautiful morning, a familiar call rings across the ice — &#x27;I&#x27;m HOME!&#x27; It&#x27;s Mama Pearl! She&#x27;s been on the most amazing fishing trip, diving deep into the sparkling ocean to bring back the very best food for her family. Mama is sleek and beautiful, with a soft silver-white chest and the gentlest eyes. She and Papa sing their special song to find each other among thousands of penguins. When they meet, they bow to each other and tap beaks — a penguin kiss!</p>
+            </div>
+            <div data-lang="es">
+                <p>Una hermosa mañana, un llamado familiar resuena por el hielo — &#x27;¡Estoy en CASA!&#x27; ¡Es Mamá Pearl! Ha estado en el viaje de pesca más increíble, buceando profundamente en el océano brillante para traer la mejor comida para su familia. Mamá es elegante y hermosa, con un pecho blanco-plateado suave y los ojos más dulces. Ella y Papá cantan su canción especial para encontrarse entre miles de pingüinos. Cuando se encuentran, se inclinan uno al otro y chocan picos — ¡un beso de pingüino!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Одним прекрасным утром знакомый зов раздаётся надо льдом — &#x27;Я ДОМА!&#x27; Это Мама Перл! Она была в самом удивительном рыболовном путешествии, ныряя глубоко в сверкающий океан, чтобы принести лучшую еду для семьи. Мама изящная и красивая, с мягкой серебристо-белой грудкой и самыми нежными глазами. Она и Папа поют свою особенную песню, чтобы найти друг друга среди тысяч пингвинов. Когда они встречаются, они кланяются и касаются клювами — пингвиний поцелуй!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/kaia-hatches.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Welcome, Little Kaia!</h2>
+            <h2 data-lang="es">¡Bienvenida, Pequeña Kaia!</h2>
+            <h2 data-lang="ru">Добро пожаловать, маленькая Кайя!</h2>
+            <div data-lang="en" class="active">
+                <p>CRACK! A tiny sound comes from the egg. CRACK-CRACK! Papa and Mama watch breathlessly. And then — a little grey head pops out! &#x27;Hello, world!&#x27; Baby Kaia blinks her enormous dark eyes and sees her parents for the very first time. She is the fluffiest, most adorable ball of silver-grey down ever born. Papa&#x27;s eyes fill with happy tears. Mama nuzzles Kaia&#x27;s tiny head with her beak. &#x27;You&#x27;re here,&#x27; they both whisper. &#x27;Our beautiful baby is here.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡CRAC! Un sonido diminuto sale del huevo. ¡CRAC-CRAC! Papá y Mamá observan sin respirar. Y entonces — ¡una cabecita gris asoma! &#x27;¡Hola, mundo!&#x27; La bebé Kaia parpadea con sus enormes ojos oscuros y ve a sus padres por primera vez. Es la bolita de plumón gris-plateado más esponjosa y adorable jamás nacida. Los ojos de Papá se llenan de lágrimas felices. Mamá acaricia la cabecita de Kaia con su pico. &#x27;Estás aquí,&#x27; susurran ambos. &#x27;Nuestra hermosa bebé está aquí.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>КРАК! Крошечный звук раздаётся из яйца. КРАК-КРАК! Папа и Мама смотрят затаив дыхание. И тогда — маленькая серая головка появляется! &#x27;Привет, мир!&#x27; Малышка Кайя моргает своими огромными тёмными глазами и видит родителей в самый первый раз. Она — самый пушистый, самый очаровательный комочек серебристо-серого пуха, когда-либо рождённый. Глаза Папы наполняются счастливыми слезами. Мама нежно касается клювом крошечной головки Кайи. &#x27;Ты здесь,&#x27; шепчут оба. &#x27;Наша прекрасная малышка здесь.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/papas-pouch.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Warm Pouch</h2>
+            <h2 data-lang="es">El Bolsillo Cálido de Papá</h2>
+            <h2 data-lang="ru">Тёплый мешочек Папы</h2>
+            <div data-lang="en" class="active">
+                <p>Kaia&#x27;s favorite place in the whole world is Papa&#x27;s pouch! She sits on his big warm feet, tucked under his soft belly feathers, and peeks out at the sparkling ice world. It&#x27;s like the coziest sleeping bag ever invented. &#x27;Papa, why is everything so sparkly?&#x27; she asks. &#x27;Because you&#x27;re seeing it for the first time,&#x27; Papa smiles. &#x27;Everything is magical when you&#x27;re brand new.&#x27; Kaia wiggles deeper into the pouch and yawns. Being brand new is wonderful.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡El lugar favorito de Kaia en todo el mundo es el bolsillo de Papá! Se sienta sobre sus grandes patas calientes, acurrucada bajo las suaves plumas de su barriga, y se asoma al brillante mundo de hielo. Es como el saco de dormir más acogedor jamás inventado. &#x27;¡Papá, por qué todo es tan brillante?&#x27; pregunta. &#x27;Porque lo estás viendo por primera vez,&#x27; sonríe Papá. &#x27;Todo es mágico cuando eres nueva.&#x27; Kaia se acurruca más en el bolsillo y bosteza.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Любимое место Кайи во всём мире — мешочек Папы! Она сидит на его больших тёплых лапах, укутанная под мягкими перьями на животе, и выглядывает на сверкающий ледяной мир. Это как самый уютный спальный мешок, когда-либо изобретённый. &#x27;Папа, почему всё такое блестящее?&#x27; спрашивает она. &#x27;Потому что ты видишь это впервые,&#x27; улыбается Папа. &#x27;Всё волшебно, когда ты совсем новенькая.&#x27; Кайя забирается глубже в мешочек и зевает.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/first-feeding.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama&#x27;s Special Breakfast</h2>
+            <h2 data-lang="es">El Desayuno Especial de Mamá</h2>
+            <h2 data-lang="ru">Особый завтрак Мамы</h2>
+            <div data-lang="en" class="active">
+                <p>Time for Kaia&#x27;s very first meal! Mama Pearl leans down and feeds Kaia beak-to-beak — the most delicious fish soup a baby penguin could dream of. &#x27;Mama brought this all the way from the ocean, just for you,&#x27; Papa explains proudly. Kaia gobbles it up and chirps for more. Mama laughs her soft penguin laugh. &#x27;You eat just like your Papa!&#x27; From now on, Mama and Papa will take turns — one fishing in the ocean, one keeping Kaia warm and fed. The best team ever!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Hora de la primera comida de Kaia! Mamá Pearl se inclina y alimenta a Kaia pico a pico — la sopa de pescado más deliciosa que un bebé pingüino podría soñar. &#x27;Mamá trajo esto desde el océano, solo para ti,&#x27; explica Papá con orgullo. Kaia lo devora y pía pidiendo más. Mamá ríe su suave risa de pingüino. &#x27;¡Comes igual que tu Papá!&#x27; De ahora en adelante, Mamá y Papá se turnarán — uno pescando en el océano, otro manteniendo a Kaia caliente y alimentada.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Время первой еды Кайи! Мама Перл наклоняется и кормит Кайю клюв к клюву — самый вкусный рыбный суп, о котором мог мечтать птенец пингвина. &#x27;Мама принесла это из самого океана, только для тебя,&#x27; гордо объясняет Папа. Кайя жадно съедает и пищит, прося ещё. Мама смеётся своим мягким пингвиньим смехом. &#x27;Ты ешь прямо как Папа!&#x27; Отныне Мама и Папа будут чередоваться — один ловит рыбу в океане, другой согревает и кормит Кайю.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/pip-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Adorable fluffy grey emperor penguin chick, slightly round, with a funny tuft of fluff on top of its head, playful expression, standing on sparkling ice"
+                 data-alt-en="Adorable fluffy grey emperor penguin chick, slightly round, with a funny tuft of fluff on top of its head, playful expression, standing on sparkling ice"
+                 data-alt-es="Adorable cría de pingüino emperador gris esponjosa, un poco redonda, con un gracioso mechón de plumón en la cabeza, expresión juguetona, de pie sobre hielo brillante"
+                 data-alt-ru="Очаровательный пушистый серый птенец императорского пингвина, немного круглый, с забавным хохолком пуха на голове, игривое выражение, стоящий на сверкающем льду"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Pip, the Brave Explorer</h2>
+            <h2 data-lang="es">Conoce a Pip, el Explorador Valiente</h2>
+            <h2 data-lang="ru">Знакомьтесь: Пип, храбрый исследователь</h2>
+            <div data-lang="en" class="active">
+                <p>In the penguin nursery — called a crèche — Kaia meets Pip! Pip is a bit older and rounder, with a funny little tuft of fluff that sticks straight up on his head. &#x27;Want to see something AMAZING?&#x27; Pip whispers. He waddles to the edge of a tiny ice hill and slides down on his belly — WHEEE! &#x27;That&#x27;s called tobogganing,&#x27; he announces proudly. &#x27;I invented it!&#x27; (He didn&#x27;t, but Kaia is very impressed.) They become the very best of friends.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡En la guardería de pingüinos — llamada crèche — Kaia conoce a Pip! Pip es un poco mayor y más redondo, con un gracioso mechoncito de plumón que se levanta recto sobre su cabeza. &#x27;¿Quieres ver algo INCREÍBLE?&#x27; susurra Pip. Se balancea hasta el borde de una pequeña colina de hielo y se desliza sobre su barriga — ¡WIIII! &#x27;Eso se llama trineo,&#x27; anuncia orgulloso. &#x27;¡Yo lo inventé!&#x27; (No lo hizo, pero Kaia está muy impresionada.) Se convierten en los mejores amigos.</p>
+            </div>
+            <div data-lang="ru">
+                <p>В пингвиньем детском саду — он называется ясли — Кайя встречает Пипа! Пип немного старше и круглее, с забавным хохолком пуха, торчащим прямо вверх на голове. &#x27;Хочешь увидеть что-то ПОТРЯСАЮЩЕЕ?&#x27; шепчет Пип. Он переваливается к краю маленькой ледяной горки и скатывается на животе — УИИИ! &#x27;Это называется тобогган,&#x27; гордо объявляет он. &#x27;Я это придумал!&#x27; (Нет, не придумал, но Кайя очень впечатлена.) Они становятся лучшими друзьями.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/tobogganing-fun.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Belly Sliding!</h2>
+            <h2 data-lang="es">¡Deslizándose sobre la Barriga!</h2>
+            <h2 data-lang="ru">Катание на животике!</h2>
+            <div data-lang="en" class="active">
+                <p>Tobogganing is officially the BEST THING EVER! Kaia and Pip spend all day sliding on their fluffy bellies across the smooth ice. They race each other, spin in circles, and crash into soft snow banks — POOF! &#x27;Again! Again!&#x27; Kaia squeals. Even the grown-up penguins toboggan — it&#x27;s actually faster than walking! Mama and Papa watch from nearby, laughing as the chicks tumble and slide. &#x27;We used to do that too,&#x27; Mama whispers to Papa.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡El trineo es oficialmente la MEJOR COSA DEL MUNDO! Kaia y Pip pasan todo el día deslizándose sobre sus barrigas esponjosas por el hielo liso. Compiten entre ellos, giran en círculos y se estrellan contra suaves bancos de nieve — ¡POOF! &#x27;¡Otra vez! ¡Otra vez!&#x27; chilla Kaia. Incluso los pingüinos adultos se deslizan — ¡en realidad es más rápido que caminar! Mamá y Papá observan desde cerca, riendo mientras las crías ruedan y se deslizan.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Тобогган — это официально ЛУЧШЕЕ В МИРЕ! Кайя и Пип проводят весь день, скользя на пушистых животиках по гладкому льду. Они гоняются наперегонки, крутятся кругами и врезаются в мягкие сугробы — ПУФ! &#x27;Ещё! Ещё!&#x27; визжит Кайя. Даже взрослые пингвины катаются на животе — это на самом деле быстрее ходьбы! Мама и Папа наблюдают рядом, смеясь, как птенцы кувыркаются и скользят.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/family-song.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Our Family Song</h2>
+            <h2 data-lang="es">Nuestra Canción Familiar</h2>
+            <h2 data-lang="ru">Наша семейная песня</h2>
+            <div data-lang="en" class="active">
+                <p>Every penguin family has their own special song — and no two songs are the same! Papa&#x27;s voice is deep and rumbly like gentle thunder. Mama&#x27;s voice is clear and bright like a bell. And Kaia&#x27;s little voice is squeaky and adorable. Together, they point their beaks to the sky and sing! Their song echoes across the ice. &#x27;This is how we&#x27;ll always find each other,&#x27; Papa explains. &#x27;Even in a crowd of a thousand penguins, I will always know YOUR voice.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Cada familia de pingüinos tiene su propia canción especial — y no hay dos canciones iguales! La voz de Papá es profunda y retumbante como un trueno suave. La voz de Mamá es clara y brillante como una campana. Y la vocecita de Kaia es chillona y adorable. Juntos, apuntan sus picos al cielo y ¡cantan! Su canción resuena por el hielo. &#x27;Así es como siempre nos encontraremos,&#x27; explica Papá. &#x27;Incluso en una multitud de mil pingüinos, siempre reconoceré TU voz.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>У каждой пингвиньей семьи есть своя особенная песня — и нет двух одинаковых! Голос Папы глубокий и гулкий, как мягкий гром. Голос Мамы чистый и яркий, как колокольчик. А голосок Кайи пискливый и обворожительный. Вместе они направляют клювы к небу и поют! Их песня разносится надо льдом. &#x27;Так мы всегда найдём друг друга,&#x27; объясняет Папа. &#x27;Даже среди тысячи пингвинов я всегда узнаю ТВОЙ голос.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/aurora-wonder.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Dancing Lights</h2>
+            <h2 data-lang="es">Las Luces Danzantes</h2>
+            <h2 data-lang="ru">Танцующие огни</h2>
+            <div data-lang="en" class="active">
+                <p>One night, Kaia looks up and gasps. The sky is DANCING! Great curtains of green and purple and pink light ripple across the darkness like a magic show. &#x27;Papa! Mama! The sky is on FIRE!&#x27; &#x27;Those are the Southern Lights,&#x27; Mama whispers. &#x27;Some say they&#x27;re the sky&#x27;s way of singing.&#x27; Kaia watches, mouth wide open, as the colors swirl and shimmer above the ice. It&#x27;s the most beautiful thing she has ever seen. She decides right then: Antarctica is the best home in the whole universe.</p>
+            </div>
+            <div data-lang="es">
+                <p>Una noche, Kaia mira hacia arriba y queda boquiabierta. ¡El cielo está BAILANDO! Grandes cortinas de luz verde, púrpura y rosa ondean a través de la oscuridad como un espectáculo de magia. &#x27;¡Papá! ¡Mamá! ¡El cielo está en LLAMAS!&#x27; &#x27;Esas son las Luces del Sur,&#x27; susurra Mamá. &#x27;Algunos dicen que es la forma en que el cielo canta.&#x27; Kaia observa, con la boca bien abierta, mientras los colores giran y brillan sobre el hielo. Es lo más hermoso que ha visto jamás.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Однажды ночью Кайя смотрит вверх и ахает. Небо ТАНЦУЕТ! Великие занавеси зелёного, фиолетового и розового света струятся сквозь темноту, как волшебное шоу. &#x27;Папа! Мама! Небо ГОРИТ!&#x27; &#x27;Это Южное сияние,&#x27; шепчет Мама. &#x27;Некоторые говорят, что это небо поёт.&#x27; Кайя смотрит, широко раскрыв рот, как цвета кружатся и мерцают надо льдом. Это самое красивое, что она когда-либо видела.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/funny-molting.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Funny Feather Stage</h2>
+            <h2 data-lang="es">La Etapa Graciosa de las Plumas</h2>
+            <h2 data-lang="ru">Забавная линька</h2>
+            <div data-lang="en" class="active">
+                <p>One morning, Kaia notices something strange — her fluffy grey baby feathers are falling out! In their place, sleek new black-and-white feathers are growing in. She looks absolutely RIDICULOUS — half fluffy, half sleek, like a penguin wearing a costume that doesn&#x27;t fit. Pip looks even funnier — he has a big grey patch right on his face! &#x27;We look like clouds with legs!&#x27; Kaia giggles. &#x27;But soon,&#x27; says Mama proudly, &#x27;you&#x27;ll have the most beautiful waterproof coat in the ocean.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Una mañana, Kaia nota algo extraño — ¡sus plumas esponjosas grises de bebé se están cayendo! En su lugar, plumas nuevas y elegantes blancas y negras están creciendo. Se ve absolutamente RIDÍCULA — mitad esponjosa, mitad elegante, como un pingüino usando un disfraz que no le queda. ¡Pip se ve aún más gracioso — tiene un gran parche gris justo en la cara! &#x27;¡Parecemos nubes con patas!&#x27; ríe Kaia. &#x27;Pero pronto,&#x27; dice Mamá con orgullo, &#x27;tendrás el abrigo impermeable más hermoso del océano.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Однажды утром Кайя замечает что-то странное — её пушистые серые детские перья выпадают! На их месте растут гладкие новые чёрно-белые перья. Она выглядит абсолютно НЕЛЕПО — наполовину пушистая, наполовину гладкая, как пингвин в костюме не по размеру. Пип выглядит ещё смешнее — у него большое серое пятно прямо на лице! &#x27;Мы похожи на облака с ножками!&#x27; хихикает Кайя. &#x27;Но скоро,&#x27; говорит Мама с гордостью, &#x27;у тебя будет самая красивая водонепроницаемая шубка в океане.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#12</span>
+            <img data-src="assets/images/first-swim.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Young emperor penguin diving joyfully into crystal-clear turquoise Antarctic water, parent penguins watching proudly from ice edge, sunlight streaming through water, pure freedom and joy"
+                 data-alt-en="Young emperor penguin diving joyfully into crystal-clear turquoise Antarctic water, parent penguins watching proudly from ice edge, sunlight streaming through water, pure freedom and joy"
+                 data-alt-es="Joven pingüino emperador sumergiéndose alegremente en agua turquesa cristalina antártica, pingüinos padres observando orgullosamente desde el borde del hielo, luz solar atravesando el agua"
+                 data-alt-ru="Молодой императорский пингвин радостно ныряющий в кристально чистую бирюзовую антарктическую воду, родители-пингвины гордо наблюдающие с края льда, солнечный свет пронизывающий воду"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Kaia&#x27;s First Swim!</h2>
+            <h2 data-lang="es">¡El Primer Baño de Kaia!</h2>
+            <h2 data-lang="ru">Первый заплыв Кайи!</h2>
+            <div data-lang="en" class="active">
+                <p>The day has come — Kaia&#x27;s new waterproof feathers are ready, and it&#x27;s time for her VERY FIRST SWIM! She stands at the edge of the ice, looking at the sparkling turquoise water. Her heart beats fast. Papa stands on one side. Mama stands on the other. &#x27;We&#x27;ll be right here,&#x27; they promise. Kaia takes a deep breath and — SPLASH! The water is cool and wonderful! She zooms through it like a rocket, twisting and spinning. &#x27;I&#x27;M FLYING UNDERWATER!&#x27; she shouts with pure joy.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡El día ha llegado — las nuevas plumas impermeables de Kaia están listas, y es hora de su PRIMER BAÑO! Se para al borde del hielo, mirando el agua turquesa brillante. Su corazón late rápido. Papá está a un lado. Mamá al otro. &#x27;Estaremos justo aquí,&#x27; prometen. Kaia respira profundamente y — ¡SPLASH! ¡El agua es fresca y maravillosa! Se desliza como un cohete, girando y dando vueltas. &#x27;¡ESTOY VOLANDO BAJO EL AGUA!&#x27; grita con pura alegría.</p>
+            </div>
+            <div data-lang="ru">
+                <p>День настал — новые водонепроницаемые перья Кайи готовы, и пришло время её САМОГО ПЕРВОГО ЗАПЛЫВА! Она стоит на краю льда, глядя на сверкающую бирюзовую воду. Сердце бьётся быстро. Папа стоит с одной стороны. Мама с другой. &#x27;Мы будем прямо здесь,&#x27; обещают они. Кайя глубоко вдыхает и — ПЛЮХ! Вода прохладная и чудесная! Она мчится сквозь неё как ракета, крутясь и вращаясь. &#x27;Я ЛЕТАЮ ПОД ВОДОЙ!&#x27; кричит она от чистой радости.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <span class="img-ref">#13</span>
+            <img data-src="assets/images/family-together-sunset.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Emperor penguin family — father, mother, and nearly-grown chick — standing together on ice at golden sunset, warm amber light, the whole colony visible in the background, peaceful and loving"
+                 data-alt-en="Emperor penguin family — father, mother, and nearly-grown chick — standing together on ice at golden sunset, warm amber light, the whole colony visible in the background, peaceful and loving"
+                 data-alt-es="Familia de pingüinos emperador — padre, madre y cría casi adulta — de pie juntos sobre el hielo al atardecer dorado, cálida luz ámbar, toda la colonia visible al fondo, pacífica y amorosa"
+                 data-alt-ru="Семья императорских пингвинов — отец, мать и почти взрослый птенец — стоят вместе на льду на золотом закате, тёплый янтарный свет, вся колония видна на фоне, мирная и любящая"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Together Forever</h2>
+            <h2 data-lang="es">Juntos Para Siempre</h2>
+            <h2 data-lang="ru">Вместе навсегда</h2>
+            <div data-lang="en" class="active">
+                <p>As the golden Antarctic sun paints the ice in warm shades of amber and rose, the whole colony gathers together. Papa, Mama, and Kaia stand side by side, sleek and beautiful in their matching tuxedos. Kaia is almost as tall as her parents now! She can swim, she can sing, she can toboggan faster than Pip (don&#x27;t tell him). But the very best thing about being a penguin, Kaia knows, is having a family that keeps you warm — no matter how cold the world gets. And that is the warmest thing of all.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras el dorado sol antártico pinta el hielo en cálidos tonos de ámbar y rosa, toda la colonia se reúne. Papá, Mamá y Kaia están lado a lado, elegantes y hermosos en sus esmóquines a juego. ¡Kaia es casi tan alta como sus padres ahora! Puede nadar, puede cantar, puede deslizarse más rápido que Pip (no le digan). Pero lo mejor de ser pingüino, sabe Kaia, es tener una familia que te mantiene caliente — sin importar cuán frío sea el mundo.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда золотое антарктическое солнце окрашивает лёд в тёплые оттенки янтаря и розы, вся колония собирается вместе. Папа, Мама и Кайя стоят бок о бок, элегантные и красивые в своих одинаковых фраках. Кайя почти такая же высокая, как её родители! Она умеет плавать, петь, кататься на животе быстрее Пипа (не говорите ему). Но самое лучшее в том, чтобы быть пингвином, знает Кайя — это иметь семью, которая согревает тебя, как бы холодно ни было вокруг.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-feet-warmth.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Brood Pouch"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Brood Pouch</h3>
+                    <h3 data-lang="es">El Bolsillo de Cría</h3>
+                    <h3 data-lang="ru">Наседный мешочек</h3>
+                    <p data-lang="en" class="active">Look at Papa Frost&#x27;s feet — see that special flap of warm skin? That&#x27;s the brood pouch! Emperor penguin fathers balance the egg (or chick) on top of their feet and cover it with this warm, feathered pouch. Inside, the temperature stays a cozy 36°C even when it&#x27;s -40°C outside. It&#x27;s nature&#x27;s best sleeping bag!</p>
+                    <p data-lang="es">¡Mira los pies de Papá Frost — ves esa solapa especial de piel caliente? ¡Ese es el bolsillo de cría! Los padres pingüino emperador equilibran el huevo (o la cría) sobre sus patas y lo cubren con este cálido bolsillo emplumado. Adentro, la temperatura se mantiene en acogedores 36°C incluso cuando afuera hay -40°C. ¡Es el mejor saco de dormir de la naturaleza!</p>
+                    <p data-lang="ru">Посмотрите на лапы Папы Фроста — видите эту особую складку тёплой кожи? Это наседный мешочек! Папы-пингвины балансируют яйцо (или птенца) на лапах и накрывают его этим тёплым, оперённым мешочком. Внутри температура держится на уютных 36°C, даже когда снаружи -40°C. Это лучший спальный мешок в природе!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-feather-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Waterproof Feathers"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Waterproof Feathers</h3>
+                    <h3 data-lang="es">Plumas Impermeables</h3>
+                    <h3 data-lang="ru">Водонепроницаемые перья</h3>
+                    <p data-lang="en" class="active">Emperor penguin feathers are incredible! They have about 100 feathers per square inch — more than almost any other bird. The feathers overlap tightly like roof tiles, and each one is coated with a special oil that repels water. This keeps penguins completely dry even when diving in freezing water. That&#x27;s why Kaia had to wait for her adult feathers before swimming!</p>
+                    <p data-lang="es">¡Las plumas de los pingüinos emperador son increíbles! Tienen unas 100 plumas por pulgada cuadrada — más que casi cualquier otra ave. Las plumas se superponen como tejas de techo, y cada una está recubierta con un aceite especial que repele el agua. Esto mantiene a los pingüinos completamente secos incluso al bucear en agua helada. ¡Por eso Kaia tuvo que esperar sus plumas adultas antes de nadar!</p>
+                    <p data-lang="ru">Перья императорских пингвинов невероятны! У них около 100 перьев на квадратный дюйм — больше, чем у почти любой другой птицы. Перья плотно накладываются друг на друга как черепица, и каждое покрыто специальным маслом, отталкивающим воду. Это сохраняет пингвинов совершенно сухими даже при нырянии в ледяную воду. Вот почему Кайе пришлось ждать взрослых перьев перед плаванием!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-eye-adaptation.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Underwater Eyes"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Underwater Eyes</h3>
+                    <h3 data-lang="es">Ojos Submarinos</h3>
+                    <h3 data-lang="ru">Подводные глаза</h3>
+                    <p data-lang="en" class="active">Kaia&#x27;s big dark eyes aren&#x27;t just adorable — they&#x27;re specially designed for underwater hunting! Penguins can see perfectly both above and below water. Their eyes adjust quickly from bright ice to the dark deep ocean. They can even see in near-darkness at 500 meters deep, helping them spot tiny fish and krill.</p>
+                    <p data-lang="es">¡Los grandes ojos oscuros de Kaia no son solo adorables — están especialmente diseñados para cazar bajo el agua! Los pingüinos pueden ver perfectamente tanto sobre como bajo el agua. Sus ojos se ajustan rápidamente del hielo brillante al océano profundo y oscuro. ¡Incluso pueden ver en casi oscuridad a 500 metros de profundidad, ayudándolos a detectar pequeños peces y krill!</p>
+                    <p data-lang="ru">Большие тёмные глаза Кайи не просто очаровательны — они специально приспособлены для подводной охоты! Пингвины прекрасно видят как над водой, так и под водой. Их глаза быстро адаптируются от яркого льда к тёмному глубокому океану. Они даже могут видеть в почти полной темноте на глубине 500 метров!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-beak-structure.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Penguin Beak"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Penguin Beak</h3>
+                    <h3 data-lang="es">El Pico del Pingüino</h3>
+                    <h3 data-lang="ru">Клюв пингвина</h3>
+                    <p data-lang="en" class="active">Mama Pearl&#x27;s beak is a multi-tool! The orange-pink coloring at the sides helps penguins recognize each other. The sharp, curved tip is perfect for catching slippery fish. And inside, tiny backwards-pointing barbs grip prey so it can&#x27;t escape. Mama uses her beak for feeding Kaia, preening her feathers, and giving gentle penguin kisses!</p>
+                    <p data-lang="es">¡El pico de Mamá Pearl es una multiherramienta! La coloración naranja-rosa en los lados ayuda a los pingüinos a reconocerse. La punta afilada y curvada es perfecta para atrapar peces resbaladizos. Y adentro, pequeñas púas que apuntan hacia atrás agarran las presas para que no escapen. ¡Mamá usa su pico para alimentar a Kaia, acicalar sus plumas y dar dulces besos de pingüino!</p>
+                    <p data-lang="ru">Клюв Мамы Перл — это мультиинструмент! Оранжево-розовая окраска по бокам помогает пингвинам узнавать друг друга. Острый изогнутый кончик идеален для ловли скользкой рыбы. А внутри крошечные направленные назад шипики удерживают добычу, чтобы она не ускользнула. Мама использует клюв, чтобы кормить Кайю, чистить перья и дарить нежные пингвиньи поцелуи!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Penguin Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Pingüinos!</h2>
+            <h2 data-lang="ru">Удивительные факты о пингвинах!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-deep-diving.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Champion Divers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Champion Divers</h3>
+                        <h3 data-lang="es">Campeones de Buceo</h3>
+                        <h3 data-lang="ru">Чемпионы по нырянию</h3>
+                        <p data-lang="en" class="active">Emperor penguins can dive deeper than 500 meters (1,640 feet) — that&#x27;s taller than the Eiffel Tower! They can hold their breath for over 20 minutes while hunting for fish, squid, and krill in the deep, dark ocean. Their special blood can carry extra oxygen, like a built-in scuba tank!</p>
+                        <p data-lang="es">¡Los pingüinos emperador pueden bucear más de 500 metros de profundidad — eso es más alto que la Torre Eiffel! Pueden contener la respiración por más de 20 minutos mientras cazan peces, calamares y krill en el océano profundo y oscuro. ¡Su sangre especial puede llevar oxígeno extra, como un tanque de buceo incorporado!</p>
+                        <p data-lang="ru">Императорские пингвины могут нырять глубже 500 метров — это выше Эйфелевой башни! Они могут задерживать дыхание более 20 минут, охотясь за рыбой, кальмарами и крилем в глубоком тёмном океане. Их особая кровь может нести дополнительный кислород, как встроенный акваланг!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-toboggan.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Belly Surfers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Belly Surfers</h3>
+                        <h3 data-lang="es">Surfistas de Barriga</h3>
+                        <h3 data-lang="ru">Серфингисты на животе</h3>
+                        <p data-lang="en" class="active">Penguins don&#x27;t just walk — they toboggan! By lying on their bellies and pushing with their flippers, they can slide across the ice much faster than waddling. It&#x27;s like having a built-in sled wherever you go! Baby penguins learn to toboggan as soon as they can walk, and it&#x27;s their favorite game.</p>
+                        <p data-lang="es">¡Los pingüinos no solo caminan — se deslizan! Acostándose sobre sus barrigas y empujándose con sus aletas, pueden deslizarse por el hielo mucho más rápido que caminando. ¡Es como tener un trineo incorporado donde vayas! Los bebés pingüinos aprenden a deslizarse tan pronto como pueden caminar, y es su juego favorito.</p>
+                        <p data-lang="ru">Пингвины не только ходят — они катаются! Ложась на живот и отталкиваясь ластами, они могут скользить по льду гораздо быстрее, чем переваливаясь. Это как встроенные санки, куда бы ты ни шёл! Птенцы учатся кататься, как только начинают ходить, и это их любимая игра.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-no-teeth.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="No Teeth, No Problem!"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">No Teeth, No Problem!</h3>
+                        <h3 data-lang="es">¡Sin Dientes, Sin Problema!</h3>
+                        <h3 data-lang="ru">Без зубов — не проблема!</h3>
+                        <p data-lang="en" class="active">Penguins don&#x27;t have teeth! Instead, they have backwards-pointing barbs inside their beaks and on their tongues that help grip slippery fish. Once a fish goes in, it can only go one way — down! This clever design means penguins never drop their dinner, even underwater.</p>
+                        <p data-lang="es">¡Los pingüinos no tienen dientes! En su lugar, tienen púas que apuntan hacia atrás dentro de sus picos y en sus lenguas que ayudan a agarrar peces resbaladizos. Una vez que un pez entra, solo puede ir en una dirección — ¡abajo! Este diseño inteligente significa que los pingüinos nunca dejan caer su cena, ni siquiera bajo el agua.</p>
+                        <p data-lang="ru">У пингвинов нет зубов! Вместо этого у них есть направленные назад шипики внутри клюва и на языке, которые помогают удерживать скользкую рыбу. Раз рыба попала внутрь, она может двигаться только в одном направлении — вниз! Этот хитрый дизайн означает, что пингвины никогда не роняют ужин, даже под водой.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-huddle-warmth.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="The Warmest Huddle"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">The Warmest Huddle</h3>
+                        <h3 data-lang="es">El Grupo Más Cálido</h3>
+                        <h3 data-lang="ru">Самое тёплое сплочение</h3>
+                        <p data-lang="en" class="active">When emperor penguins huddle together, the temperature inside the group can reach a toasty 37°C (98°F) — as warm as your body! The penguins on the outside slowly shuffle to the center to warm up, while the warm ones move out. They take turns so everyone stays cozy. It&#x27;s like a giant, rotating group hug!</p>
+                        <p data-lang="es">Cuando los pingüinos emperador se acurrucan juntos, ¡la temperatura dentro del grupo puede alcanzar unos agradables 37°C — tan caliente como tu cuerpo! Los pingüinos de afuera se mueven lentamente al centro para calentarse, mientras los calientes salen. Se turnan para que todos se mantengan cómodos. ¡Es como un abrazo grupal gigante y rotativo!</p>
+                        <p data-lang="ru">Когда императорские пингвины жмутся друг к другу, температура внутри группы может достигать уютных 37°C — как температура вашего тела! Пингвины снаружи медленно перемещаются в центр, чтобы согреться, а тёплые выходят наружу. Они чередуются, чтобы всем было уютно. Это как гигантское вращающееся групповое объятие!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the most devoted parents in the animal kingdom</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando a los padres más dedicados del reino animal</p>
+        <p data-lang="ru" style="margin-top: 10px;">Celebrating самых преданных родителей в животном мире</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

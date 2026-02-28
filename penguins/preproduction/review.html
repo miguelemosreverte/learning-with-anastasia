@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Bible — Penguins: The Warmest Family on Ice</title>
+<style>
+    :root {
+        --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d;
+        --text: #e6edf3; --text-dim: #8b949e; --accent: #58a6ff; --green: #3fb950;
+        --orange: #d29922; --red: #f85149; --purple: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero-header { text-align: center; padding: 48px 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .hero-header h1 { font-size: 2.5em; margin-bottom: 8px; }
+    .hero-header .subtitle { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+    .hero-header .meta-line { color: var(--text-dim); font-size: 0.9em; }
+    .hero-header .description { max-width: 700px; margin: 16px auto; color: var(--text-dim); }
+    .hero-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-top: 24px; border: 1px solid var(--border); }
+    h2 { font-size: 1.5em; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+    h3 { font-size: 1.2em; margin: 24px 0 12px; color: var(--accent); }
+    .preface { background: var(--surface); border-radius: 8px; padding: 24px; border-left: 4px solid var(--accent); margin-bottom: 32px; }
+    .preface p { margin-bottom: 12px; color: var(--text-dim); }
+    .preface p:last-child { margin-bottom: 0; }
+    .style-banner { background: linear-gradient(135deg, #1a1e2e, #1e2636); border-radius: 8px; padding: 20px 24px; border: 1px solid var(--purple); margin-bottom: 32px; }
+    .style-banner strong { color: var(--purple); }
+    .characters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .character-profile { display: flex; gap: 16px; background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .character-thumb { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+    .character-thumb-placeholder { width: 100px; height: 100px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2em; color: var(--text-dim); flex-shrink: 0; }
+    .character-info h4 { margin-bottom: 4px; }
+    .character-info p { color: var(--text-dim); font-size: 0.9em; }
+    .small-text { color: var(--text-dim); font-size: 0.75em; font-family: monospace; }
+    .sections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .section-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .section-card.character-card { border-color: var(--green); }
+    .section-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+    .section-id { font-family: monospace; color: var(--text-dim); font-size: 0.8em; }
+    .section-image { width: 100%; border-radius: 6px; margin: 12px 0; max-height: 300px; object-fit: cover; }
+    .section-content { color: var(--text-dim); font-size: 0.9em; margin: 8px 0; max-height: 80px; overflow: hidden; }
+    .prompt-block { background: var(--surface2); padding: 8px 12px; border-radius: 4px; font-size: 0.8em; margin: 8px 0; color: var(--text-dim); border-left: 3px solid var(--orange); }
+    .refs { font-size: 0.8em; color: var(--purple); margin-top: 4px; }
+    .image-filename { font-family: monospace; font-size: 0.75em; color: var(--text-dim); margin-top: 8px; }
+    .missing-image { background: var(--surface2); border: 2px dashed var(--red); border-radius: 6px; padding: 40px; text-align: center; color: var(--red); margin: 12px 0; }
+    .missing-thumb { background: var(--surface2); border: 1px dashed var(--red); border-radius: 4px; padding: 12px; text-align: center; color: var(--red); font-size: 0.8em; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; font-weight: 600; text-transform: uppercase; }
+    .badge-gemini { background: #1a3a2a; color: var(--green); }
+    .badge-openai { background: #2a2a1a; color: var(--orange); }
+    .badge-unknown { background: var(--surface2); color: var(--text-dim); }
+    .badge-character { background: #1a2a1a; color: var(--green); }
+    .details-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .detail-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .detail-image { width: 100%; border-radius: 6px; margin-bottom: 12px; max-height: 200px; object-fit: cover; }
+    .detail-card h4 { margin-bottom: 8px; }
+    .detail-card p { color: var(--text-dim); font-size: 0.85em; }
+    .hidden-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hidden-section-card { background: var(--surface); border-radius: 6px; padding: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .thumb { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; }
+    .small-prompt { font-size: 0.75em; color: var(--text-dim); }
+    .prepro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .prepro-step { background: var(--surface); border-radius: 8px; padding: 20px; border: 2px solid var(--border); text-align: center; }
+    .prepro-step h4 { margin-bottom: 8px; }
+    .prepro-step p { color: var(--text-dim); font-size: 0.9em; margin-bottom: 8px; }
+    .step-approved { border-color: var(--green); }
+    .step-pending { border-color: var(--orange); }
+    .check { color: var(--green); font-weight: 600; }
+    .pending { color: var(--orange); font-weight: 600; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .prepro-image-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .prepro-image-grid .grid-item img { height: 280px; }
+    .grid-item { background: var(--surface); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
+    .grid-item img { width: 100%; height: 160px; object-fit: cover; }
+    .grid-item span { display: block; padding: 4px 8px; font-size: 0.7em; color: var(--text-dim); font-family: monospace; }
+    .approved-item { border-color: var(--green); border-width: 2px; }
+    .approved-item span { color: var(--green); }
+    .cover-section { text-align: center; margin-bottom: 32px; }
+    .cover-image { max-width: 400px; border-radius: 8px; border: 2px solid var(--accent); }
+    .stats-bar { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 20px; background: var(--surface); border-radius: 8px; margin-bottom: 32px; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 0.8em; color: var(--text-dim); }
+    footer { text-align: center; padding: 32px; color: var(--text-dim); font-size: 0.8em; border-top: 1px solid var(--border); margin-top: 40px; }
+    @media (max-width: 768px) {
+        .prepro-grid { grid-template-columns: 1fr; }
+        .sections-grid { grid-template-columns: 1fr; }
+        .hero-header h1 { font-size: 1.8em; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-header">
+        <h1>Penguins: The Warmest Family on Ice</h1>
+        <div class="subtitle">Kaia's Cozy Winter Adventure</div>
+        <div class="meta-line">February 2026 &bull; Issue #9 &bull; Chapter: penguins</div>
+        <p class="description">Follow Kaia the emperor penguin chick through her first months, from hatching in Papa's warm pouch to her first swim with the whole family</p>
+        
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat"><div class="num">4</div><div class="label">Characters</div></div>
+        <div class="stat"><div class="num">13</div><div class="label">Scenes</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Viewer Details</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Fun Facts</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">Total Images</div></div>
+        <div class="stat"><div class="num">0 / 0</div><div class="label">Gemini / OpenAI</div></div>
+    </div>
+
+    <h2>Preface</h2>
+    <div class="preface">
+        <p>Welcome to the sparkling world of Antarctica, where emperor penguins prove that love is the warmest thing of all! In this adventure, we'll follow Kaia, an adorable fluffy chick, as she discovers the wonders of her icy home with her devoted Mama and Papa.</p>
+<p>Emperor penguins are the most amazing parents in nature. Papa keeps the egg warm on his feet for months, tucked under a special pouch, while Mama goes fishing to bring back the best food. When the chick hatches, both parents take turns caring for their baby — a true team!</p>
+<p>Through Kaia's first months, you'll discover how penguins huddle together for warmth, toboggan on their bellies for fun, sing to find each other in a crowd of thousands, and take the most exciting first swim imaginable. Get ready for a cozy adventure!</p>
+    </div>
+
+    <h2>Art Direction</h2>
+    <div class="style-banner">
+        <strong>Global Style:</strong> Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in feathers and ice. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Sparkling Antarctic setting with ice, snow, and soft pastel skies. Child-friendly and inviting.
+    </div>
+
+    <h2>Pre-Production Pipeline</h2>
+    
+        <div class="prepro-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="prepro-step step-pending">
+                <h4>Step 0: Storyline</h4>
+                <p>pending (0 attempts)</p>
+                <span class="pending">pending</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 1: Unified Cast Sheet</h4>
+                <p>approved (1 attempts)</p>
+                <span class="check">Approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 2: Character Sheets</h4>
+                <p>approved</p>
+                <span class="check">Papa Frost: approved</span><br><span class="check">Mama Pearl: approved</span><br><span class="check">Kaia: approved</span><br><span class="check">Pip: approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 3: Mood Proposals</h4>
+                <p>approved</p>
+                <span class="check">Moods: epic-skies, soft-intimate</span>
+            </div>
+        </div>
+    
+    <h3>Step 1: Unified Cast Sheets</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step1-unified/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>approved.jpg (APPROVED)</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step1-unified/unified-cast-v1.jpg" alt="unified-cast-v1.jpg" loading="lazy" />
+                        <span>unified-cast-v1.jpg</span>
+                    </div></div><h3>Step 2: Papa Frost Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/papa-frost/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/papa-frost/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Mama Pearl Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/mama-pearl/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/mama-pearl/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Kaia Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/kaia/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/kaia/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Pip Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/pip/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/pip/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 3: Pixar Mood Proposals</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step3-style/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>APPROVED</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-1-translucency-botanical.jpg" alt="proposal-1-translucency-botanical.jpg" loading="lazy" />
+                        <span>1-translucency-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-2-epic-intimate.jpg" alt="proposal-2-epic-intimate.jpg" loading="lazy" />
+                        <span>2-epic-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-3-golden-botanical.jpg" alt="proposal-3-golden-botanical.jpg" loading="lazy" />
+                        <span>3-golden-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-4-translucency-intimate.jpg" alt="proposal-4-translucency-intimate.jpg" loading="lazy" />
+                        <span>4-translucency-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-5-epic-golden.jpg" alt="proposal-5-epic-golden.jpg" loading="lazy" />
+                        <span>5-epic-golden</span>
+                    </div></div>
+
+    <h2>Character Cast</h2>
+    <div class="characters-grid">
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">P</div>
+                <div class="character-info">
+                    <h4>Papa Frost</h4>
+                    <p>Tall proud emperor penguin father with golden-orange chest patch, gentle warm eyes, devoted and protective</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">M</div>
+                <div class="character-info">
+                    <h4>Mama Pearl</h4>
+                    <p>Beautiful sleek emperor penguin mother with soft silver-white chest, gentle eyes, graceful and loving</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">K</div>
+                <div class="character-info">
+                    <h4>Kaia</h4>
+                    <p>Tiny adorable fluffy grey emperor penguin chick with enormous curious dark eyes and silver-grey down feathers</p>
+                    <span class="small-text">kaia-hatches.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">P</div>
+                <div class="character-info">
+                    <h4>Pip</h4>
+                    <p>Slightly older and rounder fluffy grey penguin chick with a funny tuft of fluff sticking up on his head, mischievous and playful</p>
+                    <span class="small-text">pip-portrait.jpg</span>
+                </div>
+            </div></div>
+
+    <h2>Scene Plan (13 scenes)</h2>
+    <div class="sections-grid">
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-papa</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Papa Frost</h3>
+                <div class="missing-image">Missing: papa-frost-portrait.jpg</div>
+                <p class="section-content">Papa Frost is the proudest penguin in all of Antarctica! He is tall and handsome, with a sleek black-and-white tuxedo and a beautiful golden-orange patch on his chest that glows like sunshine. Right now, Papa has the most important job in the world — he is keeping a very special egg warm on top of his feet, tucked snugly under his belly pouch. 'Don't worry, little one,' he whispers to the egg. 'I'll keep you warm until Mama comes home.'</p>
+                
+                
+                <div class="image-filename">papa-frost-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-great-huddle</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Cozy Huddle</h3>
+                <div class="missing-image">Missing: great-huddle.jpg</div>
+                <p class="section-content">When the wind blows cold, the penguin papas have a brilliant idea — they huddle together! Hundreds of penguins press close, sharing their warmth like one enormous feathery blanket. They take turns — the ones on the outside slowly shuffle to the warm center, and the warm ones move out to take their turn. 'We take care of each other,' Papa tells the egg. 'That's what families do.' Together, they are warmer than any house!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> hundreds of emperor penguins huddled tightly together on Antarctic ice for warmth, all facing inward, steam rising from the group, one penguin with a golden chest patch visible in the huddle with an egg on his feet, soft blue-pink twilight sky, snowflakes gently falling, cozy and warm feeling despite the cold setting</div>
+                <div class="refs">References: meet-papa</div>
+                <div class="image-filename">great-huddle.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">mama-returns</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Mama Pearl Comes Home!</h3>
+                <div class="missing-image">Missing: mama-pearl-portrait.jpg</div>
+                <p class="section-content">One beautiful morning, a familiar call rings across the ice — 'I'm HOME!' It's Mama Pearl! She's been on the most amazing fishing trip, diving deep into the sparkling ocean to bring back the very best food for her family. Mama is sleek and beautiful, with a soft silver-white chest and the gentlest eyes. She and Papa sing their special song to find each other among thousands of penguins. When they meet, they bow to each other and tap beaks — a penguin kiss!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> female emperor penguin walking gracefully across sparkly ice toward a group of penguins, carrying fish in her beak, warm golden light behind her, she looks excited and happy, the ice sparkles like diamonds, joyful reunion scene</div>
+                <div class="refs">References: meet-papa</div>
+                <div class="image-filename">mama-pearl-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">kaia-hatches</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Welcome, Little Kaia!</h3>
+                <div class="missing-image">Missing: kaia-hatches.jpg</div>
+                <p class="section-content">CRACK! A tiny sound comes from the egg. CRACK-CRACK! Papa and Mama watch breathlessly. And then — a little grey head pops out! 'Hello, world!' Baby Kaia blinks her enormous dark eyes and sees her parents for the very first time. She is the fluffiest, most adorable ball of silver-grey down ever born. Papa's eyes fill with happy tears. Mama nuzzles Kaia's tiny head with her beak. 'You're here,' they both whisper. 'Our beautiful baby is here.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> adorable tiny fluffy grey penguin chick peeking out from father penguin's belly pouch for the first time, mother penguin leaning in to see, both parents looking down with overwhelming love, cracked eggshell visible, warm golden light, the chick has huge curious dark eyes and fluffy silver-grey down</div>
+                <div class="refs">References: meet-papa, mama-returns</div>
+                <div class="image-filename">kaia-hatches.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">papas-pouch</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Papa's Warm Pouch</h3>
+                <div class="missing-image">Missing: papas-pouch.jpg</div>
+                <p class="section-content">Kaia's favorite place in the whole world is Papa's pouch! She sits on his big warm feet, tucked under his soft belly feathers, and peeks out at the sparkling ice world. It's like the coziest sleeping bag ever invented. 'Papa, why is everything so sparkly?' she asks. 'Because you're seeing it for the first time,' Papa smiles. 'Everything is magical when you're brand new.' Kaia wiggles deeper into the pouch and yawns. Being brand new is wonderful.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> tiny fluffy grey penguin chick sitting snugly on father penguin's feet, tucked under his warm belly pouch, only the chick's face peeking out, both looking content and cozy, soft warm light, ice crystals sparkling around them</div>
+                <div class="refs">References: kaia-hatches, meet-papa</div>
+                <div class="image-filename">papas-pouch.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">first-feeding</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Mama's Special Breakfast</h3>
+                <div class="missing-image">Missing: first-feeding.jpg</div>
+                <p class="section-content">Time for Kaia's very first meal! Mama Pearl leans down and feeds Kaia beak-to-beak — the most delicious fish soup a baby penguin could dream of. 'Mama brought this all the way from the ocean, just for you,' Papa explains proudly. Kaia gobbles it up and chirps for more. Mama laughs her soft penguin laugh. 'You eat just like your Papa!' From now on, Mama and Papa will take turns — one fishing in the ocean, one keeping Kaia warm and fed. The best team ever!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> mother emperor penguin gently feeding a tiny fluffy grey chick beak-to-beak, the chick is standing on the mother's feet looking up eagerly, warm tender moment, soft golden Antarctic light, other penguin families visible in the gentle background</div>
+                <div class="refs">References: kaia-hatches, mama-returns</div>
+                <div class="image-filename">first-feeding.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-pip</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Pip, the Brave Explorer</h3>
+                <div class="missing-image">Missing: pip-portrait.jpg</div>
+                <p class="section-content">In the penguin nursery — called a crèche — Kaia meets Pip! Pip is a bit older and rounder, with a funny little tuft of fluff that sticks straight up on his head. 'Want to see something AMAZING?' Pip whispers. He waddles to the edge of a tiny ice hill and slides down on his belly — WHEEE! 'That's called tobogganing,' he announces proudly. 'I invented it!' (He didn't, but Kaia is very impressed.) They become the very best of friends.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two fluffy grey emperor penguin chicks standing face to face on ice, one slightly bigger and rounder than the other, both with huge curious dark eyes, playful poses, one has a tiny tuft of extra fluff sticking up on its head, sparkling ice around them, joyful meeting</div>
+                <div class="refs">References: kaia-hatches</div>
+                <div class="image-filename">pip-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">tobogganing</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Belly Sliding!</h3>
+                <div class="missing-image">Missing: tobogganing-fun.jpg</div>
+                <p class="section-content">Tobogganing is officially the BEST THING EVER! Kaia and Pip spend all day sliding on their fluffy bellies across the smooth ice. They race each other, spin in circles, and crash into soft snow banks — POOF! 'Again! Again!' Kaia squeals. Even the grown-up penguins toboggan — it's actually faster than walking! Mama and Papa watch from nearby, laughing as the chicks tumble and slide. 'We used to do that too,' Mama whispers to Papa.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two fluffy grey penguin chicks sliding on their bellies down a gentle ice slope, pure joy on their faces, one behind the other, snow spraying around them, sparkling ice surface, blue sky, playful fun scene</div>
+                <div class="refs">References: kaia-hatches, meet-pip</div>
+                <div class="image-filename">tobogganing-fun.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">penguin-song</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Our Family Song</h3>
+                <div class="missing-image">Missing: family-song.jpg</div>
+                <p class="section-content">Every penguin family has their own special song — and no two songs are the same! Papa's voice is deep and rumbly like gentle thunder. Mama's voice is clear and bright like a bell. And Kaia's little voice is squeaky and adorable. Together, they point their beaks to the sky and sing! Their song echoes across the ice. 'This is how we'll always find each other,' Papa explains. 'Even in a crowd of a thousand penguins, I will always know YOUR voice.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> emperor penguin family — father, mother and tiny fluffy chick — standing close together with beaks pointed upward, singing together, golden-pink sky behind them, aurora borealis faintly visible, other penguin families singing in the background, beautiful harmonious scene</div>
+                <div class="refs">References: kaia-hatches, meet-papa, mama-returns</div>
+                <div class="image-filename">family-song.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">aurora-lights</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Dancing Lights</h3>
+                <div class="missing-image">Missing: aurora-wonder.jpg</div>
+                <p class="section-content">One night, Kaia looks up and gasps. The sky is DANCING! Great curtains of green and purple and pink light ripple across the darkness like a magic show. 'Papa! Mama! The sky is on FIRE!' 'Those are the Southern Lights,' Mama whispers. 'Some say they're the sky's way of singing.' Kaia watches, mouth wide open, as the colors swirl and shimmer above the ice. It's the most beautiful thing she has ever seen. She decides right then: Antarctica is the best home in the whole universe.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> tiny fluffy penguin chick staring up in wonder at a magnificent aurora australis (southern lights) painting the Antarctic sky in curtains of green, purple and pink light, the chick's face lit up with amazement, sparkling ice reflecting the colors, magical and awe-inspiring but warm and safe feeling</div>
+                <div class="refs">References: kaia-hatches</div>
+                <div class="image-filename">aurora-wonder.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">growing-up</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Funny Feather Stage</h3>
+                <div class="missing-image">Missing: funny-molting.jpg</div>
+                <p class="section-content">One morning, Kaia notices something strange — her fluffy grey baby feathers are falling out! In their place, sleek new black-and-white feathers are growing in. She looks absolutely RIDICULOUS — half fluffy, half sleek, like a penguin wearing a costume that doesn't fit. Pip looks even funnier — he has a big grey patch right on his face! 'We look like clouds with legs!' Kaia giggles. 'But soon,' says Mama proudly, 'you'll have the most beautiful waterproof coat in the ocean.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two young emperor penguins in the middle of molting — patches of fluffy grey baby down mixed with sleek new black and white adult feathers coming in, one looking at the other's patchy appearance and laughing, funny awkward teenage penguin stage, bright Antarctic day</div>
+                <div class="refs">References: kaia-hatches, meet-pip</div>
+                <div class="image-filename">funny-molting.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">first-swim</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Kaia's First Swim!</h3>
+                <div class="missing-image">Missing: first-swim.jpg</div>
+                <p class="section-content">The day has come — Kaia's new waterproof feathers are ready, and it's time for her VERY FIRST SWIM! She stands at the edge of the ice, looking at the sparkling turquoise water. Her heart beats fast. Papa stands on one side. Mama stands on the other. 'We'll be right here,' they promise. Kaia takes a deep breath and — SPLASH! The water is cool and wonderful! She zooms through it like a rocket, twisting and spinning. 'I'M FLYING UNDERWATER!' she shouts with pure joy.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> young emperor penguin with new sleek feathers diving joyfully into crystal-clear turquoise Antarctic water for the first time, parent penguins watching proudly from the ice edge, underwater view showing the young penguin swimming gracefully with fish visible, sunlight streaming through the water, pure joy and freedom</div>
+                <div class="refs">References: kaia-hatches, meet-papa, mama-returns</div>
+                <div class="image-filename">first-swim.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">family-together</span>
+                    
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Together Forever</h3>
+                <div class="missing-image">Missing: family-together-sunset.jpg</div>
+                <p class="section-content">As the golden Antarctic sun paints the ice in warm shades of amber and rose, the whole colony gathers together. Papa, Mama, and Kaia stand side by side, sleek and beautiful in their matching tuxedos. Kaia is almost as tall as her parents now! She can swim, she can sing, she can toboggan faster than Pip (don't tell him). But the very best thing about being a penguin, Kaia knows, is having a family that keeps you warm — no matter how cold the world gets. And that is the warmest thing of all.</p>
+                
+                
+                <div class="image-filename">family-together-sunset.jpg</div>
+            </div></div>
+
+    <h2>Viewer Details</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-feet-warmth.jpg</div>
+                <h4>The Brood Pouch</h4>
+                <p>Look at Papa Frost's feet — see that special flap of warm skin? That's the brood pouch! Emperor penguin fathers balance the egg (or chick) on top of their feet and cover it with this warm, feathered pouch. Inside, the temperature stays a cozy 36°C even when it's -40°C outside. It's nature's best sleeping bag!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-feather-closeup.jpg</div>
+                <h4>Waterproof Feathers</h4>
+                <p>Emperor penguin feathers are incredible! They have about 100 feathers per square inch — more than almost any other bird. The feathers overlap tightly like roof tiles, and each one is coated with a special oil that repels water. This keeps penguins completely dry even when diving in freezing water. That's why Kaia had to wait for her adult feathers before swimming!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-eye-adaptation.jpg</div>
+                <h4>Underwater Eyes</h4>
+                <p>Kaia's big dark eyes aren't just adorable — they're specially designed for underwater hunting! Penguins can see perfectly both above and below water. Their eyes adjust quickly from bright ice to the dark deep ocean. They can even see in near-darkness at 500 meters deep, helping them spot tiny fish and krill.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-beak-structure.jpg</div>
+                <h4>The Penguin Beak</h4>
+                <p>Mama Pearl's beak is a multi-tool! The orange-pink coloring at the sides helps penguins recognize each other. The sharp, curved tip is perfect for catching slippery fish. And inside, tiny backwards-pointing barbs grip prey so it can't escape. Mama uses her beak for feeding Kaia, preening her feathers, and giving gentle penguin kisses!</p>
+            </div></div>
+
+    <h2>Fun Facts</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-deep-diving.jpg</div>
+                <h4>Champion Divers</h4>
+                <p>Emperor penguins can dive deeper than 500 meters (1,640 feet) — that's taller than the Eiffel Tower! They can hold their breath for over 20 minutes while hunting for fish, squid, and krill in the deep, dark ocean. Their special blood can carry extra oxygen, like a built-in scuba tank!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-toboggan.jpg</div>
+                <h4>Belly Surfers</h4>
+                <p>Penguins don't just walk — they toboggan! By lying on their bellies and pushing with their flippers, they can slide across the ice much faster than waddling. It's like having a built-in sled wherever you go! Baby penguins learn to toboggan as soon as they can walk, and it's their favorite game.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-no-teeth.jpg</div>
+                <h4>No Teeth, No Problem!</h4>
+                <p>Penguins don't have teeth! Instead, they have backwards-pointing barbs inside their beaks and on their tongues that help grip slippery fish. Once a fish goes in, it can only go one way — down! This clever design means penguins never drop their dinner, even underwater.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-huddle-warmth.jpg</div>
+                <h4>The Warmest Huddle</h4>
+                <p>When emperor penguins huddle together, the temperature inside the group can reach a toasty 37°C (98°F) — as warm as your body! The penguins on the outside slowly shuffle to the center to warm up, while the warm ones move out. They take turns so everyone stays cozy. It's like a giant, rotating group hug!</p>
+            </div></div>
+
+    <h2>Hidden Generation Sections</h2>
+    <div class="hidden-grid">
+            <div class="hidden-section-card">
+                <span class="section-id">detail-feather-close</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Extreme close-up of emperor penguin feathers showing the dense, overlapping waterproof structure, individual barbs visib...</p>
+                
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-feet-warmth</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the penguin from reference, close-up of emperor penguin's feet showing how they keep eggs/chicks warm with the bro...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-eye-adaptation</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the penguin chick from reference, close-up of emperor penguin's large dark eye showing adaptation to underwater vi...</p>
+                <span class="refs">Ref: kaia-hatches</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-beak-structure</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the penguin from reference, close-up of emperor penguin's beak showing the orange-pink coloring and strong curved ...</p>
+                <span class="refs">Ref: mama-returns</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-deep-diving-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the penguin from reference, show an emperor penguin swimming deep underwater surrounded by beautiful fish and ocea...</p>
+                <span class="refs">Ref: kaia-hatches</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-toboggan-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the penguin chick from reference, show a line of penguins sliding on their bellies across the ice in a fun tobogga...</p>
+                <span class="refs">Ref: kaia-hatches</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-no-teeth-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the penguin from reference, show an emperor penguin with mouth open showing the backwards-pointing barbs inside th...</p>
+                <span class="refs">Ref: mama-returns</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-huddle-warmth-img</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Cross-section illustration showing how emperor penguins huddle — warm center vs cold outside, arrows showing rotation pa...</p>
+                
+            </div></div>
+
+    
+
+    <h2>All Images — Visual Consistency Check</h2>
+    <div class="image-grid"></div>
+
+    <footer>
+        Production Bible &bull; Generated 2026-02-28 &bull; Penguins: The Warmest Family on Ice
+    </footer>
+</div>
+</body>
+</html>

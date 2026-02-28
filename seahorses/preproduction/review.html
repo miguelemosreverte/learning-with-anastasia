@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Bible — Seahorses: The Tiniest Dance in the Sea</title>
+<style>
+    :root {
+        --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d;
+        --text: #e6edf3; --text-dim: #8b949e; --accent: #58a6ff; --green: #3fb950;
+        --orange: #d29922; --red: #f85149; --purple: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero-header { text-align: center; padding: 48px 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .hero-header h1 { font-size: 2.5em; margin-bottom: 8px; }
+    .hero-header .subtitle { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+    .hero-header .meta-line { color: var(--text-dim); font-size: 0.9em; }
+    .hero-header .description { max-width: 700px; margin: 16px auto; color: var(--text-dim); }
+    .hero-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-top: 24px; border: 1px solid var(--border); }
+    h2 { font-size: 1.5em; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+    h3 { font-size: 1.2em; margin: 24px 0 12px; color: var(--accent); }
+    .preface { background: var(--surface); border-radius: 8px; padding: 24px; border-left: 4px solid var(--accent); margin-bottom: 32px; }
+    .preface p { margin-bottom: 12px; color: var(--text-dim); }
+    .preface p:last-child { margin-bottom: 0; }
+    .style-banner { background: linear-gradient(135deg, #1a1e2e, #1e2636); border-radius: 8px; padding: 20px 24px; border: 1px solid var(--purple); margin-bottom: 32px; }
+    .style-banner strong { color: var(--purple); }
+    .characters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .character-profile { display: flex; gap: 16px; background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .character-thumb { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+    .character-thumb-placeholder { width: 100px; height: 100px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2em; color: var(--text-dim); flex-shrink: 0; }
+    .character-info h4 { margin-bottom: 4px; }
+    .character-info p { color: var(--text-dim); font-size: 0.9em; }
+    .small-text { color: var(--text-dim); font-size: 0.75em; font-family: monospace; }
+    .sections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .section-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .section-card.character-card { border-color: var(--green); }
+    .section-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+    .section-id { font-family: monospace; color: var(--text-dim); font-size: 0.8em; }
+    .section-image { width: 100%; border-radius: 6px; margin: 12px 0; max-height: 300px; object-fit: cover; }
+    .section-content { color: var(--text-dim); font-size: 0.9em; margin: 8px 0; max-height: 80px; overflow: hidden; }
+    .prompt-block { background: var(--surface2); padding: 8px 12px; border-radius: 4px; font-size: 0.8em; margin: 8px 0; color: var(--text-dim); border-left: 3px solid var(--orange); }
+    .refs { font-size: 0.8em; color: var(--purple); margin-top: 4px; }
+    .image-filename { font-family: monospace; font-size: 0.75em; color: var(--text-dim); margin-top: 8px; }
+    .missing-image { background: var(--surface2); border: 2px dashed var(--red); border-radius: 6px; padding: 40px; text-align: center; color: var(--red); margin: 12px 0; }
+    .missing-thumb { background: var(--surface2); border: 1px dashed var(--red); border-radius: 4px; padding: 12px; text-align: center; color: var(--red); font-size: 0.8em; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; font-weight: 600; text-transform: uppercase; }
+    .badge-gemini { background: #1a3a2a; color: var(--green); }
+    .badge-openai { background: #2a2a1a; color: var(--orange); }
+    .badge-unknown { background: var(--surface2); color: var(--text-dim); }
+    .badge-character { background: #1a2a1a; color: var(--green); }
+    .details-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .detail-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .detail-image { width: 100%; border-radius: 6px; margin-bottom: 12px; max-height: 200px; object-fit: cover; }
+    .detail-card h4 { margin-bottom: 8px; }
+    .detail-card p { color: var(--text-dim); font-size: 0.85em; }
+    .hidden-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hidden-section-card { background: var(--surface); border-radius: 6px; padding: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .thumb { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; }
+    .small-prompt { font-size: 0.75em; color: var(--text-dim); }
+    .prepro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .prepro-step { background: var(--surface); border-radius: 8px; padding: 20px; border: 2px solid var(--border); text-align: center; }
+    .prepro-step h4 { margin-bottom: 8px; }
+    .prepro-step p { color: var(--text-dim); font-size: 0.9em; margin-bottom: 8px; }
+    .step-approved { border-color: var(--green); }
+    .step-pending { border-color: var(--orange); }
+    .check { color: var(--green); font-weight: 600; }
+    .pending { color: var(--orange); font-weight: 600; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .prepro-image-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .prepro-image-grid .grid-item img { height: 280px; }
+    .grid-item { background: var(--surface); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
+    .grid-item img { width: 100%; height: 160px; object-fit: cover; }
+    .grid-item span { display: block; padding: 4px 8px; font-size: 0.7em; color: var(--text-dim); font-family: monospace; }
+    .approved-item { border-color: var(--green); border-width: 2px; }
+    .approved-item span { color: var(--green); }
+    .cover-section { text-align: center; margin-bottom: 32px; }
+    .cover-image { max-width: 400px; border-radius: 8px; border: 2px solid var(--accent); }
+    .stats-bar { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 20px; background: var(--surface); border-radius: 8px; margin-bottom: 32px; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 0.8em; color: var(--text-dim); }
+    footer { text-align: center; padding: 32px; color: var(--text-dim); font-size: 0.8em; border-top: 1px solid var(--border); margin-top: 40px; }
+    @media (max-width: 768px) {
+        .prepro-grid { grid-template-columns: 1fr; }
+        .sections-grid { grid-template-columns: 1fr; }
+        .hero-header h1 { font-size: 1.8em; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-header">
+        <h1>Seahorses: The Tiniest Dance in the Sea</h1>
+        <div class="subtitle">Coral's First Day in the Reef</div>
+        <div class="meta-line">February 2026 &bull; Issue #12 &bull; Chapter: seahorses</div>
+        <p class="description">Follow Coral the baby seahorse through her first day in the tropical reef, from swirling out of Papa's pouch to learning to grip, eat, and dance with her family</p>
+        
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat"><div class="num">4</div><div class="label">Characters</div></div>
+        <div class="stat"><div class="num">11</div><div class="label">Scenes</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Viewer Details</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Fun Facts</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">Total Images</div></div>
+        <div class="stat"><div class="num">0 / 0</div><div class="label">Gemini / OpenAI</div></div>
+    </div>
+
+    <h2>Preface</h2>
+    <div class="preface">
+        <p>Welcome to the sparkling coral reef, where the tiniest and most magical fish in the sea live — seahorses! In this adventure, we'll follow Coral, a sunny little baby seahorse, as she discovers the wonders of her colorful underwater home with her devoted Papa Sol and graceful Mama Pearl.</p>
+<p>Seahorses are truly one of nature's greatest surprises. Did you know that seahorse papas carry all the babies in a special pouch? And that seahorse parents dance together every single morning, changing colors and intertwining their tails? They are some of the most loving families in the ocean!</p>
+<p>Through Coral's first day, you'll discover how seahorses grip with their curly tails, eat with their tubular snouts, look in two directions at once, and perform the most beautiful sunset dance you've ever seen. Get ready for a tiny, magical adventure!</p>
+    </div>
+
+    <h2>Art Direction</h2>
+    <div class="style-banner">
+        <strong>Global Style:</strong> Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in scales and fins. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Vivid tropical coral reef setting with sparkling turquoise water, colorful corals in pink purple orange and yellow, golden sunbeams filtering through the surface, and swaying sea plants. Child-friendly and inviting.
+    </div>
+
+    <h2>Pre-Production Pipeline</h2>
+    
+        <div class="prepro-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="prepro-step step-pending">
+                <h4>Step 0: Storyline</h4>
+                <p>pending (0 attempts)</p>
+                <span class="pending">pending</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 1: Unified Cast Sheet</h4>
+                <p>approved (1 attempts)</p>
+                <span class="check">Approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 2: Character Sheets</h4>
+                <p>approved</p>
+                <span class="check">Papa Sol: approved</span><br><span class="check">Mama Pearl: approved</span><br><span class="check">Coral: approved</span><br><span class="check">Bubbles: approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 3: Mood Proposals</h4>
+                <p>approved</p>
+                <span class="check">Moods: translucency, lush-botanical</span>
+            </div>
+        </div>
+    
+    <h3>Step 1: Unified Cast Sheets</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step1-unified/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>approved.jpg (APPROVED)</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step1-unified/unified-cast-v1.jpg" alt="unified-cast-v1.jpg" loading="lazy" />
+                        <span>unified-cast-v1.jpg</span>
+                    </div></div><h3>Step 2: Papa Sol Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/papa-sol/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/papa-sol/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Mama Pearl Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/mama-pearl/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/mama-pearl/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Coral Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/coral/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/coral/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Bubbles Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/bubbles/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/bubbles/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 3: Pixar Mood Proposals</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step3-style/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>APPROVED</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-1-translucency-botanical.jpg" alt="proposal-1-translucency-botanical.jpg" loading="lazy" />
+                        <span>1-translucency-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-2-epic-intimate.jpg" alt="proposal-2-epic-intimate.jpg" loading="lazy" />
+                        <span>2-epic-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-3-golden-botanical.jpg" alt="proposal-3-golden-botanical.jpg" loading="lazy" />
+                        <span>3-golden-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-4-translucency-intimate.jpg" alt="proposal-4-translucency-intimate.jpg" loading="lazy" />
+                        <span>4-translucency-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-5-epic-golden.jpg" alt="proposal-5-epic-golden.jpg" loading="lazy" />
+                        <span>5-epic-golden</span>
+                    </div></div>
+
+    <h2>Character Cast</h2>
+    <div class="characters-grid">
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">P</div>
+                <div class="character-info">
+                    <h4>Papa Sol</h4>
+                    <p>Proud handsome seahorse father in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">M</div>
+                <div class="character-info">
+                    <h4>Mama Pearl</h4>
+                    <p>Graceful seahorse mother in shimmering rose-pink with pearlescent white highlights, slightly taller than Papa, delicate almost-transparent fins</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">C</div>
+                <div class="character-info">
+                    <h4>Coral</h4>
+                    <p>Tiny baby seahorse in bright sunny yellow with baby-pink spots, enormous round curious eyes, always curling tail around things</p>
+                    <span class="small-text">coral-and-bubbles-portrait.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">B</div>
+                <div class="character-info">
+                    <h4>Bubbles</h4>
+                    <p>Slightly rounder baby seahorse in soft lavender-purple with white belly, tall coronet, shy, always gripping Papa's tail</p>
+                    <span class="small-text">coral-and-bubbles-portrait.jpg</span>
+                </div>
+            </div></div>
+
+    <h2>Scene Plan (11 scenes)</h2>
+    <div class="sections-grid">
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-papa</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Meet Papa Sol</h3>
+                <div class="missing-image">Missing: papa-sol-portrait.jpg</div>
+                <p class="section-content">Papa Sol is the proudest seahorse in all the reef! He is a handsome fellow in deep warm orange with golden speckles that shimmer like tiny stars whenever the sunlight touches him. His beautiful fan-like dorsal fin flutters so fast it's almost invisible. But the most special thing about Papa is his rounded belly pouch — because inside, dozens of tiny babies are growing! Papa holds onto a piece of swaying seagrass with his curly tail and rocks gently in the current. 'Almost time, little ones,' he whispers to his belly. 'Almost time.'</p>
+                
+                
+                <div class="image-filename">papa-sol-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-mama</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Meet Mama Pearl</h3>
+                <div class="missing-image">Missing: mama-pearl-portrait.jpg</div>
+                <p class="section-content">Here comes Mama Pearl, the most graceful seahorse in the reef! She glides through the water like a dancer, her shimmering rose-pink body catching the light in every direction. Pearlescent white highlights run along her ridges like tiny opals, and her delicate fins are so thin and beautiful they look like stained glass windows when the sun shines through them. Mama is slightly taller than Papa — elegant and poised. She swims toward Papa with the biggest smile. 'Good morning, my love,' she calls. 'Are you ready for our dance?'</p>
+                
+                
+                <div class="image-filename">mama-pearl-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">morning-dance</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Morning Dance</h3>
+                <div class="missing-image">Missing: morning-dance.jpg</div>
+                <p class="section-content">Every single morning, Mama Pearl and Papa Sol perform the most beautiful dance in the ocean. They swim toward each other through the golden water, and when they meet — they intertwine their curly tails! Then something magical happens: colors begin to ripple across their bodies! Papa flushes from orange to bright gold. Mama shimmers from pink to glowing peach. They spin together slowly, tails linked, changing colors like a living sunset. 'This is how we say I love you,' Mama whispers. They've danced every morning since they met — and they always will.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two seahorses — one deep orange with golden speckles, one shimmering rose-pink — meeting at dawn in a coral reef, intertwining their curly tails together, both changing colors with swirls of pastel hues rippling across their bodies, golden sunbeams filtering through turquoise water, romantic and magical, tiny bubbles floating around them</div>
+                <div class="refs">References: meet-papa, meet-mama</div>
+                <div class="image-filename">morning-dance.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">papas-pouch</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Papa's Special Pouch</h3>
+                <div class="missing-image">Missing: papas-pouch.jpg</div>
+                <p class="section-content">While the babies grow, Papa Sol has the most important job in all the sea. His round pouch is like a tiny nursery — warm, safe, and full of growing seahorse babies! Papa grips a piece of seagrass with his curly tail and rocks gently back and forth in the current. He can't swim very far or very fast right now, but he doesn't mind one bit. 'I'm the luckiest Papa in the ocean,' he says, patting his belly softly. Mama Pearl brings him tiny shrimp to eat and nuzzles him. 'You're doing wonderfully, my love.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> close-up of an orange seahorse with golden speckles gripping seagrass with his curly tail, his rounded belly pouch visibly full and glowing faintly, rocking gently in the current, peaceful coral reef behind him, warm golden-green light, serene and tender</div>
+                <div class="refs">References: meet-papa</div>
+                <div class="image-filename">papas-pouch.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-big-arrival</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Big Arrival!</h3>
+                <div class="missing-image">Missing: the-big-arrival.jpg</div>
+                <p class="section-content">The most exciting day has arrived! Papa Sol grips his seagrass tightly, and then — WHOOSH! Tiny baby seahorses begin swirling out of his pouch like living confetti! Dozens and dozens of miniature seahorses spiral into the sparkling water, each one smaller than a grain of rice! They tumble and twirl in the current, surrounded by a cloud of tiny bubbles. Mama Pearl watches with tears of joy. 'They're here! They're all here!' Papa gasps, out of breath but beaming with pride. It's the most magical moment in the entire reef.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> dramatic magical moment — an orange seahorse with golden speckles releasing dozens of tiny baby seahorses from his belly pouch into sparkling turquoise water, babies swirling out like confetti in a cloud of tiny bubbles, mama rose-pink seahorse watching nearby with joy, golden sunbeams streaming through the water, coral reef background, the most exciting moment ever</div>
+                <div class="refs">References: meet-papa, meet-mama</div>
+                <div class="image-filename">the-big-arrival.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">coral-and-bubbles</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Meet Coral and Bubbles</h3>
+                <div class="missing-image">Missing: coral-and-bubbles-portrait.jpg</div>
+                <p class="section-content">Among all the tiny babies, two little seahorses stand out right away! Coral is bright sunny yellow with the cutest baby-pink spots and the most enormous curious eyes you've ever seen. She immediately starts looking around at EVERYTHING, her little tail curling with excitement. And right beside her is Bubbles — a slightly rounder baby in soft lavender-purple with a white belly and a distinctively tall coronet on her head. Bubbles is a bit shy, and the very first thing she does is grip Papa's tail. 'Don't worry, Bubbles,' Papa says gently. 'I've got you.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two distinct tiny baby seahorses side by side — one bright sunny yellow with pink spots and enormous curious eyes, one soft lavender-purple with white belly and tall coronet — floating near their orange father and pink mother seahorse, colorful coral garden background, warm intimate lighting, adorable and heartwarming</div>
+                <div class="refs">References: meet-papa, meet-mama</div>
+                <div class="image-filename">coral-and-bubbles-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">tail-gripping</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Hold On Tight!</h3>
+                <div class="missing-image">Missing: tail-gripping.jpg</div>
+                <p class="section-content">The very first lesson for baby seahorses is the most important one: hold on tight! Seahorses are the slowest swimmers in the ocean, so their curly tails are their superpower. Coral tries gripping a piece of bright green seagrass — her tiny tail wraps around it like a little spring. 'I did it! I did it!' she squeaks. Bubbles tries too, but instead of gripping the seagrass, she wraps her tail around Papa's tail. 'That works too,' Papa laughs. They practice gripping everything — seagrass, coral branches, each other's tails. It's the best game ever!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two tiny baby seahorses — one yellow, one purple — learning to grip with their curly tails, the yellow one wrapped around a piece of bright green seagrass, the purple one gripping the orange father's tail, coral reef with swaying sea fans behind them, warm dappled sunlight, adorable learning moment</div>
+                <div class="refs">References: coral-and-bubbles, meet-papa</div>
+                <div class="image-filename">tail-gripping.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">tiny-meals</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Snout Snacks!</h3>
+                <div class="missing-image">Missing: tiny-meals.jpg</div>
+                <p class="section-content">Time for the first meal! Baby seahorses eat by sucking food through their long tubular snouts — SLURRRP! — like a tiny underwater vacuum cleaner. Coral spots a cloud of sparkly microscopic shrimp and — SLUUURP! — she sucks one right up! 'Mmmm!' Her eyes go wide. 'More! More!' Bubbles tries too — SLURP, SLURP — she's a natural! 'You need to eat ALL DAY LONG,' Mama Pearl tells them, 'because you have no stomach! Food goes straight through you.' 'No stomach?!' Coral gasps. 'Best excuse for always eating!'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> tiny yellow baby seahorse with enormous eyes sucking up microscopic food through her tubular snout, tiny sparkly particles visible being drawn in like a vacuum, purple baby seahorse beside her trying too, surrounded by floating microscopic plankton that sparkles, warm turquoise water with coral in background</div>
+                <div class="refs">References: coral-and-bubbles</div>
+                <div class="image-filename">tiny-meals.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">two-way-eyes</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Eyes Everywhere!</h3>
+                <div class="missing-image">Missing: two-way-eyes.jpg</div>
+                <p class="section-content">Coral makes the FUNNIEST discovery! She's looking at a pretty orange clownfish swimming in front of her, when she realizes — she can ALSO see Bubbles sneaking up behind her! Each of her eyes can look in a completely different direction at the same time! 'Bubbles, I can see you back there!' Coral giggles. 'HOW?!' Bubbles squeaks, startled. 'My eyes are magic! One looks forward, one looks backward!' Coral spins one eye up and one eye down. 'I can see the sky AND the sand at the same time!' Papa laughs. 'That's your seahorse superpower, little ones.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> close-up of a tiny bright yellow baby seahorse with one eye looking forward at a colorful clownfish and the other eye looking backward at a purple baby seahorse, both eyes clearly pointing in different directions, vibrant coral reef background with anemones and sea fans, warm playful lighting, funny and adorable</div>
+                <div class="refs">References: coral-and-bubbles</div>
+                <div class="image-filename">two-way-eyes.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">reef-exploration</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Grand Reef Tour</h3>
+                <div class="missing-image">Missing: reef-exploration.jpg</div>
+                <p class="section-content">Time for an adventure! The whole family sets out to explore their magnificent reef home. They drift past waving purple sea fans as tall as trees, bright orange anemones where clownfish play peek-a-boo, yellow tube sponges that look like chimneys, and gardens of coral in every color imaginable. 'Look, Mama! A starfish!' squeals Coral, pointing with her snout. 'Look, Papa! Blue fish!' Bubbles whispers from behind Papa's tail. The reef is an endless wonderland of color and life. Even Papa and Mama discover something new. 'We've lived here our whole lives,' Mama marvels, 'and it still surprises us.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> seahorse family — orange father, rose-pink mother, tiny yellow baby and tiny purple baby — touring a magnificent colorful coral reef together, swimming past giant purple sea fans, bright orange anemones with clownfish, yellow tube sponges, schools of tiny blue fish, golden sunbeams creating light shafts through the water, magical and awe-inspiring underwater landscape</div>
+                <div class="refs">References: meet-papa, meet-mama, coral-and-bubbles</div>
+                <div class="image-filename">reef-exploration.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">color-dance</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Sunset Dance</h3>
+                <div class="missing-image">Missing: color-dance-sunset.jpg</div>
+                <p class="section-content">As the golden sunset light streams down through the water, Mama Pearl and Papa Sol begin their evening dance. Their tails intertwine, and colors ripple across their bodies — orange to gold, pink to peach, then both shimmer with rainbow light. And then something wonderful happens: Coral and Bubbles try to dance too! Coral flickers from yellow to green to — OOPS — bright red! Bubbles flashes from purple to blue and accidentally turns polka-dotted! They're not very good at it yet, but they're trying SO HARD. The whole family laughs and dances together as the reef glows gold around them. This is home. This is love. This is the tiniest, most beautiful dance in all the sea.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> sunset scene underwater — orange father seahorse and rose-pink mother seahorse with tails intertwined performing their color-changing dance, nearby two tiny baby seahorses — one yellow one purple — trying to copy them, their little bodies flickering through rainbow colors clumsily, golden sunset light streaming down through the water, coral reef silhouettes, magical and heartwarming family moment, particles of light floating like stars</div>
+                <div class="refs">References: meet-papa, meet-mama, coral-and-bubbles</div>
+                <div class="image-filename">color-dance-sunset.jpg</div>
+            </div></div>
+
+    <h2>Viewer Details</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-brood-pouch.jpg</div>
+                <h4>The Brood Pouch</h4>
+                <p>Look at Papa Sol's round belly — see that special pouch? That's the brood pouch, and it's one of the most amazing things in nature! Only papa seahorses have it. Mama places her eggs inside, and Papa carries them for 2-4 weeks. The pouch provides oxygen and nutrients to the growing babies, just like a nursery. When the babies are ready, Papa pumps his body back and forth to push them out into the world!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-prehensile-tail.jpg</div>
+                <h4>Prehensile Tail</h4>
+                <p>A seahorse's tail is one of nature's cleverest inventions! Unlike most fish tails, it can curl and grip like a monkey's tail. Seahorses use it to anchor themselves to seagrass, coral, and even each other so they don't get swept away by the current. The tail has a square cross-section (not round!) which makes it even stronger for gripping. Coral loves wrapping her tail around everything she finds!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-coronet.jpg</div>
+                <h4>The Coronet</h4>
+                <p>See the little crown on top of Bubbles' head? That's called a coronet! Every single seahorse has one, and no two are exactly alike — it's like a seahorse fingerprint! Scientists use coronets to tell individual seahorses apart. The coronet is made of bone and grows with the seahorse throughout its life. Bubbles has an especially tall, distinctive coronet that makes her easy to spot.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-dorsal-fin.jpg</div>
+                <h4>The Dorsal Fin</h4>
+                <p>Papa Sol's beautiful fan-like dorsal fin is a tiny marvel of engineering! This single small fin on the seahorse's back is their main engine — it flutters an incredible 35 times per second, so fast it looks like a hummingbird wing! Despite this amazing speed, seahorses are still the slowest fish in the ocean. They also have two tiny pectoral fins behind their head that help them steer. It's like having a tiny propeller and two little rudders!</p>
+            </div></div>
+
+    <h2>Fun Facts</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-papa-power.jpg</div>
+                <h4>Papa Power</h4>
+                <p>Male seahorses carry and give birth to all the babies — they're one of the only species in the world where the father does this! Papa seahorse has a special pouch on his belly where the eggs grow for 2-4 weeks. When the babies are ready, he pushes them out into the water in a magical cloud of tiny seahorses. One papa can have up to 2,000 babies at once!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-super-snouts.jpg</div>
+                <h4>Super Snouts</h4>
+                <p>Seahorses suck food up through their long tubular snouts like a tiny vacuum cleaner — SLURP! They have no teeth at all, so they swallow their food whole. A single seahorse can eat up to 3,000 tiny brine shrimp in one day! Their snouts are so powerful they can suck up food from over an inch away.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-no-stomach.jpg</div>
+                <h4>No Stomach!</h4>
+                <p>Seahorses have no stomach at all! Food passes straight through their digestive system very quickly, which means they barely absorb any nutrients from each meal. That's why they need to eat almost constantly — all day long, every day! It's like having a never-ending snack time. Coral would approve!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-tiny-swimmers.jpg</div>
+                <h4>Tiny Swimmers</h4>
+                <p>Seahorses are the slowest fish in the entire ocean! The dwarf seahorse moves at only about 5 feet per hour — a garden snail is faster! But their tiny dorsal fin is incredible: it flutters up to 35 times per second, so fast it becomes almost invisible. They steer with their tiny pectoral fins behind their head, like little underwater helicopters.</p>
+            </div></div>
+
+    <h2>Hidden Generation Sections</h2>
+    <div class="hidden-grid">
+            <div class="hidden-section-card">
+                <span class="section-id">detail-brood-pouch</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the seahorse from reference, extreme close-up of a seahorse's rounded brood pouch showing the opening and texture,...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-prehensile-tail</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the baby seahorse from reference, close-up of a seahorse's curling prehensile tail wrapped tightly around a piece ...</p>
+                <span class="refs">Ref: coral-and-bubbles</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-coronet</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the baby seahorse from reference, close-up of a seahorse's coronet — the crown-like bony structure on top of the h...</p>
+                <span class="refs">Ref: coral-and-bubbles</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-dorsal-fin</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the seahorse from reference, close-up of a seahorse's tiny dorsal fin fluttering rapidly, motion blur showing the ...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-papa-power-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the seahorse from reference, show an orange seahorse father releasing tiny baby seahorses from his pouch, babies s...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-super-snouts-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the baby seahorse from reference, show a yellow baby seahorse sucking up tiny shrimp through its long tubular snou...</p>
+                <span class="refs">Ref: coral-and-bubbles</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-no-stomach-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the baby seahorse from reference, show a cross-section educational illustration of a seahorse's body showing food ...</p>
+                <span class="refs">Ref: coral-and-bubbles</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-tiny-swimmers-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Educational illustration showing a tiny seahorse next to a fast-swimming fish for size and speed comparison, the seahors...</p>
+                
+            </div></div>
+
+    
+
+    <h2>All Images — Visual Consistency Check</h2>
+    <div class="image-grid"></div>
+
+    <footer>
+        Production Bible &bull; Generated 2026-02-28 &bull; Seahorses: The Tiniest Dance in the Sea
+    </footer>
+</div>
+</body>
+</html>

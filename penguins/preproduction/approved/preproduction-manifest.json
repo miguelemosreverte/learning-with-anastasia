@@ -1,0 +1,22 @@
+{
+  "chapter": "penguins",
+  "completedAt": "2026-02-28T04:55:41.338Z",
+  "unifiedCast": "unified-cast.jpg",
+  "characterSheets": {
+    "papa-frost": "papa-frost-sheet.jpg",
+    "mama-pearl": "mama-pearl-sheet.jpg",
+    "kaia-hatches": "kaia-sheet.jpg",
+    "meet-pip": "pip-sheet.jpg"
+  },
+  "styleReference": "style-reference.jpg",
+  "chosenStyle": {
+    "id": "epic-intimate",
+    "name": "Epic Skies + Soft Intimate",
+    "base": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.",
+    "moods": [
+      "epic-skies",
+      "soft-intimate"
+    ],
+    "description": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nDramatic, expansive skies dominating the composition — towering clouds, vivid sunset/sunrise gradients, god rays breaking through cloud layers, atmospheric perspective pulling the eye to the horizon.\n\nClose, warm framing. Shallow depth of field with creamy bokeh. Soft diffused lighting like a cozy room. Warm skin tones, gentle shadows. The feeling of being held close."
+  }
+}

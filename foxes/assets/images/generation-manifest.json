@@ -1,0 +1,167 @@
+{
+  "chapter": "foxes",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, leaves, and grass. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Warm autumn woodland setting with golden leaves, amber light, misty mornings, and cozy den interiors. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "papa-russet": {
+      "name": "Papa Russet",
+      "description": "Tall handsome dog fox with deep rich russet coat, dramatic silver streak along his back, long elegant black legs, magnificent bushy tail, warm amber eyes",
+      "uniqueFeatures": [
+        "TALLEST character — significantly larger than Mama Fern, towers over both kits",
+        "Deep RICH RUSSET coat — darker and more intense red than any other character",
+        "Dramatic SILVER STREAK running along his back — his signature mark, like a bolt of lightning",
+        "Long ELEGANT BLACK LEGS — tall and powerful, built for speed and silent movement",
+        "MAGNIFICENT bushy tail — the biggest tail, used as a blanket for the whole family",
+        "Warm AMBER eyes — golden-brown, always alert and watchful"
+      ],
+      "personality": "Wise and adventurous — stands tall and alert, ears always turning, protective but encouraging",
+      "notLike": "NOT slim or delicate like Mama Fern, NOT small or round like the kits, NOT light-coloured"
+    },
+    "mama-fern": {
+      "name": "Mama Fern",
+      "description": "Graceful vixen with softer golden-orange coat, beautiful cream chest, gentle warm brown eyes, distinctive pale patch behind one ear",
+      "uniqueFeatures": [
+        "SOFTER GOLDEN-ORANGE coat — clearly lighter and warmer-toned than Papa's deep russet",
+        "Beautiful CREAM CHEST — prominent light patch on chest and belly",
+        "Gentle warm BROWN eyes — softer and more nurturing than Papa's amber",
+        "Distinctive PALE PATCH behind one ear — her unique identifying mark",
+        "More SLENDER and graceful build than Papa — elegant but not as tall",
+        "Often seen CURLED protectively — body language always nurturing and sheltering"
+      ],
+      "personality": "Patient and nurturing — often curled protectively around kits, gentle and wise about the forest",
+      "notLike": "NOT as tall or dark as Papa Russet, NOT as small as the kits, NOT as intense or bold-coloured"
+    },
+    "pip": {
+      "name": "Pip",
+      "description": "Smallest kit with brightest vivid orange fur, oversized perky ears, one distinctive white sock on front left paw, curious tilted-head pose",
+      "uniqueFeatures": [
+        "SMALLEST character — much smaller than both parents, slightly smaller than Clover",
+        "BRIGHTEST vivid orange fur — more intensely orange than any other character",
+        "OVERSIZED perky ears — disproportionately large for his small head",
+        "One distinctive WHITE SOCK on front left paw — the other three paws are black",
+        "Signature TILTED-HEAD pose — always tilting head sideways to listen",
+        "Bright curious eyes — always wide open with wonder"
+      ],
+      "personality": "Curious and brave — always tilting head sideways to listen, eager to try everything, boundless energy",
+      "notLike": "NOT as big as Clover, much SMALLER than adults, NOT dark-auburn like Clover, NOT calm or still"
+    },
+    "clover": {
+      "name": "Clover",
+      "description": "Slightly larger kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail for her age",
+      "uniqueFeatures": [
+        "Slightly LARGER than Pip — bigger and more solidly built, but still clearly a kit",
+        "DARKER REDDISH-AUBURN coat — distinctly different from Pip's bright orange",
+        "EXTRA-LARGE white tail tip — bigger white tip than any other character",
+        "Tiny dark FRECKLE on nose — her unique identifying mark",
+        "Notably BUSHY TAIL for her age — takes after Papa's magnificent brush",
+        "Determined expression — slightly narrowed eyes, focused and clever"
+      ],
+      "personality": "Clever and determined — always figuring things out first, independent and resourceful",
+      "notLike": "NOT as bright-orange as Pip, NOT as big as adults, NOT as small as Pip, NOT timid or hesitant"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-autumn-meadow.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Breathtaking autumn woodland meadow at dawn with golden and amber leaves, soft morning mist drifting between ancient oak trees, warm golden light filtering through branches, mushrooms and wild berries dotting the forest floor",
+        "es": "Impresionante prado de bosque otoñal al amanecer con hojas doradas y ámbar, suave neblina matutina entre antiguos robles, cálida luz dorada filtrándose entre las ramas, setas y bayas silvestres salpicando el suelo del bosque",
+        "ru": "Захватывающий осенний лесной луг на рассвете с золотыми и янтарными листьями, мягкий утренний туман между старыми дубами, тёплый золотистый свет, проникающий сквозь ветви, грибы и дикие ягоды на лесной подстилке"
+      }
+    },
+    {
+      "filename": "papa-russet-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Tall handsome red fox with deep russet coat and silver streak along his back, standing alert in a misty autumn meadow at dawn, long black legs, magnificent bushy tail, warm amber eyes",
+        "es": "Apuesto zorro rojo alto con pelaje rojizo profundo y raya plateada a lo largo del lomo, alerta en un prado otoñal brumoso al amanecer, largas patas negras, magnífica cola peluda, cálidos ojos ámbar",
+        "ru": "Высокий красивый рыжий лис с глубоким рыжим мехом и серебристой полосой вдоль спины, стоящий настороже на туманном осеннем лугу на рассвете, длинные чёрные лапы, великолепный пушистый хвост, тёплые янтарные глаза"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "mama-fern-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Graceful golden-orange vixen curled protectively in a cozy underground den lined with moss and leaves, cream chest, warm brown eyes, pale patch behind one ear, two tiny kits nestled against her",
+        "es": "Graciosa zorra dorada-anaranjada acurrucada protectoramente en una acogedora madriguera subterránea con musgo y hojas, pecho crema, cálidos ojos marrones, mancha clara detrás de una oreja, dos pequeños cachorros acurrucados contra ella",
+        "ru": "Грациозная золотисто-рыжая лисица, свернувшаяся в уютной подземной норе с мхом и листьями, кремовая грудка, тёплые карие глаза, светлое пятнышко за ухом, два крошечных лисёнка прижались к ней"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "pip-opens-eyes.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Tiny fox kit with vivid orange fur and oversized ears opening his eyes for the first time in a cozy den, one white sock on front left paw, curious tilted head, mama fox curled around him",
+        "es": "Pequeño cachorro de zorro con pelaje naranja vívido y orejas enormes abriendo los ojos por primera vez en una madriguera acogedora, un calcetín blanco en la pata delantera izquierda, cabeza inclinada con curiosidad, mamá zorra acurrucada a su alrededor",
+        "ru": "Крошечный лисёнок с ярко-рыжим мехом и огромными ушами, впервые открывающий глаза в уютной норе, белый носочек на левой передней лапе, любопытно наклонённая голова, мама-лиса свернулась вокруг него"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "clover-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Slightly larger fox kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail, exploring den edges with determination",
+        "es": "Cachorro de zorro un poco más grande con pelaje más oscuro castaño-rojizo, punta de cola blanca extra grande, pequeña peca oscura en la nariz, cola notablemente peluda, explorando los bordes de la madriguera con determinación",
+        "ru": "Чуть больший лисёнок с более тёмной рыжевато-каштановой шерстью, большим белым кончиком хвоста, крошечной тёмной веснушкой на носу, заметно пушистым хвостом, исследующий края норы с решимостью"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-outside.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papas-pounce.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "clovers-first-catch.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "berry-picking.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "fox-games.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "hide-and-seek.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "sunset-meadow.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Fox family playing in spectacular autumn sunset, golden light through trees, papa and mama fox with two kits leaping through golden leaves, warm amber sky, magical golden hour",
+        "es": "Familia de zorros jugando en un espectacular atardecer otoñal, luz dorada entre los árboles, papá y mamá zorro con dos cachorros saltando entre hojas doradas, cálido cielo ámbar, mágica hora dorada",
+        "ru": "Семья лис играет в великолепном осеннем закате, золотой свет сквозь деревья, папа и мама-лисы с двумя лисятами, прыгающими среди золотых листьев, тёплое янтарное небо, волшебный золотой час"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "starry-den.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Fox family curled up together under starry sky at den entrance, papa's bushy tail wrapped around kits like a blanket, mama nestled close, fireflies glowing, peaceful autumn night",
+        "es": "Familia de zorros acurrucada junta bajo el cielo estrellado en la entrada de la madriguera, la cola peluda de papá envolviendo a los cachorros como una manta, mamá acurrucada cerca, luciérnagas brillando, noche otoñal pacífica",
+        "ru": "Лисья семья, свернувшаяся вместе под звёздным небом у входа в нору, пушистый хвост папы обёрнут вокруг лисят как одеяло, мама прижалась рядом, светлячки мерцают, мирная осенняя ночь"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

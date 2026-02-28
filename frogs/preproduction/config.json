@@ -1,0 +1,113 @@
+{
+  "chapter": "frogs",
+  "createdAt": "2026-02-28T04:34:42.276Z",
+  "characters": [
+    {
+      "id": "papa-verde",
+      "name": "Papa Verde",
+      "description": "Handsome red-eyed tree frog father with brilliant green body, huge glowing red eyes, blue-yellow striped sides, bright orange feet",
+      "uniqueFeatures": [
+        "LARGEST frog character — visibly bigger and more muscular than Mama",
+        "BRILLIANT emerald green — the most saturated, vivid green of all characters",
+        "HUGE glowing red eyes — the biggest eyes proportionally, like burning rubies",
+        "Bold BLUE AND YELLOW striped sides — thick, vivid stripes",
+        "BRIGHT ORANGE feet — like wearing orange gloves",
+        "Wide, confident stance with toes splayed out"
+      ],
+      "personality": "Proud and watchful — sits tall and upright, chest puffed out, always alert and guarding",
+      "notLike": "NOT soft or delicate like Mama Hoja, NOT tiny like Luna or Brio"
+    },
+    {
+      "id": "mama-hoja",
+      "name": "Mama Hoja",
+      "description": "Beautiful red-eyed tree frog mother with soft green coloring, gentle red eyes, slightly smaller and more delicate than Papa",
+      "uniqueFeatures": [
+        "SMALLER and more DELICATE than Papa — slimmer build, more graceful",
+        "SOFT SAGE GREEN coloring — noticeably lighter and less saturated than Papa's emerald",
+        "Gentler, SOFTER red eyes — more orange-red than Papa's ruby-red",
+        "Thinner, more delicate blue-yellow side stripes — pastel compared to Papa's bold",
+        "Lighter PEACH-ORANGE feet — not as bright as Papa's vivid orange",
+        "Rounder face with a sweeter expression"
+      ],
+      "personality": "Gentle and nurturing — often leaning down toward the little ones, soft caring posture",
+      "notLike": "NOT as vibrant or bold-colored as Papa Verde, NOT tiny like the young ones"
+    },
+    {
+      "id": "luna",
+      "name": "Luna",
+      "description": "Starts as tiny black tadpole, transforms through stages into a small bright green red-eyed tree frog with huge curious red eyes",
+      "uniqueFeatures": [
+        "TINIEST character — half the size of Mama Hoja",
+        "As tadpole: COMPLETELY BLACK with a round head and wiggly tail",
+        "As frog: bright green but LIGHTER than Papa, with disproportionately HUGE curious eyes",
+        "As frog: smaller and rounder than Mama — baby proportions with oversized head",
+        "Signature look of WONDER — eyes always wide open, head tilted with curiosity",
+        "Legs are shorter and chubbier than adult frogs"
+      ],
+      "personality": "Curious and amazed — always looking at something with wide eyes, head tilted to one side",
+      "notLike": "NOT as vibrant as Papa, NOT as graceful as Mama, much SMALLER than both parents"
+    },
+    {
+      "id": "brio",
+      "name": "Brio",
+      "description": "Luna's older brother, slightly bigger green-brown tadpole with developing legs, later a young red-eyed tree frog",
+      "uniqueFeatures": [
+        "As tadpole: GREEN-BROWN coloring — distinctly different from Luna's pure black",
+        "As tadpole: BIGGER than Luna with visible developing back legs",
+        "As frog: slightly BIGGER than Luna but still smaller than parents",
+        "As frog: GREEN-BROWN tint — muddier, less pure green than Luna or parents",
+        "WIDER body than Luna — stockier, less delicate build",
+        "Slightly lopsided grin — one side of mouth curves up more"
+      ],
+      "personality": "Adventurous and bold — always leaping first, chest forward, ready for action",
+      "notLike": "NOT pure black like Luna-tadpole, NOT pure green like Luna-frog, NOT as big as parents"
+    }
+  ],
+  "step0": {
+    "status": "pending",
+    "attempts": 0,
+    "feedback": []
+  },
+  "step1": {
+    "status": "approved",
+    "attempts": 1,
+    "feedback": [],
+    "approvedVersion": 1
+  },
+  "step2": {
+    "status": "approved",
+    "characters": {
+      "papa-verde": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "mama-hoja": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "luna": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "brio": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      }
+    }
+  },
+  "step3": {
+    "status": "approved",
+    "chosenStyle": 1,
+    "styleName": "translucency-botanical",
+    "chosenMoods": [
+      "translucency",
+      "lush-botanical"
+    ],
+    "styleDescription": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nEmphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.\n\nRich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper."
+  },
+  "updatedAt": "2026-02-28T04:55:41.961Z"
+}

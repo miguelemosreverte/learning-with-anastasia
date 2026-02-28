@@ -1,0 +1,495 @@
+# Foxes Chapter Definition - Pip's Adventures in the Autumn Meadow
+meta:
+  id: foxes
+  issueNumber: 11
+  date: "February 2026"
+  folderName: "foxes"
+  title:
+    en: "Red Foxes: A Den Full of Love"
+    es: "Zorros Rojos: Una Madriguera Llena de Amor"
+    ru: "Рыжие лисы: Нора, полная любви"
+  subtitle:
+    en: "Pip's Adventures in the Autumn Meadow"
+    es: "Las Aventuras de Pip en el Prado Otoñal"
+    ru: "Приключения Пипа на осеннем лугу"
+  magazineText:
+    en: "Meet Pip, a tiny fox kit with oversized ears and the brightest orange fur, who discovers the wonders of the autumn woodland with his family! Watch him open his eyes for the first time, learn Papa's famous pounce, play in golden leaves, and curl up under the stars wrapped in Papa's big bushy tail."
+    es: "¡Conoce a Pip, un pequeño cachorro de zorro con orejas enormes y el pelaje naranja más brillante, que descubre las maravillas del bosque otoñal con su familia! Míralo abrir los ojos por primera vez, aprender el famoso salto de Papá, jugar entre hojas doradas y acurrucarse bajo las estrellas envuelto en la gran cola esponjosa de Papá."
+    ru: "Познакомьтесь с Пипом, крошечным лисёнком с огромными ушами и самым ярким рыжим мехом, который открывает чудеса осеннего леса вместе со своей семьёй! Смотрите, как он впервые открывает глаза, учится знаменитому прыжку Папы, играет в золотых листьях и засыпает под звёздами, укутанный большим пушистым хвостом Папы."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Celebrating the cleverest family in the autumn woodland"
+    es: "Celebrando a la familia más astuta del bosque otoñal"
+    ru: "Celebrating самую умную семью осеннего леса"
+  description: "Follow Pip the red fox kit through his first autumn, from opening his eyes in the cozy den to learning to pounce, play, and curl up with his family under the stars"
+  preface:
+    en:
+      - "Welcome to the golden autumn woodland, where a family of red foxes lives in a cozy underground den beneath an old oak tree! In this adventure, we'll follow Pip, an adorable little kit with oversized ears and one white sock, as he discovers the magic of the meadow with his family."
+      - "Red foxes are some of the cleverest animals in nature. Papa hunts with an incredible pounce-dive, Mama knows every berry and safe path in the forest, and the kits learn everything through play. Both parents work together to teach their babies about the wonderful world above their den."
+      - "Through Pip's first autumn, you'll discover how foxes hear mice under the snow, how they bury food in hundreds of hiding spots, how their bushy tails keep them warm like blankets, and how their eyes glow in the dark. Get ready for a cozy adventure in the autumn leaves!"
+    es:
+      - "¡Bienvenidos al dorado bosque otoñal, donde una familia de zorros rojos vive en una acogedora madriguera subterránea bajo un viejo roble! En esta aventura, seguiremos a Pip, un adorable cachorro con orejas enormes y un calcetín blanco, mientras descubre la magia del prado con su familia."
+      - "Los zorros rojos son de los animales más astutos de la naturaleza. Papá caza con un increíble salto-zambullida, Mamá conoce cada baya y sendero seguro del bosque, y los cachorros aprenden todo a través del juego. Ambos padres trabajan juntos para enseñar a sus bebés sobre el maravilloso mundo sobre su madriguera."
+      - "A través del primer otoño de Pip, descubrirás cómo los zorros escuchan ratones bajo la nieve, cómo entierran comida en cientos de escondites, cómo sus colas peludas los mantienen calientes como mantas y cómo sus ojos brillan en la oscuridad. ¡Prepárate para una aventura acogedora entre las hojas de otoño!"
+    ru:
+      - "Добро пожаловать в золотой осенний лес, где семья рыжих лис живёт в уютной подземной норе под старым дубом! В этом приключении мы последуем за Пипом, очаровательным лисёнком с огромными ушами и одним белым носочком, пока он открывает волшебство луга вместе со своей семьёй."
+      - "Рыжие лисы — одни из самых умных животных в природе. Папа охотится невероятным прыжком-нырком, Мама знает каждую ягоду и безопасную тропинку в лесу, а лисята учатся всему через игру. Оба родителя вместе учат малышей удивительному миру над их норой."
+      - "Через первую осень Пипа вы узнаете, как лисы слышат мышей под снегом, как прячут еду в сотнях тайников, как их пушистые хвосты согревают как одеяла и как их глаза светятся в темноте. Приготовьтесь к уютному приключению среди осенних листьев!"
+
+hero:
+  title:
+    en: "Red Foxes"
+    es: "Zorros Rojos"
+    ru: "Рыжие лисы"
+  subtitle:
+    en: "A Den Full of Love"
+    es: "Una Madriguera Llena de Amor"
+    ru: "Нора, полная любви"
+  image: "hero-autumn-meadow.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Breathtaking autumn woodland meadow at dawn with golden and amber leaves, soft morning mist drifting between ancient oak trees, warm golden light filtering through branches, mushrooms and wild berries dotting the forest floor"
+    es: "Impresionante prado de bosque otoñal al amanecer con hojas doradas y ámbar, suave neblina matutina entre antiguos robles, cálida luz dorada filtrándose entre las ramas, setas y bayas silvestres salpicando el suelo del bosque"
+    ru: "Захватывающий осенний лесной луг на рассвете с золотыми и янтарными листьями, мягкий утренний туман между старыми дубами, тёплый золотистый свет, проникающий сквозь ветви, грибы и дикие ягоды на лесной подстилке"
+
+sections:
+  # Meet Papa Russet
+  - id: meet-papa
+    generate_character: true
+    mood: [golden-hour, epic-skies]
+    title:
+      en: "Meet Papa Russet"
+      es: "Conoce a Papá Russet"
+      ru: "Знакомьтесь: Папа Рассет"
+    content:
+      en: "Papa Russet is the handsomest fox in the whole autumn woodland! He stands tall and proud in the misty dawn meadow, his deep rich russet coat glowing like fire in the golden light. A dramatic silver streak runs along his back like a bolt of lightning, and his long elegant black legs carry him silently through the grass. His magnificent bushy tail swishes behind him as he listens, ears turning this way and that. 'The meadow is waking up,' he whispers, his warm amber eyes sparkling. 'And somewhere under this grass, breakfast is hiding.'"
+      es: "¡Papá Russet es el zorro más apuesto de todo el bosque otoñal! Se para alto y orgulloso en el prado brumoso al amanecer, su profundo pelaje rojizo brillando como fuego en la luz dorada. Una dramática raya plateada recorre su lomo como un rayo, y sus largas y elegantes patas negras lo llevan silenciosamente entre la hierba. Su magnífica cola peluda se balancea mientras escucha, las orejas girando de aquí para allá. 'El prado está despertando,' susurra, con sus cálidos ojos ámbar brillando. 'Y en algún lugar bajo esta hierba, el desayuno se esconde.'"
+      ru: "Папа Рассет — самый красивый лис во всём осеннем лесу! Он стоит высокий и гордый на туманном рассветном лугу, его глубокая рыжая шерсть сияет как огонь в золотистом свете. Эффектная серебристая полоса бежит вдоль спины, как молния, а длинные элегантные чёрные лапы несут его бесшумно по траве. Его великолепный пушистый хвост покачивается, пока он слушает, поворачивая уши туда-сюда. 'Луг просыпается,' шепчет он, его тёплые янтарные глаза искрятся. 'И где-то под этой травой прячется завтрак.'"
+    image: "papa-russet-portrait.jpg"
+    imageAlt:
+      en: "Tall handsome red fox with deep russet coat and silver streak along his back, standing alert in a misty autumn meadow at dawn, long black legs, magnificent bushy tail, warm amber eyes"
+      es: "Apuesto zorro rojo alto con pelaje rojizo profundo y raya plateada a lo largo del lomo, alerta en un prado otoñal brumoso al amanecer, largas patas negras, magnífica cola peluda, cálidos ojos ámbar"
+      ru: "Высокий красивый рыжий лис с глубоким рыжим мехом и серебристой полосой вдоль спины, стоящий настороже на туманном осеннем лугу на рассвете, длинные чёрные лапы, великолепный пушистый хвост, тёплые янтарные глаза"
+
+  # Meet Mama Fern
+  - id: meet-mama
+    generate_character: true
+    mood: [soft-intimate, translucency]
+    title:
+      en: "Meet Mama Fern"
+      es: "Conoce a Mamá Fern"
+      ru: "Знакомьтесь: Мама Ферн"
+    content:
+      en: "Deep underground, in the cosiest den you can imagine, Mama Fern is curled up like a golden-orange crescent moon. The walls are smooth earth, lined with soft moss and dry leaves she gathered herself. Mama's coat is softer and lighter than Papa's — a beautiful golden-orange that seems to glow in the dim light. Her cream-coloured chest rises and falls gently, and her warm brown eyes watch over two tiny bundles of fur nestled against her belly. 'Sleep well, my little ones,' she murmurs, her distinctive pale patch behind one ear catching the faintest light from the den entrance. 'Tomorrow, you'll see the world.'"
+      es: "Bajo tierra, en la madriguera más acogedora que puedas imaginar, Mamá Fern está acurrucada como una luna creciente dorada-anaranjada. Las paredes son de tierra lisa, forradas con musgo suave y hojas secas que ella misma recolectó. El pelaje de Mamá es más suave y claro que el de Papá — un hermoso dorado-anaranjado que parece brillar en la luz tenue. Su pecho color crema sube y baja suavemente, y sus cálidos ojos marrones vigilan dos pequeños bultitos de pelo acurrucados contra su barriga. 'Duerman bien, mis pequeños,' murmura, su distintiva mancha clara detrás de una oreja captando la luz más tenue de la entrada de la madriguera. 'Mañana verán el mundo.'"
+      ru: "Глубоко под землёй, в самой уютной норе, какую только можно представить, Мама Ферн свернулась как золотисто-рыжий полумесяц. Стены из гладкой земли выстланы мягким мхом и сухими листьями, которые она собрала сама. Шерсть Мамы мягче и светлее, чем у Папы — красивая золотисто-оранжевая, словно светящаяся в тусклом свете. Её кремовая грудка мерно поднимается и опускается, а тёплые карие глаза наблюдают за двумя крошечными комочками меха, прижавшимися к её животу. 'Спите крепко, мои маленькие,' шепчет она, её приметное светлое пятнышко за ухом ловит слабый свет от входа в нору. 'Завтра вы увидите мир.'"
+    image: "mama-fern-portrait.jpg"
+    imageAlt:
+      en: "Graceful golden-orange vixen curled protectively in a cozy underground den lined with moss and leaves, cream chest, warm brown eyes, pale patch behind one ear, two tiny kits nestled against her"
+      es: "Graciosa zorra dorada-anaranjada acurrucada protectoramente en una acogedora madriguera subterránea con musgo y hojas, pecho crema, cálidos ojos marrones, mancha clara detrás de una oreja, dos pequeños cachorros acurrucados contra ella"
+      ru: "Грациозная золотисто-рыжая лисица, свернувшаяся в уютной подземной норе с мхом и листьями, кремовая грудка, тёплые карие глаза, светлое пятнышко за ухом, два крошечных лисёнка прижались к ней"
+
+  # Pip Opens His Eyes
+  - id: pip-opens-eyes
+    generate_character: true
+    mood: [soft-intimate, translucency]
+    use_character: "${meet-mama.image}"
+    action: "tiny fox kit with brightest vivid orange fur and oversized perky ears opening his eyes for the very first time inside a cozy dark underground den, one white sock on front left paw visible, mama fox curled around him, the kit's face full of wonder and curiosity, warm dim light from den entrance, soft moss bedding"
+    title:
+      en: "Hello, World!"
+      es: "¡Hola, Mundo!"
+      ru: "Привет, мир!"
+    content:
+      en: "One morning, the smallest kit opens his eyes for the very first time. The world is blurry and dim, but oh — how WONDERFUL it smells! Earth and moss and Mama's warm fur. Little Pip blinks his bright eyes and tilts his head sideways, his oversized ears perking up at every tiny sound. He wiggles his paws — three black ones and one special white sock on his front left paw. 'Mama?' he squeaks. Mama Fern nuzzles him gently. 'Hello, my brave little Pip. You have the most curious eyes I've ever seen.' And she's right — Pip wants to see EVERYTHING."
+      es: "Una mañana, el cachorro más pequeño abre los ojos por primera vez. El mundo está borroso y oscuro, pero oh — ¡cómo HUELE de maravilloso! Tierra y musgo y el cálido pelaje de Mamá. El pequeño Pip parpadea con sus ojos brillantes e inclina la cabeza hacia un lado, sus enormes orejas levantándose con cada sonido diminuto. Mueve sus patitas — tres negras y un calcetín blanco especial en la pata delantera izquierda. '¿Mamá?' chilla. Mamá Fern lo acaricia suavemente. 'Hola, mi pequeño Pip valiente. Tienes los ojos más curiosos que he visto.' Y tiene razón — Pip quiere ver TODO."
+      ru: "Однажды утром самый маленький лисёнок открывает глаза в самый первый раз. Мир размытый и тёмный, но ох — как ЧУДЕСНО пахнет! Земля, мох и тёплый мех Мамы. Маленький Пип моргает яркими глазами и наклоняет голову набок, его огромные уши вздрагивают от каждого звука. Он шевелит лапками — три чёрные и один особенный белый носочек на левой передней. 'Мама?' пищит он. Мама Ферн нежно тычется в него носом. 'Привет, мой храбрый маленький Пип. У тебя самые любопытные глаза, какие я видела.' И она права — Пип хочет увидеть ВСЁ."
+    image: "pip-opens-eyes.jpg"
+    imageAlt:
+      en: "Tiny fox kit with vivid orange fur and oversized ears opening his eyes for the first time in a cozy den, one white sock on front left paw, curious tilted head, mama fox curled around him"
+      es: "Pequeño cachorro de zorro con pelaje naranja vívido y orejas enormes abriendo los ojos por primera vez en una madriguera acogedora, un calcetín blanco en la pata delantera izquierda, cabeza inclinada con curiosidad, mamá zorra acurrucada a su alrededor"
+      ru: "Крошечный лисёнок с ярко-рыжим мехом и огромными ушами, впервые открывающий глаза в уютной норе, белый носочек на левой передней лапе, любопытно наклонённая голова, мама-лиса свернулась вокруг него"
+
+  # Meet Clover
+  - id: meet-clover
+    generate_character: true
+    mood: [soft-intimate]
+    use_characters: ["${pip-opens-eyes.image}", "${meet-mama.image}"]
+    action: "slightly larger fox kit with darker reddish-auburn coat and an extra-large white tail tip exploring the edges of the underground den, sniffing at a root poking through the earth wall, tiny dark freckle on nose visible, notably bushy tail for her age, the smaller bright orange kit watching from beside mama fox"
+    title:
+      en: "Meet Clover, the Clever One"
+      es: "Conoce a Clover, la Astuta"
+      ru: "Знакомьтесь: Кловер, умница"
+    content:
+      en: "Pip isn't alone! His sister Clover is already awake and exploring. She's a bit bigger than Pip, with a darker reddish-auburn coat and the bushiest tail you've ever seen on a kit. There's a tiny dark freckle right on her nose that wiggles when she sniffs. And she sniffs EVERYTHING. Right now she's figured out that a root poking through the den wall leads UP — to the outside world. 'I bet I can dig around it,' Clover announces, already pawing at the earth. 'Clover, darling,' Mama sighs with a smile. 'The door is right over there.' But that's Clover — she always finds her own way."
+      es: "¡Pip no está solo! Su hermana Clover ya está despierta y explorando. Es un poco más grande que Pip, con un pelaje más oscuro castaño-rojizo y la cola más peluda que hayas visto en un cachorro. Tiene una pequeña peca oscura justo en la nariz que se mueve cuando olfatea. Y olfatea TODO. Ahora mismo ha descubierto que una raíz que atraviesa la pared de la madriguera lleva ARRIBA — al mundo exterior. 'Apuesto a que puedo cavar alrededor,' anuncia Clover, ya escarbando la tierra. 'Clover, cariño,' suspira Mamá con una sonrisa. 'La puerta está justo allí.' Pero así es Clover — siempre encuentra su propio camino."
+      ru: "Пип не один! Его сестра Кловер уже проснулась и исследует. Она немного больше Пипа, с более тёмной рыжевато-каштановой шерстью и самым пушистым хвостом, какой только видели у лисёнка. У неё крошечная тёмная веснушка прямо на носу, которая шевелится, когда она нюхает. А нюхает она ВСЁ. Сейчас она обнаружила, что корень, торчащий из стены норы, ведёт НАВЕРХ — во внешний мир. 'Спорим, я смогу подкопать,' объявляет Кловер, уже скребя землю лапой. 'Кловер, милая,' вздыхает Мама с улыбкой. 'Дверь вон там.' Но такова Кловер — она всегда находит свой путь."
+    image: "clover-portrait.jpg"
+    imageAlt:
+      en: "Slightly larger fox kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail, exploring den edges with determination"
+      es: "Cachorro de zorro un poco más grande con pelaje más oscuro castaño-rojizo, punta de cola blanca extra grande, pequeña peca oscura en la nariz, cola notablemente peluda, explorando los bordes de la madriguera con determinación"
+      ru: "Чуть больший лисёнок с более тёмной рыжевато-каштановой шерстью, большим белым кончиком хвоста, крошечной тёмной веснушкой на носу, заметно пушистым хвостом, исследующий края норы с решимостью"
+
+  # First Time Outside
+  - id: first-outside
+    mood: [golden-hour, epic-skies]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}", "${pip-opens-eyes.image}", "${meet-clover.image}"]
+    action: "fox family emerging from their underground den into brilliant autumn sunshine for the first time, two tiny kits blinking at the bright golden world, enormous ancient oak tree above, golden and amber leaves everywhere, the kits' eyes wide with amazement, papa and mama fox standing protectively, warm morning mist, mushrooms on the ground"
+    title:
+      en: "The Great Big World!"
+      es: "¡El Gran Mundo Enorme!"
+      ru: "Огромный большой мир!"
+    content:
+      en: "Today is the day! Papa appears at the den entrance, his silver-streaked back silhouetted against a blaze of golden light. 'Come on, little ones. It's time to see your meadow.' Pip and Clover scramble up the tunnel and — GASP! The world is ENORMOUS! There's a sky that goes on forever, painted in soft pinks and golds. There are trees taller than a thousand dens stacked on top of each other. There are leaves raining down like golden coins. Pip sits down with a thump, head tilted way back, mouth wide open. 'Papa,' he whispers. 'Is all of this... OURS?' Papa smiles. 'Every last leaf.'"
+      es: "¡Hoy es el día! Papá aparece en la entrada de la madriguera, su lomo con la raya plateada silueteado contra un resplandor de luz dorada. 'Vengan, pequeños. Es hora de ver su prado.' Pip y Clover suben corriendo por el túnel y — ¡ASOMBRO! ¡El mundo es ENORME! Hay un cielo que no termina nunca, pintado en rosas y dorados suaves. Hay árboles más altos que mil madrigueras apiladas. Hay hojas cayendo como monedas de oro. Pip se sienta de golpe, con la cabeza inclinada hacia atrás, la boca bien abierta. 'Papá,' susurra. '¿Todo esto es... NUESTRO?' Papá sonríe. 'Hasta la última hoja.'"
+      ru: "Сегодня тот самый день! Папа появляется у входа в нору, его спина с серебристой полосой вырисовывается на фоне золотистого сияния. 'Пойдёмте, малыши. Пора увидеть ваш луг.' Пип и Кловер карабкаются по тоннелю и — АХ! Мир ОГРОМНЫЙ! Есть небо, которое тянется вечно, раскрашенное в нежные розовые и золотые тона. Есть деревья выше тысячи нор, поставленных друг на друга. Есть листья, падающие как золотые монетки. Пип садится с глухим стуком, запрокинув голову, рот широко открыт. 'Папа,' шепчет он. 'Всё это... НАШЕ?' Папа улыбается. 'До последнего листика.'"
+    image: "first-outside.jpg"
+
+  # Papa's Pounce
+  - id: papas-pounce
+    mood: [golden-hour, lush-botanical]
+    use_characters: ["${meet-papa.image}", "${pip-opens-eyes.image}", "${meet-clover.image}"]
+    action: "papa fox mid-leap doing his famous mouse-pounce dive, body arched high in the air with front paws aimed downward into tall autumn grass, two small fox kits watching with amazement from a safe distance, golden meadow with amber leaves, dramatic action pose, warm autumn light"
+    title:
+      en: "Papa's Amazing Pounce!"
+      es: "¡El Increíble Salto de Papá!"
+      ru: "Потрясающий прыжок Папы!"
+    content:
+      en: "Papa has something INCREDIBLE to show the kits. He stands very still in the tall grass, head tilted, one ear turned forward and one turned sideways. 'Shhhh,' he whispers. 'Listen.' The kits freeze. Then Papa does the most AMAZING thing — he leaps HIGH into the air, arching his whole body like a rainbow, and DIVES nose-first straight down into the grass! POUNCE! He pops back up with a proud grin. 'That, my dears, is the fox pounce. We listen for mice under the grass, and then — we fly!' Pip's eyes are as round as the moon. 'I want to FLY!'"
+      es: "Papá tiene algo INCREÍBLE para mostrar a los cachorros. Se queda muy quieto en la hierba alta, la cabeza inclinada, una oreja hacia adelante y la otra de lado. 'Shhhh,' susurra. 'Escuchen.' Los cachorros se congelan. Entonces Papá hace la cosa más INCREÍBLE — ¡salta ALTO en el aire, arqueando todo su cuerpo como un arcoíris, y se ZAMBULLE con la nariz directo hacia la hierba! ¡POUNCE! Se levanta con una sonrisa orgullosa. 'Eso, mis queridos, es el salto del zorro. Escuchamos ratones bajo la hierba, y entonces — ¡volamos!' Los ojos de Pip son redondos como la luna. '¡Yo quiero VOLAR!'"
+      ru: "У Папы есть кое-что НЕВЕРОЯТНОЕ, чтобы показать лисятам. Он стоит совершенно неподвижно в высокой траве, голова наклонена, одно ухо повёрнуто вперёд, другое вбок. 'Тшшш,' шепчет он. 'Слушайте.' Лисята замирают. И тогда Папа делает самое УДИВИТЕЛЬНОЕ — он прыгает ВЫСОКО в воздух, изгибая всё тело как радугу, и НЫРЯЕТ носом прямо вниз в траву! ПРЫЖОК! Он выныривает с гордой улыбкой. 'Это, мои дорогие, лисий прыжок. Мы слушаем мышей под травой, а потом — летим!' Глаза Пипа круглые как луна. 'Я хочу ЛЕТАТЬ!'"
+    image: "papas-pounce.jpg"
+
+  # Clover's First Catch
+  - id: clovers-first-catch
+    mood: [golden-hour]
+    use_characters: ["${meet-clover.image}", "${meet-papa.image}", "${pip-opens-eyes.image}"]
+    action: "small reddish-auburn fox kit doing a wobbly adorable pounce into a pile of golden autumn leaves, front paws outstretched, body arched clumsily, catching a leaf mid-air, papa fox watching proudly in the background, smaller bright orange kit watching wide-eyed, golden autumn meadow setting"
+    title:
+      en: "Clover's Wobbly Pounce"
+      es: "El Salto Tambaleante de Clover"
+      ru: "Шаткий прыжок Кловер"
+    content:
+      en: "Clover watches Papa carefully — head tilt, ear turn, and... POUNCE! Well, sort of. Her first try is more of a wobbly belly-flop into a pile of leaves — FWUMP! But Clover is determined. She tries again. And again. On her fifth try, she launches herself into the air, arches her back just like Papa, and — catches a falling leaf right between her paws! 'I CAUGHT SOMETHING!' she shouts, holding up the golden leaf triumphantly. Papa beams with pride. 'A perfect pounce! Next time, that leaf will be a mouse.' Pip claps his paws together. 'My turn! My turn!'"
+      es: "Clover observa a Papá cuidadosamente — inclina la cabeza, gira la oreja, y... ¡SALTO! Bueno, más o menos. Su primer intento es más un panzazo tambaleante en un montón de hojas — ¡FWUMP! Pero Clover es decidida. Lo intenta otra vez. Y otra vez. En su quinto intento, se lanza al aire, arquea la espalda justo como Papá, y — ¡atrapa una hoja que caía justo entre sus patas! '¡ATRAPÉ ALGO!' grita, levantando la hoja dorada triunfalmente. Papá rebosa de orgullo. '¡Un salto perfecto! La próxima vez, esa hoja será un ratón.' Pip aplaude con sus patitas. '¡Mi turno! ¡Mi turno!'"
+      ru: "Кловер внимательно наблюдает за Папой — наклон головы, поворот уха, и... ПРЫЖОК! Ну, почти. Её первая попытка больше похожа на шаткое плюхание животом в кучу листьев — БУМС! Но Кловер упрямая. Она пробует снова. И снова. На пятой попытке она взлетает в воздух, выгибает спинку точно как Папа, и — ловит падающий лист прямо между лапками! 'Я ЧТО-ТО ПОЙМАЛА!' кричит она, победно поднимая золотой лист. Папа сияет от гордости. 'Идеальный прыжок! В следующий раз этот лист будет мышкой.' Пип хлопает лапками. 'Моя очередь! Моя очередь!'"
+    image: "clovers-first-catch.jpg"
+
+  # Berry Picking with Mama
+  - id: berry-picking
+    mood: [lush-botanical, golden-hour]
+    use_characters: ["${meet-mama.image}", "${pip-opens-eyes.image}", "${meet-clover.image}"]
+    action: "mama fox teaching two small fox kits about berries and mushrooms in an autumn woodland, mama sniffing at ripe blackberries on a bush, one kit reaching up toward berries, the other sniffing a mushroom, a gentle stream visible in the background, rich autumn colors, dappled golden light through trees"
+    title:
+      en: "Mama's Meadow Lessons"
+      es: "Las Lecciones del Prado de Mamá"
+      ru: "Мамины уроки луга"
+    content:
+      en: "While Papa teaches pouncing, Mama teaches everything else! She leads the kits along the stream, showing them which berries are sweet and safe. 'Blackberries — yummy!' she says, plucking one for each kit. 'But those red ones? Never touch.' She shows them where the frogs hide, where the best mushrooms grow, and how to drink from the stream without getting your nose too wet. Pip sticks his whole face in the water — SPLUTTER! Clover drinks daintily and shakes her head. 'You have to be GENTLE, Pip.' But Pip doesn't mind. The water tastes like adventure."
+      es: "¡Mientras Papá enseña a saltar, Mamá enseña todo lo demás! Guía a los cachorros por el arroyo, mostrándoles qué bayas son dulces y seguras. '¡Moras — deliciosas!' dice, arrancando una para cada cachorro. '¿Pero esas rojas? Nunca las toquen.' Les muestra dónde se esconden las ranas, dónde crecen los mejores hongos y cómo beber del arroyo sin mojarse mucho la nariz. Pip mete toda la cara en el agua — ¡SPLASH! Clover bebe delicadamente y sacude la cabeza. 'Tienes que ser DELICADO, Pip.' Pero a Pip no le importa. El agua sabe a aventura."
+      ru: "Пока Папа учит прыгать, Мама учит всему остальному! Она ведёт лисят вдоль ручья, показывая, какие ягоды сладкие и безопасные. 'Ежевика — вкуснятина!' говорит она, срывая по одной для каждого лисёнка. 'А вот те красные? Никогда не трогайте.' Она показывает, где прячутся лягушки, где растут лучшие грибы и как пить из ручья, не слишком мочив нос. Пип суёт всю мордочку в воду — БУЛТЫХ! Кловер пьёт изящно и качает головой. 'Нужно быть НЕЖНЫМ, Пип.' Но Пипу всё равно. Вода на вкус как приключение."
+    image: "berry-picking.jpg"
+
+  # Fox Games
+  - id: fox-games
+    mood: [golden-hour, epic-skies]
+    use_characters: ["${pip-opens-eyes.image}", "${meet-clover.image}"]
+    action: "two fox kits playing wildly in golden autumn leaves, one bright orange kit leaping over the other darker reddish-auburn kit, leaves flying everywhere, tails streaming behind them, wrestling and tumbling, pure joy and energy, golden meadow with scattered autumn leaves, warm amber light"
+    title:
+      en: "Wild Fox Games!"
+      es: "¡Juegos Salvajes de Zorros!"
+      ru: "Дикие лисьи игры!"
+    content:
+      en: "When fox kits play, they play with their WHOLE hearts! Pip and Clover race through piles of golden leaves, sending them flying like fireworks. They wrestle — Clover pins Pip down, but he wiggles free and grabs her tail. They chase each other in circles until they're dizzy, then collapse in a giggling heap. Pip leaps OVER Clover. Clover leaps over a log. Pip tries to leap over the log AND Clover — and lands right on top of her! 'OOOF!' But they're both laughing too hard to care. This is what it means to be a fox kit in autumn."
+      es: "¡Cuando los cachorros de zorro juegan, juegan con TODO el corazón! Pip y Clover corren entre montones de hojas doradas, lanzándolas como fuegos artificiales. Luchan — Clover inmoviliza a Pip, pero él se escabulle y le agarra la cola. Se persiguen en círculos hasta marearse, y colapsan en un montón de risas. Pip salta POR ENCIMA de Clover. Clover salta sobre un tronco. Pip intenta saltar sobre el tronco Y sobre Clover — ¡y aterriza justo encima de ella! '¡OOOF!' Pero ambos se ríen demasiado para que les importe."
+      ru: "Когда лисята играют, они играют ВСЕМ сердцем! Пип и Кловер носятся по кучам золотых листьев, разбрасывая их как фейерверки. Они борются — Кловер прижимает Пипа, но он вырывается и хватает её за хвост. Они гоняются друг за другом кругами, пока не закружится голова, а потом падают в хохочущую кучу. Пип прыгает ЧЕРЕЗ Кловер. Кловер прыгает через бревно. Пип пытается перепрыгнуть и бревно, И Кловер — и приземляется прямо на неё! 'ООФ!' Но оба смеются слишком сильно, чтобы переживать."
+    image: "fox-games.jpg"
+
+  # Hide and Seek
+  - id: hide-and-seek
+    mood: [lush-botanical, translucency]
+    use_characters: ["${pip-opens-eyes.image}", "${meet-clover.image}"]
+    action: "two fox kits hiding in autumn leaves, their orange and reddish-auburn fur blending perfectly with the golden and amber fallen leaves, only their bright eyes and ear tips visible, natural camouflage, dappled forest light, fallen leaves covering the forest floor, magical hide-and-seek moment"
+    title:
+      en: "Can You See Us?"
+      es: "¿Puedes Vernos?"
+      ru: "Видите нас?"
+    content:
+      en: "Mama teaches the kits the most important fox trick of all — how to disappear! 'Lie very still in the leaves,' she whispers. 'Your fur is the same colour as autumn.' Pip and Clover dive into a pile of fallen leaves and hold perfectly still. And — MAGIC! Their orange and auburn fur blends so perfectly with the golden leaves that they completely vanish! Only their bright eyes peek out. 'I can't see you anywhere!' Papa calls out, pretending to search. The kits giggle silently, leaves trembling. 'Nature gave foxes the best disguise,' Mama says proudly. 'The whole forest is your hiding spot.'"
+      es: "Mamá enseña a los cachorros el truco más importante del zorro — ¡cómo desaparecer! 'Quédense muy quietos entre las hojas,' susurra. 'Su pelaje es del mismo color que el otoño.' Pip y Clover se lanzan a un montón de hojas caídas y se quedan perfectamente inmóviles. Y — ¡MAGIA! Su pelaje naranja y castaño se mezcla tan perfectamente con las hojas doradas que desaparecen completamente. Solo sus ojos brillantes se asoman. '¡No puedo verlos en ningún lado!' grita Papá, pretendiendo buscar. Los cachorros ríen en silencio, las hojas temblando. 'La naturaleza dio a los zorros el mejor disfraz,' dice Mamá orgullosa."
+      ru: "Мама учит лисят самому важному лисьему трюку — как исчезать! 'Лежите совсем тихо в листьях,' шепчет она. 'Ваш мех такого же цвета, как осень.' Пип и Кловер ныряют в кучу опавших листьев и замирают. И — ВОЛШЕБСТВО! Их рыжий и каштановый мех так идеально сливается с золотыми листьями, что они полностью исчезают! Только яркие глазки выглядывают. 'Я нигде вас не вижу!' зовёт Папа, делая вид, что ищет. Лисята тихонько хихикают, листья дрожат. 'Природа дала лисам лучший маскировочный костюм,' гордо говорит Мама."
+    image: "hide-and-seek.jpg"
+
+  # Sunset Meadow
+  - id: sunset-meadow
+    mood: [golden-hour, epic-skies]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}", "${pip-opens-eyes.image}", "${meet-clover.image}"]
+    action: "fox family playing together in a spectacular autumn sunset, golden light streaming through trees, papa and mama fox with two kits chasing and leaping through golden leaves, long shadows, warm amber and rose sky, silhouettes of ancient oaks, magical golden hour atmosphere, pure family joy"
+    title:
+      en: "Golden Hour"
+      es: "La Hora Dorada"
+      ru: "Золотой час"
+    content:
+      en: "As the sun sinks low, the whole meadow turns to liquid gold. This is the foxes' favourite time — the golden hour, when the light makes everything look like a painting. Papa chases Pip through the tall grass while Mama and Clover play tug with a stick. The kits' fur blazes like little flames in the amber light. Long shadows stretch across the meadow like gentle giants. Pip stops and looks around at his family — Papa with his silver streak glowing, Mama with her cream chest catching the last warm rays, Clover with her bushy tail streaming behind her like a banner. 'This is the best day,' Pip thinks. But tomorrow will be the best day too."
+      es: "Cuando el sol baja, todo el prado se convierte en oro líquido. Esta es la hora favorita de los zorros — la hora dorada, cuando la luz hace que todo parezca una pintura. Papá persigue a Pip por la hierba alta mientras Mamá y Clover juegan a jalar un palo. El pelaje de los cachorros arde como pequeñas llamas en la luz ámbar. Largas sombras se estiran por el prado como gigantes gentiles. Pip se detiene y mira a su familia — Papá con su raya plateada brillando, Mamá con su pecho crema captando los últimos rayos, Clover con su cola peluda ondeando como una bandera. 'Este es el mejor día,' piensa Pip. Pero mañana también será el mejor día."
+      ru: "Когда солнце опускается низко, весь луг превращается в жидкое золото. Это любимое время лис — золотой час, когда свет делает всё похожим на картину. Папа гонится за Пипом по высокой траве, пока Мама и Кловер играют в перетягивание палки. Мех лисят пылает как маленькие огоньки в янтарном свете. Длинные тени тянутся по лугу как нежные великаны. Пип останавливается и смотрит на свою семью — Папа с сияющей серебристой полосой, Мама с кремовой грудкой в последних тёплых лучах, Кловер с пушистым хвостом, реющим как знамя. 'Это лучший день,' думает Пип. Но завтра тоже будет лучшим."
+    image: "sunset-meadow.jpg"
+    imageAlt:
+      en: "Fox family playing in spectacular autumn sunset, golden light through trees, papa and mama fox with two kits leaping through golden leaves, warm amber sky, magical golden hour"
+      es: "Familia de zorros jugando en un espectacular atardecer otoñal, luz dorada entre los árboles, papá y mamá zorro con dos cachorros saltando entre hojas doradas, cálido cielo ámbar, mágica hora dorada"
+      ru: "Семья лис играет в великолепном осеннем закате, золотой свет сквозь деревья, папа и мама-лисы с двумя лисятами, прыгающими среди золотых листьев, тёплое янтарное небо, волшебный золотой час"
+
+  # Starry Den
+  - id: starry-den
+    mood: [soft-intimate, translucency]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}", "${pip-opens-eyes.image}", "${meet-clover.image}"]
+    action: "fox family curled up together under a starry night sky just outside their den entrance beneath the old oak tree, papa fox wrapping his big bushy tail around both kits like a blanket, mama fox nestled close, all four foxes cozy and sleepy, stars twinkling above, fireflies glowing softly, peaceful autumn night, warm and safe feeling"
+    title:
+      en: "Papa's Tail Blanket"
+      es: "La Manta de Cola de Papá"
+      ru: "Одеяло из Папиного хвоста"
+    content:
+      en: "Night falls softly over the meadow, and a thousand stars appear like tiny candles in the sky. The fox family curls up together at the entrance of their den, under the old oak tree. Papa wraps his big magnificent tail around both kits like the warmest, softest blanket in the world. Mama nestles close, her gentle brown eyes already heavy with sleep. Pip burrows deeper into the warm fur. He can hear Papa's heartbeat — steady and strong. He can feel Clover's breathing — slow and peaceful. He can smell the earth, the leaves, the night. 'Papa?' Pip whispers. 'Are the stars our night-lights?' 'Yes,' Papa murmurs. 'Every single one.' And wrapped in love and starlight and the warmth of Papa's tail, the little fox family drifts off to sleep."
+      es: "La noche cae suavemente sobre el prado, y mil estrellas aparecen como pequeñas velas en el cielo. La familia de zorros se acurruca junta en la entrada de su madriguera, bajo el viejo roble. Papá envuelve su gran magnífica cola alrededor de ambos cachorros como la manta más cálida y suave del mundo. Mamá se acurruca cerca, sus dulces ojos marrones ya pesados de sueño. Pip se entierra más profundo en el cálido pelaje. Puede oír el latido del corazón de Papá — constante y fuerte. Puede sentir la respiración de Clover — lenta y pacífica. Puede oler la tierra, las hojas, la noche. '¿Papá?' susurra Pip. '¿Las estrellas son nuestras luces de noche?' 'Sí,' murmura Papá. 'Cada una de ellas.' Y envueltos en amor y luz de estrellas y el calor de la cola de Papá, la pequeña familia de zorros se queda dormida."
+      ru: "Ночь мягко опускается на луг, и тысяча звёзд появляется как крошечные свечи на небе. Лисья семья сворачивается вместе у входа в нору, под старым дубом. Папа оборачивает свой большой великолепный хвост вокруг обоих лисят, как самое тёплое и мягкое одеяло в мире. Мама устраивается рядом, её нежные карие глаза уже тяжелеют от сна. Пип зарывается глубже в тёплый мех. Он слышит Папино сердцебиение — ровное и сильное. Он чувствует дыхание Кловер — медленное и мирное. Он чувствует запах земли, листьев, ночи. 'Папа?' шепчет Пип. 'Звёзды — это наши ночники?' 'Да,' бормочет Папа. 'Каждая из них.' И укутанная в любовь, звёздный свет и тепло Папиного хвоста, маленькая лисья семья засыпает."
+    image: "starry-den.jpg"
+    imageAlt:
+      en: "Fox family curled up together under starry sky at den entrance, papa's bushy tail wrapped around kits like a blanket, mama nestled close, fireflies glowing, peaceful autumn night"
+      es: "Familia de zorros acurrucada junta bajo el cielo estrellado en la entrada de la madriguera, la cola peluda de papá envolviendo a los cachorros como una manta, mamá acurrucada cerca, luciérnagas brillando, noche otoñal pacífica"
+      ru: "Лисья семья, свернувшаяся вместе под звёздным небом у входа в нору, пушистый хвост папы обёрнут вокруг лисят как одеяло, мама прижалась рядом, светлячки мерцают, мирная осенняя ночь"
+
+  # Hidden sections for viewer detail image generation
+  - id: "detail-ear-closeup"
+    image: "detail-ear-closeup.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the fox from reference, extreme close-up of a red fox's large pointed ears showing the independent rotation ability, one ear facing forward and one turned sideways, fine reddish fur and dark ear tips visible. Warm educational illustration, child-friendly. Classic hand-drawn Disney animation style with warm organic lines."
+    hidden: true
+
+  - id: "detail-paw-pads"
+    image: "detail-paw-pads.jpg"
+    referenceImage: "${pip-opens-eyes.image}"
+    prompt: "Using the fox kit from reference, close-up of a red fox's paw showing the semi-retractable claws and furry paw pads, one white sock paw and one black paw side by side, soft warm lighting. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-whisker-sensors"
+    image: "detail-whisker-sensors.jpg"
+    referenceImage: "${meet-mama.image}"
+    prompt: "Using the vixen from reference, close-up of a red fox's face focusing on the long sensitive whiskers fanning out from the muzzle, whiskers catching soft light, gentle brown eyes in background. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-tail-anatomy"
+    image: "detail-tail-anatomy.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the fox from reference, detailed view of a red fox's magnificent bushy tail showing the thick fur layers and white tip, the tail curled around like a blanket, warm autumn light. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-super-hearing-img"
+    image: "fun-fact-super-hearing.jpg"
+    referenceImage: "${pip-opens-eyes.image}"
+    prompt: "Using the fox kit from reference, show a fox with ears perked up independently rotating, sound waves illustrated coming from under snow/grass, the fox's head tilted listening intently, autumn meadow setting. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-food-burying-img"
+    image: "fun-fact-food-burying.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the fox from reference, show a fox carefully burying food in the ground with its nose, small cache holes visible around the meadow with acorns and berries, autumn leaves scattered. Educational, child-friendly. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-tail-warmth-img"
+    image: "fun-fact-tail-warmth.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the fox from reference, show a fox curled up with its bushy tail wrapped over its nose and paws like a blanket, cozy winter scene with snowflakes, warm and snug feeling. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-night-vision-img"
+    image: "fun-fact-night-vision.jpg"
+    prompt: "A red fox's face in the dark with eyes glowing bright greenish-gold from the reflective tapetum lucidum, mysterious night setting with moonlight, the fox silhouetted against a starry sky. Educational diagram style but with classic hand-drawn Disney warmth, child-friendly."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming magazine cover featuring a tiny fox kit with vivid orange fur, oversized perky ears, and one white sock on its front left paw, sitting in a pile of golden autumn leaves in the foreground with head tilted curiously. A tall handsome papa fox with silver streak stands protectively nearby. A graceful mama fox with golden-orange coat watches lovingly. Another slightly larger kit with darker auburn fur plays with leaves in the background. Ancient oak tree with golden leaves overhead. Style: Classic hand-drawn Disney animation — warm organic lines, soulful expressive eyes, painterly brushwork, vintage animation cel warmth. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${pip-opens-eyes.image}"
+      - "${meet-papa.image}"
+      - "${meet-mama.image}"
+      - "${meet-clover.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Fox kit Pip sitting in golden leaves with head tilted, Papa Russet standing tall nearby, Mama Fern watching lovingly, Clover playing in the background, autumn oak tree overhead"
+      es: "Cachorro de zorro Pip sentado entre hojas doradas con la cabeza inclinada, Papá Russet de pie cerca, Mamá Fern mirando con cariño, Clover jugando al fondo, roble otoñal arriba"
+      ru: "Лисёнок Пип сидит в золотых листьях с наклонённой головой, Папа Рассет стоит рядом, Мама Ферн смотрит с любовью, Кловер играет на заднем плане, осенний дуб наверху"
+
+funFacts:
+  title:
+    en: "Amazing Fox Facts!"
+    es: "¡Datos Asombrosos sobre Zorros!"
+    ru: "Удивительные факты о лисах!"
+  facts:
+    - title:
+        en: "Super Hearing"
+        es: "Súper Oído"
+        ru: "Суперслух"
+      content:
+        en: "Red foxes can hear a mouse squeaking from 100 feet away, and can even hear them tunnelling under 3 feet of snow! Their large ears can rotate independently — one ear forward and one sideways — like two satellite dishes scanning for sound. This super hearing is what makes their famous pounce-dive so accurate. They can pinpoint exactly where a mouse is hiding, even when they can't see it!"
+        es: "¡Los zorros rojos pueden escuchar un ratón chirriando a 30 metros de distancia, e incluso pueden oírlos cavando bajo un metro de nieve! Sus grandes orejas pueden rotar independientemente — una hacia adelante y otra de lado — como dos antenas parabólicas buscando sonido. Este súper oído es lo que hace que su famoso salto-zambullida sea tan preciso. ¡Pueden localizar exactamente dónde se esconde un ratón, incluso cuando no pueden verlo!"
+        ru: "Рыжие лисы могут услышать писк мыши с расстояния 30 метров и даже слышат их под метром снега! Их большие уши могут вращаться независимо — одно вперёд, другое вбок — как две спутниковые тарелки, сканирующие звуки. Именно этот суперслух делает их знаменитый прыжок-нырок таким точным. Они могут определить, где именно прячется мышь, даже не видя её!"
+      image: "fun-fact-super-hearing.jpg"
+
+    - title:
+        en: "The Fox Trot"
+        es: "El Trote del Zorro"
+        ru: "Лисья рысца"
+      content:
+        en: "When a fox finds extra food, it doesn't just eat it all — it buries it for later! Foxes dig small holes, drop in a mouse or some berries, and cover it back up with their nose. The amazing part? A single fox can remember HUNDREDS of hiding spots! They use landmarks like trees, rocks, and streams to create a mental treasure map. Some foxes have been found with over 1,000 cached food items!"
+        es: "Cuando un zorro encuentra comida extra, ¡no se lo come todo — lo entierra para después! Los zorros cavan pequeños hoyos, meten un ratón o algunas bayas, y lo cubren con la nariz. ¿La parte increíble? ¡Un solo zorro puede recordar CIENTOS de escondites! Usan puntos de referencia como árboles, rocas y arroyos para crear un mapa mental del tesoro. ¡Se han encontrado zorros con más de 1,000 alimentos escondidos!"
+        ru: "Когда лиса находит лишнюю еду, она не съедает всё — она закапывает на потом! Лисы роют маленькие ямки, кладут туда мышку или ягоды и закрывают носом. Удивительное в том, что одна лиса может помнить СОТНИ тайников! Они используют ориентиры — деревья, камни, ручьи — чтобы создать мысленную карту сокровищ. У некоторых лис находили более 1000 спрятанных запасов еды!"
+      image: "fun-fact-food-burying.jpg"
+
+    - title:
+        en: "Tail Warmth"
+        es: "Calor de Cola"
+        ru: "Тепло хвоста"
+      content:
+        en: "A fox's bushy tail — called a 'brush' — is the ultimate multi-tool! In cold weather, foxes wrap their tail over their nose and paws like a cozy blanket. In rain, it works like an umbrella. When running, it helps with balance like a tightrope walker's pole. Foxes even use their tails to communicate — a wagging tail means 'let's play,' and a puffed-up tail means 'stay away!' Baby foxes love sleeping wrapped in their parents' tails."
+        es: "¡La cola peluda de un zorro — llamada 'pincel' — es la herramienta multiusos definitiva! En clima frío, los zorros envuelven su cola sobre la nariz y las patas como una manta acogedora. Con lluvia, funciona como un paraguas. Al correr, ayuda con el equilibrio como la pértiga de un equilibrista. Los zorros incluso usan sus colas para comunicarse — una cola moviéndose significa 'juguemos,' ¡y una cola esponjada significa 'aléjate!' A los cachorros les encanta dormir envueltos en las colas de sus padres."
+        ru: "Пушистый хвост лисы — его называют 'труба' — это универсальный инструмент! В холодную погоду лисы оборачивают хвост вокруг носа и лап как уютное одеяло. В дождь он работает как зонтик. При беге помогает с балансом как шест канатоходца. Лисы даже общаются хвостами — виляющий хвост значит 'давай играть,' а распушённый — 'не подходи!' Лисята обожают спать, укутанные в хвосты родителей."
+      image: "fun-fact-tail-warmth.jpg"
+
+    - title:
+        en: "Night Vision"
+        es: "Visión Nocturna"
+        ru: "Ночное зрение"
+      content:
+        en: "Fox eyes have a special mirror-like layer behind the retina called the tapetum lucidum — which means 'bright carpet' in Latin! This layer bounces light back through the eye a second time, giving foxes incredible night vision. It's also what makes their eyes glow bright greenish-gold when caught in a flashlight beam at night. Foxes can see in light levels six times lower than what humans need. They're nature's night ninjas!"
+        es: "¡Los ojos de los zorros tienen una capa especial como un espejo detrás de la retina llamada tapetum lucidum — que significa 'alfombra brillante' en latín! Esta capa refleja la luz de vuelta a través del ojo una segunda vez, dando a los zorros una increíble visión nocturna. También es lo que hace que sus ojos brillen verde-dorado cuando los alumbra una linterna por la noche. Los zorros pueden ver con niveles de luz seis veces más bajos que los humanos. ¡Son los ninjas nocturnos de la naturaleza!"
+        ru: "У лисьих глаз есть особый зеркальный слой за сетчаткой — тапетум лусидум, что по-латыни значит 'светящийся ковёр'! Этот слой отражает свет обратно через глаз во второй раз, давая лисам невероятное ночное зрение. Именно он заставляет их глаза светиться зеленовато-золотым, когда на них попадает луч фонарика ночью. Лисы видят при освещении в шесть раз слабее, чем нужно людям. Они — ночные ниндзя природы!"
+      image: "fun-fact-night-vision.jpg"
+
+imageGeneration:
+  characters:
+    papa-russet:
+      name: "Papa Russet"
+      description: "Tall handsome dog fox with deep rich russet coat, dramatic silver streak along his back, long elegant black legs, magnificent bushy tail, warm amber eyes"
+      uniqueFeatures:
+        - "TALLEST character — significantly larger than Mama Fern, towers over both kits"
+        - "Deep RICH RUSSET coat — darker and more intense red than any other character"
+        - "Dramatic SILVER STREAK running along his back — his signature mark, like a bolt of lightning"
+        - "Long ELEGANT BLACK LEGS — tall and powerful, built for speed and silent movement"
+        - "MAGNIFICENT bushy tail — the biggest tail, used as a blanket for the whole family"
+        - "Warm AMBER eyes — golden-brown, always alert and watchful"
+      personality: "Wise and adventurous — stands tall and alert, ears always turning, protective but encouraging"
+      notLike: "NOT slim or delicate like Mama Fern, NOT small or round like the kits, NOT light-coloured"
+
+    mama-fern:
+      name: "Mama Fern"
+      description: "Graceful vixen with softer golden-orange coat, beautiful cream chest, gentle warm brown eyes, distinctive pale patch behind one ear"
+      uniqueFeatures:
+        - "SOFTER GOLDEN-ORANGE coat — clearly lighter and warmer-toned than Papa's deep russet"
+        - "Beautiful CREAM CHEST — prominent light patch on chest and belly"
+        - "Gentle warm BROWN eyes — softer and more nurturing than Papa's amber"
+        - "Distinctive PALE PATCH behind one ear — her unique identifying mark"
+        - "More SLENDER and graceful build than Papa — elegant but not as tall"
+        - "Often seen CURLED protectively — body language always nurturing and sheltering"
+      personality: "Patient and nurturing — often curled protectively around kits, gentle and wise about the forest"
+      notLike: "NOT as tall or dark as Papa Russet, NOT as small as the kits, NOT as intense or bold-coloured"
+
+    pip:
+      name: "Pip"
+      description: "Smallest kit with brightest vivid orange fur, oversized perky ears, one distinctive white sock on front left paw, curious tilted-head pose"
+      uniqueFeatures:
+        - "SMALLEST character — much smaller than both parents, slightly smaller than Clover"
+        - "BRIGHTEST vivid orange fur — more intensely orange than any other character"
+        - "OVERSIZED perky ears — disproportionately large for his small head"
+        - "One distinctive WHITE SOCK on front left paw — the other three paws are black"
+        - "Signature TILTED-HEAD pose — always tilting head sideways to listen"
+        - "Bright curious eyes — always wide open with wonder"
+      personality: "Curious and brave — always tilting head sideways to listen, eager to try everything, boundless energy"
+      notLike: "NOT as big as Clover, much SMALLER than adults, NOT dark-auburn like Clover, NOT calm or still"
+
+    clover:
+      name: "Clover"
+      description: "Slightly larger kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail for her age"
+      uniqueFeatures:
+        - "Slightly LARGER than Pip — bigger and more solidly built, but still clearly a kit"
+        - "DARKER REDDISH-AUBURN coat — distinctly different from Pip's bright orange"
+        - "EXTRA-LARGE white tail tip — bigger white tip than any other character"
+        - "Tiny dark FRECKLE on nose — her unique identifying mark"
+        - "Notably BUSHY TAIL for her age — takes after Papa's magnificent brush"
+        - "Determined expression — slightly narrowed eyes, focused and clever"
+      personality: "Clever and determined — always figuring things out first, independent and resourceful"
+      notLike: "NOT as bright-orange as Pip, NOT as big as adults, NOT as small as Pip, NOT timid or hesitant"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, leaves, and grass. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Warm autumn woodland setting with golden leaves, amber light, misty mornings, and cozy den interiors. Child-friendly and inviting."
+
+viewerDetails:
+- title:
+    en: "Ear Close-up"
+    es: "Primer Plano de Orejas"
+    ru: "Уши крупным планом"
+  description:
+    en: "Look at Papa Russet's amazing ears — they can rotate independently, like two radar dishes! One ear can point forward while the other turns sideways or even backward. This lets foxes pinpoint the exact location of sounds, even tiny mice rustling under leaves or snow. The ears are lined with thick fur to keep warm, and the dark tips help foxes recognize each other. A fox's hearing is so precise it can detect the direction of a sound within one degree!"
+    es: "¡Mira las increíbles orejas de Papá Russet — pueden rotar independientemente, como dos antenas de radar! Una oreja puede apuntar hacia adelante mientras la otra gira de lado o incluso hacia atrás. Esto permite a los zorros localizar la ubicación exacta de los sonidos, incluso ratones diminutos moviéndose bajo hojas o nieve. Las orejas están forradas de pelaje grueso para mantenerse calientes, y las puntas oscuras ayudan a los zorros a reconocerse."
+    ru: "Посмотрите на удивительные уши Папы Рассета — они могут вращаться независимо, как две радарные тарелки! Одно ухо может быть направлено вперёд, а другое поворачивается вбок или даже назад. Это позволяет лисам точно определять расположение звуков, даже крошечных мышей, шуршащих под листьями или снегом. Уши покрыты густым мехом для тепла, а тёмные кончики помогают лисам узнавать друг друга."
+  image: "detail-ear-closeup.jpg"
+
+- title:
+    en: "Paw Pads"
+    es: "Almohadillas de las Patas"
+    ru: "Подушечки лап"
+  description:
+    en: "Fox paws are perfectly designed for sneaking! Their paw pads are covered in thick fur — even on the bottom — which muffles their footsteps like built-in slippers. Unlike most dogs, foxes have semi-retractable claws that they can pull in slightly for silent stalking and extend for digging dens. Look at Pip's special white sock on his front left paw — underneath, his paw pads are just as dark and tough as his black paws!"
+    es: "¡Las patas de los zorros están perfectamente diseñadas para escabullirse! Sus almohadillas están cubiertas de pelaje grueso — incluso por debajo — lo que amortigua sus pasos como pantuflas incorporadas. A diferencia de la mayoría de los perros, los zorros tienen garras semi-retráctiles que pueden retraer ligeramente para acechar en silencio y extender para cavar madrigueras. ¡Mira el calcetín blanco especial de Pip en su pata delantera izquierda — debajo, sus almohadillas son tan oscuras y resistentes como sus patas negras!"
+    ru: "Лисьи лапы идеально созданы для подкрадывания! Их подушечки покрыты густым мехом — даже снизу — что приглушает шаги, как встроенные тапочки. В отличие от большинства собак, у лис полувтяжные когти, которые они могут слегка убирать для бесшумного преследования и выпускать для рытья нор. Посмотрите на белый носочек Пипа на левой передней лапе — под ним подушечки такие же тёмные и крепкие, как на чёрных лапках!"
+  image: "detail-paw-pads.jpg"
+
+- title:
+    en: "Whisker Sensors"
+    es: "Sensores de Bigotes"
+    ru: "Усы-сенсоры"
+  description:
+    en: "Mama Fern's long whiskers aren't just for looks — they're incredibly sensitive touch sensors! Each whisker is connected to hundreds of nerve endings that can detect the tiniest changes in air currents. This helps foxes navigate in complete darkness inside their dens and through thick undergrowth at night. The whiskers are as wide as the fox's body, helping them judge whether they can fit through tight spaces. They can even sense the body heat of nearby prey!"
+    es: "¡Los largos bigotes de Mamá Fern no son solo para verse bien — son sensores táctiles increíblemente sensibles! Cada bigote está conectado a cientos de terminaciones nerviosas que pueden detectar los cambios más pequeños en las corrientes de aire. Esto ayuda a los zorros a navegar en completa oscuridad dentro de sus madrigueras y entre la vegetación espesa por la noche. Los bigotes son tan anchos como el cuerpo del zorro, ayudándolos a juzgar si caben por espacios estrechos."
+    ru: "Длинные усы Мамы Ферн — это не просто украшение — это невероятно чувствительные датчики осязания! Каждый ус соединён с сотнями нервных окончаний, которые улавливают малейшие изменения воздушных потоков. Это помогает лисам ориентироваться в полной темноте внутри нор и в густых зарослях ночью. Усы по ширине равны телу лисы, помогая определять, пролезут ли они в узкое место."
+  image: "detail-whisker-sensors.jpg"
+
+- title:
+    en: "The Magnificent Brush"
+    es: "El Magnífico Pincel"
+    ru: "Великолепная труба"
+  description:
+    en: "Papa Russet's tail — called a 'brush' by fox lovers — is a marvel of nature! It makes up about one-third of his total body length and is packed with thick, insulating fur. The white tip at the end helps fox family members follow each other through tall grass and dim light. Inside the tail, a scent gland produces the musky 'foxy' smell that foxes use to mark their territory. Kits love to chase their parents' tails — it's their favourite toy!"
+    es: "¡La cola de Papá Russet — llamada 'pincel' por los amantes de los zorros — es una maravilla de la naturaleza! Representa aproximadamente un tercio de la longitud total de su cuerpo y está llena de pelaje grueso y aislante. La punta blanca al final ayuda a los miembros de la familia a seguirse en la hierba alta y la luz tenue. Dentro de la cola, una glándula de aroma produce el olor almizclado que los zorros usan para marcar su territorio. ¡A los cachorros les encanta perseguir las colas de sus padres — es su juguete favorito!"
+    ru: "Хвост Папы Рассета — его называют 'труба' — чудо природы! Он составляет около трети общей длины тела и набит густым утепляющим мехом. Белый кончик помогает членам лисьей семьи следовать друг за другом в высокой траве и сумерках. Внутри хвоста находится пахучая железа, которая вырабатывает мускусный 'лисий' запах для пометки территории. Лисята обожают гоняться за хвостами родителей — это их любимая игрушка!"
+  image: "detail-tail-anatomy.jpg"
+
+routing:
+    openai:
+      - "hero-autumn-meadow.jpg"
+      - "papa-russet-portrait.jpg"
+      - "mama-fern-portrait.jpg"
+      - "pip-opens-eyes.jpg"
+      - "fun-fact-night-vision.jpg"
+
+    gemini:
+      - "clover-portrait.jpg"
+      - "first-outside.jpg"
+      - "papas-pounce.jpg"
+      - "clovers-first-catch.jpg"
+      - "berry-picking.jpg"
+      - "fox-games.jpg"
+      - "hide-and-seek.jpg"
+      - "sunset-meadow.jpg"
+      - "starry-den.jpg"
+      - "detail-ear-closeup.jpg"
+      - "detail-paw-pads.jpg"
+      - "detail-whisker-sensors.jpg"
+      - "detail-tail-anatomy.jpg"
+      - "fun-fact-super-hearing.jpg"
+      - "fun-fact-food-burying.jpg"
+      - "fun-fact-tail-warmth.jpg"
+      - "magazine-cover.jpg"

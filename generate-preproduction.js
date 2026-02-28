@@ -3,9 +3,10 @@
  * generate-preproduction.js — Character & style pre-production pipeline
  *
  * Modeled after real animation studio workflows:
+ *   Step 0: Storyline generation (Claude CLI generates narrative markdown)
  *   Step 1: Unified character sheet (B&W line art, all characters)
  *   Step 2: Individual character sheets (multi-angle per character)
- *   Step 3: Style proposals (5 artistic styles applied to a test scene)
+ *   Step 3: Pixar mood proposals (5 mood combos applied to a test scene)
  *
  * Non-interactive: generates everything, produces a review HTML.
  * Use --review to regenerate the HTML without re-running generation.
@@ -33,35 +34,32 @@ const {
     ROOT
 } = require('./automation/image-utils');
 
-// ── Style Proposals ─────────────────────────────────────────────────
+// ── Pixar Base + Composable Mood Labels ────────────────────────────
 
-const STYLE_PROPOSALS = [
-    {
-        id: 'classic-disney',
-        name: 'Classic Disney Hand-Drawn',
-        prompt: 'Classic hand-drawn animation style inspired by Disney\'s Golden Age (Snow White, Bambi, The Jungle Book). Expressive character faces with large soulful eyes. Warm, naturalistic color palette with rich earth tones. Painterly brushstrokes visible in fur, skin, and foliage. Soft, rounded character proportions emphasizing personality over photorealism. Vintage animation cel warmth with gentle watercolor-like backgrounds. The charm of hand-drawn animation — organic, flowing lines with visible human artistry.'
-    },
-    {
-        id: 'ghibli',
-        name: 'Studio Ghibli Watercolor Warmth',
-        prompt: 'Studio Ghibli-inspired hand-painted watercolor style, similar to classic hand-drawn Disney films but with Japanese animation sensibility. Soft edges, warm golden palette, visible brushstrokes. Gentle pastel tones with warm highlights. Atmospheric perspective with soft backgrounds. Organic hand-drawn character design with painterly brushwork. The feeling of a Miyazaki film — peaceful, warm, and magical. Luminous sky with soft clouds.'
-    },
-    {
-        id: 'pixar',
-        name: 'Pixar / 3D Render Quality',
-        prompt: 'Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Dramatic cinematic lighting with warm key light and cool fill. Rich saturated colors. Photorealistic textures but stylized proportions. Depth of field with bokeh. The look of a Pixar feature film still.'
-    },
-    {
-        id: 'classic-book',
-        name: 'Classic Children\'s Book Illustration',
-        prompt: 'Traditional children\'s book illustration style inspired by Eric Carle and Oliver Jeffers. Textured paper feel, visible artistic medium (gouache, colored pencil, collage). Bold simple shapes. Warm earth tones with pops of bright primary colors. Hand-crafted tactile quality. Slightly naive, charming character rendering.'
-    },
-    {
-        id: 'pbr',
-        name: 'PBR / Photorealistic Rendering',
-        prompt: 'Physically-based rendering with photorealistic lighting and materials. Natural textures on skin — wrinkles, dust, fine hairs visible. Golden-hour volumetric lighting with god rays through trees. Photographic depth of field. Ground truth materials — real grass, real water, real dust particles. Nature documentary quality but with a warm child-friendly feel.'
-    }
+const PIXAR_BASE = `Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.`;
+
+const MOOD_LABELS = {
+    'translucency': 'Emphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.',
+    'epic-skies': 'Dramatic, expansive skies dominating the composition — towering clouds, vivid sunset/sunrise gradients, god rays breaking through cloud layers, atmospheric perspective pulling the eye to the horizon.',
+    'lush-botanical': 'Rich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper.',
+    'soft-intimate': 'Close, warm framing. Shallow depth of field with creamy bokeh. Soft diffused lighting like a cozy room. Warm skin tones, gentle shadows. The feeling of being held close.',
+    'golden-hour': 'Warm golden-hour lighting throughout — long amber shadows, honeyed highlights, everything bathed in the last hour of sunlight. Warm color temperature across the entire palette.'
+};
+
+const MOOD_PROPOSALS = [
+    { id: 'translucency-botanical', name: 'Translucency + Lush Botanical', moods: ['translucency', 'lush-botanical'] },
+    { id: 'epic-intimate',         name: 'Epic Skies + Soft Intimate',    moods: ['epic-skies', 'soft-intimate'] },
+    { id: 'golden-botanical',      name: 'Golden Hour + Lush Botanical',  moods: ['golden-hour', 'lush-botanical'] },
+    { id: 'translucency-intimate', name: 'Translucency + Soft Intimate',  moods: ['translucency', 'soft-intimate'] },
+    { id: 'epic-golden',           name: 'Epic Skies + Golden + Translucency', moods: ['epic-skies', 'golden-hour', 'translucency'] }
 ];
+
+function buildMoodPrompt(moods) {
+    const moodDescriptions = moods
+        .filter(m => MOOD_LABELS[m])
+        .map(m => MOOD_LABELS[m]);
+    return PIXAR_BASE + '\n\n' + moodDescriptions.join('\n\n');
+}
 
 // ── Helpers ─────────────────────────────────────────────────────────
 
@@ -93,7 +91,7 @@ function parseArgs() {
     const opts = {
         chapter: null, step: null, status: false, reset: false,
         review: false, approve: null, approveStyle: null,
-        redo: null, feedback: null
+        redo: null, feedback: null, autoApprove: false
     };
 
     for (let i = 0; i < args.length; i++) {
@@ -105,6 +103,7 @@ function parseArgs() {
         else if (args[i] === '--approve-style' && args[i + 1]) opts.approveStyle = parseInt(args[++i]);
         else if (args[i] === '--redo' && args[i + 1]) opts.redo = parseInt(args[++i]);
         else if (args[i] === '--feedback' && args[i + 1]) opts.feedback = args[++i];
+        else if (args[i] === '--auto-approve') opts.autoApprove = true;
         else if (!args[i].startsWith('--') && !opts.chapter) opts.chapter = args[i];
     }
     return opts;
@@ -136,6 +135,7 @@ class PreproductionPipeline {
         // Create directories
         const dirs = [
             this.preproDir,
+            path.join(this.preproDir, 'step0-storyline'),
             path.join(this.preproDir, 'step1-unified'),
             path.join(this.preproDir, 'step3-style'),
             path.join(this.preproDir, 'approved')
@@ -163,7 +163,10 @@ class PreproductionPipeline {
             characters.push({
                 id,
                 name: def.name || id,
-                description: def.description || ''
+                description: def.description || '',
+                uniqueFeatures: def.uniqueFeatures || [],
+                personality: def.personality || '',
+                notLike: def.notLike || ''
             });
         }
 
@@ -173,7 +176,10 @@ class PreproductionPipeline {
                     characters.push({
                         id: s.id.replace('meet-', ''),
                         name: s.title?.en || s.id,
-                        description: s.imageAlt?.en || ''
+                        description: s.imageAlt?.en || '',
+                        uniqueFeatures: [],
+                        personality: '',
+                        notLike: ''
                     });
                 }
             }
@@ -207,9 +213,10 @@ class PreproductionPipeline {
                 chapter: this.chapter,
                 createdAt: new Date().toISOString(),
                 characters: this.characters,
+                step0: { status: 'pending', attempts: 0, feedback: [] },
                 step1: { status: 'pending', attempts: 0, feedback: [] },
                 step2: { status: 'pending', characters: {} },
-                step3: { status: 'pending', chosenStyle: null, styleName: null }
+                step3: { status: 'pending', chosenStyle: null, styleName: null, chosenMoods: null }
             };
             for (const char of this.characters) {
                 this.config.step2.characters[char.id] = {
@@ -266,6 +273,156 @@ class PreproductionPipeline {
         return files.length > 0 ? path.join(dir, files[0]) : null;
     }
 
+    // ── Step 0: Storyline Generation ──────────────────────────────
+
+    async runStep0(feedback) {
+        console.log('\n--- Step 0: Storyline Generation (Claude CLI) ---\n');
+
+        if (!this.config.step0) {
+            this.config.step0 = { status: 'pending', attempts: 0, feedback: [] };
+        }
+
+        if (this.config.step0.status === 'approved' && !feedback) {
+            console.log('   Already approved. Use --redo 0 to regenerate.');
+            return;
+        }
+
+        // Check if Claude CLI is available
+        let claudeAvailable = false;
+        try {
+            execSync('which claude', { stdio: 'ignore' });
+            claudeAvailable = true;
+        } catch {
+            console.log('   Claude CLI not found. Skipping storyline generation.');
+            console.log('   Install with: npm install -g @anthropic-ai/claude-code');
+            console.log('   Or write the storyline manually in step0-storyline/storyline-v1.md');
+            return;
+        }
+
+        const storylineDir = path.join(this.preproDir, 'step0-storyline');
+        fs.mkdirSync(storylineDir, { recursive: true });
+
+        // Load reference storylines from existing chapters
+        const referenceChapters = ['bears', 'beavers', 'elephants'];
+        let referenceSummaries = '';
+        for (const refChapter of referenceChapters) {
+            const refPath = path.join(ROOT, 'chapters', `${refChapter}.yaml`);
+            if (!fs.existsSync(refPath)) continue;
+            try {
+                const refData = yaml.load(fs.readFileSync(refPath, 'utf8'));
+                const title = refData.meta?.title?.en || refChapter;
+                const sections = (refData.sections || []).filter(s => !s.hidden);
+                const sectionSummary = sections.map(s =>
+                    `  - ${s.id}: "${s.title?.en || s.id}" — ${(s.content?.en || '').substring(0, 100)}...`
+                ).join('\n');
+                const chars = refData.imageGeneration?.characters || {};
+                const charSummary = Object.entries(chars).map(([id, c]) =>
+                    `  - ${c.name || id}: ${c.description || ''}`
+                ).join('\n');
+                referenceSummaries += `\n### ${title}\nCharacters:\n${charSummary}\nSections (${sections.length}):\n${sectionSummary}\n`;
+            } catch { /* skip unreadable chapters */ }
+        }
+
+        const cleanFeedback = feedback ? feedback.replace(/[{}[\]`]/g, '').substring(0, 500) : '';
+        const feedbackLine = cleanFeedback
+            ? `\n\nIMPORTANT REVISION FEEDBACK from the user: ${cleanFeedback}`
+            : '';
+
+        const storylinePrompt = `Generate a children's book storyline for: ${this.chapter.toUpperCase()}
+
+TARGET AUDIENCE: Children aged 1-3 years old.
+TONE: Happy, warm, loving, educational. Absolutely NO scary, sad, or dark themes.
+REQUIREMENT: Both parents (father AND mother) must be present and loving throughout.
+
+NARRATIVE STRUCTURE (follow this pattern from our reference books):
+- Introduction (2-3 sections): Meet the family members one by one
+- Learning/Teaching (4-8 sections): The young protagonist learns from parents/elders
+- Climax (1 section): A joyful milestone or magical moment that fulfills a promise from early in the story
+- Resolution (2-3 sections): The family celebrates together, looking to the future
+
+CHARACTER DESIGN:
+- 3-generation or 2-generation family (at minimum: father, mother, young protagonist)
+- Each character needs UNIQUE VISUAL FEATURES that make them instantly distinguishable
+- Give each character a personality that shows in their body language
+- Consider adding a sibling or friend character for variety
+
+REFERENCE STORYLINES (use these as examples of good structure and tone):
+${referenceSummaries}
+
+OUTPUT FORMAT (use exactly this markdown structure):
+# ${this.chapter.charAt(0).toUpperCase() + this.chapter.slice(1)}: [Your Title]
+## Subtitle
+[A poetic subtitle]
+## Characters
+- **Name** (role: father/mother/protagonist/sibling) — Visual description with UNIQUE features. Personality: [brief]. NOT like: [contrast with other characters].
+## Storyline
+1. **Section Title** (id: section-id) — Content summary describing what happens. [mood: label1, label2]
+2. ...
+## Fun Facts (4)
+1. **Title** — Educational content about the animal
+## Viewer Details (4)
+1. **Title** — Close-up detail about anatomy/behavior
+## Values & Themes
+- Theme: explanation of the value being taught
+${feedbackLine}
+
+Generate a complete, detailed storyline. Each section summary should be 2-3 sentences describing the narrative, not just a title. Include mood labels from: translucency, epic-skies, lush-botanical, soft-intimate, golden-hour.`;
+
+        this.config.step0.attempts++;
+        const version = this.config.step0.attempts;
+
+        console.log(`   Generating storyline (v${version}) via Claude CLI...`);
+
+        try {
+            const result = execSync(
+                `claude -p ${JSON.stringify(storylinePrompt)}`,
+                { encoding: 'utf8', maxBuffer: 1024 * 1024, timeout: 120000 }
+            );
+
+            const outputPath = path.join(storylineDir, `storyline-v${version}.md`);
+            fs.writeFileSync(outputPath, result);
+            console.log(`   Generated: storyline-v${version}.md (${(result.length / 1024).toFixed(1)} KB)`);
+
+            if (feedback) {
+                this.config.step0.feedback.push(`v${version}: ${feedback}`);
+            }
+            this.config.step0.status = 'generated';
+            this._saveConfig();
+        } catch (err) {
+            console.error(`   Error generating storyline: ${err.message}`);
+            this.config.step0.attempts--;
+            this._saveConfig();
+        }
+    }
+
+    approveStep0() {
+        const storylineDir = path.join(this.preproDir, 'step0-storyline');
+        if (!fs.existsSync(storylineDir)) {
+            console.log('   No storyline found. Run step 0 first.');
+            return;
+        }
+        const files = fs.readdirSync(storylineDir)
+            .filter(f => f.match(/^storyline-v\d+\.md$/))
+            .sort((a, b) => {
+                const va = parseInt(a.match(/v(\d+)/)?.[1] || '0');
+                const vb = parseInt(b.match(/v(\d+)/)?.[1] || '0');
+                return vb - va;
+            });
+        if (files.length === 0) {
+            console.log('   No storyline versions found. Run step 0 first.');
+            return;
+        }
+        const latest = files[0];
+        const approvedPath = path.join(storylineDir, 'approved.md');
+        fs.copyFileSync(path.join(storylineDir, latest), approvedPath);
+        const version = latest.match(/v(\d+)/)?.[1] || '?';
+        if (!this.config.step0) this.config.step0 = { status: 'pending', attempts: 0, feedback: [] };
+        this.config.step0.status = 'approved';
+        this.config.step0.approvedVersion = parseInt(version);
+        this._saveConfig();
+        console.log(`   Step 0 approved (v${version})`);
+    }
+
     // ── Step 1: Unified Character Sheet ──────────────────────────
 
     async runStep1(feedback) {
@@ -316,32 +473,55 @@ class PreproductionPipeline {
     }
 
     _buildUnifiedSheetPrompt(feedback) {
-        const charList = this.characters.map((c, i) =>
-            `${i + 1}. ${c.name.toUpperCase()} — ${c.description}`
-        ).join('\n');
+        const charList = this.characters.map((c, i) => {
+            let entry = `${i + 1}. ${c.name.toUpperCase()} — ${c.description}`;
+            if (c.uniqueFeatures && c.uniqueFeatures.length > 0) {
+                entry += '\n   KEY VISUAL DIFFERENCES: ' + c.uniqueFeatures.join('; ');
+            }
+            if (c.personality) {
+                entry += '\n   POSE/BODY LANGUAGE: ' + c.personality;
+            }
+            return entry;
+        }).join('\n\n');
+
+        // Build contrast table
+        const contrastLines = [];
+        for (let i = 0; i < this.characters.length; i++) {
+            for (let j = i + 1; j < this.characters.length; j++) {
+                const a = this.characters[i];
+                const b = this.characters[j];
+                contrastLines.push(`${a.name} vs ${b.name}: ${a.notLike || a.description} / ${b.notLike || b.description}`);
+            }
+        }
+        const contrastTable = contrastLines.length > 0
+            ? `\nCONTRAST TABLE (each pair MUST look visually different):\n${contrastLines.join('\n')}`
+            : '';
 
         const cleanFeedback = feedback ? feedback.replace(/[{}[\]`]/g, '').substring(0, 500) : '';
         const feedbackLine = cleanFeedback
             ? `\nIMPORTANT REVISION FEEDBACK: ${cleanFeedback}`
             : '';
 
-        return `Create a CHARACTER DESIGN SHEET in classic hand-drawn animation style, like a Disney animator's reference page from the Golden Age (Snow White, Bambi era).
-
-Show the following characters side by side, each clearly separated and labeled:
+        return `Create a CHARACTER DESIGN SHEET showing ${this.characters.length} VISUALLY DISTINCT characters side by side.
 
 ${charList}
+${contrastTable}
 
-RULES:
+CRITICAL DIFFERENTIATION RULES:
+- Each character MUST be immediately distinguishable at THUMBNAIL SIZE — different height, build, markings, and pose
+- Characters must NOT look like copies of each other — exaggerate the differences
+- SIZE MATTERS: show dramatic size differences between adults and young ones
+- MARKINGS MATTER: each character's unique colors/patterns/features must be clearly visible and distinct
+- POSE MATTERS: each character should have a different body posture that reflects their personality
+
+STYLE RULES:
 - BLACK AND WHITE LINE ART with warm, organic, hand-drawn quality — like pencil on animation paper
 - Flowing, confident lines with personality — NOT mechanical, NOT vector-clean, NOT sterile
-- The linework should feel like it was drawn by a skilled traditional animator — slight variations in line weight, natural curves
-- Show clear size relationships between characters (babies smaller, adults larger)
-- Each character must be distinct and immediately recognizable by their unique features
-- Show each character in a relaxed, expressive standing pose that reveals personality, full body visible
-- Large, soulful, expressive eyes — the hallmark of classic Disney character design
+- Show full body of each character with feet visible
+- Large, soulful, expressive eyes
 - Simple clean white/cream background like animation paper
 - Put the character name as a small label below each one
-- This is a REFERENCE SHEET for hand-drawn animators — warmth and charm above all
+- This is a REFERENCE SHEET — warmth and charm above all
 ${feedbackLine}`;
     }
 
@@ -417,9 +597,24 @@ ${feedbackLine}`;
             ? `\nIMPORTANT REVISION FEEDBACK: ${cleanFeedback}`
             : '';
 
-        return `Using the CHARACTER DESIGN SHEET as reference (the provided image), create a detailed CHARACTER MODEL SHEET for: ${character.name.toUpperCase()}
+        const uniqueFeaturesBlock = character.uniqueFeatures && character.uniqueFeatures.length > 0
+            ? `\nUNIQUE IDENTIFYING FEATURES (these MUST be clearly visible in ALL four views):\n${character.uniqueFeatures.map(f => `- ${f}`).join('\n')}`
+            : '';
+
+        const personalityBlock = character.personality
+            ? `\nPERSONALITY THROUGH POSE: ${character.personality}`
+            : '';
+
+        const notLikeBlock = character.notLike
+            ? `\nIMPORTANT — THIS CHARACTER IS: ${character.notLike}`
+            : '';
+
+        return `Using the UNIFIED CAST SHEET as reference for species anatomy, create a detailed CHARACTER MODEL SHEET for: ${character.name.toUpperCase()}
 
 Character description: ${character.description}
+${uniqueFeaturesBlock}
+${personalityBlock}
+${notLikeBlock}
 
 Show this character from FOUR angles arranged in a 2x2 grid:
 - TOP LEFT: Front view (facing the camera directly)
@@ -428,21 +623,21 @@ Show this character from FOUR angles arranged in a 2x2 grid:
 - BOTTOM RIGHT: Close-up of head and face showing expression and key features
 
 RULES:
-- Keep the character EXACTLY as shown in the reference sheet — same proportions, same features, same distinguishing marks
-- BLACK AND WHITE LINE ART with warm, hand-drawn quality — like a Disney animator's pencil work (Snow White, Bambi era)
-- Flowing, organic lines with natural variation in line weight — NOT vector-clean or digital-looking
-- Large, soulful, expressive eyes in the close-up view — the hallmark of classic animation
+- Use the reference for SPECIES ANATOMY only — apply the UNIQUE FEATURES listed above
+- The unique features must be EXAGGERATED and clearly visible — they are what makes this character recognizable
+- BLACK AND WHITE LINE ART with warm, hand-drawn quality
+- Flowing, organic lines with natural variation in line weight
+- Large, soulful, expressive eyes in the close-up view
 - All four views must be clearly the SAME character, consistent across every angle
 - Simple white/cream background like animation paper
 - Label each view (Front, 3/4, Side, Close-up)
-- This is a hand-drawn CHARACTER MODEL SHEET — warmth and expressiveness in every line
 ${feedbackLine}`;
     }
 
     // ── Step 3: Style Proposals ──────────────────────────────────
 
     async runStep3() {
-        console.log('\n--- Step 3: Style Proposals ---\n');
+        console.log('\n--- Step 3: Pixar Mood Proposals ---\n');
 
         if (this.config.step3.status === 'approved') {
             console.log('   Already approved. Use --redo 3 to regenerate.');
@@ -471,26 +666,26 @@ ${feedbackLine}`;
             `Scene: ${testScene.title}\nAction: ${testScene.action}`
         );
 
-        console.log('   Generating 5 style proposals...\n');
+        console.log('   Generating 5 Pixar mood proposals...\n');
 
-        for (let i = 0; i < STYLE_PROPOSALS.length; i++) {
-            const style = STYLE_PROPOSALS[i];
+        for (let i = 0; i < MOOD_PROPOSALS.length; i++) {
+            const proposal = MOOD_PROPOSALS[i];
             const outputPath = path.join(
-                this.preproDir, 'step3-style', `proposal-${i + 1}-${style.id}.jpg`
+                this.preproDir, 'step3-style', `proposal-${i + 1}-${proposal.id}.jpg`
             );
 
             if (fs.existsSync(outputPath)) {
-                console.log(`   [${i + 1}/5] ${style.name} — already generated`);
+                console.log(`   [${i + 1}/5] ${proposal.name} — already generated`);
                 continue;
             }
 
-            process.stdout.write(`   [${i + 1}/5] ${style.name}...`);
+            process.stdout.write(`   [${i + 1}/5] ${proposal.name}...`);
 
             try {
-                const prompt = this._buildStylePrompt(style, testScene);
+                const prompt = this._buildStylePrompt(proposal, testScene);
                 const buffer = await withRetry(
                     () => geminiMultiRefGenerate(this.ai, refPaths, prompt),
-                    { label: style.name }
+                    { label: proposal.name }
                 );
 
                 if (buffer) {
@@ -504,7 +699,7 @@ ${feedbackLine}`;
             }
 
             // Rate limit delay between proposals
-            if (i < STYLE_PROPOSALS.length - 1) {
+            if (i < MOOD_PROPOSALS.length - 1) {
                 await new Promise(r => setTimeout(r, 3000));
             }
         }
@@ -530,9 +725,11 @@ ${feedbackLine}`;
         };
     }
 
-    _buildStylePrompt(style, testScene, feedback) {
+    _buildStylePrompt(proposal, testScene, feedback) {
         const cleanFeedback = feedback ? feedback.replace(/[{}[\]`]/g, '').substring(0, 500) : '';
         const feedbackLine = cleanFeedback ? `\nIMPORTANT REVISION: ${cleanFeedback}` : '';
+
+        const moodPrompt = buildMoodPrompt(proposal.moods);
 
         return `Create a beautiful children's book illustration for this scene:
 
@@ -540,13 +737,16 @@ SCENE: ${testScene.action}
 
 Use the characters from the provided reference sheets. Keep their proportions, features, and distinguishing marks exactly as shown in the references.
 
-ART STYLE TO APPLY: ${style.prompt}
+ART STYLE AND MOOD:
+${moodPrompt}
+
+MOOD EMPHASIS FOR THIS PROPOSAL: ${proposal.name}
 
 RULES:
-- Match the characters EXACTLY to the reference sheets — same proportions, same features
-- Apply ONLY the art style described above
+- Match the characters to the reference sheets — same proportions, same unique features
+- Apply the Pixar rendering style with the specific mood emphasis described above
 - Warm, inviting, child-friendly atmosphere
-- Rich, detailed background appropriate to an African savanna
+- Rich, detailed background appropriate to the scene's setting
 - NO text, labels, watermarks, or signatures
 - Professional illustration quality suitable for a printed children's book
 - The scene should feel alive, warm, and full of gentle emotion
@@ -556,6 +756,10 @@ ${feedbackLine}`;
     // ── Approve ──────────────────────────────────────────────────
 
     approveStep(stepNum) {
+        if (stepNum === 0) {
+            this.approveStep0();
+            return;
+        }
         if (stepNum === 1) {
             const latest = this._getLatestUnified();
             if (!latest) {
@@ -597,9 +801,9 @@ ${feedbackLine}`;
             console.log('   Invalid choice. Pick 1-5.');
             return;
         }
-        const style = STYLE_PROPOSALS[choice - 1];
+        const proposal = MOOD_PROPOSALS[choice - 1];
         const chosenPath = path.join(
-            this.preproDir, 'step3-style', `proposal-${choice}-${style.id}.jpg`
+            this.preproDir, 'step3-style', `proposal-${choice}-${proposal.id}.jpg`
         );
         if (!fs.existsSync(chosenPath)) {
             console.log(`   Proposal ${choice} not found. Run step 3 first.`);
@@ -609,10 +813,11 @@ ${feedbackLine}`;
         fs.copyFileSync(chosenPath, approvedPath);
         this.config.step3.status = 'approved';
         this.config.step3.chosenStyle = choice;
-        this.config.step3.styleName = style.id;
-        this.config.step3.styleDescription = style.prompt;
+        this.config.step3.styleName = proposal.id;
+        this.config.step3.chosenMoods = proposal.moods;
+        this.config.step3.styleDescription = buildMoodPrompt(proposal.moods);
         this._saveConfig();
-        console.log(`   Style chosen: ${style.name}`);
+        console.log(`   Mood chosen: ${proposal.name} (${proposal.moods.join(', ')})`);
     }
 
     // ── Package Approved ─────────────────────────────────────────
@@ -647,6 +852,8 @@ ${feedbackLine}`;
             console.log('   style-reference.jpg');
         }
 
+        const chosenProposal = MOOD_PROPOSALS.find(p => p.id === this.config.step3.styleName);
+        const chosenMoods = this.config.step3.chosenMoods || chosenProposal?.moods || [];
         const manifest = {
             chapter: this.chapter,
             completedAt: new Date().toISOString(),
@@ -655,8 +862,10 @@ ${feedbackLine}`;
             styleReference: 'style-reference.jpg',
             chosenStyle: {
                 id: this.config.step3.styleName,
-                name: STYLE_PROPOSALS.find(s => s.id === this.config.step3.styleName)?.name || '',
-                description: this.config.step3.styleDescription || ''
+                name: chosenProposal?.name || this.config.step3.styleName || '',
+                base: PIXAR_BASE,
+                moods: chosenMoods,
+                description: this.config.step3.styleDescription || buildMoodPrompt(chosenMoods)
             }
         };
         fs.writeFileSync(
@@ -817,12 +1026,18 @@ ${feedbackLine}`;
         const hasCover = coverImage && imgExists(coverImage);
 
         // ── Pre-production status ──
+        const s0 = this.config.step0 || { status: 'pending', attempts: 0 };
         const s1 = this.config.step1;
         const s2 = this.config.step2;
         const s3 = this.config.step3;
 
         let preproStatusHTML = `
-        <div class="prepro-grid">
+        <div class="prepro-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="prepro-step ${s0.status === 'approved' ? 'step-approved' : 'step-pending'}">
+                <h4>Step 0: Storyline</h4>
+                <p>${s0.status} (${s0.attempts} attempts)</p>
+                ${s0.status === 'approved' ? '<span class="check">Approved</span>' : `<span class="pending">${s0.status}</span>`}
+            </div>
             <div class="prepro-step ${s1.status === 'approved' ? 'step-approved' : 'step-pending'}">
                 <h4>Step 1: Unified Cast Sheet</h4>
                 <p>${s1.status} (${s1.attempts} attempts)</p>
@@ -837,11 +1052,31 @@ ${feedbackLine}`;
                 }).join('<br>')}
             </div>
             <div class="prepro-step ${s3.status === 'approved' ? 'step-approved' : 'step-pending'}">
-                <h4>Step 3: Style Proposals</h4>
+                <h4>Step 3: Mood Proposals</h4>
                 <p>${s3.status}</p>
-                ${s3.styleName ? `<span class="check">Chosen: ${s3.styleName}</span>` : `<span class="pending">${s3.status}</span>`}
+                ${s3.chosenMoods ? `<span class="check">Moods: ${s3.chosenMoods.join(', ')}</span>` :
+                  s3.styleName ? `<span class="check">Chosen: ${s3.styleName}</span>` :
+                  `<span class="pending">${s3.status}</span>`}
             </div>
         </div>`;
+
+        // ── Storyline ──
+        let storylineHTML = '';
+        const storylineDir = path.join(this.preproDir, 'step0-storyline');
+        if (fs.existsSync(storylineDir)) {
+            const approvedStoryline = path.join(storylineDir, 'approved.md');
+            const storylineFiles = fs.readdirSync(storylineDir)
+                .filter(f => f.endsWith('.md'))
+                .sort();
+            if (storylineFiles.length > 0) {
+                const latestFile = fs.existsSync(approvedStoryline)
+                    ? 'approved.md'
+                    : storylineFiles[storylineFiles.length - 1];
+                const content = fs.readFileSync(path.join(storylineDir, latestFile), 'utf8');
+                storylineHTML = `<h3>Storyline (${latestFile})</h3>
+                <div style="background:var(--surface);border-radius:8px;padding:20px;border:1px solid var(--border);max-height:400px;overflow-y:auto;white-space:pre-wrap;font-size:0.9em;color:var(--text-dim);">${escapeHtml(content)}</div>`;
+            }
+        }
 
         // ── Pre-production images ──
         let preproImagesHTML = '';
@@ -885,7 +1120,7 @@ ${feedbackLine}`;
         if (fs.existsSync(styleDir)) {
             const styleFiles = fs.readdirSync(styleDir).filter(f => f.endsWith('.jpg')).sort();
             if (styleFiles.length > 0) {
-                preproImagesHTML += '<h3>Step 3: Style Proposals</h3><div class="image-grid prepro-image-grid">';
+                preproImagesHTML += '<h3>Step 3: Pixar Mood Proposals</h3><div class="image-grid prepro-image-grid">';
                 for (const f of styleFiles) {
                     const isApproved = f === 'approved.jpg';
                     const styleName = f.replace('proposal-', '').replace('.jpg', '');
@@ -1041,6 +1276,7 @@ ${feedbackLine}`;
 
     <h2>Pre-Production Pipeline</h2>
     ${preproStatusHTML}
+    ${storylineHTML}
     ${preproImagesHTML}
 
     <h2>Character Cast</h2>
@@ -1089,8 +1325,11 @@ ${feedbackLine}`;
         console.log(`\nCharacters (${this.characters.length}):`);
         this.characters.forEach(c => console.log(`   ${c.name} — ${c.description}`));
 
+        const s0 = this.config.step0 || { status: 'pending', attempts: 0 };
+        console.log(`\nStep 0: Storyline          — ${s0.status} (${s0.attempts} attempts)`);
+
         const s1 = this.config.step1;
-        console.log(`\nStep 1: Unified Cast Sheet — ${s1.status} (${s1.attempts} attempts)`);
+        console.log(`Step 1: Unified Cast Sheet — ${s1.status} (${s1.attempts} attempts)`);
 
         const s2 = this.config.step2;
         console.log(`Step 2: Character Sheets   — ${s2.status}`);
@@ -1100,10 +1339,11 @@ ${feedbackLine}`;
         }
 
         const s3 = this.config.step3;
-        console.log(`Step 3: Style Proposals    — ${s3.status}`);
+        console.log(`Step 3: Mood Proposals     — ${s3.status}`);
         if (s3.styleName) {
-            const style = STYLE_PROPOSALS.find(s => s.id === s3.styleName);
-            console.log(`   Chosen: ${style?.name || s3.styleName}`);
+            const proposal = MOOD_PROPOSALS.find(p => p.id === s3.styleName);
+            console.log(`   Chosen: ${proposal?.name || s3.styleName}`);
+            if (s3.chosenMoods) console.log(`   Moods: ${s3.chosenMoods.join(', ')}`);
         }
 
         console.log();
@@ -1111,7 +1351,7 @@ ${feedbackLine}`;
 
     // ── Main Orchestration ───────────────────────────────────────
 
-    async run(startStep, feedback) {
+    async run(startStep, feedback, { autoApprove = false } = {}) {
         console.log(`\n${'='.repeat(50)}`);
         console.log(`  PRE-PRODUCTION: ${this.chapterData.meta?.title?.en || this.chapter}`);
         console.log('='.repeat(50));
@@ -1121,13 +1361,31 @@ ${feedbackLine}`;
             console.log(`   ${i + 1}. ${c.name} — ${c.description}`);
         });
 
-        const step = startStep || this._nextPendingStep();
+        if (autoApprove) console.log('\n   Auto-approve mode: all steps will be approved automatically.\n');
 
-        if (step <= 1) await this.runStep1(step === 1 ? feedback : null);
-        if (step <= 2) await this.runStep2(step === 2 ? feedback : null);
-        if (step <= 3) await this.runStep3();
+        const step = startStep !== null && startStep !== undefined ? startStep : this._nextPendingStep();
 
-        // Auto-package if all 3 steps approved
+        if (step <= 0) {
+            await this.runStep0(step === 0 ? feedback : null);
+            if (autoApprove && this.config.step0?.status === 'generated') this.approveStep(0);
+        }
+        if (step <= 1) {
+            await this.runStep1(step === 1 ? feedback : null);
+            if (autoApprove && this.config.step1.status === 'generated') this.approveStep(1);
+        }
+        if (step <= 2) {
+            await this.runStep2(step === 2 ? feedback : null);
+            if (autoApprove && this.config.step2.status === 'generated') this.approveStep(2);
+        }
+        if (step <= 3) {
+            await this.runStep3();
+            if (autoApprove && this.config.step3.status === 'generated') {
+                // Auto-select mood proposal 1 (agents can override with --approve-style N)
+                this.approveStyle(1);
+            }
+        }
+
+        // Auto-package if steps 1-3 approved
         if (this.config.step1.status === 'approved' &&
             this.config.step2.status === 'approved' &&
             this.config.step3.status === 'approved') {
@@ -1140,6 +1398,7 @@ ${feedbackLine}`;
     }
 
     _nextPendingStep() {
+        if (this.config.step0 && this.config.step0.status === 'pending') return 0;
         if (this.config.step1.status === 'pending') return 1;
         if (this.config.step2.status === 'pending') return 2;
         if (this.config.step3.status === 'pending') return 3;
@@ -1157,24 +1416,27 @@ async function main() {
 Usage: node generate-preproduction.js <chapter> [options]
 
 Options:
-  --step N              Run from specific step (1, 2, or 3)
+  --step N              Run from specific step (0, 1, 2, or 3)
   --redo N              Regenerate step N (new version)
   --feedback "text"     Feedback for --redo (revision instructions)
   --approve N           Approve step N (latest version)
-  --approve-style N     Choose style proposal N (1-5)
+  --approve-style N     Choose mood proposal N (1-5)
   --review              Generate HTML review page only
   --status              Show current state
   --reset               Start over
 
 Steps:
+  0. Storyline Generation (Claude CLI generates narrative markdown)
   1. Unified Character Sheet (B&W line art, all characters)
   2. Individual Character Sheets (multi-angle per character)
-  3. Style Proposals (5 styles applied to a test scene)
+  3. Pixar Mood Proposals (5 mood combos applied to a test scene)
 
 Examples:
   node generate-preproduction.js elephants
+  node generate-preproduction.js elephants --step 0
   node generate-preproduction.js elephants --step 1
   node generate-preproduction.js elephants --redo 1 --feedback "bigger ears on Tembo"
+  node generate-preproduction.js elephants --approve 0
   node generate-preproduction.js elephants --approve 1
   node generate-preproduction.js elephants --approve-style 2
   node generate-preproduction.js elephants --review
@@ -1224,11 +1486,11 @@ Examples:
     }
 
     if (opts.redo) {
-        await pipeline.run(opts.redo, opts.feedback);
+        await pipeline.run(opts.redo, opts.feedback, { autoApprove: opts.autoApprove });
         return;
     }
 
-    await pipeline.run(opts.step, opts.feedback);
+    await pipeline.run(opts.step, opts.feedback, { autoApprove: opts.autoApprove });
 }
 
 main().catch(err => {

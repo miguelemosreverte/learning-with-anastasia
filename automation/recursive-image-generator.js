@@ -34,6 +34,11 @@ class RecursiveImageGenerator {
         this.preproduction = null;
         this.preproCharacterSheets = {};
         this.preproStyleRef = null;
+
+        // Composable mood system
+        this.preproMoods = {};       // { id: description } lookup
+        this.defaultMoods = [];      // chapter-wide default mood IDs
+        this.pixarBase = '';
     }
 
     /**
@@ -68,6 +73,12 @@ class RecursiveImageGenerator {
             // Override style description with chosen style
             if (manifest.chosenStyle && manifest.chosenStyle.description) {
                 this.styleDescription = manifest.chosenStyle.description;
+            }
+
+            // Load composable mood system
+            if (manifest.chosenStyle && manifest.chosenStyle.moods) {
+                this.defaultMoods = manifest.chosenStyle.moods;
+                this.pixarBase = manifest.chosenStyle.base || '';
             }
 
             return true;
@@ -489,9 +500,26 @@ class RecursiveImageGenerator {
         // Build prompt contents - include multiple reference images if available
         const contents = [];
 
-        const styleInstruction = this.preproStyleRef
-            ? `Match the art style shown in the style reference image (the last reference image provided). ${this.styleDescription}`
-            : `Style: ${this.styleDescription || 'Studio Ghibli warmth, Pixar quality, vibrant colors, magical lighting, child-friendly.'}`;
+        // Build style instruction — use per-scene moods if available, else chapter defaults
+        let styleInstruction;
+        if (this.preproStyleRef) {
+            const sceneMoods = section.mood || this.defaultMoods;
+            if (sceneMoods && sceneMoods.length > 0 && this.pixarBase) {
+                const MOOD_LABELS = {
+                    'translucency': 'Emphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.',
+                    'epic-skies': 'Dramatic, expansive skies dominating the composition — towering clouds, vivid sunset/sunrise gradients, god rays breaking through cloud layers.',
+                    'lush-botanical': 'Rich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom.',
+                    'soft-intimate': 'Close, warm framing. Shallow depth of field with creamy bokeh. Soft diffused lighting. Warm skin tones, gentle shadows. The feeling of being held close.',
+                    'golden-hour': 'Warm golden-hour lighting throughout — long amber shadows, honeyed highlights, everything bathed in the last hour of sunlight.'
+                };
+                const moodDescriptions = sceneMoods.filter(m => MOOD_LABELS[m]).map(m => MOOD_LABELS[m]);
+                styleInstruction = `Match the art style shown in the style reference image. ${this.pixarBase}\n${moodDescriptions.join('\n')}`;
+            } else {
+                styleInstruction = `Match the art style shown in the style reference image (the last reference image provided). ${this.styleDescription}`;
+            }
+        } else {
+            styleInstruction = `Style: ${this.styleDescription || 'Studio Ghibli warmth, Pixar quality, vibrant colors, magical lighting, child-friendly.'}`;
+        }
 
         contents.push({
             text: `Create a cheerful, child-friendly illustration. Using the character(s) from the reference image(s), create a heartwarming scene: ${section.action || section.prompt || section.content?.en || 'Generate image'}

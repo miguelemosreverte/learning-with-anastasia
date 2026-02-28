@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Foxes: A Den Full of Love - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Red Foxes: A Den Full of Love</h1>
+        <h1 data-lang="es">Zorros Rojos: Una Madriguera Llena de Amor</h1>
+        <h1 data-lang="ru">Рыжие лисы: Нора, полная любви</h1>
+        <p data-lang="en" class="active">Pip&#x27;s Adventures in the Autumn Meadow</p>
+        <p data-lang="es">Las Aventuras de Pip en el Prado Otoñal</p>
+        <p data-lang="ru">Приключения Пипа на осеннем лугу</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-autumn-meadow.jpg"
+             alt="Red Foxes"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Red Foxes</h2>
+            <h2 class="hero-title" data-lang="es">Zorros Rojos</h2>
+            <h2 class="hero-title" data-lang="ru">Рыжие лисы</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">A Den Full of Love</p>
+            <p class="hero-subtitle" data-lang="es">Una Madriguera Llena de Amor</p>
+            <p class="hero-subtitle" data-lang="ru">Нора, полная любви</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/papa-russet-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Tall handsome red fox with deep russet coat and silver streak along his back, standing alert in a misty autumn meadow at dawn, long black legs, magnificent bushy tail, warm amber eyes"
+                 data-alt-en="Tall handsome red fox with deep russet coat and silver streak along his back, standing alert in a misty autumn meadow at dawn, long black legs, magnificent bushy tail, warm amber eyes"
+                 data-alt-es="Apuesto zorro rojo alto con pelaje rojizo profundo y raya plateada a lo largo del lomo, alerta en un prado otoñal brumoso al amanecer, largas patas negras, magnífica cola peluda, cálidos ojos ámbar"
+                 data-alt-ru="Высокий красивый рыжий лис с глубоким рыжим мехом и серебристой полосой вдоль спины, стоящий настороже на туманном осеннем лугу на рассвете, длинные чёрные лапы, великолепный пушистый хвост, тёплые янтарные глаза"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Papa Russet</h2>
+            <h2 data-lang="es">Conoce a Papá Russet</h2>
+            <h2 data-lang="ru">Знакомьтесь: Папа Рассет</h2>
+            <div data-lang="en" class="active">
+                <p>Papa Russet is the handsomest fox in the whole autumn woodland! He stands tall and proud in the misty dawn meadow, his deep rich russet coat glowing like fire in the golden light. A dramatic silver streak runs along his back like a bolt of lightning, and his long elegant black legs carry him silently through the grass. His magnificent bushy tail swishes behind him as he listens, ears turning this way and that. &#x27;The meadow is waking up,&#x27; he whispers, his warm amber eyes sparkling. &#x27;And somewhere under this grass, breakfast is hiding.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Papá Russet es el zorro más apuesto de todo el bosque otoñal! Se para alto y orgulloso en el prado brumoso al amanecer, su profundo pelaje rojizo brillando como fuego en la luz dorada. Una dramática raya plateada recorre su lomo como un rayo, y sus largas y elegantes patas negras lo llevan silenciosamente entre la hierba. Su magnífica cola peluda se balancea mientras escucha, las orejas girando de aquí para allá. &#x27;El prado está despertando,&#x27; susurra, con sus cálidos ojos ámbar brillando. &#x27;Y en algún lugar bajo esta hierba, el desayuno se esconde.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Папа Рассет — самый красивый лис во всём осеннем лесу! Он стоит высокий и гордый на туманном рассветном лугу, его глубокая рыжая шерсть сияет как огонь в золотистом свете. Эффектная серебристая полоса бежит вдоль спины, как молния, а длинные элегантные чёрные лапы несут его бесшумно по траве. Его великолепный пушистый хвост покачивается, пока он слушает, поворачивая уши туда-сюда. &#x27;Луг просыпается,&#x27; шепчет он, его тёплые янтарные глаза искрятся. &#x27;И где-то под этой травой прячется завтрак.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/mama-fern-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Graceful golden-orange vixen curled protectively in a cozy underground den lined with moss and leaves, cream chest, warm brown eyes, pale patch behind one ear, two tiny kits nestled against her"
+                 data-alt-en="Graceful golden-orange vixen curled protectively in a cozy underground den lined with moss and leaves, cream chest, warm brown eyes, pale patch behind one ear, two tiny kits nestled against her"
+                 data-alt-es="Graciosa zorra dorada-anaranjada acurrucada protectoramente en una acogedora madriguera subterránea con musgo y hojas, pecho crema, cálidos ojos marrones, mancha clara detrás de una oreja, dos pequeños cachorros acurrucados contra ella"
+                 data-alt-ru="Грациозная золотисто-рыжая лисица, свернувшаяся в уютной подземной норе с мхом и листьями, кремовая грудка, тёплые карие глаза, светлое пятнышко за ухом, два крошечных лисёнка прижались к ней"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Mama Fern</h2>
+            <h2 data-lang="es">Conoce a Mamá Fern</h2>
+            <h2 data-lang="ru">Знакомьтесь: Мама Ферн</h2>
+            <div data-lang="en" class="active">
+                <p>Deep underground, in the cosiest den you can imagine, Mama Fern is curled up like a golden-orange crescent moon. The walls are smooth earth, lined with soft moss and dry leaves she gathered herself. Mama&#x27;s coat is softer and lighter than Papa&#x27;s — a beautiful golden-orange that seems to glow in the dim light. Her cream-coloured chest rises and falls gently, and her warm brown eyes watch over two tiny bundles of fur nestled against her belly. &#x27;Sleep well, my little ones,&#x27; she murmurs, her distinctive pale patch behind one ear catching the faintest light from the den entrance. &#x27;Tomorrow, you&#x27;ll see the world.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Bajo tierra, en la madriguera más acogedora que puedas imaginar, Mamá Fern está acurrucada como una luna creciente dorada-anaranjada. Las paredes son de tierra lisa, forradas con musgo suave y hojas secas que ella misma recolectó. El pelaje de Mamá es más suave y claro que el de Papá — un hermoso dorado-anaranjado que parece brillar en la luz tenue. Su pecho color crema sube y baja suavemente, y sus cálidos ojos marrones vigilan dos pequeños bultitos de pelo acurrucados contra su barriga. &#x27;Duerman bien, mis pequeños,&#x27; murmura, su distintiva mancha clara detrás de una oreja captando la luz más tenue de la entrada de la madriguera. &#x27;Mañana verán el mundo.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Глубоко под землёй, в самой уютной норе, какую только можно представить, Мама Ферн свернулась как золотисто-рыжий полумесяц. Стены из гладкой земли выстланы мягким мхом и сухими листьями, которые она собрала сама. Шерсть Мамы мягче и светлее, чем у Папы — красивая золотисто-оранжевая, словно светящаяся в тусклом свете. Её кремовая грудка мерно поднимается и опускается, а тёплые карие глаза наблюдают за двумя крошечными комочками меха, прижавшимися к её животу. &#x27;Спите крепко, мои маленькие,&#x27; шепчет она, её приметное светлое пятнышко за ухом ловит слабый свет от входа в нору. &#x27;Завтра вы увидите мир.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/pip-opens-eyes.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Tiny fox kit with vivid orange fur and oversized ears opening his eyes for the first time in a cozy den, one white sock on front left paw, curious tilted head, mama fox curled around him"
+                 data-alt-en="Tiny fox kit with vivid orange fur and oversized ears opening his eyes for the first time in a cozy den, one white sock on front left paw, curious tilted head, mama fox curled around him"
+                 data-alt-es="Pequeño cachorro de zorro con pelaje naranja vívido y orejas enormes abriendo los ojos por primera vez en una madriguera acogedora, un calcetín blanco en la pata delantera izquierda, cabeza inclinada con curiosidad, mamá zorra acurrucada a su alrededor"
+                 data-alt-ru="Крошечный лисёнок с ярко-рыжим мехом и огромными ушами, впервые открывающий глаза в уютной норе, белый носочек на левой передней лапе, любопытно наклонённая голова, мама-лиса свернулась вокруг него"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Hello, World!</h2>
+            <h2 data-lang="es">¡Hola, Mundo!</h2>
+            <h2 data-lang="ru">Привет, мир!</h2>
+            <div data-lang="en" class="active">
+                <p>One morning, the smallest kit opens his eyes for the very first time. The world is blurry and dim, but oh — how WONDERFUL it smells! Earth and moss and Mama&#x27;s warm fur. Little Pip blinks his bright eyes and tilts his head sideways, his oversized ears perking up at every tiny sound. He wiggles his paws — three black ones and one special white sock on his front left paw. &#x27;Mama?&#x27; he squeaks. Mama Fern nuzzles him gently. &#x27;Hello, my brave little Pip. You have the most curious eyes I&#x27;ve ever seen.&#x27; And she&#x27;s right — Pip wants to see EVERYTHING.</p>
+            </div>
+            <div data-lang="es">
+                <p>Una mañana, el cachorro más pequeño abre los ojos por primera vez. El mundo está borroso y oscuro, pero oh — ¡cómo HUELE de maravilloso! Tierra y musgo y el cálido pelaje de Mamá. El pequeño Pip parpadea con sus ojos brillantes e inclina la cabeza hacia un lado, sus enormes orejas levantándose con cada sonido diminuto. Mueve sus patitas — tres negras y un calcetín blanco especial en la pata delantera izquierda. &#x27;¿Mamá?&#x27; chilla. Mamá Fern lo acaricia suavemente. &#x27;Hola, mi pequeño Pip valiente. Tienes los ojos más curiosos que he visto.&#x27; Y tiene razón — Pip quiere ver TODO.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Однажды утром самый маленький лисёнок открывает глаза в самый первый раз. Мир размытый и тёмный, но ох — как ЧУДЕСНО пахнет! Земля, мох и тёплый мех Мамы. Маленький Пип моргает яркими глазами и наклоняет голову набок, его огромные уши вздрагивают от каждого звука. Он шевелит лапками — три чёрные и один особенный белый носочек на левой передней. &#x27;Мама?&#x27; пищит он. Мама Ферн нежно тычется в него носом. &#x27;Привет, мой храбрый маленький Пип. У тебя самые любопытные глаза, какие я видела.&#x27; И она права — Пип хочет увидеть ВСЁ.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/clover-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Slightly larger fox kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail, exploring den edges with determination"
+                 data-alt-en="Slightly larger fox kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail, exploring den edges with determination"
+                 data-alt-es="Cachorro de zorro un poco más grande con pelaje más oscuro castaño-rojizo, punta de cola blanca extra grande, pequeña peca oscura en la nariz, cola notablemente peluda, explorando los bordes de la madriguera con determinación"
+                 data-alt-ru="Чуть больший лисёнок с более тёмной рыжевато-каштановой шерстью, большим белым кончиком хвоста, крошечной тёмной веснушкой на носу, заметно пушистым хвостом, исследующий края норы с решимостью"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Clover, the Clever One</h2>
+            <h2 data-lang="es">Conoce a Clover, la Astuta</h2>
+            <h2 data-lang="ru">Знакомьтесь: Кловер, умница</h2>
+            <div data-lang="en" class="active">
+                <p>Pip isn&#x27;t alone! His sister Clover is already awake and exploring. She&#x27;s a bit bigger than Pip, with a darker reddish-auburn coat and the bushiest tail you&#x27;ve ever seen on a kit. There&#x27;s a tiny dark freckle right on her nose that wiggles when she sniffs. And she sniffs EVERYTHING. Right now she&#x27;s figured out that a root poking through the den wall leads UP — to the outside world. &#x27;I bet I can dig around it,&#x27; Clover announces, already pawing at the earth. &#x27;Clover, darling,&#x27; Mama sighs with a smile. &#x27;The door is right over there.&#x27; But that&#x27;s Clover — she always finds her own way.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Pip no está solo! Su hermana Clover ya está despierta y explorando. Es un poco más grande que Pip, con un pelaje más oscuro castaño-rojizo y la cola más peluda que hayas visto en un cachorro. Tiene una pequeña peca oscura justo en la nariz que se mueve cuando olfatea. Y olfatea TODO. Ahora mismo ha descubierto que una raíz que atraviesa la pared de la madriguera lleva ARRIBA — al mundo exterior. &#x27;Apuesto a que puedo cavar alrededor,&#x27; anuncia Clover, ya escarbando la tierra. &#x27;Clover, cariño,&#x27; suspira Mamá con una sonrisa. &#x27;La puerta está justo allí.&#x27; Pero así es Clover — siempre encuentra su propio camino.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пип не один! Его сестра Кловер уже проснулась и исследует. Она немного больше Пипа, с более тёмной рыжевато-каштановой шерстью и самым пушистым хвостом, какой только видели у лисёнка. У неё крошечная тёмная веснушка прямо на носу, которая шевелится, когда она нюхает. А нюхает она ВСЁ. Сейчас она обнаружила, что корень, торчащий из стены норы, ведёт НАВЕРХ — во внешний мир. &#x27;Спорим, я смогу подкопать,&#x27; объявляет Кловер, уже скребя землю лапой. &#x27;Кловер, милая,&#x27; вздыхает Мама с улыбкой. &#x27;Дверь вон там.&#x27; Но такова Кловер — она всегда находит свой путь.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/first-outside.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Great Big World!</h2>
+            <h2 data-lang="es">¡El Gran Mundo Enorme!</h2>
+            <h2 data-lang="ru">Огромный большой мир!</h2>
+            <div data-lang="en" class="active">
+                <p>Today is the day! Papa appears at the den entrance, his silver-streaked back silhouetted against a blaze of golden light. &#x27;Come on, little ones. It&#x27;s time to see your meadow.&#x27; Pip and Clover scramble up the tunnel and — GASP! The world is ENORMOUS! There&#x27;s a sky that goes on forever, painted in soft pinks and golds. There are trees taller than a thousand dens stacked on top of each other. There are leaves raining down like golden coins. Pip sits down with a thump, head tilted way back, mouth wide open. &#x27;Papa,&#x27; he whispers. &#x27;Is all of this... OURS?&#x27; Papa smiles. &#x27;Every last leaf.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Hoy es el día! Papá aparece en la entrada de la madriguera, su lomo con la raya plateada silueteado contra un resplandor de luz dorada. &#x27;Vengan, pequeños. Es hora de ver su prado.&#x27; Pip y Clover suben corriendo por el túnel y — ¡ASOMBRO! ¡El mundo es ENORME! Hay un cielo que no termina nunca, pintado en rosas y dorados suaves. Hay árboles más altos que mil madrigueras apiladas. Hay hojas cayendo como monedas de oro. Pip se sienta de golpe, con la cabeza inclinada hacia atrás, la boca bien abierta. &#x27;Papá,&#x27; susurra. &#x27;¿Todo esto es... NUESTRO?&#x27; Papá sonríe. &#x27;Hasta la última hoja.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Сегодня тот самый день! Папа появляется у входа в нору, его спина с серебристой полосой вырисовывается на фоне золотистого сияния. &#x27;Пойдёмте, малыши. Пора увидеть ваш луг.&#x27; Пип и Кловер карабкаются по тоннелю и — АХ! Мир ОГРОМНЫЙ! Есть небо, которое тянется вечно, раскрашенное в нежные розовые и золотые тона. Есть деревья выше тысячи нор, поставленных друг на друга. Есть листья, падающие как золотые монетки. Пип садится с глухим стуком, запрокинув голову, рот широко открыт. &#x27;Папа,&#x27; шепчет он. &#x27;Всё это... НАШЕ?&#x27; Папа улыбается. &#x27;До последнего листика.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/papas-pounce.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Amazing Pounce!</h2>
+            <h2 data-lang="es">¡El Increíble Salto de Papá!</h2>
+            <h2 data-lang="ru">Потрясающий прыжок Папы!</h2>
+            <div data-lang="en" class="active">
+                <p>Papa has something INCREDIBLE to show the kits. He stands very still in the tall grass, head tilted, one ear turned forward and one turned sideways. &#x27;Shhhh,&#x27; he whispers. &#x27;Listen.&#x27; The kits freeze. Then Papa does the most AMAZING thing — he leaps HIGH into the air, arching his whole body like a rainbow, and DIVES nose-first straight down into the grass! POUNCE! He pops back up with a proud grin. &#x27;That, my dears, is the fox pounce. We listen for mice under the grass, and then — we fly!&#x27; Pip&#x27;s eyes are as round as the moon. &#x27;I want to FLY!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Papá tiene algo INCREÍBLE para mostrar a los cachorros. Se queda muy quieto en la hierba alta, la cabeza inclinada, una oreja hacia adelante y la otra de lado. &#x27;Shhhh,&#x27; susurra. &#x27;Escuchen.&#x27; Los cachorros se congelan. Entonces Papá hace la cosa más INCREÍBLE — ¡salta ALTO en el aire, arqueando todo su cuerpo como un arcoíris, y se ZAMBULLE con la nariz directo hacia la hierba! ¡POUNCE! Se levanta con una sonrisa orgullosa. &#x27;Eso, mis queridos, es el salto del zorro. Escuchamos ratones bajo la hierba, y entonces — ¡volamos!&#x27; Los ojos de Pip son redondos como la luna. &#x27;¡Yo quiero VOLAR!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>У Папы есть кое-что НЕВЕРОЯТНОЕ, чтобы показать лисятам. Он стоит совершенно неподвижно в высокой траве, голова наклонена, одно ухо повёрнуто вперёд, другое вбок. &#x27;Тшшш,&#x27; шепчет он. &#x27;Слушайте.&#x27; Лисята замирают. И тогда Папа делает самое УДИВИТЕЛЬНОЕ — он прыгает ВЫСОКО в воздух, изгибая всё тело как радугу, и НЫРЯЕТ носом прямо вниз в траву! ПРЫЖОК! Он выныривает с гордой улыбкой. &#x27;Это, мои дорогие, лисий прыжок. Мы слушаем мышей под травой, а потом — летим!&#x27; Глаза Пипа круглые как луна. &#x27;Я хочу ЛЕТАТЬ!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/clovers-first-catch.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Clover&#x27;s Wobbly Pounce</h2>
+            <h2 data-lang="es">El Salto Tambaleante de Clover</h2>
+            <h2 data-lang="ru">Шаткий прыжок Кловер</h2>
+            <div data-lang="en" class="active">
+                <p>Clover watches Papa carefully — head tilt, ear turn, and... POUNCE! Well, sort of. Her first try is more of a wobbly belly-flop into a pile of leaves — FWUMP! But Clover is determined. She tries again. And again. On her fifth try, she launches herself into the air, arches her back just like Papa, and — catches a falling leaf right between her paws! &#x27;I CAUGHT SOMETHING!&#x27; she shouts, holding up the golden leaf triumphantly. Papa beams with pride. &#x27;A perfect pounce! Next time, that leaf will be a mouse.&#x27; Pip claps his paws together. &#x27;My turn! My turn!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Clover observa a Papá cuidadosamente — inclina la cabeza, gira la oreja, y... ¡SALTO! Bueno, más o menos. Su primer intento es más un panzazo tambaleante en un montón de hojas — ¡FWUMP! Pero Clover es decidida. Lo intenta otra vez. Y otra vez. En su quinto intento, se lanza al aire, arquea la espalda justo como Papá, y — ¡atrapa una hoja que caía justo entre sus patas! &#x27;¡ATRAPÉ ALGO!&#x27; grita, levantando la hoja dorada triunfalmente. Papá rebosa de orgullo. &#x27;¡Un salto perfecto! La próxima vez, esa hoja será un ratón.&#x27; Pip aplaude con sus patitas. &#x27;¡Mi turno! ¡Mi turno!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Кловер внимательно наблюдает за Папой — наклон головы, поворот уха, и... ПРЫЖОК! Ну, почти. Её первая попытка больше похожа на шаткое плюхание животом в кучу листьев — БУМС! Но Кловер упрямая. Она пробует снова. И снова. На пятой попытке она взлетает в воздух, выгибает спинку точно как Папа, и — ловит падающий лист прямо между лапками! &#x27;Я ЧТО-ТО ПОЙМАЛА!&#x27; кричит она, победно поднимая золотой лист. Папа сияет от гордости. &#x27;Идеальный прыжок! В следующий раз этот лист будет мышкой.&#x27; Пип хлопает лапками. &#x27;Моя очередь! Моя очередь!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/berry-picking.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama&#x27;s Meadow Lessons</h2>
+            <h2 data-lang="es">Las Lecciones del Prado de Mamá</h2>
+            <h2 data-lang="ru">Мамины уроки луга</h2>
+            <div data-lang="en" class="active">
+                <p>While Papa teaches pouncing, Mama teaches everything else! She leads the kits along the stream, showing them which berries are sweet and safe. &#x27;Blackberries — yummy!&#x27; she says, plucking one for each kit. &#x27;But those red ones? Never touch.&#x27; She shows them where the frogs hide, where the best mushrooms grow, and how to drink from the stream without getting your nose too wet. Pip sticks his whole face in the water — SPLUTTER! Clover drinks daintily and shakes her head. &#x27;You have to be GENTLE, Pip.&#x27; But Pip doesn&#x27;t mind. The water tastes like adventure.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Mientras Papá enseña a saltar, Mamá enseña todo lo demás! Guía a los cachorros por el arroyo, mostrándoles qué bayas son dulces y seguras. &#x27;¡Moras — deliciosas!&#x27; dice, arrancando una para cada cachorro. &#x27;¿Pero esas rojas? Nunca las toquen.&#x27; Les muestra dónde se esconden las ranas, dónde crecen los mejores hongos y cómo beber del arroyo sin mojarse mucho la nariz. Pip mete toda la cara en el agua — ¡SPLASH! Clover bebe delicadamente y sacude la cabeza. &#x27;Tienes que ser DELICADO, Pip.&#x27; Pero a Pip no le importa. El agua sabe a aventura.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пока Папа учит прыгать, Мама учит всему остальному! Она ведёт лисят вдоль ручья, показывая, какие ягоды сладкие и безопасные. &#x27;Ежевика — вкуснятина!&#x27; говорит она, срывая по одной для каждого лисёнка. &#x27;А вот те красные? Никогда не трогайте.&#x27; Она показывает, где прячутся лягушки, где растут лучшие грибы и как пить из ручья, не слишком мочив нос. Пип суёт всю мордочку в воду — БУЛТЫХ! Кловер пьёт изящно и качает головой. &#x27;Нужно быть НЕЖНЫМ, Пип.&#x27; Но Пипу всё равно. Вода на вкус как приключение.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/fox-games.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Wild Fox Games!</h2>
+            <h2 data-lang="es">¡Juegos Salvajes de Zorros!</h2>
+            <h2 data-lang="ru">Дикие лисьи игры!</h2>
+            <div data-lang="en" class="active">
+                <p>When fox kits play, they play with their WHOLE hearts! Pip and Clover race through piles of golden leaves, sending them flying like fireworks. They wrestle — Clover pins Pip down, but he wiggles free and grabs her tail. They chase each other in circles until they&#x27;re dizzy, then collapse in a giggling heap. Pip leaps OVER Clover. Clover leaps over a log. Pip tries to leap over the log AND Clover — and lands right on top of her! &#x27;OOOF!&#x27; But they&#x27;re both laughing too hard to care. This is what it means to be a fox kit in autumn.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Cuando los cachorros de zorro juegan, juegan con TODO el corazón! Pip y Clover corren entre montones de hojas doradas, lanzándolas como fuegos artificiales. Luchan — Clover inmoviliza a Pip, pero él se escabulle y le agarra la cola. Se persiguen en círculos hasta marearse, y colapsan en un montón de risas. Pip salta POR ENCIMA de Clover. Clover salta sobre un tronco. Pip intenta saltar sobre el tronco Y sobre Clover — ¡y aterriza justo encima de ella! &#x27;¡OOOF!&#x27; Pero ambos se ríen demasiado para que les importe.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда лисята играют, они играют ВСЕМ сердцем! Пип и Кловер носятся по кучам золотых листьев, разбрасывая их как фейерверки. Они борются — Кловер прижимает Пипа, но он вырывается и хватает её за хвост. Они гоняются друг за другом кругами, пока не закружится голова, а потом падают в хохочущую кучу. Пип прыгает ЧЕРЕЗ Кловер. Кловер прыгает через бревно. Пип пытается перепрыгнуть и бревно, И Кловер — и приземляется прямо на неё! &#x27;ООФ!&#x27; Но оба смеются слишком сильно, чтобы переживать.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/hide-and-seek.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Can You See Us?</h2>
+            <h2 data-lang="es">¿Puedes Vernos?</h2>
+            <h2 data-lang="ru">Видите нас?</h2>
+            <div data-lang="en" class="active">
+                <p>Mama teaches the kits the most important fox trick of all — how to disappear! &#x27;Lie very still in the leaves,&#x27; she whispers. &#x27;Your fur is the same colour as autumn.&#x27; Pip and Clover dive into a pile of fallen leaves and hold perfectly still. And — MAGIC! Their orange and auburn fur blends so perfectly with the golden leaves that they completely vanish! Only their bright eyes peek out. &#x27;I can&#x27;t see you anywhere!&#x27; Papa calls out, pretending to search. The kits giggle silently, leaves trembling. &#x27;Nature gave foxes the best disguise,&#x27; Mama says proudly. &#x27;The whole forest is your hiding spot.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Mamá enseña a los cachorros el truco más importante del zorro — ¡cómo desaparecer! &#x27;Quédense muy quietos entre las hojas,&#x27; susurra. &#x27;Su pelaje es del mismo color que el otoño.&#x27; Pip y Clover se lanzan a un montón de hojas caídas y se quedan perfectamente inmóviles. Y — ¡MAGIA! Su pelaje naranja y castaño se mezcla tan perfectamente con las hojas doradas que desaparecen completamente. Solo sus ojos brillantes se asoman. &#x27;¡No puedo verlos en ningún lado!&#x27; grita Papá, pretendiendo buscar. Los cachorros ríen en silencio, las hojas temblando. &#x27;La naturaleza dio a los zorros el mejor disfraz,&#x27; dice Mamá orgullosa.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Мама учит лисят самому важному лисьему трюку — как исчезать! &#x27;Лежите совсем тихо в листьях,&#x27; шепчет она. &#x27;Ваш мех такого же цвета, как осень.&#x27; Пип и Кловер ныряют в кучу опавших листьев и замирают. И — ВОЛШЕБСТВО! Их рыжий и каштановый мех так идеально сливается с золотыми листьями, что они полностью исчезают! Только яркие глазки выглядывают. &#x27;Я нигде вас не вижу!&#x27; зовёт Папа, делая вид, что ищет. Лисята тихонько хихикают, листья дрожат. &#x27;Природа дала лисам лучший маскировочный костюм,&#x27; гордо говорит Мама.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/sunset-meadow.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Fox family playing in spectacular autumn sunset, golden light through trees, papa and mama fox with two kits leaping through golden leaves, warm amber sky, magical golden hour"
+                 data-alt-en="Fox family playing in spectacular autumn sunset, golden light through trees, papa and mama fox with two kits leaping through golden leaves, warm amber sky, magical golden hour"
+                 data-alt-es="Familia de zorros jugando en un espectacular atardecer otoñal, luz dorada entre los árboles, papá y mamá zorro con dos cachorros saltando entre hojas doradas, cálido cielo ámbar, mágica hora dorada"
+                 data-alt-ru="Семья лис играет в великолепном осеннем закате, золотой свет сквозь деревья, папа и мама-лисы с двумя лисятами, прыгающими среди золотых листьев, тёплое янтарное небо, волшебный золотой час"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Golden Hour</h2>
+            <h2 data-lang="es">La Hora Dorada</h2>
+            <h2 data-lang="ru">Золотой час</h2>
+            <div data-lang="en" class="active">
+                <p>As the sun sinks low, the whole meadow turns to liquid gold. This is the foxes&#x27; favourite time — the golden hour, when the light makes everything look like a painting. Papa chases Pip through the tall grass while Mama and Clover play tug with a stick. The kits&#x27; fur blazes like little flames in the amber light. Long shadows stretch across the meadow like gentle giants. Pip stops and looks around at his family — Papa with his silver streak glowing, Mama with her cream chest catching the last warm rays, Clover with her bushy tail streaming behind her like a banner. &#x27;This is the best day,&#x27; Pip thinks. But tomorrow will be the best day too.</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando el sol baja, todo el prado se convierte en oro líquido. Esta es la hora favorita de los zorros — la hora dorada, cuando la luz hace que todo parezca una pintura. Papá persigue a Pip por la hierba alta mientras Mamá y Clover juegan a jalar un palo. El pelaje de los cachorros arde como pequeñas llamas en la luz ámbar. Largas sombras se estiran por el prado como gigantes gentiles. Pip se detiene y mira a su familia — Papá con su raya plateada brillando, Mamá con su pecho crema captando los últimos rayos, Clover con su cola peluda ondeando como una bandera. &#x27;Este es el mejor día,&#x27; piensa Pip. Pero mañana también será el mejor día.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда солнце опускается низко, весь луг превращается в жидкое золото. Это любимое время лис — золотой час, когда свет делает всё похожим на картину. Папа гонится за Пипом по высокой траве, пока Мама и Кловер играют в перетягивание палки. Мех лисят пылает как маленькие огоньки в янтарном свете. Длинные тени тянутся по лугу как нежные великаны. Пип останавливается и смотрит на свою семью — Папа с сияющей серебристой полосой, Мама с кремовой грудкой в последних тёплых лучах, Кловер с пушистым хвостом, реющим как знамя. &#x27;Это лучший день,&#x27; думает Пип. Но завтра тоже будет лучшим.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#12</span>
+            <img data-src="assets/images/starry-den.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Fox family curled up together under starry sky at den entrance, papa&#x27;s bushy tail wrapped around kits like a blanket, mama nestled close, fireflies glowing, peaceful autumn night"
+                 data-alt-en="Fox family curled up together under starry sky at den entrance, papa&#x27;s bushy tail wrapped around kits like a blanket, mama nestled close, fireflies glowing, peaceful autumn night"
+                 data-alt-es="Familia de zorros acurrucada junta bajo el cielo estrellado en la entrada de la madriguera, la cola peluda de papá envolviendo a los cachorros como una manta, mamá acurrucada cerca, luciérnagas brillando, noche otoñal pacífica"
+                 data-alt-ru="Лисья семья, свернувшаяся вместе под звёздным небом у входа в нору, пушистый хвост папы обёрнут вокруг лисят как одеяло, мама прижалась рядом, светлячки мерцают, мирная осенняя ночь"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Tail Blanket</h2>
+            <h2 data-lang="es">La Manta de Cola de Papá</h2>
+            <h2 data-lang="ru">Одеяло из Папиного хвоста</h2>
+            <div data-lang="en" class="active">
+                <p>Night falls softly over the meadow, and a thousand stars appear like tiny candles in the sky. The fox family curls up together at the entrance of their den, under the old oak tree. Papa wraps his big magnificent tail around both kits like the warmest, softest blanket in the world. Mama nestles close, her gentle brown eyes already heavy with sleep. Pip burrows deeper into the warm fur. He can hear Papa&#x27;s heartbeat — steady and strong. He can feel Clover&#x27;s breathing — slow and peaceful. He can smell the earth, the leaves, the night. &#x27;Papa?&#x27; Pip whispers. &#x27;Are the stars our night-lights?&#x27; &#x27;Yes,&#x27; Papa murmurs. &#x27;Every single one.&#x27; And wrapped in love and starlight and the warmth of Papa&#x27;s tail, the little fox family drifts off to sleep.</p>
+            </div>
+            <div data-lang="es">
+                <p>La noche cae suavemente sobre el prado, y mil estrellas aparecen como pequeñas velas en el cielo. La familia de zorros se acurruca junta en la entrada de su madriguera, bajo el viejo roble. Papá envuelve su gran magnífica cola alrededor de ambos cachorros como la manta más cálida y suave del mundo. Mamá se acurruca cerca, sus dulces ojos marrones ya pesados de sueño. Pip se entierra más profundo en el cálido pelaje. Puede oír el latido del corazón de Papá — constante y fuerte. Puede sentir la respiración de Clover — lenta y pacífica. Puede oler la tierra, las hojas, la noche. &#x27;¿Papá?&#x27; susurra Pip. &#x27;¿Las estrellas son nuestras luces de noche?&#x27; &#x27;Sí,&#x27; murmura Papá. &#x27;Cada una de ellas.&#x27; Y envueltos en amor y luz de estrellas y el calor de la cola de Papá, la pequeña familia de zorros se queda dormida.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Ночь мягко опускается на луг, и тысяча звёзд появляется как крошечные свечи на небе. Лисья семья сворачивается вместе у входа в нору, под старым дубом. Папа оборачивает свой большой великолепный хвост вокруг обоих лисят, как самое тёплое и мягкое одеяло в мире. Мама устраивается рядом, её нежные карие глаза уже тяжелеют от сна. Пип зарывается глубже в тёплый мех. Он слышит Папино сердцебиение — ровное и сильное. Он чувствует дыхание Кловер — медленное и мирное. Он чувствует запах земли, листьев, ночи. &#x27;Папа?&#x27; шепчет Пип. &#x27;Звёзды — это наши ночники?&#x27; &#x27;Да,&#x27; бормочет Папа. &#x27;Каждая из них.&#x27; И укутанная в любовь, звёздный свет и тепло Папиного хвоста, маленькая лисья семья засыпает.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-ear-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Ear Close-up"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Ear Close-up</h3>
+                    <h3 data-lang="es">Primer Plano de Orejas</h3>
+                    <h3 data-lang="ru">Уши крупным планом</h3>
+                    <p data-lang="en" class="active">Look at Papa Russet&#x27;s amazing ears — they can rotate independently, like two radar dishes! One ear can point forward while the other turns sideways or even backward. This lets foxes pinpoint the exact location of sounds, even tiny mice rustling under leaves or snow. The ears are lined with thick fur to keep warm, and the dark tips help foxes recognize each other. A fox&#x27;s hearing is so precise it can detect the direction of a sound within one degree!</p>
+                    <p data-lang="es">¡Mira las increíbles orejas de Papá Russet — pueden rotar independientemente, como dos antenas de radar! Una oreja puede apuntar hacia adelante mientras la otra gira de lado o incluso hacia atrás. Esto permite a los zorros localizar la ubicación exacta de los sonidos, incluso ratones diminutos moviéndose bajo hojas o nieve. Las orejas están forradas de pelaje grueso para mantenerse calientes, y las puntas oscuras ayudan a los zorros a reconocerse.</p>
+                    <p data-lang="ru">Посмотрите на удивительные уши Папы Рассета — они могут вращаться независимо, как две радарные тарелки! Одно ухо может быть направлено вперёд, а другое поворачивается вбок или даже назад. Это позволяет лисам точно определять расположение звуков, даже крошечных мышей, шуршащих под листьями или снегом. Уши покрыты густым мехом для тепла, а тёмные кончики помогают лисам узнавать друг друга.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-paw-pads.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Paw Pads"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Paw Pads</h3>
+                    <h3 data-lang="es">Almohadillas de las Patas</h3>
+                    <h3 data-lang="ru">Подушечки лап</h3>
+                    <p data-lang="en" class="active">Fox paws are perfectly designed for sneaking! Their paw pads are covered in thick fur — even on the bottom — which muffles their footsteps like built-in slippers. Unlike most dogs, foxes have semi-retractable claws that they can pull in slightly for silent stalking and extend for digging dens. Look at Pip&#x27;s special white sock on his front left paw — underneath, his paw pads are just as dark and tough as his black paws!</p>
+                    <p data-lang="es">¡Las patas de los zorros están perfectamente diseñadas para escabullirse! Sus almohadillas están cubiertas de pelaje grueso — incluso por debajo — lo que amortigua sus pasos como pantuflas incorporadas. A diferencia de la mayoría de los perros, los zorros tienen garras semi-retráctiles que pueden retraer ligeramente para acechar en silencio y extender para cavar madrigueras. ¡Mira el calcetín blanco especial de Pip en su pata delantera izquierda — debajo, sus almohadillas son tan oscuras y resistentes como sus patas negras!</p>
+                    <p data-lang="ru">Лисьи лапы идеально созданы для подкрадывания! Их подушечки покрыты густым мехом — даже снизу — что приглушает шаги, как встроенные тапочки. В отличие от большинства собак, у лис полувтяжные когти, которые они могут слегка убирать для бесшумного преследования и выпускать для рытья нор. Посмотрите на белый носочек Пипа на левой передней лапе — под ним подушечки такие же тёмные и крепкие, как на чёрных лапках!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-whisker-sensors.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Whisker Sensors"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Whisker Sensors</h3>
+                    <h3 data-lang="es">Sensores de Bigotes</h3>
+                    <h3 data-lang="ru">Усы-сенсоры</h3>
+                    <p data-lang="en" class="active">Mama Fern&#x27;s long whiskers aren&#x27;t just for looks — they&#x27;re incredibly sensitive touch sensors! Each whisker is connected to hundreds of nerve endings that can detect the tiniest changes in air currents. This helps foxes navigate in complete darkness inside their dens and through thick undergrowth at night. The whiskers are as wide as the fox&#x27;s body, helping them judge whether they can fit through tight spaces. They can even sense the body heat of nearby prey!</p>
+                    <p data-lang="es">¡Los largos bigotes de Mamá Fern no son solo para verse bien — son sensores táctiles increíblemente sensibles! Cada bigote está conectado a cientos de terminaciones nerviosas que pueden detectar los cambios más pequeños en las corrientes de aire. Esto ayuda a los zorros a navegar en completa oscuridad dentro de sus madrigueras y entre la vegetación espesa por la noche. Los bigotes son tan anchos como el cuerpo del zorro, ayudándolos a juzgar si caben por espacios estrechos.</p>
+                    <p data-lang="ru">Длинные усы Мамы Ферн — это не просто украшение — это невероятно чувствительные датчики осязания! Каждый ус соединён с сотнями нервных окончаний, которые улавливают малейшие изменения воздушных потоков. Это помогает лисам ориентироваться в полной темноте внутри нор и в густых зарослях ночью. Усы по ширине равны телу лисы, помогая определять, пролезут ли они в узкое место.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-tail-anatomy.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Magnificent Brush"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Magnificent Brush</h3>
+                    <h3 data-lang="es">El Magnífico Pincel</h3>
+                    <h3 data-lang="ru">Великолепная труба</h3>
+                    <p data-lang="en" class="active">Papa Russet&#x27;s tail — called a &#x27;brush&#x27; by fox lovers — is a marvel of nature! It makes up about one-third of his total body length and is packed with thick, insulating fur. The white tip at the end helps fox family members follow each other through tall grass and dim light. Inside the tail, a scent gland produces the musky &#x27;foxy&#x27; smell that foxes use to mark their territory. Kits love to chase their parents&#x27; tails — it&#x27;s their favourite toy!</p>
+                    <p data-lang="es">¡La cola de Papá Russet — llamada &#x27;pincel&#x27; por los amantes de los zorros — es una maravilla de la naturaleza! Representa aproximadamente un tercio de la longitud total de su cuerpo y está llena de pelaje grueso y aislante. La punta blanca al final ayuda a los miembros de la familia a seguirse en la hierba alta y la luz tenue. Dentro de la cola, una glándula de aroma produce el olor almizclado que los zorros usan para marcar su territorio. ¡A los cachorros les encanta perseguir las colas de sus padres — es su juguete favorito!</p>
+                    <p data-lang="ru">Хвост Папы Рассета — его называют &#x27;труба&#x27; — чудо природы! Он составляет около трети общей длины тела и набит густым утепляющим мехом. Белый кончик помогает членам лисьей семьи следовать друг за другом в высокой траве и сумерках. Внутри хвоста находится пахучая железа, которая вырабатывает мускусный &#x27;лисий&#x27; запах для пометки территории. Лисята обожают гоняться за хвостами родителей — это их любимая игрушка!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Fox Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Zorros!</h2>
+            <h2 data-lang="ru">Удивительные факты о лисах!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-super-hearing.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Super Hearing"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Super Hearing</h3>
+                        <h3 data-lang="es">Súper Oído</h3>
+                        <h3 data-lang="ru">Суперслух</h3>
+                        <p data-lang="en" class="active">Red foxes can hear a mouse squeaking from 100 feet away, and can even hear them tunnelling under 3 feet of snow! Their large ears can rotate independently — one ear forward and one sideways — like two satellite dishes scanning for sound. This super hearing is what makes their famous pounce-dive so accurate. They can pinpoint exactly where a mouse is hiding, even when they can&#x27;t see it!</p>
+                        <p data-lang="es">¡Los zorros rojos pueden escuchar un ratón chirriando a 30 metros de distancia, e incluso pueden oírlos cavando bajo un metro de nieve! Sus grandes orejas pueden rotar independientemente — una hacia adelante y otra de lado — como dos antenas parabólicas buscando sonido. Este súper oído es lo que hace que su famoso salto-zambullida sea tan preciso. ¡Pueden localizar exactamente dónde se esconde un ratón, incluso cuando no pueden verlo!</p>
+                        <p data-lang="ru">Рыжие лисы могут услышать писк мыши с расстояния 30 метров и даже слышат их под метром снега! Их большие уши могут вращаться независимо — одно вперёд, другое вбок — как две спутниковые тарелки, сканирующие звуки. Именно этот суперслух делает их знаменитый прыжок-нырок таким точным. Они могут определить, где именно прячется мышь, даже не видя её!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-food-burying.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="The Fox Trot"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">The Fox Trot</h3>
+                        <h3 data-lang="es">El Trote del Zorro</h3>
+                        <h3 data-lang="ru">Лисья рысца</h3>
+                        <p data-lang="en" class="active">When a fox finds extra food, it doesn&#x27;t just eat it all — it buries it for later! Foxes dig small holes, drop in a mouse or some berries, and cover it back up with their nose. The amazing part? A single fox can remember HUNDREDS of hiding spots! They use landmarks like trees, rocks, and streams to create a mental treasure map. Some foxes have been found with over 1,000 cached food items!</p>
+                        <p data-lang="es">Cuando un zorro encuentra comida extra, ¡no se lo come todo — lo entierra para después! Los zorros cavan pequeños hoyos, meten un ratón o algunas bayas, y lo cubren con la nariz. ¿La parte increíble? ¡Un solo zorro puede recordar CIENTOS de escondites! Usan puntos de referencia como árboles, rocas y arroyos para crear un mapa mental del tesoro. ¡Se han encontrado zorros con más de 1,000 alimentos escondidos!</p>
+                        <p data-lang="ru">Когда лиса находит лишнюю еду, она не съедает всё — она закапывает на потом! Лисы роют маленькие ямки, кладут туда мышку или ягоды и закрывают носом. Удивительное в том, что одна лиса может помнить СОТНИ тайников! Они используют ориентиры — деревья, камни, ручьи — чтобы создать мысленную карту сокровищ. У некоторых лис находили более 1000 спрятанных запасов еды!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-tail-warmth.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Tail Warmth"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Tail Warmth</h3>
+                        <h3 data-lang="es">Calor de Cola</h3>
+                        <h3 data-lang="ru">Тепло хвоста</h3>
+                        <p data-lang="en" class="active">A fox&#x27;s bushy tail — called a &#x27;brush&#x27; — is the ultimate multi-tool! In cold weather, foxes wrap their tail over their nose and paws like a cozy blanket. In rain, it works like an umbrella. When running, it helps with balance like a tightrope walker&#x27;s pole. Foxes even use their tails to communicate — a wagging tail means &#x27;let&#x27;s play,&#x27; and a puffed-up tail means &#x27;stay away!&#x27; Baby foxes love sleeping wrapped in their parents&#x27; tails.</p>
+                        <p data-lang="es">¡La cola peluda de un zorro — llamada &#x27;pincel&#x27; — es la herramienta multiusos definitiva! En clima frío, los zorros envuelven su cola sobre la nariz y las patas como una manta acogedora. Con lluvia, funciona como un paraguas. Al correr, ayuda con el equilibrio como la pértiga de un equilibrista. Los zorros incluso usan sus colas para comunicarse — una cola moviéndose significa &#x27;juguemos,&#x27; ¡y una cola esponjada significa &#x27;aléjate!&#x27; A los cachorros les encanta dormir envueltos en las colas de sus padres.</p>
+                        <p data-lang="ru">Пушистый хвост лисы — его называют &#x27;труба&#x27; — это универсальный инструмент! В холодную погоду лисы оборачивают хвост вокруг носа и лап как уютное одеяло. В дождь он работает как зонтик. При беге помогает с балансом как шест канатоходца. Лисы даже общаются хвостами — виляющий хвост значит &#x27;давай играть,&#x27; а распушённый — &#x27;не подходи!&#x27; Лисята обожают спать, укутанные в хвосты родителей.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-night-vision.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Night Vision"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Night Vision</h3>
+                        <h3 data-lang="es">Visión Nocturna</h3>
+                        <h3 data-lang="ru">Ночное зрение</h3>
+                        <p data-lang="en" class="active">Fox eyes have a special mirror-like layer behind the retina called the tapetum lucidum — which means &#x27;bright carpet&#x27; in Latin! This layer bounces light back through the eye a second time, giving foxes incredible night vision. It&#x27;s also what makes their eyes glow bright greenish-gold when caught in a flashlight beam at night. Foxes can see in light levels six times lower than what humans need. They&#x27;re nature&#x27;s night ninjas!</p>
+                        <p data-lang="es">¡Los ojos de los zorros tienen una capa especial como un espejo detrás de la retina llamada tapetum lucidum — que significa &#x27;alfombra brillante&#x27; en latín! Esta capa refleja la luz de vuelta a través del ojo una segunda vez, dando a los zorros una increíble visión nocturna. También es lo que hace que sus ojos brillen verde-dorado cuando los alumbra una linterna por la noche. Los zorros pueden ver con niveles de luz seis veces más bajos que los humanos. ¡Son los ninjas nocturnos de la naturaleza!</p>
+                        <p data-lang="ru">У лисьих глаз есть особый зеркальный слой за сетчаткой — тапетум лусидум, что по-латыни значит &#x27;светящийся ковёр&#x27;! Этот слой отражает свет обратно через глаз во второй раз, давая лисам невероятное ночное зрение. Именно он заставляет их глаза светиться зеленовато-золотым, когда на них попадает луч фонарика ночью. Лисы видят при освещении в шесть раз слабее, чем нужно людям. Они — ночные ниндзя природы!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the cleverest family in the autumn woodland</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando a la familia más astuta del bosque otoñal</p>
+        <p data-lang="ru" style="margin-top: 10px;">Celebrating самую умную семью осеннего леса</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

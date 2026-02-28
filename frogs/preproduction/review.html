@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Bible — Frogs: The Great Transformation</title>
+<style>
+    :root {
+        --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d;
+        --text: #e6edf3; --text-dim: #8b949e; --accent: #58a6ff; --green: #3fb950;
+        --orange: #d29922; --red: #f85149; --purple: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero-header { text-align: center; padding: 48px 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .hero-header h1 { font-size: 2.5em; margin-bottom: 8px; }
+    .hero-header .subtitle { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+    .hero-header .meta-line { color: var(--text-dim); font-size: 0.9em; }
+    .hero-header .description { max-width: 700px; margin: 16px auto; color: var(--text-dim); }
+    .hero-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-top: 24px; border: 1px solid var(--border); }
+    h2 { font-size: 1.5em; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+    h3 { font-size: 1.2em; margin: 24px 0 12px; color: var(--accent); }
+    .preface { background: var(--surface); border-radius: 8px; padding: 24px; border-left: 4px solid var(--accent); margin-bottom: 32px; }
+    .preface p { margin-bottom: 12px; color: var(--text-dim); }
+    .preface p:last-child { margin-bottom: 0; }
+    .style-banner { background: linear-gradient(135deg, #1a1e2e, #1e2636); border-radius: 8px; padding: 20px 24px; border: 1px solid var(--purple); margin-bottom: 32px; }
+    .style-banner strong { color: var(--purple); }
+    .characters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .character-profile { display: flex; gap: 16px; background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .character-thumb { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+    .character-thumb-placeholder { width: 100px; height: 100px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2em; color: var(--text-dim); flex-shrink: 0; }
+    .character-info h4 { margin-bottom: 4px; }
+    .character-info p { color: var(--text-dim); font-size: 0.9em; }
+    .small-text { color: var(--text-dim); font-size: 0.75em; font-family: monospace; }
+    .sections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .section-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .section-card.character-card { border-color: var(--green); }
+    .section-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+    .section-id { font-family: monospace; color: var(--text-dim); font-size: 0.8em; }
+    .section-image { width: 100%; border-radius: 6px; margin: 12px 0; max-height: 300px; object-fit: cover; }
+    .section-content { color: var(--text-dim); font-size: 0.9em; margin: 8px 0; max-height: 80px; overflow: hidden; }
+    .prompt-block { background: var(--surface2); padding: 8px 12px; border-radius: 4px; font-size: 0.8em; margin: 8px 0; color: var(--text-dim); border-left: 3px solid var(--orange); }
+    .refs { font-size: 0.8em; color: var(--purple); margin-top: 4px; }
+    .image-filename { font-family: monospace; font-size: 0.75em; color: var(--text-dim); margin-top: 8px; }
+    .missing-image { background: var(--surface2); border: 2px dashed var(--red); border-radius: 6px; padding: 40px; text-align: center; color: var(--red); margin: 12px 0; }
+    .missing-thumb { background: var(--surface2); border: 1px dashed var(--red); border-radius: 4px; padding: 12px; text-align: center; color: var(--red); font-size: 0.8em; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; font-weight: 600; text-transform: uppercase; }
+    .badge-gemini { background: #1a3a2a; color: var(--green); }
+    .badge-openai { background: #2a2a1a; color: var(--orange); }
+    .badge-unknown { background: var(--surface2); color: var(--text-dim); }
+    .badge-character { background: #1a2a1a; color: var(--green); }
+    .details-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .detail-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .detail-image { width: 100%; border-radius: 6px; margin-bottom: 12px; max-height: 200px; object-fit: cover; }
+    .detail-card h4 { margin-bottom: 8px; }
+    .detail-card p { color: var(--text-dim); font-size: 0.85em; }
+    .hidden-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hidden-section-card { background: var(--surface); border-radius: 6px; padding: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .thumb { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; }
+    .small-prompt { font-size: 0.75em; color: var(--text-dim); }
+    .prepro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .prepro-step { background: var(--surface); border-radius: 8px; padding: 20px; border: 2px solid var(--border); text-align: center; }
+    .prepro-step h4 { margin-bottom: 8px; }
+    .prepro-step p { color: var(--text-dim); font-size: 0.9em; margin-bottom: 8px; }
+    .step-approved { border-color: var(--green); }
+    .step-pending { border-color: var(--orange); }
+    .check { color: var(--green); font-weight: 600; }
+    .pending { color: var(--orange); font-weight: 600; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .prepro-image-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .prepro-image-grid .grid-item img { height: 280px; }
+    .grid-item { background: var(--surface); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
+    .grid-item img { width: 100%; height: 160px; object-fit: cover; }
+    .grid-item span { display: block; padding: 4px 8px; font-size: 0.7em; color: var(--text-dim); font-family: monospace; }
+    .approved-item { border-color: var(--green); border-width: 2px; }
+    .approved-item span { color: var(--green); }
+    .cover-section { text-align: center; margin-bottom: 32px; }
+    .cover-image { max-width: 400px; border-radius: 8px; border: 2px solid var(--accent); }
+    .stats-bar { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 20px; background: var(--surface); border-radius: 8px; margin-bottom: 32px; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 0.8em; color: var(--text-dim); }
+    footer { text-align: center; padding: 32px; color: var(--text-dim); font-size: 0.8em; border-top: 1px solid var(--border); margin-top: 40px; }
+    @media (max-width: 768px) {
+        .prepro-grid { grid-template-columns: 1fr; }
+        .sections-grid { grid-template-columns: 1fr; }
+        .hero-header h1 { font-size: 1.8em; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-header">
+        <h1>Frogs: The Great Transformation</h1>
+        <div class="subtitle">Luna's Magical Journey from Tiny Egg to Leaping Frog</div>
+        <div class="meta-line">February 2026 &bull; Issue #10 &bull; Chapter: frogs</div>
+        <p class="description">Follow Luna the red-eyed tree frog through her incredible metamorphosis from egg to tadpole to frog, guided by her loving family in the tropical rainforest</p>
+        
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat"><div class="num">4</div><div class="label">Characters</div></div>
+        <div class="stat"><div class="num">11</div><div class="label">Scenes</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Viewer Details</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Fun Facts</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">Total Images</div></div>
+        <div class="stat"><div class="num">0 / 0</div><div class="label">Gemini / OpenAI</div></div>
+    </div>
+
+    <h2>Preface</h2>
+    <div class="preface">
+        <p>Welcome to the magical tropical rainforest, where one of nature's greatest miracles happens every day — a tiny egg becomes a swimming tadpole, and then transforms into a beautiful leaping frog! In this adventure, we'll follow Luna through her incredible metamorphosis.</p>
+<p>Red-eyed tree frogs are one of the most beautiful creatures on Earth. Their bright green bodies, stunning red eyes, blue-striped sides, and bright orange feet make them look like living jewels of the rainforest. And both Mama and Papa work together to keep their babies safe!</p>
+<p>Through Luna's journey, you'll discover how tadpoles breathe underwater with gills, how legs magically appear, how tails disappear, and how sticky toe pads let tree frogs climb anything. Get ready for the most amazing transformation you've ever seen!</p>
+    </div>
+
+    <h2>Art Direction</h2>
+    <div class="style-banner">
+        <strong>Global Style:</strong> Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in skin, leaves, and water. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Lush magical tropical rainforest setting with rich greens, golden light, dewdrops, and colorful flowers. Child-friendly and inviting.
+    </div>
+
+    <h2>Pre-Production Pipeline</h2>
+    
+        <div class="prepro-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="prepro-step step-pending">
+                <h4>Step 0: Storyline</h4>
+                <p>pending (0 attempts)</p>
+                <span class="pending">pending</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 1: Unified Cast Sheet</h4>
+                <p>approved (1 attempts)</p>
+                <span class="check">Approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 2: Character Sheets</h4>
+                <p>approved</p>
+                <span class="check">Papa Verde: approved</span><br><span class="check">Mama Hoja: approved</span><br><span class="check">Luna: approved</span><br><span class="check">Brio: approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 3: Mood Proposals</h4>
+                <p>approved</p>
+                <span class="check">Moods: translucency, lush-botanical</span>
+            </div>
+        </div>
+    
+    <h3>Step 1: Unified Cast Sheets</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step1-unified/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>approved.jpg (APPROVED)</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step1-unified/unified-cast-v1.jpg" alt="unified-cast-v1.jpg" loading="lazy" />
+                        <span>unified-cast-v1.jpg</span>
+                    </div></div><h3>Step 2: Papa Verde Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/papa-verde/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/papa-verde/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Mama Hoja Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/mama-hoja/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/mama-hoja/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Luna Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/luna/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/luna/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Brio Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/brio/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/brio/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 3: Pixar Mood Proposals</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step3-style/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>APPROVED</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-1-translucency-botanical.jpg" alt="proposal-1-translucency-botanical.jpg" loading="lazy" />
+                        <span>1-translucency-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-2-epic-intimate.jpg" alt="proposal-2-epic-intimate.jpg" loading="lazy" />
+                        <span>2-epic-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-3-golden-botanical.jpg" alt="proposal-3-golden-botanical.jpg" loading="lazy" />
+                        <span>3-golden-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-4-translucency-intimate.jpg" alt="proposal-4-translucency-intimate.jpg" loading="lazy" />
+                        <span>4-translucency-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-5-epic-golden.jpg" alt="proposal-5-epic-golden.jpg" loading="lazy" />
+                        <span>5-epic-golden</span>
+                    </div></div>
+
+    <h2>Character Cast</h2>
+    <div class="characters-grid">
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">P</div>
+                <div class="character-info">
+                    <h4>Papa Verde</h4>
+                    <p>Handsome red-eyed tree frog father with brilliant green body, huge glowing red eyes, blue-yellow striped sides, bright orange feet</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">M</div>
+                <div class="character-info">
+                    <h4>Mama Hoja</h4>
+                    <p>Beautiful red-eyed tree frog mother with soft green coloring, gentle red eyes, slightly smaller and more delicate than Papa</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">L</div>
+                <div class="character-info">
+                    <h4>Luna</h4>
+                    <p>Starts as tiny black tadpole, transforms through stages into a small bright green red-eyed tree frog with huge curious red eyes</p>
+                    <span class="small-text">luna-tadpole.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">B</div>
+                <div class="character-info">
+                    <h4>Brio</h4>
+                    <p>Luna's older brother, slightly bigger green-brown tadpole with developing legs, later a young red-eyed tree frog</p>
+                    <span class="small-text">brio-portrait.jpg</span>
+                </div>
+            </div></div>
+
+    <h2>Scene Plan (11 scenes)</h2>
+    <div class="sections-grid">
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-papa</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Papa Verde</h3>
+                <div class="missing-image">Missing: papa-verde-portrait.jpg</div>
+                <p class="section-content">Papa Verde is the most handsome frog in the entire rainforest! His body is a brilliant, shining green — like a living emerald. His enormous red eyes glow like rubies in the moonlight. His sides are striped with beautiful blue and yellow, and his feet are the brightest orange you've ever seen. Tonight, Papa has the most important job: he is guarding the eggs that he and Mama laid together on a big green leaf hanging over the pond. 'I'll watch over you all night,' he promises.</p>
+                
+                
+                <div class="image-filename">papa-verde-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-mama</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Mama Hoja and the Tiny Eggs</h3>
+                <div class="missing-image">Missing: mama-hoja-portrait.jpg</div>
+                <p class="section-content">Mama Hoja chose the perfect leaf — big, strong, and hanging right over the safest pond in the rainforest. Together, she and Papa Verde carefully placed their tiny eggs on the leaf. The eggs look like little transparent pearls, and inside each one, you can already see a tiny black dot — a baby frog waiting to begin! 'Look, Papa,' Mama whispers, 'they're already wiggling!' Papa puts his arm around Mama. 'Our little family is beginning,' he says softly.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two beautiful red-eyed tree frogs sitting close together on a large green leaf over a pond, one slightly smaller and more delicate with softer green coloring, both looking lovingly at a cluster of tiny transparent eggs on the leaf, moonlit rainforest, warm tender scene</div>
+                <div class="refs">References: meet-papa</div>
+                <div class="image-filename">mama-hoja-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">luna-drops-in</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Splash! Luna Drops In!</h3>
+                <div class="missing-image">Missing: luna-tadpole.jpg</div>
+                <p class="section-content">One golden morning — PLOP! A tiny black tadpole wiggles out of her egg and drops off the leaf right into the pond below! SPLASH! 'She did it!' Papa cheers from the leaf. 'Our first baby!' Mama watches with tears of joy. Little Luna is only as big as a grain of rice, with a round head and a wiggly tail. She looks up through the water and sees Mama and Papa's happy faces peering down at her. Luna swishes her tail and zooms across the pond. She can SWIM!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> tiny black tadpole dropping from a green leaf into a crystal-clear rainforest pond, splash of water, two adult red-eyed tree frogs watching from the leaf above with proud expressions, golden morning light, lush green tropical plants surrounding the pond</div>
+                <div class="refs">References: meet-papa, meet-mama</div>
+                <div class="image-filename">luna-tadpole.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-brio</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Brio, Big Brother!</h3>
+                <div class="missing-image">Missing: brio-portrait.jpg</div>
+                <p class="section-content">In the pond, Luna meets Brio — her big brother from the season before! Brio is a bit bigger and has already started his transformation — he has two tiny back legs growing behind his tail! 'Don't worry, little sister,' Brio says. 'The legs feel weird at first, but wait until you can JUMP! It's the best feeling ever!' Brio shows Luna the best spots for eating algae and the coziest hiding places under lily pads. He is the best big brother a tadpole could wish for.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two tadpoles in a clear rainforest pond — one small and black, one slightly bigger and green-brown with tiny developing back legs visible, swimming together playfully among water plants and lily pads, warm golden underwater light</div>
+                <div class="refs">References: luna-drops-in</div>
+                <div class="image-filename">brio-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">back-legs-appear</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Something is Growing!</h3>
+                <div class="missing-image">Missing: luna-back-legs.jpg</div>
+                <p class="section-content">One morning, Luna feels something tickly behind her tail. She looks back and — 'PAPA! MAMA! I HAVE LEGS!' Two tiny green back legs are growing right out of her body! They're small and wobbly, but they're REAL LEGS! Papa hops down to the pond edge, beaming. 'Your transformation has begun, my little one!' Mama adds, 'I remember when my legs grew in. I couldn't stop kicking!' Luna kicks her new legs experimentally — SPLASH! She does three somersaults. This is AMAZING!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> cute tadpole in clear pond water, now green-colored and slightly bigger, with two small but visible back legs growing, the tadpole looks surprised and delighted at its own legs, colorful underwater scene with water plants and pebbles, warm golden light filtering through water</div>
+                <div class="refs">References: luna-drops-in</div>
+                <div class="image-filename">luna-back-legs.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">front-legs-appear</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Four Legs! A Froglet!</h3>
+                <div class="missing-image">Missing: luna-froglet.jpg</div>
+                <p class="section-content">The magic keeps going! Now Luna has FOUR legs — her strong back legs for jumping, and two adorable tiny front legs for landing and climbing. Her tail is getting shorter every day. Her round tadpole head is becoming a frog-shaped head. Her skin is turning the most beautiful shade of green! 'You're becoming a frog!' Brio cheers. Luna climbs onto a lily pad for the first time — half in the water, half out. She takes her very first breath of AIR. The world smells incredible!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> tadpole transforming into a froglet — now has four legs (back legs bigger, front legs tiny and new), tail still present but shorter, body turning green, sitting on a lily pad half in half out of water, looking at its own tiny new front legs with amazement, lush rainforest pond setting with warm golden light</div>
+                <div class="refs">References: luna-drops-in</div>
+                <div class="image-filename">luna-froglet.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">first-climb</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Sticky Toes!</h3>
+                <div class="missing-image">Missing: luna-first-climb.jpg</div>
+                <p class="section-content">Luna's tail is completely gone now, and she is a real frog! But the best surprise is on her toes — STICKY PADS! Papa teaches her how to use them. 'Press gently, and you can climb anything,' he shows her, walking straight up a wet leaf like it's nothing. Luna presses her orange toes against a stem and — she STICKS! She climbs up, up, up, higher than she's ever been. 'I can see the whole pond from up here!' she squeals. 'Welcome to the trees, my little climber,' Papa smiles.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> tiny bright green froglet with red eyes climbing up a wet tropical plant stem for the very first time using sticky toe pads, an adult red-eyed tree frog watching from a branch above encouraging the climb, rainforest leaves glistening with dewdrops, warm golden light, the froglet looks determined and excited</div>
+                <div class="refs">References: luna-drops-in, meet-papa</div>
+                <div class="image-filename">luna-first-climb.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">flash-red-eyes</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Red Eye Trick!</h3>
+                <div class="missing-image">Missing: luna-red-eye-flash.jpg</div>
+                <p class="section-content">'Time for the best trick in the rainforest,' says Mama with a wink. 'When someone sneaks up on you — FLASH!' Mama opens her huge red eyes as wide as they'll go. The sudden burst of bright red is startling! 'It surprises them so much, they forget what they were doing!' Luna practices in front of a dewdrop mirror. She opens her eyes wide — FLASH! 'Wow!' says Brio, genuinely startled. 'You're a natural!' Luna giggles. Having red eyes is the COOLEST thing ever.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> small bright green frog with huge wide-open glowing red eyes on a green leaf, eyes opened dramatically wide in a startle display, the red eyes seeming to glow in the dim rainforest light, adult frog nearby demonstrating the same pose, playful and dramatic scene, lush rainforest setting</div>
+                <div class="refs">References: luna-drops-in, meet-mama</div>
+                <div class="image-filename">luna-red-eye-flash.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">first-bug-catch</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Sticky Tongue!</h3>
+                <div class="missing-image">Missing: luna-tongue-catch.jpg</div>
+                <p class="section-content">Luna is hungry, and Papa says it's time for a VERY important lesson. 'See that little fly?' Papa points. 'Watch this.' His tongue SHOOTS out like a pink lightning bolt — ZAP! — and the fly is gone. 'YOUR TURN!' Papa says. Luna focuses hard. She sees a tiny gnat land on a flower. She takes aim and — THWAP! Her sticky tongue zaps out and catches it! Her very first bug! It's delicious! 'THAT WAS AMAZING!' Luna bounces up and down. Papa beams. 'That's my girl.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> small bright green red-eyed tree frog on a branch catching a tiny fly with its long sticky pink tongue, tongue extended in mid-catch, the frog looks triumphant and delighted, lush rainforest setting with flowers and butterflies in background, warm golden light</div>
+                <div class="refs">References: luna-drops-in</div>
+                <div class="image-filename">luna-tongue-catch.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-great-leap</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Luna's Great Leap!</h3>
+                <div class="missing-image">Missing: luna-great-leap.jpg</div>
+                <p class="section-content">The moment has come — Luna's GREAT LEAP! She stands on a branch high up in the canopy. The next branch is FAR away. Mama, Papa, and Brio all watch. 'You can do it, Luna!' they cheer. Luna crouches, feels the power in her strong back legs, and — LEAPS! She SOARS through the golden sunset air, legs outstretched like she's flying, and — STICK! She lands perfectly on the far branch! 'I DID IT! I DID IT!' The whole family cheers. Luna went from a tiny egg to the greatest leaper in the rainforest. And it all started on one perfect leaf.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> small bright green red-eyed tree frog making a magnificent leap between two branches high in the rainforest canopy, legs fully extended, caught mid-air, adult frog family watching from branches with proud expressions, golden sunset light streaming through leaves, magical triumphant moment</div>
+                <div class="refs">References: luna-drops-in, meet-papa, meet-mama, meet-brio</div>
+                <div class="image-filename">luna-great-leap.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">rainforest-chorus</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Our Family Song</h3>
+                <div class="missing-image">Missing: family-chorus.jpg</div>
+                <p class="section-content">As the moon rises over the rainforest, Luna joins the greatest concert on Earth — the frog chorus! Papa's voice is a deep, warm 'CROCK-CROCK.' Mama's voice is a gentle, silvery 'PEEP-PEEP.' Brio's is a bouncy 'RIBBIT-RIBBIT.' And Luna? Luna has her very own special voice — a bright, happy 'KREEE-KREEE!' Together, the four of them sit on their favorite branch, singing to the moon. Around them, a hundred different frog voices join in. The rainforest is alive with music. And Luna knows: this is exactly where she belongs.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> a family of four red-eyed tree frogs sitting together on a large branch in the moonlit rainforest, all with mouths open singing their frog chorus together, dewdrops sparkling on leaves around them, warm moonlight, fireflies glowing nearby, magical and cozy nighttime scene, the whole family together and happy</div>
+                <div class="refs">References: luna-drops-in, meet-papa, meet-mama, meet-brio</div>
+                <div class="image-filename">family-chorus.jpg</div>
+            </div></div>
+
+    <h2>Viewer Details</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-sticky-toes.jpg</div>
+                <h4>Super Sticky Toes</h4>
+                <p>Look at Luna's orange toes — see those round discs at the tips? Those are sticky toe pads! Each pad works like a tiny suction cup, creating wet adhesion that lets tree frogs climb smooth leaves, wet bark, and even glass. The pads produce a thin layer of mucus that fills every tiny bump on a surface, creating an incredibly strong grip. That's how Luna can sleep upside down!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-skin-texture.jpg</div>
+                <h4>Living Jewel Skin</h4>
+                <p>Papa Verde's brilliant green skin isn't just beautiful — it's alive with special abilities! The green color comes from a combination of blue and yellow pigments layered in the skin. During the day, red-eyed tree frogs close their eyes and tuck in their legs, showing only green — perfect camouflage among the leaves. Their blue-and-yellow striped sides are hidden until they jump!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-eye-closeup.jpg</div>
+                <h4>Ruby Red Eyes</h4>
+                <p>Luna's stunning red eyes serve an important purpose — they're a defense mechanism called 'startle coloration.' When a sleeping frog opens its eyes suddenly, the flash of bright red confuses predators, giving the frog time to escape. The vertical slit pupil can open wide in darkness for excellent night vision, since these frogs are nocturnal — they're most active at night!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-tongue-anatomy.jpg</div>
+                <h4>Lightning Tongue</h4>
+                <p>A frog's tongue is one of the fastest muscles in the animal kingdom! It can extend and retract in just 0.07 seconds — faster than you can blink! The tongue is attached at the front of the mouth (not the back like ours), so it can flip out extra far. The tip is covered in super-sticky mucus that's 50 times stickier than anything humans have made. Once a bug lands on that tongue, there's no escape!</p>
+            </div></div>
+
+    <h2>Fun Facts</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-metamorphosis.jpg</div>
+                <h4>The Great Metamorphosis</h4>
+                <p>Frogs go through one of nature's most amazing transformations! They start as eggs, hatch into tadpoles that breathe water through gills, then slowly grow legs, absorb their tails, develop lungs, and become air-breathing frogs. The whole process takes about 12 to 16 weeks — that's like becoming a completely different animal in just three months!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-breathing.jpg</div>
+                <h4>Breathing Through Skin!</h4>
+                <p>Frogs can breathe through their skin! Their moist, thin skin allows oxygen to pass right through. This means frogs can breathe underwater through their skin (though tadpoles use gills). That's why frogs always need to stay moist — their skin is like a second pair of lungs! Some frogs don't even have lungs at all and breathe entirely through their skin.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-jumping.jpg</div>
+                <h4>Super Jumpers</h4>
+                <p>Some frogs can jump over 20 times their own body length in a single leap! That would be like a human jumping the length of a basketball court. Their powerful back legs work like springs, storing energy and releasing it all at once. Red-eyed tree frogs are especially good jumpers — they leap from branch to branch high up in the rainforest canopy!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-colors.jpg</div>
+                <h4>Rainbow of Frogs</h4>
+                <p>Frogs come in every color of the rainbow! There are bright blue poison dart frogs, strawberry-red frogs, golden yellow frogs, and even see-through glass frogs where you can see their organs! The bright colors often mean 'don't eat me!' — warning that the frog might not taste very nice. Red-eyed tree frogs use their colors to startle anyone who bothers them — surprise!</p>
+            </div></div>
+
+    <h2>Hidden Generation Sections</h2>
+    <div class="hidden-grid">
+            <div class="hidden-section-card">
+                <span class="section-id">detail-sticky-toes</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Extreme close-up of a red-eyed tree frog's orange toe pads showing the sticky disc-like structure, the toe gripping a we...</p>
+                <span class="refs">Ref: luna-drops-in</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-skin-texture</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the frog from reference, close-up of red-eyed tree frog's brilliant green skin showing the smooth, moist texture a...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-eye-closeup</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the frog from reference, extreme close-up of a red-eyed tree frog's stunning red eye showing the vertical pupil an...</p>
+                <span class="refs">Ref: luna-drops-in</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-tongue-anatomy</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the frog from reference, illustration showing a tree frog's tongue extended, showing the sticky tip and the speed ...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-metamorphosis-img</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Educational illustration showing the stages of frog metamorphosis in a circular diagram: egg cluster on leaf, tiny tadpo...</p>
+                
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-breathing-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the tadpole from reference, educational illustration showing a tadpole breathing through gills underwater versus a...</p>
+                <span class="refs">Ref: luna-drops-in</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-jumping-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the frog from reference, show a red-eyed tree frog making an incredible leap, with motion lines showing the distan...</p>
+                <span class="refs">Ref: luna-drops-in</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-colors-img</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Collection of different colorful frog species arranged beautifully: red-eyed tree frog (green with red eyes), blue poiso...</p>
+                
+            </div></div>
+
+    
+
+    <h2>All Images — Visual Consistency Check</h2>
+    <div class="image-grid"></div>
+
+    <footer>
+        Production Bible &bull; Generated 2026-02-28 &bull; Frogs: The Great Transformation
+    </footer>
+</div>
+</body>
+</html>

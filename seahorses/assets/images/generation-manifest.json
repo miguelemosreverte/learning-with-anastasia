@@ -1,0 +1,152 @@
+{
+  "chapter": "seahorses",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in scales and fins. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Vivid tropical coral reef setting with sparkling turquoise water, colorful corals in pink purple orange and yellow, golden sunbeams filtering through the surface, and swaying sea plants. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "papa-sol": {
+      "name": "Papa Sol",
+      "description": "Proud handsome seahorse father in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin",
+      "uniqueFeatures": [
+        "Deep WARM ORANGE body color with GOLDEN SPECKLES that shimmer — his signature look",
+        "ROUNDED belly pouch — prominently visible, his defining feature as the baby-carrier",
+        "LONG elegant snout — refined and distinguished",
+        "Beautiful FAN-LIKE dorsal fin — wide and delicate",
+        "SHORTER than Mama Pearl — stockier, more compact build",
+        "Curly PREHENSILE tail — always gripping something"
+      ],
+      "personality": "Gentle and patient — often seen rocking gently, always counting babies, warm and protective",
+      "notLike": "NOT as tall or slender as Mama Pearl, NOT pink like Mama, NOT tiny like babies Coral and Bubbles"
+    },
+    "mama-pearl": {
+      "name": "Mama Pearl",
+      "description": "Graceful seahorse mother in shimmering rose-pink with pearlescent white highlights, slightly taller than Papa, delicate almost-transparent fins",
+      "uniqueFeatures": [
+        "Shimmering ROSE-PINK body — clearly different from Papa's orange",
+        "PEARLESCENT WHITE highlights running along her ridges like tiny opals",
+        "SLIGHTLY TALLER than Papa Sol — elegant and elongated build",
+        "Delicate ALMOST-TRANSPARENT fins — catch light like stained glass windows",
+        "Graceful curved posture — always poised and elegant",
+        "More SLENDER build than Papa — no belly pouch"
+      ],
+      "personality": "Elegant and loving — moves with flowing grace, always initiating the morning dance, affectionate",
+      "notLike": "NOT orange like Papa Sol, NOT stocky or round-bellied like Papa, NOT tiny like babies"
+    },
+    "coral": {
+      "name": "Coral",
+      "description": "Tiny baby seahorse in bright sunny yellow with baby-pink spots, enormous round curious eyes, always curling tail around things",
+      "uniqueFeatures": [
+        "Bright SUNNY YELLOW body — vivid and warm like sunshine",
+        "A few BABY-PINK SPOTS scattered across body — cute freckle-like markings",
+        "ENORMOUS round curious eyes — disproportionately large, always wide open",
+        "TINY size — much much smaller than both parents",
+        "Tail always CURLING around something — seagrass, coral, other tails",
+        "Lively energetic posture — leaning forward, always exploring"
+      ],
+      "personality": "Curious and adventurous — first to explore, always pointing snout at new things, excitable",
+      "notLike": "NOT purple like Bubbles, NOT round like Bubbles, much SMALLER than parents, NOT orange or pink"
+    },
+    "bubbles": {
+      "name": "Bubbles",
+      "description": "Slightly rounder baby seahorse in soft lavender-purple with white belly, tall coronet, shy, always gripping Papa's tail",
+      "uniqueFeatures": [
+        "Soft LAVENDER-PURPLE body color — distinctly different from yellow Coral",
+        "WHITE BELLY — visible contrast against the purple",
+        "Distinctively TALL CORONET on head — the crown-like bump is her signature feature",
+        "Slightly ROUNDER build than Coral — chubbier, softer shape",
+        "SHY posture — often partially hidden behind Papa's tail",
+        "TINY size — same generation as Coral, much smaller than parents"
+      ],
+      "personality": "Shy and sweet — always gripping Papa's tail, peeks out cautiously, gentle and quiet",
+      "notLike": "NOT yellow like Coral, NOT as bold or forward-leaning as Coral, NOT orange like Papa, NOT pink like Mama"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-coral-reef.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Breathtaking tropical coral reef at dawn with shafts of golden sunlight filtering through turquoise water, vivid pink purple orange and yellow corals, swaying sea fans, colorful tropical fish, and sparkling particles floating in the warm water",
+        "es": "Impresionante arrecife de coral tropical al amanecer con rayos de luz dorada filtrándose a través del agua turquesa, corales vívidos en rosa púrpura naranja y amarillo, abanicos de mar meciéndose, peces tropicales coloridos y partículas brillantes flotando en el agua cálida",
+        "ru": "Захватывающий тропический коралловый риф на рассвете с лучами золотистого света, проникающими сквозь бирюзовую воду, яркие кораллы в розовых фиолетовых оранжевых и жёлтых тонах, покачивающиеся морские веера, разноцветные тропические рыбки и сверкающие частички, парящие в тёплой воде"
+      }
+    },
+    {
+      "filename": "papa-sol-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Proud handsome seahorse in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin, holding onto seagrass with curly tail, warm sunlight in turquoise water",
+        "es": "Orgulloso y apuesto caballito de mar en naranja cálido profundo con motas doradas, bolsillo redondeado en la barriga, hocico largo y elegante, hermosa aleta dorsal en forma de abanico, sujetándose a hierba marina con cola rizada, luz cálida en agua turquesa",
+        "ru": "Гордый красивый морской конёк глубокого тёплого оранжевого цвета с золотистыми крапинками, округлый мешочек на животе, длинная элегантная мордочка, красивый веерообразный спинной плавник, держащийся за морскую траву закрученным хвостиком, тёплый солнечный свет в бирюзовой воде"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "mama-pearl-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Graceful seahorse in shimmering rose-pink with pearlescent white highlights along ridges, delicate almost-transparent fins catching light like stained glass, slightly taller build, elegant expression, surrounded by colorful coral",
+        "es": "Elegante caballita de mar en rosa brillante con reflejos blancos nacarados a lo largo de las crestas, aletas delicadas casi transparentes capturando la luz como vitrales, complexión un poco más alta, expresión elegante, rodeada de coral colorido",
+        "ru": "Грациозная морская конька мерцающего розового цвета с перламутровыми белыми бликами вдоль гребней, нежные почти прозрачные плавники ловящие свет как витражи, чуть более высокая фигура, элегантное выражение, окружённая красочными кораллами"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "morning-dance.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papas-pouch.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "the-big-arrival.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "coral-and-bubbles-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Two tiny adorable baby seahorses — one bright sunny yellow with pink spots and enormous curious eyes, one soft lavender-purple with white belly and tall coronet — floating together near colorful coral",
+        "es": "Dos diminutos y adorables caballitos de mar bebés — uno amarillo brillante con manchas rosas y enormes ojos curiosos, uno suave lavanda-púrpura con barriga blanca y corona alta — flotando juntos cerca de coral colorido",
+        "ru": "Два крошечных очаровательных малыша-конька — один ярко-жёлтый с розовыми пятнышками и огромными любопытными глазами, другой нежно-лавандово-фиолетовый с белым животиком и высокой коронкой — плавающие вместе возле красочных кораллов"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tail-gripping.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "tiny-meals.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "two-way-eyes.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "reef-exploration.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "color-dance-sunset.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Seahorse family at sunset — orange Papa and pink Mama with tails intertwined dancing, two tiny babies trying to copy them, golden light streaming through water, coral reef glowing, magical rainbow colors flickering across all four seahorses",
+        "es": "Familia de caballitos de mar al atardecer — Papá naranja y Mamá rosa con colas entrelazadas bailando, dos diminutos bebés intentando copiarlos, luz dorada atravesando el agua, arrecife brillando, colores de arcoíris mágicos parpadeando en los cuatro caballitos",
+        "ru": "Семья морских коньков на закате — оранжевый Папа и розовая Мама с переплетёнными хвостиками танцуют, два крошечных малыша пытаются их копировать, золотистый свет пронизывает воду, риф сияет, волшебные радужные цвета мерцают на всех четырёх коньках"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

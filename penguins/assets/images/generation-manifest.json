@@ -1,0 +1,164 @@
+{
+  "chapter": "penguins",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in feathers and ice. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Sparkling Antarctic setting with ice, snow, and soft pastel skies. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "papa-frost": {
+      "name": "Papa Frost",
+      "description": "Tall proud emperor penguin father with golden-orange chest patch, gentle warm eyes, devoted and protective",
+      "uniqueFeatures": [
+        "TALLEST character — 25% taller than Mama Pearl, towers over chicks",
+        "Large GOLDEN-ORANGE chest patch shaped like a sunrise — his signature mark",
+        "THICK muscular build — broad barrel chest, strong wide flippers",
+        "Heavy brow ridge giving a determined, protective expression",
+        "Egg balanced on his feet — his defining prop in early scenes"
+      ],
+      "personality": "Stoic and protective — stands very upright and perfectly still like a soldier on guard duty",
+      "notLike": "NOT slim or graceful like Mama Pearl, NOT fluffy or round like the chicks"
+    },
+    "mama-pearl": {
+      "name": "Mama Pearl",
+      "description": "Beautiful sleek emperor penguin mother with soft silver-white chest, gentle eyes, graceful and loving",
+      "uniqueFeatures": [
+        "SLEEK slim build — visibly more slender and elegant than Papa",
+        "Soft SILVER-WHITE chest — clearly lighter and cooler-toned than Papa's gold",
+        "Longer, more pointed beak than Papa — refined and delicate",
+        "Graceful curved neck — carries her head at a gentle tilt",
+        "Feathers lie perfectly smooth and streamlined — a swimmer's body"
+      ],
+      "personality": "Graceful and gentle — moves with flowing elegance, often tilts her head affectionately",
+      "notLike": "NOT broad or stocky like Papa Frost, NOT fluffy like the chicks"
+    },
+    "kaia": {
+      "name": "Kaia",
+      "description": "Tiny adorable fluffy grey emperor penguin chick with enormous curious dark eyes and silver-grey down feathers",
+      "uniqueFeatures": [
+        "SMALLEST character — only 30% the height of Papa Frost",
+        "Covered entirely in SILVER-GREY fluffy down — looks like a pom-pom",
+        "ENORMOUS round dark eyes — disproportionately large for her face",
+        "Teardrop-shaped body — widest at the bottom, tiny at the top",
+        "Neat, tidy fluff — no messy feathers, perfectly round silhouette"
+      ],
+      "personality": "Curious and wide-eyed — always looking up with wonder, slightly timid stance",
+      "notLike": "NOT as round as Pip, NOT as messy-feathered as Pip, much SMALLER than adults"
+    },
+    "pip": {
+      "name": "Pip",
+      "description": "Slightly older and rounder fluffy grey penguin chick with a funny tuft of fluff sticking up on his head, mischievous and playful",
+      "uniqueFeatures": [
+        "ROUNDER and CHUBBIER than Kaia — like a fluffy bowling ball",
+        "Signature TUFT of fluff sticking straight up on top of his head — his defining feature",
+        "Slightly TALLER than Kaia — older and bigger",
+        "Messy, ruffled down feathers — always looks a bit disheveled",
+        "Wider, goofier beak — slightly open as if about to laugh"
+      ],
+      "personality": "Mischievous and bouncy — always leaning forward eagerly, never stands still",
+      "notLike": "NOT neat or tidy like Kaia, NOT as small as Kaia, NOT tall or elegant like adults"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-antarctica-dawn.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Breathtaking Antarctic landscape at dawn with soft pink and purple sky, sparkling ice and snow, a colony of emperor penguins gathered peacefully on the ice, gentle golden light on the horizon",
+        "es": "Impresionante paisaje antártico al amanecer con cielo rosa y púrpura suave, hielo y nieve brillantes, una colonia de pingüinos emperador reunidos pacíficamente sobre el hielo, suave luz dorada en el horizonte",
+        "ru": "Захватывающий антарктический пейзаж на рассвете с нежным розово-фиолетовым небом, сверкающим льдом и снегом, колония императорских пингвинов мирно собравшихся на льду, мягкий золотистый свет на горизонте"
+      }
+    },
+    {
+      "filename": "papa-frost-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Proud tall emperor penguin father with golden-orange chest patch, standing on ice with an egg balanced on his feet, warm gentle expression, soft Antarctic light",
+        "es": "Orgulloso y alto pingüino emperador padre con parche dorado-anaranjado en el pecho, de pie sobre el hielo con un huevo equilibrado en sus patas, expresión cálida y gentil, suave luz antártica",
+        "ru": "Гордый высокий отец-пингвин с золотисто-оранжевым пятном на груди, стоящий на льду с яйцом на лапах, тёплое нежное выражение, мягкий антарктический свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "great-huddle.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "mama-pearl-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Beautiful female emperor penguin with soft silver-white chest and gentle eyes, standing on sparkling ice, warm and loving expression",
+        "es": "Hermosa pingüino emperador hembra con pecho blanco-plateado suave y ojos dulces, de pie sobre hielo brillante, expresión cálida y amorosa",
+        "ru": "Красивая самка императорского пингвина с мягкой серебристо-белой грудкой и нежными глазами, стоящая на сверкающем льду, тёплое и любящее выражение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kaia-hatches.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "papas-pouch.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-feeding.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "pip-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Adorable fluffy grey emperor penguin chick, slightly round, with a funny tuft of fluff on top of its head, playful expression, standing on sparkling ice",
+        "es": "Adorable cría de pingüino emperador gris esponjosa, un poco redonda, con un gracioso mechón de plumón en la cabeza, expresión juguetona, de pie sobre hielo brillante",
+        "ru": "Очаровательный пушистый серый птенец императорского пингвина, немного круглый, с забавным хохолком пуха на голове, игривое выражение, стоящий на сверкающем льду"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tobogganing-fun.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "family-song.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "aurora-wonder.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "funny-molting.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "first-swim.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Young emperor penguin diving joyfully into crystal-clear turquoise Antarctic water, parent penguins watching proudly from ice edge, sunlight streaming through water, pure freedom and joy",
+        "es": "Joven pingüino emperador sumergiéndose alegremente en agua turquesa cristalina antártica, pingüinos padres observando orgullosamente desde el borde del hielo, luz solar atravesando el agua",
+        "ru": "Молодой императорский пингвин радостно ныряющий в кристально чистую бирюзовую антарктическую воду, родители-пингвины гордо наблюдающие с края льда, солнечный свет пронизывающий воду"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "family-together-sunset.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Emperor penguin family — father, mother, and nearly-grown chick — standing together on ice at golden sunset, warm amber light, the whole colony visible in the background, peaceful and loving",
+        "es": "Familia de pingüinos emperador — padre, madre y cría casi adulta — de pie juntos sobre el hielo al atardecer dorado, cálida luz ámbar, toda la colonia visible al fondo, pacífica y amorosa",
+        "ru": "Семья императорских пингвинов — отец, мать и почти взрослый птенец — стоят вместе на льду на золотом закате, тёплый янтарный свет, вся колония видна на фоне, мирная и любящая"
+      },
+      "reference": "${meet-papa.image}",
+      "needsTranslations": false
+    }
+  ]
+}

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frogs: The Great Transformation - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Frogs: The Great Transformation</h1>
+        <h1 data-lang="es">Ranas: La Gran Transformación</h1>
+        <h1 data-lang="ru">Лягушки: Великое превращение</h1>
+        <p data-lang="en" class="active">Luna&#x27;s Magical Journey from Tiny Egg to Leaping Frog</p>
+        <p data-lang="es">El Viaje Mágico de Luna de Huevito a Rana Saltarina</p>
+        <p data-lang="ru">Волшебное путешествие Луны от крошечного яйца до прыгающей лягушки</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-rainforest.jpg"
+             alt="Frogs"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Frogs</h2>
+            <h2 class="hero-title" data-lang="es">Ranas</h2>
+            <h2 class="hero-title" data-lang="ru">Лягушки</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Great Transformation</p>
+            <p class="hero-subtitle" data-lang="es">La Gran Transformación</p>
+            <p class="hero-subtitle" data-lang="ru">Великое превращение</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/papa-verde-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Stunning red-eyed tree frog with brilliant green body, huge glowing red eyes, blue-and-yellow striped sides, and bright orange feet, perched on a green leaf in the moonlit rainforest"
+                 data-alt-en="Stunning red-eyed tree frog with brilliant green body, huge glowing red eyes, blue-and-yellow striped sides, and bright orange feet, perched on a green leaf in the moonlit rainforest"
+                 data-alt-es="Impresionante rana arbórea de ojos rojos con brillante cuerpo verde, enormes ojos rojos brillantes, costados rayados de azul y amarillo, y patas naranjas brillantes, posada en una hoja verde en la selva iluminada por la luna"
+                 data-alt-ru="Потрясающая красноглазая древесная лягушка с блестящим зелёным телом, огромными сияющими красными глазами, голубо-жёлтыми полосками на боках и ярко-оранжевыми лапками, сидящая на зелёном листе в лунном тропическом лесу"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Papa Verde</h2>
+            <h2 data-lang="es">Conoce a Papá Verde</h2>
+            <h2 data-lang="ru">Знакомьтесь: Папа Верде</h2>
+            <div data-lang="en" class="active">
+                <p>Papa Verde is the most handsome frog in the entire rainforest! His body is a brilliant, shining green — like a living emerald. His enormous red eyes glow like rubies in the moonlight. His sides are striped with beautiful blue and yellow, and his feet are the brightest orange you&#x27;ve ever seen. Tonight, Papa has the most important job: he is guarding the eggs that he and Mama laid together on a big green leaf hanging over the pond. &#x27;I&#x27;ll watch over you all night,&#x27; he promises.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Papá Verde es la rana más apuesta de toda la selva! Su cuerpo es de un verde brillante y reluciente — como una esmeralda viviente. Sus enormes ojos rojos brillan como rubíes a la luz de la luna. Sus costados tienen rayas de hermoso azul y amarillo, y sus patas son del naranja más brillante que hayas visto. Esta noche, Papá tiene el trabajo más importante: está guardando los huevos que él y Mamá pusieron juntos en una gran hoja verde colgando sobre el estanque.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Папа Верде — самая красивая лягушка во всём тропическом лесу! Его тело — ярко-зелёное, сверкающее — как живой изумруд. Его огромные красные глаза сияют как рубины в лунном свете. Бока украшены полосками прекрасного голубого и жёлтого, а лапки — самого яркого оранжевого цвета. Сегодня ночью у Папы самая важная работа: он охраняет яйца, которые они с Мамой вместе отложили на большом зелёном листе над прудом.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/mama-hoja-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Beautiful red-eyed tree frog mother with soft green coloring sitting beside a cluster of transparent eggs on a leaf, gentle moonlit rainforest setting"
+                 data-alt-en="Beautiful red-eyed tree frog mother with soft green coloring sitting beside a cluster of transparent eggs on a leaf, gentle moonlit rainforest setting"
+                 data-alt-es="Hermosa rana arbórea de ojos rojos madre con suave coloración verde sentada junto a un grupo de huevos transparentes en una hoja, suave escenario de selva iluminada por la luna"
+                 data-alt-ru="Красивая мама красноглазая древесная лягушка с мягкой зелёной окраской, сидящая рядом с кучкой прозрачных яиц на листе, мягкое лунное освещение тропического леса"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama Hoja and the Tiny Eggs</h2>
+            <h2 data-lang="es">Mamá Hoja y los Huevitos</h2>
+            <h2 data-lang="ru">Мама Хоха и крошечные яйца</h2>
+            <div data-lang="en" class="active">
+                <p>Mama Hoja chose the perfect leaf — big, strong, and hanging right over the safest pond in the rainforest. Together, she and Papa Verde carefully placed their tiny eggs on the leaf. The eggs look like little transparent pearls, and inside each one, you can already see a tiny black dot — a baby frog waiting to begin! &#x27;Look, Papa,&#x27; Mama whispers, &#x27;they&#x27;re already wiggling!&#x27; Papa puts his arm around Mama. &#x27;Our little family is beginning,&#x27; he says softly.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mamá Hoja eligió la hoja perfecta — grande, fuerte, y colgando justo sobre el estanque más seguro de la selva. Juntos, ella y Papá Verde colocaron cuidadosamente sus huevitos en la hoja. Los huevos parecen pequeñas perlas transparentes, y dentro de cada uno, ya puedes ver un puntito negro — ¡un bebé rana esperando a comenzar! &#x27;Mira, Papá,&#x27; susurra Mamá, &#x27;¡ya se están moviendo!&#x27; Papá rodea a Mamá con su brazo. &#x27;Nuestra pequeña familia está comenzando,&#x27; dice suavemente.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Мама Хоха выбрала идеальный лист — большой, крепкий, свисающий прямо над самым безопасным прудом в тропическом лесу. Вместе с Папой Верде они аккуратно разместили крошечные яйца на листе. Яйца похожи на маленькие прозрачные жемчужинки, и внутри каждого уже видна крошечная чёрная точка — малыш-лягушонок, ждущий начала! &#x27;Смотри, Папа,&#x27; шепчет Мама, &#x27;они уже шевелятся!&#x27; Папа обнимает Маму. &#x27;Наша маленькая семья начинается,&#x27; говорит он тихо.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/luna-tadpole.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Tiny black tadpole in crystal-clear rainforest pond water, two colorful red-eyed tree frogs watching from a leaf above, golden morning light, lush tropical setting"
+                 data-alt-en="Tiny black tadpole in crystal-clear rainforest pond water, two colorful red-eyed tree frogs watching from a leaf above, golden morning light, lush tropical setting"
+                 data-alt-es="Diminuto renacuajo negro en agua cristalina de estanque de selva, dos coloridas ranas arbóreas de ojos rojos observando desde una hoja arriba, luz dorada matutina"
+                 data-alt-ru="Крошечный чёрный головастик в кристально чистой воде пруда тропического леса, две красноглазые древесные лягушки наблюдают с листа сверху, золотистый утренний свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Splash! Luna Drops In!</h2>
+            <h2 data-lang="es">¡Splash! ¡Luna se Deja Caer!</h2>
+            <h2 data-lang="ru">Плюх! Луна падает!</h2>
+            <div data-lang="en" class="active">
+                <p>One golden morning — PLOP! A tiny black tadpole wiggles out of her egg and drops off the leaf right into the pond below! SPLASH! &#x27;She did it!&#x27; Papa cheers from the leaf. &#x27;Our first baby!&#x27; Mama watches with tears of joy. Little Luna is only as big as a grain of rice, with a round head and a wiggly tail. She looks up through the water and sees Mama and Papa&#x27;s happy faces peering down at her. Luna swishes her tail and zooms across the pond. She can SWIM!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Una dorada mañana — PLOP! Un diminuto renacuajo negro se menea fuera de su huevo y cae de la hoja directo al estanque — ¡SPLASH! &#x27;¡Lo logró!&#x27; anima Papá desde la hoja. &#x27;¡Nuestra primera bebé!&#x27; Mamá observa con lágrimas de alegría. La pequeña Luna es solo del tamaño de un grano de arroz, con una cabeza redonda y una colita movediza. Mira hacia arriba a través del agua y ve las caras felices de Mamá y Papá mirándola. Luna agita su cola y cruza el estanque. ¡Puede NADAR!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Одним золотым утром — ПЛЮХ! Крошечный чёрный головастик выбирается из яйца и падает с листа прямо в пруд! ВСПЛЕСК! &#x27;Получилось!&#x27; радуется Папа с листа. &#x27;Наш первый малыш!&#x27; Мама смотрит со слезами радости. Маленькая Луна размером всего с рисовое зёрнышко, с круглой головкой и виляющим хвостиком. Она смотрит вверх сквозь воду и видит счастливые лица Мамы и Папы. Луна взмахивает хвостом и мчится через пруд. Она умеет ПЛАВАТЬ!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/brio-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Two tadpoles swimming together in a clear pond — one small and black, one bigger and green-brown with tiny developing back legs, among lily pads and water plants"
+                 data-alt-en="Two tadpoles swimming together in a clear pond — one small and black, one bigger and green-brown with tiny developing back legs, among lily pads and water plants"
+                 data-alt-es="Dos renacuajos nadando juntos en un estanque claro — uno pequeño y negro, otro más grande y verde-marrón con pequeñas patas traseras en desarrollo, entre nenúfares y plantas acuáticas"
+                 data-alt-ru="Два головастика плавают вместе в чистом пруду — один маленький и чёрный, другой побольше и зелёно-коричневый с крошечными развивающимися задними лапками, среди кувшинок и водных растений"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Brio, Big Brother!</h2>
+            <h2 data-lang="es">¡Conoce a Brio, el Hermano Mayor!</h2>
+            <h2 data-lang="ru">Знакомьтесь: Брио, старший брат!</h2>
+            <div data-lang="en" class="active">
+                <p>In the pond, Luna meets Brio — her big brother from the season before! Brio is a bit bigger and has already started his transformation — he has two tiny back legs growing behind his tail! &#x27;Don&#x27;t worry, little sister,&#x27; Brio says. &#x27;The legs feel weird at first, but wait until you can JUMP! It&#x27;s the best feeling ever!&#x27; Brio shows Luna the best spots for eating algae and the coziest hiding places under lily pads. He is the best big brother a tadpole could wish for.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;¡En el estanque, Luna conoce a Brio — su hermano mayor de la temporada anterior! Brio es un poco más grande y ya ha comenzado su transformación — ¡tiene dos pequeñas patas traseras creciendo detrás de su cola! &#x27;No te preocupes, hermanita,&#x27; dice Brio. &#x27;Las patas se sienten raras al principio, pero espera hasta que puedas SALTAR! ¡Es la mejor sensación!&#x27; Brio le muestra a Luna los mejores lugares para comer algas y los escondites más acogedores bajo los nenúfares.</p>
+            </div>
+            <div data-lang="ru">
+                <p>В пруду Луна встречает Брио — своего старшего брата из прошлого сезона! Брио немного крупнее и уже начал превращение — у него растут две крошечные задние лапки позади хвоста! &#x27;Не волнуйся, сестрёнка,&#x27; говорит Брио. &#x27;Лапки поначалу кажутся странными, но подожди, пока сможешь ПРЫГАТЬ! Это лучшее ощущение!&#x27; Брио показывает Луне лучшие места для поедания водорослей и самые уютные укрытия под листьями кувшинок.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/luna-back-legs.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Something is Growing!</h2>
+            <h2 data-lang="es">¡Algo Está Creciendo!</h2>
+            <h2 data-lang="ru">Что-то растёт!</h2>
+            <div data-lang="en" class="active">
+                <p>One morning, Luna feels something tickly behind her tail. She looks back and — &#x27;PAPA! MAMA! I HAVE LEGS!&#x27; Two tiny green back legs are growing right out of her body! They&#x27;re small and wobbly, but they&#x27;re REAL LEGS! Papa hops down to the pond edge, beaming. &#x27;Your transformation has begun, my little one!&#x27; Mama adds, &#x27;I remember when my legs grew in. I couldn&#x27;t stop kicking!&#x27; Luna kicks her new legs experimentally — SPLASH! She does three somersaults. This is AMAZING!</p>
+            </div>
+            <div data-lang="es">
+                <p>Una mañana, Luna siente algo que le hace cosquillas detrás de la cola. Mira hacia atrás y — &#x27;¡PAPÁ! ¡MAMÁ! ¡TENGO PATAS!&#x27; ¡Dos pequeñas patas traseras verdes están creciendo de su cuerpo! Son pequeñas y tambaleantes, pero ¡son PATAS DE VERDAD! Papá salta al borde del estanque, radiante. &#x27;¡Tu transformación ha comenzado, mi pequeña!&#x27; Mamá agrega, &#x27;¡Recuerdo cuando me crecieron las patas! ¡No podía parar de patear!&#x27; Luna patea sus nuevas patas experimentalmente — ¡SPLASH!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Однажды утром Луна чувствует что-то щекотное позади хвоста. Она оглядывается и — &#x27;ПАПА! МАМА! У МЕНЯ НОЖКИ!&#x27; Две крошечные зелёные задние лапки растут прямо из её тела! Они маленькие и шаткие, но они НАСТОЯЩИЕ НОЖКИ! Папа прыгает к краю пруда, сияя. &#x27;Твоё превращение началось, моя маленькая!&#x27; Мама добавляет, &#x27;Я помню, когда у меня выросли лапки. Я не могла перестать брыкаться!&#x27; Луна экспериментально пинает новыми лапками — ВСПЛЕСК!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/luna-froglet.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Four Legs! A Froglet!</h2>
+            <h2 data-lang="es">¡Cuatro Patas! ¡Una Ranita!</h2>
+            <h2 data-lang="ru">Четыре ножки! Лягушонок!</h2>
+            <div data-lang="en" class="active">
+                <p>The magic keeps going! Now Luna has FOUR legs — her strong back legs for jumping, and two adorable tiny front legs for landing and climbing. Her tail is getting shorter every day. Her round tadpole head is becoming a frog-shaped head. Her skin is turning the most beautiful shade of green! &#x27;You&#x27;re becoming a frog!&#x27; Brio cheers. Luna climbs onto a lily pad for the first time — half in the water, half out. She takes her very first breath of AIR. The world smells incredible!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡La magia continúa! Ahora Luna tiene CUATRO patas — sus fuertes patas traseras para saltar, y dos adorables patitas delanteras para aterrizar y trepar. Su cola se acorta cada día. Su cabeza redonda de renacuajo se está convirtiendo en cabeza de rana. ¡Su piel se está volviendo del verde más hermoso! &#x27;¡Te estás convirtiendo en rana!&#x27; anima Brio. Luna trepa a un nenúfar por primera vez. Toma su primera respiración de AIRE. ¡El mundo huele increíble!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Волшебство продолжается! Теперь у Луны ЧЕТЫРЕ лапки — сильные задние для прыжков и две очаровательные крошечные передние для приземления и лазания. Хвост становится короче с каждым днём. Круглая головастиковая головка превращается в лягушачью. Кожа становится самого красивого оттенка зелёного! &#x27;Ты становишься лягушкой!&#x27; радуется Брио. Луна забирается на лист кувшинки впервые. Она делает свой первый вдох ВОЗДУХА. Мир пахнет невероятно!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/luna-first-climb.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Sticky Toes!</h2>
+            <h2 data-lang="es">¡Dedos Pegajosos!</h2>
+            <h2 data-lang="ru">Липкие пальчики!</h2>
+            <div data-lang="en" class="active">
+                <p>Luna&#x27;s tail is completely gone now, and she is a real frog! But the best surprise is on her toes — STICKY PADS! Papa teaches her how to use them. &#x27;Press gently, and you can climb anything,&#x27; he shows her, walking straight up a wet leaf like it&#x27;s nothing. Luna presses her orange toes against a stem and — she STICKS! She climbs up, up, up, higher than she&#x27;s ever been. &#x27;I can see the whole pond from up here!&#x27; she squeals. &#x27;Welcome to the trees, my little climber,&#x27; Papa smiles.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡La cola de Luna ha desaparecido por completo, y es una rana de verdad! Pero la mejor sorpresa está en sus dedos — ¡ALMOHADILLAS PEGAJOSAS! Papá le enseña a usarlas. &#x27;Presiona suavemente, y puedes trepar cualquier cosa,&#x27; le muestra, caminando directamente por una hoja mojada como si nada. Luna presiona sus dedos naranjas contra un tallo y — ¡se PEGA! Trepa arriba, arriba, arriba, más alto de lo que ha estado jamás. &#x27;¡Puedo ver todo el estanque desde aquí!&#x27; chilla.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Хвост Луны полностью исчез, и она — настоящая лягушка! Но лучший сюрприз — на её пальчиках — ЛИПКИЕ ПОДУШЕЧКИ! Папа учит её пользоваться ими. &#x27;Нажми нежно, и ты сможешь залезть на что угодно,&#x27; показывает он, шагая прямо вверх по мокрому листу как ни в чём не бывало. Луна прижимает оранжевые пальчики к стеблю и — она ПРИЛИПАЕТ! Она карабкается вверх, вверх, вверх, выше, чем когда-либо. &#x27;Я вижу весь пруд отсюда!&#x27; визжит она.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/luna-red-eye-flash.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Red Eye Trick!</h2>
+            <h2 data-lang="es">¡El Truco de los Ojos Rojos!</h2>
+            <h2 data-lang="ru">Фокус с красными глазами!</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Time for the best trick in the rainforest,&#x27; says Mama with a wink. &#x27;When someone sneaks up on you — FLASH!&#x27; Mama opens her huge red eyes as wide as they&#x27;ll go. The sudden burst of bright red is startling! &#x27;It surprises them so much, they forget what they were doing!&#x27; Luna practices in front of a dewdrop mirror. She opens her eyes wide — FLASH! &#x27;Wow!&#x27; says Brio, genuinely startled. &#x27;You&#x27;re a natural!&#x27; Luna giggles. Having red eyes is the COOLEST thing ever.</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Hora del mejor truco de la selva,&#x27; dice Mamá con un guiño. &#x27;Cuando alguien se acerca sigilosamente — ¡FLASH!&#x27; Mamá abre sus enormes ojos rojos lo más que puede. ¡El repentino destello de rojo brillante es sorprendente! &#x27;¡Los sorprende tanto que olvidan lo que estaban haciendo!&#x27; Luna practica frente a un espejo de gota de rocío. Abre los ojos bien grandes — ¡FLASH! &#x27;¡Wow!&#x27; dice Brio, genuinamente sorprendido. &#x27;¡Eres una natural!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Время для лучшего фокуса в тропическом лесу,&#x27; говорит Мама с подмигиванием. &#x27;Когда кто-то подкрадывается — ВСПЫШКА!&#x27; Мама широко раскрывает свои огромные красные глаза. Внезапная вспышка ярко-красного поражает! &#x27;Это так удивляет их, что они забывают, что делали!&#x27; Луна практикуется перед зеркалом из капельки росы. Она широко раскрывает глаза — ВСПЫШКА! &#x27;Ого!&#x27; говорит Брио, по-настоящему удивлённый. &#x27;Ты прирождённая!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/luna-tongue-catch.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Sticky Tongue!</h2>
+            <h2 data-lang="es">¡La Lengua Pegajosa!</h2>
+            <h2 data-lang="ru">Липкий язычок!</h2>
+            <div data-lang="en" class="active">
+                <p>Luna is hungry, and Papa says it&#x27;s time for a VERY important lesson. &#x27;See that little fly?&#x27; Papa points. &#x27;Watch this.&#x27; His tongue SHOOTS out like a pink lightning bolt — ZAP! — and the fly is gone. &#x27;YOUR TURN!&#x27; Papa says. Luna focuses hard. She sees a tiny gnat land on a flower. She takes aim and — THWAP! Her sticky tongue zaps out and catches it! Her very first bug! It&#x27;s delicious! &#x27;THAT WAS AMAZING!&#x27; Luna bounces up and down. Papa beams. &#x27;That&#x27;s my girl.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Luna tiene hambre, y Papá dice que es hora de una lección MUY importante. &#x27;¿Ves esa mosquita?&#x27; señala Papá. &#x27;Mira esto.&#x27; Su lengua SALE disparada como un rayo rosa — ¡ZAP! — y la mosca desaparece. &#x27;¡TU TURNO!&#x27; dice Papá. Luna se concentra mucho. Ve un pequeño mosquito posarse en una flor. Apunta y — ¡THWAP! ¡Su lengua pegajosa sale disparada y lo atrapa! ¡Su primer bichito! ¡Está delicioso! &#x27;¡ESO FUE INCREÍBLE!&#x27; Luna salta de arriba abajo.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Луна голодна, и Папа говорит, что пришло время ОЧЕНЬ важного урока. &#x27;Видишь ту мушку?&#x27; показывает Папа. &#x27;Смотри.&#x27; Его язык ВЫСТРЕЛИВАЕТ как розовая молния — ЗАП! — и мушки нет. &#x27;ТВОЯ ОЧЕРЕДЬ!&#x27; говорит Папа. Луна сосредотачивается. Она видит крошечного комарика на цветке. Прицеливается и — ШЛ-ЛЁП! Её липкий язычок выстреливает и ловит его! Её самый первый жучок! Он вкусный! &#x27;ЭТО БЫЛО ПОТРЯСАЮЩЕ!&#x27; Луна прыгает от радости.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/luna-great-leap.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Small bright green red-eyed tree frog leaping magnificently between branches in golden sunset light, family of frogs watching proudly, magical rainforest canopy"
+                 data-alt-en="Small bright green red-eyed tree frog leaping magnificently between branches in golden sunset light, family of frogs watching proudly, magical rainforest canopy"
+                 data-alt-es="Pequeña rana arbórea verde de ojos rojos saltando magníficamente entre ramas en la luz dorada del atardecer, familia de ranas observando con orgullo, mágica copa de la selva"
+                 data-alt-ru="Маленькая ярко-зелёная красноглазая древесная лягушка великолепно прыгающая между ветвями в золотистом закатном свете, семья лягушек гордо наблюдает, волшебная крона тропического леса"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Luna&#x27;s Great Leap!</h2>
+            <h2 data-lang="es">¡El Gran Salto de Luna!</h2>
+            <h2 data-lang="ru">Великий прыжок Луны!</h2>
+            <div data-lang="en" class="active">
+                <p>The moment has come — Luna&#x27;s GREAT LEAP! She stands on a branch high up in the canopy. The next branch is FAR away. Mama, Papa, and Brio all watch. &#x27;You can do it, Luna!&#x27; they cheer. Luna crouches, feels the power in her strong back legs, and — LEAPS! She SOARS through the golden sunset air, legs outstretched like she&#x27;s flying, and — STICK! She lands perfectly on the far branch! &#x27;I DID IT! I DID IT!&#x27; The whole family cheers. Luna went from a tiny egg to the greatest leaper in the rainforest. And it all started on one perfect leaf.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Ha llegado el momento — el GRAN SALTO de Luna! Está de pie en una rama alta en la copa de los árboles. La siguiente rama está LEJOS. Mamá, Papá y Brio observan. &#x27;¡Tú puedes, Luna!&#x27; animan. Luna se agacha, siente el poder en sus fuertes patas traseras, y — ¡SALTA! ¡VUELA por el aire dorado del atardecer, con las patas extendidas como si volara, y — ¡STICK! ¡Aterriza perfectamente en la rama lejana! &#x27;¡LO LOGRÉ! ¡LO LOGRÉ!&#x27; Toda la familia celebra.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Момент настал — ВЕЛИКИЙ ПРЫЖОК Луны! Она стоит на ветке высоко в кроне. Следующая ветка ДАЛЕКО. Мама, Папа и Брио смотрят. &#x27;Ты сможешь, Луна!&#x27; подбадривают они. Луна приседает, чувствует силу в своих крепких задних лапках, и — ПРЫГАЕТ! Она ПАРИТ сквозь золотой закатный воздух, лапки вытянуты, будто она летит, и — ПРИЛИП! Она идеально приземляется на дальнюю ветку! &#x27;Я СДЕЛАЛА ЭТО!&#x27; Вся семья ликует.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/family-chorus.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Our Family Song</h2>
+            <h2 data-lang="es">Nuestra Canción Familiar</h2>
+            <h2 data-lang="ru">Наша семейная песня</h2>
+            <div data-lang="en" class="active">
+                <p>As the moon rises over the rainforest, Luna joins the greatest concert on Earth — the frog chorus! Papa&#x27;s voice is a deep, warm &#x27;CROCK-CROCK.&#x27; Mama&#x27;s voice is a gentle, silvery &#x27;PEEP-PEEP.&#x27; Brio&#x27;s is a bouncy &#x27;RIBBIT-RIBBIT.&#x27; And Luna? Luna has her very own special voice — a bright, happy &#x27;KREEE-KREEE!&#x27; Together, the four of them sit on their favorite branch, singing to the moon. Around them, a hundred different frog voices join in. The rainforest is alive with music. And Luna knows: this is exactly where she belongs.</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando la luna se eleva sobre la selva, Luna se une al mayor concierto de la Tierra — ¡el coro de ranas! La voz de Papá es un profundo y cálido &#x27;CROAC-CROAC.&#x27; La voz de Mamá es un suave y plateado &#x27;PIP-PIP.&#x27; La de Brio es un alegre &#x27;RIBBIT-RIBBIT.&#x27; ¿Y Luna? Luna tiene su propia voz especial — un brillante y feliz &#x27;¡CRIIII-CRIIII!&#x27; Juntos, los cuatro se sientan en su rama favorita, cantándole a la luna. A su alrededor, cien voces diferentes de ranas se unen. La selva está viva con música.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда луна поднимается над тропическим лесом, Луна присоединяется к величайшему концерту на Земле — лягушачьему хору! Голос Папы — глубокий, тёплый &#x27;КВАА-КВАА.&#x27; Голос Мамы — нежный, серебристый &#x27;ПИП-ПИП.&#x27; У Брио — весёлый &#x27;РИБИТ-РИБИТ.&#x27; А Луна? У Луны свой особенный голос — яркий, счастливый &#x27;КРИИ-КРИИ!&#x27; Вчетвером они сидят на своей любимой ветке и поют луне. Вокруг сотня разных лягушачьих голосов присоединяются. Тропический лес полон музыки.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-sticky-toes.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Super Sticky Toes"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Super Sticky Toes</h3>
+                    <h3 data-lang="es">Dedos Súper Pegajosos</h3>
+                    <h3 data-lang="ru">Суперлипкие пальчики</h3>
+                    <p data-lang="en" class="active">Look at Luna&#x27;s orange toes — see those round discs at the tips? Those are sticky toe pads! Each pad works like a tiny suction cup, creating wet adhesion that lets tree frogs climb smooth leaves, wet bark, and even glass. The pads produce a thin layer of mucus that fills every tiny bump on a surface, creating an incredibly strong grip. That&#x27;s how Luna can sleep upside down!</p>
+                    <p data-lang="es">¡Mira los dedos naranjas de Luna — ves esos discos redondos en las puntas? ¡Esas son almohadillas pegajosas! Cada almohadilla funciona como una pequeña ventosa, creando adhesión húmeda que permite a las ranas arbóreas trepar hojas lisas, corteza mojada e incluso vidrio. Las almohadillas producen una fina capa de mucosa que llena cada pequeño bulto en una superficie.</p>
+                    <p data-lang="ru">Посмотрите на оранжевые пальчики Луны — видите круглые диски на кончиках? Это липкие подушечки! Каждая работает как крошечная присоска, создавая влажную адгезию, которая позволяет древесным лягушкам карабкаться по гладким листьям, мокрой коре и даже стеклу. Подушечки выделяют тонкий слой слизи, заполняющий каждую неровность поверхности.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-skin-texture.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Living Jewel Skin"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Living Jewel Skin</h3>
+                    <h3 data-lang="es">Piel de Joya Viviente</h3>
+                    <h3 data-lang="ru">Кожа-драгоценность</h3>
+                    <p data-lang="en" class="active">Papa Verde&#x27;s brilliant green skin isn&#x27;t just beautiful — it&#x27;s alive with special abilities! The green color comes from a combination of blue and yellow pigments layered in the skin. During the day, red-eyed tree frogs close their eyes and tuck in their legs, showing only green — perfect camouflage among the leaves. Their blue-and-yellow striped sides are hidden until they jump!</p>
+                    <p data-lang="es">¡La brillante piel verde de Papá Verde no es solo hermosa — está viva con habilidades especiales! El color verde proviene de una combinación de pigmentos azules y amarillos en capas de la piel. Durante el día, las ranas de ojos rojos cierran los ojos y recogen las patas, mostrando solo verde — perfecto camuflaje entre las hojas.</p>
+                    <p data-lang="ru">Блестящая зелёная кожа Папы Верде не просто красива — она обладает особыми способностями! Зелёный цвет образуется из комбинации синих и жёлтых пигментов, расположенных слоями в коже. Днём красноглазые древесные лягушки закрывают глаза и поджимают лапки, показывая только зелёное — идеальный камуфляж среди листьев.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-eye-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Ruby Red Eyes"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Ruby Red Eyes</h3>
+                    <h3 data-lang="es">Ojos Rojo Rubí</h3>
+                    <h3 data-lang="ru">Рубиновые глаза</h3>
+                    <p data-lang="en" class="active">Luna&#x27;s stunning red eyes serve an important purpose — they&#x27;re a defense mechanism called &#x27;startle coloration.&#x27; When a sleeping frog opens its eyes suddenly, the flash of bright red confuses predators, giving the frog time to escape. The vertical slit pupil can open wide in darkness for excellent night vision, since these frogs are nocturnal — they&#x27;re most active at night!</p>
+                    <p data-lang="es">¡Los impresionantes ojos rojos de Luna tienen un propósito importante — son un mecanismo de defensa llamado &#x27;coloración de sobresalto&#x27;! Cuando una rana dormida abre los ojos de repente, el destello de rojo brillante confunde a los depredadores, dando tiempo a la rana para escapar. La pupila vertical puede abrirse en la oscuridad para una excelente visión nocturna.</p>
+                    <p data-lang="ru">Потрясающие красные глаза Луны служат важной цели — это защитный механизм, называемый &#x27;окраска вспугивания.&#x27; Когда спящая лягушка внезапно открывает глаза, вспышка ярко-красного сбивает с толку хищников, давая лягушке время убежать. Вертикальный зрачок может широко раскрываться в темноте для отличного ночного зрения.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-tongue-anatomy.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Lightning Tongue"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Lightning Tongue</h3>
+                    <h3 data-lang="es">Lengua Relámpago</h3>
+                    <h3 data-lang="ru">Молниеносный язык</h3>
+                    <p data-lang="en" class="active">A frog&#x27;s tongue is one of the fastest muscles in the animal kingdom! It can extend and retract in just 0.07 seconds — faster than you can blink! The tongue is attached at the front of the mouth (not the back like ours), so it can flip out extra far. The tip is covered in super-sticky mucus that&#x27;s 50 times stickier than anything humans have made. Once a bug lands on that tongue, there&#x27;s no escape!</p>
+                    <p data-lang="es">¡La lengua de una rana es uno de los músculos más rápidos del reino animal! Puede extenderse y retractarse en solo 0.07 segundos — ¡más rápido de lo que puedes parpadear! La lengua está pegada en la parte delantera de la boca (no atrás como la nuestra), así que puede salir extra lejos. La punta está cubierta de una mucosa súper pegajosa que es 50 veces más pegajosa que cualquier cosa hecha por humanos.</p>
+                    <p data-lang="ru">Язык лягушки — одна из самых быстрых мышц в животном мире! Он может выдвигаться и втягиваться всего за 0.07 секунды — быстрее, чем вы моргаете! Язык прикреплён к передней части рта (не к задней, как наш), поэтому может выбрасываться очень далеко. Кончик покрыт суперлипкой слизью, которая в 50 раз липче всего, что создали люди.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Frog Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Ranas!</h2>
+            <h2 data-lang="ru">Удивительные факты о лягушках!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-metamorphosis.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="The Great Metamorphosis"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">The Great Metamorphosis</h3>
+                        <h3 data-lang="es">La Gran Metamorfosis</h3>
+                        <h3 data-lang="ru">Великий метаморфоз</h3>
+                        <p data-lang="en" class="active">Frogs go through one of nature&#x27;s most amazing transformations! They start as eggs, hatch into tadpoles that breathe water through gills, then slowly grow legs, absorb their tails, develop lungs, and become air-breathing frogs. The whole process takes about 12 to 16 weeks — that&#x27;s like becoming a completely different animal in just three months!</p>
+                        <p data-lang="es">¡Las ranas pasan por una de las transformaciones más asombrosas de la naturaleza! Comienzan como huevos, nacen como renacuajos que respiran agua a través de branquias, luego lentamente les crecen patas, absorben sus colas, desarrollan pulmones y se convierten en ranas que respiran aire. ¡Todo el proceso toma de 12 a 16 semanas — es como convertirse en un animal completamente diferente en solo tres meses!</p>
+                        <p data-lang="ru">Лягушки проходят через одно из самых удивительных превращений в природе! Начинают как яйца, вылупляются в головастиков, дышащих жабрами, потом постепенно отращивают лапки, впитывают хвосты, развивают лёгкие и становятся лягушками, дышащими воздухом. Весь процесс занимает 12-16 недель — это как стать совершенно другим животным всего за три месяца!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-breathing.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Breathing Through Skin!"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Breathing Through Skin!</h3>
+                        <h3 data-lang="es">¡Respirando a Través de la Piel!</h3>
+                        <h3 data-lang="ru">Дышат через кожу!</h3>
+                        <p data-lang="en" class="active">Frogs can breathe through their skin! Their moist, thin skin allows oxygen to pass right through. This means frogs can breathe underwater through their skin (though tadpoles use gills). That&#x27;s why frogs always need to stay moist — their skin is like a second pair of lungs! Some frogs don&#x27;t even have lungs at all and breathe entirely through their skin.</p>
+                        <p data-lang="es">¡Las ranas pueden respirar a través de su piel! Su piel húmeda y delgada permite que el oxígeno pase directamente. Esto significa que las ranas pueden respirar bajo el agua a través de su piel (aunque los renacuajos usan branquias). ¡Por eso las ranas siempre necesitan mantenerse húmedas — su piel es como un segundo par de pulmones!</p>
+                        <p data-lang="ru">Лягушки могут дышать через кожу! Их влажная, тонкая кожа позволяет кислороду проходить прямо через неё. Это значит, что лягушки могут дышать под водой через кожу (хотя головастики используют жабры). Вот почему лягушки всегда должны оставаться влажными — их кожа как вторая пара лёгких!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-jumping.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Super Jumpers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Super Jumpers</h3>
+                        <h3 data-lang="es">Súper Saltadores</h3>
+                        <h3 data-lang="ru">Суперпрыгуны</h3>
+                        <p data-lang="en" class="active">Some frogs can jump over 20 times their own body length in a single leap! That would be like a human jumping the length of a basketball court. Their powerful back legs work like springs, storing energy and releasing it all at once. Red-eyed tree frogs are especially good jumpers — they leap from branch to branch high up in the rainforest canopy!</p>
+                        <p data-lang="es">¡Algunas ranas pueden saltar más de 20 veces la longitud de su cuerpo en un solo salto! Eso sería como si un humano saltara la longitud de una cancha de baloncesto. Sus poderosas patas traseras funcionan como resortes, almacenando energía y liberándola de golpe. ¡Las ranas arbóreas de ojos rojos son especialmente buenas saltadoras!</p>
+                        <p data-lang="ru">Некоторые лягушки могут прыгнуть на расстояние более 20 длин своего тела за один прыжок! Это как если бы человек перепрыгнул баскетбольную площадку. Их мощные задние лапы работают как пружины, накапливая энергию и высвобождая её разом. Красноглазые древесные лягушки — особенно хорошие прыгуны!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-colors.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Rainbow of Frogs"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Rainbow of Frogs</h3>
+                        <h3 data-lang="es">Arcoíris de Ranas</h3>
+                        <h3 data-lang="ru">Радуга лягушек</h3>
+                        <p data-lang="en" class="active">Frogs come in every color of the rainbow! There are bright blue poison dart frogs, strawberry-red frogs, golden yellow frogs, and even see-through glass frogs where you can see their organs! The bright colors often mean &#x27;don&#x27;t eat me!&#x27; — warning that the frog might not taste very nice. Red-eyed tree frogs use their colors to startle anyone who bothers them — surprise!</p>
+                        <p data-lang="es">¡Las ranas vienen en todos los colores del arcoíris! Hay ranas dardo venenosas azul brillante, ranas rojo fresa, ranas amarillo dorado, ¡e incluso ranas de cristal transparentes donde puedes ver sus órganos! Los colores brillantes a menudo significan &#x27;¡no me comas!&#x27; — advirtiendo que la rana podría no saber muy bien.</p>
+                        <p data-lang="ru">Лягушки бывают всех цветов радуги! Есть ярко-голубые ядовитые лягушки-дротики, клубнично-красные лягушки, золотисто-жёлтые лягушки и даже прозрачные стеклянные лягушки, сквозь которых видны органы! Яркие цвета часто означают &#x27;не ешь меня!&#x27; — предупреждая, что лягушка может быть невкусной.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the most magical transformation in the animal kingdom</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando la transformación más mágica del reino animal</p>
+        <p data-lang="ru" style="margin-top: 10px;">Celebrating самое волшебное превращение в животном мире</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

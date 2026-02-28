@@ -1,0 +1,113 @@
+{
+  "chapter": "seahorses",
+  "createdAt": "2026-02-28T05:06:06.979Z",
+  "characters": [
+    {
+      "id": "papa-sol",
+      "name": "Papa Sol",
+      "description": "Proud handsome seahorse father in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin",
+      "uniqueFeatures": [
+        "Deep WARM ORANGE body color with GOLDEN SPECKLES that shimmer — his signature look",
+        "ROUNDED belly pouch — prominently visible, his defining feature as the baby-carrier",
+        "LONG elegant snout — refined and distinguished",
+        "Beautiful FAN-LIKE dorsal fin — wide and delicate",
+        "SHORTER than Mama Pearl — stockier, more compact build",
+        "Curly PREHENSILE tail — always gripping something"
+      ],
+      "personality": "Gentle and patient — often seen rocking gently, always counting babies, warm and protective",
+      "notLike": "NOT as tall or slender as Mama Pearl, NOT pink like Mama, NOT tiny like babies Coral and Bubbles"
+    },
+    {
+      "id": "mama-pearl",
+      "name": "Mama Pearl",
+      "description": "Graceful seahorse mother in shimmering rose-pink with pearlescent white highlights, slightly taller than Papa, delicate almost-transparent fins",
+      "uniqueFeatures": [
+        "Shimmering ROSE-PINK body — clearly different from Papa's orange",
+        "PEARLESCENT WHITE highlights running along her ridges like tiny opals",
+        "SLIGHTLY TALLER than Papa Sol — elegant and elongated build",
+        "Delicate ALMOST-TRANSPARENT fins — catch light like stained glass windows",
+        "Graceful curved posture — always poised and elegant",
+        "More SLENDER build than Papa — no belly pouch"
+      ],
+      "personality": "Elegant and loving — moves with flowing grace, always initiating the morning dance, affectionate",
+      "notLike": "NOT orange like Papa Sol, NOT stocky or round-bellied like Papa, NOT tiny like babies"
+    },
+    {
+      "id": "coral",
+      "name": "Coral",
+      "description": "Tiny baby seahorse in bright sunny yellow with baby-pink spots, enormous round curious eyes, always curling tail around things",
+      "uniqueFeatures": [
+        "Bright SUNNY YELLOW body — vivid and warm like sunshine",
+        "A few BABY-PINK SPOTS scattered across body — cute freckle-like markings",
+        "ENORMOUS round curious eyes — disproportionately large, always wide open",
+        "TINY size — much much smaller than both parents",
+        "Tail always CURLING around something — seagrass, coral, other tails",
+        "Lively energetic posture — leaning forward, always exploring"
+      ],
+      "personality": "Curious and adventurous — first to explore, always pointing snout at new things, excitable",
+      "notLike": "NOT purple like Bubbles, NOT round like Bubbles, much SMALLER than parents, NOT orange or pink"
+    },
+    {
+      "id": "bubbles",
+      "name": "Bubbles",
+      "description": "Slightly rounder baby seahorse in soft lavender-purple with white belly, tall coronet, shy, always gripping Papa's tail",
+      "uniqueFeatures": [
+        "Soft LAVENDER-PURPLE body color — distinctly different from yellow Coral",
+        "WHITE BELLY — visible contrast against the purple",
+        "Distinctively TALL CORONET on head — the crown-like bump is her signature feature",
+        "Slightly ROUNDER build than Coral — chubbier, softer shape",
+        "SHY posture — often partially hidden behind Papa's tail",
+        "TINY size — same generation as Coral, much smaller than parents"
+      ],
+      "personality": "Shy and sweet — always gripping Papa's tail, peeks out cautiously, gentle and quiet",
+      "notLike": "NOT yellow like Coral, NOT as bold or forward-leaning as Coral, NOT orange like Papa, NOT pink like Mama"
+    }
+  ],
+  "step0": {
+    "status": "pending",
+    "attempts": 0,
+    "feedback": []
+  },
+  "step1": {
+    "status": "approved",
+    "attempts": 1,
+    "feedback": [],
+    "approvedVersion": 1
+  },
+  "step2": {
+    "status": "approved",
+    "characters": {
+      "papa-sol": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "mama-pearl": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "coral": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "bubbles": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      }
+    }
+  },
+  "step3": {
+    "status": "approved",
+    "chosenStyle": 1,
+    "styleName": "translucency-botanical",
+    "chosenMoods": [
+      "translucency",
+      "lush-botanical"
+    ],
+    "styleDescription": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nEmphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.\n\nRich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper."
+  },
+  "updatedAt": "2026-02-28T05:08:52.097Z"
+}

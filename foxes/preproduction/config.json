@@ -1,0 +1,113 @@
+{
+  "chapter": "foxes",
+  "createdAt": "2026-02-28T05:06:04.763Z",
+  "characters": [
+    {
+      "id": "papa-russet",
+      "name": "Papa Russet",
+      "description": "Tall handsome dog fox with deep rich russet coat, dramatic silver streak along his back, long elegant black legs, magnificent bushy tail, warm amber eyes",
+      "uniqueFeatures": [
+        "TALLEST character — significantly larger than Mama Fern, towers over both kits",
+        "Deep RICH RUSSET coat — darker and more intense red than any other character",
+        "Dramatic SILVER STREAK running along his back — his signature mark, like a bolt of lightning",
+        "Long ELEGANT BLACK LEGS — tall and powerful, built for speed and silent movement",
+        "MAGNIFICENT bushy tail — the biggest tail, used as a blanket for the whole family",
+        "Warm AMBER eyes — golden-brown, always alert and watchful"
+      ],
+      "personality": "Wise and adventurous — stands tall and alert, ears always turning, protective but encouraging",
+      "notLike": "NOT slim or delicate like Mama Fern, NOT small or round like the kits, NOT light-coloured"
+    },
+    {
+      "id": "mama-fern",
+      "name": "Mama Fern",
+      "description": "Graceful vixen with softer golden-orange coat, beautiful cream chest, gentle warm brown eyes, distinctive pale patch behind one ear",
+      "uniqueFeatures": [
+        "SOFTER GOLDEN-ORANGE coat — clearly lighter and warmer-toned than Papa's deep russet",
+        "Beautiful CREAM CHEST — prominent light patch on chest and belly",
+        "Gentle warm BROWN eyes — softer and more nurturing than Papa's amber",
+        "Distinctive PALE PATCH behind one ear — her unique identifying mark",
+        "More SLENDER and graceful build than Papa — elegant but not as tall",
+        "Often seen CURLED protectively — body language always nurturing and sheltering"
+      ],
+      "personality": "Patient and nurturing — often curled protectively around kits, gentle and wise about the forest",
+      "notLike": "NOT as tall or dark as Papa Russet, NOT as small as the kits, NOT as intense or bold-coloured"
+    },
+    {
+      "id": "pip",
+      "name": "Pip",
+      "description": "Smallest kit with brightest vivid orange fur, oversized perky ears, one distinctive white sock on front left paw, curious tilted-head pose",
+      "uniqueFeatures": [
+        "SMALLEST character — much smaller than both parents, slightly smaller than Clover",
+        "BRIGHTEST vivid orange fur — more intensely orange than any other character",
+        "OVERSIZED perky ears — disproportionately large for his small head",
+        "One distinctive WHITE SOCK on front left paw — the other three paws are black",
+        "Signature TILTED-HEAD pose — always tilting head sideways to listen",
+        "Bright curious eyes — always wide open with wonder"
+      ],
+      "personality": "Curious and brave — always tilting head sideways to listen, eager to try everything, boundless energy",
+      "notLike": "NOT as big as Clover, much SMALLER than adults, NOT dark-auburn like Clover, NOT calm or still"
+    },
+    {
+      "id": "clover",
+      "name": "Clover",
+      "description": "Slightly larger kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail for her age",
+      "uniqueFeatures": [
+        "Slightly LARGER than Pip — bigger and more solidly built, but still clearly a kit",
+        "DARKER REDDISH-AUBURN coat — distinctly different from Pip's bright orange",
+        "EXTRA-LARGE white tail tip — bigger white tip than any other character",
+        "Tiny dark FRECKLE on nose — her unique identifying mark",
+        "Notably BUSHY TAIL for her age — takes after Papa's magnificent brush",
+        "Determined expression — slightly narrowed eyes, focused and clever"
+      ],
+      "personality": "Clever and determined — always figuring things out first, independent and resourceful",
+      "notLike": "NOT as bright-orange as Pip, NOT as big as adults, NOT as small as Pip, NOT timid or hesitant"
+    }
+  ],
+  "step0": {
+    "status": "pending",
+    "attempts": 0,
+    "feedback": []
+  },
+  "step1": {
+    "status": "approved",
+    "attempts": 1,
+    "feedback": [],
+    "approvedVersion": 1
+  },
+  "step2": {
+    "status": "approved",
+    "characters": {
+      "papa-russet": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "mama-fern": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "pip": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "clover": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      }
+    }
+  },
+  "step3": {
+    "status": "approved",
+    "chosenStyle": 1,
+    "styleName": "translucency-botanical",
+    "chosenMoods": [
+      "translucency",
+      "lush-botanical"
+    ],
+    "styleDescription": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nEmphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.\n\nRich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper."
+  },
+  "updatedAt": "2026-02-28T05:08:38.297Z"
+}

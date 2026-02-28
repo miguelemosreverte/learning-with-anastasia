@@ -1,0 +1,469 @@
+# Seahorses Chapter Definition - Coral's First Day in the Reef
+meta:
+  id: seahorses
+  issueNumber: 12
+  date: "February 2026"
+  folderName: "seahorses"
+  title:
+    en: "Seahorses: The Tiniest Dance in the Sea"
+    es: "Caballitos de Mar: La Danza Más Pequeña del Mar"
+    ru: "Морские коньки: Самый крошечный танец в море"
+  subtitle:
+    en: "Coral's First Day in the Reef"
+    es: "El Primer Día de Coral en el Arrecife"
+    ru: "Первый день Коралла на рифе"
+  magazineText:
+    en: "Meet Coral, a tiny sunny-yellow baby seahorse who discovers the wonders of the reef on her very first day! Watch her swirl out of Papa Sol's magical pouch, learn to grip with her curly tail, and discover that seahorse families have the most beautiful dance in all the ocean."
+    es: "¡Conoce a Coral, un diminuto caballito de mar amarillo que descubre las maravillas del arrecife en su primer día! Mírala salir del mágico bolsillo de Papá Sol, aprender a agarrarse con su cola rizada y descubrir que las familias de caballitos de mar tienen la danza más hermosa de todo el océano."
+    ru: "Познакомьтесь с Коралл, крошечным солнечно-жёлтым морским коньком, который открывает чудеса рифа в свой самый первый день! Смотрите, как она выплывает из волшебного мешочка Папы Сола, учится хвататься закрученным хвостиком и узнаёт, что семьи морских коньков исполняют самый красивый танец во всём океане."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Celebrating the most magical dancers in the ocean"
+    es: "Celebrando a los bailarines más mágicos del océano"
+    ru: "Celebrating самых волшебных танцоров океана"
+  description: "Follow Coral the baby seahorse through her first day in the tropical reef, from swirling out of Papa's pouch to learning to grip, eat, and dance with her family"
+  preface:
+    en:
+      - "Welcome to the sparkling coral reef, where the tiniest and most magical fish in the sea live — seahorses! In this adventure, we'll follow Coral, a sunny little baby seahorse, as she discovers the wonders of her colorful underwater home with her devoted Papa Sol and graceful Mama Pearl."
+      - "Seahorses are truly one of nature's greatest surprises. Did you know that seahorse papas carry all the babies in a special pouch? And that seahorse parents dance together every single morning, changing colors and intertwining their tails? They are some of the most loving families in the ocean!"
+      - "Through Coral's first day, you'll discover how seahorses grip with their curly tails, eat with their tubular snouts, look in two directions at once, and perform the most beautiful sunset dance you've ever seen. Get ready for a tiny, magical adventure!"
+    es:
+      - "¡Bienvenidos al brillante arrecife de coral, donde viven los peces más diminutos y mágicos del mar — los caballitos de mar! En esta aventura, seguiremos a Coral, un pequeño y soleado caballito de mar bebé, mientras descubre las maravillas de su colorido hogar submarino con su dedicado Papá Sol y su elegante Mamá Pearl."
+      - "Los caballitos de mar son verdaderamente una de las mayores sorpresas de la naturaleza. ¿Sabías que los papás caballitos de mar cargan a todos los bebés en un bolsillo especial? ¿Y que los padres caballitos de mar bailan juntos cada mañana, cambiando de colores y entrelazando sus colas? ¡Son una de las familias más amorosas del océano!"
+      - "A través del primer día de Coral, descubrirás cómo los caballitos de mar se agarran con sus colas rizadas, comen con sus hocicos tubulares, miran en dos direcciones a la vez y realizan la danza del atardecer más hermosa que hayas visto. ¡Prepárate para una pequeña aventura mágica!"
+    ru:
+      - "Добро пожаловать на сверкающий коралловый риф, где живут самые крошечные и волшебные рыбки моря — морские коньки! В этом приключении мы последуем за Коралл, маленьким солнечным морским коньком, пока она открывает чудеса своего красочного подводного дома вместе с преданным Папой Солом и грациозной Мамой Перл."
+      - "Морские коньки — поистине одно из величайших чудес природы. Знаете ли вы, что папы морских коньков вынашивают всех малышей в специальном мешочке? И что родители морских коньков танцуют вместе каждое утро, меняя цвета и переплетая хвостики? Они — одни из самых любящих семей в океане!"
+      - "Через первый день Коралл вы узнаете, как морские коньки хватаются закрученными хвостиками, едят трубчатыми мордочками, смотрят в двух направлениях одновременно и исполняют самый прекрасный танец на закате. Готовьтесь к крошечному волшебному приключению!"
+
+hero:
+  title:
+    en: "Seahorses"
+    es: "Caballitos de Mar"
+    ru: "Морские коньки"
+  subtitle:
+    en: "The Tiniest Dance in the Sea"
+    es: "La Danza Más Pequeña del Mar"
+    ru: "Самый крошечный танец в море"
+  image: "hero-coral-reef.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Breathtaking tropical coral reef at dawn with shafts of golden sunlight filtering through turquoise water, vivid pink purple orange and yellow corals, swaying sea fans, colorful tropical fish, and sparkling particles floating in the warm water"
+    es: "Impresionante arrecife de coral tropical al amanecer con rayos de luz dorada filtrándose a través del agua turquesa, corales vívidos en rosa púrpura naranja y amarillo, abanicos de mar meciéndose, peces tropicales coloridos y partículas brillantes flotando en el agua cálida"
+    ru: "Захватывающий тропический коралловый риф на рассвете с лучами золотистого света, проникающими сквозь бирюзовую воду, яркие кораллы в розовых фиолетовых оранжевых и жёлтых тонах, покачивающиеся морские веера, разноцветные тропические рыбки и сверкающие частички, парящие в тёплой воде"
+
+sections:
+  # Meet Papa Sol
+  - id: meet-papa
+    generate_character: true
+    mood: [soft-intimate, golden-hour]
+    title:
+      en: "Meet Papa Sol"
+      es: "Conoce a Papá Sol"
+      ru: "Знакомьтесь: Папа Сол"
+    content:
+      en: "Papa Sol is the proudest seahorse in all the reef! He is a handsome fellow in deep warm orange with golden speckles that shimmer like tiny stars whenever the sunlight touches him. His beautiful fan-like dorsal fin flutters so fast it's almost invisible. But the most special thing about Papa is his rounded belly pouch — because inside, dozens of tiny babies are growing! Papa holds onto a piece of swaying seagrass with his curly tail and rocks gently in the current. 'Almost time, little ones,' he whispers to his belly. 'Almost time.'"
+      es: "¡Papá Sol es el caballito de mar más orgulloso de todo el arrecife! Es un apuesto ejemplar de color naranja cálido profundo con motas doradas que brillan como pequeñas estrellas cada vez que la luz del sol lo toca. Su hermosa aleta dorsal en forma de abanico aletea tan rápido que es casi invisible. ¡Pero lo más especial de Papá es su bolsillo redondeado en la barriga — porque adentro, docenas de pequeños bebés están creciendo! Papá se sujeta a una rama de hierba marina con su cola rizada y se mece suavemente en la corriente. 'Ya casi es hora, pequeños,' le susurra a su barriga. 'Ya casi.'"
+      ru: "Папа Сол — самый гордый морской конёк на всём рифе! Он красавец глубокого тёплого оранжевого цвета с золотистыми крапинками, которые мерцают как крошечные звёзды, когда солнечный свет касается его. Его красивый веерообразный спинной плавник трепещет так быстро, что почти невидим. Но самое особенное в Папе — его округлый мешочек на животе — потому что внутри растут десятки крошечных малышей! Папа держится за покачивающуюся морскую траву закрученным хвостиком и мягко качается на течении. 'Уже скоро, малыши,' шепчет он своему животику. 'Уже скоро.'"
+    image: "papa-sol-portrait.jpg"
+    imageAlt:
+      en: "Proud handsome seahorse in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin, holding onto seagrass with curly tail, warm sunlight in turquoise water"
+      es: "Orgulloso y apuesto caballito de mar en naranja cálido profundo con motas doradas, bolsillo redondeado en la barriga, hocico largo y elegante, hermosa aleta dorsal en forma de abanico, sujetándose a hierba marina con cola rizada, luz cálida en agua turquesa"
+      ru: "Гордый красивый морской конёк глубокого тёплого оранжевого цвета с золотистыми крапинками, округлый мешочек на животе, длинная элегантная мордочка, красивый веерообразный спинной плавник, держащийся за морскую траву закрученным хвостиком, тёплый солнечный свет в бирюзовой воде"
+
+  # Meet Mama Pearl
+  - id: meet-mama
+    generate_character: true
+    mood: [translucency, lush-botanical]
+    title:
+      en: "Meet Mama Pearl"
+      es: "Conoce a Mamá Pearl"
+      ru: "Знакомьтесь: Мама Перл"
+    content:
+      en: "Here comes Mama Pearl, the most graceful seahorse in the reef! She glides through the water like a dancer, her shimmering rose-pink body catching the light in every direction. Pearlescent white highlights run along her ridges like tiny opals, and her delicate fins are so thin and beautiful they look like stained glass windows when the sun shines through them. Mama is slightly taller than Papa — elegant and poised. She swims toward Papa with the biggest smile. 'Good morning, my love,' she calls. 'Are you ready for our dance?'"
+      es: "¡Aquí viene Mamá Pearl, la caballita de mar más elegante del arrecife! Se desliza por el agua como una bailarina, su cuerpo rosa brillante capturando la luz en todas las direcciones. Reflejos blancos nacarados recorren sus crestas como pequeños ópalos, y sus delicadas aletas son tan finas y hermosas que parecen vitrales cuando el sol brilla a través de ellas. Mamá es un poco más alta que Papá — elegante y distinguida. Nada hacia Papá con la sonrisa más grande. '¡Buenos días, mi amor!' llama. '¿Estás listo para nuestro baile?'"
+      ru: "А вот и Мама Перл, самая грациозная морская конька на рифе! Она скользит по воде как танцовщица, её мерцающее розовое тело ловит свет со всех сторон. Перламутровые белые блики бегут вдоль её гребней как маленькие опалы, а её нежные плавники настолько тонкие и прекрасные, что похожи на витражи, когда сквозь них светит солнце. Мама немного выше Папы — элегантная и грациозная. Она плывёт к Папе с самой широкой улыбкой. 'Доброе утро, любимый,' зовёт она. 'Ты готов к нашему танцу?'"
+    image: "mama-pearl-portrait.jpg"
+    imageAlt:
+      en: "Graceful seahorse in shimmering rose-pink with pearlescent white highlights along ridges, delicate almost-transparent fins catching light like stained glass, slightly taller build, elegant expression, surrounded by colorful coral"
+      es: "Elegante caballita de mar en rosa brillante con reflejos blancos nacarados a lo largo de las crestas, aletas delicadas casi transparentes capturando la luz como vitrales, complexión un poco más alta, expresión elegante, rodeada de coral colorido"
+      ru: "Грациозная морская конька мерцающего розового цвета с перламутровыми белыми бликами вдоль гребней, нежные почти прозрачные плавники ловящие свет как витражи, чуть более высокая фигура, элегантное выражение, окружённая красочными кораллами"
+
+  # The Morning Dance
+  - id: morning-dance
+    mood: [golden-hour, translucency]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}"]
+    action: "two seahorses — one deep orange with golden speckles, one shimmering rose-pink — meeting at dawn in a coral reef, intertwining their curly tails together, both changing colors with swirls of pastel hues rippling across their bodies, golden sunbeams filtering through turquoise water, romantic and magical, tiny bubbles floating around them"
+    title:
+      en: "The Morning Dance"
+      es: "La Danza Matutina"
+      ru: "Утренний танец"
+    content:
+      en: "Every single morning, Mama Pearl and Papa Sol perform the most beautiful dance in the ocean. They swim toward each other through the golden water, and when they meet — they intertwine their curly tails! Then something magical happens: colors begin to ripple across their bodies! Papa flushes from orange to bright gold. Mama shimmers from pink to glowing peach. They spin together slowly, tails linked, changing colors like a living sunset. 'This is how we say I love you,' Mama whispers. They've danced every morning since they met — and they always will."
+      es: "Cada mañana, Mamá Pearl y Papá Sol realizan la danza más hermosa del océano. Nadan uno hacia el otro a través del agua dorada, y cuando se encuentran — ¡entrelazan sus colas rizadas! Entonces algo mágico sucede: ¡los colores comienzan a ondular por sus cuerpos! Papá cambia de naranja a dorado brillante. Mamá brilla de rosa a melocotón luminoso. Giran juntos lentamente, colas enlazadas, cambiando de colores como un atardecer viviente. 'Así es como decimos te quiero,' susurra Mamá. Han bailado cada mañana desde que se conocieron — y siempre lo harán."
+      ru: "Каждое утро Мама Перл и Папа Сол исполняют самый красивый танец в океане. Они плывут навстречу друг другу через золотистую воду, и когда встречаются — переплетают свои закрученные хвостики! Тогда происходит волшебство: по их телам начинают струиться цвета! Папа переливается из оранжевого в яркое золото. Мама мерцает от розового до светящегося персикового. Они медленно кружатся вместе, хвостики связаны, меняя цвета как живой закат. 'Так мы говорим «я тебя люблю»,' шепчет Мама. Они танцуют каждое утро с момента встречи — и всегда будут."
+    image: "morning-dance.jpg"
+
+  # Papa's Pouch
+  - id: papas-pouch
+    mood: [soft-intimate, translucency]
+    use_character: "${meet-papa.image}"
+    action: "close-up of an orange seahorse with golden speckles gripping seagrass with his curly tail, his rounded belly pouch visibly full and glowing faintly, rocking gently in the current, peaceful coral reef behind him, warm golden-green light, serene and tender"
+    title:
+      en: "Papa's Special Pouch"
+      es: "El Bolsillo Especial de Papá"
+      ru: "Особый мешочек Папы"
+    content:
+      en: "While the babies grow, Papa Sol has the most important job in all the sea. His round pouch is like a tiny nursery — warm, safe, and full of growing seahorse babies! Papa grips a piece of seagrass with his curly tail and rocks gently back and forth in the current. He can't swim very far or very fast right now, but he doesn't mind one bit. 'I'm the luckiest Papa in the ocean,' he says, patting his belly softly. Mama Pearl brings him tiny shrimp to eat and nuzzles him. 'You're doing wonderfully, my love.'"
+      es: "Mientras los bebés crecen, Papá Sol tiene el trabajo más importante de todo el mar. Su bolsillo redondo es como una pequeña guardería — cálido, seguro y lleno de caballitos de mar creciendo. Papá se agarra a una hierba marina con su cola rizada y se mece suavemente con la corriente. No puede nadar muy lejos ni muy rápido ahora, ¡pero no le importa en absoluto! 'Soy el Papá más afortunado del océano,' dice, acariciando suavemente su barriga. Mamá Pearl le trae pequeños camarones para comer y lo acaricia. 'Lo estás haciendo maravillosamente, mi amor.'"
+      ru: "Пока малыши растут, у Папы Сола самая важная работа во всём море. Его круглый мешочек — как крошечные ясли — тёплый, безопасный и полный растущих малышей-коньков! Папа держится за морскую траву закрученным хвостиком и мягко покачивается на течении. Он не может сейчас далеко или быстро плавать, но ему совсем не жаль. 'Я самый счастливый Папа в океане,' говорит он, нежно поглаживая животик. Мама Перл приносит ему крошечных креветок и ласково касается его. 'Ты справляешься чудесно, любимый.'"
+    image: "papas-pouch.jpg"
+
+  # The Big Arrival
+  - id: the-big-arrival
+    mood: [epic-skies, translucency]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}"]
+    action: "dramatic magical moment — an orange seahorse with golden speckles releasing dozens of tiny baby seahorses from his belly pouch into sparkling turquoise water, babies swirling out like confetti in a cloud of tiny bubbles, mama rose-pink seahorse watching nearby with joy, golden sunbeams streaming through the water, coral reef background, the most exciting moment ever"
+    title:
+      en: "The Big Arrival!"
+      es: "¡La Gran Llegada!"
+      ru: "Великое появление!"
+    content:
+      en: "The most exciting day has arrived! Papa Sol grips his seagrass tightly, and then — WHOOSH! Tiny baby seahorses begin swirling out of his pouch like living confetti! Dozens and dozens of miniature seahorses spiral into the sparkling water, each one smaller than a grain of rice! They tumble and twirl in the current, surrounded by a cloud of tiny bubbles. Mama Pearl watches with tears of joy. 'They're here! They're all here!' Papa gasps, out of breath but beaming with pride. It's the most magical moment in the entire reef."
+      es: "¡El día más emocionante ha llegado! Papá Sol se agarra fuerte a su hierba marina, y entonces — ¡WOOSH! ¡Diminutos caballitos de mar bebés comienzan a salir en espiral de su bolsillo como confeti viviente! Docenas y docenas de caballitos de mar en miniatura giran en el agua brillante, ¡cada uno más pequeño que un grano de arroz! Ruedan y dan vueltas en la corriente, rodeados de una nube de pequeñas burbujas. Mamá Pearl observa con lágrimas de alegría. '¡Están aquí! ¡Todos están aquí!' jadea Papá, sin aliento pero radiante de orgullo."
+      ru: "Самый волнующий день настал! Папа Сол крепко хватается за морскую траву, и тогда — ФУУ-У-УШ! Крошечные малыши-коньки начинают выплывать из его мешочка как живое конфетти! Десятки и десятки миниатюрных морских коньков спиралью кружатся в сверкающей воде, каждый меньше рисового зёрнышка! Они кувыркаются и вертятся на течении, окружённые облачком крошечных пузырьков. Мама Перл смотрит со слезами радости. 'Они здесь! Все здесь!' выдыхает Папа, запыхавшийся, но сияющий от гордости."
+    image: "the-big-arrival.jpg"
+
+  # Meet Coral and Bubbles
+  - id: coral-and-bubbles
+    generate_character: true
+    mood: [soft-intimate, lush-botanical]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}"]
+    action: "two distinct tiny baby seahorses side by side — one bright sunny yellow with pink spots and enormous curious eyes, one soft lavender-purple with white belly and tall coronet — floating near their orange father and pink mother seahorse, colorful coral garden background, warm intimate lighting, adorable and heartwarming"
+    title:
+      en: "Meet Coral and Bubbles"
+      es: "Conoce a Coral y Bubbles"
+      ru: "Знакомьтесь: Коралл и Баблс"
+    content:
+      en: "Among all the tiny babies, two little seahorses stand out right away! Coral is bright sunny yellow with the cutest baby-pink spots and the most enormous curious eyes you've ever seen. She immediately starts looking around at EVERYTHING, her little tail curling with excitement. And right beside her is Bubbles — a slightly rounder baby in soft lavender-purple with a white belly and a distinctively tall coronet on her head. Bubbles is a bit shy, and the very first thing she does is grip Papa's tail. 'Don't worry, Bubbles,' Papa says gently. 'I've got you.'"
+      es: "¡Entre todos los diminutos bebés, dos pequeños caballitos de mar destacan de inmediato! Coral es amarilla brillante como el sol con las manchitas rosa más lindas y los ojos curiosos más enormes que hayas visto. Inmediatamente empieza a mirar TODO a su alrededor, su colita rizándose de emoción. Y justo a su lado está Bubbles — una bebé un poco más redonda en suave lavanda-púrpura con barriga blanca y una corona distintivamente alta en su cabeza. Bubbles es un poco tímida, y lo primero que hace es agarrarse a la cola de Papá. 'No te preocupes, Bubbles,' dice Papá suavemente. 'Te tengo.'"
+      ru: "Среди всех крошечных малышей двое маленьких морских коньков сразу выделяются! Коралл — ярко-жёлтая, солнечная, с самыми милыми розовыми пятнышками и самыми огромными любопытными глазами, какие вы когда-либо видели. Она тут же начинает разглядывать ВСЁ вокруг, её маленький хвостик закручивается от волнения. А рядом с ней — Баблс — чуть более круглая малышка нежного лавандово-фиолетового цвета с белым животиком и заметно высокой коронкой на голове. Баблс немного стеснительная, и самое первое, что она делает — хватается за хвост Папы. 'Не волнуйся, Баблс,' мягко говорит Папа. 'Я рядом.'"
+    image: "coral-and-bubbles-portrait.jpg"
+    imageAlt:
+      en: "Two tiny adorable baby seahorses — one bright sunny yellow with pink spots and enormous curious eyes, one soft lavender-purple with white belly and tall coronet — floating together near colorful coral"
+      es: "Dos diminutos y adorables caballitos de mar bebés — uno amarillo brillante con manchas rosas y enormes ojos curiosos, uno suave lavanda-púrpura con barriga blanca y corona alta — flotando juntos cerca de coral colorido"
+      ru: "Два крошечных очаровательных малыша-конька — один ярко-жёлтый с розовыми пятнышками и огромными любопытными глазами, другой нежно-лавандово-фиолетовый с белым животиком и высокой коронкой — плавающие вместе возле красочных кораллов"
+
+  # Tail Gripping
+  - id: tail-gripping
+    mood: [lush-botanical, soft-intimate]
+    use_characters: ["${coral-and-bubbles.image}", "${meet-papa.image}"]
+    action: "two tiny baby seahorses — one yellow, one purple — learning to grip with their curly tails, the yellow one wrapped around a piece of bright green seagrass, the purple one gripping the orange father's tail, coral reef with swaying sea fans behind them, warm dappled sunlight, adorable learning moment"
+    title:
+      en: "Hold On Tight!"
+      es: "¡Agárrate Fuerte!"
+      ru: "Держись крепче!"
+    content:
+      en: "The very first lesson for baby seahorses is the most important one: hold on tight! Seahorses are the slowest swimmers in the ocean, so their curly tails are their superpower. Coral tries gripping a piece of bright green seagrass — her tiny tail wraps around it like a little spring. 'I did it! I did it!' she squeaks. Bubbles tries too, but instead of gripping the seagrass, she wraps her tail around Papa's tail. 'That works too,' Papa laughs. They practice gripping everything — seagrass, coral branches, each other's tails. It's the best game ever!"
+      es: "¡La primera lección para los caballitos de mar bebés es la más importante: agárrate fuerte! Los caballitos de mar son los nadadores más lentos del océano, así que sus colas rizadas son su superpoder. Coral intenta agarrarse a una hierba marina verde brillante — su colita se envuelve alrededor como un pequeño resorte. '¡Lo logré! ¡Lo logré!' chilla. Bubbles también intenta, pero en vez de agarrar la hierba marina, envuelve su cola alrededor de la cola de Papá. 'Eso también funciona,' ríe Papá. Practican agarrar todo — hierba marina, ramas de coral, las colas de los demás."
+      ru: "Самый первый урок для малышей-коньков — самый важный: держись крепко! Морские коньки — самые медленные пловцы в океане, поэтому их закрученные хвостики — их суперсила. Коралл пробует ухватиться за ярко-зелёную морскую траву — её крошечный хвостик обвивается вокруг как маленькая пружинка. 'Получилось! Получилось!' пищит она. Баблс тоже пробует, но вместо травы обвивает хвостиком хвост Папы. 'Так тоже подходит,' смеётся Папа. Они тренируются хвататься за всё подряд — морскую траву, веточки кораллов, хвостики друг друга."
+    image: "tail-gripping.jpg"
+
+  # Tiny Meals
+  - id: tiny-meals
+    mood: [soft-intimate, translucency]
+    use_characters: ["${coral-and-bubbles.image}"]
+    action: "tiny yellow baby seahorse with enormous eyes sucking up microscopic food through her tubular snout, tiny sparkly particles visible being drawn in like a vacuum, purple baby seahorse beside her trying too, surrounded by floating microscopic plankton that sparkles, warm turquoise water with coral in background"
+    title:
+      en: "Snout Snacks!"
+      es: "¡Bocadillos de Hocico!"
+      ru: "Перекус через мордочку!"
+    content:
+      en: "Time for the first meal! Baby seahorses eat by sucking food through their long tubular snouts — SLURRRP! — like a tiny underwater vacuum cleaner. Coral spots a cloud of sparkly microscopic shrimp and — SLUUURP! — she sucks one right up! 'Mmmm!' Her eyes go wide. 'More! More!' Bubbles tries too — SLURP, SLURP — she's a natural! 'You need to eat ALL DAY LONG,' Mama Pearl tells them, 'because you have no stomach! Food goes straight through you.' 'No stomach?!' Coral gasps. 'Best excuse for always eating!'"
+      es: "¡Hora de la primera comida! Los caballitos de mar bebés comen succionando comida a través de sus largos hocicos tubulares — ¡SLURRRP! — como una pequeña aspiradora submarina. Coral ve una nube de diminutos camarones brillantes y — ¡SLURRRP! — ¡succiona uno! '¡Mmmm!' Sus ojos se agrandan. '¡Más! ¡Más!' Bubbles también intenta — ¡SLURP, SLURP! — ¡es una natural! 'Necesitan comer TODO EL DÍA,' les dice Mamá Pearl, 'porque no tienen estómago. La comida pasa directo.' '¿¡Sin estómago!?' jadea Coral. '¡La mejor excusa para siempre estar comiendo!'"
+      ru: "Время первой еды! Малыши-коньки едят, всасывая еду через длинные трубчатые мордочки — ХЛЮП! — как крошечный подводный пылесос. Коралл замечает облачко сверкающих микроскопических креветок и — ХЛЮЮЮП! — всасывает одну! 'Ммм!' Её глаза округляются. 'Ещё! Ещё!' Баблс тоже пробует — ХЛЮП, ХЛЮП — у неё природный талант! 'Вам нужно есть ВЕСЬ ДЕНЬ,' говорит им Мама Перл, 'потому что у вас нет желудка! Еда проходит насквозь.' 'Нет желудка?!' ахает Коралл. 'Лучшее оправдание, чтобы всегда кушать!'"
+    image: "tiny-meals.jpg"
+
+  # Two-Way Eyes
+  - id: two-way-eyes
+    mood: [lush-botanical, translucency]
+    use_characters: ["${coral-and-bubbles.image}"]
+    action: "close-up of a tiny bright yellow baby seahorse with one eye looking forward at a colorful clownfish and the other eye looking backward at a purple baby seahorse, both eyes clearly pointing in different directions, vibrant coral reef background with anemones and sea fans, warm playful lighting, funny and adorable"
+    title:
+      en: "Eyes Everywhere!"
+      es: "¡Ojos por Todas Partes!"
+      ru: "Глаза повсюду!"
+    content:
+      en: "Coral makes the FUNNIEST discovery! She's looking at a pretty orange clownfish swimming in front of her, when she realizes — she can ALSO see Bubbles sneaking up behind her! Each of her eyes can look in a completely different direction at the same time! 'Bubbles, I can see you back there!' Coral giggles. 'HOW?!' Bubbles squeaks, startled. 'My eyes are magic! One looks forward, one looks backward!' Coral spins one eye up and one eye down. 'I can see the sky AND the sand at the same time!' Papa laughs. 'That's your seahorse superpower, little ones.'"
+      es: "¡Coral hace el descubrimiento MÁS GRACIOSO! Está mirando a un bonito pez payaso naranja nadando frente a ella, cuando se da cuenta — ¡TAMBIÉN puede ver a Bubbles acercándose por detrás! ¡Cada uno de sus ojos puede mirar en una dirección completamente diferente al mismo tiempo! '¡Bubbles, puedo verte allí atrás!' ríe Coral. '¿¡CÓMO!?' chilla Bubbles, asustada. '¡Mis ojos son mágicos! ¡Uno mira adelante, otro mira atrás!' Coral gira un ojo hacia arriba y otro hacia abajo. '¡Puedo ver el cielo Y la arena al mismo tiempo!' Papá ríe. 'Ese es su superpoder de caballito de mar, pequeñas.'"
+      ru: "Коралл делает САМОЕ СМЕШНОЕ открытие! Она смотрит на красивую оранжевую рыбку-клоуна, плывущую перед ней, когда понимает — она ТАКЖЕ видит Баблс, подкрадывающуюся сзади! Каждый её глаз может смотреть в совершенно разном направлении одновременно! 'Баблс, я вижу тебя сзади!' хихикает Коралл. 'КАК?!' пищит Баблс, испуганная. 'Мои глаза волшебные! Один смотрит вперёд, другой — назад!' Коралл поворачивает один глаз вверх, а другой вниз. 'Я вижу небо И песок одновременно!' Папа смеётся. 'Это ваша суперсила морских коньков, малышки.'"
+    image: "two-way-eyes.jpg"
+
+  # Reef Exploration
+  - id: reef-exploration
+    mood: [lush-botanical, epic-skies]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}", "${coral-and-bubbles.image}"]
+    action: "seahorse family — orange father, rose-pink mother, tiny yellow baby and tiny purple baby — touring a magnificent colorful coral reef together, swimming past giant purple sea fans, bright orange anemones with clownfish, yellow tube sponges, schools of tiny blue fish, golden sunbeams creating light shafts through the water, magical and awe-inspiring underwater landscape"
+    title:
+      en: "The Grand Reef Tour"
+      es: "El Gran Tour del Arrecife"
+      ru: "Великая экскурсия по рифу"
+    content:
+      en: "Time for an adventure! The whole family sets out to explore their magnificent reef home. They drift past waving purple sea fans as tall as trees, bright orange anemones where clownfish play peek-a-boo, yellow tube sponges that look like chimneys, and gardens of coral in every color imaginable. 'Look, Mama! A starfish!' squeals Coral, pointing with her snout. 'Look, Papa! Blue fish!' Bubbles whispers from behind Papa's tail. The reef is an endless wonderland of color and life. Even Papa and Mama discover something new. 'We've lived here our whole lives,' Mama marvels, 'and it still surprises us.'"
+      es: "¡Hora de una aventura! Toda la familia sale a explorar su magnífico hogar de arrecife. Se deslizan junto a abanicos de mar púrpura ondulantes tan altos como árboles, anémonas naranjas brillantes donde los peces payaso juegan al escondite, esponjas tubulares amarillas que parecen chimeneas, y jardines de coral en cada color imaginable. '¡Mira, Mamá! ¡Una estrella de mar!' chilla Coral, señalando con su hocico. '¡Mira, Papá! ¡Peces azules!' susurra Bubbles desde detrás de la cola de Papá. El arrecife es un mundo maravilloso sin fin de color y vida."
+      ru: "Время приключений! Вся семья отправляется исследовать свой великолепный рифовый дом. Они проплывают мимо покачивающихся фиолетовых морских вееров высотой с деревья, ярко-оранжевых актиний, где рыбки-клоуны играют в прятки, жёлтых трубчатых губок, похожих на дымоходы, и садов кораллов всех мыслимых цветов. 'Смотри, Мама! Морская звезда!' визжит Коралл, показывая мордочкой. 'Смотри, Папа! Голубые рыбки!' шепчет Баблс из-за Папиного хвоста. Риф — бесконечная страна чудес, полная красок и жизни."
+    image: "reef-exploration.jpg"
+
+  # The Color Dance (Finale)
+  - id: color-dance
+    mood: [golden-hour, epic-skies]
+    use_characters: ["${meet-papa.image}", "${meet-mama.image}", "${coral-and-bubbles.image}"]
+    action: "sunset scene underwater — orange father seahorse and rose-pink mother seahorse with tails intertwined performing their color-changing dance, nearby two tiny baby seahorses — one yellow one purple — trying to copy them, their little bodies flickering through rainbow colors clumsily, golden sunset light streaming down through the water, coral reef silhouettes, magical and heartwarming family moment, particles of light floating like stars"
+    title:
+      en: "The Sunset Dance"
+      es: "La Danza del Atardecer"
+      ru: "Танец на закате"
+    content:
+      en: "As the golden sunset light streams down through the water, Mama Pearl and Papa Sol begin their evening dance. Their tails intertwine, and colors ripple across their bodies — orange to gold, pink to peach, then both shimmer with rainbow light. And then something wonderful happens: Coral and Bubbles try to dance too! Coral flickers from yellow to green to — OOPS — bright red! Bubbles flashes from purple to blue and accidentally turns polka-dotted! They're not very good at it yet, but they're trying SO HARD. The whole family laughs and dances together as the reef glows gold around them. This is home. This is love. This is the tiniest, most beautiful dance in all the sea."
+      es: "Mientras la luz dorada del atardecer se filtra por el agua, Mamá Pearl y Papá Sol comienzan su danza vespertina. Sus colas se entrelazan, y los colores ondean por sus cuerpos — naranja a oro, rosa a melocotón, luego ambos brillan con luz de arcoíris. ¡Y entonces algo maravilloso sucede: Coral y Bubbles intentan bailar también! Coral parpadea de amarillo a verde a — ¡UPS! — ¡rojo brillante! Bubbles destella de púrpura a azul y accidentalmente se vuelve de lunares. No son muy buenas todavía, pero se esfuerzan TANTO. Toda la familia ríe y baila junta mientras el arrecife brilla dorado a su alrededor. Esto es hogar. Esto es amor. Esta es la danza más pequeña y hermosa de todo el mar."
+      ru: "Когда золотистый закатный свет струится сквозь воду, Мама Перл и Папа Сол начинают свой вечерний танец. Их хвостики переплетаются, и по их телам разливаются цвета — оранжевый в золотой, розовый в персиковый, затем оба мерцают радужным светом. И тогда происходит чудесное: Коралл и Баблс тоже пытаются танцевать! Коралл мигает от жёлтого к зелёному и — ОЙ! — ярко-красному! Баблс вспыхивает от фиолетового к голубому и случайно становится в горошек! Они пока не очень хорошо танцуют, но стараются ТАК СИЛЬНО. Вся семья смеётся и танцует вместе, пока риф сияет золотом вокруг них. Это — дом. Это — любовь. Это — самый крошечный, самый прекрасный танец во всём море."
+    image: "color-dance-sunset.jpg"
+    imageAlt:
+      en: "Seahorse family at sunset — orange Papa and pink Mama with tails intertwined dancing, two tiny babies trying to copy them, golden light streaming through water, coral reef glowing, magical rainbow colors flickering across all four seahorses"
+      es: "Familia de caballitos de mar al atardecer — Papá naranja y Mamá rosa con colas entrelazadas bailando, dos diminutos bebés intentando copiarlos, luz dorada atravesando el agua, arrecife brillando, colores de arcoíris mágicos parpadeando en los cuatro caballitos"
+      ru: "Семья морских коньков на закате — оранжевый Папа и розовая Мама с переплетёнными хвостиками танцуют, два крошечных малыша пытаются их копировать, золотистый свет пронизывает воду, риф сияет, волшебные радужные цвета мерцают на всех четырёх коньках"
+
+  # Hidden sections for viewer detail image generation
+  - id: "detail-brood-pouch"
+    image: "detail-brood-pouch.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the seahorse from reference, extreme close-up of a seahorse's rounded brood pouch showing the opening and texture, warm educational illustration, the pouch slightly translucent showing tiny shapes inside. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-prehensile-tail"
+    image: "detail-prehensile-tail.jpg"
+    referenceImage: "${coral-and-bubbles.image}"
+    prompt: "Using the baby seahorse from reference, close-up of a seahorse's curling prehensile tail wrapped tightly around a piece of bright green seagrass, showing the spiral grip, colorful coral behind. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-coronet"
+    image: "detail-coronet.jpg"
+    referenceImage: "${coral-and-bubbles.image}"
+    prompt: "Using the baby seahorse from reference, close-up of a seahorse's coronet — the crown-like bony structure on top of the head, showing its unique intricate shape, warm light. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-dorsal-fin"
+    image: "detail-dorsal-fin.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the seahorse from reference, close-up of a seahorse's tiny dorsal fin fluttering rapidly, motion blur showing the 35-beats-per-second movement, warm underwater light, educational and child-friendly. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-papa-power-img"
+    image: "fun-fact-papa-power.jpg"
+    referenceImage: "${meet-papa.image}"
+    prompt: "Using the seahorse from reference, show an orange seahorse father releasing tiny baby seahorses from his pouch, babies swirling out like confetti, joyful and educational, warm golden underwater light. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-super-snouts-img"
+    image: "fun-fact-super-snouts.jpg"
+    referenceImage: "${coral-and-bubbles.image}"
+    prompt: "Using the baby seahorse from reference, show a yellow baby seahorse sucking up tiny shrimp through its long tubular snout like a vacuum, sparkly particles being drawn in, fun and educational. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-no-stomach-img"
+    image: "fun-fact-no-stomach.jpg"
+    referenceImage: "${coral-and-bubbles.image}"
+    prompt: "Using the baby seahorse from reference, show a cross-section educational illustration of a seahorse's body showing food passing straight through without a stomach, child-friendly diagram with cute seahorse character. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-tiny-swimmers-img"
+    image: "fun-fact-tiny-swimmers.jpg"
+    prompt: "Educational illustration showing a tiny seahorse next to a fast-swimming fish for size and speed comparison, the seahorse's tiny dorsal fin fluttering rapidly with motion lines, fun and child-friendly with warm underwater colors. Classic hand-drawn Disney animation style with warm organic lines."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming magazine cover featuring a tiny bright sunny-yellow baby seahorse with enormous curious eyes and pink spots in the foreground, curling its tail around a piece of coral. Behind, a handsome deep-orange father seahorse with golden speckles and a graceful rose-pink mother seahorse with pearlescent highlights dance with tails intertwined. A soft lavender-purple baby seahorse peeks shyly from behind the father. Vivid tropical coral reef background with turquoise water, golden sunbeams, colorful corals and sea fans. Style: Classic hand-drawn Disney animation — warm organic lines, soulful expressive eyes, painterly brushwork, vintage animation cel warmth. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${coral-and-bubbles.image}"
+      - "${meet-papa.image}"
+      - "${meet-mama.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Tiny yellow baby seahorse Coral in the foreground gripping coral, Papa Sol and Mama Pearl dancing with tails intertwined behind, shy purple Bubbles peeking out, vivid coral reef with golden sunbeams"
+      es: "Diminuta caballita de mar amarilla Coral en primer plano agarrada a un coral, Papá Sol y Mamá Pearl bailando con colas entrelazadas detrás, tímida Bubbles púrpura asomándose, arrecife vívido con rayos dorados"
+      ru: "Крошечная жёлтая малышка-конёк Коралл на переднем плане, держащаяся за коралл, Папа Сол и Мама Перл танцуют с переплетёнными хвостиками позади, застенчивая фиолетовая Баблс выглядывает, яркий коралловый риф с золотистыми лучами"
+
+funFacts:
+  title:
+    en: "Amazing Seahorse Facts!"
+    es: "¡Datos Asombrosos sobre Caballitos de Mar!"
+    ru: "Удивительные факты о морских коньках!"
+  facts:
+    - title:
+        en: "Papa Power"
+        es: "Poder de Papá"
+        ru: "Сила Папы"
+      content:
+        en: "Male seahorses carry and give birth to all the babies — they're one of the only species in the world where the father does this! Papa seahorse has a special pouch on his belly where the eggs grow for 2-4 weeks. When the babies are ready, he pushes them out into the water in a magical cloud of tiny seahorses. One papa can have up to 2,000 babies at once!"
+        es: "¡Los caballitos de mar macho cargan y dan a luz a todos los bebés — son una de las únicas especies del mundo donde el padre hace esto! Papá caballito de mar tiene un bolsillo especial en su barriga donde los huevos crecen durante 2-4 semanas. Cuando los bebés están listos, los empuja al agua en una nube mágica de diminutos caballitos. ¡Un papá puede tener hasta 2,000 bebés a la vez!"
+        ru: "Самцы морских коньков вынашивают и рожают всех малышей — они одни из единственных видов в мире, где это делает отец! У папы-конька есть специальный мешочек на животе, где яйца растут 2-4 недели. Когда малыши готовы, он выпускает их в воду волшебным облачком крошечных коньков. Один папа может родить до 2000 малышей за раз!"
+      image: "fun-fact-papa-power.jpg"
+
+    - title:
+        en: "Super Snouts"
+        es: "Súper Hocicos"
+        ru: "Супер-мордочки"
+      content:
+        en: "Seahorses suck food up through their long tubular snouts like a tiny vacuum cleaner — SLURP! They have no teeth at all, so they swallow their food whole. A single seahorse can eat up to 3,000 tiny brine shrimp in one day! Their snouts are so powerful they can suck up food from over an inch away."
+        es: "¡Los caballitos de mar succionan la comida a través de sus largos hocicos tubulares como una pequeña aspiradora — SLURP! No tienen dientes en absoluto, así que tragan su comida entera. ¡Un solo caballito de mar puede comer hasta 3,000 pequeños camarones de salmuera en un día! Sus hocicos son tan poderosos que pueden succionar comida desde más de dos centímetros de distancia."
+        ru: "Морские коньки всасывают еду через длинные трубчатые мордочки как крошечный пылесос — ХЛЮП! У них совсем нет зубов, поэтому они глотают еду целиком. Один морской конёк может съесть до 3000 крошечных рачков за день! Их мордочки настолько мощные, что могут всасывать еду с расстояния более двух сантиметров."
+      image: "fun-fact-super-snouts.jpg"
+
+    - title:
+        en: "No Stomach!"
+        es: "¡Sin Estómago!"
+        ru: "Без желудка!"
+      content:
+        en: "Seahorses have no stomach at all! Food passes straight through their digestive system very quickly, which means they barely absorb any nutrients from each meal. That's why they need to eat almost constantly — all day long, every day! It's like having a never-ending snack time. Coral would approve!"
+        es: "¡Los caballitos de mar no tienen estómago en absoluto! La comida pasa directamente por su sistema digestivo muy rápidamente, lo que significa que apenas absorben nutrientes de cada comida. ¡Por eso necesitan comer casi constantemente — todo el día, todos los días! Es como tener una merienda interminable. ¡Coral lo aprobaría!"
+        ru: "У морских коньков совсем нет желудка! Еда проходит через пищеварительную систему очень быстро, а это значит, что они почти не усваивают питательных веществ из каждого приёма пищи. Вот почему им нужно есть почти постоянно — весь день, каждый день! Это как бесконечный перекус. Коралл бы одобрила!"
+      image: "fun-fact-no-stomach.jpg"
+
+    - title:
+        en: "Tiny Swimmers"
+        es: "Nadadores Diminutos"
+        ru: "Крошечные пловцы"
+      content:
+        en: "Seahorses are the slowest fish in the entire ocean! The dwarf seahorse moves at only about 5 feet per hour — a garden snail is faster! But their tiny dorsal fin is incredible: it flutters up to 35 times per second, so fast it becomes almost invisible. They steer with their tiny pectoral fins behind their head, like little underwater helicopters."
+        es: "¡Los caballitos de mar son los peces más lentos de todo el océano! El caballito de mar enano se mueve a solo unos 1.5 metros por hora — ¡un caracol de jardín es más rápido! Pero su diminuta aleta dorsal es increíble: aletea hasta 35 veces por segundo, tan rápido que se vuelve casi invisible. Se dirigen con sus pequeñas aletas pectorales detrás de la cabeza, como pequeños helicópteros submarinos."
+        ru: "Морские коньки — самые медленные рыбы во всём океане! Карликовый морской конёк двигается со скоростью всего 1,5 метра в час — садовая улитка быстрее! Но их крошечный спинной плавник невероятен: он трепещет до 35 раз в секунду, так быстро, что становится почти невидимым. Они управляют крошечными грудными плавниками за головой, как маленькие подводные вертолёты."
+      image: "fun-fact-tiny-swimmers.jpg"
+
+imageGeneration:
+  characters:
+    papa-sol:
+      name: "Papa Sol"
+      description: "Proud handsome seahorse father in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin"
+      uniqueFeatures:
+        - "Deep WARM ORANGE body color with GOLDEN SPECKLES that shimmer — his signature look"
+        - "ROUNDED belly pouch — prominently visible, his defining feature as the baby-carrier"
+        - "LONG elegant snout — refined and distinguished"
+        - "Beautiful FAN-LIKE dorsal fin — wide and delicate"
+        - "SHORTER than Mama Pearl — stockier, more compact build"
+        - "Curly PREHENSILE tail — always gripping something"
+      personality: "Gentle and patient — often seen rocking gently, always counting babies, warm and protective"
+      notLike: "NOT as tall or slender as Mama Pearl, NOT pink like Mama, NOT tiny like babies Coral and Bubbles"
+
+    mama-pearl:
+      name: "Mama Pearl"
+      description: "Graceful seahorse mother in shimmering rose-pink with pearlescent white highlights, slightly taller than Papa, delicate almost-transparent fins"
+      uniqueFeatures:
+        - "Shimmering ROSE-PINK body — clearly different from Papa's orange"
+        - "PEARLESCENT WHITE highlights running along her ridges like tiny opals"
+        - "SLIGHTLY TALLER than Papa Sol — elegant and elongated build"
+        - "Delicate ALMOST-TRANSPARENT fins — catch light like stained glass windows"
+        - "Graceful curved posture — always poised and elegant"
+        - "More SLENDER build than Papa — no belly pouch"
+      personality: "Elegant and loving — moves with flowing grace, always initiating the morning dance, affectionate"
+      notLike: "NOT orange like Papa Sol, NOT stocky or round-bellied like Papa, NOT tiny like babies"
+
+    coral:
+      name: "Coral"
+      description: "Tiny baby seahorse in bright sunny yellow with baby-pink spots, enormous round curious eyes, always curling tail around things"
+      uniqueFeatures:
+        - "Bright SUNNY YELLOW body — vivid and warm like sunshine"
+        - "A few BABY-PINK SPOTS scattered across body — cute freckle-like markings"
+        - "ENORMOUS round curious eyes — disproportionately large, always wide open"
+        - "TINY size — much much smaller than both parents"
+        - "Tail always CURLING around something — seagrass, coral, other tails"
+        - "Lively energetic posture — leaning forward, always exploring"
+      personality: "Curious and adventurous — first to explore, always pointing snout at new things, excitable"
+      notLike: "NOT purple like Bubbles, NOT round like Bubbles, much SMALLER than parents, NOT orange or pink"
+
+    bubbles:
+      name: "Bubbles"
+      description: "Slightly rounder baby seahorse in soft lavender-purple with white belly, tall coronet, shy, always gripping Papa's tail"
+      uniqueFeatures:
+        - "Soft LAVENDER-PURPLE body color — distinctly different from yellow Coral"
+        - "WHITE BELLY — visible contrast against the purple"
+        - "Distinctively TALL CORONET on head — the crown-like bump is her signature feature"
+        - "Slightly ROUNDER build than Coral — chubbier, softer shape"
+        - "SHY posture — often partially hidden behind Papa's tail"
+        - "TINY size — same generation as Coral, much smaller than parents"
+      personality: "Shy and sweet — always gripping Papa's tail, peeks out cautiously, gentle and quiet"
+      notLike: "NOT yellow like Coral, NOT as bold or forward-leaning as Coral, NOT orange like Papa, NOT pink like Mama"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in scales and fins. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Vivid tropical coral reef setting with sparkling turquoise water, colorful corals in pink purple orange and yellow, golden sunbeams filtering through the surface, and swaying sea plants. Child-friendly and inviting."
+
+viewerDetails:
+- title:
+    en: "The Brood Pouch"
+    es: "El Bolsillo de Cría"
+    ru: "Выводковый мешочек"
+  description:
+    en: "Look at Papa Sol's round belly — see that special pouch? That's the brood pouch, and it's one of the most amazing things in nature! Only papa seahorses have it. Mama places her eggs inside, and Papa carries them for 2-4 weeks. The pouch provides oxygen and nutrients to the growing babies, just like a nursery. When the babies are ready, Papa pumps his body back and forth to push them out into the world!"
+    es: "¡Mira la barriga redonda de Papá Sol — ves ese bolsillo especial? ¡Ese es el bolsillo de cría, y es una de las cosas más asombrosas de la naturaleza! Solo los papás caballitos de mar lo tienen. Mamá coloca sus huevos adentro, y Papá los carga durante 2-4 semanas. El bolsillo proporciona oxígeno y nutrientes a los bebés en crecimiento, como una guardería. Cuando los bebés están listos, ¡Papá bombea su cuerpo hacia adelante y atrás para empujarlos al mundo!"
+    ru: "Посмотрите на круглый животик Папы Сола — видите этот особый мешочек? Это выводковый мешочек, и он — одно из самых удивительных чудес природы! Только папы-коньки его имеют. Мама помещает яйца внутрь, а Папа вынашивает их 2-4 недели. Мешочек обеспечивает кислородом и питательными веществами растущих малышей, как настоящие ясли. Когда малыши готовы, Папа раскачивает тело вперёд-назад, выталкивая их в мир!"
+  image: "detail-brood-pouch.jpg"
+
+- title:
+    en: "Prehensile Tail"
+    es: "Cola Prensil"
+    ru: "Хватательный хвост"
+  description:
+    en: "A seahorse's tail is one of nature's cleverest inventions! Unlike most fish tails, it can curl and grip like a monkey's tail. Seahorses use it to anchor themselves to seagrass, coral, and even each other so they don't get swept away by the current. The tail has a square cross-section (not round!) which makes it even stronger for gripping. Coral loves wrapping her tail around everything she finds!"
+    es: "¡La cola de un caballito de mar es una de las invenciones más inteligentes de la naturaleza! A diferencia de la mayoría de las colas de pez, puede rizarse y agarrar como la cola de un mono. Los caballitos de mar la usan para anclarse a la hierba marina, coral e incluso entre ellos para no ser arrastrados por la corriente. ¡La cola tiene una sección transversal cuadrada (no redonda!) lo que la hace aún más fuerte para agarrar! ¡A Coral le encanta envolver su cola alrededor de todo lo que encuentra!"
+    ru: "Хвост морского конька — одно из самых хитрых изобретений природы! В отличие от большинства рыбьих хвостов, он может закручиваться и хвататься как хвост обезьяны. Морские коньки используют его, чтобы прикрепляться к морской траве, кораллам и даже друг другу, чтобы их не унесло течением. У хвоста квадратное сечение (не круглое!), что делает его ещё крепче для хватания. Коралл обожает обвивать хвостиком всё, что находит!"
+  image: "detail-prehensile-tail.jpg"
+
+- title:
+    en: "The Coronet"
+    es: "La Coronita"
+    ru: "Коронка"
+  description:
+    en: "See the little crown on top of Bubbles' head? That's called a coronet! Every single seahorse has one, and no two are exactly alike — it's like a seahorse fingerprint! Scientists use coronets to tell individual seahorses apart. The coronet is made of bone and grows with the seahorse throughout its life. Bubbles has an especially tall, distinctive coronet that makes her easy to spot."
+    es: "¿Ves la pequeña corona en la cabeza de Bubbles? ¡Se llama coronita! Cada caballito de mar tiene una, y no hay dos exactamente iguales — ¡es como una huella digital de caballito de mar! Los científicos usan las coronitas para distinguir a los caballitos de mar individuales. La coronita está hecha de hueso y crece con el caballito de mar durante toda su vida. Bubbles tiene una coronita especialmente alta y distintiva que la hace fácil de identificar."
+    ru: "Видите маленькую корону на голове Баблс? Это называется коронка! У каждого морского конька она есть, и нет двух абсолютно одинаковых — это как отпечаток пальца морского конька! Учёные используют коронки, чтобы различать отдельных морских коньков. Коронка сделана из кости и растёт вместе с коньком всю жизнь. У Баблс особенно высокая, заметная коронка, по которой её легко узнать."
+  image: "detail-coronet.jpg"
+
+- title:
+    en: "The Dorsal Fin"
+    es: "La Aleta Dorsal"
+    ru: "Спинной плавник"
+  description:
+    en: "Papa Sol's beautiful fan-like dorsal fin is a tiny marvel of engineering! This single small fin on the seahorse's back is their main engine — it flutters an incredible 35 times per second, so fast it looks like a hummingbird wing! Despite this amazing speed, seahorses are still the slowest fish in the ocean. They also have two tiny pectoral fins behind their head that help them steer. It's like having a tiny propeller and two little rudders!"
+    es: "¡La hermosa aleta dorsal en forma de abanico de Papá Sol es una pequeña maravilla de ingeniería! Esta única aleta pequeña en la espalda del caballito de mar es su motor principal — ¡aletea increíbles 35 veces por segundo, tan rápido que parece un ala de colibrí! A pesar de esta velocidad asombrosa, los caballitos de mar siguen siendo los peces más lentos del océano. También tienen dos pequeñas aletas pectorales detrás de la cabeza que les ayudan a dirigirse. ¡Es como tener una pequeña hélice y dos pequeños timones!"
+    ru: "Красивый веерообразный спинной плавник Папы Сола — крошечное чудо инженерии! Этот единственный маленький плавник на спине морского конька — их главный двигатель — он трепещет невероятные 35 раз в секунду, так быстро, что похож на крыло колибри! Несмотря на эту потрясающую скорость, морские коньки всё ещё самые медленные рыбы в океане. У них также есть два крошечных грудных плавника за головой, которые помогают рулить. Это как маленький пропеллер и два маленьких руля!"
+  image: "detail-dorsal-fin.jpg"
+
+routing:
+    openai:
+      - "hero-coral-reef.jpg"
+      - "papa-sol-portrait.jpg"
+      - "mama-pearl-portrait.jpg"
+      - "coral-and-bubbles-portrait.jpg"
+
+    gemini:
+      - "morning-dance.jpg"
+      - "papas-pouch.jpg"
+      - "the-big-arrival.jpg"
+      - "tail-gripping.jpg"
+      - "tiny-meals.jpg"
+      - "two-way-eyes.jpg"
+      - "reef-exploration.jpg"
+      - "color-dance-sunset.jpg"
+      - "detail-brood-pouch.jpg"
+      - "detail-prehensile-tail.jpg"
+      - "detail-coronet.jpg"
+      - "detail-dorsal-fin.jpg"
+      - "fun-fact-papa-power.jpg"
+      - "fun-fact-super-snouts.jpg"
+      - "fun-fact-no-stomach.jpg"
+      - "fun-fact-tiny-swimmers.jpg"
+      - "magazine-cover.jpg"

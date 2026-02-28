@@ -1,0 +1,157 @@
+{
+  "chapter": "frogs",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in skin, leaves, and water. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Lush magical tropical rainforest setting with rich greens, golden light, dewdrops, and colorful flowers. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "papa-verde": {
+      "name": "Papa Verde",
+      "description": "Handsome red-eyed tree frog father with brilliant green body, huge glowing red eyes, blue-yellow striped sides, bright orange feet",
+      "uniqueFeatures": [
+        "LARGEST frog character — visibly bigger and more muscular than Mama",
+        "BRILLIANT emerald green — the most saturated, vivid green of all characters",
+        "HUGE glowing red eyes — the biggest eyes proportionally, like burning rubies",
+        "Bold BLUE AND YELLOW striped sides — thick, vivid stripes",
+        "BRIGHT ORANGE feet — like wearing orange gloves",
+        "Wide, confident stance with toes splayed out"
+      ],
+      "personality": "Proud and watchful — sits tall and upright, chest puffed out, always alert and guarding",
+      "notLike": "NOT soft or delicate like Mama Hoja, NOT tiny like Luna or Brio"
+    },
+    "mama-hoja": {
+      "name": "Mama Hoja",
+      "description": "Beautiful red-eyed tree frog mother with soft green coloring, gentle red eyes, slightly smaller and more delicate than Papa",
+      "uniqueFeatures": [
+        "SMALLER and more DELICATE than Papa — slimmer build, more graceful",
+        "SOFT SAGE GREEN coloring — noticeably lighter and less saturated than Papa's emerald",
+        "Gentler, SOFTER red eyes — more orange-red than Papa's ruby-red",
+        "Thinner, more delicate blue-yellow side stripes — pastel compared to Papa's bold",
+        "Lighter PEACH-ORANGE feet — not as bright as Papa's vivid orange",
+        "Rounder face with a sweeter expression"
+      ],
+      "personality": "Gentle and nurturing — often leaning down toward the little ones, soft caring posture",
+      "notLike": "NOT as vibrant or bold-colored as Papa Verde, NOT tiny like the young ones"
+    },
+    "luna": {
+      "name": "Luna",
+      "description": "Starts as tiny black tadpole, transforms through stages into a small bright green red-eyed tree frog with huge curious red eyes",
+      "uniqueFeatures": [
+        "TINIEST character — half the size of Mama Hoja",
+        "As tadpole: COMPLETELY BLACK with a round head and wiggly tail",
+        "As frog: bright green but LIGHTER than Papa, with disproportionately HUGE curious eyes",
+        "As frog: smaller and rounder than Mama — baby proportions with oversized head",
+        "Signature look of WONDER — eyes always wide open, head tilted with curiosity",
+        "Legs are shorter and chubbier than adult frogs"
+      ],
+      "personality": "Curious and amazed — always looking at something with wide eyes, head tilted to one side",
+      "notLike": "NOT as vibrant as Papa, NOT as graceful as Mama, much SMALLER than both parents"
+    },
+    "brio": {
+      "name": "Brio",
+      "description": "Luna's older brother, slightly bigger green-brown tadpole with developing legs, later a young red-eyed tree frog",
+      "uniqueFeatures": [
+        "As tadpole: GREEN-BROWN coloring — distinctly different from Luna's pure black",
+        "As tadpole: BIGGER than Luna with visible developing back legs",
+        "As frog: slightly BIGGER than Luna but still smaller than parents",
+        "As frog: GREEN-BROWN tint — muddier, less pure green than Luna or parents",
+        "WIDER body than Luna — stockier, less delicate build",
+        "Slightly lopsided grin — one side of mouth curves up more"
+      ],
+      "personality": "Adventurous and bold — always leaping first, chest forward, ready for action",
+      "notLike": "NOT pure black like Luna-tadpole, NOT pure green like Luna-frog, NOT as big as parents"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-rainforest.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Lush magical tropical rainforest at dawn with golden light filtering through enormous green leaves, colorful flowers, sparkling water droplets, bromeliads, and a small crystal-clear pond visible below",
+        "es": "Exuberante selva tropical mágica al amanecer con luz dorada filtrándose a través de enormes hojas verdes, flores coloridas, gotas de agua brillantes, bromelias y un pequeño estanque cristalino visible abajo",
+        "ru": "Пышный волшебный тропический лес на рассвете с золотистым светом, проникающим сквозь огромные зелёные листья, яркие цветы, сверкающие капли воды, бромелии и маленький кристально чистый пруд внизу"
+      }
+    },
+    {
+      "filename": "papa-verde-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Stunning red-eyed tree frog with brilliant green body, huge glowing red eyes, blue-and-yellow striped sides, and bright orange feet, perched on a green leaf in the moonlit rainforest",
+        "es": "Impresionante rana arbórea de ojos rojos con brillante cuerpo verde, enormes ojos rojos brillantes, costados rayados de azul y amarillo, y patas naranjas brillantes, posada en una hoja verde en la selva iluminada por la luna",
+        "ru": "Потрясающая красноглазая древесная лягушка с блестящим зелёным телом, огромными сияющими красными глазами, голубо-жёлтыми полосками на боках и ярко-оранжевыми лапками, сидящая на зелёном листе в лунном тропическом лесу"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "mama-hoja-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Beautiful red-eyed tree frog mother with soft green coloring sitting beside a cluster of transparent eggs on a leaf, gentle moonlit rainforest setting",
+        "es": "Hermosa rana arbórea de ojos rojos madre con suave coloración verde sentada junto a un grupo de huevos transparentes en una hoja, suave escenario de selva iluminada por la luna",
+        "ru": "Красивая мама красноглазая древесная лягушка с мягкой зелёной окраской, сидящая рядом с кучкой прозрачных яиц на листе, мягкое лунное освещение тропического леса"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "luna-tadpole.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Tiny black tadpole in crystal-clear rainforest pond water, two colorful red-eyed tree frogs watching from a leaf above, golden morning light, lush tropical setting",
+        "es": "Diminuto renacuajo negro en agua cristalina de estanque de selva, dos coloridas ranas arbóreas de ojos rojos observando desde una hoja arriba, luz dorada matutina",
+        "ru": "Крошечный чёрный головастик в кристально чистой воде пруда тропического леса, две красноглазые древесные лягушки наблюдают с листа сверху, золотистый утренний свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "brio-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Two tadpoles swimming together in a clear pond — one small and black, one bigger and green-brown with tiny developing back legs, among lily pads and water plants",
+        "es": "Dos renacuajos nadando juntos en un estanque claro — uno pequeño y negro, otro más grande y verde-marrón con pequeñas patas traseras en desarrollo, entre nenúfares y plantas acuáticas",
+        "ru": "Два головастика плавают вместе в чистом пруду — один маленький и чёрный, другой побольше и зелёно-коричневый с крошечными развивающимися задними лапками, среди кувшинок и водных растений"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "luna-back-legs.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "luna-froglet.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "luna-first-climb.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "luna-red-eye-flash.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "luna-tongue-catch.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "luna-great-leap.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Small bright green red-eyed tree frog leaping magnificently between branches in golden sunset light, family of frogs watching proudly, magical rainforest canopy",
+        "es": "Pequeña rana arbórea verde de ojos rojos saltando magníficamente entre ramas en la luz dorada del atardecer, familia de ranas observando con orgullo, mágica copa de la selva",
+        "ru": "Маленькая ярко-зелёная красноглазая древесная лягушка великолепно прыгающая между ветвями в золотистом закатном свете, семья лягушек гордо наблюдает, волшебная крона тропического леса"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "family-chorus.jpg",
+      "type": "content",
+      "needsTranslations": false
+    }
+  ]
+}

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seahorses: The Tiniest Dance in the Sea - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Seahorses: The Tiniest Dance in the Sea</h1>
+        <h1 data-lang="es">Caballitos de Mar: La Danza Más Pequeña del Mar</h1>
+        <h1 data-lang="ru">Морские коньки: Самый крошечный танец в море</h1>
+        <p data-lang="en" class="active">Coral&#x27;s First Day in the Reef</p>
+        <p data-lang="es">El Primer Día de Coral en el Arrecife</p>
+        <p data-lang="ru">Первый день Коралла на рифе</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-coral-reef.jpg"
+             alt="Seahorses"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Seahorses</h2>
+            <h2 class="hero-title" data-lang="es">Caballitos de Mar</h2>
+            <h2 class="hero-title" data-lang="ru">Морские коньки</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Tiniest Dance in the Sea</p>
+            <p class="hero-subtitle" data-lang="es">La Danza Más Pequeña del Mar</p>
+            <p class="hero-subtitle" data-lang="ru">Самый крошечный танец в море</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/papa-sol-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Proud handsome seahorse in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin, holding onto seagrass with curly tail, warm sunlight in turquoise water"
+                 data-alt-en="Proud handsome seahorse in deep warm orange with golden speckles, rounded belly pouch, long elegant snout, beautiful fan-like dorsal fin, holding onto seagrass with curly tail, warm sunlight in turquoise water"
+                 data-alt-es="Orgulloso y apuesto caballito de mar en naranja cálido profundo con motas doradas, bolsillo redondeado en la barriga, hocico largo y elegante, hermosa aleta dorsal en forma de abanico, sujetándose a hierba marina con cola rizada, luz cálida en agua turquesa"
+                 data-alt-ru="Гордый красивый морской конёк глубокого тёплого оранжевого цвета с золотистыми крапинками, округлый мешочек на животе, длинная элегантная мордочка, красивый веерообразный спинной плавник, держащийся за морскую траву закрученным хвостиком, тёплый солнечный свет в бирюзовой воде"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Papa Sol</h2>
+            <h2 data-lang="es">Conoce a Papá Sol</h2>
+            <h2 data-lang="ru">Знакомьтесь: Папа Сол</h2>
+            <div data-lang="en" class="active">
+                <p>Papa Sol is the proudest seahorse in all the reef! He is a handsome fellow in deep warm orange with golden speckles that shimmer like tiny stars whenever the sunlight touches him. His beautiful fan-like dorsal fin flutters so fast it&#x27;s almost invisible. But the most special thing about Papa is his rounded belly pouch — because inside, dozens of tiny babies are growing! Papa holds onto a piece of swaying seagrass with his curly tail and rocks gently in the current. &#x27;Almost time, little ones,&#x27; he whispers to his belly. &#x27;Almost time.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Papá Sol es el caballito de mar más orgulloso de todo el arrecife! Es un apuesto ejemplar de color naranja cálido profundo con motas doradas que brillan como pequeñas estrellas cada vez que la luz del sol lo toca. Su hermosa aleta dorsal en forma de abanico aletea tan rápido que es casi invisible. ¡Pero lo más especial de Papá es su bolsillo redondeado en la barriga — porque adentro, docenas de pequeños bebés están creciendo! Papá se sujeta a una rama de hierba marina con su cola rizada y se mece suavemente en la corriente. &#x27;Ya casi es hora, pequeños,&#x27; le susurra a su barriga. &#x27;Ya casi.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Папа Сол — самый гордый морской конёк на всём рифе! Он красавец глубокого тёплого оранжевого цвета с золотистыми крапинками, которые мерцают как крошечные звёзды, когда солнечный свет касается его. Его красивый веерообразный спинной плавник трепещет так быстро, что почти невидим. Но самое особенное в Папе — его округлый мешочек на животе — потому что внутри растут десятки крошечных малышей! Папа держится за покачивающуюся морскую траву закрученным хвостиком и мягко качается на течении. &#x27;Уже скоро, малыши,&#x27; шепчет он своему животику. &#x27;Уже скоро.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/mama-pearl-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Graceful seahorse in shimmering rose-pink with pearlescent white highlights along ridges, delicate almost-transparent fins catching light like stained glass, slightly taller build, elegant expression, surrounded by colorful coral"
+                 data-alt-en="Graceful seahorse in shimmering rose-pink with pearlescent white highlights along ridges, delicate almost-transparent fins catching light like stained glass, slightly taller build, elegant expression, surrounded by colorful coral"
+                 data-alt-es="Elegante caballita de mar en rosa brillante con reflejos blancos nacarados a lo largo de las crestas, aletas delicadas casi transparentes capturando la luz como vitrales, complexión un poco más alta, expresión elegante, rodeada de coral colorido"
+                 data-alt-ru="Грациозная морская конька мерцающего розового цвета с перламутровыми белыми бликами вдоль гребней, нежные почти прозрачные плавники ловящие свет как витражи, чуть более высокая фигура, элегантное выражение, окружённая красочными кораллами"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Mama Pearl</h2>
+            <h2 data-lang="es">Conoce a Mamá Pearl</h2>
+            <h2 data-lang="ru">Знакомьтесь: Мама Перл</h2>
+            <div data-lang="en" class="active">
+                <p>Here comes Mama Pearl, the most graceful seahorse in the reef! She glides through the water like a dancer, her shimmering rose-pink body catching the light in every direction. Pearlescent white highlights run along her ridges like tiny opals, and her delicate fins are so thin and beautiful they look like stained glass windows when the sun shines through them. Mama is slightly taller than Papa — elegant and poised. She swims toward Papa with the biggest smile. &#x27;Good morning, my love,&#x27; she calls. &#x27;Are you ready for our dance?&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Aquí viene Mamá Pearl, la caballita de mar más elegante del arrecife! Se desliza por el agua como una bailarina, su cuerpo rosa brillante capturando la luz en todas las direcciones. Reflejos blancos nacarados recorren sus crestas como pequeños ópalos, y sus delicadas aletas son tan finas y hermosas que parecen vitrales cuando el sol brilla a través de ellas. Mamá es un poco más alta que Papá — elegante y distinguida. Nada hacia Papá con la sonrisa más grande. &#x27;¡Buenos días, mi amor!&#x27; llama. &#x27;¿Estás listo para nuestro baile?&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>А вот и Мама Перл, самая грациозная морская конька на рифе! Она скользит по воде как танцовщица, её мерцающее розовое тело ловит свет со всех сторон. Перламутровые белые блики бегут вдоль её гребней как маленькие опалы, а её нежные плавники настолько тонкие и прекрасные, что похожи на витражи, когда сквозь них светит солнце. Мама немного выше Папы — элегантная и грациозная. Она плывёт к Папе с самой широкой улыбкой. &#x27;Доброе утро, любимый,&#x27; зовёт она. &#x27;Ты готов к нашему танцу?&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/morning-dance.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Morning Dance</h2>
+            <h2 data-lang="es">La Danza Matutina</h2>
+            <h2 data-lang="ru">Утренний танец</h2>
+            <div data-lang="en" class="active">
+                <p>Every single morning, Mama Pearl and Papa Sol perform the most beautiful dance in the ocean. They swim toward each other through the golden water, and when they meet — they intertwine their curly tails! Then something magical happens: colors begin to ripple across their bodies! Papa flushes from orange to bright gold. Mama shimmers from pink to glowing peach. They spin together slowly, tails linked, changing colors like a living sunset. &#x27;This is how we say I love you,&#x27; Mama whispers. They&#x27;ve danced every morning since they met — and they always will.</p>
+            </div>
+            <div data-lang="es">
+                <p>Cada mañana, Mamá Pearl y Papá Sol realizan la danza más hermosa del océano. Nadan uno hacia el otro a través del agua dorada, y cuando se encuentran — ¡entrelazan sus colas rizadas! Entonces algo mágico sucede: ¡los colores comienzan a ondular por sus cuerpos! Papá cambia de naranja a dorado brillante. Mamá brilla de rosa a melocotón luminoso. Giran juntos lentamente, colas enlazadas, cambiando de colores como un atardecer viviente. &#x27;Así es como decimos te quiero,&#x27; susurra Mamá. Han bailado cada mañana desde que se conocieron — y siempre lo harán.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Каждое утро Мама Перл и Папа Сол исполняют самый красивый танец в океане. Они плывут навстречу друг другу через золотистую воду, и когда встречаются — переплетают свои закрученные хвостики! Тогда происходит волшебство: по их телам начинают струиться цвета! Папа переливается из оранжевого в яркое золото. Мама мерцает от розового до светящегося персикового. Они медленно кружатся вместе, хвостики связаны, меняя цвета как живой закат. &#x27;Так мы говорим «я тебя люблю»,&#x27; шепчет Мама. Они танцуют каждое утро с момента встречи — и всегда будут.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/papas-pouch.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Special Pouch</h2>
+            <h2 data-lang="es">El Bolsillo Especial de Papá</h2>
+            <h2 data-lang="ru">Особый мешочек Папы</h2>
+            <div data-lang="en" class="active">
+                <p>While the babies grow, Papa Sol has the most important job in all the sea. His round pouch is like a tiny nursery — warm, safe, and full of growing seahorse babies! Papa grips a piece of seagrass with his curly tail and rocks gently back and forth in the current. He can&#x27;t swim very far or very fast right now, but he doesn&#x27;t mind one bit. &#x27;I&#x27;m the luckiest Papa in the ocean,&#x27; he says, patting his belly softly. Mama Pearl brings him tiny shrimp to eat and nuzzles him. &#x27;You&#x27;re doing wonderfully, my love.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras los bebés crecen, Papá Sol tiene el trabajo más importante de todo el mar. Su bolsillo redondo es como una pequeña guardería — cálido, seguro y lleno de caballitos de mar creciendo. Papá se agarra a una hierba marina con su cola rizada y se mece suavemente con la corriente. No puede nadar muy lejos ni muy rápido ahora, ¡pero no le importa en absoluto! &#x27;Soy el Papá más afortunado del océano,&#x27; dice, acariciando suavemente su barriga. Mamá Pearl le trae pequeños camarones para comer y lo acaricia. &#x27;Lo estás haciendo maravillosamente, mi amor.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пока малыши растут, у Папы Сола самая важная работа во всём море. Его круглый мешочек — как крошечные ясли — тёплый, безопасный и полный растущих малышей-коньков! Папа держится за морскую траву закрученным хвостиком и мягко покачивается на течении. Он не может сейчас далеко или быстро плавать, но ему совсем не жаль. &#x27;Я самый счастливый Папа в океане,&#x27; говорит он, нежно поглаживая животик. Мама Перл приносит ему крошечных креветок и ласково касается его. &#x27;Ты справляешься чудесно, любимый.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/the-big-arrival.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Big Arrival!</h2>
+            <h2 data-lang="es">¡La Gran Llegada!</h2>
+            <h2 data-lang="ru">Великое появление!</h2>
+            <div data-lang="en" class="active">
+                <p>The most exciting day has arrived! Papa Sol grips his seagrass tightly, and then — WHOOSH! Tiny baby seahorses begin swirling out of his pouch like living confetti! Dozens and dozens of miniature seahorses spiral into the sparkling water, each one smaller than a grain of rice! They tumble and twirl in the current, surrounded by a cloud of tiny bubbles. Mama Pearl watches with tears of joy. &#x27;They&#x27;re here! They&#x27;re all here!&#x27; Papa gasps, out of breath but beaming with pride. It&#x27;s the most magical moment in the entire reef.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡El día más emocionante ha llegado! Papá Sol se agarra fuerte a su hierba marina, y entonces — ¡WOOSH! ¡Diminutos caballitos de mar bebés comienzan a salir en espiral de su bolsillo como confeti viviente! Docenas y docenas de caballitos de mar en miniatura giran en el agua brillante, ¡cada uno más pequeño que un grano de arroz! Ruedan y dan vueltas en la corriente, rodeados de una nube de pequeñas burbujas. Mamá Pearl observa con lágrimas de alegría. &#x27;¡Están aquí! ¡Todos están aquí!&#x27; jadea Papá, sin aliento pero radiante de orgullo.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Самый волнующий день настал! Папа Сол крепко хватается за морскую траву, и тогда — ФУУ-У-УШ! Крошечные малыши-коньки начинают выплывать из его мешочка как живое конфетти! Десятки и десятки миниатюрных морских коньков спиралью кружатся в сверкающей воде, каждый меньше рисового зёрнышка! Они кувыркаются и вертятся на течении, окружённые облачком крошечных пузырьков. Мама Перл смотрит со слезами радости. &#x27;Они здесь! Все здесь!&#x27; выдыхает Папа, запыхавшийся, но сияющий от гордости.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/coral-and-bubbles-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Two tiny adorable baby seahorses — one bright sunny yellow with pink spots and enormous curious eyes, one soft lavender-purple with white belly and tall coronet — floating together near colorful coral"
+                 data-alt-en="Two tiny adorable baby seahorses — one bright sunny yellow with pink spots and enormous curious eyes, one soft lavender-purple with white belly and tall coronet — floating together near colorful coral"
+                 data-alt-es="Dos diminutos y adorables caballitos de mar bebés — uno amarillo brillante con manchas rosas y enormes ojos curiosos, uno suave lavanda-púrpura con barriga blanca y corona alta — flotando juntos cerca de coral colorido"
+                 data-alt-ru="Два крошечных очаровательных малыша-конька — один ярко-жёлтый с розовыми пятнышками и огромными любопытными глазами, другой нежно-лавандово-фиолетовый с белым животиком и высокой коронкой — плавающие вместе возле красочных кораллов"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Coral and Bubbles</h2>
+            <h2 data-lang="es">Conoce a Coral y Bubbles</h2>
+            <h2 data-lang="ru">Знакомьтесь: Коралл и Баблс</h2>
+            <div data-lang="en" class="active">
+                <p>Among all the tiny babies, two little seahorses stand out right away! Coral is bright sunny yellow with the cutest baby-pink spots and the most enormous curious eyes you&#x27;ve ever seen. She immediately starts looking around at EVERYTHING, her little tail curling with excitement. And right beside her is Bubbles — a slightly rounder baby in soft lavender-purple with a white belly and a distinctively tall coronet on her head. Bubbles is a bit shy, and the very first thing she does is grip Papa&#x27;s tail. &#x27;Don&#x27;t worry, Bubbles,&#x27; Papa says gently. &#x27;I&#x27;ve got you.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Entre todos los diminutos bebés, dos pequeños caballitos de mar destacan de inmediato! Coral es amarilla brillante como el sol con las manchitas rosa más lindas y los ojos curiosos más enormes que hayas visto. Inmediatamente empieza a mirar TODO a su alrededor, su colita rizándose de emoción. Y justo a su lado está Bubbles — una bebé un poco más redonda en suave lavanda-púrpura con barriga blanca y una corona distintivamente alta en su cabeza. Bubbles es un poco tímida, y lo primero que hace es agarrarse a la cola de Papá. &#x27;No te preocupes, Bubbles,&#x27; dice Papá suavemente. &#x27;Te tengo.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Среди всех крошечных малышей двое маленьких морских коньков сразу выделяются! Коралл — ярко-жёлтая, солнечная, с самыми милыми розовыми пятнышками и самыми огромными любопытными глазами, какие вы когда-либо видели. Она тут же начинает разглядывать ВСЁ вокруг, её маленький хвостик закручивается от волнения. А рядом с ней — Баблс — чуть более круглая малышка нежного лавандово-фиолетового цвета с белым животиком и заметно высокой коронкой на голове. Баблс немного стеснительная, и самое первое, что она делает — хватается за хвост Папы. &#x27;Не волнуйся, Баблс,&#x27; мягко говорит Папа. &#x27;Я рядом.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/tail-gripping.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Hold On Tight!</h2>
+            <h2 data-lang="es">¡Agárrate Fuerte!</h2>
+            <h2 data-lang="ru">Держись крепче!</h2>
+            <div data-lang="en" class="active">
+                <p>The very first lesson for baby seahorses is the most important one: hold on tight! Seahorses are the slowest swimmers in the ocean, so their curly tails are their superpower. Coral tries gripping a piece of bright green seagrass — her tiny tail wraps around it like a little spring. &#x27;I did it! I did it!&#x27; she squeaks. Bubbles tries too, but instead of gripping the seagrass, she wraps her tail around Papa&#x27;s tail. &#x27;That works too,&#x27; Papa laughs. They practice gripping everything — seagrass, coral branches, each other&#x27;s tails. It&#x27;s the best game ever!</p>
+            </div>
+            <div data-lang="es">
+                <p>¡La primera lección para los caballitos de mar bebés es la más importante: agárrate fuerte! Los caballitos de mar son los nadadores más lentos del océano, así que sus colas rizadas son su superpoder. Coral intenta agarrarse a una hierba marina verde brillante — su colita se envuelve alrededor como un pequeño resorte. &#x27;¡Lo logré! ¡Lo logré!&#x27; chilla. Bubbles también intenta, pero en vez de agarrar la hierba marina, envuelve su cola alrededor de la cola de Papá. &#x27;Eso también funciona,&#x27; ríe Papá. Practican agarrar todo — hierba marina, ramas de coral, las colas de los demás.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Самый первый урок для малышей-коньков — самый важный: держись крепко! Морские коньки — самые медленные пловцы в океане, поэтому их закрученные хвостики — их суперсила. Коралл пробует ухватиться за ярко-зелёную морскую траву — её крошечный хвостик обвивается вокруг как маленькая пружинка. &#x27;Получилось! Получилось!&#x27; пищит она. Баблс тоже пробует, но вместо травы обвивает хвостиком хвост Папы. &#x27;Так тоже подходит,&#x27; смеётся Папа. Они тренируются хвататься за всё подряд — морскую траву, веточки кораллов, хвостики друг друга.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/tiny-meals.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Snout Snacks!</h2>
+            <h2 data-lang="es">¡Bocadillos de Hocico!</h2>
+            <h2 data-lang="ru">Перекус через мордочку!</h2>
+            <div data-lang="en" class="active">
+                <p>Time for the first meal! Baby seahorses eat by sucking food through their long tubular snouts — SLURRRP! — like a tiny underwater vacuum cleaner. Coral spots a cloud of sparkly microscopic shrimp and — SLUUURP! — she sucks one right up! &#x27;Mmmm!&#x27; Her eyes go wide. &#x27;More! More!&#x27; Bubbles tries too — SLURP, SLURP — she&#x27;s a natural! &#x27;You need to eat ALL DAY LONG,&#x27; Mama Pearl tells them, &#x27;because you have no stomach! Food goes straight through you.&#x27; &#x27;No stomach?!&#x27; Coral gasps. &#x27;Best excuse for always eating!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Hora de la primera comida! Los caballitos de mar bebés comen succionando comida a través de sus largos hocicos tubulares — ¡SLURRRP! — como una pequeña aspiradora submarina. Coral ve una nube de diminutos camarones brillantes y — ¡SLURRRP! — ¡succiona uno! &#x27;¡Mmmm!&#x27; Sus ojos se agrandan. &#x27;¡Más! ¡Más!&#x27; Bubbles también intenta — ¡SLURP, SLURP! — ¡es una natural! &#x27;Necesitan comer TODO EL DÍA,&#x27; les dice Mamá Pearl, &#x27;porque no tienen estómago. La comida pasa directo.&#x27; &#x27;¿¡Sin estómago!?&#x27; jadea Coral. &#x27;¡La mejor excusa para siempre estar comiendo!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Время первой еды! Малыши-коньки едят, всасывая еду через длинные трубчатые мордочки — ХЛЮП! — как крошечный подводный пылесос. Коралл замечает облачко сверкающих микроскопических креветок и — ХЛЮЮЮП! — всасывает одну! &#x27;Ммм!&#x27; Её глаза округляются. &#x27;Ещё! Ещё!&#x27; Баблс тоже пробует — ХЛЮП, ХЛЮП — у неё природный талант! &#x27;Вам нужно есть ВЕСЬ ДЕНЬ,&#x27; говорит им Мама Перл, &#x27;потому что у вас нет желудка! Еда проходит насквозь.&#x27; &#x27;Нет желудка?!&#x27; ахает Коралл. &#x27;Лучшее оправдание, чтобы всегда кушать!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/two-way-eyes.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Eyes Everywhere!</h2>
+            <h2 data-lang="es">¡Ojos por Todas Partes!</h2>
+            <h2 data-lang="ru">Глаза повсюду!</h2>
+            <div data-lang="en" class="active">
+                <p>Coral makes the FUNNIEST discovery! She&#x27;s looking at a pretty orange clownfish swimming in front of her, when she realizes — she can ALSO see Bubbles sneaking up behind her! Each of her eyes can look in a completely different direction at the same time! &#x27;Bubbles, I can see you back there!&#x27; Coral giggles. &#x27;HOW?!&#x27; Bubbles squeaks, startled. &#x27;My eyes are magic! One looks forward, one looks backward!&#x27; Coral spins one eye up and one eye down. &#x27;I can see the sky AND the sand at the same time!&#x27; Papa laughs. &#x27;That&#x27;s your seahorse superpower, little ones.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Coral hace el descubrimiento MÁS GRACIOSO! Está mirando a un bonito pez payaso naranja nadando frente a ella, cuando se da cuenta — ¡TAMBIÉN puede ver a Bubbles acercándose por detrás! ¡Cada uno de sus ojos puede mirar en una dirección completamente diferente al mismo tiempo! &#x27;¡Bubbles, puedo verte allí atrás!&#x27; ríe Coral. &#x27;¿¡CÓMO!?&#x27; chilla Bubbles, asustada. &#x27;¡Mis ojos son mágicos! ¡Uno mira adelante, otro mira atrás!&#x27; Coral gira un ojo hacia arriba y otro hacia abajo. &#x27;¡Puedo ver el cielo Y la arena al mismo tiempo!&#x27; Papá ríe. &#x27;Ese es su superpoder de caballito de mar, pequeñas.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Коралл делает САМОЕ СМЕШНОЕ открытие! Она смотрит на красивую оранжевую рыбку-клоуна, плывущую перед ней, когда понимает — она ТАКЖЕ видит Баблс, подкрадывающуюся сзади! Каждый её глаз может смотреть в совершенно разном направлении одновременно! &#x27;Баблс, я вижу тебя сзади!&#x27; хихикает Коралл. &#x27;КАК?!&#x27; пищит Баблс, испуганная. &#x27;Мои глаза волшебные! Один смотрит вперёд, другой — назад!&#x27; Коралл поворачивает один глаз вверх, а другой вниз. &#x27;Я вижу небо И песок одновременно!&#x27; Папа смеётся. &#x27;Это ваша суперсила морских коньков, малышки.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/reef-exploration.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Grand Reef Tour</h2>
+            <h2 data-lang="es">El Gran Tour del Arrecife</h2>
+            <h2 data-lang="ru">Великая экскурсия по рифу</h2>
+            <div data-lang="en" class="active">
+                <p>Time for an adventure! The whole family sets out to explore their magnificent reef home. They drift past waving purple sea fans as tall as trees, bright orange anemones where clownfish play peek-a-boo, yellow tube sponges that look like chimneys, and gardens of coral in every color imaginable. &#x27;Look, Mama! A starfish!&#x27; squeals Coral, pointing with her snout. &#x27;Look, Papa! Blue fish!&#x27; Bubbles whispers from behind Papa&#x27;s tail. The reef is an endless wonderland of color and life. Even Papa and Mama discover something new. &#x27;We&#x27;ve lived here our whole lives,&#x27; Mama marvels, &#x27;and it still surprises us.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Hora de una aventura! Toda la familia sale a explorar su magnífico hogar de arrecife. Se deslizan junto a abanicos de mar púrpura ondulantes tan altos como árboles, anémonas naranjas brillantes donde los peces payaso juegan al escondite, esponjas tubulares amarillas que parecen chimeneas, y jardines de coral en cada color imaginable. &#x27;¡Mira, Mamá! ¡Una estrella de mar!&#x27; chilla Coral, señalando con su hocico. &#x27;¡Mira, Papá! ¡Peces azules!&#x27; susurra Bubbles desde detrás de la cola de Papá. El arrecife es un mundo maravilloso sin fin de color y vida.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Время приключений! Вся семья отправляется исследовать свой великолепный рифовый дом. Они проплывают мимо покачивающихся фиолетовых морских вееров высотой с деревья, ярко-оранжевых актиний, где рыбки-клоуны играют в прятки, жёлтых трубчатых губок, похожих на дымоходы, и садов кораллов всех мыслимых цветов. &#x27;Смотри, Мама! Морская звезда!&#x27; визжит Коралл, показывая мордочкой. &#x27;Смотри, Папа! Голубые рыбки!&#x27; шепчет Баблс из-за Папиного хвоста. Риф — бесконечная страна чудес, полная красок и жизни.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/color-dance-sunset.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Seahorse family at sunset — orange Papa and pink Mama with tails intertwined dancing, two tiny babies trying to copy them, golden light streaming through water, coral reef glowing, magical rainbow colors flickering across all four seahorses"
+                 data-alt-en="Seahorse family at sunset — orange Papa and pink Mama with tails intertwined dancing, two tiny babies trying to copy them, golden light streaming through water, coral reef glowing, magical rainbow colors flickering across all four seahorses"
+                 data-alt-es="Familia de caballitos de mar al atardecer — Papá naranja y Mamá rosa con colas entrelazadas bailando, dos diminutos bebés intentando copiarlos, luz dorada atravesando el agua, arrecife brillando, colores de arcoíris mágicos parpadeando en los cuatro caballitos"
+                 data-alt-ru="Семья морских коньков на закате — оранжевый Папа и розовая Мама с переплетёнными хвостиками танцуют, два крошечных малыша пытаются их копировать, золотистый свет пронизывает воду, риф сияет, волшебные радужные цвета мерцают на всех четырёх коньках"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Sunset Dance</h2>
+            <h2 data-lang="es">La Danza del Atardecer</h2>
+            <h2 data-lang="ru">Танец на закате</h2>
+            <div data-lang="en" class="active">
+                <p>As the golden sunset light streams down through the water, Mama Pearl and Papa Sol begin their evening dance. Their tails intertwine, and colors ripple across their bodies — orange to gold, pink to peach, then both shimmer with rainbow light. And then something wonderful happens: Coral and Bubbles try to dance too! Coral flickers from yellow to green to — OOPS — bright red! Bubbles flashes from purple to blue and accidentally turns polka-dotted! They&#x27;re not very good at it yet, but they&#x27;re trying SO HARD. The whole family laughs and dances together as the reef glows gold around them. This is home. This is love. This is the tiniest, most beautiful dance in all the sea.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras la luz dorada del atardecer se filtra por el agua, Mamá Pearl y Papá Sol comienzan su danza vespertina. Sus colas se entrelazan, y los colores ondean por sus cuerpos — naranja a oro, rosa a melocotón, luego ambos brillan con luz de arcoíris. ¡Y entonces algo maravilloso sucede: Coral y Bubbles intentan bailar también! Coral parpadea de amarillo a verde a — ¡UPS! — ¡rojo brillante! Bubbles destella de púrpura a azul y accidentalmente se vuelve de lunares. No son muy buenas todavía, pero se esfuerzan TANTO. Toda la familia ríe y baila junta mientras el arrecife brilla dorado a su alrededor. Esto es hogar. Esto es amor. Esta es la danza más pequeña y hermosa de todo el mar.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда золотистый закатный свет струится сквозь воду, Мама Перл и Папа Сол начинают свой вечерний танец. Их хвостики переплетаются, и по их телам разливаются цвета — оранжевый в золотой, розовый в персиковый, затем оба мерцают радужным светом. И тогда происходит чудесное: Коралл и Баблс тоже пытаются танцевать! Коралл мигает от жёлтого к зелёному и — ОЙ! — ярко-красному! Баблс вспыхивает от фиолетового к голубому и случайно становится в горошек! Они пока не очень хорошо танцуют, но стараются ТАК СИЛЬНО. Вся семья смеётся и танцует вместе, пока риф сияет золотом вокруг них. Это — дом. Это — любовь. Это — самый крошечный, самый прекрасный танец во всём море.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-brood-pouch.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Brood Pouch"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Brood Pouch</h3>
+                    <h3 data-lang="es">El Bolsillo de Cría</h3>
+                    <h3 data-lang="ru">Выводковый мешочек</h3>
+                    <p data-lang="en" class="active">Look at Papa Sol&#x27;s round belly — see that special pouch? That&#x27;s the brood pouch, and it&#x27;s one of the most amazing things in nature! Only papa seahorses have it. Mama places her eggs inside, and Papa carries them for 2-4 weeks. The pouch provides oxygen and nutrients to the growing babies, just like a nursery. When the babies are ready, Papa pumps his body back and forth to push them out into the world!</p>
+                    <p data-lang="es">¡Mira la barriga redonda de Papá Sol — ves ese bolsillo especial? ¡Ese es el bolsillo de cría, y es una de las cosas más asombrosas de la naturaleza! Solo los papás caballitos de mar lo tienen. Mamá coloca sus huevos adentro, y Papá los carga durante 2-4 semanas. El bolsillo proporciona oxígeno y nutrientes a los bebés en crecimiento, como una guardería. Cuando los bebés están listos, ¡Papá bombea su cuerpo hacia adelante y atrás para empujarlos al mundo!</p>
+                    <p data-lang="ru">Посмотрите на круглый животик Папы Сола — видите этот особый мешочек? Это выводковый мешочек, и он — одно из самых удивительных чудес природы! Только папы-коньки его имеют. Мама помещает яйца внутрь, а Папа вынашивает их 2-4 недели. Мешочек обеспечивает кислородом и питательными веществами растущих малышей, как настоящие ясли. Когда малыши готовы, Папа раскачивает тело вперёд-назад, выталкивая их в мир!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-prehensile-tail.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Prehensile Tail"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Prehensile Tail</h3>
+                    <h3 data-lang="es">Cola Prensil</h3>
+                    <h3 data-lang="ru">Хватательный хвост</h3>
+                    <p data-lang="en" class="active">A seahorse&#x27;s tail is one of nature&#x27;s cleverest inventions! Unlike most fish tails, it can curl and grip like a monkey&#x27;s tail. Seahorses use it to anchor themselves to seagrass, coral, and even each other so they don&#x27;t get swept away by the current. The tail has a square cross-section (not round!) which makes it even stronger for gripping. Coral loves wrapping her tail around everything she finds!</p>
+                    <p data-lang="es">¡La cola de un caballito de mar es una de las invenciones más inteligentes de la naturaleza! A diferencia de la mayoría de las colas de pez, puede rizarse y agarrar como la cola de un mono. Los caballitos de mar la usan para anclarse a la hierba marina, coral e incluso entre ellos para no ser arrastrados por la corriente. ¡La cola tiene una sección transversal cuadrada (no redonda!) lo que la hace aún más fuerte para agarrar! ¡A Coral le encanta envolver su cola alrededor de todo lo que encuentra!</p>
+                    <p data-lang="ru">Хвост морского конька — одно из самых хитрых изобретений природы! В отличие от большинства рыбьих хвостов, он может закручиваться и хвататься как хвост обезьяны. Морские коньки используют его, чтобы прикрепляться к морской траве, кораллам и даже друг другу, чтобы их не унесло течением. У хвоста квадратное сечение (не круглое!), что делает его ещё крепче для хватания. Коралл обожает обвивать хвостиком всё, что находит!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-coronet.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Coronet"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Coronet</h3>
+                    <h3 data-lang="es">La Coronita</h3>
+                    <h3 data-lang="ru">Коронка</h3>
+                    <p data-lang="en" class="active">See the little crown on top of Bubbles&#x27; head? That&#x27;s called a coronet! Every single seahorse has one, and no two are exactly alike — it&#x27;s like a seahorse fingerprint! Scientists use coronets to tell individual seahorses apart. The coronet is made of bone and grows with the seahorse throughout its life. Bubbles has an especially tall, distinctive coronet that makes her easy to spot.</p>
+                    <p data-lang="es">¿Ves la pequeña corona en la cabeza de Bubbles? ¡Se llama coronita! Cada caballito de mar tiene una, y no hay dos exactamente iguales — ¡es como una huella digital de caballito de mar! Los científicos usan las coronitas para distinguir a los caballitos de mar individuales. La coronita está hecha de hueso y crece con el caballito de mar durante toda su vida. Bubbles tiene una coronita especialmente alta y distintiva que la hace fácil de identificar.</p>
+                    <p data-lang="ru">Видите маленькую корону на голове Баблс? Это называется коронка! У каждого морского конька она есть, и нет двух абсолютно одинаковых — это как отпечаток пальца морского конька! Учёные используют коронки, чтобы различать отдельных морских коньков. Коронка сделана из кости и растёт вместе с коньком всю жизнь. У Баблс особенно высокая, заметная коронка, по которой её легко узнать.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-dorsal-fin.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Dorsal Fin"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Dorsal Fin</h3>
+                    <h3 data-lang="es">La Aleta Dorsal</h3>
+                    <h3 data-lang="ru">Спинной плавник</h3>
+                    <p data-lang="en" class="active">Papa Sol&#x27;s beautiful fan-like dorsal fin is a tiny marvel of engineering! This single small fin on the seahorse&#x27;s back is their main engine — it flutters an incredible 35 times per second, so fast it looks like a hummingbird wing! Despite this amazing speed, seahorses are still the slowest fish in the ocean. They also have two tiny pectoral fins behind their head that help them steer. It&#x27;s like having a tiny propeller and two little rudders!</p>
+                    <p data-lang="es">¡La hermosa aleta dorsal en forma de abanico de Papá Sol es una pequeña maravilla de ingeniería! Esta única aleta pequeña en la espalda del caballito de mar es su motor principal — ¡aletea increíbles 35 veces por segundo, tan rápido que parece un ala de colibrí! A pesar de esta velocidad asombrosa, los caballitos de mar siguen siendo los peces más lentos del océano. También tienen dos pequeñas aletas pectorales detrás de la cabeza que les ayudan a dirigirse. ¡Es como tener una pequeña hélice y dos pequeños timones!</p>
+                    <p data-lang="ru">Красивый веерообразный спинной плавник Папы Сола — крошечное чудо инженерии! Этот единственный маленький плавник на спине морского конька — их главный двигатель — он трепещет невероятные 35 раз в секунду, так быстро, что похож на крыло колибри! Несмотря на эту потрясающую скорость, морские коньки всё ещё самые медленные рыбы в океане. У них также есть два крошечных грудных плавника за головой, которые помогают рулить. Это как маленький пропеллер и два маленьких руля!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Seahorse Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Caballitos de Mar!</h2>
+            <h2 data-lang="ru">Удивительные факты о морских коньках!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-papa-power.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Papa Power"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Papa Power</h3>
+                        <h3 data-lang="es">Poder de Papá</h3>
+                        <h3 data-lang="ru">Сила Папы</h3>
+                        <p data-lang="en" class="active">Male seahorses carry and give birth to all the babies — they&#x27;re one of the only species in the world where the father does this! Papa seahorse has a special pouch on his belly where the eggs grow for 2-4 weeks. When the babies are ready, he pushes them out into the water in a magical cloud of tiny seahorses. One papa can have up to 2,000 babies at once!</p>
+                        <p data-lang="es">¡Los caballitos de mar macho cargan y dan a luz a todos los bebés — son una de las únicas especies del mundo donde el padre hace esto! Papá caballito de mar tiene un bolsillo especial en su barriga donde los huevos crecen durante 2-4 semanas. Cuando los bebés están listos, los empuja al agua en una nube mágica de diminutos caballitos. ¡Un papá puede tener hasta 2,000 bebés a la vez!</p>
+                        <p data-lang="ru">Самцы морских коньков вынашивают и рожают всех малышей — они одни из единственных видов в мире, где это делает отец! У папы-конька есть специальный мешочек на животе, где яйца растут 2-4 недели. Когда малыши готовы, он выпускает их в воду волшебным облачком крошечных коньков. Один папа может родить до 2000 малышей за раз!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-super-snouts.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Super Snouts"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Super Snouts</h3>
+                        <h3 data-lang="es">Súper Hocicos</h3>
+                        <h3 data-lang="ru">Супер-мордочки</h3>
+                        <p data-lang="en" class="active">Seahorses suck food up through their long tubular snouts like a tiny vacuum cleaner — SLURP! They have no teeth at all, so they swallow their food whole. A single seahorse can eat up to 3,000 tiny brine shrimp in one day! Their snouts are so powerful they can suck up food from over an inch away.</p>
+                        <p data-lang="es">¡Los caballitos de mar succionan la comida a través de sus largos hocicos tubulares como una pequeña aspiradora — SLURP! No tienen dientes en absoluto, así que tragan su comida entera. ¡Un solo caballito de mar puede comer hasta 3,000 pequeños camarones de salmuera en un día! Sus hocicos son tan poderosos que pueden succionar comida desde más de dos centímetros de distancia.</p>
+                        <p data-lang="ru">Морские коньки всасывают еду через длинные трубчатые мордочки как крошечный пылесос — ХЛЮП! У них совсем нет зубов, поэтому они глотают еду целиком. Один морской конёк может съесть до 3000 крошечных рачков за день! Их мордочки настолько мощные, что могут всасывать еду с расстояния более двух сантиметров.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-no-stomach.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="No Stomach!"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">No Stomach!</h3>
+                        <h3 data-lang="es">¡Sin Estómago!</h3>
+                        <h3 data-lang="ru">Без желудка!</h3>
+                        <p data-lang="en" class="active">Seahorses have no stomach at all! Food passes straight through their digestive system very quickly, which means they barely absorb any nutrients from each meal. That&#x27;s why they need to eat almost constantly — all day long, every day! It&#x27;s like having a never-ending snack time. Coral would approve!</p>
+                        <p data-lang="es">¡Los caballitos de mar no tienen estómago en absoluto! La comida pasa directamente por su sistema digestivo muy rápidamente, lo que significa que apenas absorben nutrientes de cada comida. ¡Por eso necesitan comer casi constantemente — todo el día, todos los días! Es como tener una merienda interminable. ¡Coral lo aprobaría!</p>
+                        <p data-lang="ru">У морских коньков совсем нет желудка! Еда проходит через пищеварительную систему очень быстро, а это значит, что они почти не усваивают питательных веществ из каждого приёма пищи. Вот почему им нужно есть почти постоянно — весь день, каждый день! Это как бесконечный перекус. Коралл бы одобрила!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-tiny-swimmers.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Tiny Swimmers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Tiny Swimmers</h3>
+                        <h3 data-lang="es">Nadadores Diminutos</h3>
+                        <h3 data-lang="ru">Крошечные пловцы</h3>
+                        <p data-lang="en" class="active">Seahorses are the slowest fish in the entire ocean! The dwarf seahorse moves at only about 5 feet per hour — a garden snail is faster! But their tiny dorsal fin is incredible: it flutters up to 35 times per second, so fast it becomes almost invisible. They steer with their tiny pectoral fins behind their head, like little underwater helicopters.</p>
+                        <p data-lang="es">¡Los caballitos de mar son los peces más lentos de todo el océano! El caballito de mar enano se mueve a solo unos 1.5 metros por hora — ¡un caracol de jardín es más rápido! Pero su diminuta aleta dorsal es increíble: aletea hasta 35 veces por segundo, tan rápido que se vuelve casi invisible. Se dirigen con sus pequeñas aletas pectorales detrás de la cabeza, como pequeños helicópteros submarinos.</p>
+                        <p data-lang="ru">Морские коньки — самые медленные рыбы во всём океане! Карликовый морской конёк двигается со скоростью всего 1,5 метра в час — садовая улитка быстрее! Но их крошечный спинной плавник невероятен: он трепещет до 35 раз в секунду, так быстро, что становится почти невидимым. Они управляют крошечными грудными плавниками за головой, как маленькие подводные вертолёты.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the most magical dancers in the ocean</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando a los bailarines más mágicos del océano</p>
+        <p data-lang="ru" style="margin-top: 10px;">Celebrating самых волшебных танцоров океана</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

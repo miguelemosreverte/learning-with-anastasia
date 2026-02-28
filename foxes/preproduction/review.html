@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Bible — Red Foxes: A Den Full of Love</title>
+<style>
+    :root {
+        --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d;
+        --text: #e6edf3; --text-dim: #8b949e; --accent: #58a6ff; --green: #3fb950;
+        --orange: #d29922; --red: #f85149; --purple: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero-header { text-align: center; padding: 48px 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .hero-header h1 { font-size: 2.5em; margin-bottom: 8px; }
+    .hero-header .subtitle { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+    .hero-header .meta-line { color: var(--text-dim); font-size: 0.9em; }
+    .hero-header .description { max-width: 700px; margin: 16px auto; color: var(--text-dim); }
+    .hero-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-top: 24px; border: 1px solid var(--border); }
+    h2 { font-size: 1.5em; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+    h3 { font-size: 1.2em; margin: 24px 0 12px; color: var(--accent); }
+    .preface { background: var(--surface); border-radius: 8px; padding: 24px; border-left: 4px solid var(--accent); margin-bottom: 32px; }
+    .preface p { margin-bottom: 12px; color: var(--text-dim); }
+    .preface p:last-child { margin-bottom: 0; }
+    .style-banner { background: linear-gradient(135deg, #1a1e2e, #1e2636); border-radius: 8px; padding: 20px 24px; border: 1px solid var(--purple); margin-bottom: 32px; }
+    .style-banner strong { color: var(--purple); }
+    .characters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .character-profile { display: flex; gap: 16px; background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .character-thumb { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+    .character-thumb-placeholder { width: 100px; height: 100px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2em; color: var(--text-dim); flex-shrink: 0; }
+    .character-info h4 { margin-bottom: 4px; }
+    .character-info p { color: var(--text-dim); font-size: 0.9em; }
+    .small-text { color: var(--text-dim); font-size: 0.75em; font-family: monospace; }
+    .sections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .section-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .section-card.character-card { border-color: var(--green); }
+    .section-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+    .section-id { font-family: monospace; color: var(--text-dim); font-size: 0.8em; }
+    .section-image { width: 100%; border-radius: 6px; margin: 12px 0; max-height: 300px; object-fit: cover; }
+    .section-content { color: var(--text-dim); font-size: 0.9em; margin: 8px 0; max-height: 80px; overflow: hidden; }
+    .prompt-block { background: var(--surface2); padding: 8px 12px; border-radius: 4px; font-size: 0.8em; margin: 8px 0; color: var(--text-dim); border-left: 3px solid var(--orange); }
+    .refs { font-size: 0.8em; color: var(--purple); margin-top: 4px; }
+    .image-filename { font-family: monospace; font-size: 0.75em; color: var(--text-dim); margin-top: 8px; }
+    .missing-image { background: var(--surface2); border: 2px dashed var(--red); border-radius: 6px; padding: 40px; text-align: center; color: var(--red); margin: 12px 0; }
+    .missing-thumb { background: var(--surface2); border: 1px dashed var(--red); border-radius: 4px; padding: 12px; text-align: center; color: var(--red); font-size: 0.8em; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; font-weight: 600; text-transform: uppercase; }
+    .badge-gemini { background: #1a3a2a; color: var(--green); }
+    .badge-openai { background: #2a2a1a; color: var(--orange); }
+    .badge-unknown { background: var(--surface2); color: var(--text-dim); }
+    .badge-character { background: #1a2a1a; color: var(--green); }
+    .details-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .detail-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .detail-image { width: 100%; border-radius: 6px; margin-bottom: 12px; max-height: 200px; object-fit: cover; }
+    .detail-card h4 { margin-bottom: 8px; }
+    .detail-card p { color: var(--text-dim); font-size: 0.85em; }
+    .hidden-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hidden-section-card { background: var(--surface); border-radius: 6px; padding: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .thumb { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; }
+    .small-prompt { font-size: 0.75em; color: var(--text-dim); }
+    .prepro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .prepro-step { background: var(--surface); border-radius: 8px; padding: 20px; border: 2px solid var(--border); text-align: center; }
+    .prepro-step h4 { margin-bottom: 8px; }
+    .prepro-step p { color: var(--text-dim); font-size: 0.9em; margin-bottom: 8px; }
+    .step-approved { border-color: var(--green); }
+    .step-pending { border-color: var(--orange); }
+    .check { color: var(--green); font-weight: 600; }
+    .pending { color: var(--orange); font-weight: 600; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .prepro-image-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .prepro-image-grid .grid-item img { height: 280px; }
+    .grid-item { background: var(--surface); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
+    .grid-item img { width: 100%; height: 160px; object-fit: cover; }
+    .grid-item span { display: block; padding: 4px 8px; font-size: 0.7em; color: var(--text-dim); font-family: monospace; }
+    .approved-item { border-color: var(--green); border-width: 2px; }
+    .approved-item span { color: var(--green); }
+    .cover-section { text-align: center; margin-bottom: 32px; }
+    .cover-image { max-width: 400px; border-radius: 8px; border: 2px solid var(--accent); }
+    .stats-bar { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 20px; background: var(--surface); border-radius: 8px; margin-bottom: 32px; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 0.8em; color: var(--text-dim); }
+    footer { text-align: center; padding: 32px; color: var(--text-dim); font-size: 0.8em; border-top: 1px solid var(--border); margin-top: 40px; }
+    @media (max-width: 768px) {
+        .prepro-grid { grid-template-columns: 1fr; }
+        .sections-grid { grid-template-columns: 1fr; }
+        .hero-header h1 { font-size: 1.8em; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-header">
+        <h1>Red Foxes: A Den Full of Love</h1>
+        <div class="subtitle">Pip's Adventures in the Autumn Meadow</div>
+        <div class="meta-line">February 2026 &bull; Issue #11 &bull; Chapter: foxes</div>
+        <p class="description">Follow Pip the red fox kit through his first autumn, from opening his eyes in the cozy den to learning to pounce, play, and curl up with his family under the stars</p>
+        
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat"><div class="num">4</div><div class="label">Characters</div></div>
+        <div class="stat"><div class="num">12</div><div class="label">Scenes</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Viewer Details</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Fun Facts</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">Total Images</div></div>
+        <div class="stat"><div class="num">0 / 0</div><div class="label">Gemini / OpenAI</div></div>
+    </div>
+
+    <h2>Preface</h2>
+    <div class="preface">
+        <p>Welcome to the golden autumn woodland, where a family of red foxes lives in a cozy underground den beneath an old oak tree! In this adventure, we'll follow Pip, an adorable little kit with oversized ears and one white sock, as he discovers the magic of the meadow with his family.</p>
+<p>Red foxes are some of the cleverest animals in nature. Papa hunts with an incredible pounce-dive, Mama knows every berry and safe path in the forest, and the kits learn everything through play. Both parents work together to teach their babies about the wonderful world above their den.</p>
+<p>Through Pip's first autumn, you'll discover how foxes hear mice under the snow, how they bury food in hundreds of hiding spots, how their bushy tails keep them warm like blankets, and how their eyes glow in the dark. Get ready for a cozy adventure in the autumn leaves!</p>
+    </div>
+
+    <h2>Art Direction</h2>
+    <div class="style-banner">
+        <strong>Global Style:</strong> Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, leaves, and grass. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Warm autumn woodland setting with golden leaves, amber light, misty mornings, and cozy den interiors. Child-friendly and inviting.
+    </div>
+
+    <h2>Pre-Production Pipeline</h2>
+    
+        <div class="prepro-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="prepro-step step-pending">
+                <h4>Step 0: Storyline</h4>
+                <p>pending (0 attempts)</p>
+                <span class="pending">pending</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 1: Unified Cast Sheet</h4>
+                <p>approved (1 attempts)</p>
+                <span class="check">Approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 2: Character Sheets</h4>
+                <p>approved</p>
+                <span class="check">Papa Russet: approved</span><br><span class="check">Mama Fern: approved</span><br><span class="check">Pip: approved</span><br><span class="check">Clover: approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 3: Mood Proposals</h4>
+                <p>approved</p>
+                <span class="check">Moods: translucency, lush-botanical</span>
+            </div>
+        </div>
+    
+    <h3>Step 1: Unified Cast Sheets</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step1-unified/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>approved.jpg (APPROVED)</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step1-unified/unified-cast-v1.jpg" alt="unified-cast-v1.jpg" loading="lazy" />
+                        <span>unified-cast-v1.jpg</span>
+                    </div></div><h3>Step 2: Papa Russet Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/papa-russet/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/papa-russet/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Mama Fern Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/mama-fern/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/mama-fern/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Pip Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/pip/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/pip/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Clover Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/clover/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/clover/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 3: Pixar Mood Proposals</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step3-style/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>APPROVED</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-1-translucency-botanical.jpg" alt="proposal-1-translucency-botanical.jpg" loading="lazy" />
+                        <span>1-translucency-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-2-epic-intimate.jpg" alt="proposal-2-epic-intimate.jpg" loading="lazy" />
+                        <span>2-epic-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-3-golden-botanical.jpg" alt="proposal-3-golden-botanical.jpg" loading="lazy" />
+                        <span>3-golden-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-4-translucency-intimate.jpg" alt="proposal-4-translucency-intimate.jpg" loading="lazy" />
+                        <span>4-translucency-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-5-epic-golden.jpg" alt="proposal-5-epic-golden.jpg" loading="lazy" />
+                        <span>5-epic-golden</span>
+                    </div></div>
+
+    <h2>Character Cast</h2>
+    <div class="characters-grid">
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">P</div>
+                <div class="character-info">
+                    <h4>Papa Russet</h4>
+                    <p>Tall handsome dog fox with deep rich russet coat, dramatic silver streak along his back, long elegant black legs, magnificent bushy tail, warm amber eyes</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">M</div>
+                <div class="character-info">
+                    <h4>Mama Fern</h4>
+                    <p>Graceful vixen with softer golden-orange coat, beautiful cream chest, gentle warm brown eyes, distinctive pale patch behind one ear</p>
+                    <span class="small-text">No portrait</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">P</div>
+                <div class="character-info">
+                    <h4>Pip</h4>
+                    <p>Smallest kit with brightest vivid orange fur, oversized perky ears, one distinctive white sock on front left paw, curious tilted-head pose</p>
+                    <span class="small-text">pip-opens-eyes.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">C</div>
+                <div class="character-info">
+                    <h4>Clover</h4>
+                    <p>Slightly larger kit with darker reddish-auburn coat, extra-large white tail tip, tiny dark freckle on nose, notably bushy tail for her age</p>
+                    <span class="small-text">clover-portrait.jpg</span>
+                </div>
+            </div></div>
+
+    <h2>Scene Plan (12 scenes)</h2>
+    <div class="sections-grid">
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-papa</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Meet Papa Russet</h3>
+                <div class="missing-image">Missing: papa-russet-portrait.jpg</div>
+                <p class="section-content">Papa Russet is the handsomest fox in the whole autumn woodland! He stands tall and proud in the misty dawn meadow, his deep rich russet coat glowing like fire in the golden light. A dramatic silver streak runs along his back like a bolt of lightning, and his long elegant black legs carry him silently through the grass. His magnificent bushy tail swishes behind him as he listens, ears turning this way and that. 'The meadow is waking up,' he whispers, his warm amber eyes sparkling. 'And somewhere under this grass, breakfast is hiding.'</p>
+                
+                
+                <div class="image-filename">papa-russet-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-mama</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Meet Mama Fern</h3>
+                <div class="missing-image">Missing: mama-fern-portrait.jpg</div>
+                <p class="section-content">Deep underground, in the cosiest den you can imagine, Mama Fern is curled up like a golden-orange crescent moon. The walls are smooth earth, lined with soft moss and dry leaves she gathered herself. Mama's coat is softer and lighter than Papa's — a beautiful golden-orange that seems to glow in the dim light. Her cream-coloured chest rises and falls gently, and her warm brown eyes watch over two tiny bundles of fur nestled against her belly. 'Sleep well, my little ones,' she murmurs, her distinctive pale patch behind one ear catching the faintest light from the den entrance. 'Tomorrow, you'll see the world.'</p>
+                
+                
+                <div class="image-filename">mama-fern-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">pip-opens-eyes</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-openai">OPENAI</span>
+                </div>
+                <h3>Hello, World!</h3>
+                <div class="missing-image">Missing: pip-opens-eyes.jpg</div>
+                <p class="section-content">One morning, the smallest kit opens his eyes for the very first time. The world is blurry and dim, but oh — how WONDERFUL it smells! Earth and moss and Mama's warm fur. Little Pip blinks his bright eyes and tilts his head sideways, his oversized ears perking up at every tiny sound. He wiggles his paws — three black ones and one special white sock on his front left paw. 'Mama?' he squeaks. Mama Fern nuzzles him gently. 'Hello, my brave little Pip. You have the most curious eyes I've ever seen.' And she's right — Pip wants to see EVERYTHING.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> tiny fox kit with brightest vivid orange fur and oversized perky ears opening his eyes for the very first time inside a cozy dark underground den, one white sock on front left paw visible, mama fox curled around him, the kit's face full of wonder and curiosity, warm dim light from den entrance, soft moss bedding</div>
+                <div class="refs">References: meet-mama</div>
+                <div class="image-filename">pip-opens-eyes.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-clover</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Clover, the Clever One</h3>
+                <div class="missing-image">Missing: clover-portrait.jpg</div>
+                <p class="section-content">Pip isn't alone! His sister Clover is already awake and exploring. She's a bit bigger than Pip, with a darker reddish-auburn coat and the bushiest tail you've ever seen on a kit. There's a tiny dark freckle right on her nose that wiggles when she sniffs. And she sniffs EVERYTHING. Right now she's figured out that a root poking through the den wall leads UP — to the outside world. 'I bet I can dig around it,' Clover announces, already pawing at the earth. 'Clover, darling,' Mama sighs with a smile. 'The door is right over there.' But that's Clover — she always finds her own way.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> slightly larger fox kit with darker reddish-auburn coat and an extra-large white tail tip exploring the edges of the underground den, sniffing at a root poking through the earth wall, tiny dark freckle on nose visible, notably bushy tail for her age, the smaller bright orange kit watching from beside mama fox</div>
+                <div class="refs">References: pip-opens-eyes, meet-mama</div>
+                <div class="image-filename">clover-portrait.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">first-outside</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Great Big World!</h3>
+                <div class="missing-image">Missing: first-outside.jpg</div>
+                <p class="section-content">Today is the day! Papa appears at the den entrance, his silver-streaked back silhouetted against a blaze of golden light. 'Come on, little ones. It's time to see your meadow.' Pip and Clover scramble up the tunnel and — GASP! The world is ENORMOUS! There's a sky that goes on forever, painted in soft pinks and golds. There are trees taller than a thousand dens stacked on top of each other. There are leaves raining down like golden coins. Pip sits down with a thump, head tilted way back, mouth wide open. 'Papa,' he whispers. 'Is all of this... OURS?' Papa smiles. 'Every last leaf.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> fox family emerging from their underground den into brilliant autumn sunshine for the first time, two tiny kits blinking at the bright golden world, enormous ancient oak tree above, golden and amber leaves everywhere, the kits' eyes wide with amazement, papa and mama fox standing protectively, warm morning mist, mushrooms on the ground</div>
+                <div class="refs">References: meet-papa, meet-mama, pip-opens-eyes, meet-clover</div>
+                <div class="image-filename">first-outside.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">papas-pounce</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Papa's Amazing Pounce!</h3>
+                <div class="missing-image">Missing: papas-pounce.jpg</div>
+                <p class="section-content">Papa has something INCREDIBLE to show the kits. He stands very still in the tall grass, head tilted, one ear turned forward and one turned sideways. 'Shhhh,' he whispers. 'Listen.' The kits freeze. Then Papa does the most AMAZING thing — he leaps HIGH into the air, arching his whole body like a rainbow, and DIVES nose-first straight down into the grass! POUNCE! He pops back up with a proud grin. 'That, my dears, is the fox pounce. We listen for mice under the grass, and then — we fly!' Pip's eyes are as round as the moon. 'I want to FLY!'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> papa fox mid-leap doing his famous mouse-pounce dive, body arched high in the air with front paws aimed downward into tall autumn grass, two small fox kits watching with amazement from a safe distance, golden meadow with amber leaves, dramatic action pose, warm autumn light</div>
+                <div class="refs">References: meet-papa, pip-opens-eyes, meet-clover</div>
+                <div class="image-filename">papas-pounce.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">clovers-first-catch</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Clover's Wobbly Pounce</h3>
+                <div class="missing-image">Missing: clovers-first-catch.jpg</div>
+                <p class="section-content">Clover watches Papa carefully — head tilt, ear turn, and... POUNCE! Well, sort of. Her first try is more of a wobbly belly-flop into a pile of leaves — FWUMP! But Clover is determined. She tries again. And again. On her fifth try, she launches herself into the air, arches her back just like Papa, and — catches a falling leaf right between her paws! 'I CAUGHT SOMETHING!' she shouts, holding up the golden leaf triumphantly. Papa beams with pride. 'A perfect pounce! Next time, that leaf will be a mouse.' Pip claps his paws together. 'My turn! My turn!'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> small reddish-auburn fox kit doing a wobbly adorable pounce into a pile of golden autumn leaves, front paws outstretched, body arched clumsily, catching a leaf mid-air, papa fox watching proudly in the background, smaller bright orange kit watching wide-eyed, golden autumn meadow setting</div>
+                <div class="refs">References: meet-clover, meet-papa, pip-opens-eyes</div>
+                <div class="image-filename">clovers-first-catch.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">berry-picking</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Mama's Meadow Lessons</h3>
+                <div class="missing-image">Missing: berry-picking.jpg</div>
+                <p class="section-content">While Papa teaches pouncing, Mama teaches everything else! She leads the kits along the stream, showing them which berries are sweet and safe. 'Blackberries — yummy!' she says, plucking one for each kit. 'But those red ones? Never touch.' She shows them where the frogs hide, where the best mushrooms grow, and how to drink from the stream without getting your nose too wet. Pip sticks his whole face in the water — SPLUTTER! Clover drinks daintily and shakes her head. 'You have to be GENTLE, Pip.' But Pip doesn't mind. The water tastes like adventure.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> mama fox teaching two small fox kits about berries and mushrooms in an autumn woodland, mama sniffing at ripe blackberries on a bush, one kit reaching up toward berries, the other sniffing a mushroom, a gentle stream visible in the background, rich autumn colors, dappled golden light through trees</div>
+                <div class="refs">References: meet-mama, pip-opens-eyes, meet-clover</div>
+                <div class="image-filename">berry-picking.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">fox-games</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Wild Fox Games!</h3>
+                <div class="missing-image">Missing: fox-games.jpg</div>
+                <p class="section-content">When fox kits play, they play with their WHOLE hearts! Pip and Clover race through piles of golden leaves, sending them flying like fireworks. They wrestle — Clover pins Pip down, but he wiggles free and grabs her tail. They chase each other in circles until they're dizzy, then collapse in a giggling heap. Pip leaps OVER Clover. Clover leaps over a log. Pip tries to leap over the log AND Clover — and lands right on top of her! 'OOOF!' But they're both laughing too hard to care. This is what it means to be a fox kit in autumn.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two fox kits playing wildly in golden autumn leaves, one bright orange kit leaping over the other darker reddish-auburn kit, leaves flying everywhere, tails streaming behind them, wrestling and tumbling, pure joy and energy, golden meadow with scattered autumn leaves, warm amber light</div>
+                <div class="refs">References: pip-opens-eyes, meet-clover</div>
+                <div class="image-filename">fox-games.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">hide-and-seek</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Can You See Us?</h3>
+                <div class="missing-image">Missing: hide-and-seek.jpg</div>
+                <p class="section-content">Mama teaches the kits the most important fox trick of all — how to disappear! 'Lie very still in the leaves,' she whispers. 'Your fur is the same colour as autumn.' Pip and Clover dive into a pile of fallen leaves and hold perfectly still. And — MAGIC! Their orange and auburn fur blends so perfectly with the golden leaves that they completely vanish! Only their bright eyes peek out. 'I can't see you anywhere!' Papa calls out, pretending to search. The kits giggle silently, leaves trembling. 'Nature gave foxes the best disguise,' Mama says proudly. 'The whole forest is your hiding spot.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two fox kits hiding in autumn leaves, their orange and reddish-auburn fur blending perfectly with the golden and amber fallen leaves, only their bright eyes and ear tips visible, natural camouflage, dappled forest light, fallen leaves covering the forest floor, magical hide-and-seek moment</div>
+                <div class="refs">References: pip-opens-eyes, meet-clover</div>
+                <div class="image-filename">hide-and-seek.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">sunset-meadow</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Golden Hour</h3>
+                <div class="missing-image">Missing: sunset-meadow.jpg</div>
+                <p class="section-content">As the sun sinks low, the whole meadow turns to liquid gold. This is the foxes' favourite time — the golden hour, when the light makes everything look like a painting. Papa chases Pip through the tall grass while Mama and Clover play tug with a stick. The kits' fur blazes like little flames in the amber light. Long shadows stretch across the meadow like gentle giants. Pip stops and looks around at his family — Papa with his silver streak glowing, Mama with her cream chest catching the last warm rays, Clover with her bushy tail streaming behind her like a banner. 'This is the best day,' Pip thinks. But tomorrow will be the best day too.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> fox family playing together in a spectacular autumn sunset, golden light streaming through trees, papa and mama fox with two kits chasing and leaping through golden leaves, long shadows, warm amber and rose sky, silhouettes of ancient oaks, magical golden hour atmosphere, pure family joy</div>
+                <div class="refs">References: meet-papa, meet-mama, pip-opens-eyes, meet-clover</div>
+                <div class="image-filename">sunset-meadow.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">starry-den</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Papa's Tail Blanket</h3>
+                <div class="missing-image">Missing: starry-den.jpg</div>
+                <p class="section-content">Night falls softly over the meadow, and a thousand stars appear like tiny candles in the sky. The fox family curls up together at the entrance of their den, under the old oak tree. Papa wraps his big magnificent tail around both kits like the warmest, softest blanket in the world. Mama nestles close, her gentle brown eyes already heavy with sleep. Pip burrows deeper into the warm fur. He can hear Papa's heartbeat — steady and strong. He can feel Clover's breathing — slow and peaceful. He can smell the earth, the leaves, the night. 'Papa?' Pip whispers. 'Are the stars our night-lights?' 'Yes,' Papa murmurs. 'Every single one.' And wrapped in love and starlight and the warmth of Papa's tail, the little fox family drifts off to sleep.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> fox family curled up together under a starry night sky just outside their den entrance beneath the old oak tree, papa fox wrapping his big bushy tail around both kits like a blanket, mama fox nestled close, all four foxes cozy and sleepy, stars twinkling above, fireflies glowing softly, peaceful autumn night, warm and safe feeling</div>
+                <div class="refs">References: meet-papa, meet-mama, pip-opens-eyes, meet-clover</div>
+                <div class="image-filename">starry-den.jpg</div>
+            </div></div>
+
+    <h2>Viewer Details</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-ear-closeup.jpg</div>
+                <h4>Ear Close-up</h4>
+                <p>Look at Papa Russet's amazing ears — they can rotate independently, like two radar dishes! One ear can point forward while the other turns sideways or even backward. This lets foxes pinpoint the exact location of sounds, even tiny mice rustling under leaves or snow. The ears are lined with thick fur to keep warm, and the dark tips help foxes recognize each other. A fox's hearing is so precise it can detect the direction of a sound within one degree!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-paw-pads.jpg</div>
+                <h4>Paw Pads</h4>
+                <p>Fox paws are perfectly designed for sneaking! Their paw pads are covered in thick fur — even on the bottom — which muffles their footsteps like built-in slippers. Unlike most dogs, foxes have semi-retractable claws that they can pull in slightly for silent stalking and extend for digging dens. Look at Pip's special white sock on his front left paw — underneath, his paw pads are just as dark and tough as his black paws!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-whisker-sensors.jpg</div>
+                <h4>Whisker Sensors</h4>
+                <p>Mama Fern's long whiskers aren't just for looks — they're incredibly sensitive touch sensors! Each whisker is connected to hundreds of nerve endings that can detect the tiniest changes in air currents. This helps foxes navigate in complete darkness inside their dens and through thick undergrowth at night. The whiskers are as wide as the fox's body, helping them judge whether they can fit through tight spaces. They can even sense the body heat of nearby prey!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-tail-anatomy.jpg</div>
+                <h4>The Magnificent Brush</h4>
+                <p>Papa Russet's tail — called a 'brush' by fox lovers — is a marvel of nature! It makes up about one-third of his total body length and is packed with thick, insulating fur. The white tip at the end helps fox family members follow each other through tall grass and dim light. Inside the tail, a scent gland produces the musky 'foxy' smell that foxes use to mark their territory. Kits love to chase their parents' tails — it's their favourite toy!</p>
+            </div></div>
+
+    <h2>Fun Facts</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-super-hearing.jpg</div>
+                <h4>Super Hearing</h4>
+                <p>Red foxes can hear a mouse squeaking from 100 feet away, and can even hear them tunnelling under 3 feet of snow! Their large ears can rotate independently — one ear forward and one sideways — like two satellite dishes scanning for sound. This super hearing is what makes their famous pounce-dive so accurate. They can pinpoint exactly where a mouse is hiding, even when they can't see it!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-food-burying.jpg</div>
+                <h4>The Fox Trot</h4>
+                <p>When a fox finds extra food, it doesn't just eat it all — it buries it for later! Foxes dig small holes, drop in a mouse or some berries, and cover it back up with their nose. The amazing part? A single fox can remember HUNDREDS of hiding spots! They use landmarks like trees, rocks, and streams to create a mental treasure map. Some foxes have been found with over 1,000 cached food items!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-tail-warmth.jpg</div>
+                <h4>Tail Warmth</h4>
+                <p>A fox's bushy tail — called a 'brush' — is the ultimate multi-tool! In cold weather, foxes wrap their tail over their nose and paws like a cozy blanket. In rain, it works like an umbrella. When running, it helps with balance like a tightrope walker's pole. Foxes even use their tails to communicate — a wagging tail means 'let's play,' and a puffed-up tail means 'stay away!' Baby foxes love sleeping wrapped in their parents' tails.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-night-vision.jpg</div>
+                <h4>Night Vision</h4>
+                <p>Fox eyes have a special mirror-like layer behind the retina called the tapetum lucidum — which means 'bright carpet' in Latin! This layer bounces light back through the eye a second time, giving foxes incredible night vision. It's also what makes their eyes glow bright greenish-gold when caught in a flashlight beam at night. Foxes can see in light levels six times lower than what humans need. They're nature's night ninjas!</p>
+            </div></div>
+
+    <h2>Hidden Generation Sections</h2>
+    <div class="hidden-grid">
+            <div class="hidden-section-card">
+                <span class="section-id">detail-ear-closeup</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the fox from reference, extreme close-up of a red fox's large pointed ears showing the independent rotation abilit...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-paw-pads</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the fox kit from reference, close-up of a red fox's paw showing the semi-retractable claws and furry paw pads, one...</p>
+                <span class="refs">Ref: pip-opens-eyes</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-whisker-sensors</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the vixen from reference, close-up of a red fox's face focusing on the long sensitive whiskers fanning out from th...</p>
+                <span class="refs">Ref: meet-mama</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-tail-anatomy</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the fox from reference, detailed view of a red fox's magnificent bushy tail showing the thick fur layers and white...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-super-hearing-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the fox kit from reference, show a fox with ears perked up independently rotating, sound waves illustrated coming ...</p>
+                <span class="refs">Ref: pip-opens-eyes</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-food-burying-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the fox from reference, show a fox carefully burying food in the ground with its nose, small cache holes visible a...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-tail-warmth-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the fox from reference, show a fox curled up with its bushy tail wrapped over its nose and paws like a blanket, co...</p>
+                <span class="refs">Ref: meet-papa</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-night-vision-img</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">A red fox's face in the dark with eyes glowing bright greenish-gold from the reflective tapetum lucidum, mysterious nigh...</p>
+                
+            </div></div>
+
+    
+
+    <h2>All Images — Visual Consistency Check</h2>
+    <div class="image-grid"></div>
+
+    <footer>
+        Production Bible &bull; Generated 2026-02-28 &bull; Red Foxes: A Den Full of Love
+    </footer>
+</div>
+</body>
+</html>
