@@ -32,10 +32,25 @@ class IndexGenerator {
         return this.chapters;
     }
 
+    loadIgnoredChapters() {
+        const ignorePath = path.join(__dirname, '..', '.chapterignore');
+        if (!fs.existsSync(ignorePath)) return [];
+        return fs.readFileSync(ignorePath, 'utf8')
+            .split('\n')
+            .map(line => line.trim())
+            .filter(line => line && !line.startsWith('#'));
+    }
+
     async loadChapters() {
+        const ignored = this.loadIgnoredChapters();
         const files = fs.readdirSync(this.chaptersDir)
-            .filter(file => file.endsWith('.yaml'));
-        
+            .filter(file => file.endsWith('.yaml'))
+            .filter(file => !ignored.includes(file.replace('.yaml', '')));
+
+        if (ignored.length > 0) {
+            console.log(`📋 Ignoring chapters: ${ignored.join(', ')}`);
+        }
+
         for (const file of files) {
             const filePath = path.join(this.chaptersDir, file);
             console.log(`📖 Loading: ${file}`);

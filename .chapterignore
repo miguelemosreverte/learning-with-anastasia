@@ -1,0 +1,5 @@
+# Chapters listed here are excluded from the published index.html
+# One chapter name per line (matches the .yaml filename without extension)
+# Lines starting with # are comments
+
+seahorses

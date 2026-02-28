@@ -116,7 +116,7 @@ sections:
   - id: meet-brio
     generate_character: true
     use_character: "${luna-drops-in.image}"
-    action: "two tadpoles in a clear rainforest pond — one small and black, one slightly bigger and green-brown with tiny developing back legs visible, swimming together playfully among water plants and lily pads, warm golden underwater light"
+    action: "bird's-eye view looking straight DOWN into a shallow rainforest pond — two tadpoles visible through the water swimming side by side, one small and black, one slightly bigger and green-brown with tiny developing back legs visible, lily pads and floating flowers on the water surface around them, pebbles visible on the sandy pond floor beneath the tadpoles, warm dappled sunlight from above, top-down perspective like looking into a koi pond"
     title:
       en: "Meet Brio, Big Brother!"
       es: "¡Conoce a Brio, el Hermano Mayor!"
@@ -148,7 +148,7 @@ sections:
   # Front Legs Appear
   - id: front-legs-appear
     use_characters: ["${luna-drops-in.image}"]
-    action: "tadpole transforming into a froglet — now has four legs (back legs bigger, front legs tiny and new), tail still present but shorter, body turning green, sitting on a lily pad half in half out of water, looking at its own tiny new front legs with amazement, lush rainforest pond setting with warm golden light"
+    action: "EXACTLY FOUR LEGS ONLY — a small green froglet sitting on a lily pad, seen from the front. It has TWO large bent back legs tucked underneath like a squatting position and TWO tiny front arms near its chest. A short stubby tail remnant still visible. The froglet looks down at its own tiny new front legs with wide-eyed amazement. CRITICAL: count the legs — exactly 2 front, 2 back, total 4. No extra limbs. Lush rainforest pond, warm golden light."
     title:
       en: "Four Legs! A Froglet!"
       es: "¡Cuatro Patas! ¡Una Ranita!"
@@ -178,7 +178,7 @@ sections:
   - id: flash-red-eyes
     mood: [translucency, soft-intimate]
     use_characters: ["${luna-drops-in.image}", "${meet-mama.image}"]
-    action: "small bright green frog with huge wide-open glowing red eyes on a green leaf, eyes opened dramatically wide in a startle display, the red eyes seeming to glow in the dim rainforest light, adult frog nearby demonstrating the same pose, playful and dramatic scene, lush rainforest setting"
+    action: "two bright green red-eyed tree frogs on a broad leaf in lush rainforest — a small young frog and a larger adult mother frog, both with their vivid crimson-red eyes wide open in a dramatic startle display, the eyes are matte vivid red with dark vertical slit pupils (like a real Agalychnis callidryas photograph — no glow effects, no light emission), both frogs look directly at the viewer with theatrical wide-eyed surprise, playful rainforest setting with dewdrops on leaves"
     title:
       en: "The Red Eye Trick!"
       es: "¡El Truco de los Ojos Rojos!"
@@ -241,7 +241,7 @@ sections:
   - id: "detail-sticky-toes"
     image: "detail-sticky-toes.jpg"
     referenceImage: "${luna-drops-in.image}"
-    prompt: "Extreme close-up of a red-eyed tree frog's orange toe pads showing the sticky disc-like structure, the toe gripping a wet leaf surface. Classic hand-drawn Disney animation style, warm educational illustration, child-friendly."
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single frog FOOT with five orange toe pads gripping the edge of a wet green leaf. The foot is attached to a visible green leg coming from off-frame. Show the round suction-cup disc at the tip of each toe pressing flat against the leaf surface. Dewdrops on the leaf. Only the foot, toes, and part of the leg visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
     hidden: true
 
   - id: "detail-skin-texture"
@@ -259,7 +259,7 @@ sections:
   - id: "detail-tongue-anatomy"
     image: "detail-tongue-anatomy.jpg"
     referenceImage: "${meet-papa.image}"
-    prompt: "Using the frog from reference, illustration showing a tree frog's tongue extended, showing the sticky tip and the speed of the catch, a small fly being caught. Same character and classic hand-drawn Disney animation style, educational."
+    prompt: "A SINGLE red-eyed tree frog — ONLY ONE frog in the image — perched on a branch with its mouth WIDE OPEN and its long pink sticky tongue fully extended outward catching a small fly in mid-air. Show exactly ONE frog, ONE mouth, ONE tongue. No second frog, no reflection, no duplicate. Classic hand-drawn Disney animation style, educational close-up illustration."
     hidden: true
 
   # Fun fact images
