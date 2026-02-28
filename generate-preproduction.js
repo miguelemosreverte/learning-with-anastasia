@@ -37,31 +37,54 @@ const {
 
 const STYLE_PROPOSALS = [
     {
+        id: 'classic-disney',
+        name: 'Classic Disney Hand-Drawn',
+        prompt: 'Classic hand-drawn animation style inspired by Disney\'s Golden Age (Snow White, Bambi, The Jungle Book). Expressive character faces with large soulful eyes. Warm, naturalistic color palette with rich earth tones. Painterly brushstrokes visible in fur, skin, and foliage. Soft, rounded character proportions emphasizing personality over photorealism. Vintage animation cel warmth with gentle watercolor-like backgrounds. The charm of hand-drawn animation — organic, flowing lines with visible human artistry.'
+    },
+    {
+        id: 'ghibli',
+        name: 'Studio Ghibli Watercolor Warmth',
+        prompt: 'Studio Ghibli-inspired hand-painted watercolor style, similar to classic hand-drawn Disney films but with Japanese animation sensibility. Soft edges, warm golden palette, visible brushstrokes. Gentle pastel tones with warm highlights. Atmospheric perspective with soft backgrounds. Organic hand-drawn character design with painterly brushwork. The feeling of a Miyazaki film — peaceful, warm, and magical. Luminous sky with soft clouds.'
+    },
+    {
         id: 'pixar',
         name: 'Pixar / 3D Render Quality',
         prompt: 'Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Dramatic cinematic lighting with warm key light and cool fill. Rich saturated colors. Photorealistic textures but stylized proportions. Depth of field with bokeh. The look of a Pixar feature film still.'
     },
     {
-        id: 'ghibli',
-        name: 'Studio Ghibli Watercolor Warmth',
-        prompt: 'Studio Ghibli-inspired hand-painted watercolor style. Soft edges, warm golden palette, visible brushstrokes. Gentle pastel tones with warm highlights. Atmospheric perspective with soft backgrounds. The feeling of a Miyazaki film — peaceful, warm, and magical. Luminous sky with soft clouds.'
-    },
-    {
-        id: 'classic',
+        id: 'classic-book',
         name: 'Classic Children\'s Book Illustration',
         prompt: 'Traditional children\'s book illustration style inspired by Eric Carle and Oliver Jeffers. Textured paper feel, visible artistic medium (gouache, colored pencil, collage). Bold simple shapes. Warm earth tones with pops of bright primary colors. Hand-crafted tactile quality. Slightly naive, charming character rendering.'
     },
     {
-        id: 'cel-shaded',
-        name: 'Cel-Shaded / Anime-Influenced',
-        prompt: 'Clean cel-shaded illustration with bold outlines. Anime-influenced but child-friendly. Flat color areas with sharp shadow edges. Bright saturated color palette. Dynamic composition. Clean vector-like quality with occasional soft gradient on sky and background. Expressive eyes and poses.'
-    },
-    {
         id: 'pbr',
-        name: 'PBR / Physically-Based Rendering',
+        name: 'PBR / Photorealistic Rendering',
         prompt: 'Physically-based rendering with photorealistic lighting and materials. Natural textures on skin — wrinkles, dust, fine hairs visible. Golden-hour volumetric lighting with god rays through trees. Photographic depth of field. Ground truth materials — real grass, real water, real dust particles. Nature documentary quality but with a warm child-friendly feel.'
     }
 ];
+
+// ── Helpers ─────────────────────────────────────────────────────────
+
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+}
+
+async function withRetry(fn, { maxRetries = 2, label = 'API call' } = {}) {
+    for (let attempt = 0; attempt <= maxRetries; attempt++) {
+        try {
+            return await fn();
+        } catch (err) {
+            if (attempt === maxRetries) throw err;
+            const delay = Math.pow(2, attempt + 1) * 1000; // 2s, 4s
+            console.log(`   Retry ${attempt + 1}/${maxRetries} for ${label} in ${delay / 1000}s (${err.message})`);
+            await new Promise(r => setTimeout(r, delay));
+        }
+    }
+}
 
 // ── CLI ──────────────────────────────────────────────────────────────
 
@@ -161,8 +184,24 @@ class PreproductionPipeline {
 
     _loadOrCreateConfig() {
         if (fs.existsSync(this.configPath)) {
-            this.config = JSON.parse(fs.readFileSync(this.configPath, 'utf8'));
+            try {
+                this.config = JSON.parse(fs.readFileSync(this.configPath, 'utf8'));
+            } catch (err) {
+                console.error(`   Warning: config.json corrupted (${err.message}), creating fresh config`);
+                this.config = null;
+            }
+        }
+
+        if (this.config) {
             this.config.characters = this.characters;
+            // Ensure step2.characters has entries for all characters
+            if (!this.config.step2) this.config.step2 = { status: 'pending', characters: {} };
+            if (!this.config.step2.characters) this.config.step2.characters = {};
+            for (const char of this.characters) {
+                if (!this.config.step2.characters[char.id]) {
+                    this.config.step2.characters[char.id] = { status: 'pending', attempts: 0 };
+                }
+            }
         } else {
             this.config = {
                 chapter: this.chapter,
@@ -191,6 +230,8 @@ class PreproductionPipeline {
      */
     _getLatestUnified() {
         const dir = path.join(this.preproDir, 'step1-unified');
+        if (!fs.existsSync(dir)) return null;
+
         const approved = path.join(dir, 'approved.jpg');
         if (fs.existsSync(approved)) return approved;
 
@@ -198,8 +239,8 @@ class PreproductionPipeline {
         const files = fs.readdirSync(dir)
             .filter(f => f.match(/^unified-cast-v\d+\.jpg$/))
             .sort((a, b) => {
-                const va = parseInt(a.match(/v(\d+)/)[1]);
-                const vb = parseInt(b.match(/v(\d+)/)[1]);
+                const va = parseInt(a.match(/v(\d+)/)?.[1] || '0');
+                const vb = parseInt(b.match(/v(\d+)/)?.[1] || '0');
                 return vb - va;
             });
         return files.length > 0 ? path.join(dir, files[0]) : null;
@@ -218,8 +259,8 @@ class PreproductionPipeline {
         const files = fs.readdirSync(dir)
             .filter(f => f.match(/^sheet-v\d+\.jpg$/))
             .sort((a, b) => {
-                const va = parseInt(a.match(/v(\d+)/)[1]);
-                const vb = parseInt(b.match(/v(\d+)/)[1]);
+                const va = parseInt(a.match(/v(\d+)/)?.[1] || '0');
+                const vb = parseInt(b.match(/v(\d+)/)?.[1] || '0');
                 return vb - va;
             });
         return files.length > 0 ? path.join(dir, files[0]) : null;
@@ -246,7 +287,16 @@ class PreproductionPipeline {
         console.log(`\n   Generating unified cast sheet (v${version})...`);
         const prompt = this._buildUnifiedSheetPrompt(feedback);
 
-        const buffer = await geminiTextToImage(this.ai, prompt);
+        let buffer;
+        try {
+            buffer = await withRetry(
+                () => geminiTextToImage(this.ai, prompt),
+                { label: 'unified cast sheet' }
+            );
+        } catch (err) {
+            console.log(`   API error: ${err.message}`);
+            return;
+        }
         if (!buffer) {
             console.log('   No image returned from API.');
             return;
@@ -270,26 +320,28 @@ class PreproductionPipeline {
             `${i + 1}. ${c.name.toUpperCase()} — ${c.description}`
         ).join('\n');
 
-        const feedbackLine = feedback
-            ? `\nIMPORTANT REVISION FEEDBACK: ${feedback}`
+        const cleanFeedback = feedback ? feedback.replace(/[{}[\]`]/g, '').substring(0, 500) : '';
+        const feedbackLine = cleanFeedback
+            ? `\nIMPORTANT REVISION FEEDBACK: ${cleanFeedback}`
             : '';
 
-        return `Create a CHARACTER DESIGN SHEET in clean BLACK AND WHITE LINE ART style.
+        return `Create a CHARACTER DESIGN SHEET in classic hand-drawn animation style, like a Disney animator's reference page from the Golden Age (Snow White, Bambi era).
 
 Show the following characters side by side, each clearly separated and labeled:
 
 ${charList}
 
 RULES:
-- BLACK AND WHITE LINE ART ONLY — no color, no shading, no gradients, no background scenery
-- Clean outlines like a professional animation character turnaround sheet
+- BLACK AND WHITE LINE ART with warm, organic, hand-drawn quality — like pencil on animation paper
+- Flowing, confident lines with personality — NOT mechanical, NOT vector-clean, NOT sterile
+- The linework should feel like it was drawn by a skilled traditional animator — slight variations in line weight, natural curves
 - Show clear size relationships between characters (babies smaller, adults larger)
 - Each character must be distinct and immediately recognizable by their unique features
-- Show each character in a relaxed standing pose, full body visible
-- Simple clean white background
+- Show each character in a relaxed, expressive standing pose that reveals personality, full body visible
+- Large, soulful, expressive eyes — the hallmark of classic Disney character design
+- Simple clean white/cream background like animation paper
 - Put the character name as a small label below each one
-- NO artistic style applied — pure character construction and proportions only
-- This is a REFERENCE SHEET for animators — clarity and consistency above all
+- This is a REFERENCE SHEET for hand-drawn animators — warmth and charm above all
 ${feedbackLine}`;
     }
 
@@ -323,14 +375,16 @@ ${feedbackLine}`;
                 continue;
             }
 
-            charConfig.attempts++;
-            const version = charConfig.attempts;
+            const version = charConfig.attempts + 1;
 
             console.log(`   Generating ${char.name} sheet (v${version})...`);
             const prompt = this._buildCharacterSheetPrompt(char, feedback);
 
             try {
-                const buffer = await geminiMultiRefGenerate(this.ai, [unifiedPath], prompt);
+                const buffer = await withRetry(
+                    () => geminiMultiRefGenerate(this.ai, [unifiedPath], prompt),
+                    { label: `${char.name} sheet` }
+                );
                 if (!buffer) {
                     console.log(`   No image returned for ${char.name}.`);
                     continue;
@@ -341,6 +395,8 @@ ${feedbackLine}`;
                 fs.writeFileSync(outputPath, buffer);
                 console.log(`   Generated: ${char.id}/sheet-v${version}.jpg (${(buffer.length / 1024).toFixed(0)} KB)`);
 
+                // Only update config after successful generation
+                charConfig.attempts = version;
                 charConfig.status = 'generated';
                 this._saveConfig();
             } catch (err) {
@@ -356,8 +412,9 @@ ${feedbackLine}`;
     }
 
     _buildCharacterSheetPrompt(character, feedback) {
-        const feedbackLine = feedback
-            ? `\nIMPORTANT REVISION FEEDBACK: ${feedback}`
+        const cleanFeedback = feedback ? feedback.replace(/[{}[\]`]/g, '').substring(0, 500) : '';
+        const feedbackLine = cleanFeedback
+            ? `\nIMPORTANT REVISION FEEDBACK: ${cleanFeedback}`
             : '';
 
         return `Using the CHARACTER DESIGN SHEET as reference (the provided image), create a detailed CHARACTER MODEL SHEET for: ${character.name.toUpperCase()}
@@ -372,11 +429,13 @@ Show this character from FOUR angles arranged in a 2x2 grid:
 
 RULES:
 - Keep the character EXACTLY as shown in the reference sheet — same proportions, same features, same distinguishing marks
-- BLACK AND WHITE LINE ART ONLY — clean outlines, no shading, no color
+- BLACK AND WHITE LINE ART with warm, hand-drawn quality — like a Disney animator's pencil work (Snow White, Bambi era)
+- Flowing, organic lines with natural variation in line weight — NOT vector-clean or digital-looking
+- Large, soulful, expressive eyes in the close-up view — the hallmark of classic animation
 - All four views must be clearly the SAME character, consistent across every angle
-- Simple white background with subtle grid lines to show scale
+- Simple white/cream background like animation paper
 - Label each view (Front, 3/4, Side, Close-up)
-- This is a PROFESSIONAL CHARACTER MODEL SHEET for production use
+- This is a hand-drawn CHARACTER MODEL SHEET — warmth and expressiveness in every line
 ${feedbackLine}`;
     }
 
@@ -429,7 +488,10 @@ ${feedbackLine}`;
 
             try {
                 const prompt = this._buildStylePrompt(style, testScene);
-                const buffer = await geminiMultiRefGenerate(this.ai, refPaths, prompt);
+                const buffer = await withRetry(
+                    () => geminiMultiRefGenerate(this.ai, refPaths, prompt),
+                    { label: style.name }
+                );
 
                 if (buffer) {
                     fs.writeFileSync(outputPath, buffer);
@@ -469,7 +531,8 @@ ${feedbackLine}`;
     }
 
     _buildStylePrompt(style, testScene, feedback) {
-        const feedbackLine = feedback ? `\nIMPORTANT REVISION: ${feedback}` : '';
+        const cleanFeedback = feedback ? feedback.replace(/[{}[\]`]/g, '').substring(0, 500) : '';
+        const feedbackLine = cleanFeedback ? `\nIMPORTANT REVISION: ${cleanFeedback}` : '';
 
         return `Create a beautiful children's book illustration for this scene:
 
@@ -660,17 +723,17 @@ ${feedbackLine}`;
             sectionsHTML += `
             <div class="section-card ${isCharacter ? 'character-card' : ''}">
                 <div class="section-header">
-                    <span class="section-id">${s.id}</span>
+                    <span class="section-id">${escapeHtml(s.id)}</span>
                     ${isCharacter ? '<span class="badge badge-character">CHARACTER</span>' : ''}
-                    <span class="badge badge-${sRoute}">${sRoute.toUpperCase()}</span>
+                    <span class="badge badge-${escapeHtml(sRoute)}">${escapeHtml(sRoute).toUpperCase()}</span>
                 </div>
-                <h3>${sTitle}</h3>
-                ${hasImg ? `<img src="${imgSrc(sImage)}" alt="${sAlt}" class="section-image" loading="lazy" />` :
-                    sImage ? `<div class="missing-image">Missing: ${sImage}</div>` : ''}
-                <p class="section-content">${sContent}</p>
-                ${sAction ? `<div class="prompt-block"><strong>Action prompt:</strong> ${sAction}</div>` : ''}
-                ${refs.length ? `<div class="refs">References: ${refs.join(', ')}</div>` : ''}
-                <div class="image-filename">${sImage || 'No image'}</div>
+                <h3>${escapeHtml(sTitle)}</h3>
+                ${hasImg ? `<img src="${imgSrc(sImage)}" alt="${escapeHtml(sAlt)}" class="section-image" loading="lazy" />` :
+                    sImage ? `<div class="missing-image">Missing: ${escapeHtml(sImage)}</div>` : ''}
+                <p class="section-content">${escapeHtml(sContent)}</p>
+                ${sAction ? `<div class="prompt-block"><strong>Action prompt:</strong> ${escapeHtml(sAction)}</div>` : ''}
+                ${refs.length ? `<div class="refs">References: ${refs.map(escapeHtml).join(', ')}</div>` : ''}
+                <div class="image-filename">${escapeHtml(sImage || 'No image')}</div>
             </div>`;
         }
 
@@ -709,9 +772,9 @@ ${feedbackLine}`;
                 ${hasPortrait ? `<img src="${imgSrc(portrait)}" alt="${c.name}" class="character-thumb" loading="lazy" />` :
                     `<div class="character-thumb-placeholder">${c.name[0]}</div>`}
                 <div class="character-info">
-                    <h4>${c.name}</h4>
-                    <p>${c.description}</p>
-                    <span class="small-text">${portrait || 'No portrait'}</span>
+                    <h4>${escapeHtml(c.name)}</h4>
+                    <p>${escapeHtml(c.description)}</p>
+                    <span class="small-text">${escapeHtml(portrait || 'No portrait')}</span>
                 </div>
             </div>`;
         }
