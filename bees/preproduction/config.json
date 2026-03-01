@@ -1,0 +1,113 @@
+{
+  "chapter": "bees",
+  "createdAt": "2026-02-28T22:56:24.840Z",
+  "characters": [
+    {
+      "id": "queen-aurelia",
+      "name": "Queen Aurelia",
+      "description": "Majestic honey bee queen, the largest bee in the hive, with an elongated golden abdomen, regal bearing, golden crown-like pattern on her thorax",
+      "uniqueFeatures": [
+        "LARGEST bee character — noticeably bigger than all workers, elongated body",
+        "ELONGATED GOLDEN ABDOMEN — much longer than worker bees, tapered and elegant",
+        "GOLDEN CROWN-LIKE PATTERN on thorax — distinctive marking that looks like a tiny crown",
+        "Moves SLOWLY and DELIBERATELY — never rushed, always regal",
+        "Warmer, deeper gold coloring than standard yellow-black workers",
+        "Workers always clustered around her, attending and feeding"
+      ],
+      "personality": "Regal and calm — moves with slow deliberate grace, the calm center of the hive's activity",
+      "notLike": "NOT small like workers, NOT black-and-yellow striped like Buzz, NOT fluffy like Petal"
+    },
+    {
+      "id": "buzz",
+      "name": "Buzz",
+      "description": "Hardworking worker bee with bright yellow-and-black stripes, fuzzy body always covered in pollen, one wing with a tiny notch",
+      "uniqueFeatures": [
+        "Standard worker size — much smaller than Queen Aurelia",
+        "BRIGHT YELLOW-AND-BLACK stripes — classic bee coloring, vivid and cheerful",
+        "TINY NOTCH in one wing — distinctive identifying mark, but flies perfectly",
+        "FUZZY body always DUSTED WITH POLLEN — looks like she rolled in gold dust",
+        "Always in motion — wings buzzing, legs moving, never still",
+        "Cheerful, bright-eyed expression"
+      ],
+      "personality": "Hardworking and cheerful — always busy, always smiling, never complains",
+      "notLike": "NOT large like Queen Aurelia, NOT extra fluffy like Petal, NOT dark like Spike"
+    },
+    {
+      "id": "petal",
+      "name": "Petal",
+      "description": "Young bee on her first foraging flights, slightly smaller than other workers, lighter coloring, extra fluffy fuzz, wide-eyed wonder",
+      "uniqueFeatures": [
+        "SLIGHTLY SMALLER than other worker bees — young and delicate",
+        "LIGHTER COLORING — paler yellow, less intense stripes than Buzz",
+        "EXTRA FLUFFY — has not worn down her fuzz yet, looks like a tiny pompom",
+        "WIDE EYES — bigger, rounder eyes than other bees, full of wonder",
+        "Lighter, more translucent wings — newer and more delicate",
+        "Often looking around in amazement at everything"
+      ],
+      "personality": "Nervous but excited — wide-eyed wonder at everything outside the hive, eager to learn",
+      "notLike": "NOT as boldly striped as Buzz, NOT large like Queen Aurelia, NOT dark like Spike"
+    },
+    {
+      "id": "spike",
+      "name": "Spike",
+      "description": "Guard bee, slightly larger worker with darker coloring, stationed at the hive entrance, mandibles always ready",
+      "uniqueFeatures": [
+        "SLIGHTLY LARGER than standard workers — bulkier, more muscular build",
+        "DARKER COLORING — deeper brown-black with darker yellow, more muted stripes",
+        "Always STANDING ALERT with MANDIBLES READY — jaws slightly open",
+        "Stockier build — wider thorax and legs than other workers",
+        "Positioned at hive entrance — always on guard duty",
+        "Intense, watchful eyes scanning everything"
+      ],
+      "personality": "Protective and vigilant — always scanning, always alert, takes his duty seriously",
+      "notLike": "NOT cheerful and bouncy like Buzz, NOT fluffy like Petal, NOT regal like Queen Aurelia"
+    }
+  ],
+  "step0": {
+    "status": "pending",
+    "attempts": 0,
+    "feedback": []
+  },
+  "step1": {
+    "status": "approved",
+    "attempts": 1,
+    "feedback": [],
+    "approvedVersion": 1
+  },
+  "step2": {
+    "status": "approved",
+    "characters": {
+      "queen-aurelia": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "buzz": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "petal": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "spike": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      }
+    }
+  },
+  "step3": {
+    "status": "approved",
+    "chosenStyle": 1,
+    "styleName": "translucency-botanical",
+    "chosenMoods": [
+      "translucency",
+      "lush-botanical"
+    ],
+    "styleDescription": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nEmphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.\n\nRich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper."
+  },
+  "updatedAt": "2026-02-28T23:00:05.082Z"
+}

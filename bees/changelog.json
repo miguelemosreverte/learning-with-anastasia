@@ -1,0 +1,755 @@
+{
+  "chapter": "bees",
+  "lastUpdated": "2026-02-28T23:55:51.652Z",
+  "summary": {
+    "total": 39,
+    "byType": {
+      "anatomical-fix": 31,
+      "composition-fix": 4,
+      "physics-fix": 4
+    },
+    "byTool": {
+      "fix-image": 39
+    },
+    "verified": 8,
+    "verifiedRate": "21%",
+    "automated": 39,
+    "manual": 0,
+    "automatedRate": "100%",
+    "avgAttempts": 2.7,
+    "totalCost": 4.28
+  },
+  "entries": [
+    {
+      "timestamp": "2026-02-28T23:18:23.802Z",
+      "image": "the-buzzing-hive.jpg",
+      "tag": "#1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: Multiple bees exhibit an anatomically incorrect number of visible legs (e.g., 4 or 5 instead of the correct 6), or have distorted limb structures making an accurate count impossible.; Visual Artifacts: Minor visual artifacts are present, including some indistinct rendering in the honey drips and slight artificiality in the background foliage and distant elements.; Quality: Certain smaller elements, particularly some bees and floral details, lack crispness and exhibit minor blur or distortion, impacting overall image clarity.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/the-buzzing-hive-v1.jpg",
+      "afterImage": "assets/images/the-buzzing-hive.jpg",
+      "attemptImages": [
+        "assets/images/attempts/the-buzzing-hive-v1.jpg",
+        "assets/images/attempts/the-buzzing-hive-v2.jpg",
+        "assets/images/attempts/the-buzzing-hive-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:19:06.952Z",
+      "image": "queen-aurelia-portrait.jpg",
+      "tag": "#2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Most bees in the illustration consistently have 4 legs instead of the anatomically correct 6 legs. This includes the larger bee on the ground and multiple flying bees.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/queen-aurelia-portrait-v1.jpg",
+      "afterImage": "assets/images/queen-aurelia-portrait.jpg",
+      "attemptImages": [
+        "assets/images/attempts/queen-aurelia-portrait-v1.jpg",
+        "assets/images/attempts/queen-aurelia-portrait-v2.jpg",
+        "assets/images/attempts/queen-aurelia-portrait-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:19:36.245Z",
+      "image": "buzz-portrait.jpg",
+      "tag": "#3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The bee does not clearly display all 6 anatomically correct legs; only 4 are distinctly visible, and a fifth is partially obscured, leading to missing visible limbs.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/buzz-portrait-v1.jpg",
+      "afterImage": "assets/images/buzz-portrait.jpg",
+      "attemptImages": [
+        "assets/images/attempts/buzz-portrait-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:20:22.325Z",
+      "image": "petal-first-flight.jpg",
+      "tag": "#4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: On both bees, only three legs are distinctly visible. For a bee to have the anatomically correct number of six legs, the remaining three legs are either entirely obscured by the body/pose or missing from the illustration, preventing them from being counted as per instructions.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/petal-first-flight-v1.jpg",
+      "afterImage": "assets/images/petal-first-flight.jpg",
+      "attemptImages": [
+        "assets/images/attempts/petal-first-flight-v1.jpg",
+        "assets/images/attempts/petal-first-flight-v2.jpg",
+        "assets/images/attempts/petal-first-flight-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:21:18.818Z",
+      "image": "flower-garden.jpg",
+      "tag": "#5",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Unable to confirm the anatomically correct number of six legs for each bee due to obscured limbs and stylized representation, making it impossible for a strict count.; COMPOSITION: The dense, patterned texture of the sunflower's center could potentially trigger trypophobia in sensitive individuals.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/flower-garden-v1.jpg",
+      "afterImage": "assets/images/flower-garden.jpg",
+      "attemptImages": [
+        "assets/images/attempts/flower-garden-v1.jpg",
+        "assets/images/attempts/flower-garden-v2.jpg",
+        "assets/images/attempts/flower-garden-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:21:59.569Z",
+      "image": "waggle-dance.jpg",
+      "tag": "#6",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Composition: The prominent honeycomb texture with multiple clustered holes and droplets may act as a trypophobia trigger.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/waggle-dance-v1.jpg",
+      "afterImage": "assets/images/waggle-dance.jpg",
+      "attemptImages": [
+        "assets/images/attempts/waggle-dance-v1.jpg",
+        "assets/images/attempts/waggle-dance-v2.jpg",
+        "assets/images/attempts/waggle-dance-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:22:39.291Z",
+      "image": "making-honey.jpg",
+      "tag": "#7",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: All bees are depicted with 4 legs instead of the anatomically correct 6 legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/making-honey-v1.jpg",
+      "afterImage": "assets/images/making-honey.jpg",
+      "attemptImages": [
+        "assets/images/attempts/making-honey-v1.jpg",
+        "assets/images/attempts/making-honey-v2.jpg",
+        "assets/images/attempts/making-honey-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:23:32.343Z",
+      "image": "building-beeswax.jpg",
+      "tag": "#8",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Most bees are depicted with only 4 visible legs, instead of the anatomically correct 6 legs for an insect.; COMPOSITION: The repeating hexagonal pattern of the honeycomb could potentially trigger trypophobia in some sensitive individuals.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/building-beeswax-v1.jpg",
+      "afterImage": "assets/images/building-beeswax.jpg",
+      "attemptImages": [
+        "assets/images/attempts/building-beeswax-v1.jpg",
+        "assets/images/attempts/building-beeswax-v2.jpg",
+        "assets/images/attempts/building-beeswax-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:24:19.770Z",
+      "image": "spike-guards-door.jpg",
+      "tag": "#9",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The main bee only shows 4 legs, missing 2. The two smaller bees each show only 2 legs, missing 4 each. Bees should anatomically have 6 legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/spike-guards-door-v1.jpg",
+      "afterImage": "assets/images/spike-guards-door.jpg",
+      "attemptImages": [
+        "assets/images/attempts/spike-guards-door-v1.jpg",
+        "assets/images/attempts/spike-guards-door-v2.jpg",
+        "assets/images/attempts/spike-guards-door-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:25:06.330Z",
+      "image": "winter-cluster.jpg",
+      "tag": "#10",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Many worker bees in the cluster do not clearly display the anatomically correct number of six legs due to perspective, overlap, or obscured views, often showing only two or three visible limbs. According to strict anatomical requirements for every bee, this constitutes missing limbs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/winter-cluster-v1.jpg",
+      "afterImage": "assets/images/winter-cluster.jpg",
+      "attemptImages": [
+        "assets/images/attempts/winter-cluster-v1.jpg",
+        "assets/images/attempts/winter-cluster-v2.jpg",
+        "assets/images/attempts/winter-cluster-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:26:04.991Z",
+      "image": "sweet-golden-honey.jpg",
+      "tag": "#11",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The bee on the left has 3 visible legs, not the anatomically correct 6 legs for a bee.; The bee on the right has 3 visible legs, not the anatomically correct 6 legs for a bee.; The pervasive hexagonal honeycomb pattern, both in the background and forming the ground, could potentially trigger trypophobia in sensitive viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/sweet-golden-honey-v1.jpg",
+      "afterImage": "assets/images/sweet-golden-honey.jpg",
+      "attemptImages": [
+        "assets/images/attempts/sweet-golden-honey-v1.jpg",
+        "assets/images/attempts/sweet-golden-honey-v2.jpg",
+        "assets/images/attempts/sweet-golden-honey-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:26:47.555Z",
+      "image": "our-garden-friends.jpg",
+      "tag": "#12",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: All three bee characters are depicted with 4 limbs (2 arms and 2 legs) instead of the anatomically correct 6 legs for a bee, violating the requirement for the correct number of limbs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/our-garden-friends-v1.jpg",
+      "afterImage": "assets/images/our-garden-friends.jpg",
+      "attemptImages": [
+        "assets/images/attempts/our-garden-friends-v1.jpg",
+        "assets/images/attempts/our-garden-friends-v2.jpg",
+        "assets/images/attempts/our-garden-friends-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:27:53.005Z",
+      "image": "detail-compound-eye.jpg",
+      "tag": "V2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomical verification of limbs is not possible as no limbs are visible on the bee.; The prominent honeycomb pattern in the bee's eye may trigger trypophobia.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-compound-eye-v1.jpg",
+      "afterImage": "assets/images/detail-compound-eye.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-compound-eye-v1.jpg",
+        "assets/images/attempts/detail-compound-eye-v2.jpg",
+        "assets/images/attempts/detail-compound-eye-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:28:39.501Z",
+      "image": "detail-pollen-basket.jpg",
+      "tag": "V3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The full number of limbs on the bee cannot be verified as most of its body and legs are out of frame, preventing confirmation of the anatomically correct count of six legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-pollen-basket-v1.jpg",
+      "afterImage": "assets/images/detail-pollen-basket.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-pollen-basket-v1.jpg",
+        "assets/images/attempts/detail-pollen-basket-v2.jpg",
+        "assets/images/attempts/detail-pollen-basket-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:29:39.042Z",
+      "image": "detail-honeycomb-hexagon.jpg",
+      "tag": "V4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: While no obvious extra or missing limbs were observed on any bee, it is impossible to verify the anatomically correct number of 6 legs for every single bee due to varying sizes, angles, and occlusion within the dense composition.; COMPOSITION: The detailed, repeating pattern of numerous, closely packed honeycomb cells containing various textures (pollen, honey, stylized flowers) may be a trigger for trypophobia in some sensitive viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-honeycomb-hexagon-v1.jpg",
+      "afterImage": "assets/images/detail-honeycomb-hexagon.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-honeycomb-hexagon-v1.jpg",
+        "assets/images/attempts/detail-honeycomb-hexagon-v2.jpg",
+        "assets/images/attempts/detail-honeycomb-hexagon-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:30:53.015Z",
+      "image": "fun-fact-two-million.jpg",
+      "tag": "F1",
+      "type": "physics-fix",
+      "tool": "fix-image",
+      "description": "Multiple floating elements are present without physical support, including numbers ('2', '16', '6J', '3:') and hexagonal particles containing letters ('M', 'S', 'A', 'I', 'O', 'P').; Embedded text and labels are present on the honey jar, including a misspelling ('HONIEY' instead of 'HONEY') and unreadable gibberish text.; The prominent honeycomb sphere and dense clusters of small flowers may present textures that could trigger trypophobia.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-two-million-v1.jpg",
+      "afterImage": "assets/images/fun-fact-two-million.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-two-million-v1.jpg",
+        "assets/images/attempts/fun-fact-two-million-v2.jpg",
+        "assets/images/attempts/fun-fact-two-million-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:31:31.503Z",
+      "image": "fun-fact-waggle-dance.jpg",
+      "tag": "F2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The bee has 4 legs, which is anatomically incorrect for an insect that should have 6 legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-waggle-dance-v1.jpg",
+      "afterImage": "assets/images/fun-fact-waggle-dance.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-waggle-dance-v1.jpg",
+        "assets/images/attempts/fun-fact-waggle-dance-v2.jpg",
+        "assets/images/attempts/fun-fact-waggle-dance-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:32:26.983Z",
+      "image": "fun-fact-hexagons.jpg",
+      "tag": "F3",
+      "type": "physics-fix",
+      "tool": "fix-image",
+      "description": "Physics: The central honeycomb structure and several connected decorative elements (e.g., spheres, ladders) are floating without visible support, violating the rule that all objects must obey gravity.; Composition: The dense arrangement of hexagonal cells with various textures, including honeycomb-like and pitted surfaces, could be considered trypophobia-triggering for sensitive viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-hexagons-v1.jpg",
+      "afterImage": "assets/images/fun-fact-hexagons.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-hexagons-v1.jpg",
+        "assets/images/attempts/fun-fact-hexagons-v2.jpg",
+        "assets/images/attempts/fun-fact-hexagons-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:32:41.263Z",
+      "image": "fun-fact-ultraviolet.jpg",
+      "tag": "F4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The bee in the illustration only visibly has 2 legs/feet. Anatomically, bees have 6 legs. Therefore, 4 legs are missing.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-ultraviolet-v1.jpg",
+      "afterImage": "assets/images/fun-fact-ultraviolet.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-ultraviolet-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:36:59.675Z",
+      "image": "queen-aurelia-portrait.jpg",
+      "tag": "#2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The central Queen bee character has two human-like arms and zero bee legs, which deviates from the anatomically correct six legs for a bee, as required for 'every bees'.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/queen-aurelia-portrait-v4.jpg",
+      "afterImage": "assets/images/queen-aurelia-portrait.jpg",
+      "attemptImages": [
+        "assets/images/attempts/queen-aurelia-portrait-v4.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:37:35.932Z",
+      "image": "buzz-portrait.jpg",
+      "tag": "#3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The bee has an anatomically incorrect number of legs, with only 4 visible instead of the correct 6.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/buzz-portrait-v2.jpg",
+      "afterImage": "assets/images/buzz-portrait.jpg",
+      "attemptImages": [
+        "assets/images/attempts/buzz-portrait-v2.jpg",
+        "assets/images/attempts/buzz-portrait-v3.jpg",
+        "assets/images/attempts/buzz-portrait-v4.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:38:13.278Z",
+      "image": "petal-first-flight.jpg",
+      "tag": "#4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Both bees have only 4 visible legs instead of the anatomically correct 6 legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/petal-first-flight-v4.jpg",
+      "afterImage": "assets/images/petal-first-flight.jpg",
+      "attemptImages": [
+        "assets/images/attempts/petal-first-flight-v4.jpg",
+        "assets/images/attempts/petal-first-flight-v5.jpg",
+        "assets/images/attempts/petal-first-flight-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:38:55.620Z",
+      "image": "flower-garden.jpg",
+      "tag": "#5",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The left bee has an anatomically incorrect number of visible legs (3 visible instead of 6).; The right bee has an anatomically incorrect number of visible legs (3 visible instead of 6).",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/flower-garden-v4.jpg",
+      "afterImage": "assets/images/flower-garden.jpg",
+      "attemptImages": [
+        "assets/images/attempts/flower-garden-v4.jpg",
+        "assets/images/attempts/flower-garden-v5.jpg",
+        "assets/images/attempts/flower-garden-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:40:34.296Z",
+      "image": "waggle-dance.jpg",
+      "tag": "#6",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Potential trypophobia trigger due to dense hexagonal honeycomb patterns.",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/waggle-dance-v4.jpg",
+      "afterImage": "assets/images/waggle-dance.jpg",
+      "attemptImages": [
+        "assets/images/attempts/waggle-dance-v4.jpg",
+        "assets/images/attempts/waggle-dance-v5.jpg",
+        "assets/images/attempts/waggle-dance-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:40:48.880Z",
+      "image": "building-beeswax.jpg",
+      "tag": "#8",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Composition: The honeycomb texture, with its repetitive hexagonal cells, may be a trypophobia trigger for some viewers, which could be problematic for a children's book illustration.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/building-beeswax-v4.jpg",
+      "afterImage": "assets/images/building-beeswax.jpg",
+      "attemptImages": [
+        "assets/images/attempts/building-beeswax-v4.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:41:30.090Z",
+      "image": "winter-cluster.jpg",
+      "tag": "#10",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: Many bees, including the central queen figure, do not display the anatomically correct number of six legs; most visible bees have fewer than six or no discernible limbs.; Physics: The central queen bee figure is depicted floating without any visible physical support, violating the rule that all objects must obey gravity.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/winter-cluster-v4.jpg",
+      "afterImage": "assets/images/winter-cluster.jpg",
+      "attemptImages": [
+        "assets/images/attempts/winter-cluster-v4.jpg",
+        "assets/images/attempts/winter-cluster-v5.jpg",
+        "assets/images/attempts/winter-cluster-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:42:07.506Z",
+      "image": "sweet-golden-honey.jpg",
+      "tag": "#11",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The smaller bee on the right only has 4 clearly visible legs. An anatomically correct bee should have 6 legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/sweet-golden-honey-v4.jpg",
+      "afterImage": "assets/images/sweet-golden-honey.jpg",
+      "attemptImages": [
+        "assets/images/attempts/sweet-golden-honey-v4.jpg",
+        "assets/images/attempts/sweet-golden-honey-v5.jpg",
+        "assets/images/attempts/sweet-golden-honey-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:42:53.615Z",
+      "image": "our-garden-friends.jpg",
+      "tag": "#12",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The middle bee has only 3 visible legs instead of the anatomically correct 6 legs.; The rightmost bee has only 3 visible legs instead of the anatomically correct 6 legs.",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/our-garden-friends-v4.jpg",
+      "afterImage": "assets/images/our-garden-friends.jpg",
+      "attemptImages": [
+        "assets/images/attempts/our-garden-friends-v4.jpg",
+        "assets/images/attempts/our-garden-friends-v5.jpg",
+        "assets/images/attempts/our-garden-friends-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:43:35.799Z",
+      "image": "detail-wing-closeup.jpg",
+      "tag": "V1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The bee's body is significantly cropped, making it impossible to count all limbs and verify the anatomically correct number of legs.",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-wing-closeup-v1.jpg",
+      "afterImage": "assets/images/detail-wing-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-wing-closeup-v1.jpg",
+        "assets/images/attempts/detail-wing-closeup-v2.jpg",
+        "assets/images/attempts/detail-wing-closeup-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:44:35.707Z",
+      "image": "detail-compound-eye.jpg",
+      "tag": "V2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The bee-like character is missing the anatomically correct number of limbs (bees should have 6, but none are clearly visible). Additionally, the numerous small dots on the character's skin could potentially trigger trypophobia.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-compound-eye-v4.jpg",
+      "afterImage": "assets/images/detail-compound-eye.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-compound-eye-v4.jpg",
+        "assets/images/attempts/detail-compound-eye-v5.jpg",
+        "assets/images/attempts/detail-compound-eye-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:45:34.413Z",
+      "image": "detail-honeycomb-hexagon.jpg",
+      "tag": "V4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Several bees throughout the illustration exhibit an anatomically incorrect number of limbs (some appear to have more or fewer than six), or display malformed/fused limbs.; COMPOSITION: The dense and repetitive pattern of hexagonal cells filled with various objects could potentially trigger trypophobia in sensitive viewers, which is a concern for children's book illustrations.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-honeycomb-hexagon-v4.jpg",
+      "afterImage": "assets/images/detail-honeycomb-hexagon.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-honeycomb-hexagon-v4.jpg",
+        "assets/images/attempts/detail-honeycomb-hexagon-v5.jpg",
+        "assets/images/attempts/detail-honeycomb-hexagon-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:45:47.932Z",
+      "image": "fun-fact-two-million.jpg",
+      "tag": "F1",
+      "type": "physics-fix",
+      "tool": "fix-image",
+      "description": "PHYSICS: Several spherical flower clusters are floating in the upper part of the image without any visible support, violating the rule that objects must obey gravity.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-two-million-v4.jpg",
+      "afterImage": "assets/images/fun-fact-two-million.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-two-million-v4.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:46:37.884Z",
+      "image": "fun-fact-waggle-dance.jpg",
+      "tag": "F2",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "TEXT/WATERMARKS: The image contains embedded graphical labels/symbols (a sun icon with a smiley face and circular arrows), which violates the rule stating there should be NONE.; COMPOSITION: The prominent honeycomb pattern consists of many closely packed cells, which may be a trypophobia trigger for some viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-waggle-dance-v4.jpg",
+      "afterImage": "assets/images/fun-fact-waggle-dance.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-waggle-dance-v4.jpg",
+        "assets/images/attempts/fun-fact-waggle-dance-v5.jpg",
+        "assets/images/attempts/fun-fact-waggle-dance-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:47:20.042Z",
+      "image": "fun-fact-hexagons.jpg",
+      "tag": "F3",
+      "type": "physics-fix",
+      "tool": "fix-image",
+      "description": "Physics: Several small spherical objects are floating without any visible support or attachment.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-hexagons-v4.jpg",
+      "afterImage": "assets/images/fun-fact-hexagons.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-hexagons-v4.jpg",
+        "assets/images/attempts/fun-fact-hexagons-v5.jpg",
+        "assets/images/attempts/fun-fact-hexagons-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:48:05.353Z",
+      "image": "fun-fact-ultraviolet.jpg",
+      "tag": "F4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The bee has only 4 clearly visible legs, which is anatomically incorrect for a bee (should have 6 limbs).; COMPOSITION: The dense circular pattern of seeds in the sunflower head could be a trypophobia-triggering texture for some viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-ultraviolet-v2.jpg",
+      "afterImage": "assets/images/fun-fact-ultraviolet.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-ultraviolet-v2.jpg",
+        "assets/images/attempts/fun-fact-ultraviolet-v3.jpg",
+        "assets/images/attempts/fun-fact-ultraviolet-v4.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:52:41.600Z",
+      "image": "hero-meadow.jpg",
+      "tag": "H",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Many flying bees have an anatomically incorrect number of legs (fewer than 6) or are too indistinct to verify the correct count.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/hero-meadow-v1.jpg",
+      "afterImage": "assets/images/hero-meadow.jpg",
+      "attemptImages": [
+        "assets/images/attempts/hero-meadow-v1.jpg",
+        "assets/images/attempts/hero-meadow-v2.jpg",
+        "assets/images/attempts/hero-meadow-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:53:33.002Z",
+      "image": "the-buzzing-hive.jpg",
+      "tag": "#1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Several bees do not clearly display the anatomically correct number of six legs. Many bees have indistinct, partially obscured, or fewer than six visible limbs, making it impossible to confirm the correct count for every individual bee.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/the-buzzing-hive-v4.jpg",
+      "afterImage": "assets/images/the-buzzing-hive.jpg",
+      "attemptImages": [
+        "assets/images/attempts/the-buzzing-hive-v4.jpg",
+        "assets/images/attempts/the-buzzing-hive-v5.jpg",
+        "assets/images/attempts/the-buzzing-hive-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:54:20.393Z",
+      "image": "making-honey.jpg",
+      "tag": "#7",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: For Bee 1 (top left) and Bee 4 (bottom right), not all six legs are clearly visible due to angle, blur, or obstruction, making it impossible to definitively count all anatomically correct limbs.; Composition: The dense, repetitive pattern of the honeycomb cells, while contextually appropriate, could potentially be a trypophobia trigger for some sensitive individuals.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/making-honey-v4.jpg",
+      "afterImage": "assets/images/making-honey.jpg",
+      "attemptImages": [
+        "assets/images/attempts/making-honey-v4.jpg",
+        "assets/images/attempts/making-honey-v5.jpg",
+        "assets/images/attempts/making-honey-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:54:59.578Z",
+      "image": "spike-guards-door.jpg",
+      "tag": "#9",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy check failed: All bees are depicted with fewer than the anatomically correct six legs. The prominent foreground bee visibly has only four legs, and the flying bees only show two each.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/spike-guards-door-v4.jpg",
+      "afterImage": "assets/images/spike-guards-door.jpg",
+      "attemptImages": [
+        "assets/images/attempts/spike-guards-door-v4.jpg",
+        "assets/images/attempts/spike-guards-door-v5.jpg",
+        "assets/images/attempts/spike-guards-door-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    }
+  ]
+}

@@ -31,6 +31,7 @@ const {
     geminiVerify
 } = require('./automation/image-utils');
 const ChangeLog = require('./automation/changelog');
+const logger = require('./automation/logger');
 
 async function fixImage(chapterName, identifier, fixDescription, options = {}) {
     const { maxRetries = 3, automated = false, type = 'anatomical-fix' } = options;
@@ -41,6 +42,8 @@ async function fixImage(chapterName, identifier, fixDescription, options = {}) {
         if (require.main === module) process.exit(1);
         return false;
     }
+
+    const _logTaskId = logger.taskStart(`Fix image: ${chapterName}/${filename}`);
 
     console.log(`\n🔧 Fixing: ${filename}`);
     console.log(`   Issue: ${fixDescription}`);
@@ -102,6 +105,7 @@ CRITICAL RULES:
                     attemptImages
                 });
                 changelog.save();
+                logger.taskEnd(_logTaskId, { attempts: attempt, verified: true, tool: 'fix-image' });
                 return true;
             } else {
                 console.log(`   ❌ Still broken: ${verdict.reason}`);
@@ -121,6 +125,7 @@ CRITICAL RULES:
     }
 
     console.error(`   ❌ Failed verification after ${maxRetries} attempts`);
+    logger.taskEnd(_logTaskId, { attempts: maxRetries, verified: false, tool: 'fix-image' });
     const changelog = new ChangeLog(chapterName);
     changelog.log({
         image: filename,

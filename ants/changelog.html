@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — ants</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; padding: 2rem; }
+  h1 { color: #f0f6fc; margin-bottom: 0.25rem; }
+  .subtitle { color: #8b949e; margin-bottom: 2rem; font-size: 0.9rem; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .stat { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; text-align: center; }
+  .stat-value { font-size: 1.8rem; font-weight: 700; color: #58a6ff; }
+  .stat-label { font-size: 0.8rem; color: #8b949e; margin-top: 0.25rem; }
+  .breakdown-row { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .breakdown { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; flex: 1; min-width: 200px; }
+  .breakdown h3 { color: #f0f6fc; font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .breakdown-item { display: flex; justify-content: space-between; padding: 0.25rem 0; font-size: 0.85rem; border-bottom: 1px solid #21262d; }
+  .breakdown-item:last-child { border-bottom: none; }
+  h2 { color: #f0f6fc; margin: 2rem 0 1rem; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+  .card.verified { border-left: 4px solid #3fb950; }
+  .card.failed { border-left: 4px solid #f85149; }
+  .card-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1rem 0.5rem; flex-wrap: wrap; }
+  .card-number { font-weight: 700; color: #8b949e; font-size: 0.85rem; }
+  .card-image { font-weight: 600; color: #f0f6fc; font-family: monospace; font-size: 0.95rem; }
+  .card-tag { background: #30363d; color: #c9d1d9; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-family: monospace; }
+  .status-badge { padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+  .status-badge.verified { background: #23842a; color: #fff; }
+  .status-badge.failed { background: #b62324; color: #fff; }
+  .card-meta { display: flex; gap: 1rem; padding: 0 1rem 0.5rem; font-size: 0.8rem; color: #8b949e; flex-wrap: wrap; }
+  .card-time { margin-left: auto; }
+  .card-description { padding: 0.5rem 1rem 1rem; font-size: 0.9rem; line-height: 1.5; }
+  .image-comparison { display: flex; gap: 1rem; padding: 0 1rem 1rem; flex-wrap: wrap; }
+  .image-panel { flex: 1; min-width: 250px; }
+  .image-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.6rem; background: #b62324; color: #fff; display: inline-block; border-radius: 4px 4px 0 0; }
+  .after-label { background: #23842a; }
+  .image-panel img { width: 100%; border-radius: 0 4px 4px 4px; border: 1px solid #30363d; display: block; }
+  .missing { padding: 3rem; text-align: center; color: #8b949e; background: #0d1117; border-radius: 4px; border: 1px dashed #30363d; }
+  .attempts-detail { padding: 0 1rem 1rem; }
+  .attempts-detail summary { cursor: pointer; color: #58a6ff; font-size: 0.85rem; padding: 0.25rem 0; }
+  .attempts-grid { display: flex; gap: 0.75rem; margin-top: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+  .attempt-thumb { min-width: 150px; max-width: 200px; }
+  .attempt-label { font-size: 0.7rem; font-weight: 600; color: #8b949e; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .attempt-thumb img { width: 100%; border-radius: 4px; border: 1px solid #30363d; }
+  .clean-run { text-align: center; padding: 4rem 2rem; font-size: 1.2rem; color: #3fb950; background: #161b22; border-radius: 8px; border: 1px solid #30363d; }
+</style>
+</head>
+<body>
+  <h1>Changelog: ants</h1>
+  <div class="subtitle">Last updated: 2026-02-28T23:41:58.260Z &mdash; Every attempt is preserved, nothing is discarded.</div>
+
+  
+        <div class="stats-grid">
+          <div class="stat"><div class="stat-value">23</div><div class="stat-label">Interventions</div></div>
+          <div class="stat"><div class="stat-value">6</div><div class="stat-label">Verified (26%)</div></div>
+          <div class="stat"><div class="stat-value">23</div><div class="stat-label">Automated (100%)</div></div>
+          <div class="stat"><div class="stat-value">0</div><div class="stat-label">Manual</div></div>
+          <div class="stat"><div class="stat-value">2.5</div><div class="stat-label">Avg Attempts</div></div>
+          <div class="stat"><div class="stat-value">$2.32</div><div class="stat-label">Est. Cost</div></div>
+        </div>
+        <div class="breakdown-row">
+          <div class="breakdown">
+            <h3>By Type</h3>
+            <div class="breakdown-item"><span>composition-fix</span><span>7</span></div><div class="breakdown-item"><span>anatomical-fix</span><span>16</span></div>
+          </div>
+          <div class="breakdown">
+            <h3>By Tool</h3>
+            <div class="breakdown-item"><span>fix-image</span><span>23</span></div>
+          </div>
+        </div>
+
+  <h2>Interventions</h2>
+  
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#1</span>
+              <span class="card-image">hero-anthill.jpg</span>
+              <span class="card-tag">H</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:17:44</span>
+            </div>
+            <div class="card-description">COMPOSITION: The numerous clustered holes and organic forms present on the hills and structures could potentially trigger trypophobia in some viewers, which may be inappropriate for a children's book illustration.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/hero-anthill-v1.jpg" alt="Before: hero-anthill.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/hero-anthill.jpg" alt="After: hero-anthill.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#2</span>
+              <span class="card-image">colony-awakens.jpg</span>
+              <span class="card-tag">#1</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:18:45</span>
+            </div>
+            <div class="card-description">ANATOMY: Some ants inside the glowing nest openings do not clearly display the anatomically correct number of six legs; several smaller, partially obscured ants appear to have fewer than six visible limbs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/colony-awakens-v1.jpg" alt="Before: colony-awakens.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/colony-awakens.jpg" alt="After: colony-awakens.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/colony-awakens-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/colony-awakens-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/colony-awakens-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#3</span>
+              <span class="card-image">queen-terra-portrait.jpg</span>
+              <span class="card-tag">#2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:19:24</span>
+            </div>
+            <div class="card-description">QUALITY: The illustration contains intentional depth-of-field blur on foreground and background elements, which violates the strict 'no blur' quality requirement.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/queen-terra-portrait-v1.jpg" alt="Before: queen-terra-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/queen-terra-portrait.jpg" alt="After: queen-terra-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/queen-terra-portrait-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/queen-terra-portrait-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/queen-terra-portrait-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#4</span>
+              <span class="card-image">tiny-carries-leaf.jpg</span>
+              <span class="card-tag">#6</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:19:38</span>
+            </div>
+            <div class="card-description">ANATOMY: The main ant carrying the leaf has small wings, which is anatomically incorrect for a worker ant. Worker ants do not possess wings.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/tiny-carries-leaf-v1.jpg" alt="Before: tiny-carries-leaf.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/tiny-carries-leaf.jpg" alt="After: tiny-carries-leaf.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#5</span>
+              <span class="card-image">the-nursery.jpg</span>
+              <span class="card-tag">#11</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:20:25</span>
+            </div>
+            <div class="card-description">COMPOSITION: Potential trypophobia-triggering textures (clusters of larvae and small holes on tunnel surfaces).</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/the-nursery-v1.jpg" alt="Before: the-nursery.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/the-nursery.jpg" alt="After: the-nursery.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/the-nursery-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/the-nursery-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/the-nursery-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#6</span>
+              <span class="card-image">all-together-strong.jpg</span>
+              <span class="card-tag">#12</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:21:10</span>
+            </div>
+            <div class="card-description">Anatomical error: The muscular ant on the right side of the main entrance has 4 limbs (2 arms, 2 legs) instead of the anatomically correct 6 legs for an ant.; Anatomical error: The ant carrying a leaf on the left path has 4 limbs (2 arms holding the leaf, 2 legs) instead of the anatomically correct 6 legs for an ant.; Compositional concern: The multitude of holes covering the ant hill structure may trigger trypophobia in sensitive individuals.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/all-together-strong-v1.jpg" alt="Before: all-together-strong.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/all-together-strong.jpg" alt="After: all-together-strong.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/all-together-strong-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/all-together-strong-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/all-together-strong-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#7</span>
+              <span class="card-image">detail-mandible-closeup.jpg</span>
+              <span class="card-tag">V1</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:21:52</span>
+            </div>
+            <div class="card-description">ANATOMY: The ant has 4 clearly visible walking legs instead of the anatomically correct 6 legs. The anterior pair of legs appears to be missing or completely obscured.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-mandible-closeup-v1.jpg" alt="Before: detail-mandible-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-mandible-closeup.jpg" alt="After: detail-mandible-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-mandible-closeup-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-mandible-closeup-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-mandible-closeup-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#8</span>
+              <span class="card-image">detail-antenna-closeup.jpg</span>
+              <span class="card-tag">V2</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:22:10</span>
+            </div>
+            <div class="card-description">Ant's legs are not fully visible, making it impossible to confirm the anatomically correct number of six legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-antenna-closeup-v1.jpg" alt="Before: detail-antenna-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-antenna-closeup.jpg" alt="After: detail-antenna-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#9</span>
+              <span class="card-image">fun-fact-strength.jpg</span>
+              <span class="card-tag">F1</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:22:33</span>
+            </div>
+            <div class="card-description">Embedded text/labels found on a signpost in the left panel. The text is illegible.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-strength-v1.jpg" alt="Before: fun-fact-strength.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-strength.jpg" alt="After: fun-fact-strength.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#10</span>
+              <span class="card-image">fun-fact-colony-size.jpg</span>
+              <span class="card-tag">F2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:23:29</span>
+            </div>
+            <div class="card-description">Anatomical inconsistencies: Many smaller ants, particularly within the magnified area and some in the foreground, appear to have fewer than the anatomically correct six legs, either due to rendering ambiguity, obstruction, or an incomplete depiction.; Compositional issues: The dense clustering of numerous small, round ant-like forms and particles within the magnifying glass and on parts of the ground may potentially trigger trypophobia in sensitive individuals. Additionally, some repetitive, unusual textures are present on the distant hills.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-colony-size-v1.jpg" alt="Before: fun-fact-colony-size.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-colony-size.jpg" alt="After: fun-fact-colony-size.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-colony-size-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-colony-size-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-colony-size-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#11</span>
+              <span class="card-image">fun-fact-fungus-farming.jpg</span>
+              <span class="card-tag">F4</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:23:52</span>
+            </div>
+            <div class="card-description">Embedded text is present in the illustration at the top right.; Labels 'fieniant', 'Amaaan', and 'amemer' are embedded in the illustration.; The embedded text is nonsensical, indicating a text generation artifact.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-fungus-farming-v1.jpg" alt="Before: fun-fact-fungus-farming.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-fungus-farming.jpg" alt="After: fun-fact-fungus-farming.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#12</span>
+              <span class="card-image">hero-anthill.jpg</span>
+              <span class="card-tag">H</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:28:38</span>
+            </div>
+            <div class="card-description">Composition: The dense, repetitive, and intricate grid pattern in the golden background, with its numerous small, glowing, interconnected cells, may be mildly trypophobia-triggering for some viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/hero-anthill-v2.jpg" alt="Before: hero-anthill.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/hero-anthill.jpg" alt="After: hero-anthill.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/hero-anthill-v2.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/hero-anthill-v3.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/hero-anthill-v4.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#13</span>
+              <span class="card-image">queen-terra-portrait.jpg</span>
+              <span class="card-tag">#2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:29:27</span>
+            </div>
+            <div class="card-description">ANATOMY: The limbs of the ants in the bottom-most foreground are too blurry to be accurately counted, making it impossible to verify if all ants possess the anatomically correct number of six legs.; QUALITY: While intentional for depth, the extreme blur on the foreground subjects hinders critical inspection for anatomical accuracy.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/queen-terra-portrait-v4.jpg" alt="Before: queen-terra-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/queen-terra-portrait.jpg" alt="After: queen-terra-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/queen-terra-portrait-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/queen-terra-portrait-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/queen-terra-portrait-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#14</span>
+              <span class="card-image">scout-portrait.jpg</span>
+              <span class="card-tag">#3</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:30:08</span>
+            </div>
+            <div class="card-description">COMPOSITION: The numerous and clustered dewdrops on the grass blades might be a potential trigger for trypophobia in some viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/scout-portrait-v1.jpg" alt="Before: scout-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/scout-portrait.jpg" alt="After: scout-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/scout-portrait-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/scout-portrait-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/scout-portrait-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#15</span>
+              <span class="card-image">tiny-carries-leaf.jpg</span>
+              <span class="card-tag">#6</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:30:47</span>
+            </div>
+            <div class="card-description">ANATOMY: The ant furthest to the right is mostly out of frame and obscured by the background, making it impossible to confirm it has the anatomically correct number of 6 legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/tiny-carries-leaf-v2.jpg" alt="Before: tiny-carries-leaf.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/tiny-carries-leaf.jpg" alt="After: tiny-carries-leaf.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/tiny-carries-leaf-v2.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/tiny-carries-leaf-v3.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/tiny-carries-leaf-v4.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#16</span>
+              <span class="card-image">major-guards-gate.jpg</span>
+              <span class="card-tag">#7</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>2 attempts</span>
+              <span class="card-time">2026-02-28 23:31:20</span>
+            </div>
+            <div class="card-description">ANATOMY: The two smaller ants each have only three legs distinctly visible. Anatomically, ants should have six legs. The remaining legs are not clearly discernible due to their pose and being partially obscured by their bodies and carried objects.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/major-guards-gate-v1.jpg" alt="Before: major-guards-gate.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/major-guards-gate.jpg" alt="After: major-guards-gate.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 2 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/major-guards-gate-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/major-guards-gate-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#17</span>
+              <span class="card-image">all-together-strong.jpg</span>
+              <span class="card-tag">#12</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:32:10</span>
+            </div>
+            <div class="card-description">ANATOMY: The large ant on the right side, carrying a nut, exhibits an anatomically incorrect limb structure, featuring two distinct arm-like appendages in addition to four legs, rather than the six uniform legs typical of an ant.; ANATOMY: Numerous smaller ants, particularly those on the upper ant hill and within the burrow entrances, are rendered with insufficient detail or are too indistinct to definitively confirm the presence of exactly six anatomically correct legs for each individual ant, failing the 'every ant' requirement.; COMPOSITION: The ant hill's surface, adorned with many clustered openings and glowing holes, presents a texture that could potentially trigger trypophobia in sensitive viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/all-together-strong-v4.jpg" alt="Before: all-together-strong.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/all-together-strong.jpg" alt="After: all-together-strong.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/all-together-strong-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/all-together-strong-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/all-together-strong-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#18</span>
+              <span class="card-image">detail-mandible-closeup.jpg</span>
+              <span class="card-tag">V1</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:32:52</span>
+            </div>
+            <div class="card-description">ANATOMY: The ant has an anatomically incorrect number of legs. Only 4 distinct legs are clearly visible (2 on the left, 2 on the right), whereas an ant should have 6 legs. The prominent pincer-like structures are interpreted as mandibles, not legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-mandible-closeup-v4.jpg" alt="Before: detail-mandible-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-mandible-closeup.jpg" alt="After: detail-mandible-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-mandible-closeup-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-mandible-closeup-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-mandible-closeup-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#19</span>
+              <span class="card-image">fun-fact-colony-size.jpg</span>
+              <span class="card-tag">F2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:34:21</span>
+            </div>
+            <div class="card-description">ANATOMY: Multiple ants are depicted with an anatomically incorrect number of legs. For example, at least two prominent ants (one located to the left of the magnifying glass handle and another in the lower-center foreground) clearly have 8 legs instead of the anatomically correct 6 legs. Additionally, one ant inside the magnifying glass appears to have 7 legs.; ANATOMY: Numerous smaller ants throughout the illustration are rendered with insufficient detail and clarity, making it impossible to accurately count their limbs and verify their anatomical correctness.; COMPOSITION: The dense and repetitive texture formed by numerous tiny granular particles and highly clustered, indistinct small ants on the ground could potentially be perceived as a trypophobia-triggering pattern for some viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-colony-size-v4.jpg" alt="Before: fun-fact-colony-size.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-colony-size.jpg" alt="After: fun-fact-colony-size.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-colony-size-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-colony-size-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-colony-size-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#20</span>
+              <span class="card-image">colony-awakens.jpg</span>
+              <span class="card-tag">#1</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:38:50</span>
+            </div>
+            <div class="card-description">ANATOMY: The tiny ants visible within the glowing windows of the nest, as well as some smaller ants in the background, do not clearly display all six anatomically correct limbs. Their small size and indistinct rendering prevent a precise count for 'every ant.'; COMPOSITION: The illustration features numerous clusters of water droplets on leaves and multiple small, rounded openings on the ant nest. While not extreme, these repetitive patterns could potentially trigger mild trypophobia in sensitive individuals.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/colony-awakens-v4.jpg" alt="Before: colony-awakens.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/colony-awakens.jpg" alt="After: colony-awakens.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/colony-awakens-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/colony-awakens-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/colony-awakens-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#21</span>
+              <span class="card-image">building-tunnels.jpg</span>
+              <span class="card-tag">#8</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:39:34</span>
+            </div>
+            <div class="card-description">Unable to confirm anatomically correct limb count for all ants due to extreme blur and small size of some ants in the deep background, violating the strict 'Anatomy' criterion.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/building-tunnels-v1.jpg" alt="Before: building-tunnels.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/building-tunnels.jpg" alt="After: building-tunnels.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/building-tunnels-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/building-tunnels-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/building-tunnels-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#22</span>
+              <span class="card-image">carrying-giants.jpg</span>
+              <span class="card-tag">#10</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:40:22</span>
+            </div>
+            <div class="card-description">ANATOMY: The correct number of limbs (6 legs) cannot be verified for all ants, as several are partially obscured by other ants and the watermelon, making it impossible to count all their legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/carrying-giants-v1.jpg" alt="Before: carrying-giants.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/carrying-giants.jpg" alt="After: carrying-giants.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/carrying-giants-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/carrying-giants-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/carrying-giants-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#23</span>
+              <span class="card-image">the-nursery.jpg</span>
+              <span class="card-tag">#11</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:41:06</span>
+            </div>
+            <div class="card-description">Composition: The repetition of numerous small, rounded water droplets on the roots and small, rounded bumps on the outer wall of the nest could potentially be a mild trypophobia trigger for some sensitive individuals.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/the-nursery-v4.jpg" alt="Before: the-nursery.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/the-nursery.jpg" alt="After: the-nursery.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/the-nursery-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/the-nursery-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/the-nursery-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+</body>
+</html>

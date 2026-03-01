@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lions: The Law of the Savanna - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Lions: The Law of the Savanna</h1>
+        <h1 data-lang="es">Leones: La Ley de la Sabana</h1>
+        <h1 data-lang="ru">Львы: Закон Саванны</h1>
+        <p data-lang="en" class="active">Power, Sacrifice, and the Circle of Life</p>
+        <p data-lang="es">Poder, Sacrificio y el Círculo de la Vida</p>
+        <p data-lang="ru">Власть, жертва и круг жизни</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-savanna.jpg"
+             alt="Lions"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Lions</h2>
+            <h2 class="hero-title" data-lang="es">Leones</h2>
+            <h2 class="hero-title" data-lang="ru">Львы</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Law of the Savanna</p>
+            <p class="hero-subtitle" data-lang="es">La Ley de la Sabana</p>
+            <p class="hero-subtitle" data-lang="ru">Закон Саванны</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/kazi-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Battle-scarred magnificent male lion with huge dark brown mane standing on a rocky kopje, golden amber eyes surveying vast territory, dramatic sky, powerful and weathered"
+                 data-alt-en="Battle-scarred magnificent male lion with huge dark brown mane standing on a rocky kopje, golden amber eyes surveying vast territory, dramatic sky, powerful and weathered"
+                 data-alt-es="Magnífico león macho marcado por la batalla con enorme melena marrón oscura de pie en un kopje rocoso, ojos dorados de ámbar inspeccionando vasto territorio, cielo dramático, poderoso y curtido"
+                 data-alt-ru="Великолепный покрытый шрамами лев-самец с огромной тёмно-коричневой гривой стоит на скалистом копье, золотисто-янтарные глаза осматривают обширную территорию, драматичное небо, мощный и закалённый"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The King&#x27;s Territory</h2>
+            <h2 data-lang="es">El Territorio del Rey</h2>
+            <h2 data-lang="ru">Территория короля</h2>
+            <div data-lang="en" class="active">
+                <p>Kazi surveys his kingdom from the highest kopje — a rocky island rising from the sea of golden grass. His dark brown mane, thick and full, cascades around his scarred face like a crown forged in battle. Every scratch tells a story. Every scar is a victory. For three years, Kazi has held this territory — fifteen square miles of prime savanna with the best watering holes, the richest hunting grounds, and the safest denning sites. His pride numbers twelve: eight lionesses, two adolescents, and his two young cubs. He earned every one of them through strength, vigilance, and the thunderous roar that shakes the earth each dusk. But Kazi knows what every king knows — his reign has an expiration date. Somewhere out there, a younger, hungrier male is watching. Waiting.</p>
+            </div>
+            <div data-lang="es">
+                <p>Kazi inspecciona su reino desde el kopje más alto — una isla rocosa que se eleva del mar de hierba dorada. Su melena marrón oscura, espesa y abundante, cae alrededor de su rostro cicatrizado como una corona forjada en batalla. Cada rasguño cuenta una historia. Cada cicatriz es una victoria. Durante tres años, Kazi ha mantenido este territorio — veinticuatro kilómetros cuadrados de sabana principal con los mejores abrevaderos, los terrenos de caza más ricos y los sitios de guarida más seguros. Su manada cuenta doce: ocho leonas, dos adolescentes y sus dos cachorros pequeños. Se ganó a cada uno con fuerza, vigilancia y el atronador rugido que sacude la tierra cada atardecer. Pero Kazi sabe lo que todo rey sabe — su reinado tiene fecha de vencimiento. En algún lugar allá afuera, un macho más joven y hambriento está observando. Esperando.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Кази осматривает своё королевство с самого высокого копье — скалистого острова, поднимающегося из моря золотой травы. Его тёмно-коричневая грива, густая и пышная, ниспадает вокруг его испещрённого шрамами лица как корона, выкованная в бою. Каждая царапина рассказывает историю. Каждый шрам — это победа. Три года Кази удерживает эту территорию — двадцать четыре квадратных километра лучшей саванны с лучшими водопоями, богатейшими охотничьими угодьями и самыми безопасными логовами. Его прайд насчитывает двенадцать: восемь львиц, два подростка и двое его маленьких львят. Он заслужил каждого из них силой, бдительностью и громовым рыком, сотрясающим землю на каждом закате. Но Кази знает то, что знает каждый король — у его правления есть срок годности. Где-то там, снаружи, более молодой, более голодный самец наблюдает. Ждёт.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/challenger-arrives.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Two male lions facing off across dusty savanna clearing, one older with dark mane and scars, one younger with tawny mane, intense staredown, dramatic stormy sky"
+                 data-alt-en="Two male lions facing off across dusty savanna clearing, one older with dark mane and scars, one younger with tawny mane, intense staredown, dramatic stormy sky"
+                 data-alt-es="Dos leones machos enfrentándose en un claro polvoriento de la sabana, uno mayor con melena oscura y cicatrices, otro más joven con melena leonada, mirada intensa, cielo tormentoso dramático"
+                 data-alt-ru="Два льва-самца стоят друг напротив друга на пыльной поляне саванны, один старше с тёмной гривой и шрамами, другой моложе с рыжеватой гривой, напряжённое противостояние, драматичное грозовое небо"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Challenger Arrives</h2>
+            <h2 data-lang="es">El Retador Llega</h2>
+            <h2 data-lang="ru">Появление претендента</h2>
+            <div data-lang="en" class="active">
+                <p>He comes at dusk, when the sky burns orange. A young male, lean and wild, with a tawny mane still growing in. His name doesn&#x27;t matter — what matters is his hunger. Not for food, but for what Kazi has: a pride, a territory, a legacy. The young male has been wandering alone for two years since his own father drove him out — as all pride males eventually do to their sons, to prevent competition. He&#x27;s survived hyenas, starvation, and other nomad males. He is hardened. He is desperate. He roars from the eastern boundary, and the sound rolls across the savanna like a declaration of war. Kazi hears it. His mane bristles. His amber eyes narrow. &#x27;Stay with the cubs,&#x27; he tells Dalila. And he walks toward the sound. A king does not hide from a challenge.</p>
+            </div>
+            <div data-lang="es">
+                <p>Llega al anochecer, cuando el cielo arde en naranja. Un macho joven, delgado y salvaje, con una melena leonada aún creciendo. Su nombre no importa — lo que importa es su hambre. No de comida, sino de lo que Kazi tiene: una manada, un territorio, un legado. El joven macho ha vagado solo durante dos años desde que su propio padre lo expulsó — como todos los machos de manada eventualmente hacen con sus hijos, para prevenir competencia. Ha sobrevivido hienas, hambre y otros machos nómadas. Está endurecido. Está desesperado. Ruge desde el límite oriental, y el sonido rueda por la sabana como una declaración de guerra. Kazi lo escucha. Su melena se eriza. Sus ojos ámbar se estrechan. &#x27;Quédate con los cachorros,&#x27; le dice a Dalila. Y camina hacia el sonido.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Он приходит на закате, когда небо горит оранжевым. Молодой самец, поджарый и дикий, с рыжеватой гривой, ещё растущей. Его имя не важно — важен его голод. Не по еде, а по тому, что есть у Кази: прайд, территория, наследие. Молодой самец скитался один два года с тех пор, как его собственный отец изгнал его — как все вожаки прайдов в конце концов поступают со своими сыновьями, чтобы предотвратить конкуренцию. Он пережил гиен, голод и других бродячих самцов. Он закалён. Он отчаян. Он рычит с восточной границы, и звук катится по саванне как объявление войны. Кази слышит. Его грива встаёт дыбом. Янтарные глаза сужаются. &#x27;Оставайся с львятами,&#x27; говорит он Далиле. И идёт навстречу звуку. Король не прячется от вызова.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/battle-pride.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Two massive male lions locked in ferocious combat, rearing up on hind legs, claws and teeth, dust exploding, dark mane versus tawny mane, dramatic storm sky"
+                 data-alt-en="Two massive male lions locked in ferocious combat, rearing up on hind legs, claws and teeth, dust exploding, dark mane versus tawny mane, dramatic storm sky"
+                 data-alt-es="Dos enormes leones machos trabados en feroz combate, erguidos sobre las patas traseras, garras y dientes, polvo explotando, melena oscura contra melena leonada, cielo tormentoso dramático"
+                 data-alt-ru="Два огромных льва-самца в яростной схватке, встав на задние лапы, когти и зубы, взрыв пыли, тёмная грива против рыжеватой, драматичное грозовое небо"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Battle for the Pride</h2>
+            <h2 data-lang="es">Batalla por la Manada</h2>
+            <h2 data-lang="ru">Битва за прайд</h2>
+            <div data-lang="en" class="active">
+                <p>The battle is unlike anything the savanna has seen in years. Two titans collide in an explosion of dust, muscle, and fury. They rear up on their hind legs — each over 400 pounds of pure power — and slam into each other. Claws rake across manes. Teeth find flesh. Their roars shake the ground. The lionesses watch from the ridge, cubs pressed between their paws. Dalila&#x27;s eyes never leave Kazi. The fight lasts nearly thirty minutes — an eternity in lion warfare. Kazi is stronger, more experienced. But the challenger is younger, faster, and has nothing to lose. They break apart, panting. Blood mats both manes. Then the young male charges again. Kazi meets him head-on. This is not about pride or ego. This is about everything — his lionesses, his cubs, his bloodline. This is the law of the savanna: only the strongest may lead.</p>
+            </div>
+            <div data-lang="es">
+                <p>La batalla es como nada que la sabana haya visto en años. Dos titanes chocan en una explosión de polvo, músculo y furia. Se elevan sobre sus patas traseras — cada uno más de 180 kilos de puro poder — y se estrellan uno contra otro. Las garras rasgan las melenas. Los dientes encuentran carne. Sus rugidos sacuden la tierra. Las leonas observan desde la cresta, cachorros presionados entre sus patas. Los ojos de Dalila nunca dejan a Kazi. La pelea dura casi treinta minutos — una eternidad en la guerra leonina. Kazi es más fuerte, más experimentado. Pero el retador es más joven, más rápido, y no tiene nada que perder. Se separan, jadeando. La sangre apelmaza ambas melenas. Entonces el joven macho carga de nuevo. Kazi lo enfrenta de lleno. Esto no se trata de orgullo o ego. Se trata de todo — sus leonas, sus cachorros, su linaje.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Битва не похожа ни на что, что саванна видела за последние годы. Два титана сталкиваются во взрыве пыли, мышц и ярости. Они встают на задние лапы — каждый более 180 килограммов чистой мощи — и обрушиваются друг на друга. Когти рвут гривы. Зубы находят плоть. Их рык сотрясает землю. Львицы наблюдают с гребня, львята прижаты между их лапами. Глаза Далилы не отрываются от Кази. Бой длится почти тридцать минут — вечность в львиной войне. Кази сильнее, опытнее. Но претендент моложе, быстрее, и ему нечего терять. Они расходятся, задыхаясь. Кровь склеивает обе гривы. Затем молодой самец атакует снова. Кази встречает его в лоб. Речь не о гордости или эго. Речь обо всём — его львицах, его львятах, его родословной. Таков закон саванны: только сильнейший может вести.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/pride-mothers.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Pride&#x27;s Many Mothers</h2>
+            <h2 data-lang="es">Las Muchas Madres de la Manada</h2>
+            <h2 data-lang="ru">Множество матерей прайда</h2>
+            <div data-lang="en" class="active">
+                <p>While males fight for dominance, the true backbone of the pride is its lionesses. A pride is a matrilineal society — the females are all related: mothers, daughters, sisters, aunts. They are born into the pride and stay for life. Unlike males, who come and go, the lionesses are the permanent residents, the keepers of knowledge — which watering holes are safe, where the best hunting routes lie, when the migrations pass through. Dalila nurses her cubs alongside her sister and two cousins. The cubs feed from any willing mother — in a pride, every cub belongs to every female. If Dalila falls in a hunt, her sister will raise Taji and Zuri as her own. This communal motherhood is not sentiment — it is survival strategy, refined over millions of years.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras los machos luchan por la dominancia, la verdadera columna vertebral de la manada son las leonas. Una manada es una sociedad matrilineal — las hembras están todas emparentadas: madres, hijas, hermanas, tías. Nacen en la manada y se quedan de por vida. A diferencia de los machos, que vienen y van, las leonas son las residentes permanentes, las guardianas del conocimiento — qué abrevaderos son seguros, dónde están las mejores rutas de caza, cuándo pasan las migraciones. Dalila amamanta a sus cachorros junto a su hermana y dos primas. Los cachorros se alimentan de cualquier madre dispuesta — en una manada, cada cachorro pertenece a todas las hembras. Si Dalila cae en una cacería, su hermana criará a Taji y Zuri como propios. Esta maternidad comunal no es sentimentalismo — es estrategia de supervivencia, refinada durante millones de años.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пока самцы сражаются за господство, истинный стержень прайда — его львицы. Прайд — это матрилинейное общество: все самки — родственницы: матери, дочери, сёстры, тётки. Они рождаются в прайде и остаются на всю жизнь. В отличие от самцов, которые приходят и уходят, львицы — постоянные жительницы, хранительницы знаний: какие водопои безопасны, где лучшие охотничьи маршруты, когда проходят миграции. Далила кормит своих львят рядом со своей сестрой и двумя кузинами. Детёныши кормятся у любой согласной матери — в прайде каждый львёнок принадлежит каждой самке. Если Далила погибнет на охоте, её сестра вырастит Таджи и Зури как своих. Это коллективное материнство — не сентиментальность, а стратегия выживания, отточенная миллионами лет.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/mating-season.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mating Season</h2>
+            <h2 data-lang="es">Temporada de Apareamiento</h2>
+            <h2 data-lang="ru">Брачный сезон</h2>
+            <div data-lang="en" class="active">
+                <p>When a lioness comes into estrus, a remarkable biological event unfolds. For four to five days, the mating pair becomes inseparable. They leave the pride, finding a private spot on the savanna. The intensity of their pairing is staggering by any standard in the animal kingdom: lions mate approximately every 15 to 20 minutes, day and night, totaling 20 to 40 couplings per day — sometimes as many as 50. Each coupling is brief, lasting only seconds, but the sheer frequency serves an essential biological purpose: it stimulates ovulation in the lioness, which does not occur without repeated mating. Kazi stays close to Dalila throughout, guarding her from rival males and refusing to eat or drink. He may lose significant body weight during these few days. This exhausting ritual ensures his genes — and his alone — will pass to the next generation. It is nature at its most demanding and purposeful.</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando una leona entra en celo, se desarrolla un evento biológico notable. Durante cuatro a cinco días, la pareja reproductora se vuelve inseparable. Dejan la manada, encontrando un lugar privado en la sabana. La intensidad de su apareamiento es asombrosa por cualquier estándar del reino animal: los leones se aparean aproximadamente cada 15 a 20 minutos, día y noche, totalizando de 20 a 40 apareamientos por día — a veces hasta 50. Cada apareamiento es breve, durando solo segundos, pero la pura frecuencia sirve un propósito biológico esencial: estimula la ovulación en la leona, que no ocurre sin el apareamiento repetido. Kazi permanece cerca de Dalila todo el tiempo, protegiéndola de machos rivales y negándose a comer o beber. Puede perder peso corporal significativo durante estos días. Este ritual agotador asegura que sus genes — y solo los suyos — pasarán a la siguiente generación.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда у львицы наступает течка, разворачивается замечательное биологическое событие. В течение четырёх-пяти дней пара становится неразлучной. Они покидают прайд, находя уединённое место в саванне. Интенсивность их спаривания поразительна по любым меркам животного мира: львы спариваются примерно каждые 15-20 минут, днём и ночью, в общей сложности от 20 до 40 раз в день — иногда до 50. Каждое спаривание кратко, длится лишь секунды, но сама частота служит важнейшей биологической цели: она стимулирует овуляцию у львицы, которая не происходит без многократного спаривания. Кази остаётся рядом с Далилой всё время, охраняя её от соперников и отказываясь от еды и воды. Он может значительно потерять в весе за эти дни. Этот изнурительный ритуал гарантирует, что его гены — и только его — перейдут к следующему поколению.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/new-life-danger.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">New Life and Danger</h2>
+            <h2 data-lang="es">Nueva Vida y Peligro</h2>
+            <h2 data-lang="ru">Новая жизнь и опасность</h2>
+            <div data-lang="en" class="active">
+                <p>Three and a half months after mating, Dalila slips away from the pride to a hidden rocky den. Alone and in secret, she gives birth to Taji and Zuri. They are tiny — barely two pounds each — blind, helpless, and utterly dependent on her warmth and milk. For the first six weeks, Dalila hides them from everything — even the pride. This is not paranoia. Male lions — including the pride male himself in rare cases — may kill cubs that are not their own. Nomad males sneaking through the territory pose the greatest threat. Hyenas will take unguarded cubs without hesitation. Even eagles can snatch a newborn. Dalila eats little, drinks little, and barely sleeps. Every sound makes her ears swivel, every shadow makes her tense. She is mother, guardian, and fortress. When she finally introduces the cubs to the pride, she watches every interaction with fierce, unblinking attention.</p>
+            </div>
+            <div data-lang="es">
+                <p>Tres meses y medio después del apareamiento, Dalila se escabulle de la manada a una guarida rocosa oculta. Sola y en secreto, da a luz a Taji y Zuri. Son diminutos — apenas un kilo cada uno — ciegos, indefensos y completamente dependientes de su calor y su leche. Durante las primeras seis semanas, Dalila los esconde de todo — incluso de la manada. Esto no es paranoia. Los leones machos — incluyendo el propio macho de la manada en casos raros — pueden matar cachorros que no son suyos. Los machos nómadas que se cuelan por el territorio representan la mayor amenaza. Las hienas tomarán cachorros desprotegidos sin dudarlo. Incluso las águilas pueden arrebatar a un recién nacido. Dalila come poco, bebe poco y apenas duerme. Cada sonido hace girar sus orejas, cada sombra la tensa. Ella es madre, guardiana y fortaleza.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Через три с половиной месяца после спаривания Далила ускользает от прайда в скрытое скалистое логово. Одна и в тайне она рожает Таджи и Зури. Они крошечные — едва по килограмму каждый — слепые, беспомощные и полностью зависимые от её тепла и молока. Первые шесть недель Далила прячет их от всего — даже от прайда. Это не паранойя. Львы-самцы — включая самого вожака прайда в редких случаях — могут убить чужих детёнышей. Бродячие самцы, пробирающиеся через территорию, представляют наибольшую угрозу. Гиены заберут неохраняемых львят без колебаний. Даже орлы могут схватить новорождённого. Далила мало ест, мало пьёт и почти не спит. Каждый звук заставляет её уши повернуться, каждая тень заставляет её напрячься. Она — мать, страж и крепость.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/fallen-king.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Battle-scarred male lion walking alone into the sunset, dark mane matted and torn, limping with dignity, vast empty savanna behind him, bittersweet golden and purple sky"
+                 data-alt-en="Battle-scarred male lion walking alone into the sunset, dark mane matted and torn, limping with dignity, vast empty savanna behind him, bittersweet golden and purple sky"
+                 data-alt-es="León macho marcado por la batalla caminando solo hacia el atardecer, melena oscura apelmazada y rasgada, cojeando con dignidad, vasta sabana vacía detrás, cielo agridulce dorado y púrpura"
+                 data-alt-ru="Покрытый шрамами лев-самец уходит один в закат, тёмная грива спутана и порвана, хромает с достоинством, бескрайняя пустая саванна позади, горько-сладкое золотисто-пурпурное небо"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Fallen King</h2>
+            <h2 data-lang="es">El Rey Caído</h2>
+            <h2 data-lang="ru">Павший король</h2>
+            <div data-lang="en" class="active">
+                <p>It happens on a night with no moon. The challenger returns — this time not alone. He has found a coalition partner, another young nomad. Two against one. Even Kazi, with all his strength and fury, cannot hold against two prime males. The battle is savage and brief. When it ends, Kazi stands bloody and broken at the edge of his own territory. He has lost. The law of the savanna is absolute — there is no appeal, no second chance, no graceful retirement. A deposed pride male must leave immediately or risk being killed. Kazi limps away into the darkness, alone for the first time in three years. Behind him, his roar still echoes across the land he once ruled. The pride watches him go. The lionesses do not follow — they belong to the territory, not the male. This is how it has always been. A king&#x27;s reign lasts, on average, just two to three years. Kazi&#x27;s time is over. But his story is not.</p>
+            </div>
+            <div data-lang="es">
+                <p>Ocurre en una noche sin luna. El retador regresa — esta vez no solo. Ha encontrado un compañero de coalición, otro joven nómada. Dos contra uno. Incluso Kazi, con toda su fuerza y furia, no puede resistir contra dos machos en su plenitud. La batalla es salvaje y breve. Cuando termina, Kazi se mantiene de pie, sangriento y quebrantado, al borde de su propio territorio. Ha perdido. La ley de la sabana es absoluta — no hay apelación, no hay segunda oportunidad, no hay jubilación digna. Un macho de manada destronado debe irse inmediatamente o arriesgarse a ser asesinado. Kazi cojea hacia la oscuridad, solo por primera vez en tres años. Detrás de él, su rugido todavía resuena por la tierra que una vez gobernó. La manada lo ve irse. Las leonas no lo siguen — pertenecen al territorio, no al macho. Así ha sido siempre.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Это случается в безлунную ночь. Претендент возвращается — на этот раз не один. Он нашёл партнёра по коалиции, другого молодого бродягу. Двое против одного. Даже Кази, со всей его силой и яростью, не может устоять против двух самцов в расцвете сил. Битва жестока и коротка. Когда она заканчивается, Кази стоит окровавленный и сломленный на краю собственной территории. Он проиграл. Закон саванны абсолютен — нет апелляции, нет второго шанса, нет почётной отставки. Свергнутый вожак должен немедленно уйти или рискует быть убитым. Кази хромает прочь в темноту, один впервые за три года. Позади него его рык всё ещё разносится по земле, которой он когда-то правил. Прайд смотрит, как он уходит. Львицы не следуют — они принадлежат территории, не самцу. Так было всегда.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/mothers-defense.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">A Mother&#x27;s Fierce Defense</h2>
+            <h2 data-lang="es">La Feroz Defensa de una Madre</h2>
+            <h2 data-lang="ru">Яростная защита матери</h2>
+            <div data-lang="en" class="active">
+                <p>The new males waste no time. Their biological imperative is clear: eliminate the former king&#x27;s cubs so the lionesses will come into estrus again and bear their offspring instead. This is not cruelty — it is evolution&#x27;s cold arithmetic. A male&#x27;s window of dominance is short; he cannot afford to spend it raising another male&#x27;s genes. The new coalition approaches Taji and Zuri. But they did not account for Dalila. She stands over her cubs, teeth bared, every muscle coiled like a spring. Her snarl could freeze blood. She is smaller than either male, outweighed by a hundred pounds, but she does not flinch. She swipes at the first male&#x27;s face, drawing blood. He recoils, stunned. No kill is worth losing an eye. The other lionesses join Dalila, forming a wall of teeth and claws. Together, the mothers hold the line. Not every lioness succeeds in this defense — in many prides, cubs are lost to new males. But Dalila&#x27;s ferocity, backed by her sisters, gives Taji and Zuri a chance. Nature does not guarantee survival. It guarantees opportunity.</p>
+            </div>
+            <div data-lang="es">
+                <p>Los nuevos machos no pierden tiempo. Su imperativo biológico es claro: eliminar a los cachorros del antiguo rey para que las leonas entren en celo nuevamente y tengan su descendencia. Esto no es crueldad — es la fría aritmética de la evolución. La ventana de dominancia de un macho es corta; no puede permitirse gastarla criando genes de otro macho. La nueva coalición se acerca a Taji y Zuri. Pero no contaron con Dalila. Ella se para sobre sus cachorros, dientes al descubierto, cada músculo enrollado como un resorte. Su gruñido podría helar la sangre. Es más pequeña que cualquiera de los machos, con cien kilos menos, pero no retrocede. Golpea la cara del primer macho, sacando sangre. Él retrocede, aturdido. Ninguna presa vale perder un ojo. Las otras leonas se unen a Dalila, formando un muro de dientes y garras. Juntas, las madres mantienen la línea.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Новые самцы не теряют времени. Их биологический императив ясен: уничтожить детёнышей прежнего короля, чтобы львицы снова вошли в течку и произвели уже их потомство. Это не жестокость — это холодная арифметика эволюции. Окно доминирования самца коротко; он не может позволить себе тратить его на воспитание чужих генов. Новая коалиция приближается к Таджи и Зури. Но они не учли Далилу. Она стоит над своими львятами, зубы обнажены, каждый мускул скручен как пружина. Её рычание может заморозить кровь. Она меньше любого из самцов, легче на пятьдесят килограммов, но не отступает. Она бьёт первого самца по морде, пуская кровь. Он отшатывается, ошеломлённый. Никакая добыча не стоит потери глаза. Другие львицы присоединяются к Далиле, образуя стену из зубов и когтей. Вместе матери держат оборону.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/cubs-survival.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Cubs&#x27; Survival</h2>
+            <h2 data-lang="es">La Supervivencia de los Cachorros</h2>
+            <h2 data-lang="ru">Выживание львят</h2>
+            <div data-lang="en" class="active">
+                <p>The weeks that follow the takeover are the most dangerous of Taji and Zuri&#x27;s lives. The new males tolerate them — barely — thanks to the lionesses&#x27; united front. But tolerance is not acceptance. The cubs must stay close to their mothers at all times. They learn to read the males&#x27; moods — when to approach, when to hide, when to freeze. Roughly one in four lion cubs does not survive their first year. Starvation, predators, disease, and pride takeovers all take their toll. Taji and Zuri survive because Dalila never rests. She hunts harder, stays more alert, and positions herself between danger and her cubs at every moment. Slowly, as the cubs grow larger and the new males&#x27; own offspring begin to arrive, the threat diminishes. The new coalition begins to accept the older cubs as part of their pride. Survival in the savanna is not guaranteed by strength alone — it is earned through endurance, timing, and an unbreakable mother&#x27;s will.</p>
+            </div>
+            <div data-lang="es">
+                <p>Las semanas que siguen a la toma de poder son las más peligrosas de las vidas de Taji y Zuri. Los nuevos machos los toleran — apenas — gracias al frente unido de las leonas. Pero tolerancia no es aceptación. Los cachorros deben permanecer cerca de sus madres en todo momento. Aprenden a leer los estados de ánimo de los machos — cuándo acercarse, cuándo esconderse, cuándo quedarse inmóviles. Aproximadamente uno de cada cuatro cachorros de león no sobrevive su primer año. El hambre, los depredadores, las enfermedades y las tomas de poder cobran su precio. Taji y Zuri sobreviven porque Dalila nunca descansa. Caza más duro, permanece más alerta, y se posiciona entre el peligro y sus cachorros en cada momento. Lentamente, a medida que los cachorros crecen y comienzan a llegar las crías propias de los nuevos machos, la amenaza disminuye.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Недели после смены власти — самые опасные в жизни Таджи и Зури. Новые самцы терпят их — едва-едва — благодаря единому фронту львиц. Но терпимость — не принятие. Львята должны всё время оставаться рядом с матерями. Они учатся читать настроение самцов — когда приближаться, когда прятаться, когда замереть. Примерно каждый четвёртый львёнок не переживает первый год. Голод, хищники, болезни и смены власти берут своё. Таджи и Зури выживают, потому что Далила никогда не отдыхает. Она охотится усерднее, остаётся более бдительной и в каждый момент становится между опасностью и своими львятами. Постепенно, когда львята подрастают и у новых самцов начинает появляться собственное потомство, угроза уменьшается.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/natures-balance.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Vast African savanna landscape at sunrise showing the interconnected cycle of life — green grass, grazing herds, distant lion pride, circling vultures, golden river, dramatic sky"
+                 data-alt-en="Vast African savanna landscape at sunrise showing the interconnected cycle of life — green grass, grazing herds, distant lion pride, circling vultures, golden river, dramatic sky"
+                 data-alt-es="Vasto paisaje de sabana africana al amanecer mostrando el ciclo interconectado de la vida — hierba verde, manadas pastando, manada de leones distante, buitres circulando, río dorado, cielo dramático"
+                 data-alt-ru="Бескрайний пейзаж африканской саванны на рассвете, показывающий взаимосвязанный круг жизни — зелёная трава, пасущиеся стада, далёкий прайд львов, кружащие стервятники, золотая река, драматичное небо"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Nature&#x27;s Harsh Balance</h2>
+            <h2 data-lang="es">El Duro Equilibrio de la Naturaleza</h2>
+            <h2 data-lang="ru">Суровое равновесие природы</h2>
+            <div data-lang="en" class="active">
+                <p>Why does nature permit such brutality? Why must cubs die and kings fall? The answer lies in the merciless efficiency of natural selection. When only the strongest males breed, the pride&#x27;s genetic fitness improves. When weak or sick cubs are lost, resources flow to those most likely to survive and reproduce. When old males are replaced, genetic diversity increases, preventing the problems of inbreeding. This system produces lions that are faster, stronger, and more resilient with every generation. The savanna wastes nothing — the fallen feed the vultures, the vultures clean the land, the clean land grows the grass, the grass feeds the herds, the herds feed the lions. Every death serves life. Every ending enables a beginning. This is not a comfortable truth, and it should not be. But it is the truth that has sustained the African ecosystem for millions of years — a truth far older and wiser than human morality.</p>
+            </div>
+            <div data-lang="es">
+                <p>¿Por qué la naturaleza permite tal brutalidad? ¿Por qué deben morir cachorros y caer reyes? La respuesta está en la eficiencia despiadada de la selección natural. Cuando solo los machos más fuertes se reproducen, la aptitud genética de la manada mejora. Cuando los cachorros débiles o enfermos se pierden, los recursos fluyen hacia aquellos con más probabilidades de sobrevivir y reproducirse. Cuando los machos viejos son reemplazados, la diversidad genética aumenta, previniendo los problemas de la endogamia. Este sistema produce leones más rápidos, más fuertes y más resistentes con cada generación. La sabana no desperdicia nada — los caídos alimentan a los buitres, los buitres limpian la tierra, la tierra limpia hace crecer la hierba, la hierba alimenta las manadas, las manadas alimentan a los leones. Cada muerte sirve a la vida.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Почему природа допускает такую жестокость? Почему должны гибнуть львята и падать короли? Ответ — в безжалостной эффективности естественного отбора. Когда размножаются только сильнейшие самцы, генетическая приспособленность прайда улучшается. Когда слабые или больные детёныши погибают, ресурсы достаются тем, кто скорее выживет и размножится. Когда старых самцов заменяют, генетическое разнообразие возрастает, предотвращая проблемы инбридинга. Эта система производит львов быстрее, сильнее и устойчивее с каждым поколением. Саванна не расточительна — павшие кормят стервятников, стервятники очищают землю, чистая земля растит траву, трава кормит стада, стада кормят львов. Каждая смерть служит жизни. Каждый конец делает возможным начало.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/circle-continues.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Young male lion with growing mane standing on rocky kopje at sunrise in the same pose as his father, young lioness and older lioness with notched ear nearby, vast savanna at dawn, hope and continuation"
+                 data-alt-en="Young male lion with growing mane standing on rocky kopje at sunrise in the same pose as his father, young lioness and older lioness with notched ear nearby, vast savanna at dawn, hope and continuation"
+                 data-alt-es="Joven león macho con melena creciente de pie en un kopje rocoso al amanecer en la misma pose que su padre, joven leona y leona mayor con oreja muescada cerca, vasta sabana al amanecer, esperanza y continuación"
+                 data-alt-ru="Молодой лев-самец с растущей гривой стоит на скалистом копье на рассвете в той же позе, что и его отец, молодая львица и старшая львица с зарубкой на ухе рядом, бескрайняя саванна на рассвете, надежда и продолжение"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Circle Continues</h2>
+            <h2 data-lang="es">El Círculo Continúa</h2>
+            <h2 data-lang="ru">Круг продолжается</h2>
+            <div data-lang="en" class="active">
+                <p>Two years later. Taji stands on the same kopje where Kazi once surveyed his kingdom. His mane, lighter than his father&#x27;s but growing thicker every month, catches the dawn light. He is not the king here — not yet. Soon, the new pride males will drive him out, as all pride males do to maturing sons. He will become a nomad, wandering the savanna, building strength, waiting for his chance to challenge for a pride of his own. Zuri hunts beside Dalila now, already nearly as fast and twice as fearless. She will stay with the pride forever, raising the next generation, passing on Dalila&#x27;s knowledge and Dalila&#x27;s courage. And somewhere far away, an old lion with a dark, matted mane lies in the shade of a lone acacia. Kazi is thinner now, his scars more prominent, his roar quieter. But he is alive. And sometimes, when the wind blows just right, he hears a young roar rising from the east — and he knows. His son is becoming a king. The circle continues.</p>
+            </div>
+            <div data-lang="es">
+                <p>Dos años después. Taji se para en el mismo kopje donde Kazi una vez inspeccionaba su reino. Su melena, más clara que la de su padre pero cada mes más espesa, capta la luz del amanecer. No es el rey aquí — todavía no. Pronto, los nuevos machos de la manada lo expulsarán, como todos los machos hacen con los hijos que maduran. Se convertirá en nómada, vagando por la sabana, fortalecién dose, esperando su oportunidad de desafiar por una manada propia. Zuri caza junto a Dalila ahora, casi tan rápida y el doble de valiente. Ella se quedará con la manada para siempre, criando la siguiente generación, transmitiendo el conocimiento y el coraje de Dalila. Y en algún lugar lejano, un viejo león con una melena oscura y apelmazada yace a la sombra de una acacia solitaria. Kazi está más delgado ahora, sus cicatrices más prominentes, su rugido más callado. Pero está vivo. Y a veces, cuando el viento sopla justo, escucha un joven rugido elevándose desde el este — y lo sabe. Su hijo se está convirtiendo en rey.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Два года спустя. Таджи стоит на том же копье, где Кази когда-то осматривал своё королевство. Его грива, светлее отцовской, но густеющая с каждым месяцем, ловит свет зари. Он не король здесь — пока нет. Скоро новые самцы прайда изгонят его, как все вожаки поступают с взрослеющими сыновьями. Он станет бродягой, скитающимся по саванне, набирающим силу, ждущим своего шанса бросить вызов за собственный прайд. Зури охотится рядом с Далилой теперь, почти такая же быстрая и вдвое бесстрашнее. Она останется в прайде навсегда, выращивая следующее поколение, передавая знания и мужество Далилы. А где-то далеко старый лев с тёмной, спутанной гривой лежит в тени одинокой акации. Кази стал худее, шрамы заметнее, рык тише. Но он жив. И иногда, когда ветер дует как надо, он слышит молодой рык, поднимающийся с востока — и знает. Его сын становится королём. Круг продолжается.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-mane-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Mighty Mane"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Mighty Mane</h3>
+                    <h3 data-lang="es">La Melena Poderosa</h3>
+                    <h3 data-lang="ru">Могучая грива</h3>
+                    <p data-lang="en" class="active">Look at Papa Kazi&#x27;s incredible mane! A lion&#x27;s mane is made of thick, coarse hair that grows around the face, neck, and shoulders. The darker the mane, the healthier and stronger the lion! Kazi&#x27;s dark brown mane tells everyone he is in his prime. The mane makes him look much bigger than he really is, which scares away rivals. It also protects his neck during fights. No two lion manes are exactly alike — each one is as unique as a fingerprint!</p>
+                    <p data-lang="es">¡Mira la increíble melena de Papá Kazi! La melena de un león está hecha de pelo grueso y áspero que crece alrededor de la cara, cuello y hombros. ¡Cuanto más oscura la melena, más sano y fuerte el león! La melena marrón oscura de Kazi le dice a todos que está en su mejor momento. La melena lo hace parecer mucho más grande de lo que realmente es, lo que asusta a los rivales. También protege su cuello durante las peleas.</p>
+                    <p data-lang="ru">Посмотрите на невероятную гриву Папы Кази! Грива льва состоит из толстых, жёстких волос, растущих вокруг лица, шеи и плеч. Чем темнее грива, тем здоровее и сильнее лев! Тёмно-коричневая грива Кази говорит всем, что он в расцвете сил. Грива делает его намного больше, чем он есть на самом деле, что отпугивает соперников. Она также защищает шею в боях. Нет двух одинаковых грив — каждая уникальна, как отпечаток пальца!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-retractable-claws.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Retractable Claws"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Retractable Claws</h3>
+                    <h3 data-lang="es">Garras Retráctiles</h3>
+                    <h3 data-lang="ru">Втягивающиеся когти</h3>
+                    <p data-lang="en" class="active">Lions have an amazing superpower — retractable claws! When walking, their sharp claws are tucked inside soft, furry paw pads, keeping them quiet and their claws razor-sharp. But when hunting or climbing, the claws pop out like hidden knives! Each claw can be up to 1.5 inches long and curved like a hook. This retractable design means their claws never get dull from walking on hard ground. Lions are one of the few cats that can&#x27;t fully retract their claws — cheetahs can&#x27;t at all!</p>
+                    <p data-lang="es">¡Los leones tienen un superpoder asombroso — garras retráctiles! Al caminar, sus afiladas garras están guardadas dentro de suaves almohadillas peludas, manteniéndolos silenciosos y sus garras afiladísimas. ¡Pero al cazar o trepar, las garras salen como cuchillos ocultos! Cada garra puede medir hasta 4 centímetros de largo y curvarse como un gancho. Este diseño retráctil significa que sus garras nunca se desgastan al caminar sobre suelo duro.</p>
+                    <p data-lang="ru">У львов есть удивительная суперспособность — втягивающиеся когти! При ходьбе острые когти спрятаны внутри мягких пушистых подушечек лап, что делает шаги бесшумными и сохраняет когти острыми как бритва. Но во время охоты или лазания когти выскакивают как скрытые ножи! Каждый коготь может достигать 4 сантиметров в длину и изогнут как крючок. Этот убирающийся механизм означает, что когти никогда не тупятся от ходьбы по твёрдой земле.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-whisker-spots.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Whisker Spot ID"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Whisker Spot ID</h3>
+                    <h3 data-lang="es">Identificación por Bigotes</h3>
+                    <h3 data-lang="ru">Усы-отпечатки</h3>
+                    <p data-lang="en" class="active">Did you know that every lion has a unique pattern of whisker spots? The small dark dots on a lion&#x27;s muzzle where each whisker grows form a pattern that is different for every single lion — just like human fingerprints! Scientists use these whisker spot patterns to identify individual lions in the wild. Next time you see a lion, look closely at the dots on its muzzle — no other lion in the world has the exact same pattern!</p>
+                    <p data-lang="es">¿Sabías que cada león tiene un patrón único de puntos de bigotes? Los pequeños puntos oscuros en el hocico de un león donde crece cada bigote forman un patrón diferente para cada león — ¡igual que las huellas dactilares humanas! Los científicos usan estos patrones de puntos de bigotes para identificar leones individuales en la naturaleza. La próxima vez que veas un león, mira de cerca los puntos en su hocico.</p>
+                    <p data-lang="ru">Вы знали, что у каждого льва уникальный рисунок точек у усов? Маленькие тёмные точки на морде льва, где растёт каждый ус, образуют рисунок, отличающийся у каждого льва — как отпечатки пальцев у людей! Учёные используют эти рисунки точек у усов для идентификации отдельных львов в дикой природе. В следующий раз, когда увидите льва, присмотритесь к точкам на его морде.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-rough-tongue.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Sandpaper Tongue"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Sandpaper Tongue</h3>
+                    <h3 data-lang="es">Lengua de Lija</h3>
+                    <h3 data-lang="ru">Язык-наждачка</h3>
+                    <p data-lang="en" class="active">A lion&#x27;s tongue is covered in tiny backward-pointing barbs called papillae, making it rough like sandpaper! These barbs are made of the same material as your fingernails. The rough tongue helps lions scrape every last bit of meat from bones, and it works like a comb for grooming their fur. When Mama Dalila licks her cubs clean, it&#x27;s like a gentle scrubbing brush! One lick from a lion&#x27;s tongue could scratch your skin — but to the cubs, it feels like the warmest, most loving bath.</p>
+                    <p data-lang="es">¡La lengua de un león está cubierta de pequeñas púas apuntando hacia atrás llamadas papilas, haciéndola áspera como papel de lija! Estas púas están hechas del mismo material que tus uñas. La lengua áspera ayuda a los leones a raspar hasta el último pedazo de carne de los huesos, y funciona como un peine para acicalar su pelaje. ¡Cuando Mamá Dalila lame a sus cachorros para limpiarlos, es como un suave cepillo de fregar!</p>
+                    <p data-lang="ru">Язык льва покрыт крошечными направленными назад шипами — папиллами, что делает его шершавым как наждачная бумага! Эти шипы сделаны из того же материала, что и ваши ногти. Шершавый язык помогает львам соскребать каждый кусочек мяса с костей и работает как расчёска для ухода за шерстью. Когда Мама Далила вылизывает львят, это как нежная щёточка! Одно облизывание львиным языком может поцарапать кожу — но для львят это самая тёплая и любящая ванна.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Lion Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Leones!</h2>
+            <h2 data-lang="ru">Удивительные факты о львах!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-sleeping.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Champion Sleepers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Champion Sleepers</h3>
+                        <h3 data-lang="es">Campeones de la Siesta</h3>
+                        <h3 data-lang="ru">Чемпионы по сну</h3>
+                        <p data-lang="en" class="active">Lions sleep up to 20 hours a day! That makes them one of the sleepiest animals on Earth. They rest so much because hunting takes enormous energy — a single hunt can use up all their strength. So when they&#x27;re not hunting or eating, lions spend their time dozing in the shade, cuddling with family, and taking the world&#x27;s longest naps. Even their name in some African languages means &#x27;the lazy one&#x27;!</p>
+                        <p data-lang="es">¡Los leones duermen hasta 20 horas al día! Eso los convierte en uno de los animales más dormilones de la Tierra. Descansan tanto porque la caza requiere una energía enorme — una sola cacería puede usar toda su fuerza. Así que cuando no están cazando o comiendo, los leones pasan el tiempo dormitando a la sombra, acurrucándose con la familia y tomando las siestas más largas del mundo.</p>
+                        <p data-lang="ru">Львы спят до 20 часов в день! Это делает их одними из самых сонливых животных на Земле. Они столько отдыхают, потому что охота требует огромной энергии — одна охота может забрать все силы. Поэтому, когда они не охотятся и не едят, львы дремлют в тени, обнимаются с семьёй и устраивают самые длинные в мире тихие часы.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-roar.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="The 5-Mile Roar"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">The 5-Mile Roar</h3>
+                        <h3 data-lang="es">El Rugido de 8 Kilómetros</h3>
+                        <h3 data-lang="ru">Рык на 8 километров</h3>
+                        <p data-lang="en" class="active">A lion&#x27;s roar is the loudest of any big cat and can be heard from 5 miles (8 kilometers) away! That&#x27;s like roaring at one end of town and being heard at the other end. Lions roar to communicate with their pride, to warn rivals to stay away, and to find family members in the dark. They have a special bone in their throat called the hyoid bone that lets them produce such incredibly deep, powerful sounds.</p>
+                        <p data-lang="es">¡El rugido de un león es el más fuerte de todos los grandes felinos y se puede escuchar a 8 kilómetros de distancia! Es como rugir en un extremo del pueblo y ser escuchado en el otro. Los leones rugen para comunicarse con su manada, para advertir a los rivales que se mantengan lejos, y para encontrar a miembros de la familia en la oscuridad. Tienen un hueso especial en la garganta llamado hueso hioides.</p>
+                        <p data-lang="ru">Рык льва — самый громкий среди всех больших кошек, его слышно за 8 километров! Это как зарычать на одном конце города и быть услышанным на другом. Львы рычат, чтобы общаться со своим прайдом, предупреждать соперников держаться подальше и находить членов семьи в темноте. У них есть особая кость в горле — подъязычная кость, которая позволяет издавать такие невероятно глубокие, мощные звуки.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-huntress.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Girl Power Hunters"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Girl Power Hunters</h3>
+                        <h3 data-lang="es">Cazadoras Poderosas</h3>
+                        <h3 data-lang="ru">Охотницы-чемпионки</h3>
+                        <p data-lang="en" class="active">In a lion pride, the lionesses do most of the hunting! They work together as a team, using clever strategies — some lionesses chase the prey toward others waiting in ambush. Lionesses are faster, lighter, and more agile than male lions, whose big heavy manes would slow them down and make them easy to spot. The males have a different job — they patrol and protect the territory so the family is safe.</p>
+                        <p data-lang="es">¡En una manada de leones, las leonas hacen la mayor parte de la caza! Trabajan juntas como equipo, usando estrategias inteligentes — algunas leonas persiguen a la presa hacia otras que esperan emboscadas. Las leonas son más rápidas, ligeras y ágiles que los leones machos, cuyas grandes y pesadas melenas los harían más lentos y fáciles de detectar. Los machos tienen un trabajo diferente — patrullan y protegen el territorio.</p>
+                        <p data-lang="ru">В львином прайде львицы выполняют основную часть охоты! Они работают вместе как команда, используя хитрые стратегии — одни львицы гонят добычу к другим, ждущим в засаде. Львицы быстрее, легче и проворнее львов-самцов, чьи большие тяжёлые гривы замедляли бы их и делали заметными. У самцов другая работа — они патрулируют и защищают территорию, чтобы семья была в безопасности.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-spots.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Spots That Disappear"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Spots That Disappear</h3>
+                        <h3 data-lang="es">Manchas Que Desaparecen</h3>
+                        <h3 data-lang="ru">Исчезающие пятнышки</h3>
+                        <p data-lang="en" class="active">Lion cubs are born with spotted fur! These faint rosette-shaped spots help baby lions hide in the dappled shade of bushes and grass, camouflaging them from predators while they&#x27;re small and vulnerable. As the cubs grow bigger and stronger, their spots gradually fade away until they have the smooth golden coat of an adult lion. Some lions keep very faint spots on their belly even as adults — look closely next time!</p>
+                        <p data-lang="es">¡Los cachorros de león nacen con pelaje manchado! Estas tenues manchas en forma de roseta ayudan a los bebés león a esconderse en la sombra moteada de arbustos y hierba, camuflándolos de depredadores mientras son pequeños y vulnerables. A medida que los cachorros crecen más grandes y fuertes, sus manchas se desvanecen gradualmente hasta tener el suave pelaje dorado de un león adulto.</p>
+                        <p data-lang="ru">Львята рождаются с пятнистой шерстью! Эти бледные пятнышки-розетки помогают маленьким львам прятаться в пятнистой тени кустов и травы, маскируя их от хищников, пока они маленькие и уязвимые. По мере того как львята растут и крепнут, пятна постепенно исчезают, пока не остаётся гладкая золотистая шерсть взрослого льва.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">The untold story of power, sacrifice, and survival on the savanna</p>
+        <p data-lang="es" style="margin-top: 10px;">La historia no contada del poder, el sacrificio y la supervivencia en la sabana</p>
+        <p data-lang="ru" style="margin-top: 10px;">Нерассказанная история власти, жертвы и выживания в саванне</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

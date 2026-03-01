@@ -1,0 +1,519 @@
+# Ants Chapter Definition - The Tiny Builders
+meta:
+  id: ants
+  issueNumber: 15
+  date: "February 2026"
+  folderName: "ants"
+  title:
+    en: "Ants: The Tiny Builders"
+    es: "Hormigas: Las Pequenas Constructoras"
+    ru: "Муравьи: Маленькие Строители"
+  subtitle:
+    en: "A World of Teamwork Under Our Feet"
+    es: "Un Mundo de Trabajo en Equipo Bajo Nuestros Pies"
+    ru: "Мир командной работы у нас под ногами"
+  magazineText:
+    en: "Discover the incredible underground world of ants! Meet Queen Terra, brave Scout, little Tiny, and mighty Major as they work together to build a colony more amazing than any human city. Every ant has a job, and together they can do anything!"
+    es: "Descubre el increible mundo subterraneo de las hormigas! Conoce a la Reina Terra, la valiente Exploradora, la pequena Diminuta y el poderoso Mayor mientras trabajan juntos para construir una colonia mas asombrosa que cualquier ciudad humana. Cada hormiga tiene un trabajo, y juntas pueden hacer cualquier cosa!"
+    ru: "Откройте невероятный подземный мир муравьёв! Познакомьтесь с Королевой Террой, храброй Разведчицей, маленькой Крошкой и могучим Майором - они работают вместе, чтобы построить колонию удивительнее любого человеческого города. У каждого муравья есть работа, и вместе они могут всё!"
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Celebrating the power of teamwork in nature's tiniest builders"
+    es: "Celebrando el poder del trabajo en equipo en las constructoras mas pequenas de la naturaleza"
+    ru: "Восхваляя силу командной работы самых маленьких строителей природы"
+  description: "Follow Queen Terra, Scout, Tiny, and Major as they build and protect their incredible underground ant colony through the power of teamwork"
+  preface:
+    en:
+      - "Welcome to a world hidden right beneath your feet! Under every garden, every sidewalk, and every forest floor, millions of ants are building incredible underground cities. These tiny creatures are some of the strongest, smartest, and most organized animals on Earth."
+      - "In this adventure, you'll meet Queen Terra and her amazing colony. You'll discover how ants talk to each other with special scents, build tunnels deeper than a house is tall, and carry objects fifty times their own weight. That's like you carrying a car over your head!"
+      - "Every ant in the colony has an important job, and when they all work together, they can do things that seem impossible. Get ready to shrink down and explore the most incredible tiny world you've ever seen!"
+    es:
+      - "Bienvenidos a un mundo escondido justo bajo sus pies! Debajo de cada jardin, cada acera y cada suelo del bosque, millones de hormigas estan construyendo increibles ciudades subterraneas. Estas diminutas criaturas son algunos de los animales mas fuertes, inteligentes y organizados de la Tierra."
+      - "En esta aventura, conoceran a la Reina Terra y su asombrosa colonia. Descubriran como las hormigas hablan entre si con olores especiales, construyen tuneles mas profundos que una casa y cargan objetos cincuenta veces su propio peso. Eso es como si tu cargaras un auto sobre tu cabeza!"
+      - "Cada hormiga en la colonia tiene un trabajo importante, y cuando todas trabajan juntas, pueden hacer cosas que parecen imposibles. Preparense para encogerse y explorar el mundo diminuto mas increible que hayan visto!"
+    ru:
+      - "Добро пожаловать в мир, спрятанный прямо у вас под ногами! Под каждым садом, каждым тротуаром и каждым лесным покровом миллионы муравьёв строят невероятные подземные города. Эти крошечные существа - одни из самых сильных, умных и организованных животных на Земле."
+      - "В этом приключении вы познакомитесь с Королевой Террой и её удивительной колонией. Вы узнаете, как муравьи разговаривают друг с другом с помощью особых запахов, строят тоннели глубже, чем высота дома, и переносят предметы в пятьдесят раз тяжелее себя. Это как если бы вы несли машину над головой!"
+      - "У каждого муравья в колонии есть важная работа, и когда все работают вместе, они могут делать то, что кажется невозможным. Приготовьтесь уменьшиться и исследовать самый невероятный крошечный мир!"
+
+hero:
+  title:
+    en: "Ants"
+    es: "Hormigas"
+    ru: "Муравьи"
+  subtitle:
+    en: "The Tiny Builders"
+    es: "Las Pequenas Constructoras"
+    ru: "Маленькие Строители"
+  image: "hero-anthill.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "A cross-section view of a magnificent ant colony underground, showing tunnels and chambers filled with busy ants, with a lush green meadow and wildflowers above ground, warm golden sunlight"
+    es: "Vista en corte transversal de una magnifica colonia de hormigas subterranea, mostrando tuneles y camaras llenas de hormigas ocupadas, con un exuberante prado verde y flores silvestres en la superficie, calida luz dorada"
+    ru: "Вид в разрезе великолепной подземной колонии муравьёв с тоннелями и камерами, полными занятых муравьёв, с пышным зелёным лугом и полевыми цветами наверху, тёплый золотистый свет"
+
+sections:
+  # The Colony Awakens
+  - id: colony-awakens
+    mood: [golden-hour, lush-botanical]
+    action: "sunrise over a lush green meadow, warm golden light streaming across the grass, a large anthill mound visible in the center with tiny ants beginning to emerge from multiple entrances, dewdrops sparkling on blades of grass, wildflowers surrounding the mound, peaceful morning scene"
+    title:
+      en: "The Colony Awakens"
+      es: "La Colonia Despierta"
+      ru: "Колония просыпается"
+    content:
+      en: "As the first golden rays of sunshine warm the earth, something magical happens beneath the meadow. Deep underground, in a city of tunnels and chambers bigger than your bedroom, thousands of tiny feet begin to stir. The ants are waking up! One by one, they stretch their six legs, wiggle their antennae, and get ready for the busiest day you can imagine. Up on the surface, little doors in the anthill open, and the first brave ants peek outside. A new day in the colony has begun!"
+      es: "Cuando los primeros rayos dorados del sol calientan la tierra, algo magico ocurre debajo del prado. En las profundidades, en una ciudad de tuneles y camaras mas grande que tu habitacion, miles de patitas comienzan a moverse. Las hormigas estan despertando! Una por una, estiran sus seis patas, mueven sus antenas y se preparan para el dia mas ocupado que puedas imaginar. En la superficie, pequenas puertas del hormiguero se abren, y las primeras hormigas valientes se asoman. Un nuevo dia en la colonia ha comenzado!"
+      ru: "Когда первые золотые лучи солнца согревают землю, нечто волшебное происходит под лугом. Глубоко под землёй, в городе из тоннелей и камер больше вашей комнаты, тысячи крошечных ножек начинают шевелиться. Муравьи просыпаются! Один за другим они вытягивают шесть лапок, шевелят усиками и готовятся к самому занятому дню, какой только можно представить. На поверхности маленькие дверцы муравейника открываются, и первые смелые муравьи выглядывают наружу. Новый день в колонии начался!"
+    image: "colony-awakens.jpg"
+    imageAlt:
+      en: "Sunrise over a green meadow with a large anthill, tiny ants emerging from entrances, dewdrops on grass, warm golden morning light"
+      es: "Amanecer sobre un prado verde con un gran hormiguero, pequenas hormigas emergiendo de las entradas, gotas de rocio en la hierba, calida luz dorada matutina"
+      ru: "Рассвет над зелёным лугом с большим муравейником, крошечные муравьи выходят из входов, капли росы на траве, тёплый золотистый утренний свет"
+
+  # Meet Queen Terra
+  - id: meet-queen-terra
+    generate_character: true
+    mood: [soft-intimate, golden-hour]
+    action: "a large reddish-brown ant queen sitting regally in a spacious underground chamber, she is the largest ant with wise ancient eyes, a slightly iridescent wing remnant on her back catches the light, surrounded by smaller worker ants attending to her, the chamber walls are smooth earth with tiny root tendrils, warm amber lighting from bioluminescent fungi"
+    title:
+      en: "Meet Queen Terra"
+      es: "Conoce a la Reina Terra"
+      ru: "Знакомьтесь: Королева Терра"
+    content:
+      en: "Deep in the very heart of the colony lives the most important ant of all — Queen Terra! She is the mother of every single ant in the colony, and she is MAGNIFICENT. Queen Terra is the biggest ant you've ever seen, with a deep reddish-brown body that gleams like polished wood. Her eyes are old and wise — she has seen a thousand sunrises from underground. On her back, you can see something special: a tiny, shimmering wing remnant that sparkles like a rainbow. Long ago, she flew through the sky to find this perfect spot and start her family. 'Welcome, little ones,' she says in her warm, deep voice. 'Every one of you is important.'"
+      es: "En lo mas profundo del corazon de la colonia vive la hormiga mas importante de todas: la Reina Terra! Ella es la madre de cada hormiga en la colonia, y es MAGNIFICA. La Reina Terra es la hormiga mas grande que hayas visto, con un cuerpo marron rojizo profundo que brilla como madera pulida. Sus ojos son ancianos y sabios — ha visto mil amaneceres desde bajo tierra. En su espalda puedes ver algo especial: un pequeno resto de ala brillante que centellea como un arcoiris. Hace mucho tiempo, ella volo por el cielo para encontrar este lugar perfecto y comenzar su familia. 'Bienvenidos, pequenos,' dice con su voz calida y profunda. 'Cada uno de ustedes es importante.'"
+      ru: "Глубоко в самом сердце колонии живёт самый важный муравей — Королева Терра! Она мать каждого муравья в колонии, и она ВЕЛИКОЛЕПНА. Королева Терра — самый большой муравей, какого вы когда-либо видели, с глубоким красновато-коричневым телом, блестящим как полированное дерево. Её глаза старые и мудрые — она видела тысячу восходов из-под земли. На её спине можно заметить кое-что особенное: крошечный переливающийся остаток крыла, сверкающий как радуга. Давным-давно она летела по небу, чтобы найти это идеальное место и начать свою семью. 'Добро пожаловать, малыши,' говорит она тёплым, глубоким голосом. 'Каждый из вас важен.'"
+    image: "queen-terra-portrait.jpg"
+    imageAlt:
+      en: "Large reddish-brown ant queen with wise eyes and an iridescent wing remnant on her back, sitting regally in an underground chamber surrounded by worker ants"
+      es: "Gran hormiga reina marron rojiza con ojos sabios y un resto de ala iridiscente en su espalda, sentada regiamente en una camara subterranea rodeada de hormigas obreras"
+      ru: "Большая красновато-коричневая королева муравьёв с мудрыми глазами и переливающимся остатком крыла на спине, величественно сидящая в подземной камере в окружении рабочих муравьёв"
+
+  # Meet Scout
+  - id: meet-scout
+    generate_character: true
+    mood: [lush-botanical, golden-hour]
+    use_character: "${meet-queen-terra.image}"
+    action: "a lean, fast-looking lighter brown ant with antennae pointing forward alertly, one antenna slightly bent, standing at the edge of the anthill entrance looking out over a vast meadow of grass blades that tower like trees, morning light, adventurous pose with front legs raised, ready to explore"
+    title:
+      en: "Scout Sets Out!"
+      es: "Exploradora Sale a Buscar!"
+      ru: "Разведчица отправляется в путь!"
+    content:
+      en: "Meet Scout — the bravest explorer in the whole colony! Scout is lean and fast, with lighter brown coloring that helps her blend with the dry leaves. Her antennae are always pointing forward, feeling and smelling everything around her. Look closely — see how one of her antennae has a little bend in it? She got that on her very first adventure, when she bravely explored a garden all by herself! 'Today I'm going to find the biggest, most delicious food for the colony!' Scout announces, wiggling her bent antenna. And off she goes, racing into the enormous world of grass and soil!"
+      es: "Conoce a Exploradora — la exploradora mas valiente de toda la colonia! Exploradora es delgada y rapida, con un color marron mas claro que la ayuda a camuflarse con las hojas secas. Sus antenas siempre apuntan hacia adelante, sintiendo y oliendo todo a su alrededor. Mira de cerca — ves como una de sus antenas tiene una pequena curva? La obtuvo en su primera aventura, cuando exploro valientemente un jardin ella sola! 'Hoy voy a encontrar la comida mas grande y deliciosa para la colonia!' anuncia Exploradora, moviendo su antena doblada. Y se va, corriendo hacia el enorme mundo de hierba y tierra!"
+      ru: "Знакомьтесь — Разведчица, самая храбрая исследовательница во всей колонии! Разведчица стройная и быстрая, с более светлой коричневой окраской, помогающей ей сливаться с сухими листьями. Её усики всегда направлены вперёд, ощупывая и обнюхивая всё вокруг. Присмотритесь — видите, как один из её усиков слегка изогнут? Это случилось в её самом первом приключении, когда она смело исследовала сад совсем одна! 'Сегодня я найду самую большую и вкусную еду для колонии!' объявляет Разведчица, шевеля изогнутым усиком. И вот она мчится в огромный мир травы и почвы!"
+    image: "scout-portrait.jpg"
+    imageAlt:
+      en: "Lean, alert lighter brown ant with one bent antenna standing at the anthill entrance looking out over a vast meadow, adventurous pose, morning light"
+      es: "Hormiga delgada y alerta de color marron claro con una antena doblada, de pie en la entrada del hormiguero mirando un vasto prado, pose aventurera, luz matutina"
+      ru: "Стройный, настороженный светло-коричневый муравей с одним изогнутым усиком, стоящий у входа в муравейник и смотрящий на бескрайний луг, приключенческая поза, утренний свет"
+
+  # Scout Finds Food
+  - id: scout-finds-food
+    mood: [golden-hour, lush-botanical]
+    use_characters: ["${meet-scout.image}"]
+    action: "a lean lighter brown ant with one bent antenna discovering a huge ripe strawberry fallen on the ground in a meadow, the strawberry is enormous compared to the tiny ant, the ant is touching it excitedly with her antennae, grass blades towering around them, golden sunlight, magical discovery moment"
+    title:
+      en: "The Greatest Discovery!"
+      es: "El Mayor Descubrimiento!"
+      ru: "Величайшее открытие!"
+    content:
+      en: "Scout races through the forest of grass blades, climbing over pebbles like mountains and jumping over puddles like lakes. Then she smells something AMAZING. She follows her nose — or rather, her antennae — and finds... a STRAWBERRY! It's fallen from the garden above, and it's the biggest, most beautiful red thing Scout has ever seen. It's a hundred times bigger than she is! 'The colony is going to FEAST!' Scout dances in a happy circle. But how will she tell everyone where it is? Scout has a plan — she'll leave a trail of special scent that every ant can follow!"
+      es: "Exploradora corre a traves del bosque de hojas de hierba, trepando piedras como montanas y saltando charcos como lagos. Entonces huele algo INCREIBLE. Sigue su nariz — o mejor dicho, sus antenas — y encuentra... una FRESA! Ha caido del jardin de arriba, y es la cosa roja mas grande y hermosa que Exploradora ha visto. Es cien veces mas grande que ella! 'La colonia va a tener un FESTIN!' Exploradora baila en un circulo feliz. Pero como les dira a todos donde esta? Exploradora tiene un plan — dejara un rastro de olor especial que cada hormiga puede seguir!"
+      ru: "Разведчица мчится через лес из травинок, карабкается через камешки как через горы и перепрыгивает через лужи как через озёра. И тут она чувствует нечто ПОТРЯСАЮЩЕЕ. Она идёт по запаху — точнее, по усикам — и находит... КЛУБНИКУ! Она упала из сада наверху, и это самая большая, самая красивая красная вещь, которую Разведчица когда-либо видела. Она в сто раз больше неё! 'Колония будет ПИРОВАТЬ!' Разведчица танцует в счастливом кружочке. Но как рассказать всем, где это? У Разведчицы есть план — она оставит след из особого запаха, по которому каждый муравей сможет пойти!"
+    image: "scout-finds-strawberry.jpg"
+    imageAlt:
+      en: "Small lighter brown ant excitedly discovering a huge ripe strawberry on the ground, grass blades towering around, golden sunlight, magical discovery moment"
+      es: "Pequena hormiga marron claro descubriendo emocionada una enorme fresa madura en el suelo, hojas de hierba imponentes alrededor, luz dorada, momento de descubrimiento magico"
+      ru: "Маленький светло-коричневый муравей с восторгом обнаруживает огромную спелую клубнику на земле, травинки возвышаются вокруг, золотистый солнечный свет, волшебный момент открытия"
+
+  # The Trail of Scents
+  - id: trail-of-scents
+    mood: [lush-botanical, translucency]
+    use_characters: ["${meet-scout.image}"]
+    action: "a line of ants marching single-file along a glowing scent trail through the grass, the lead ant is lighter brown with a bent antenna, the trail shimmers with a faint golden glow to show the pheromone path, grass blades on both sides like a corridor, warm dappled sunlight, other ants eagerly following the trail"
+    title:
+      en: "The Trail of Scents"
+      es: "El Rastro de Olores"
+      ru: "Тропа запахов"
+    content:
+      en: "Scout races back to the colony, dragging her belly along the ground as she runs. She's leaving behind a special invisible perfume called a PHEROMONE — a chemical message that says 'FOOD THIS WAY!' When she reaches the colony, she dances excitedly. 'Follow me! Follow me!' The other ants touch her antennae and smell the message. One by one, they line up behind Scout and march out in a perfect single-file line. Each ant follows the scent trail exactly, adding more scent as she goes. The more ants that walk the trail, the STRONGER the smell gets! It's like a highway made of perfume!"
+      es: "Exploradora corre de vuelta a la colonia, arrastrando su barriga por el suelo mientras corre. Esta dejando atras un perfume invisible especial llamado FEROMONA — un mensaje quimico que dice 'COMIDA POR AQUI!' Cuando llega a la colonia, baila emocionada. 'Siganme! Siganme!' Las otras hormigas tocan sus antenas y huelen el mensaje. Una por una, se alinean detras de Exploradora y marchan en una perfecta fila india. Cada hormiga sigue el rastro de olor exactamente, anadiendo mas aroma mientras camina. Cuantas mas hormigas caminan por el rastro, mas FUERTE se vuelve el olor! Es como una autopista hecha de perfume!"
+      ru: "Разведчица мчится обратно в колонию, волоча брюшко по земле на бегу. Она оставляет за собой особые невидимые духи — ФЕРОМОН — химическое сообщение, которое говорит 'ЕДА ТУТ!' Когда она добирается до колонии, она взволнованно танцует. 'За мной! За мной!' Другие муравьи касаются её усиков и чувствуют запах-послание. Один за другим они выстраиваются за Разведчицей и маршируют в идеальной колонне. Каждый муравей следует по следу запаха точно, добавляя ещё больше аромата по пути. Чем больше муравьёв идёт по тропе, тем СИЛЬНЕЕ становится запах! Это как шоссе, сделанное из духов!"
+    image: "trail-of-scents.jpg"
+    imageAlt:
+      en: "Line of ants marching single-file along a glowing scent trail through the grass, led by a lighter brown ant with a bent antenna, warm dappled sunlight"
+      es: "Linea de hormigas marchando en fila india a lo largo de un rastro de aroma brillante a traves de la hierba, lideradas por una hormiga marron claro con antena doblada, calida luz moteada"
+      ru: "Колонна муравьёв, марширующих гуськом по светящейся тропе запахов через траву, ведомых светло-коричневым муравьём с изогнутым усиком, тёплый пятнистый солнечный свет"
+
+  # Tiny's Big Job
+  - id: tinys-big-job
+    generate_character: true
+    mood: [soft-intimate, golden-hour]
+    use_character: "${meet-queen-terra.image}"
+    action: "a very small dark-colored ant struggling adorably to carry a leaf piece that is twice her size over her head, she is wobbling and straining but determined, on a dirt path near the anthill entrance, other ants watch encouragingly, warm sunlight, the leaf casts a green shadow over the tiny ant, humorous and endearing scene"
+    title:
+      en: "Tiny's Big Job"
+      es: "El Gran Trabajo de Diminuta"
+      ru: "Большая работа Крошки"
+    content:
+      en: "Little Tiny is the SMALLEST ant in the whole colony, but she has the BIGGEST heart! Today is her first day carrying food back to the nest, and she has found a piece of leaf that is TWICE her size. She grabs it with her tiny mandibles and lifts it over her head. WOBBLE! She tips left. WOBBLE! She tips right. The leaf spins her in a circle! 'I... can... DO this!' Tiny grunts. The other ants cheer her on. 'You've got it, Tiny!' Step by wobbly step, she marches toward home. The leaf is SO heavy, but Tiny never gives up. She finally makes it to the tunnel entrance — and all the ants cheer!"
+      es: "La pequena Diminuta es la hormiga MAS PEQUENA de toda la colonia, pero tiene el corazon MAS GRANDE! Hoy es su primer dia cargando comida de vuelta al nido, y ha encontrado un trozo de hoja que es el DOBLE de su tamano. Lo agarra con sus diminutas mandibulas y lo levanta sobre su cabeza. TAMBALEO! Se inclina a la izquierda. TAMBALEO! Se inclina a la derecha. La hoja la hace girar en circulo! 'Yo... puedo... HACERLO!' gruñe Diminuta. Las otras hormigas la animan. 'Tu puedes, Diminuta!' Paso a tambaleante paso, marcha hacia casa. La hoja es TAN pesada, pero Diminuta nunca se rinde. Finalmente llega a la entrada del tunel — y todas las hormigas celebran!"
+      ru: "Маленькая Крошка — САМЫЙ МАЛЕНЬКИЙ муравей во всей колонии, но у неё САМОЕ БОЛЬШОЕ сердце! Сегодня её первый день, когда она несёт еду в гнездо, и она нашла кусочек листа ВДВОЕ больше себя. Она хватает его крошечными челюстями и поднимает над головой. ШАТАНИЕ! Она наклоняется влево. ШАТАНИЕ! Наклоняется вправо. Лист крутит её по кругу! 'Я... могу... ЭТО СДЕЛАТЬ!' пыхтит Крошка. Другие муравьи подбадривают её. 'Давай, Крошка!' Шаг за шатким шагом она марширует к дому. Лист ТАКОЙ тяжёлый, но Крошка никогда не сдаётся. Наконец она добирается до входа в тоннель — и все муравьи ликуют!"
+    image: "tiny-carries-leaf.jpg"
+    imageAlt:
+      en: "Very small dark ant struggling adorably to carry a leaf piece twice her size over her head, wobbling with determination near the anthill entrance, warm sunlight"
+      es: "Hormiga muy pequena y oscura luchando adorablemente por cargar un trozo de hoja el doble de su tamano sobre su cabeza, tambaleandose con determinacion cerca de la entrada del hormiguero"
+      ru: "Очень маленький тёмный муравей, трогательно пытающийся нести кусок листа вдвое больше себя над головой, шатаясь с решимостью у входа в муравейник, тёплый солнечный свет"
+
+  # Major Guards the Gate
+  - id: major-guards-gate
+    generate_character: true
+    mood: [epic-skies, golden-hour]
+    use_character: "${meet-queen-terra.image}"
+    action: "a large dark reddish-black soldier ant with a massive head and oversized mandibles standing guard at a tunnel entrance in the anthill, intimidating stance but gentle eyes, two smaller worker ants pass safely under his jaws, dramatic lighting from the tunnel entrance, earth walls of the tunnel visible, powerful and protective pose"
+    title:
+      en: "Major Guards the Gate"
+      es: "Mayor Guarda la Puerta"
+      ru: "Майор охраняет ворота"
+    content:
+      en: "At the main entrance of the colony stands MAJOR — the biggest, strongest ant you've ever seen! His head is enormous, and his mandibles (that's what ant jaws are called) are so big they look like they could cut through anything. Major looks SO scary from the outside! But here's a secret: Major is the GENTLEST ant in the colony. When little Tiny wobbles past with her giant leaf, Major softly guides her through. 'Great job, little one,' he rumbles. But when a stranger ant from another colony tries to sneak in — Major blocks the way! 'This is OUR home,' he says firmly. Nobody gets past Major."
+      es: "En la entrada principal de la colonia esta MAYOR — la hormiga mas grande y fuerte que hayas visto! Su cabeza es enorme, y sus mandibulas (asi se llaman las quijadas de las hormigas) son tan grandes que parece que podrian cortar cualquier cosa. Mayor se ve TAN aterrador desde afuera! Pero aqui hay un secreto: Mayor es la hormiga MAS GENTIL de la colonia. Cuando la pequena Diminuta pasa tambaleandose con su hoja gigante, Mayor la guia suavemente. 'Buen trabajo, pequena,' murmura. Pero cuando una hormiga extraña de otra colonia intenta colarse — Mayor bloquea el camino! 'Este es NUESTRO hogar,' dice firmemente."
+      ru: "У главного входа в колонию стоит МАЙОР — самый большой, самый сильный муравей, какого вы когда-либо видели! Его голова огромна, а его мандибулы (так называются челюсти муравьёв) такие большие, что кажется, будто они могут разрезать что угодно. Майор выглядит ТАК страшно снаружи! Но вот секрет: Майор — САМЫЙ НЕЖНЫЙ муравей в колонии. Когда маленькая Крошка шатко проходит мимо со своим гигантским листом, Майор мягко направляет её. 'Отличная работа, малышка,' гудит он. Но когда чужой муравей из другой колонии пытается прокрасться — Майор преграждает путь! 'Это НАШ дом,' говорит он твёрдо. Никто не пройдёт мимо Майора."
+    image: "major-guards-gate.jpg"
+    imageAlt:
+      en: "Large dark reddish-black soldier ant with massive head and oversized mandibles standing guard at a tunnel entrance, smaller worker ants passing safely, dramatic lighting"
+      es: "Gran hormiga soldado rojo-negra oscura con cabeza masiva y mandibulas enormes de guardia en la entrada de un tunel, hormigas obreras mas pequenas pasando a salvo, iluminacion dramatica"
+      ru: "Большой тёмный красновато-чёрный муравей-солдат с массивной головой и огромными челюстями на страже у входа в тоннель, маленькие рабочие муравьи безопасно проходят мимо, драматичное освещение"
+
+  # Building Tunnels
+  - id: building-tunnels
+    mood: [soft-intimate, translucency]
+    use_characters: ["${tinys-big-job.image}", "${meet-scout.image}"]
+    action: "inside a cross-section view of underground ant tunnels being built, multiple small worker ants digging with their mandibles, carrying tiny balls of earth, creating new chambers, the tunnel walls are smooth and well-constructed, tiny root tendrils hang from the ceiling, warm amber underground glow, industrious and impressive engineering scene"
+    title:
+      en: "Building the Underground City"
+      es: "Construyendo la Ciudad Subterranea"
+      ru: "Строим подземный город"
+    content:
+      en: "Underground, the ants are building something INCREDIBLE. Thousands of workers dig with their strong mandibles, scooping out tiny balls of earth and carrying them to the surface. They're building tunnels that connect hundreds of rooms — nurseries for babies, storage rooms for food, resting chambers, and even a special room for Queen Terra! The tunnels go deeper than a tall person! Some rooms have perfect ventilation to keep the air fresh. Scout plans the routes while Tiny and her friends do the digging. Every tunnel is smooth and perfectly round. It's like an entire city — and ANTS built it, grain by grain!"
+      es: "Bajo tierra, las hormigas estan construyendo algo INCREIBLE. Miles de obreras cavan con sus fuertes mandibulas, sacando pequenas bolitas de tierra y llevandolas a la superficie. Estan construyendo tuneles que conectan cientos de habitaciones — guarderias para bebes, almacenes para comida, camaras de descanso, e incluso una habitacion especial para la Reina Terra! Los tuneles van mas profundo que una persona alta! Algunas habitaciones tienen ventilacion perfecta para mantener el aire fresco. Exploradora planifica las rutas mientras Diminuta y sus amigas hacen la excavacion. Cada tunel es liso y perfectamente redondo. Es como una ciudad entera — y las HORMIGAS la construyeron, grano por grano!"
+      ru: "Под землёй муравьи строят нечто НЕВЕРОЯТНОЕ. Тысячи рабочих копают сильными челюстями, вычерпывая крошечные комочки земли и вынося их на поверхность. Они строят тоннели, соединяющие сотни комнат — детские для малышей, кладовые для еды, камеры отдыха и даже особую комнату для Королевы Терры! Тоннели уходят глубже, чем рост высокого человека! В некоторых комнатах идеальная вентиляция для свежего воздуха. Разведчица планирует маршруты, а Крошка с подружками копают. Каждый тоннель гладкий и идеально круглый. Это целый город — и МУРАВЬИ построили его, песчинка за песчинкой!"
+    image: "building-tunnels.jpg"
+    imageAlt:
+      en: "Cross-section view of underground ant tunnels with worker ants digging and carrying earth balls, smooth tunnel walls, root tendrils, warm amber glow, impressive engineering"
+      es: "Vista en corte transversal de tuneles subterraneos con hormigas obreras cavando y cargando bolitas de tierra, paredes lisas, raices, resplandor ambar calido"
+      ru: "Вид в разрезе подземных муравьиных тоннелей с рабочими муравьями, копающими и несущими комочки земли, гладкие стены, корешки, тёплое янтарное свечение"
+
+  # The Fungus Garden
+  - id: fungus-garden
+    mood: [translucency, soft-intimate]
+    use_characters: ["${tinys-big-job.image}"]
+    action: "a magical underground chamber where ants are farming white fluffy fungus gardens, tiny ants carefully tending and harvesting the fungus which grows on beds of chewed leaf pieces, the fungus glows softly with a warm light, the scene looks like a miniature magical farm, some ants carry tiny leaf pieces in while others harvest fungus, warm cozy lighting"
+    title:
+      en: "The Fungus Garden"
+      es: "El Jardin de Hongos"
+      ru: "Грибной сад"
+    content:
+      en: "Here's the most AMAZING secret in the ant world: some ants are FARMERS! Deep in the colony, there's a special room that looks like a magical garden. Remember all those leaves Tiny and the others carried in? They don't eat the leaves — they CHEW them up into tiny pieces and use them to grow FUNGUS! The white, fluffy fungus is the ants' favorite food. They tend their garden like tiny farmers, pulling out weeds, adding fresh leaves, and harvesting the yummy fungus when it's ready. Tiny is learning to be a fungus gardener, and she's SO gentle with the delicate white puffs. 'It's like growing a cloud!' she says dreamily."
+      es: "Aqui esta el secreto mas ASOMBROSO del mundo de las hormigas: algunas hormigas son GRANJERAS! En lo profundo de la colonia, hay una habitacion especial que parece un jardin magico. Recuerdan todas esas hojas que Diminuta y las demas cargaron? No se comen las hojas — las MASTICAN en pedacitos y las usan para cultivar HONGOS! El hongo blanco y esponjoso es la comida favorita de las hormigas. Cuidan su jardin como pequenas granjeras, arrancando malezas, anadiendo hojas frescas y cosechando el delicioso hongo cuando esta listo. Diminuta esta aprendiendo a ser jardinera de hongos, y es TAN delicada con los suaves copitos blancos. 'Es como cultivar una nube!' dice sonadora."
+      ru: "Вот самый УДИВИТЕЛЬНЫЙ секрет мира муравьёв: некоторые муравьи — ФЕРМЕРЫ! Глубоко в колонии есть особая комната, похожая на волшебный сад. Помните все те листья, что Крошка и другие приносили? Они не едят листья — они ПЕРЕЖЁВЫВАЮТ их в крошечные кусочки и используют для выращивания ГРИБОВ! Белый, пушистый гриб — любимая еда муравьёв. Они ухаживают за своим садом как крошечные фермеры, вырывая сорняки, добавляя свежие листья и собирая вкусный гриб, когда он готов. Крошка учится быть грибным садовником, и она ТАКАЯ нежная с деликатными белыми пушинками. 'Это как выращивать облако!' говорит она мечтательно."
+    image: "fungus-garden.jpg"
+    imageAlt:
+      en: "Magical underground chamber with ants farming white fluffy fungus on beds of chewed leaves, soft glowing light, tiny ant farmers tending the garden"
+      es: "Camara subterranea magica con hormigas cultivando hongos blancos esponjosos en camas de hojas masticadas, luz suave y brillante, pequenas hormigas granjeras cuidando el jardin"
+      ru: "Волшебная подземная камера, где муравьи выращивают белые пушистые грибы на подстилке из пережёванных листьев, мягкое свечение, крошечные муравьи-фермеры ухаживают за садом"
+
+  # Carrying Giants
+  - id: carrying-giants
+    mood: [epic-skies, golden-hour]
+    use_characters: ["${tinys-big-job.image}", "${meet-scout.image}", "${major-guards-gate.image}"]
+    action: "a team of ants working together to carry an enormous piece of fruit back to the colony, some pushing from behind, some pulling from the front, some lifting from underneath, the fruit piece is massive compared to the tiny ants, golden afternoon light, a trail of ants stretching into the distance, teamwork scene showing incredible strength"
+    title:
+      en: "Carrying Giants!"
+      es: "Cargando Gigantes!"
+      ru: "Несём великанов!"
+    content:
+      en: "Here comes the BEST part about ants — they are the STRONGEST animals for their size on the ENTIRE PLANET! An ant can carry FIFTY TIMES her own body weight. That would be like YOU picking up a school bus! When Scout found that enormous strawberry, it took a team of ants to carry it home. Some push from behind, some pull from the front, and some lift from underneath. 'One, two, THREE — LIFT!' calls Scout. The strawberry rises off the ground! Even little Tiny helps, pushing with all her might from the back. 'TEAMWORK!' they all shout together. And inch by inch, the giant strawberry moves toward home."
+      es: "Aqui viene lo MEJOR de las hormigas — son los animales MAS FUERTES para su tamano en TODO EL PLANETA! Una hormiga puede cargar CINCUENTA VECES su propio peso. Eso seria como si TU levantaras un autobus escolar! Cuando Exploradora encontro esa enorme fresa, se necesito un equipo de hormigas para llevarla a casa. Algunas empujan por detras, algunas jalan por delante, y algunas levantan por debajo. 'Una, dos, TRES — LEVANTEN!' grita Exploradora. La fresa se eleva del suelo! Incluso la pequena Diminuta ayuda, empujando con todas sus fuerzas por detras. 'TRABAJO EN EQUIPO!' gritan todas juntas."
+      ru: "А вот САМОЕ ЛУЧШЕЕ в муравьях — они САМЫЕ СИЛЬНЫЕ животные для своего размера на ВСЕЙ ПЛАНЕТЕ! Муравей может нести в ПЯТЬДЕСЯТ раз больше собственного веса. Это как если бы ВЫ подняли школьный автобус! Когда Разведчица нашла ту огромную клубнику, понадобилась команда муравьёв, чтобы отнести её домой. Одни толкают сзади, другие тянут спереди, третьи поднимают снизу. 'Раз, два, ТРИ — ПОДЪЁМ!' командует Разведчица. Клубника поднимается с земли! Даже маленькая Крошка помогает, толкая изо всех сил сзади. 'КОМАНДНАЯ РАБОТА!' кричат они все вместе."
+    image: "carrying-giants.jpg"
+    imageAlt:
+      en: "Team of ants working together to carry an enormous piece of fruit, some pushing, some pulling, some lifting, golden afternoon light, incredible teamwork"
+      es: "Equipo de hormigas trabajando juntas para cargar un enorme trozo de fruta, algunas empujando, otras jalando, otras levantando, luz dorada de la tarde, increible trabajo en equipo"
+      ru: "Команда муравьёв, работающих вместе, чтобы нести огромный кусок фрукта, одни толкают, другие тянут, третьи поднимают, золотистый послеполуденный свет, невероятная командная работа"
+
+  # The Nursery
+  - id: the-nursery
+    mood: [soft-intimate, translucency]
+    use_characters: ["${tinys-big-job.image}", "${meet-queen-terra.image}"]
+    action: "a warm cozy underground nursery chamber filled with tiny white ant eggs and larvae, gentle nurse ants carefully tending to the babies, moving them and cleaning them, a small dark ant is delicately holding a single egg with the utmost care, warm soft amber lighting, nurturing and tender scene, the chamber feels safe and protected"
+    title:
+      en: "The Nursery"
+      es: "La Guarderia"
+      ru: "Детская"
+    content:
+      en: "The most precious room in the entire colony is the nursery. Here, special nurse ants take care of Queen Terra's eggs and babies. The tiny white eggs are so small you'd need a magnifying glass to see them! The nurses carry them gently in their mandibles, moving them to warmer or cooler spots depending on what the babies need. Tiny has been chosen as a nursery helper today! She holds a single tiny egg so carefully, like it's the most precious thing in the world — because it IS. 'Hello, little one,' Tiny whispers to the egg. 'I was small once too, and look at me now — I can carry a whole leaf!' The egg seems to wiggle in response."
+      es: "La habitacion mas preciada de toda la colonia es la guarderia. Aqui, hormigas niñeras especiales cuidan los huevos y bebes de la Reina Terra. Los diminutos huevos blancos son tan pequenos que necesitarias una lupa para verlos! Las niñeras los cargan suavemente en sus mandibulas, moviendolos a lugares mas calidos o frios dependiendo de lo que los bebes necesiten. Diminuta ha sido elegida como ayudante de guarderia hoy! Sostiene un pequeno huevo con tanto cuidado, como si fuera la cosa mas preciosa del mundo — porque lo ES. 'Hola, pequenito,' susurra Diminuta al huevo. 'Yo tambien fui pequena, y mirame ahora — puedo cargar una hoja entera!'"
+      ru: "Самая драгоценная комната во всей колонии — детская. Здесь особые муравьи-няни заботятся о яйцах и малышах Королевы Терры. Крошечные белые яйца настолько малы, что вам понадобится лупа, чтобы их увидеть! Няни нежно несут их в челюстях, перенося в более тёплые или прохладные места в зависимости от того, что нужно малышам. Крошка сегодня выбрана помощницей в детской! Она держит одно крошечное яйцо так бережно, будто это самая ценная вещь в мире — потому что так и ЕСТЬ. 'Привет, малыш,' шепчет Крошка яйцу. 'Я тоже когда-то была маленькой, а теперь — могу нести целый лист!'"
+    image: "the-nursery.jpg"
+    imageAlt:
+      en: "Warm underground nursery chamber with tiny white eggs and larvae, nurse ants carefully tending babies, a small dark ant gently holding an egg, soft amber lighting"
+      es: "Calida camara subterranea de guarderia con diminutos huevos blancos y larvas, hormigas niñeras cuidando bebes, una pequena hormiga oscura sosteniendo un huevo suavemente"
+      ru: "Тёплая подземная камера-детская с крошечными белыми яйцами и личинками, муравьи-няни бережно ухаживают за малышами, маленький тёмный муравей нежно держит яйцо"
+
+  # All Together Strong
+  - id: all-together-strong
+    mood: [epic-skies, golden-hour]
+    use_characters: ["${meet-queen-terra.image}", "${meet-scout.image}", "${tinys-big-job.image}", "${major-guards-gate.image}"]
+    action: "a magnificent wide shot of the entire ant colony in action at golden sunset, ants streaming in and out of the anthill in organized lines, Queen Terra visible in a cutaway underground chamber below, Scout leading a trail, Tiny carrying her leaf, Major standing guard, all characters together in one harmonious scene, the anthill glows with warm light, wildflowers and grass surround the colony, epic and beautiful teamwork celebration"
+    title:
+      en: "All Together Strong!"
+      es: "Juntas Somos Fuertes!"
+      ru: "Вместе мы сила!"
+    content:
+      en: "As the golden sunset paints the sky, look at what these tiny ants have built TOGETHER! Queen Terra watches from her chamber with pride. Scout has found enough food for everyone. Tiny proved that even the smallest ant makes a BIG difference. And Major keeps them all safe. Thousands of ants, each one as small as a grain of sand, built an underground city, grew their own food, raised their babies, and protected their home — all by working TOGETHER. No ant could do it alone, but together? Together they can move mountains — one grain at a time. And THAT is the most amazing thing about ants: alone they are tiny, but together they are UNSTOPPABLE!"
+      es: "Mientras el atardecer dorado pinta el cielo, miren lo que estas diminutas hormigas construyeron JUNTAS! La Reina Terra observa desde su camara con orgullo. Exploradora encontro suficiente comida para todos. Diminuta demostro que incluso la hormiga mas pequena hace una GRAN diferencia. Y Mayor las mantiene a todas seguras. Miles de hormigas, cada una tan pequena como un grano de arena, construyeron una ciudad subterranea, cultivaron su propia comida, criaron a sus bebes y protegieron su hogar — todo trabajando JUNTAS. Ninguna hormiga podria hacerlo sola, pero juntas? Juntas pueden mover montanas — un grano a la vez. Y ESO es lo mas asombroso de las hormigas: solas son diminutas, pero juntas son IMPARABLES!"
+      ru: "Пока золотой закат раскрашивает небо, посмотрите, что эти крошечные муравьи построили ВМЕСТЕ! Королева Терра смотрит из своей камеры с гордостью. Разведчица нашла достаточно еды для всех. Крошка доказала, что даже самый маленький муравей вносит БОЛЬШОЙ вклад. А Майор хранит всех в безопасности. Тысячи муравьёв, каждый размером с песчинку, построили подземный город, вырастили собственную еду, воспитали малышей и защитили свой дом — всё благодаря КОМАНДНОЙ РАБОТЕ. Ни один муравей не смог бы сделать это в одиночку, но вместе? Вместе они могут сдвинуть горы — песчинка за песчинкой. И ЭТО самое удивительное в муравьях: поодиночке они крошечные, но вместе они НЕУДЕРЖИМЫ!"
+    image: "all-together-strong.jpg"
+    imageAlt:
+      en: "Magnificent wide shot of the ant colony at golden sunset, ants streaming in organized lines, all four main characters visible, anthill glowing warmly, wildflowers surrounding"
+      es: "Magnifica toma amplia de la colonia al atardecer dorado, hormigas en lineas organizadas, los cuatro personajes principales visibles, hormiguero brillando calidamente"
+      ru: "Великолепный широкий план колонии муравьёв на фоне золотого заката, муравьи движутся организованными колоннами, все четыре главных персонажа видны, муравейник тепло светится"
+
+  # Hidden sections for viewer detail and fun fact image generation
+  - id: "detail-mandible-closeup"
+    image: "detail-mandible-closeup.jpg"
+    referenceImage: "${major-guards-gate.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single ant HEAD showing the massive mandibles (jaws) in extraordinary detail. The mandibles are open wide, showing their serrated inner edges like tiny saw blades. The compound eyes are visible on the sides of the head. Only the head and mandibles visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-antenna-closeup"
+    image: "detail-antenna-closeup.jpg"
+    referenceImage: "${meet-scout.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single ant antenna in extreme detail, showing the segmented structure with the elbow joint clearly visible, one antenna has a slight bend. Tiny scent molecules are illustrated floating toward the antenna tip. Only the antenna and part of the head visible. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-exoskeleton-texture"
+    image: "detail-exoskeleton-texture.jpg"
+    referenceImage: "${meet-queen-terra.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — the surface of an ant's reddish-brown exoskeleton showing the segmented armor plates, the textured surface like hammered metal, the joints between body sections with their flexible connections. Beautiful and detailed. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-leg-grip"
+    image: "detail-leg-grip.jpg"
+    referenceImage: "${tinys-big-job.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single ant FOOT gripping onto a blade of grass, showing the tiny hooks (tarsal claws) at the tip of the foot that allow ants to climb vertical surfaces and walk upside down. The adhesive pad between the claws is visible. Only the foot and part of the leg visible. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-strength-img"
+    image: "fun-fact-strength.jpg"
+    prompt: "Educational illustration showing an ant lifting an enormous weight above its head with '50x' written in big friendly numbers, a comparison showing a child next to a car to demonstrate equivalent human strength. Split comparison style. Classic hand-drawn Disney animation style, child-friendly, colorful meadow background."
+    hidden: true
+
+  - id: "fun-fact-colony-size-img"
+    image: "fun-fact-colony-size.jpg"
+    prompt: "Educational illustration showing an enormous ant colony from above, with millions of tiny ants covering the ground, a magnifying glass showing individual ants within the massive colony, numbers showing colony populations. Classic hand-drawn Disney animation style, child-friendly, impressive scale."
+    hidden: true
+
+  - id: "fun-fact-scent-trails-img"
+    image: "fun-fact-scent-trails.jpg"
+    referenceImage: "${meet-scout.image}"
+    prompt: "Using the ant from reference, educational illustration showing an ant leaving a glowing scent trail on the ground, with wavy scent lines rising from the trail, other ants following the trail in a line, diagram labels showing pheromone communication. Classic hand-drawn Disney animation style, child-friendly."
+    hidden: true
+
+  - id: "fun-fact-fungus-farming-img"
+    image: "fun-fact-fungus-farming.jpg"
+    prompt: "Educational illustration showing leaf-cutter ants in their underground fungus garden, a side-by-side comparison with a human farmer in a field, showing the parallel between ant farming and human farming. Classic hand-drawn Disney animation style, child-friendly, warm lighting."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming magazine cover featuring a small dark ant carrying an enormous green leaf above her head in the foreground, looking directly at the viewer with a determined adorable expression. Behind her, a large reddish-brown ant queen watches from an underground chamber cutaway. The background shows a beautiful meadow with wildflowers and a large anthill. A line of ants marches along a trail in the middle ground. Style: Classic hand-drawn Disney animation — warm organic lines, soulful expressive eyes, painterly brushwork, vintage animation warmth. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${meet-queen-terra.image}"
+      - "${meet-scout.image}"
+      - "${tinys-big-job.image}"
+      - "${major-guards-gate.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Small ant carrying a huge leaf, ant queen in underground chamber, beautiful meadow with anthill and marching ants"
+      es: "Pequena hormiga cargando una hoja enorme, reina hormiga en camara subterranea, hermoso prado con hormiguero y hormigas marchando"
+      ru: "Маленький муравей несёт огромный лист, королева муравьёв в подземной камере, красивый луг с муравейником и марширующими муравьями"
+
+funFacts:
+  title:
+    en: "Amazing Ant Facts!"
+    es: "Datos Asombrosos sobre Hormigas!"
+    ru: "Удивительные факты о муравьях!"
+  facts:
+    - title:
+        en: "Super Strength"
+        es: "Super Fuerza"
+        ru: "Суперсила"
+      content:
+        en: "Ants can carry objects 50 times their own body weight! That's like a human picking up a car and carrying it over their head. Their secret is their exoskeleton — a hard outer shell that acts like a suit of armor and gives their muscles incredible leverage. Some species can even carry 100 times their weight when working together!"
+        es: "Las hormigas pueden cargar objetos 50 veces su propio peso! Eso es como si un humano levantara un auto y lo cargara sobre su cabeza. Su secreto es su exoesqueleto — una cubierta exterior dura que actua como una armadura y da a sus musculos una palanca increible. Algunas especies pueden incluso cargar 100 veces su peso cuando trabajan juntas!"
+        ru: "Муравьи могут нести предметы в 50 раз тяжелее собственного веса! Это как если бы человек поднял автомобиль и нёс его над головой. Их секрет — экзоскелет, твёрдая внешняя оболочка, которая действует как доспехи и даёт их мышцам невероятный рычаг. Некоторые виды могут нести даже в 100 раз больше своего веса, работая вместе!"
+      image: "fun-fact-strength.jpg"
+
+    - title:
+        en: "Mega Colonies"
+        es: "Mega Colonias"
+        ru: "Мегаколонии"
+      content:
+        en: "Some ant colonies can have MILLIONS of members! The largest known ant supercolony stretches over 6,000 kilometers across southern Europe — that's wider than the United States! These massive colonies have multiple queens and billions of workers. A single colony of leafcutter ants can strip a whole tree of its leaves in one night!"
+        es: "Algunas colonias de hormigas pueden tener MILLONES de miembros! La supercolonia de hormigas mas grande conocida se extiende por mas de 6,000 kilometros a traves del sur de Europa — eso es mas ancho que los Estados Unidos! Estas colonias masivas tienen multiples reinas y miles de millones de trabajadoras. Una sola colonia de hormigas cortadoras puede despojar un arbol entero de sus hojas en una noche!"
+        ru: "Некоторые колонии муравьёв могут насчитывать МИЛЛИОНЫ членов! Самая большая известная суперколония муравьёв простирается на более чем 6 000 километров через южную Европу — это шире, чем США! Эти огромные колонии имеют множество королев и миллиарды рабочих. Одна колония муравьёв-листорезов может обобрать целое дерево за одну ночь!"
+      image: "fun-fact-colony-size.jpg"
+
+    - title:
+        en: "Scent Language"
+        es: "Lenguaje de Olores"
+        ru: "Язык запахов"
+      content:
+        en: "Ants talk to each other using special chemicals called pheromones! They leave scent trails on the ground to say 'food this way,' release alarm scents that mean 'danger!', and even have a special smell that says 'I'm from this colony.' An ant's antennae can detect incredibly tiny amounts of these chemicals — it's like having a super-powered nose on your head!"
+        es: "Las hormigas hablan entre si usando quimicos especiales llamados feromonas! Dejan rastros de olor en el suelo para decir 'comida por aqui,' liberan olores de alarma que significan 'peligro!', e incluso tienen un olor especial que dice 'soy de esta colonia.' Las antenas de una hormiga pueden detectar cantidades increiblemente pequenas de estos quimicos — es como tener una super nariz en tu cabeza!"
+        ru: "Муравьи разговаривают друг с другом с помощью особых химических веществ — феромонов! Они оставляют пахучие следы на земле, чтобы сказать 'еда тут,' выпускают тревожные запахи, означающие 'опасность!', и даже имеют особый запах, говорящий 'я из этой колонии.' Усики муравья могут обнаружить невероятно малые количества этих веществ — это как иметь суперносик на голове!"
+      image: "fun-fact-scent-trails.jpg"
+
+    - title:
+        en: "Tiny Farmers"
+        es: "Pequenas Granjeras"
+        ru: "Крошечные фермеры"
+      content:
+        en: "Leafcutter ants have been farming fungus for over 50 MILLION years — that's way before humans even existed! They cut leaves, carry them underground, chew them into a paste, and grow a special fungus on top. They even use natural antibiotics to keep their gardens disease-free. They were the world's first farmers, and they're still some of the best!"
+        es: "Las hormigas cortadoras de hojas han cultivado hongos por mas de 50 MILLONES de anos — eso es mucho antes de que los humanos existieran! Cortan hojas, las llevan bajo tierra, las mastican hasta hacer una pasta y cultivan un hongo especial encima. Incluso usan antibioticos naturales para mantener sus jardines libres de enfermedades. Fueron las primeras granjeras del mundo, y siguen siendo de las mejores!"
+        ru: "Муравьи-листорезы выращивают грибы уже более 50 МИЛЛИОНОВ лет — это задолго до появления людей! Они срезают листья, несут их под землю, пережёвывают в пасту и выращивают на ней особый гриб. Они даже используют природные антибиотики, чтобы защитить свои сады от болезней. Они были первыми фермерами в мире и до сих пор одни из лучших!"
+      image: "fun-fact-fungus-farming.jpg"
+
+imageGeneration:
+  characters:
+    queen-terra:
+      name: "Queen Terra"
+      description: "The ant queen, largest ant in the colony, deep reddish-brown, wise ancient eyes, sits in the heart of the nest with a slightly iridescent wing remnant on her back"
+      uniqueFeatures:
+        - "LARGEST ant character — visibly much bigger than all other ants, massive abdomen"
+        - "DEEP REDDISH-BROWN coloring — rich, warm wood-toned exoskeleton"
+        - "WISE ANCIENT EYES — calm, knowing expression, seen a thousand seasons"
+        - "IRIDESCENT WING REMNANT on her back — small shimmering stubs that catch the light like tiny rainbows, the mark of a founding queen"
+        - "Regal posture — sits upright and still, surrounded by attendant workers"
+        - "Largest head with smooth, polished-looking exoskeleton"
+      personality: "Wise, warm, and regal — sits calmly and speaks with quiet authority, maternal and commanding"
+      notLike: "NOT small or lean like Scout, NOT dark like Tiny, NOT aggressive-looking like Major"
+
+    scout:
+      name: "Scout"
+      description: "Explorer ant, lean and fast, lighter brown color, antennae always pointing forward alertly, one antenna slightly bent from an adventure"
+      uniqueFeatures:
+        - "LEAN and FAST build — longest legs proportionally, streamlined body"
+        - "LIGHTER BROWN coloring — sandier, paler than Queen Terra's deep reddish-brown"
+        - "ANTENNAE pointing FORWARD alertly — always sensing, always searching"
+        - "ONE ANTENNA SLIGHTLY BENT — the left antenna has a noticeable crook from her first adventure, her signature feature"
+        - "Front legs often raised — poised to run, ready for action"
+        - "Alert, wide-eyed expression — always looking into the distance"
+      personality: "Brave and curious — constantly exploring, front legs raised, leaning forward into the unknown"
+      notLike: "NOT large like Queen Terra, NOT dark or small like Tiny, NOT bulky like Major"
+
+    tiny:
+      name: "Tiny"
+      description: "Young worker ant, smallest of the group, darker color, eager to help but clumsy, always carries leaves twice her size"
+      uniqueFeatures:
+        - "SMALLEST ant character — noticeably smaller than all others, baby proportions"
+        - "DARKER coloring — darker brown-black than the others, distinct from Scout's light brown"
+        - "Always carrying something TOO BIG — signature look is struggling under an oversized leaf"
+        - "ROUND, oversized head relative to body — baby-like proportions"
+        - "Legs slightly splayed for balance — always wobbling, endearingly clumsy"
+        - "Determined expression despite struggling — never gives up"
+      personality: "Eager, determined, and adorably clumsy — always trying too hard, never giving up, heart of gold"
+      notLike: "NOT lean like Scout, NOT large like Queen Terra, NOT intimidating like Major"
+
+    major:
+      name: "Major"
+      description: "Soldier ant, biggest worker with oversized mandibles, dark reddish-black, stands guard at tunnel entrances, intimidating but gentle with colony-mates"
+      uniqueFeatures:
+        - "BIGGEST WORKER ant — second only to Queen Terra in size, but stockier and more muscular"
+        - "MASSIVE HEAD with OVERSIZED MANDIBLES — enormous jaws that dominate his face"
+        - "DARK REDDISH-BLACK coloring — darker and more intense than Queen Terra's warm brown"
+        - "WIDE, planted stance — legs spread, blocking tunnel entrances, immovable"
+        - "Gentle eyes that contrast with intimidating jaws — soft expression despite fearsome appearance"
+        - "Thicker exoskeleton with visible armor-like plates on head"
+      personality: "Powerful and protective but gentle — stands like an immovable guardian, speaks softly to colony-mates"
+      notLike: "NOT lean like Scout, NOT small like Tiny, NOT regal like Queen Terra"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in earth, leaves, and tunnel walls. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Lush meadow and underground settings with rich browns, golden light, green grass, and wildflowers. Child-friendly and inviting."
+
+viewerDetails:
+- title:
+    en: "Mandible Power"
+    es: "Poder de las Mandibulas"
+    ru: "Сила челюстей"
+  description:
+    en: "Look at Major's massive mandibles — those are his jaws! Ant mandibles are like a Swiss Army knife: they can cut leaves, dig tunnels, carry food, feed baby ants, and fight off enemies. Major's mandibles are especially large because he's a soldier ant. The inside edges are serrated like a tiny saw blade, perfect for gripping and cutting. Some ants can even snap their mandibles shut faster than almost any movement in the animal kingdom!"
+    es: "Mira las mandibulas masivas de Mayor — esas son sus quijadas! Las mandibulas de las hormigas son como una navaja suiza: pueden cortar hojas, cavar tuneles, cargar comida, alimentar bebes y luchar contra enemigos. Las mandibulas de Mayor son especialmente grandes porque es un soldado. Los bordes interiores estan serrados como una pequena sierra, perfectos para agarrar y cortar."
+    ru: "Посмотрите на массивные мандибулы Майора — это его челюсти! Челюсти муравья как швейцарский нож: ими можно резать листья, копать тоннели, переносить еду, кормить малышей и отбиваться от врагов. Челюсти Майора особенно большие, потому что он муравей-солдат. Внутренние края зазубрены как крошечная пила, идеальны для захвата и резки."
+  image: "detail-mandible-closeup.jpg"
+
+- title:
+    en: "Amazing Antennae"
+    es: "Antenas Asombrosas"
+    ru: "Удивительные усики"
+  description:
+    en: "Scout's antennae are her most important tools! Each antenna has a special elbow joint in the middle that lets it bend and reach in all directions. The tip is covered in thousands of tiny scent receptors that can detect chemical signals in the air. Ants use their antennae to smell, taste, touch, and even measure things! When two ants meet, they touch antennae to share information — it's like a secret handshake that tells them everything about each other."
+    es: "Las antenas de Exploradora son sus herramientas mas importantes! Cada antena tiene una articulacion especial en el medio que le permite doblarse y alcanzar en todas direcciones. La punta esta cubierta de miles de receptores de olor que pueden detectar senales quimicas en el aire. Las hormigas usan sus antenas para oler, saborear, tocar e incluso medir cosas!"
+    ru: "Усики Разведчицы — её важнейшие инструменты! На каждом усике есть особый локтевой сустав посередине, позволяющий сгибаться и дотягиваться во всех направлениях. Кончик покрыт тысячами крошечных рецепторов запаха, способных улавливать химические сигналы в воздухе. Муравьи используют усики, чтобы нюхать, пробовать на вкус, осязать и даже измерять! Когда два муравья встречаются, они касаются усиками — это как тайное рукопожатие."
+  image: "detail-antenna-closeup.jpg"
+
+- title:
+    en: "Armor Exoskeleton"
+    es: "Exoesqueleto Armadura"
+    ru: "Экзоскелет-броня"
+  description:
+    en: "Queen Terra's body is covered in an exoskeleton — a hard outer shell made of a material called chitin (say 'KY-tin'). It's like wearing a suit of armor on the outside instead of having bones on the inside! The exoskeleton is divided into plates connected by flexible joints, so ants can still move freely. It protects them from damage and keeps water inside their bodies. As ants grow, they shed their exoskeleton and grow a bigger one — like getting a new suit of armor!"
+    es: "El cuerpo de la Reina Terra esta cubierto por un exoesqueleto — una cubierta exterior dura hecha de un material llamado quitina. Es como llevar una armadura por fuera en lugar de tener huesos por dentro! El exoesqueleto esta dividido en placas conectadas por articulaciones flexibles, para que las hormigas puedan moverse libremente. Las protege del dano y mantiene el agua dentro de sus cuerpos."
+    ru: "Тело Королевы Терры покрыто экзоскелетом — твёрдой внешней оболочкой из материала хитин. Это как носить доспехи снаружи вместо костей внутри! Экзоскелет разделён на пластины, соединённые гибкими суставами, чтобы муравьи могли свободно двигаться. Он защищает их от повреждений и удерживает воду внутри тела. По мере роста муравьи сбрасывают экзоскелет и выращивают новый — как получить новые доспехи!"
+  image: "detail-exoskeleton-texture.jpg"
+
+- title:
+    en: "Grip and Climb"
+    es: "Agarre y Escalada"
+    ru: "Хватка и лазание"
+  description:
+    en: "How does Tiny walk up walls and even upside down on ceilings? Each ant foot has two tiny hooks called tarsal claws, plus a sticky pad between them called an arolium. The claws grip rough surfaces like bark and soil, while the sticky pad works on smooth surfaces like leaves and glass. This dual system means ants can walk on almost ANYTHING — vertical walls, upside down, even on water surface tension! That's why you see ants climbing everywhere without ever falling."
+    es: "Como camina Diminuta por las paredes e incluso boca abajo en los techos? Cada pata de hormiga tiene dos ganchos llamados garras tarsales, mas una almohadilla pegajosa entre ellas llamada arolio. Las garras agarran superficies rugosas como corteza y tierra, mientras la almohadilla pegajosa funciona en superficies lisas como hojas y vidrio. Este sistema doble significa que las hormigas pueden caminar en casi CUALQUIER COSA!"
+    ru: "Как Крошка ходит по стенам и даже вверх ногами по потолкам? На каждой лапке муравья есть два крошечных крючка — тарзальные коготки, плюс липкая подушечка между ними — аролиум. Коготки цепляются за шероховатые поверхности вроде коры и почвы, а липкая подушечка работает на гладких поверхностях вроде листьев и стекла. Эта двойная система означает, что муравьи могут ходить почти по ЧЕМУ УГОДНО — по вертикальным стенам, вверх ногами, даже по поверхности воды!"
+  image: "detail-leg-grip.jpg"
+
+routing:
+    openai:
+      - "hero-anthill.jpg"
+      - "fun-fact-strength.jpg"
+      - "fun-fact-colony-size.jpg"
+      - "fun-fact-fungus-farming.jpg"
+
+    gemini:
+      - "queen-terra-portrait.jpg"
+      - "scout-portrait.jpg"
+      - "scout-finds-strawberry.jpg"
+      - "trail-of-scents.jpg"
+      - "tiny-carries-leaf.jpg"
+      - "major-guards-gate.jpg"
+      - "building-tunnels.jpg"
+      - "fungus-garden.jpg"
+      - "carrying-giants.jpg"
+      - "the-nursery.jpg"
+      - "all-together-strong.jpg"
+      - "colony-awakens.jpg"
+      - "detail-mandible-closeup.jpg"
+      - "detail-antenna-closeup.jpg"
+      - "detail-exoskeleton-texture.jpg"
+      - "detail-leg-grip.jpg"
+      - "fun-fact-scent-trails.jpg"
+      - "magazine-cover.jpg"

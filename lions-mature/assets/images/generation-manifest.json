@@ -1,0 +1,162 @@
+{
+  "chapter": "lions-mature",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, grass, and sky. Soft rounded character proportions for cubs, powerful proportions for adults. Vintage animation cel warmth with dramatic watercolor-like backgrounds. Golden African savanna setting with warm amber tones, acacia trees, tall grass, dramatic sunsets, stormy skies, and moonlit nights. More dramatic and intense than the child version while maintaining artistic beauty."
+  },
+  "routing": {},
+  "characters": {
+    "kazi": {
+      "name": "Papa Kazi",
+      "description": "Magnificent battle-scarred male lion father with a huge dark brown mane, golden amber eyes, powerful muscular build, proud protective stance",
+      "uniqueFeatures": [
+        "LARGEST character — visibly bigger and more powerful than all others",
+        "HUGE DARK BROWN MANE — thick, voluminous, frames his entire face like a crown",
+        "BATTLE SCARS — visible scratches on face and muzzle, signs of past victories",
+        "GOLDEN AMBER EYES — intense, watchful, world-weary but fierce",
+        "POWERFUL MUSCULAR BUILD — broad chest, thick legs, massive paws",
+        "Signature: his mane is so thick and dark it almost looks black at the center"
+      ],
+      "personality": "Proud, battle-hardened, regal — a king who has earned every scar, fiercely protective but aware his time is limited",
+      "notLike": "NOT sleek or slim like Dalila, NOT small like the cubs, NOT young and unblemished like the challenger"
+    },
+    "dalila": {
+      "name": "Mama Dalila",
+      "description": "Sleek golden lioness mother, skilled huntress, athletic muscular build, warm but fierce eyes, small notch on left ear",
+      "uniqueFeatures": [
+        "SMALLER than Kazi — no mane, sleek and streamlined",
+        "ATHLETIC MUSCULAR BUILD — lean and powerful, built for speed",
+        "FIERCE CARING EYES — tender with cubs, terrifying to threats",
+        "SMALL NOTCH ON LEFT EAR — her signature mark from a past hunt",
+        "SMOOTH GOLDEN FUR — lighter and more uniform than Kazi's coloring",
+        "Low hunting stance — often shown crouched and ready to spring"
+      ],
+      "personality": "Fierce, devoted, and unbreakable — the true backbone of the pride, whose love manifests as relentless protection",
+      "notLike": "NOT as large or dark as Kazi, NOT spotted like cubs, always identifiable by ear notch"
+    },
+    "taji": {
+      "name": "Taji",
+      "description": "Male lion cub growing into young male, lighter golden fur with fading spots, big paws, eventually developing a young mane",
+      "uniqueFeatures": [
+        "LIGHTER GOLDEN FUR with FADING SPOTS — baby rosettes still visible but diminishing",
+        "OVERSIZED PAWS — big compared to his body, he's still growing into them",
+        "BIGGER than Zuri — the larger of the two cubs",
+        "Later: developing YOUNG MANE — lighter than Kazi's, fluffy and growing",
+        "Resembles Kazi in pose and bearing as he matures",
+        "Round cub face transitioning to adult features"
+      ],
+      "personality": "Curious evolving to confident — starts playful and clumsy, grows into a young lion finding his strength and voice",
+      "notLike": "NOT as dark as Zuri, NOT as big as parents, identifiable by lighter color and big paws"
+    },
+    "zuri": {
+      "name": "Zuri",
+      "description": "Female lion cub growing into young lioness, darker golden fur, brave and bold, increasingly resembling Dalila",
+      "uniqueFeatures": [
+        "DARKER GOLDEN FUR — noticeably darker shade than Taji",
+        "SLIGHTLY SMALLER than Taji — the smaller of the two cubs",
+        "DETERMINED EXPRESSION — fierce like her mother, jaw set, ready for anything",
+        "More ATHLETIC build than Taji even as a cub — takes after Dalila",
+        "Later: sleek and fast like Dalila, developing into a skilled huntress",
+        "Often positioned near Dalila, mirroring her mother's posture"
+      ],
+      "personality": "Brave, bold, determined — inherits her mother's fierceness, always watching, always learning",
+      "notLike": "NOT as light-colored as Taji, NOT as big as Taji, NOT as large as parents"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-savanna.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Dramatic African savanna at dusk with storm clouds gathering, a lone acacia tree silhouetted against a dark orange and crimson sky, the landscape both beautiful and foreboding",
+        "es": "Dramática sabana africana al anochecer con nubes de tormenta reuniéndose, un árbol de acacia solitario silueteado contra un cielo naranja oscuro y carmesí, el paisaje a la vez hermoso y amenazador",
+        "ru": "Драматичная африканская саванна в сумерках с надвигающимися грозовыми тучами, одинокая акация силуэтом на фоне тёмно-оранжевого и багряного неба, пейзаж красивый и предвещающий"
+      }
+    },
+    {
+      "filename": "kazi-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Battle-scarred magnificent male lion with huge dark brown mane standing on a rocky kopje, golden amber eyes surveying vast territory, dramatic sky, powerful and weathered",
+        "es": "Magnífico león macho marcado por la batalla con enorme melena marrón oscura de pie en un kopje rocoso, ojos dorados de ámbar inspeccionando vasto territorio, cielo dramático, poderoso y curtido",
+        "ru": "Великолепный покрытый шрамами лев-самец с огромной тёмно-коричневой гривой стоит на скалистом копье, золотисто-янтарные глаза осматривают обширную территорию, драматичное небо, мощный и закалённый"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "challenger-arrives.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Two male lions facing off across dusty savanna clearing, one older with dark mane and scars, one younger with tawny mane, intense staredown, dramatic stormy sky",
+        "es": "Dos leones machos enfrentándose en un claro polvoriento de la sabana, uno mayor con melena oscura y cicatrices, otro más joven con melena leonada, mirada intensa, cielo tormentoso dramático",
+        "ru": "Два льва-самца стоят друг напротив друга на пыльной поляне саванны, один старше с тёмной гривой и шрамами, другой моложе с рыжеватой гривой, напряжённое противостояние, драматичное грозовое небо"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "battle-pride.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Two massive male lions locked in ferocious combat, rearing up on hind legs, claws and teeth, dust exploding, dark mane versus tawny mane, dramatic storm sky",
+        "es": "Dos enormes leones machos trabados en feroz combate, erguidos sobre las patas traseras, garras y dientes, polvo explotando, melena oscura contra melena leonada, cielo tormentoso dramático",
+        "ru": "Два огромных льва-самца в яростной схватке, встав на задние лапы, когти и зубы, взрыв пыли, тёмная грива против рыжеватой, драматичное грозовое небо"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "pride-mothers.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "mating-season.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "new-life-danger.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "fallen-king.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Battle-scarred male lion walking alone into the sunset, dark mane matted and torn, limping with dignity, vast empty savanna behind him, bittersweet golden and purple sky",
+        "es": "León macho marcado por la batalla caminando solo hacia el atardecer, melena oscura apelmazada y rasgada, cojeando con dignidad, vasta sabana vacía detrás, cielo agridulce dorado y púrpura",
+        "ru": "Покрытый шрамами лев-самец уходит один в закат, тёмная грива спутана и порвана, хромает с достоинством, бескрайняя пустая саванна позади, горько-сладкое золотисто-пурпурное небо"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "mothers-defense.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "cubs-survival.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "natures-balance.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Vast African savanna landscape at sunrise showing the interconnected cycle of life — green grass, grazing herds, distant lion pride, circling vultures, golden river, dramatic sky",
+        "es": "Vasto paisaje de sabana africana al amanecer mostrando el ciclo interconectado de la vida — hierba verde, manadas pastando, manada de leones distante, buitres circulando, río dorado, cielo dramático",
+        "ru": "Бескрайний пейзаж африканской саванны на рассвете, показывающий взаимосвязанный круг жизни — зелёная трава, пасущиеся стада, далёкий прайд львов, кружащие стервятники, золотая река, драматичное небо"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "circle-continues.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Young male lion with growing mane standing on rocky kopje at sunrise in the same pose as his father, young lioness and older lioness with notched ear nearby, vast savanna at dawn, hope and continuation",
+        "es": "Joven león macho con melena creciente de pie en un kopje rocoso al amanecer en la misma pose que su padre, joven leona y leona mayor con oreja muescada cerca, vasta sabana al amanecer, esperanza y continuación",
+        "ru": "Молодой лев-самец с растущей гривой стоит на скалистом копье на рассвете в той же позе, что и его отец, молодая львица и старшая львица с зарубкой на ухе рядом, бескрайняя саванна на рассвете, надежда и продолжение"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

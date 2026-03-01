@@ -1,0 +1,449 @@
+{
+  "chapter": "ants",
+  "lastUpdated": "2026-02-28T23:41:58.260Z",
+  "summary": {
+    "total": 23,
+    "byType": {
+      "composition-fix": 7,
+      "anatomical-fix": 16
+    },
+    "byTool": {
+      "fix-image": 23
+    },
+    "verified": 6,
+    "verifiedRate": "26%",
+    "automated": 23,
+    "manual": 0,
+    "automatedRate": "100%",
+    "avgAttempts": 2.5,
+    "totalCost": 2.32
+  },
+  "entries": [
+    {
+      "timestamp": "2026-02-28T23:17:44.723Z",
+      "image": "hero-anthill.jpg",
+      "tag": "H",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "COMPOSITION: The numerous clustered holes and organic forms present on the hills and structures could potentially trigger trypophobia in some viewers, which may be inappropriate for a children's book illustration.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/hero-anthill-v1.jpg",
+      "afterImage": "assets/images/hero-anthill.jpg",
+      "attemptImages": [
+        "assets/images/attempts/hero-anthill-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:18:45.593Z",
+      "image": "colony-awakens.jpg",
+      "tag": "#1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Some ants inside the glowing nest openings do not clearly display the anatomically correct number of six legs; several smaller, partially obscured ants appear to have fewer than six visible limbs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/colony-awakens-v1.jpg",
+      "afterImage": "assets/images/colony-awakens.jpg",
+      "attemptImages": [
+        "assets/images/attempts/colony-awakens-v1.jpg",
+        "assets/images/attempts/colony-awakens-v2.jpg",
+        "assets/images/attempts/colony-awakens-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:19:24.669Z",
+      "image": "queen-terra-portrait.jpg",
+      "tag": "#2",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "QUALITY: The illustration contains intentional depth-of-field blur on foreground and background elements, which violates the strict 'no blur' quality requirement.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/queen-terra-portrait-v1.jpg",
+      "afterImage": "assets/images/queen-terra-portrait.jpg",
+      "attemptImages": [
+        "assets/images/attempts/queen-terra-portrait-v1.jpg",
+        "assets/images/attempts/queen-terra-portrait-v2.jpg",
+        "assets/images/attempts/queen-terra-portrait-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:19:38.326Z",
+      "image": "tiny-carries-leaf.jpg",
+      "tag": "#6",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The main ant carrying the leaf has small wings, which is anatomically incorrect for a worker ant. Worker ants do not possess wings.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/tiny-carries-leaf-v1.jpg",
+      "afterImage": "assets/images/tiny-carries-leaf.jpg",
+      "attemptImages": [
+        "assets/images/attempts/tiny-carries-leaf-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:20:25.807Z",
+      "image": "the-nursery.jpg",
+      "tag": "#11",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "COMPOSITION: Potential trypophobia-triggering textures (clusters of larvae and small holes on tunnel surfaces).",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/the-nursery-v1.jpg",
+      "afterImage": "assets/images/the-nursery.jpg",
+      "attemptImages": [
+        "assets/images/attempts/the-nursery-v1.jpg",
+        "assets/images/attempts/the-nursery-v2.jpg",
+        "assets/images/attempts/the-nursery-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:21:10.544Z",
+      "image": "all-together-strong.jpg",
+      "tag": "#12",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomical error: The muscular ant on the right side of the main entrance has 4 limbs (2 arms, 2 legs) instead of the anatomically correct 6 legs for an ant.; Anatomical error: The ant carrying a leaf on the left path has 4 limbs (2 arms holding the leaf, 2 legs) instead of the anatomically correct 6 legs for an ant.; Compositional concern: The multitude of holes covering the ant hill structure may trigger trypophobia in sensitive individuals.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/all-together-strong-v1.jpg",
+      "afterImage": "assets/images/all-together-strong.jpg",
+      "attemptImages": [
+        "assets/images/attempts/all-together-strong-v1.jpg",
+        "assets/images/attempts/all-together-strong-v2.jpg",
+        "assets/images/attempts/all-together-strong-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:21:52.608Z",
+      "image": "detail-mandible-closeup.jpg",
+      "tag": "V1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The ant has 4 clearly visible walking legs instead of the anatomically correct 6 legs. The anterior pair of legs appears to be missing or completely obscured.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-mandible-closeup-v1.jpg",
+      "afterImage": "assets/images/detail-mandible-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-mandible-closeup-v1.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v2.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:22:10.661Z",
+      "image": "detail-antenna-closeup.jpg",
+      "tag": "V2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Ant's legs are not fully visible, making it impossible to confirm the anatomically correct number of six legs.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-antenna-closeup-v1.jpg",
+      "afterImage": "assets/images/detail-antenna-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-antenna-closeup-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:22:33.441Z",
+      "image": "fun-fact-strength.jpg",
+      "tag": "F1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Embedded text/labels found on a signpost in the left panel. The text is illegible.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-strength-v1.jpg",
+      "afterImage": "assets/images/fun-fact-strength.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-strength-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:23:29.654Z",
+      "image": "fun-fact-colony-size.jpg",
+      "tag": "F2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomical inconsistencies: Many smaller ants, particularly within the magnified area and some in the foreground, appear to have fewer than the anatomically correct six legs, either due to rendering ambiguity, obstruction, or an incomplete depiction.; Compositional issues: The dense clustering of numerous small, round ant-like forms and particles within the magnifying glass and on parts of the ground may potentially trigger trypophobia in sensitive individuals. Additionally, some repetitive, unusual textures are present on the distant hills.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-colony-size-v1.jpg",
+      "afterImage": "assets/images/fun-fact-colony-size.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-colony-size-v1.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v2.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:23:52.734Z",
+      "image": "fun-fact-fungus-farming.jpg",
+      "tag": "F4",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Embedded text is present in the illustration at the top right.; Labels 'fieniant', 'Amaaan', and 'amemer' are embedded in the illustration.; The embedded text is nonsensical, indicating a text generation artifact.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-fungus-farming-v1.jpg",
+      "afterImage": "assets/images/fun-fact-fungus-farming.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-fungus-farming-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:28:38.871Z",
+      "image": "hero-anthill.jpg",
+      "tag": "H",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Composition: The dense, repetitive, and intricate grid pattern in the golden background, with its numerous small, glowing, interconnected cells, may be mildly trypophobia-triggering for some viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/hero-anthill-v2.jpg",
+      "afterImage": "assets/images/hero-anthill.jpg",
+      "attemptImages": [
+        "assets/images/attempts/hero-anthill-v2.jpg",
+        "assets/images/attempts/hero-anthill-v3.jpg",
+        "assets/images/attempts/hero-anthill-v4.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:29:27.929Z",
+      "image": "queen-terra-portrait.jpg",
+      "tag": "#2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The limbs of the ants in the bottom-most foreground are too blurry to be accurately counted, making it impossible to verify if all ants possess the anatomically correct number of six legs.; QUALITY: While intentional for depth, the extreme blur on the foreground subjects hinders critical inspection for anatomical accuracy.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/queen-terra-portrait-v4.jpg",
+      "afterImage": "assets/images/queen-terra-portrait.jpg",
+      "attemptImages": [
+        "assets/images/attempts/queen-terra-portrait-v4.jpg",
+        "assets/images/attempts/queen-terra-portrait-v5.jpg",
+        "assets/images/attempts/queen-terra-portrait-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:30:08.344Z",
+      "image": "scout-portrait.jpg",
+      "tag": "#3",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "COMPOSITION: The numerous and clustered dewdrops on the grass blades might be a potential trigger for trypophobia in some viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/scout-portrait-v1.jpg",
+      "afterImage": "assets/images/scout-portrait.jpg",
+      "attemptImages": [
+        "assets/images/attempts/scout-portrait-v1.jpg",
+        "assets/images/attempts/scout-portrait-v2.jpg",
+        "assets/images/attempts/scout-portrait-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:30:47.437Z",
+      "image": "tiny-carries-leaf.jpg",
+      "tag": "#6",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The ant furthest to the right is mostly out of frame and obscured by the background, making it impossible to confirm it has the anatomically correct number of 6 legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/tiny-carries-leaf-v2.jpg",
+      "afterImage": "assets/images/tiny-carries-leaf.jpg",
+      "attemptImages": [
+        "assets/images/attempts/tiny-carries-leaf-v2.jpg",
+        "assets/images/attempts/tiny-carries-leaf-v3.jpg",
+        "assets/images/attempts/tiny-carries-leaf-v4.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:31:20.329Z",
+      "image": "major-guards-gate.jpg",
+      "tag": "#7",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The two smaller ants each have only three legs distinctly visible. Anatomically, ants should have six legs. The remaining legs are not clearly discernible due to their pose and being partially obscured by their bodies and carried objects.",
+      "attempts": 2,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/major-guards-gate-v1.jpg",
+      "afterImage": "assets/images/major-guards-gate.jpg",
+      "attemptImages": [
+        "assets/images/attempts/major-guards-gate-v1.jpg",
+        "assets/images/attempts/major-guards-gate-v2.jpg"
+      ],
+      "cost_estimate": 0.08
+    },
+    {
+      "timestamp": "2026-02-28T23:32:10.834Z",
+      "image": "all-together-strong.jpg",
+      "tag": "#12",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The large ant on the right side, carrying a nut, exhibits an anatomically incorrect limb structure, featuring two distinct arm-like appendages in addition to four legs, rather than the six uniform legs typical of an ant.; ANATOMY: Numerous smaller ants, particularly those on the upper ant hill and within the burrow entrances, are rendered with insufficient detail or are too indistinct to definitively confirm the presence of exactly six anatomically correct legs for each individual ant, failing the 'every ant' requirement.; COMPOSITION: The ant hill's surface, adorned with many clustered openings and glowing holes, presents a texture that could potentially trigger trypophobia in sensitive viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/all-together-strong-v4.jpg",
+      "afterImage": "assets/images/all-together-strong.jpg",
+      "attemptImages": [
+        "assets/images/attempts/all-together-strong-v4.jpg",
+        "assets/images/attempts/all-together-strong-v5.jpg",
+        "assets/images/attempts/all-together-strong-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:32:52.229Z",
+      "image": "detail-mandible-closeup.jpg",
+      "tag": "V1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The ant has an anatomically incorrect number of legs. Only 4 distinct legs are clearly visible (2 on the left, 2 on the right), whereas an ant should have 6 legs. The prominent pincer-like structures are interpreted as mandibles, not legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-mandible-closeup-v4.jpg",
+      "afterImage": "assets/images/detail-mandible-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-mandible-closeup-v4.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v5.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:34:21.344Z",
+      "image": "fun-fact-colony-size.jpg",
+      "tag": "F2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Multiple ants are depicted with an anatomically incorrect number of legs. For example, at least two prominent ants (one located to the left of the magnifying glass handle and another in the lower-center foreground) clearly have 8 legs instead of the anatomically correct 6 legs. Additionally, one ant inside the magnifying glass appears to have 7 legs.; ANATOMY: Numerous smaller ants throughout the illustration are rendered with insufficient detail and clarity, making it impossible to accurately count their limbs and verify their anatomical correctness.; COMPOSITION: The dense and repetitive texture formed by numerous tiny granular particles and highly clustered, indistinct small ants on the ground could potentially be perceived as a trypophobia-triggering pattern for some viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-colony-size-v4.jpg",
+      "afterImage": "assets/images/fun-fact-colony-size.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-colony-size-v4.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v5.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:38:50.879Z",
+      "image": "colony-awakens.jpg",
+      "tag": "#1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The tiny ants visible within the glowing windows of the nest, as well as some smaller ants in the background, do not clearly display all six anatomically correct limbs. Their small size and indistinct rendering prevent a precise count for 'every ant.'; COMPOSITION: The illustration features numerous clusters of water droplets on leaves and multiple small, rounded openings on the ant nest. While not extreme, these repetitive patterns could potentially trigger mild trypophobia in sensitive individuals.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/colony-awakens-v4.jpg",
+      "afterImage": "assets/images/colony-awakens.jpg",
+      "attemptImages": [
+        "assets/images/attempts/colony-awakens-v4.jpg",
+        "assets/images/attempts/colony-awakens-v5.jpg",
+        "assets/images/attempts/colony-awakens-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:39:34.817Z",
+      "image": "building-tunnels.jpg",
+      "tag": "#8",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Unable to confirm anatomically correct limb count for all ants due to extreme blur and small size of some ants in the deep background, violating the strict 'Anatomy' criterion.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/building-tunnels-v1.jpg",
+      "afterImage": "assets/images/building-tunnels.jpg",
+      "attemptImages": [
+        "assets/images/attempts/building-tunnels-v1.jpg",
+        "assets/images/attempts/building-tunnels-v2.jpg",
+        "assets/images/attempts/building-tunnels-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:40:22.329Z",
+      "image": "carrying-giants.jpg",
+      "tag": "#10",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The correct number of limbs (6 legs) cannot be verified for all ants, as several are partially obscured by other ants and the watermelon, making it impossible to count all their legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/carrying-giants-v1.jpg",
+      "afterImage": "assets/images/carrying-giants.jpg",
+      "attemptImages": [
+        "assets/images/attempts/carrying-giants-v1.jpg",
+        "assets/images/attempts/carrying-giants-v2.jpg",
+        "assets/images/attempts/carrying-giants-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:41:06.885Z",
+      "image": "the-nursery.jpg",
+      "tag": "#11",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Composition: The repetition of numerous small, rounded water droplets on the roots and small, rounded bumps on the outer wall of the nest could potentially be a mild trypophobia trigger for some sensitive individuals.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/the-nursery-v4.jpg",
+      "afterImage": "assets/images/the-nursery.jpg",
+      "attemptImages": [
+        "assets/images/attempts/the-nursery-v4.jpg",
+        "assets/images/attempts/the-nursery-v5.jpg",
+        "assets/images/attempts/the-nursery-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    }
+  ]
+}

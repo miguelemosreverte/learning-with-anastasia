@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — lions</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; padding: 2rem; }
+  h1 { color: #f0f6fc; margin-bottom: 0.25rem; }
+  .subtitle { color: #8b949e; margin-bottom: 2rem; font-size: 0.9rem; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .stat { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; text-align: center; }
+  .stat-value { font-size: 1.8rem; font-weight: 700; color: #58a6ff; }
+  .stat-label { font-size: 0.8rem; color: #8b949e; margin-top: 0.25rem; }
+  .breakdown-row { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .breakdown { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; flex: 1; min-width: 200px; }
+  .breakdown h3 { color: #f0f6fc; font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .breakdown-item { display: flex; justify-content: space-between; padding: 0.25rem 0; font-size: 0.85rem; border-bottom: 1px solid #21262d; }
+  .breakdown-item:last-child { border-bottom: none; }
+  h2 { color: #f0f6fc; margin: 2rem 0 1rem; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+  .card.verified { border-left: 4px solid #3fb950; }
+  .card.failed { border-left: 4px solid #f85149; }
+  .card-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1rem 0.5rem; flex-wrap: wrap; }
+  .card-number { font-weight: 700; color: #8b949e; font-size: 0.85rem; }
+  .card-image { font-weight: 600; color: #f0f6fc; font-family: monospace; font-size: 0.95rem; }
+  .card-tag { background: #30363d; color: #c9d1d9; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-family: monospace; }
+  .status-badge { padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+  .status-badge.verified { background: #23842a; color: #fff; }
+  .status-badge.failed { background: #b62324; color: #fff; }
+  .card-meta { display: flex; gap: 1rem; padding: 0 1rem 0.5rem; font-size: 0.8rem; color: #8b949e; flex-wrap: wrap; }
+  .card-time { margin-left: auto; }
+  .card-description { padding: 0.5rem 1rem 1rem; font-size: 0.9rem; line-height: 1.5; }
+  .image-comparison { display: flex; gap: 1rem; padding: 0 1rem 1rem; flex-wrap: wrap; }
+  .image-panel { flex: 1; min-width: 250px; }
+  .image-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.6rem; background: #b62324; color: #fff; display: inline-block; border-radius: 4px 4px 0 0; }
+  .after-label { background: #23842a; }
+  .image-panel img { width: 100%; border-radius: 0 4px 4px 4px; border: 1px solid #30363d; display: block; }
+  .missing { padding: 3rem; text-align: center; color: #8b949e; background: #0d1117; border-radius: 4px; border: 1px dashed #30363d; }
+  .attempts-detail { padding: 0 1rem 1rem; }
+  .attempts-detail summary { cursor: pointer; color: #58a6ff; font-size: 0.85rem; padding: 0.25rem 0; }
+  .attempts-grid { display: flex; gap: 0.75rem; margin-top: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+  .attempt-thumb { min-width: 150px; max-width: 200px; }
+  .attempt-label { font-size: 0.7rem; font-weight: 600; color: #8b949e; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .attempt-thumb img { width: 100%; border-radius: 4px; border: 1px solid #30363d; }
+  .clean-run { text-align: center; padding: 4rem 2rem; font-size: 1.2rem; color: #3fb950; background: #161b22; border-radius: 8px; border: 1px solid #30363d; }
+</style>
+</head>
+<body>
+  <h1>Changelog: lions</h1>
+  <div class="subtitle">Last updated: 2026-02-28T23:36:56.167Z &mdash; Every attempt is preserved, nothing is discarded.</div>
+
+  
+        <div class="stats-grid">
+          <div class="stat"><div class="stat-value">22</div><div class="stat-label">Interventions</div></div>
+          <div class="stat"><div class="stat-value">12</div><div class="stat-label">Verified (55%)</div></div>
+          <div class="stat"><div class="stat-value">22</div><div class="stat-label">Automated (100%)</div></div>
+          <div class="stat"><div class="stat-value">0</div><div class="stat-label">Manual</div></div>
+          <div class="stat"><div class="stat-value">2.2</div><div class="stat-label">Avg Attempts</div></div>
+          <div class="stat"><div class="stat-value">$1.96</div><div class="stat-label">Est. Cost</div></div>
+        </div>
+        <div class="breakdown-row">
+          <div class="breakdown">
+            <h3>By Type</h3>
+            <div class="breakdown-item"><span>anatomical-fix</span><span>14</span></div><div class="breakdown-item"><span>physics-fix</span><span>2</span></div><div class="breakdown-item"><span>composition-fix</span><span>5</span></div><div class="breakdown-item"><span>style-restyle</span><span>1</span></div>
+          </div>
+          <div class="breakdown">
+            <h3>By Tool</h3>
+            <div class="breakdown-item"><span>fix-image</span><span>22</span></div>
+          </div>
+        </div>
+
+  <h2>Interventions</h2>
+  
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#1</span>
+              <span class="card-image">cubs-growing.jpg</span>
+              <span class="card-tag">#10</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>2 attempts</span>
+              <span class="card-time">2026-02-28 23:22:50</span>
+            </div>
+            <div class="card-description">The adult male lion lacks an anatomically correct fourth hind leg; it appears either missing or improperly rendered and fused with the background.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/cubs-growing-v1.jpg" alt="Before: cubs-growing.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/cubs-growing.jpg" alt="After: cubs-growing.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 2 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/cubs-growing-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/cubs-growing-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#2</span>
+              <span class="card-image">detail-mane-closeup.jpg</span>
+              <span class="card-tag">V1</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>physics-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:23:38</span>
+            </div>
+            <div class="card-description">PHYSICS: Small light particles/water droplets are floating in the air without any visible support, violating the rule that all objects must obey gravity.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-mane-closeup-v1.jpg" alt="Before: detail-mane-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-mane-closeup.jpg" alt="After: detail-mane-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-mane-closeup-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-mane-closeup-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-mane-closeup-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#3</span>
+              <span class="card-image">detail-whisker-spots.jpg</span>
+              <span class="card-tag">V3</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:23:46</span>
+            </div>
+            <div class="card-description">The image does not contain any lions or birds, making it impossible to perform the requested anatomical limb count checks for these specific species as per the instructions. While other criteria such as physics, text/watermarks, composition, and overall quality appear satisfactory, the inability to complete the primary anatomical review for the specified subjects results in a failed review.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-whisker-spots-v1.jpg" alt="Before: detail-whisker-spots.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-whisker-spots.jpg" alt="After: detail-whisker-spots.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#4</span>
+              <span class="card-image">detail-retractable-claws.jpg</span>
+              <span class="card-tag">V2</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:23:57</span>
+            </div>
+            <div class="card-description">Anatomy: Cannot verify the total number of limbs for a lion as only a single paw is visible, thus preventing full adherence to the anatomy check regarding limb count for a lion.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-retractable-claws-v1.jpg" alt="Before: detail-retractable-claws.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-retractable-claws.jpg" alt="After: detail-retractable-claws.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#5</span>
+              <span class="card-image">detail-rough-tongue.jpg</span>
+              <span class="card-tag">V4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:24:31</span>
+            </div>
+            <div class="card-description">The dense, pointed texture (papillae) on the lion's tongue may be trypophobia-triggering, which is a concern under the composition check for children's illustrations.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-rough-tongue-v1.jpg" alt="Before: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-rough-tongue.jpg" alt="After: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#6</span>
+              <span class="card-image">fun-fact-roar.jpg</span>
+              <span class="card-tag">F2</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:24:49</span>
+            </div>
+            <div class="card-description">Embedded text/labels are present on the signs ('1 MILE', '2 MILES', '3 MILES', '4 MILES'), violating the rule that there should be NONE.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-roar-v1.jpg" alt="Before: fun-fact-roar.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-roar.jpg" alt="After: fun-fact-roar.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#7</span>
+              <span class="card-image">detail-whisker-spots.jpg</span>
+              <span class="card-tag">V3</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:25:06</span>
+            </div>
+            <div class="card-description">The image does not contain any lions, making the requested limb count for lions impossible to perform.; The image does not contain any birds, making the requested leg/feet count for birds impossible to perform.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-whisker-spots-v4.jpg" alt="Before: detail-whisker-spots.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-whisker-spots.jpg" alt="After: detail-whisker-spots.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#8</span>
+              <span class="card-image">detail-rough-tongue.jpg</span>
+              <span class="card-tag">V4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:25:56</span>
+            </div>
+            <div class="card-description">Anatomy check incomplete: Only a partial view of one lion is present, making it impossible to count all limbs as required.; Composition concern: The dense, spiky texture of the tongue's papillae might be unsettling for some viewers sensitive to certain textures (trypophobia).</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-rough-tongue-v4.jpg" alt="Before: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-rough-tongue.jpg" alt="After: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#9</span>
+              <span class="card-image">fun-fact-sleeping.jpg</span>
+              <span class="card-tag">F1</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>physics-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:26:10</span>
+            </div>
+            <div class="card-description">The golden string holding the clocks and suns is floating in the sky without any visible support or attachment to the trees or other objects.; One of the suns on the far right is floating without clear attachment.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-sleeping-v1.jpg" alt="Before: fun-fact-sleeping.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-sleeping.jpg" alt="After: fun-fact-sleeping.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#10</span>
+              <span class="card-image">fun-fact-roar.jpg</span>
+              <span class="card-tag">F2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:26:52</span>
+            </div>
+            <div class="card-description">Embedded text labels '1 MILE', '2 MILES', '3 MILES', '4 MILES' are present on the path.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-roar-v2.jpg" alt="Before: fun-fact-roar.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-roar.jpg" alt="After: fun-fact-roar.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-roar-v2.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-roar-v3.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-roar-v4.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#11</span>
+              <span class="card-image">hero-savanna.jpg</span>
+              <span class="card-tag">H</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:27:52</span>
+            </div>
+            <div class="card-description">Composition: The numerous clustered seeds/fluffs on the dandelion heads, and similar patterns in some other flowers, could potentially be perceived as trypophobia-triggering textures.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/hero-savanna-v1.jpg" alt="Before: hero-savanna.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/hero-savanna.jpg" alt="After: hero-savanna.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#12</span>
+              <span class="card-image">learning-to-stalk.jpg</span>
+              <span class="card-tag">#4</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:28:08</span>
+            </div>
+            <div class="card-description">The adult lion in the center-right appears to have only three visible or implied limbs, which is anatomically incorrect.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/learning-to-stalk-v1.jpg" alt="Before: learning-to-stalk.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/learning-to-stalk.jpg" alt="After: learning-to-stalk.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#13</span>
+              <span class="card-image">pride-together.jpg</span>
+              <span class="card-tag">#11</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>style-restyle</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:28:49</span>
+            </div>
+            <div class="card-description">Slight color banding visible in the sky gradient, particularly in the upper cloud areas.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/pride-together-v1.jpg" alt="Before: pride-together.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/pride-together.jpg" alt="After: pride-together.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/pride-together-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/pride-together-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/pride-together-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#14</span>
+              <span class="card-image">detail-mane-closeup.jpg</span>
+              <span class="card-tag">V1</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:29:03</span>
+            </div>
+            <div class="card-description">The lion's limbs are not visible in the illustration, making it impossible to confirm the anatomically correct number of legs/limbs as required by the anatomy check.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-mane-closeup-v4.jpg" alt="Before: detail-mane-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-mane-closeup.jpg" alt="After: detail-mane-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#15</span>
+              <span class="card-image">detail-retractable-claws.jpg</span>
+              <span class="card-tag">V2</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:29:52</span>
+            </div>
+            <div class="card-description">ANATOMY: The illustration does not show the full body of any lion, making it impossible to count all limbs and verify the anatomically correct number of legs (four) per animal as required by the prompt.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-retractable-claws-v2.jpg" alt="Before: detail-retractable-claws.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-retractable-claws.jpg" alt="After: detail-retractable-claws.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-retractable-claws-v2.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-retractable-claws-v3.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-retractable-claws-v4.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#16</span>
+              <span class="card-image">detail-rough-tongue.jpg</span>
+              <span class="card-tag">V4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:30:38</span>
+            </div>
+            <div class="card-description">The image shows only a partial view of the lion, making it impossible to count all its limbs and confirm anatomical correctness regarding the number of legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-rough-tongue-v7.jpg" alt="Before: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-rough-tongue.jpg" alt="After: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v7.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v8.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v9.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#17</span>
+              <span class="card-image">pride-together.jpg</span>
+              <span class="card-tag">#11</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:30:48</span>
+            </div>
+            <div class="card-description">Minor visual artifact observed in the blending of the male lion's mane near the shoulder.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/pride-together-v4.jpg" alt="Before: pride-together.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/pride-together.jpg" alt="After: pride-together.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/pride-together-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/pride-together-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/pride-together-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#18</span>
+              <span class="card-image">detail-mane-closeup.jpg</span>
+              <span class="card-tag">V1</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:31:06</span>
+            </div>
+            <div class="card-description">ANATOMY: Cannot verify the anatomically correct number of limbs for the lion as its full body is not visible due to cropping.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-mane-closeup-v5.jpg" alt="Before: detail-mane-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-mane-closeup.jpg" alt="After: detail-mane-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#19</span>
+              <span class="card-image">detail-whisker-spots.jpg</span>
+              <span class="card-tag">V3</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:31:49</span>
+            </div>
+            <div class="card-description">Some flying birds do not have visible legs, violating the rule that each bird must have exactly 2 legs. All other checks passed.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-whisker-spots-v7.jpg" alt="Before: detail-whisker-spots.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-whisker-spots.jpg" alt="After: detail-whisker-spots.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v7.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v8.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-whisker-spots-v9.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#20</span>
+              <span class="card-image">detail-rough-tongue.jpg</span>
+              <span class="card-tag">V4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:32:29</span>
+            </div>
+            <div class="card-description">ANATOMY: Cannot verify the total number of limbs for the lion as most of its body is out of frame, making it impossible to confirm the anatomically correct count of legs/limbs as per the instruction.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-rough-tongue-v10.jpg" alt="Before: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-rough-tongue.jpg" alt="After: detail-rough-tongue.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v10.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v11.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-rough-tongue-v12.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#21</span>
+              <span class="card-image">watering-hole.jpg</span>
+              <span class="card-tag">#8</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:33:49</span>
+            </div>
+            <div class="card-description">Anatomy: Unable to verify the total number of limbs for the third lion cub on the right, as its rear legs are obscured by another cub and the water's edge, preventing an accurate count of all four limbs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/watering-hole-v1.jpg" alt="Before: watering-hole.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/watering-hole.jpg" alt="After: watering-hole.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#22</span>
+              <span class="card-image">detail-retractable-claws.jpg</span>
+              <span class="card-tag">V2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:36:07</span>
+            </div>
+            <div class="card-description">Anatomy: The second lion depicted (adult lion) is only partially shown, with only one paw and part of a leg visible. This makes it impossible to count all its limbs to confirm the anatomically correct number of legs/limbs (4), as strictly required by the instructions.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-retractable-claws-v5.jpg" alt="Before: detail-retractable-claws.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-retractable-claws.jpg" alt="After: detail-retractable-claws.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-retractable-claws-v5.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-retractable-claws-v6.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-retractable-claws-v7.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+</body>
+</html>

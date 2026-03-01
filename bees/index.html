@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bees: The Honey Makers - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Bees: The Honey Makers</h1>
+        <h1 data-lang="es">Abejas: Las Hacedoras de Miel</h1>
+        <h1 data-lang="ru">Пчёлы: Создательницы Мёда</h1>
+        <p data-lang="en" class="active">A Sweet Story of Flowers, Dance, and Teamwork</p>
+        <p data-lang="es">Una Dulce Historia de Flores, Baile y Trabajo en Equipo</p>
+        <p data-lang="ru">Сладкая история о цветах, танце и командной работе</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-meadow.jpg"
+             alt="Bees"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Bees</h2>
+            <h2 class="hero-title" data-lang="es">Abejas</h2>
+            <h2 class="hero-title" data-lang="ru">Пчёлы</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Honey Makers</p>
+            <p class="hero-subtitle" data-lang="es">Las Hacedoras de Miel</p>
+            <p class="hero-subtitle" data-lang="ru">Создательницы Мёда</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/the-buzzing-hive.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Magnificent golden beehive inside a hollow oak tree with thousands of bees on honeycomb, warm amber light, magical atmosphere"
+                 data-alt-en="Magnificent golden beehive inside a hollow oak tree with thousands of bees on honeycomb, warm amber light, magical atmosphere"
+                 data-alt-es="Magnifica colmena dorada dentro de un roble hueco con miles de abejas en panal, calida luz ambar, atmosfera magica"
+                 data-alt-ru="Великолепный золотой улей внутри дуба с тысячами пчёл на сотах, тёплый янтарный свет, волшебная атмосфера"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Buzzing Hive</h2>
+            <h2 data-lang="es">La Colmena Zumbante</h2>
+            <h2 data-lang="ru">Жужжащий улей</h2>
+            <div data-lang="en" class="active">
+                <p>Deep inside an old oak tree, in a meadow full of wildflowers, lives the most amazing city you have ever seen. It is built entirely of golden wax, shaped into thousands of perfect little hexagons, and it BUZZES with life! This is the beehive, and it is home to fifty thousand bees, all working together. The air inside smells like warm honey and sunshine. Every bee has a job, every honeycomb has a purpose, and every day is an adventure. Welcome to the hive!</p>
+            </div>
+            <div data-lang="es">
+                <p>Dentro de un viejo roble, en un prado lleno de flores silvestres, vive la ciudad mas asombrosa que hayas visto. !Esta construida enteramente de cera dorada, formada en miles de pequenos hexagonos perfectos, y ZUMBA con vida! Esta es la colmena, y es hogar de cincuenta mil abejas, todas trabajando juntas. El aire huele a miel calida y sol. Cada abeja tiene un trabajo, cada panal tiene un proposito y cada dia es una aventura. !Bienvenidos a la colmena!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Глубоко внутри старого дуба, на лугу, полном полевых цветов, живёт самый удивительный город, который вы когда-либо видели. Он целиком построен из золотистого воска, сложен в тысячи идеальных маленьких шестиугольников и ЖУЖЖИТ жизнью! Это пчелиный улей, и в нём живут пятьдесят тысяч пчёл, которые все работают вместе. Воздух внутри пахнет тёплым мёдом и солнцем. У каждой пчелы есть работа, у каждых сот есть назначение, и каждый день — приключение. Добро пожаловать в улей!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/queen-aurelia-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Majestic honey bee queen with elongated golden abdomen and crown-like pattern, surrounded by attentive worker bees on golden honeycomb"
+                 data-alt-en="Majestic honey bee queen with elongated golden abdomen and crown-like pattern, surrounded by attentive worker bees on golden honeycomb"
+                 data-alt-es="Majestuosa abeja reina con abdomen dorado alargado y patron de corona, rodeada de abejas obreras atentas en panal dorado"
+                 data-alt-ru="Величественная пчелиная королева с удлинённым золотистым брюшком и узором-короной, окружённая заботливыми рабочими пчёлами на золотистых сотах"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Queen Aurelia</h2>
+            <h2 data-lang="es">Conoce a la Reina Aurelia</h2>
+            <h2 data-lang="ru">Знакомьтесь: Королева Аурелия</h2>
+            <div data-lang="en" class="active">
+                <p>At the very heart of the hive lives Queen Aurelia, the most important bee of all. She is much bigger than the other bees, with a long, elegant golden body that gleams like treasure. On her thorax, she wears a pattern that looks just like a tiny golden crown! Queen Aurelia moves slowly and gracefully while dozens of worker bees flutter around her, feeding her, grooming her, and keeping her comfortable. She is the mother of every single bee in the hive. &#x27;My children,&#x27; she hums softly, &#x27;together we are strong.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>En el corazon de la colmena vive la Reina Aurelia, la abeja mas importante de todas. Es mucho mas grande que las demas abejas, con un cuerpo dorado largo y elegante que brilla como un tesoro. En su torax, lleva un patron que parece una pequena corona dorada. La Reina Aurelia se mueve lenta y graciosamente mientras docenas de abejas obreras revolotean a su alrededor, alimentandola, acicalandola y manteniendola comoda. Ella es la madre de cada abeja en la colmena. &#x27;Mis hijas,&#x27; zumba suavemente, &#x27;juntas somos fuertes.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>В самом сердце улья живёт Королева Аурелия — самая важная пчела из всех. Она намного крупнее остальных пчёл, с длинным, элегантным золотистым телом, которое сияет как сокровище. На её грудке — узор, похожий на крошечную золотую корону! Королева Аурелия движется медленно и грациозно, пока десятки рабочих пчёл порхают вокруг неё, кормят, чистят и заботятся о ней. Она — мать каждой пчелы в улье. &#x27;Мои дети,&#x27; тихо жужжит она, &#x27;вместе мы сильны.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/buzz-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Cheerful fuzzy worker bee with bright yellow-and-black stripes covered in pollen, flying among colorful wildflowers in golden sunlight"
+                 data-alt-en="Cheerful fuzzy worker bee with bright yellow-and-black stripes covered in pollen, flying among colorful wildflowers in golden sunlight"
+                 data-alt-es="Alegre abeja obrera peluda con rayas amarillas y negras cubierta de polen, volando entre flores silvestres coloridas bajo la luz dorada"
+                 data-alt-ru="Весёлая пушистая рабочая пчела с яркими жёлто-чёрными полосками, покрытая пыльцой, летящая среди ярких полевых цветов в золотистом свете"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Buzz&#x27;s Busy Day</h2>
+            <h2 data-lang="es">El Dia Ocupado de Buzz</h2>
+            <h2 data-lang="ru">Занятой день Базз</h2>
+            <div data-lang="en" class="active">
+                <p>Buzz is the busiest bee in the whole hive! From the moment the sun rises, she is zooming from job to job. First, she feeds the baby bees their special honey breakfast. Then she helps pack pollen into the honeycomb. Then she fans the honey with her wings to make it thick and perfect. Buzz has a tiny notch in one wing, but she flies just as fast as everyone else! Her fuzzy golden body is always dusted with pollen. &#x27;No time to rest!&#x27; she buzzes happily. &#x27;There is so much to do and every job matters!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>!Buzz es la abeja mas ocupada de toda la colmena! Desde que sale el sol, va volando de trabajo en trabajo. Primero, alimenta a las abejas bebe con su desayuno especial de miel. Luego ayuda a empacar polen en el panal. Despues abanica la miel con sus alas para hacerla espesa y perfecta. Buzz tiene una pequena muesca en un ala, !pero vuela tan rapido como todas las demas! Su cuerpo dorado y peludo siempre esta cubierto de polen. &#x27;!No hay tiempo para descansar!&#x27; zumba felizmente.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Базз — самая занятая пчела во всём улье! С самого восхода солнца она мчится от одного дела к другому. Сначала она кормит малышей-пчёлок их особенным медовым завтраком. Потом помогает укладывать пыльцу в соты. Потом обмахивает мёд крылышками, чтобы он стал густым и идеальным. У Базз маленькая зазубринка на одном крыле, но она летает так же быстро, как все остальные! Её пушистое золотистое тело всегда припорошено пыльцой. &#x27;Некогда отдыхать!&#x27; жужжит она счастливо. &#x27;Столько дел, и каждое важно!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/petal-first-flight.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Young fluffy bee taking her first flight from the hive entrance, gazing wide-eyed at a vast colorful flower meadow, golden sunlight"
+                 data-alt-en="Young fluffy bee taking her first flight from the hive entrance, gazing wide-eyed at a vast colorful flower meadow, golden sunlight"
+                 data-alt-es="Joven abeja esponjosa tomando su primer vuelo desde la entrada de la colmena, mirando con ojos enormes un vasto prado de flores coloridas"
+                 data-alt-ru="Молодая пушистая пчёлка в своём первом полёте из входа улья, с широко раскрытыми глазами глядящая на огромный красочный цветочный луг"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Petal&#x27;s First Flight</h2>
+            <h2 data-lang="es">El Primer Vuelo de Petal</h2>
+            <h2 data-lang="ru">Первый полёт Петал</h2>
+            <div data-lang="en" class="active">
+                <p>Little Petal has never been outside the hive before. She stands at the entrance, her extra-fluffy fuzz blowing in the breeze, her wide eyes staring at the enormous world. &#x27;It is SO big out there!&#x27; she squeaks. Buzz lands beside her. &#x27;I know it looks scary,&#x27; Buzz says kindly, &#x27;but just wait until you smell your first flower!&#x27; Petal takes a deep breath, spreads her wings, and — BUZZ! She is flying! The wind lifts her up and suddenly the whole meadow stretches below her, a carpet of purple, yellow, and pink flowers. &#x27;This is AMAZING!&#x27; Petal shouts.</p>
+            </div>
+            <div data-lang="es">
+                <p>La pequena Petal nunca ha estado fuera de la colmena. Esta parada en la entrada, su pelusa extra esponjosa ondeando con la brisa, sus ojos enormes mirando el mundo gigante. &#x27;!Es TAN grande alla afuera!&#x27; chilla. Buzz aterriza a su lado. &#x27;Se que parece aterrador,&#x27; dice Buzz amablemente, &#x27;!pero espera a que huelas tu primera flor!&#x27; Petal respira profundo, extiende sus alas y — !BUZZ! !Esta volando! El viento la eleva y de repente todo el prado se extiende debajo, una alfombra de flores moradas, amarillas y rosas. &#x27;!Esto es INCREIBLE!&#x27; grita Petal.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Маленькая Петал никогда раньше не была за пределами улья. Она стоит у входа, её особенно пушистый пушок развевается на ветру, а широко раскрытые глаза смотрят на огромный мир. &#x27;Там ТАК просторно!&#x27; пищит она. Базз приземляется рядом. &#x27;Я знаю, выглядит страшно,&#x27; ласково говорит Базз, &#x27;но подожди, пока понюхаешь свой первый цветок!&#x27; Петал делает глубокий вдох, расправляет крылышки и — ЖЖЖЖ! Она летит! Ветер поднимает её, и вдруг весь луг расстилается внизу, ковёр из фиолетовых, жёлтых и розовых цветов. &#x27;Это НЕВЕРОЯТНО!&#x27; кричит Петал.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/flower-garden.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Two bees collecting pollen inside colorful flowers in a sunny meadow, covered in golden pollen, surrounded by sunflowers, lavender and daisies"
+                 data-alt-en="Two bees collecting pollen inside colorful flowers in a sunny meadow, covered in golden pollen, surrounded by sunflowers, lavender and daisies"
+                 data-alt-es="Dos abejas recolectando polen dentro de flores coloridas en un prado soleado, cubiertas de polen dorado, rodeadas de girasoles, lavanda y margaritas"
+                 data-alt-ru="Две пчелы собирают пыльцу внутри ярких цветов на солнечном лугу, покрытые золотой пыльцой, в окружении подсолнухов, лаванды и ромашек"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Flower Garden</h2>
+            <h2 data-lang="es">El Jardin de Flores</h2>
+            <h2 data-lang="ru">Цветочный сад</h2>
+            <div data-lang="en" class="active">
+                <p>Buzz takes Petal to the best flower garden in the meadow. &#x27;Watch me!&#x27; Buzz says, diving headfirst into a big sunflower. She rolls around in the golden pollen until she looks like a fuzzy yellow snowball! &#x27;Now you try!&#x27; Petal carefully lands on a purple lavender bloom. The smell is heavenly! Tiny grains of pollen stick to her fluffy body. &#x27;Every time we visit a flower,&#x27; Buzz explains, &#x27;we carry pollen to the next one. That helps flowers make seeds so new flowers can grow!&#x27; Petal gasps. &#x27;We help the flowers grow? We are garden helpers!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Buzz lleva a Petal al mejor jardin de flores del prado. &#x27;!Mirame!&#x27; dice Buzz, lanzandose de cabeza a un gran girasol. !Se revuelca en el polen dorado hasta parecer una bola de nieve amarilla y peluda! &#x27;!Ahora tu!&#x27; Petal aterriza cuidadosamente en una flor de lavanda morada. !El aroma es celestial! Pequenos granos de polen se pegan a su cuerpo esponjoso. &#x27;Cada vez que visitamos una flor,&#x27; explica Buzz, &#x27;llevamos polen a la siguiente. !Eso ayuda a las flores a hacer semillas para que crezcan nuevas flores!&#x27; Petal exclama. &#x27;!Ayudamos a las flores a crecer!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Базз ведёт Петал в лучший цветочный сад на лугу. &#x27;Смотри на меня!&#x27; говорит Базз, ныряя головой вперёд в большой подсолнух. Она катается в золотой пыльце, пока не становится похожа на пушистый жёлтый снежок! &#x27;Теперь ты!&#x27; Петал осторожно садится на фиолетовый цветок лаванды. Запах — просто райский! Крошечные зёрнышки пыльцы прилипают к её пушистому телу. &#x27;Каждый раз, когда мы посещаем цветок,&#x27; объясняет Базз, &#x27;мы переносим пыльцу на следующий. Это помогает цветам делать семена, чтобы росли новые цветы!&#x27; Петал ахает. &#x27;Мы помогаем цветам расти? Мы — садовые помощницы!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/waggle-dance.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Worker bee performing the waggle dance in a figure-eight on honeycomb, surrounded by attentive bees watching and learning, warm amber light"
+                 data-alt-en="Worker bee performing the waggle dance in a figure-eight on honeycomb, surrounded by attentive bees watching and learning, warm amber light"
+                 data-alt-es="Abeja obrera realizando la danza del meneo en forma de ocho sobre panal, rodeada de abejas atentas observando y aprendiendo, calida luz ambar"
+                 data-alt-ru="Рабочая пчела исполняет виляющий танец восьмёркой на сотах, окружённая внимательными пчёлами, которые смотрят и учатся, тёплый янтарный свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Waggle Dance</h2>
+            <h2 data-lang="es">La Danza del Meneo</h2>
+            <h2 data-lang="ru">Виляющий танец</h2>
+            <div data-lang="en" class="active">
+                <p>Back in the hive, Buzz has exciting news. She found a field of clover bursting with sweet nectar! But how does she tell the other bees where it is? She DANCES! Buzz walks in a figure-eight pattern on the honeycomb, waggling her bottom as she goes. The direction she waggles tells the other bees which way to fly. How long she waggles tells them how far away the flowers are! All the bees watch closely. &#x27;Turn left at the big oak, then straight past the pond!&#x27; Buzz waggles. The bees cheer and zoom off to find the clover!</p>
+            </div>
+            <div data-lang="es">
+                <p>De vuelta en la colmena, Buzz tiene noticias emocionantes. !Encontro un campo de trebol rebosante de nectar dulce! Pero, como les dice a las demas abejas donde esta? !BAILA! Buzz camina en un patron de ocho sobre el panal, meneando su colita mientras avanza. La direccion del meneo les dice a las abejas hacia donde volar. !La duracion del meneo les dice que tan lejos estan las flores! Todas las abejas miran atentamente. &#x27;!Giren a la izquierda en el gran roble, luego derecho pasando el estanque!&#x27; menea Buzz.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Вернувшись в улей, Базз приносит захватывающие новости. Она нашла поле клевера, полное сладкого нектара! Но как же рассказать другим пчёлам, где оно? Она ТАНЦУЕТ! Базз ходит по сотам, рисуя фигуру-восьмёрку и виляя брюшком на ходу. Направление виляния говорит пчёлам, куда лететь. А продолжительность виляния — как далеко до цветов! Все пчёлы внимательно смотрят. &#x27;Поверните налево у большого дуба, потом прямо мимо пруда!&#x27; виляет Базз. Пчёлы радуются и мчатся на поиски клевера!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/making-honey.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Bees working together inside the hive to make honey, passing nectar and fanning honeycomb, golden honey glistening in cells, warm amber glow"
+                 data-alt-en="Bees working together inside the hive to make honey, passing nectar and fanning honeycomb, golden honey glistening in cells, warm amber glow"
+                 data-alt-es="Abejas trabajando juntas dentro de la colmena para hacer miel, pasando nectar y abanicando panal, miel dorada brillando en celdas"
+                 data-alt-ru="Пчёлы работают вместе внутри улья, делая мёд, передавая нектар и обмахивая соты, золотистый мёд блестит в ячейках, тёплое янтарное свечение"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Making Honey</h2>
+            <h2 data-lang="es">Haciendo Miel</h2>
+            <h2 data-lang="ru">Делаем мёд</h2>
+            <div data-lang="en" class="active">
+                <p>Making honey is teamwork! First, the forager bees collect sweet nectar from flowers in their special honey stomachs. Back at the hive, they pass the nectar mouth-to-mouth to other bees — like a game of telephone! Each bee adds special enzymes that start turning the nectar into honey. Then the bees fan the honeycomb with their tiny wings — BZZZZZ! — to blow away the extra water. When the honey is thick and golden and perfectly sweet, they cap each cell with a little lid of white wax. &#x27;Sealed and safe!&#x27; Buzz announces. &#x27;Honey that will last forever!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>!Hacer miel es trabajo en equipo! Primero, las abejas recolectoras recogen nectar dulce de las flores en sus estomagos especiales de miel. De vuelta en la colmena, pasan el nectar de boca en boca — !como un juego de telefono! Cada abeja anade enzimas especiales que comienzan a convertir el nectar en miel. Luego las abejas abanian el panal con sus pequenas alas — !BZZZZZ! — para soplar el agua extra. Cuando la miel es espesa, dorada y perfectamente dulce, sellan cada celda con una tapita de cera blanca. &#x27;!Sellada y segura!&#x27; anuncia Buzz.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Делать мёд — это командная работа! Сначала пчёлы-собирательницы набирают сладкий нектар из цветов в свои особые медовые желудки. Вернувшись в улей, они передают нектар изо рта в рот другим пчёлам — как игра в телефон! Каждая пчела добавляет специальные ферменты, которые начинают превращать нектар в мёд. Потом пчёлы обмахивают соты своими крошечными крылышками — БЗЗЗЗ! — чтобы испарить лишнюю воду. Когда мёд становится густым, золотистым и идеально сладким, они запечатывают каждую ячейку крышечкой из белого воска. &#x27;Запечатано и в сохранности!&#x27; объявляет Базз.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/building-beeswax.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Bees building perfect hexagonal honeycomb from beeswax, producing wax flakes and shaping them into hexagons, warm golden architectural wonder"
+                 data-alt-en="Bees building perfect hexagonal honeycomb from beeswax, producing wax flakes and shaping them into hexagons, warm golden architectural wonder"
+                 data-alt-es="Abejas construyendo panal hexagonal perfecto de cera, produciendo escamas de cera y moldeandolas en hexagonos, calida maravilla arquitectonica dorada"
+                 data-alt-ru="Пчёлы строят идеальные шестиугольные соты из воска, производят восковые чешуйки и формируют их в шестиугольники, тёплое золотистое архитектурное чудо"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Building with Beeswax</h2>
+            <h2 data-lang="es">Construyendo con Cera</h2>
+            <h2 data-lang="ru">Строим из воска</h2>
+            <div data-lang="en" class="active">
+                <p>Bees are the most amazing builders! They make their own building material right from their bodies — tiny flakes of white wax that come from special glands on their tummies. The builder bees chew the wax until it is soft, then shape it into perfect hexagons. Why hexagons? Because they are the strongest shape that wastes no space! Every cell fits perfectly against the next one with no gaps. Petal watches in wonder as the builders work. &#x27;It is like a puzzle where every piece fits perfectly!&#x27; she says. &#x27;It IS a puzzle,&#x27; Buzz smiles. &#x27;And we solved it!&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>!Las abejas son las constructoras mas increibles! Hacen su propio material de construccion directamente de sus cuerpos — pequenas escamas de cera blanca que salen de glandulas especiales en sus pancitas. Las abejas constructoras mastican la cera hasta que esta suave, luego la moldean en hexagonos perfectos. Por que hexagonos? !Porque son la forma mas fuerte que no desperdicia espacio! Cada celda encaja perfectamente con la siguiente sin huecos. Petal observa maravillada. &#x27;!Es como un rompecabezas donde cada pieza encaja perfectamente!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пчёлы — самые удивительные строители! Они делают свой собственный строительный материал прямо из своих тел — крошечные чешуйки белого воска, которые выделяются из специальных желёз на их животиках. Пчёлы-строители жуют воск, пока он не станет мягким, а потом лепят из него идеальные шестиугольники. Почему шестиугольники? Потому что это самая прочная форма, которая не тратит пространство впустую! Каждая ячейка идеально прилегает к соседней без зазоров. Петал смотрит с восхищением. &#x27;Это как пазл, где каждый кусочек подходит идеально!&#x27; говорит она.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/spike-guards-door.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Alert guard bee standing watch at the hive entrance, mandibles ready, checking arriving bees, golden afternoon light, protective stance"
+                 data-alt-en="Alert guard bee standing watch at the hive entrance, mandibles ready, checking arriving bees, golden afternoon light, protective stance"
+                 data-alt-es="Abeja guardia alerta en la entrada de la colmena, mandibulas listas, revisando abejas que llegan, luz dorada de la tarde, postura protectora"
+                 data-alt-ru="Бдительная пчела-охранник стоит на страже у входа в улей, жвалы наготове, проверяет прибывающих пчёл, золотистый дневной свет, защитная поза"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Spike Guards the Door</h2>
+            <h2 data-lang="es">Spike Guarda la Puerta</h2>
+            <h2 data-lang="ru">Спайк охраняет вход</h2>
+            <div data-lang="en" class="active">
+                <p>Every hive needs a guard, and Spike is the best! He stands at the entrance all day long, alert and watchful, his mandibles ready. Spike&#x27;s job is to make sure that only bees from his hive come inside. How does he know? By smell! Every hive has its own special scent, and Spike sniffs each bee that arrives. &#x27;You may enter!&#x27; he nods to a returning forager. When a wasp tries to sneak in, Spike blocks the entrance. &#x27;Not today!&#x27; he says firmly. The wasp flies away. &#x27;Nobody gets past Spike!&#x27; the worker bees cheer.</p>
+            </div>
+            <div data-lang="es">
+                <p>Toda colmena necesita un guardia, !y Spike es el mejor! Se para en la entrada todo el dia, alerta y vigilante, con sus mandibulas listas. El trabajo de Spike es asegurarse de que solo entren las abejas de su colmena. Como lo sabe? !Por el olor! Cada colmena tiene su propio aroma especial, y Spike olfatea a cada abeja que llega. &#x27;!Puedes entrar!&#x27; asiente a una recolectora que regresa. Cuando una avispa intenta colarse, Spike bloquea la entrada. &#x27;!Hoy no!&#x27; dice firmemente. La avispa se va. &#x27;!Nadie pasa de Spike!&#x27; animan las obreras.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Каждому улью нужен охранник, и Спайк — лучший! Он стоит у входа весь день, бдительный и внимательный, с готовыми жвалами. Работа Спайка — следить, чтобы внутрь попадали только пчёлы из его улья. Как он узнаёт? По запаху! У каждого улья свой особый аромат, и Спайк обнюхивает каждую прилетевшую пчелу. &#x27;Можешь войти!&#x27; кивает он возвращающейся собирательнице. Когда оса пытается проскользнуть, Спайк загораживает вход. &#x27;Только не сегодня!&#x27; говорит он твёрдо. Оса улетает. &#x27;Мимо Спайка никто не пройдёт!&#x27; радуются рабочие пчёлы.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/winter-cluster.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Thousands of bees huddled in a warm cluster inside the hive during winter, queen in the center, snow outside, warm golden glow within"
+                 data-alt-en="Thousands of bees huddled in a warm cluster inside the hive during winter, queen in the center, snow outside, warm golden glow within"
+                 data-alt-es="Miles de abejas acurrucadas en un grupo caliente dentro de la colmena durante el invierno, reina en el centro, nieve afuera, calido brillo dorado adentro"
+                 data-alt-ru="Тысячи пчёл, сбившихся в тёплый клубок внутри улья зимой, королева в центре, снег снаружи, тёплое золотистое свечение внутри"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Winter Cluster</h2>
+            <h2 data-lang="es">El Grupo de Invierno</h2>
+            <h2 data-lang="ru">Зимний клубок</h2>
+            <div data-lang="en" class="active">
+                <p>When winter comes and snow covers the meadow, the bees do something wonderful. They all huddle together in a big, warm ball called a cluster! Queen Aurelia stays right in the cozy center, while thousands of bees surround her, vibrating their wing muscles to make heat. The bees on the outside slowly rotate to the warm inside, and the warm bees move out — everyone takes turns! &#x27;It is like a group hug that lasts all winter,&#x27; Petal says, snuggled between Buzz and Spike. &#x27;The biggest, warmest hug in the world,&#x27; Buzz agrees.</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando llega el invierno y la nieve cubre el prado, las abejas hacen algo maravilloso. !Todas se acurrucan juntas en una gran bola caliente llamada grupo! La Reina Aurelia se queda en el centro acogedor, mientras miles de abejas la rodean, vibrando sus musculos de las alas para generar calor. Las abejas de afuera rotan lentamente hacia el interior caliente, y las calientes se mueven afuera — !todas toman turnos! &#x27;Es como un abrazo grupal que dura todo el invierno,&#x27; dice Petal, acurrucada entre Buzz y Spike.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда приходит зима и снег покрывает луг, пчёлы делают кое-что удивительное. Они все сбиваются вместе в большой, тёплый шар, который называется клубок! Королева Аурелия остаётся прямо в уютном центре, а тысячи пчёл окружают её, вибрируя мышцами крыльев, чтобы создавать тепло. Пчёлы снаружи постепенно перемещаются в тёплый центр, а тёплые выходят наружу — все меняются! &#x27;Это как групповые обнимашки на всю зиму,&#x27; говорит Петал, устроившись между Базз и Спайком. &#x27;Самые большие и тёплые обнимашки в мире,&#x27; соглашается Базз.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/sweet-golden-honey.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Thick golden honey dripping from honeycomb, two proud bees beside perfectly capped honey cells, golden light streaming through amber honey"
+                 data-alt-en="Thick golden honey dripping from honeycomb, two proud bees beside perfectly capped honey cells, golden light streaming through amber honey"
+                 data-alt-es="Espesa miel dorada goteando del panal, dos abejas orgullosas junto a celdas de miel perfectamente selladas, luz dorada atravesando miel ambar"
+                 data-alt-ru="Густой золотистый мёд стекает с сот, две гордые пчелы рядом с идеально запечатанными медовыми ячейками, золотистый свет проходит сквозь янтарный мёд"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Sweet Golden Honey</h2>
+            <h2 data-lang="es">Dulce Miel Dorada</h2>
+            <h2 data-lang="ru">Сладкий золотой мёд</h2>
+            <div data-lang="en" class="active">
+                <p>Spring has returned, and the honey store is full! Row after row of golden, glistening honeycomb, each cell capped with perfect white wax. Buzz and Petal stand before the golden treasure, sunlight streaming through the amber honey like liquid gold. &#x27;We did this together,&#x27; Buzz says proudly. &#x27;Every single bee helped — the foragers, the builders, the nurses, the guards, and our Queen.&#x27; Petal touches a drop of honey with her tongue. It tastes like sunshine and flowers and a whole summer of hard work. &#x27;This is what teamwork tastes like!&#x27; she laughs.</p>
+            </div>
+            <div data-lang="es">
+                <p>!La primavera ha vuelto y la reserva de miel esta llena! Fila tras fila de panal dorado y brillante, cada celda sellada con cera blanca perfecta. Buzz y Petal se paran ante el tesoro dorado, la luz del sol pasando a traves de la miel ambar como oro liquido. &#x27;Hicimos esto juntas,&#x27; dice Buzz con orgullo. &#x27;Cada abeja ayudo — las recolectoras, las constructoras, las enfermeras, los guardias y nuestra Reina.&#x27; Petal toca una gota de miel con su lengua. Sabe a sol, flores y todo un verano de trabajo. &#x27;!A esto sabe el trabajo en equipo!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Весна вернулась, и запасы мёда полны! Ряд за рядом золотистых, блестящих сот, каждая ячейка запечатана идеальным белым воском. Базз и Петал стоят перед золотым сокровищем, солнечный свет проходит сквозь янтарный мёд, как жидкое золото. &#x27;Мы сделали это вместе,&#x27; гордо говорит Базз. &#x27;Каждая пчёлка помогла — собирательницы, строители, няньки, охранники и наша Королева.&#x27; Петал касается язычком капельки мёда. На вкус как солнце, цветы и целое лето усердного труда. &#x27;Вот какой вкус у командной работы!&#x27; смеётся она.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#12</span>
+            <img data-src="assets/images/our-garden-friends.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Four bee characters flying together over a magnificent blooming meadow at golden sunset, flowers and fruits growing below, triumphant and joyful"
+                 data-alt-en="Four bee characters flying together over a magnificent blooming meadow at golden sunset, flowers and fruits growing below, triumphant and joyful"
+                 data-alt-es="Cuatro personajes de abejas volando juntos sobre un magnifico prado florido al atardecer dorado, flores y frutas creciendo abajo, triunfante y alegre"
+                 data-alt-ru="Четыре пчёлки летят вместе над великолепным цветущим лугом в золотистом закате, цветы и плоды растут внизу, торжественная и радостная сцена"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Our Garden Friends</h2>
+            <h2 data-lang="es">Nuestros Amigos del Jardin</h2>
+            <h2 data-lang="ru">Наши друзья из сада</h2>
+            <div data-lang="en" class="active">
+                <p>As the golden sun sets over the meadow, all four friends fly together above the flowers. Queen Aurelia, the heart of the hive. Buzz, who never stops working. Petal, who discovered how big and beautiful the world is. And Spike, who keeps everyone safe. Below them, the meadow is bursting with life — flowers blooming, fruits growing, seeds spreading — all because the bees visited every single blossom. &#x27;We are small,&#x27; Queen Aurelia hums, &#x27;but together, we help the whole world grow.&#x27; And in the golden evening light, fifty thousand bees hum in agreement.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras el sol dorado se pone sobre el prado, los cuatro amigos vuelan juntos sobre las flores. La Reina Aurelia, el corazon de la colmena. Buzz, que nunca deja de trabajar. Petal, que descubrio lo grande y hermoso que es el mundo. Y Spike, que mantiene a todos a salvo. Debajo de ellos, el prado rebosa de vida — flores floreciendo, frutas creciendo, semillas esparciendose — todo porque las abejas visitaron cada flor. &#x27;Somos pequenas,&#x27; zumba la Reina Aurelia, &#x27;pero juntas, ayudamos a crecer al mundo entero.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда золотое солнце садится над лугом, все четверо друзей летят вместе над цветами. Королева Аурелия — сердце улья. Базз, которая никогда не перестаёт работать. Петал, которая открыла, какой большой и прекрасный мир. И Спайк, который хранит всех в безопасности. Под ними луг кипит жизнью — цветы цветут, плоды растут, семена разлетаются — и всё потому, что пчёлы навестили каждый цветок. &#x27;Мы маленькие,&#x27; жужжит Королева Аурелия, &#x27;но вместе мы помогаем расти всему миру.&#x27; И в золотистом вечернем свете пятьдесят тысяч пчёл жужжат в согласии.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-wing-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Wings That Never Stop"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Wings That Never Stop</h3>
+                    <h3 data-lang="es">Alas Que Nunca Paran</h3>
+                    <h3 data-lang="ru">Крылья, которые не останавливаются</h3>
+                    <p data-lang="en" class="active">Look at Buzz&#x27;s tiny wings — they beat an incredible 200 times per second! That is so fast they become a blur and create the buzzing sound we all know. Each bee has two pairs of wings that hook together with tiny clasps called hamuli, turning four wings into two bigger ones for powerful flight. Bees can fly at about 15 miles per hour and visit up to 5,000 flowers in a single day!</p>
+                    <p data-lang="es">!Mira las pequenas alas de Buzz — laten una increible cantidad de 200 veces por segundo! Eso es tan rapido que se vuelven borrosas y crean el zumbido que todos conocemos. Cada abeja tiene dos pares de alas que se enganchan con pequenos ganchos llamados hamuli, convirtiendo cuatro alas en dos mas grandes para un vuelo poderoso. !Las abejas pueden volar a unos 24 kilometros por hora y visitar hasta 5,000 flores en un solo dia!</p>
+                    <p data-lang="ru">Посмотрите на крошечные крылья Базз — они бьют невероятные 200 раз в секунду! Это настолько быстро, что они становятся размытыми и создают жужжание, которое мы все знаем. У каждой пчелы две пары крыльев, которые соединяются крошечными крючками — гамулями, превращая четыре крыла в два больших для мощного полёта. Пчёлы летают со скоростью около 24 километров в час и могут посетить до 5 000 цветов за один день!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-compound-eye.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="A Thousand Tiny Eyes"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">A Thousand Tiny Eyes</h3>
+                    <h3 data-lang="es">Mil Ojos Diminutos</h3>
+                    <h3 data-lang="ru">Тысяча крошечных глаз</h3>
+                    <p data-lang="en" class="active">A bee&#x27;s compound eye is made up of about 6,900 tiny hexagonal lenses called ommatidia — each one is like a mini eye! Together, they create a mosaic-like image of the world. Bees can see ultraviolet light that is invisible to humans, which reveals secret patterns on flowers. They can also detect polarized light, which helps them navigate using the sun even on cloudy days. The compound eye looks like a tiny honeycomb itself!</p>
+                    <p data-lang="es">El ojo compuesto de una abeja esta formado por unas 6,900 pequenas lentes hexagonales llamadas omatidios — !cada uno es como un mini ojo! Juntos, crean una imagen tipo mosaico del mundo. Las abejas pueden ver luz ultravioleta que es invisible para los humanos, lo que revela patrones secretos en las flores. Tambien pueden detectar luz polarizada, lo que les ayuda a navegar usando el sol incluso en dias nublados.</p>
+                    <p data-lang="ru">Сложный глаз пчелы состоит примерно из 6 900 крошечных шестиугольных линз, называемых омматидиями — каждая как мини-глаз! Вместе они создают мозаичное изображение мира. Пчёлы видят ультрафиолетовый свет, невидимый для людей, который раскрывает тайные узоры на цветах. Они также могут обнаруживать поляризованный свет, что помогает ориентироваться по солнцу даже в пасмурные дни. Сложный глаз сам похож на крошечные соты!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-pollen-basket.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Pollen Shopping Baskets"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Pollen Shopping Baskets</h3>
+                    <h3 data-lang="es">Cestas de Compras de Polen</h3>
+                    <h3 data-lang="ru">Корзинки для пыльцы</h3>
+                    <p data-lang="en" class="active">On each of Buzz&#x27;s back legs, there is a special structure called a corbicula, or pollen basket. It is a smooth, slightly concave area surrounded by stiff curved hairs. As the bee visits flowers, she combs pollen from her fuzzy body and packs it into these baskets using a little bit of nectar as glue. The bright orange or yellow pollen balls on a bee&#x27;s legs can contain pollen from hundreds of different flowers — like a grocery bag full of flower food!</p>
+                    <p data-lang="es">En cada una de las patas traseras de Buzz, hay una estructura especial llamada corbicula, o cesta de polen. Es un area lisa, ligeramente concava, rodeada de pelos curvos y rigidos. Mientras la abeja visita flores, peina el polen de su cuerpo peludo y lo empaca en estas cestas usando un poco de nectar como pegamento. !Las bolas de polen naranja o amarillo brillante en las patas de una abeja pueden contener polen de cientos de flores diferentes!</p>
+                    <p data-lang="ru">На каждой задней ножке Базз есть особая структура — корбикула, или пыльцевая корзинка. Это гладкая, слегка вогнутая область, окружённая жёсткими изогнутыми волосками. Когда пчела посещает цветы, она счёсывает пыльцу со своего пушистого тела и упаковывает её в эти корзинки, используя немного нектара как клей. Яркие оранжевые или жёлтые шарики пыльцы на ножках пчелы могут содержать пыльцу сотен разных цветов!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-honeycomb-hexagon.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Perfect Hexagon"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Perfect Hexagon</h3>
+                    <h3 data-lang="es">El Hexagono Perfecto</h3>
+                    <h3 data-lang="ru">Идеальный шестиугольник</h3>
+                    <p data-lang="en" class="active">Each honeycomb cell is a masterpiece of engineering! The hexagonal shape is mathematically the most efficient way to divide a surface into equal units with the least total perimeter. This means bees use the minimum amount of wax to create the maximum storage space. Each cell is tilted slightly upward at a 13-degree angle to prevent honey from dripping out. The walls are only 0.05 millimeters thick — thinner than a sheet of paper — yet strong enough to hold 25 times their own weight in honey!</p>
+                    <p data-lang="es">!Cada celda del panal es una obra maestra de ingenieria! La forma hexagonal es matematicamente la manera mas eficiente de dividir una superficie en unidades iguales con el menor perimetro total. Esto significa que las abejas usan la cantidad minima de cera para crear el maximo espacio de almacenamiento. Cada celda esta inclinada ligeramente hacia arriba en un angulo de 13 grados para evitar que la miel gotee. !Las paredes tienen solo 0.05 milimetros de grosor pero pueden sostener 25 veces su propio peso en miel!</p>
+                    <p data-lang="ru">Каждая ячейка сот — шедевр инженерии! Шестиугольная форма математически является самым эффективным способом разделить поверхность на равные части с наименьшим общим периметром. Это значит, что пчёлы используют минимум воска для создания максимального пространства хранения. Каждая ячейка слегка наклонена вверх под углом 13 градусов, чтобы мёд не вытекал. Стенки толщиной всего 0,05 миллиметра — тоньше листа бумаги — но достаточно прочные, чтобы выдержать вес мёда в 25 раз больше собственного!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Bee Facts!</h2>
+            <h2 data-lang="es">!Datos Asombrosos sobre Abejas!</h2>
+            <h2 data-lang="ru">Удивительные факты о пчёлах!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-two-million.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Two Million Flowers!"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Two Million Flowers!</h3>
+                        <h3 data-lang="es">!Dos Millones de Flores!</h3>
+                        <h3 data-lang="ru">Два миллиона цветов!</h3>
+                        <p data-lang="en" class="active">To make just one pound of honey, bees must visit about two million flowers and fly over 55,000 miles — that is more than twice around the entire Earth! A single worker bee makes only about one-twelfth of a teaspoon of honey in her entire lifetime. That means the jar of honey in your kitchen is the life&#x27;s work of hundreds of bees. Every drop is precious!</p>
+                        <p data-lang="es">Para hacer solo medio kilo de miel, las abejas deben visitar unos dos millones de flores y volar mas de 88,000 kilometros — !eso es mas de dos vueltas a toda la Tierra! Una sola abeja obrera hace solo alrededor de un doceavo de cucharadita de miel en toda su vida. Eso significa que el frasco de miel en tu cocina es el trabajo de toda la vida de cientos de abejas. !Cada gota es preciosa!</p>
+                        <p data-lang="ru">Чтобы сделать всего полкилограмма мёда, пчёлы должны посетить около двух миллионов цветов и пролететь более 88 000 километров — это больше, чем дважды обогнуть всю Землю! Одна рабочая пчела за всю свою жизнь делает лишь около одной двенадцатой чайной ложки мёда. Это значит, что банка мёда на вашей кухне — это труд всей жизни сотен пчёл. Каждая капля драгоценна!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-waggle-dance.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="The Waggle Dance Language"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">The Waggle Dance Language</h3>
+                        <h3 data-lang="es">El Lenguaje de la Danza del Meneo</h3>
+                        <h3 data-lang="ru">Язык виляющего танца</h3>
+                        <p data-lang="en" class="active">Bees have their own language — and it is a DANCE! When a forager bee finds flowers, she returns to the hive and performs a special waggle dance. The angle of her dance tells other bees the direction relative to the sun. The duration of her waggle tells them the distance. Bees can communicate the location of flowers up to 6 miles away, all through dancing! Karl von Frisch won the Nobel Prize for figuring this out.</p>
+                        <p data-lang="es">Las abejas tienen su propio lenguaje — !y es un BAILE! Cuando una abeja recolectora encuentra flores, regresa a la colmena y realiza una danza especial del meneo. El angulo de su baile les dice a las demas abejas la direccion relativa al sol. La duracion de su meneo les dice la distancia. !Las abejas pueden comunicar la ubicacion de flores hasta a 10 kilometros de distancia, todo a traves del baile! Karl von Frisch gano el Premio Nobel por descubrir esto.</p>
+                        <p data-lang="ru">У пчёл есть свой язык — и это ТАНЕЦ! Когда пчела-собирательница находит цветы, она возвращается в улей и исполняет особый виляющий танец. Угол её танца сообщает другим пчёлам направление относительно солнца. Продолжительность виляния — расстояние. Пчёлы могут сообщить местоположение цветов на расстоянии до 10 километров, и всё это через танец! Карл фон Фриш получил Нобелевскую премию за это открытие.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-hexagons.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Hexagons: Nature&#x27;s Perfect Shape"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Hexagons: Nature&#x27;s Perfect Shape</h3>
+                        <h3 data-lang="es">Hexagonos: La Forma Perfecta de la Naturaleza</h3>
+                        <h3 data-lang="ru">Шестиугольники: идеальная форма природы</h3>
+                        <p data-lang="en" class="active">Bees build their honeycomb using hexagons because they are the most efficient shape in nature! Hexagons fit together perfectly with no gaps and no wasted space. They also use the least amount of wax while holding the most honey. Scientists and engineers copy this design for airplane wings, satellite panels, and building structures. Bees figured out the best engineering solution millions of years before humans did!</p>
+                        <p data-lang="es">!Las abejas construyen su panal usando hexagonos porque son la forma mas eficiente de la naturaleza! Los hexagonos encajan perfectamente sin espacios ni desperdicio. Tambien usan la menor cantidad de cera mientras sostienen la mayor cantidad de miel. Cientificos e ingenieros copian este diseno para alas de aviones, paneles satelitales y estructuras de edificios. !Las abejas descubrieron la mejor solucion de ingenieria millones de anos antes que los humanos!</p>
+                        <p data-lang="ru">Пчёлы строят соты из шестиугольников, потому что это самая эффективная форма в природе! Шестиугольники идеально соединяются без зазоров и пустого пространства. Они также используют наименьшее количество воска, вмещая наибольшее количество мёда. Учёные и инженеры копируют этот дизайн для крыльев самолётов, спутниковых панелей и строительных конструкций. Пчёлы нашли лучшее инженерное решение за миллионы лет до людей!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-ultraviolet.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Seeing Ultraviolet!"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Seeing Ultraviolet!</h3>
+                        <h3 data-lang="es">!Viendo Ultravioleta!</h3>
+                        <h3 data-lang="ru">Видят ультрафиолет!</h3>
+                        <p data-lang="en" class="active">Bees can see colors that are completely invisible to humans! They see ultraviolet light, which means flowers look totally different to bees than they do to us. Many flowers have secret ultraviolet patterns — like bullseyes and landing strips — that guide bees straight to the nectar. A plain yellow flower to us looks like an airport runway to a bee! Bees cannot see the color red, but their ultraviolet vision more than makes up for it.</p>
+                        <p data-lang="es">!Las abejas pueden ver colores que son completamente invisibles para los humanos! Ven la luz ultravioleta, lo que significa que las flores se ven totalmente diferentes para las abejas que para nosotros. Muchas flores tienen patrones ultravioleta secretos — como dianas y pistas de aterrizaje — que guian a las abejas directamente al nectar. !Una flor amarilla simple para nosotros parece una pista de aeropuerto para una abeja! Las abejas no pueden ver el color rojo, pero su vision ultravioleta compensa con creces.</p>
+                        <p data-lang="ru">Пчёлы видят цвета, совершенно невидимые для людей! Они видят ультрафиолетовый свет, а значит, цветы выглядят для пчёл совсем иначе, чем для нас. У многих цветов есть секретные ультрафиолетовые узоры — мишени и посадочные полосы — которые направляют пчёл прямо к нектару. Простой жёлтый цветок для нас выглядит как взлётная полоса для пчелы! Пчёлы не видят красный цвет, но их ультрафиолетовое зрение с лихвой это компенсирует.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the sweetest teamwork in the animal kingdom</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando el trabajo en equipo mas dulce del reino animal</p>
+        <p data-lang="ru" style="margin-top: 10px;">Празднуя самую сладкую командную работу в животном мире</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

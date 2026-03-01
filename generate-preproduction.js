@@ -31,8 +31,12 @@ const {
     createGeminiClient,
     geminiTextToImage,
     geminiMultiRefGenerate,
+    geminiVerify,
     ROOT
 } = require('./automation/image-utils');
+const logger = require('./automation/logger');
+const promptSanitizer = require('./automation/prompt-sanitizer');
+const promptHistory = require('./automation/prompt-history');
 
 // ── Pixar Base + Composable Mood Labels ────────────────────────────
 
@@ -575,6 +579,37 @@ ${feedbackLine}`;
                 fs.writeFileSync(outputPath, buffer);
                 console.log(`   Generated: ${char.id}/sheet-v${version}.jpg (${(buffer.length / 1024).toFixed(0)} KB)`);
 
+                // QA check on character sheet
+                let qaPass = true;
+                try {
+                    const qaResult = await geminiVerify(this.ai, outputPath,
+                        `Check this character design sheet: 1) Is the character clearly visible and well-drawn? 2) Are there multiple views/angles shown? 3) Is the art quality good (no distortion, artifacts, or text)? 4) Are the character's unique features clearly visible?`);
+                    if (!qaResult.pass) {
+                        console.log(`   QA: FAIL — ${qaResult.reason}`);
+                        qaPass = false;
+                        promptHistory.record({
+                            image: outputPath, chapter: this.chapter, sectionId: char.id,
+                            attempt: version, service: 'gemini',
+                            original: prompt, sanitized: prompt,
+                            wasSanitized: false, sanitizeMethod: 'none', triggeredPatterns: [],
+                            outcome: 'qa_failed', error: qaResult.reason, qaResult,
+                            durationMs: 0
+                        });
+                    } else {
+                        console.log(`   QA: PASS — ${qaResult.reason}`);
+                        promptHistory.record({
+                            image: outputPath, chapter: this.chapter, sectionId: char.id,
+                            attempt: version, service: 'gemini',
+                            original: prompt, sanitized: prompt,
+                            wasSanitized: false, sanitizeMethod: 'none', triggeredPatterns: [],
+                            outcome: 'success', error: null, qaResult,
+                            durationMs: 0
+                        });
+                    }
+                } catch (qaErr) {
+                    console.log(`   QA check skipped: ${qaErr.message}`);
+                }
+
                 // Only update config after successful generation
                 charConfig.attempts = version;
                 charConfig.status = 'generated';
@@ -658,6 +693,11 @@ ${feedbackLine}`;
         console.log(`   Using ${refPaths.length} character sheet(s) as reference`);
 
         const testScene = this._pickTestScene();
+        // Sanitize the test scene action to avoid content filter triggers
+        const sanitizeResult = await promptSanitizer.sanitize(testScene.action);
+        if (sanitizeResult.wasModified) {
+            testScene.action = sanitizeResult.sanitized;
+        }
         console.log(`   Test scene: "${testScene.title}"`);
         console.log(`   ${testScene.action}\n`);
 
@@ -691,6 +731,26 @@ ${feedbackLine}`;
                 if (buffer) {
                     fs.writeFileSync(outputPath, buffer);
                     console.log(` done (${(buffer.length / 1024).toFixed(0)} KB)`);
+
+                    // QA check on style proposal
+                    try {
+                        const qaResult = await geminiVerify(this.ai, outputPath,
+                            `Check this illustration for quality: 1) Is the image well-rendered with good quality? 2) Are the characters consistent with their reference sheets? 3) No text artifacts, distortion, or visual glitches? 4) Does the mood/lighting match a professional children's book style?`);
+                        const status = qaResult.pass ? 'PASS' : 'FAIL';
+                        console.log(`      QA: ${status} — ${qaResult.reason}`);
+                        promptHistory.record({
+                            image: outputPath, chapter: this.chapter, sectionId: `style-${proposal.id}`,
+                            attempt: 1, service: 'gemini',
+                            original: testScene.action, sanitized: testScene.action,
+                            wasSanitized: sanitizeResult.wasModified, sanitizeMethod: sanitizeResult.method || 'none',
+                            triggeredPatterns: sanitizeResult.triggeredPatterns || [],
+                            outcome: qaResult.pass ? 'success' : 'qa_failed',
+                            error: qaResult.pass ? null : qaResult.reason, qaResult,
+                            durationMs: 0
+                        });
+                    } catch (qaErr) {
+                        console.log(`      QA skipped: ${qaErr.message}`);
+                    }
                 } else {
                     console.log(` no image returned`);
                 }
@@ -1352,6 +1412,8 @@ ${feedbackLine}`;
     // ── Main Orchestration ───────────────────────────────────────
 
     async run(startStep, feedback, { autoApprove = false } = {}) {
+        const _logTaskId = logger.taskStart(`Preproduction: ${this.chapter}`);
+
         console.log(`\n${'='.repeat(50)}`);
         console.log(`  PRE-PRODUCTION: ${this.chapterData.meta?.title?.en || this.chapter}`);
         console.log('='.repeat(50));
@@ -1368,14 +1430,17 @@ ${feedbackLine}`;
         if (step <= 0) {
             await this.runStep0(step === 0 ? feedback : null);
             if (autoApprove && this.config.step0?.status === 'generated') this.approveStep(0);
+            logger.event('milestone', 'Step 0 complete (storyline)', { chapter: this.chapter });
         }
         if (step <= 1) {
             await this.runStep1(step === 1 ? feedback : null);
             if (autoApprove && this.config.step1.status === 'generated') this.approveStep(1);
+            logger.event('milestone', 'Step 1 complete (unified sheet)', { chapter: this.chapter });
         }
         if (step <= 2) {
             await this.runStep2(step === 2 ? feedback : null);
             if (autoApprove && this.config.step2.status === 'generated') this.approveStep(2);
+            logger.event('milestone', 'Step 2 complete (character sheets)', { chapter: this.chapter });
         }
         if (step <= 3) {
             await this.runStep3();
@@ -1390,11 +1455,16 @@ ${feedbackLine}`;
             this.config.step2.status === 'approved' &&
             this.config.step3.status === 'approved') {
             this.packageApproved();
+            logger.event('milestone', 'Preproduction packaged', { chapter: this.chapter });
         }
+
+        logger.taskEnd(_logTaskId, { chapter: this.chapter, steps: 4 });
 
         // Always generate review HTML at the end
         const htmlPath = this.generateReviewHTML();
-        try { execSync(`open "${htmlPath}"`, { stdio: 'ignore' }); } catch {}
+        if (!autoApprove) {
+            try { execSync(`open "${htmlPath}"`, { stdio: 'ignore' }); } catch {}
+        }
     }
 
     _nextPendingStep() {

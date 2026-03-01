@@ -7,6 +7,7 @@ const RecursiveImageGenerator = require('./automation/recursive-image-generator'
 const ChapterBuilder = require('./automation/chapter-builder');
 const ReportGenerator = require('./automation/report-generator');
 const PromptArchiver = require('./automation/prompt-archiver');
+const logger = require('./automation/logger');
 
 /**
  * Parse CLI arguments.
@@ -218,6 +219,8 @@ async function runRecursiveGeneration(chapterName) {
     console.log(`\n🐻 Starting Recursive Chapter Generation: ${chapter}`);
     console.log('=' .repeat(60));
 
+    const _logTaskId = logger.taskStart(`Image generation: ${chapter}`);
+
     const yamlPath = path.join(__dirname, 'chapters', `${chapter}.yaml`);
     const outputDir = path.join(__dirname, chapter);
 
@@ -262,7 +265,14 @@ async function runRecursiveGeneration(chapterName) {
 
             console.log('\n📖 To view the generated chapter:');
             console.log(`   open "${path.join(outputDir, 'index.html')}"`);
+
+            logger.taskEnd(_logTaskId, {
+                generated: results.success || 0,
+                skipped: results.skipped || 0,
+                failed: results.failed || 0
+            });
         } else {
+            logger.taskEnd(_logTaskId, { generated: 0, failed: true });
             console.error('\n❌ No images were generated successfully');
         }
 
@@ -270,6 +280,7 @@ async function runRecursiveGeneration(chapterName) {
         // Still generate report on failure
         report.recordError(error.message);
         report.generate(outputDir);
+        logger.taskEnd(_logTaskId, { error: error.message });
         console.error('\n❌ Generation failed:', error.message);
         process.exit(1);
     }

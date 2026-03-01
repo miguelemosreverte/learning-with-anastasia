@@ -1,0 +1,481 @@
+# Lions Chapter Definition - Kings of the Savanna (Child-Friendly)
+meta:
+  id: lions
+  issueNumber: 13
+  date: "February 2026"
+  folderName: "lions"
+  title:
+    en: "Lions: Kings of the Savanna"
+    es: "Leones: Reyes de la Sabana"
+    ru: "Львы: Короли Саванны"
+  subtitle:
+    en: "A Family of Roars, Naps, and Mighty Love"
+    es: "Una Familia de Rugidos, Siestas y Amor Poderoso"
+    ru: "Семья рыков, снов и могучей любви"
+  magazineText:
+    en: "Meet Kazi the magnificent lion father and his family! Follow cubs Taji and Zuri as they learn to stalk, play-fight, and roar across the golden African savanna. Discover how Mama Dalila hunts for the family, how Papa Kazi protects them all with his mighty roar, and why lions are the only cats that live in families called prides!"
+    es: "¡Conoce a Kazi, el magnífico padre león, y a su familia! Sigue a los cachorros Taji y Zuri mientras aprenden a acechar, jugar a pelear y rugir por la dorada sabana africana. ¡Descubre cómo Mamá Dalila caza para la familia, cómo Papá Kazi los protege a todos con su poderoso rugido, y por qué los leones son los únicos felinos que viven en familias llamadas manadas!"
+    ru: "Познакомьтесь с Кази, великолепным отцом-львом, и его семьёй! Следуйте за львятами Таджи и Зури, пока они учатся выслеживать добычу, играть в бой и рычать по золотистой африканской саванне. Узнайте, как Мама Далила охотится для семьи, как Папа Кази защищает всех своим могучим рыком, и почему львы — единственные кошки, живущие семьями, называемыми прайдами!"
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Celebrating the mightiest family on the African savanna"
+    es: "Celebrando la familia más poderosa de la sabana africana"
+    ru: "Самая могучая семья африканской саванны"
+  description: "Follow the lion pride through a day on the African savanna — from Papa Kazi's mighty roar to cubs Taji and Zuri learning to stalk, hunt, and grow up in the warmth of their family"
+  preface:
+    en:
+      - "Welcome to the golden African savanna, where the most magnificent family in the animal kingdom lives — the lions! Lions are the only cats that live together in big families called prides, and every member has an important job to do."
+      - "In this adventure, you'll meet Papa Kazi with his enormous dark mane, Mama Dalila the greatest huntress on the plains, and their two playful cubs, Taji and Zuri. Together, they'll show you what it means to be part of a pride — a family that roars together, naps together, and loves together!"
+      - "Did you know that lions sleep up to 20 hours a day? Or that a lion's roar can be heard from 5 miles away? Get ready to discover all the amazing secrets of the kings and queens of the savanna!"
+    es:
+      - "¡Bienvenidos a la dorada sabana africana, donde vive la familia más magnífica del reino animal — los leones! Los leones son los únicos felinos que viven juntos en grandes familias llamadas manadas, y cada miembro tiene un trabajo importante."
+      - "En esta aventura conocerás a Papá Kazi con su enorme melena oscura, a Mamá Dalila, la mejor cazadora de las llanuras, y a sus dos juguetones cachorros, Taji y Zuri. ¡Juntos te mostrarán lo que significa ser parte de una manada — una familia que ruge junta, duerme junta y se ama junta!"
+      - "¿Sabías que los leones duermen hasta 20 horas al día? ¿O que el rugido de un león se puede escuchar a 8 kilómetros de distancia? ¡Prepárate para descubrir todos los secretos asombrosos de los reyes y reinas de la sabana!"
+    ru:
+      - "Добро пожаловать в золотистую африканскую саванну, где живёт самая великолепная семья в животном мире — львы! Львы — единственные кошки, которые живут вместе большими семьями, называемыми прайдами, и у каждого члена есть важная роль."
+      - "В этом приключении вы познакомитесь с Папой Кази и его огромной тёмной гривой, Мамой Далилой — лучшей охотницей равнин, и их двумя игривыми львятами, Таджи и Зури. Вместе они покажут вам, что значит быть частью прайда — семьи, которая рычит вместе, спит вместе и любит вместе!"
+      - "Вы знали, что львы спят до 20 часов в день? Или что рык льва слышен за 8 километров? Приготовьтесь узнать все удивительные секреты королей и королев саванны!"
+
+hero:
+  title:
+    en: "Lions"
+    es: "Leones"
+    ru: "Львы"
+  subtitle:
+    en: "Kings of the Savanna"
+    es: "Reyes de la Sabana"
+    ru: "Короли Саванны"
+  image: "hero-savanna.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "Vast golden African savanna at sunrise with acacia trees silhouetted against a warm orange sky, tall golden grass swaying in the breeze, distant mountains on the horizon"
+    es: "Vasta sabana africana dorada al amanecer con acacias silueteadas contra un cálido cielo naranja, hierba alta dorada mecida por la brisa, montañas distantes en el horizonte"
+    ru: "Бескрайняя золотистая африканская саванна на рассвете с силуэтами акаций на фоне тёплого оранжевого неба, высокая золотая трава колышется на ветру, далёкие горы на горизонте"
+
+sections:
+  # Meet Papa Kazi
+  - id: meet-kazi
+    generate_character: true
+    mood: [epic-skies, golden-hour]
+    title:
+      en: "Meet Papa Kazi, the Mighty King"
+      es: "Conoce a Papá Kazi, el Rey Poderoso"
+      ru: "Знакомьтесь: Папа Кази, могучий король"
+    content:
+      en: "Standing on a rocky hill overlooking the golden savanna, Papa Kazi is the most magnificent lion you have ever seen! His huge dark brown mane flows around his face like a crown, making him look twice as big as he already is — and he is BIG. His golden amber eyes see everything — every bird, every rustle in the grass. When Kazi yawns, you can see teeth as long as your fingers! But don't worry — this mighty king has the gentlest heart. 'My job,' he rumbles in his deep voice, 'is to keep my family safe. And I always will.'"
+      es: "¡De pie en una colina rocosa sobre la dorada sabana, Papá Kazi es el león más magnífico que hayas visto! Su enorme melena marrón oscura fluye alrededor de su cara como una corona, haciéndolo parecer el doble de grande de lo que ya es — y es MUY grande. Sus ojos dorados de ámbar lo ven todo — cada pájaro, cada susurro en la hierba. ¡Cuando Kazi bosteza, puedes ver dientes tan largos como tus dedos! Pero no te preocupes — este poderoso rey tiene el corazón más tierno. 'Mi trabajo,' retumba con su voz profunda, 'es mantener a mi familia a salvo. Y siempre lo haré.'"
+      ru: "Стоя на скалистом холме над золотой саванной, Папа Кази — самый великолепный лев, которого вы когда-либо видели! Его огромная тёмно-коричневая грива обрамляет лицо как корона, делая его вдвое больше, чем он уже есть — а он ОГРОМНЫЙ. Его золотисто-янтарные глаза видят всё — каждую птицу, каждый шорох в траве. Когда Кази зевает, видны зубы длиной с ваши пальцы! Но не волнуйтесь — у этого могучего короля самое нежное сердце. 'Моя работа,' рокочет он глубоким голосом, 'защищать мою семью. И я всегда буду.'"
+    image: "kazi-portrait.jpg"
+    imageAlt:
+      en: "Magnificent male lion with huge dark brown mane standing proudly on a rocky hill, golden amber eyes, powerful muscular build, golden savanna stretching behind him at sunrise"
+      es: "Magnífico león macho con enorme melena marrón oscura de pie orgullosamente en una colina rocosa, ojos dorados de ámbar, constitución poderosa y musculosa, sabana dorada extendiéndose detrás al amanecer"
+      ru: "Великолепный лев-самец с огромной тёмно-коричневой гривой, гордо стоящий на скалистом холме, золотисто-янтарные глаза, мощное мускулистое тело, золотая саванна простирается позади на рассвете"
+
+  # Meet Mama Dalila
+  - id: meet-dalila
+    generate_character: true
+    mood: [golden-hour, soft-intimate]
+    use_character: "${meet-kazi.image}"
+    action: "sleek golden lioness with athletic muscular build and a small notch on her left ear, standing in tall golden savanna grass in a hunting stance — low, focused, powerful. A magnificent male lion with a huge dark brown mane watches from a distance behind her. Warm golden hour light, African savanna with acacia trees"
+    title:
+      en: "Mama Dalila, the Great Huntress"
+      es: "Mamá Dalila, la Gran Cazadora"
+      ru: "Мама Далила, великая охотница"
+    content:
+      en: "While Papa Kazi is the biggest and loudest, Mama Dalila is the cleverest and fastest. She is a sleek, golden lioness with strong muscles that ripple under her smooth fur. See that little notch on her left ear? She got that from a brave hunt long ago, and she wears it proudly. Dalila can sneak through the tall grass without making a single sound. She can run as fast as a car on a neighborhood street! 'Being strong isn't just about roaring,' she tells the cubs. 'It's about being smart, patient, and working together.'"
+      es: "Mientras Papá Kazi es el más grande y ruidoso, Mamá Dalila es la más lista y rápida. Es una leona dorada y esbelta con músculos fuertes que se marcan bajo su suave pelaje. ¿Ves esa pequeña muesca en su oreja izquierda? La obtuvo en una valiente cacería hace mucho tiempo, y la lleva con orgullo. Dalila puede deslizarse por la hierba alta sin hacer un solo sonido. ¡Puede correr tan rápido como un auto en una calle residencial! 'Ser fuerte no se trata solo de rugir,' les dice a los cachorros. 'Se trata de ser inteligente, paciente y trabajar juntos.'"
+      ru: "Пока Папа Кази — самый большой и громкий, Мама Далила — самая умная и быстрая. Она стройная, золотистая львица с сильными мускулами, которые перекатываются под гладкой шерстью. Видите маленькую зарубку на её левом ухе? Она получила её на храброй охоте давным-давно и носит с гордостью. Далила может красться по высокой траве, не издав ни звука. Она бежит так быстро, как машина на городской улице! 'Быть сильным — это не только рычать,' говорит она львятам. 'Это значит быть умным, терпеливым и работать вместе.'"
+    image: "dalila-portrait.jpg"
+    imageAlt:
+      en: "Sleek golden lioness in hunting stance in tall savanna grass, athletic muscular build, small notch on left ear, warm focused eyes, golden hour light"
+      es: "Esbelta leona dorada en postura de caza en la hierba alta de la sabana, constitución atlética y musculosa, pequeña muesca en la oreja izquierda, ojos cálidos y enfocados, luz de hora dorada"
+      ru: "Стройная золотистая львица в охотничьей стойке в высокой траве саванны, атлетическое мускулистое тело, маленькая зарубка на левом ухе, тёплые сосредоточенные глаза, свет золотого часа"
+
+  # Meet the Cubs
+  - id: meet-cubs
+    generate_character: true
+    mood: [soft-intimate, golden-hour]
+    use_characters: ["${meet-kazi.image}", "${meet-dalila.image}"]
+    action: "two adorable lion cubs playing together in golden savanna grass — one slightly larger male cub with lighter golden fur and visible faint spots, oversized paws, tumbling playfully; one slightly smaller female cub with darker golden fur, pouncing bravely. A magnificent male lion with huge dark brown mane and a sleek golden lioness with notched left ear watch them lovingly from nearby shade of an acacia tree. Warm golden light, African savanna"
+    title:
+      en: "Cubs at Play: Taji and Zuri!"
+      es: "¡Cachorros Jugando: Taji y Zuri!"
+      ru: "Львята играют: Таджи и Зури!"
+    content:
+      en: "POUNCE! TUMBLE! ROLL! Meet Taji and Zuri, the two funniest, bounciest lion cubs on the entire savanna! Taji is the bigger one — his golden fur still has faint baby spots, and his paws are ENORMOUS compared to his body. He hasn't grown into them yet! He's always getting into trouble, sneaking up on butterflies and falling over his own big feet. Little Zuri is smaller but OH so brave! She has darker golden fur and she is always trying to keep up with the grown-ups. Right now, she's pounced on Taji's tail and WON'T let go! 'That's MY tail!' Taji squeals, and they both tumble into a giggling heap."
+      es: "¡SALTO! ¡VOLTERETA! ¡RUEDO! ¡Conoce a Taji y Zuri, los dos cachorros de león más graciosos y saltarines de toda la sabana! Taji es el más grande — su pelaje dorado todavía tiene tenues manchas de bebé, y sus patas son ENORMES comparadas con su cuerpo. ¡Todavía no les ha dado alcance! Siempre se mete en problemas, acechando mariposas y tropezando con sus propias patas grandes. ¡La pequeña Zuri es más chiquita pero MUY valiente! Tiene pelaje dorado más oscuro y siempre intenta seguir el paso de los grandes. ¡Ahora mismo ha saltado sobre la cola de Taji y NO la suelta! '¡Esa es MI cola!' chilla Taji, y ambos caen en un montón de risitas."
+      ru: "ПРЫГ! КУВЫРК! КАТИСЬ! Познакомьтесь с Таджи и Зури — двумя самыми смешными и прыгучими львятами во всей саванне! Таджи покрупнее — на его золотистой шерсти ещё видны бледные детские пятнышки, а лапы ОГРОМНЫЕ по сравнению с телом. Он ещё не дорос до них! Он вечно попадает в переделки, подкрадывается к бабочкам и спотыкается о собственные большие лапы. Маленькая Зури поменьше, но О какая храбрая! У неё более тёмная золотистая шерсть, и она всегда пытается угнаться за взрослыми. Прямо сейчас она вцепилась в хвост Таджи и НЕ отпускает! 'Это МОЙ хвост!' визжит Таджи, и оба кубарем валятся в хохочущую кучу."
+    image: "cubs-playing.jpg"
+    imageAlt:
+      en: "Two adorable lion cubs tumbling and playing in golden savanna grass, one larger with faint spots and big paws, one smaller and darker, parents watching from shade of acacia tree"
+      es: "Dos adorables cachorros de león rodando y jugando en la hierba dorada de la sabana, uno más grande con manchas tenues y patas grandes, otro más pequeño y oscuro, padres observando desde la sombra de un árbol de acacia"
+      ru: "Два очаровательных львёнка кувыркаются и играют в золотой траве саванны, один крупнее с бледными пятнышками и большими лапами, другой поменьше и темнее, родители наблюдают из тени акации"
+
+  # Learning to Stalk
+  - id: learning-to-stalk
+    mood: [golden-hour]
+    use_characters: ["${meet-dalila.image}", "${meet-cubs.image}"]
+    action: "golden lioness mother crouching low in tall savanna grass teaching two lion cubs to stalk — the cubs trying to copy her low hunting posture, one cub doing it well while the other has its bottom sticking up comically. Warm afternoon light, African savanna with distant acacia trees"
+    title:
+      en: "Learning to Stalk"
+      es: "Aprendiendo a Acechar"
+      ru: "Учимся подкрадываться"
+    content:
+      en: "'Lesson one,' Mama Dalila whispers. 'Get LOW.' She sinks into the golden grass until she's nearly invisible. Only her eyes peek above the tips of the grass, watching. 'Now you try.' Zuri drops down perfectly — her darker fur blends right into the shadows. 'Excellent, Zuri!' Mama purrs. Taji tries too, but his big bottom sticks up like a golden hill. A bird lands right on it! 'Taji!' Zuri giggles. 'You're supposed to be HIDING!' Taji grins his goofy grin. 'I was testing if the bird would notice. It's... research!' Mama laughs softly. 'Practice makes perfect, my darlings.'"
+      es: "'Lección uno,' susurra Mamá Dalila. 'Agáchense BIEN.' Se hunde en la hierba dorada hasta quedar casi invisible. Solo sus ojos se asoman por encima de las puntas de la hierba. 'Ahora inténtenlo.' Zuri se agacha perfectamente — su pelaje más oscuro se funde con las sombras. '¡Excelente, Zuri!' ronronea Mamá. Taji también lo intenta, pero su gran trasero sobresale como una colina dorada. ¡Un pájaro se posa encima! '¡Taji!' se ríe Zuri. '¡Se supone que debes ESCONDERTE!' Taji sonríe con su sonrisa tontita. 'Estaba probando si el pájaro notaría. Es... ¡investigación!'"
+      ru: "'Урок первый,' шепчет Мама Далила. 'Ниже.' Она опускается в золотую траву, пока не становится почти невидимой. Только глаза выглядывают над кончиками травинок. 'Теперь вы.' Зури приседает идеально — её тёмная шерсть сливается с тенями. 'Отлично, Зури!' мурлычет Мама. Таджи тоже пытается, но его большая попа торчит как золотой холмик. Птичка садится прямо на неё! 'Таджи!' хихикает Зури. 'Ты должен ПРЯТАТЬСЯ!' Таджи ухмыляется своей глупой улыбкой. 'Я проверял, заметит ли птица. Это... исследование!'"
+    image: "learning-to-stalk.jpg"
+
+  # The Great Hunt
+  - id: the-great-hunt
+    mood: [epic-skies, golden-hour]
+    use_characters: ["${meet-dalila.image}"]
+    action: "powerful golden lioness sprinting at full speed through golden savanna grass, muscles rippling, dust kicking up behind her, small notch visible on left ear, intense focused eyes, dramatic golden hour lighting with dust particles glowing in the air, African savanna landscape"
+    title:
+      en: "Mama's Amazing Hunt!"
+      es: "¡La Increíble Cacería de Mamá!"
+      ru: "Потрясающая охота Мамы!"
+    content:
+      en: "Today, the cubs get to WATCH Mama hunt for the very first time! They hide in the tall grass with Papa Kazi, eyes wide. Mama Dalila creeps through the grass, so low and so quiet, she's like a golden shadow. Step... step... step... Then — WHOOOOSH! Mama EXPLODES forward like a golden rocket! Her powerful legs eat up the ground. Dust flies everywhere! She's SO FAST! The cubs' mouths drop open. 'Is Mama FLYING?!' Taji gasps. Papa chuckles proudly. 'Your mother is the finest huntress in all the land. She feeds our whole family with her skill and bravery.'"
+      es: "¡Hoy los cachorros pueden VER a Mamá cazar por primera vez! Se esconden en la hierba alta con Papá Kazi, ojos bien abiertos. Mamá Dalila se arrastra por la hierba, tan baja y tan silenciosa, como una sombra dorada. Paso... paso... paso... ¡Entonces — FUUUUSH! ¡Mamá EXPLOTA hacia adelante como un cohete dorado! Sus poderosas patas devoran el suelo. ¡El polvo vuela por todas partes! ¡Es TAN RÁPIDA! Las bocas de los cachorros se abren. '¿¡Mamá está VOLANDO?!' jadea Taji. Papá se ríe orgulloso. 'Su madre es la mejor cazadora de toda la tierra.'"
+      ru: "Сегодня львята впервые СМОТРЯТ, как Мама охотится! Они прячутся в высокой траве с Папой Кази, глаза широко открыты. Мама Далила крадётся по траве, так низко и так тихо, что она как золотая тень. Шаг... шаг... шаг... И — ВЖУУУХ! Мама ВЗРЫВАЕТСЯ вперёд как золотая ракета! Её мощные лапы пожирают землю. Пыль летит повсюду! Она ТАКАЯ быстрая! У львят отвисают челюсти. 'Мама ЛЕТИТ?!' задыхается Таджи. Папа горделиво хмыкает. 'Ваша мать — лучшая охотница во всей округе.'"
+    image: "dalila-hunting.jpg"
+    imageAlt:
+      en: "Powerful golden lioness sprinting at full speed through golden savanna grass, muscles rippling, dust flying, intense focused expression, dramatic golden hour light"
+      es: "Poderosa leona dorada corriendo a toda velocidad por la hierba dorada de la sabana, músculos ondeando, polvo volando, expresión intensa y enfocada, luz dramática de hora dorada"
+      ru: "Мощная золотистая львица мчится на полной скорости по золотой траве саванны, мускулы перекатываются, пыль летит, сосредоточенный взгляд, драматичный свет золотого часа"
+
+  # Kazi's Mighty Roar
+  - id: mighty-roar
+    mood: [epic-skies]
+    use_characters: ["${meet-kazi.image}"]
+    action: "magnificent male lion with huge dark brown mane roaring powerfully at golden sunset, mouth wide open showing teeth, mane blowing in the wind, standing on rocky outcrop overlooking vast savanna, dramatic orange and purple sky, dust and wind swirling around him, epic powerful moment"
+    title:
+      en: "The Mightiest Roar!"
+      es: "¡El Rugido Más Poderoso!"
+      ru: "Самый могучий рык!"
+    content:
+      en: "As the sun turns the sky orange and purple, Papa Kazi climbs to the highest rock. He takes a DEEP breath, his enormous chest expanding, his great dark mane bristling in the wind. Then — RRRROOOOAAARRR! The ground seems to SHAKE! Birds scatter! The grass RIPPLES! Papa's roar rolls across the savanna like thunder, on and on and on. It can be heard FIVE MILES away! 'AGAIN! AGAIN!' the cubs cheer. Taji tries his own roar — 'Mew!' Zuri tries too — 'Mip!' Papa laughs so hard his mane shakes. 'Don't worry, little ones. Your roars will come. And they will be MIGHTY.'"
+      es: "Cuando el sol tiñe el cielo de naranja y púrpura, Papá Kazi sube a la roca más alta. Toma una respiración PROFUNDA, su enorme pecho expandiéndose, su gran melena oscura erizándose en el viento. ¡Entonces — RRRROOOOAAARRR! ¡El suelo parece TEMBLAR! ¡Los pájaros huyen! ¡La hierba ONDULA! El rugido de Papá rueda por la sabana como un trueno. ¡Se puede escuchar a OCHO KILÓMETROS! '¡OTRA VEZ! ¡OTRA VEZ!' animan los cachorros. Taji intenta su propio rugido — '¡Miu!' Zuri también — '¡Mip!' Papá se ríe tanto que su melena tiembla. 'No se preocupen, pequeños. Sus rugidos vendrán. Y serán PODEROSOS.'"
+      ru: "Когда солнце окрашивает небо в оранжевый и пурпурный, Папа Кази поднимается на самую высокую скалу. Он делает ГЛУБОКИЙ вдох, его огромная грудь расширяется, великая тёмная грива встаёт дыбом на ветру. И — РРРООООААААРРР! Земля, кажется, ДРОЖИТ! Птицы разлетаются! Трава ВОЛНУЕТСЯ! Рык Папы катится по саванне как гром, дальше и дальше. Его слышно за ВОСЕМЬ КИЛОМЕТРОВ! 'ЕЩЁ! ЕЩЁ!' кричат львята. Таджи пробует свой рык — 'Мяу!' Зури тоже — 'Мип!' Папа смеётся так, что грива трясётся. 'Не волнуйтесь, малыши. Ваши рыки придут. И они будут МОГУЧИМИ.'"
+    image: "kazi-roaring.jpg"
+    imageAlt:
+      en: "Magnificent male lion roaring powerfully on rocky outcrop at sunset, huge dark brown mane blowing in wind, dramatic orange and purple sky behind"
+      es: "Magnífico león macho rugiendo poderosamente en un promontorio rocoso al atardecer, enorme melena marrón oscura al viento, dramático cielo naranja y púrpura detrás"
+      ru: "Великолепный лев-самец могуче рычит на скалистом выступе на закате, огромная тёмно-коричневая грива развевается на ветру, драматичное оранжево-пурпурное небо позади"
+
+  # Nap Time
+  - id: nap-time
+    mood: [soft-intimate]
+    use_characters: ["${meet-kazi.image}", "${meet-dalila.image}", "${meet-cubs.image}"]
+    action: "entire lion family sleeping together in warm shade under a large acacia tree — magnificent male lion with dark brown mane sprawled on his back with two small cubs curled up on his belly, sleek golden lioness with notched ear sleeping close beside them, all peaceful and adorable, dappled golden light filtering through acacia leaves, African savanna"
+    title:
+      en: "The Great Big Nap"
+      es: "La Gran Siesta"
+      ru: "Великий сон"
+    content:
+      en: "If there's one thing lions are CHAMPIONS at, it's SLEEPING! Lions sleep up to TWENTY hours a day — that's almost the whole day! And the way they sleep is the cutest thing ever. Papa Kazi lies on his back under the big acacia tree, his huge paws in the air, snoring like a rumbling engine. Taji is curled up right on Papa's fluffy belly, rising and falling with each giant breath. Zuri is tucked between Mama and Papa, purring in her sleep. Mama Dalila has her paw draped gently over both cubs. One big, warm, furry pile of love. 'Shhhh,' the wind whispers. 'The kings are sleeping.'"
+      es: "¡Si hay algo en lo que los leones son CAMPEONES, es en DORMIR! Los leones duermen hasta VEINTE horas al día — ¡eso es casi todo el día! Y la forma en que duermen es lo más tierno del mundo. Papá Kazi yace boca arriba bajo la gran acacia, sus enormes patas en el aire, roncando como un motor. Taji está acurrucado sobre la barriguita peluda de Papá, subiendo y bajando con cada respiración gigante. Zuri está encajada entre Mamá y Papá, ronroneando dormida. Mamá Dalila tiene su pata suavemente sobre ambos cachorros. Un gran montón cálido y peludo de amor. 'Shhhh,' susurra el viento. 'Los reyes están durmiendo.'"
+      ru: "Если и есть то, в чём львы — ЧЕМПИОНЫ, так это СОН! Львы спят до ДВАДЦАТИ часов в день — это почти весь день! И то, как они спят — самое милое на свете. Папа Кази лежит на спине под большой акацией, огромные лапы в воздухе, храпит как мотор. Таджи свернулся прямо на пушистом животе Папы, поднимаясь и опускаясь с каждым гигантским вдохом. Зури устроилась между Мамой и Папой, мурлыча во сне. Мама Далила нежно положила лапу на обоих львят. Одна большая, тёплая, пушистая куча любви. 'Тшшш,' шепчет ветер. 'Короли спят.'"
+    image: "family-napping.jpg"
+
+  # The Watering Hole
+  - id: watering-hole
+    mood: [golden-hour, lush-botanical]
+    use_characters: ["${meet-kazi.image}", "${meet-dalila.image}", "${meet-cubs.image}"]
+    action: "lion family drinking water together at a beautiful African watering hole at sunset — magnificent male lion with dark brown mane, sleek golden lioness with notched ear, and two small cubs, all side by side lapping water, their reflections visible in the still water. Zebras and giraffes visible in the far background keeping safe distance. Golden sunset light, acacia trees silhouetted"
+    title:
+      en: "The Watering Hole"
+      es: "El Abrevadero"
+      ru: "Водопой"
+    content:
+      en: "When the afternoon heat cools, the whole family walks to the watering hole. It's like the neighborhood park of the savanna — everyone comes here! Papa Kazi walks in front, his dark mane swaying. The zebras and giraffes see him coming and step back politely. 'Good evening, Kazi!' a giraffe nods from a safe distance. At the water's edge, the whole family drinks together — lap, lap, lap. Taji sees his reflection and POUNCES on it — SPLASH! He's soaking wet. 'I caught a lion!' he announces proudly. Everyone laughs — even the zebras."
+      es: "Cuando el calor de la tarde se enfría, toda la familia camina al abrevadero. ¡Es como el parque del vecindario de la sabana — todos vienen aquí! Papá Kazi camina al frente, su melena oscura balanceándose. Las cebras y jirafas lo ven venir y se apartan educadamente. '¡Buenas tardes, Kazi!' asiente una jirafa desde una distancia segura. En la orilla del agua, toda la familia bebe junta — lap, lap, lap. Taji ve su reflejo y ¡SALTA sobre él — SPLASH! Está empapado. '¡Atrapé un león!' anuncia orgulloso. Todos se ríen — hasta las cebras."
+      ru: "Когда послеобеденная жара спадает, вся семья идёт к водопою. Это как парк по соседству в саванне — все приходят сюда! Папа Кази идёт впереди, его тёмная грива покачивается. Зебры и жирафы видят его и вежливо отступают. 'Добрый вечер, Кази!' кивает жираф с безопасного расстояния. У кромки воды вся семья пьёт вместе — лакать, лакать, лакать. Таджи видит своё отражение и ПРЫГАЕТ на него — ВСПЛЕСК! Он весь мокрый. 'Я поймал льва!' объявляет он гордо. Все смеются — даже зебры."
+    image: "watering-hole.jpg"
+    imageAlt:
+      en: "Lion family drinking together at African watering hole at sunset, reflections in still water, zebras and giraffes in distant background, golden light, acacia tree silhouettes"
+      es: "Familia de leones bebiendo juntos en un abrevadero africano al atardecer, reflejos en el agua quieta, cebras y jirafas en el fondo distante, luz dorada, siluetas de acacias"
+      ru: "Семья львов пьёт вместе у африканского водопоя на закате, отражения в тихой воде, зебры и жирафы на дальнем фоне, золотой свет, силуэты акаций"
+
+  # Night Patrol
+  - id: night-patrol
+    mood: [epic-skies]
+    use_characters: ["${meet-kazi.image}"]
+    action: "magnificent male lion with huge dark brown mane patrolling under a vast starry African sky with full moon, walking powerfully through moonlit savanna grass, golden amber eyes glowing softly in moonlight, protective and alert, acacia tree silhouettes against the starry sky, peaceful but powerful nighttime scene"
+    title:
+      en: "Papa's Night Patrol"
+      es: "La Patrulla Nocturna de Papá"
+      ru: "Ночной обход Папы"
+    content:
+      en: "While the family sleeps under the stars, Papa Kazi is on patrol. He walks the edges of their territory, his golden eyes glowing softly in the moonlight. Every few minutes, he lets out a low, rumbling roar — not his big roar, but a gentle one that says: 'I am here. My family is safe.' The sound travels across the dark savanna, and every animal for miles knows — this land belongs to Kazi. Back at the sleeping spot, the cubs stir. 'Is that Papa?' Zuri murmurs sleepily. 'Yes,' Mama whispers. 'Papa is watching over us. Go back to sleep, my love.' And they do, feeling perfectly safe."
+      es: "Mientras la familia duerme bajo las estrellas, Papá Kazi está de patrulla. Camina por los bordes de su territorio, sus ojos dorados brillando suavemente a la luz de la luna. Cada pocos minutos, deja escapar un rugido bajo y retumbante — no su gran rugido, sino uno suave que dice: 'Estoy aquí. Mi familia está a salvo.' El sonido viaja por la oscura sabana. De vuelta con los que duermen, los cachorros se mueven. '¿Ese es Papá?' murmura Zuri adormilada. 'Sí,' susurra Mamá. 'Papá nos vigila. Vuelve a dormir, mi amor.'"
+      ru: "Пока семья спит под звёздами, Папа Кази на обходе. Он бродит по границам их территории, золотые глаза мягко светятся в лунном свете. Каждые несколько минут он издаёт низкий, раскатистый рык — не свой большой рык, а нежный, который говорит: 'Я здесь. Моя семья в безопасности.' Звук летит по тёмной саванне, и каждое животное на километры знает — эта земля принадлежит Кази. У спящих львят Зури шевелится. 'Это Папа?' бормочет она сонно. 'Да,' шепчет Мама. 'Папа охраняет нас. Спи, моя любовь.'"
+    image: "kazi-night-patrol.jpg"
+
+  # Growing Up
+  - id: growing-up
+    mood: [golden-hour]
+    use_characters: ["${meet-cubs.image}", "${meet-dalila.image}"]
+    action: "two young lions (no longer tiny cubs but not yet adults) — one male with the beginnings of a small fluffy mane growing in, big paws, lighter golden fur with fading spots; one slightly smaller female with darker golden fur, athletic build. Both in mid-stride walking confidently through golden savanna grass. Their lioness mother with notched ear watches proudly from behind. Warm golden hour light, African savanna with acacia trees"
+    title:
+      en: "Growing Bigger Every Day!"
+      es: "¡Creciendo Más Cada Día!"
+      ru: "Растём каждый день!"
+    content:
+      en: "The days turn to weeks, and the weeks turn to months, and OH how Taji and Zuri have GROWN! Taji's big paws finally match his body, and something exciting is happening — tiny tufts of fur are growing around his neck. 'Is that... a MANE?' he asks Papa, eyes shining. Papa examines it seriously. 'Why, I believe it is! A fine mane is beginning, son. It will grow big and strong like mine.' Zuri has grown sleek and fast like Mama. She can already stalk a grasshopper without making a sound. 'My little huntress,' Mama beams. The cubs aren't so little anymore!"
+      es: "Los días se convierten en semanas, y las semanas en meses, ¡y CÓMO han CRECIDO Taji y Zuri! Las grandes patas de Taji por fin van con su cuerpo, y algo emocionante está pasando — pequeños mechones de pelo crecen alrededor de su cuello. '¿Eso es... una MELENA?' pregunta a Papá, ojos brillantes. Papá lo examina seriamente. '¡Pues creo que sí! Una fina melena está empezando, hijo. Crecerá grande y fuerte como la mía.' Zuri se ha vuelto esbelta y rápida como Mamá. Ya puede acechar a un saltamontes sin hacer ruido. 'Mi pequeña cazadora,' Mamá sonríe. ¡Los cachorros ya no son tan pequeños!"
+      ru: "Дни превращаются в недели, недели в месяцы, и КАК выросли Таджи и Зури! Большие лапы Таджи наконец подходят к его телу, и происходит кое-что волнующее — крошечные пучки шерсти растут вокруг его шеи. 'Это... ГРИВА?' спрашивает он Папу, глаза сияют. Папа серьёзно осматривает. 'Что ж, похоже! Прекрасная грива начинается, сынок. Она вырастет большой и сильной, как моя.' Зури стала стройной и быстрой, как Мама. Она уже может выследить кузнечика, не издав ни звука. 'Моя маленькая охотница,' сияет Мама. Львята уже не такие маленькие!"
+    image: "cubs-growing.jpg"
+
+  # The Pride Together
+  - id: pride-together
+    mood: [epic-skies, golden-hour, soft-intimate]
+    use_characters: ["${meet-kazi.image}", "${meet-dalila.image}", "${meet-cubs.image}"]
+    action: "entire lion family sitting together on a large rocky outcrop overlooking the vast African savanna at golden sunset — magnificent male lion with huge dark brown mane in center, sleek golden lioness with notched ear beside him, two young lions (one with small growing mane, one sleek female) in front. All looking out over the savanna together, majestic and peaceful. Dramatic orange and gold sunset sky, sweeping savanna landscape below, acacia trees dotting the horizon"
+    title:
+      en: "Our Pride, Our Family"
+      es: "Nuestra Manada, Nuestra Familia"
+      ru: "Наш прайд, наша семья"
+    content:
+      en: "As the golden sun melts into the African horizon, the family climbs to their favorite rocky hill. Papa Kazi sits tall in the center, his magnificent mane catching the last warm light. Mama Dalila leans against him, her notched ear a badge of honor. Taji sits up straight, trying to look as regal as Papa. Zuri sits close to Mama, eyes full of dreams. Below them, the whole savanna stretches out — golden, endless, and beautiful. 'This is our home,' Papa says, his deep voice full of love. 'And we are a pride — a family. We roar together, hunt together, sleep together, and love together. No matter what comes, we face it as one.' And somewhere across the savanna, a distant lion roars. And Kazi roars back. Always."
+      es: "Cuando el sol dorado se derrite en el horizonte africano, la familia sube a su colina rocosa favorita. Papá Kazi se sienta erguido en el centro, su magnífica melena captando la última luz cálida. Mamá Dalila se recarga contra él, su oreja con muesca como insignia de honor. Taji se sienta derecho, intentando verse tan regio como Papá. Zuri se sienta cerca de Mamá, ojos llenos de sueños. Debajo de ellos, toda la sabana se extiende — dorada, infinita y hermosa. 'Este es nuestro hogar,' dice Papá, su voz profunda llena de amor. 'Y somos una manada — una familia. Rugimos juntos, cazamos juntos, dormimos juntos y nos amamos juntos. Sin importar lo que venga, lo enfrentamos como uno.'"
+      ru: "Когда золотое солнце тает в африканском горизонте, семья поднимается на свой любимый скалистый холм. Папа Кази сидит прямо в центре, его великолепная грива ловит последний тёплый свет. Мама Далила прижимается к нему, зарубка на ухе — знак чести. Таджи сидит ровно, стараясь выглядеть таким же величественным, как Папа. Зури прижалась к Маме, глаза полны мечтаний. Под ними простирается вся саванна — золотая, бесконечная и прекрасная. 'Это наш дом,' говорит Папа, его глубокий голос полон любви. 'И мы — прайд. Семья. Мы рычим вместе, охотимся вместе, спим вместе и любим вместе. Что бы ни случилось, мы встречаем это вместе.'"
+    image: "pride-together.jpg"
+    imageAlt:
+      en: "Majestic lion family sitting together on rocky outcrop overlooking vast African savanna at golden sunset, father with dark mane in center, mother beside him, two young lions in front, dramatic sky"
+      es: "Majestuosa familia de leones sentada junta en un promontorio rocoso sobre la vasta sabana africana al atardecer dorado, padre con melena oscura en el centro, madre a su lado, dos leones jóvenes al frente, cielo dramático"
+      ru: "Величественная семья львов сидит вместе на скалистом выступе над бескрайней африканской саванной на золотом закате, отец с тёмной гривой в центре, мать рядом, два молодых льва впереди, драматичное небо"
+
+  # Hidden sections for viewer detail images
+  - id: "detail-mane-closeup"
+    image: "detail-mane-closeup.jpg"
+    referenceImage: "${meet-kazi.image}"
+    prompt: "MACRO CLOSE-UP of a magnificent lion's dark brown mane — showing the thick, coarse texture of individual hairs, the way the mane frames the face like a crown, golden amber eye partially visible through the mane. Only the mane and partial face visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-retractable-claws"
+    image: "detail-retractable-claws.jpg"
+    referenceImage: "${meet-dalila.image}"
+    prompt: "MACRO CLOSE-UP of a lion's paw showing retractable claws — one paw with claws retracted (soft furry paw pads visible) next to the same paw with sharp curved claws extended. Educational side-by-side comparison. Only the paw visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-whisker-spots"
+    image: "detail-whisker-spots.jpg"
+    referenceImage: "${meet-cubs.image}"
+    prompt: "MACRO CLOSE-UP of a lion cub's muzzle showing the unique pattern of whisker spots — small dark dots where each whisker emerges, arranged in rows unique to each lion like fingerprints. Soft golden fur, tiny whiskers visible. Only the nose and muzzle area visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-rough-tongue"
+    image: "detail-rough-tongue.jpg"
+    referenceImage: "${meet-kazi.image}"
+    prompt: "MACRO CLOSE-UP of a lion's tongue showing the rough papillae — tiny backward-pointing barbs that cover the surface, making it rough like sandpaper. The lion is mid-lick, tongue extended. Show the texture detail. Only the open mouth and tongue visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-sleeping-img"
+    image: "fun-fact-sleeping.jpg"
+    prompt: "Educational illustration showing a lion sleeping in various hilarious positions — on its back, draped over a branch, belly up in the grass — with a clock or sun arc showing 20 hours of sleep. Warm classic hand-drawn Disney style, child-friendly, colorful African savanna background."
+    hidden: true
+
+  - id: "fun-fact-roar-img"
+    image: "fun-fact-roar.jpg"
+    referenceImage: "${meet-kazi.image}"
+    prompt: "Using the lion from reference, educational illustration showing sound waves emanating from a roaring lion, traveling across the savanna for 5 miles, with distance markers. Same character and classic hand-drawn Disney animation style, dynamic and impressive."
+    hidden: true
+
+  - id: "fun-fact-huntress-img"
+    image: "fun-fact-huntress.jpg"
+    referenceImage: "${meet-dalila.image}"
+    prompt: "Using the lioness from reference, educational illustration showing a team of lionesses working together in a coordinated hunt, using strategic positions. Same character and classic hand-drawn Disney animation style, dynamic action scene."
+    hidden: true
+
+  - id: "fun-fact-spots-img"
+    image: "fun-fact-spots.jpg"
+    referenceImage: "${meet-cubs.image}"
+    prompt: "Using the cubs from reference, educational illustration showing a lion cub with visible spots next to an adult lion without spots, with an arrow showing growth and the spots fading away over time. Same character and classic hand-drawn Disney animation style, child-friendly."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming magazine cover featuring a magnificent male lion with a huge dark brown mane sitting proudly in the center, with two small playful lion cubs climbing on him — one on his back, one batting at his mane. A sleek golden lioness watches from beside them. Golden African savanna with acacia trees and dramatic sunset sky in the background. Style: Classic hand-drawn Disney animation — warm organic lines, soulful expressive eyes, painterly brushwork, vintage animation warmth. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${meet-kazi.image}"
+      - "${meet-dalila.image}"
+      - "${meet-cubs.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Magnificent male lion with dark mane and two playful cubs climbing on him, lioness beside them, golden African savanna sunset background"
+      es: "Magnífico león macho con melena oscura y dos cachorros juguetones trepando sobre él, leona a su lado, fondo de atardecer en la sabana africana dorada"
+      ru: "Великолепный лев-самец с тёмной гривой и двумя игривыми львятами, карабкающимися по нему, львица рядом, фон золотого заката африканской саванны"
+
+funFacts:
+  title:
+    en: "Amazing Lion Facts!"
+    es: "¡Datos Asombrosos sobre Leones!"
+    ru: "Удивительные факты о львах!"
+  facts:
+    - title:
+        en: "Champion Sleepers"
+        es: "Campeones de la Siesta"
+        ru: "Чемпионы по сну"
+      content:
+        en: "Lions sleep up to 20 hours a day! That makes them one of the sleepiest animals on Earth. They rest so much because hunting takes enormous energy — a single hunt can use up all their strength. So when they're not hunting or eating, lions spend their time dozing in the shade, cuddling with family, and taking the world's longest naps. Even their name in some African languages means 'the lazy one'!"
+        es: "¡Los leones duermen hasta 20 horas al día! Eso los convierte en uno de los animales más dormilones de la Tierra. Descansan tanto porque la caza requiere una energía enorme — una sola cacería puede usar toda su fuerza. Así que cuando no están cazando o comiendo, los leones pasan el tiempo dormitando a la sombra, acurrucándose con la familia y tomando las siestas más largas del mundo."
+        ru: "Львы спят до 20 часов в день! Это делает их одними из самых сонливых животных на Земле. Они столько отдыхают, потому что охота требует огромной энергии — одна охота может забрать все силы. Поэтому, когда они не охотятся и не едят, львы дремлют в тени, обнимаются с семьёй и устраивают самые длинные в мире тихие часы."
+      image: "fun-fact-sleeping.jpg"
+
+    - title:
+        en: "The 5-Mile Roar"
+        es: "El Rugido de 8 Kilómetros"
+        ru: "Рык на 8 километров"
+      content:
+        en: "A lion's roar is the loudest of any big cat and can be heard from 5 miles (8 kilometers) away! That's like roaring at one end of town and being heard at the other end. Lions roar to communicate with their pride, to warn rivals to stay away, and to find family members in the dark. They have a special bone in their throat called the hyoid bone that lets them produce such incredibly deep, powerful sounds."
+        es: "¡El rugido de un león es el más fuerte de todos los grandes felinos y se puede escuchar a 8 kilómetros de distancia! Es como rugir en un extremo del pueblo y ser escuchado en el otro. Los leones rugen para comunicarse con su manada, para advertir a los rivales que se mantengan lejos, y para encontrar a miembros de la familia en la oscuridad. Tienen un hueso especial en la garganta llamado hueso hioides."
+        ru: "Рык льва — самый громкий среди всех больших кошек, его слышно за 8 километров! Это как зарычать на одном конце города и быть услышанным на другом. Львы рычат, чтобы общаться со своим прайдом, предупреждать соперников держаться подальше и находить членов семьи в темноте. У них есть особая кость в горле — подъязычная кость, которая позволяет издавать такие невероятно глубокие, мощные звуки."
+      image: "fun-fact-roar.jpg"
+
+    - title:
+        en: "Girl Power Hunters"
+        es: "Cazadoras Poderosas"
+        ru: "Охотницы-чемпионки"
+      content:
+        en: "In a lion pride, the lionesses do most of the hunting! They work together as a team, using clever strategies — some lionesses chase the prey toward others waiting in ambush. Lionesses are faster, lighter, and more agile than male lions, whose big heavy manes would slow them down and make them easy to spot. The males have a different job — they patrol and protect the territory so the family is safe."
+        es: "¡En una manada de leones, las leonas hacen la mayor parte de la caza! Trabajan juntas como equipo, usando estrategias inteligentes — algunas leonas persiguen a la presa hacia otras que esperan emboscadas. Las leonas son más rápidas, ligeras y ágiles que los leones machos, cuyas grandes y pesadas melenas los harían más lentos y fáciles de detectar. Los machos tienen un trabajo diferente — patrullan y protegen el territorio."
+        ru: "В львином прайде львицы выполняют основную часть охоты! Они работают вместе как команда, используя хитрые стратегии — одни львицы гонят добычу к другим, ждущим в засаде. Львицы быстрее, легче и проворнее львов-самцов, чьи большие тяжёлые гривы замедляли бы их и делали заметными. У самцов другая работа — они патрулируют и защищают территорию, чтобы семья была в безопасности."
+      image: "fun-fact-huntress.jpg"
+
+    - title:
+        en: "Spots That Disappear"
+        es: "Manchas Que Desaparecen"
+        ru: "Исчезающие пятнышки"
+      content:
+        en: "Lion cubs are born with spotted fur! These faint rosette-shaped spots help baby lions hide in the dappled shade of bushes and grass, camouflaging them from predators while they're small and vulnerable. As the cubs grow bigger and stronger, their spots gradually fade away until they have the smooth golden coat of an adult lion. Some lions keep very faint spots on their belly even as adults — look closely next time!"
+        es: "¡Los cachorros de león nacen con pelaje manchado! Estas tenues manchas en forma de roseta ayudan a los bebés león a esconderse en la sombra moteada de arbustos y hierba, camuflándolos de depredadores mientras son pequeños y vulnerables. A medida que los cachorros crecen más grandes y fuertes, sus manchas se desvanecen gradualmente hasta tener el suave pelaje dorado de un león adulto. ¡Algunos leones mantienen manchas muy tenues en su vientre incluso de adultos!"
+        ru: "Львята рождаются с пятнистой шерстью! Эти бледные пятнышки-розетки помогают маленьким львам прятаться в пятнистой тени кустов и травы, маскируя их от хищников, пока они маленькие и уязвимые. По мере того как львята растут и крепнут, пятна постепенно исчезают, пока не остаётся гладкая золотистая шерсть взрослого льва. Некоторые львы сохраняют очень бледные пятна на животе даже во взрослом возрасте — присмотритесь внимательнее!"
+      image: "fun-fact-spots.jpg"
+
+imageGeneration:
+  characters:
+    kazi:
+      name: "Papa Kazi"
+      description: "Magnificent male lion father with a huge dark brown mane, golden amber eyes, powerful muscular build, proud protective stance"
+      uniqueFeatures:
+        - "LARGEST character — visibly bigger and more powerful than all others"
+        - "HUGE DARK BROWN MANE — thick, voluminous, frames his entire face like a crown"
+        - "GOLDEN AMBER EYES — intense, warm, watchful"
+        - "POWERFUL MUSCULAR BUILD — broad chest, thick legs, massive paws"
+        - "PROUD PROTECTIVE STANCE — always standing tall, chest out, head held high"
+        - "Signature: his mane is so thick and dark it almost looks black at the center"
+      personality: "Proud, protective, and regal — stands tall and alert, always watching over his family, but with surprising tenderness"
+      notLike: "NOT sleek or slim like Dalila, NOT small like the cubs, the BIGGEST character by far"
+
+    dalila:
+      name: "Mama Dalila"
+      description: "Sleek golden lioness mother, skilled huntress, athletic muscular build, warm caring eyes, small notch on left ear"
+      uniqueFeatures:
+        - "SMALLER than Kazi — no mane, sleek and streamlined"
+        - "ATHLETIC MUSCULAR BUILD — lean and powerful, built for speed"
+        - "WARM CARING EYES — softer expression than Kazi, but intense when hunting"
+        - "SMALL NOTCH ON LEFT EAR — her signature mark from a past hunt"
+        - "SMOOTH GOLDEN FUR — lighter and more uniform than Kazi's coloring"
+        - "Low hunting stance — often shown crouched and ready to spring"
+      personality: "Clever, fast, and nurturing — graceful in movement, fierce when protecting cubs, tender with family"
+      notLike: "NOT as large or dark as Kazi, NOT spotted like cubs, always identifiable by ear notch"
+
+    taji:
+      name: "Taji"
+      description: "Male lion cub, curious and playful, lighter golden fur with faint spots still visible, big oversized paws he hasn't grown into yet"
+      uniqueFeatures:
+        - "LIGHTER GOLDEN FUR with FAINT SPOTS — baby rosettes still visible on coat"
+        - "OVERSIZED PAWS — comically big compared to his body, he trips over them"
+        - "BIGGER than Zuri — the larger of the two cubs"
+        - "Later: tiny tufts of mane beginning to grow around neck"
+        - "GOOFY GRIN — always smiling, one side of mouth higher than the other"
+        - "Round cub face with oversized ears"
+      personality: "Curious, playful, always getting into trouble — pounces on everything, falls over his own paws, eternally cheerful"
+      notLike: "NOT as dark as Zuri, NOT as big as parents, identifiable by big paws and lighter color"
+
+    zuri:
+      name: "Zuri"
+      description: "Female lion cub, brave and bold for her size, slightly smaller than Taji, darker golden fur, always trying to keep up with the adults"
+      uniqueFeatures:
+        - "DARKER GOLDEN FUR — noticeably darker shade than Taji"
+        - "SLIGHTLY SMALLER than Taji — the smaller of the two cubs"
+        - "DETERMINED EXPRESSION — eyebrows set, jaw firm, ready for anything"
+        - "More ATHLETIC build than Taji even as a cub — takes after Mama"
+        - "Later: sleek and fast like Dalila, no mane development"
+        - "Often shown trying to match the adults' stride"
+      personality: "Brave, bold, determined — always trying to keep up with the grown-ups, serious about learning to hunt"
+      notLike: "NOT as light-colored as Taji, NOT as big as Taji, NOT as large as parents"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, grass, and sky. Soft rounded character proportions for cubs. Vintage animation cel warmth with gentle watercolor-like backgrounds. Golden African savanna setting with warm amber tones, acacia trees, tall grass, dramatic sunsets, and starry nights. Child-friendly and inviting."
+
+viewerDetails:
+- title:
+    en: "The Mighty Mane"
+    es: "La Melena Poderosa"
+    ru: "Могучая грива"
+  description:
+    en: "Look at Papa Kazi's incredible mane! A lion's mane is made of thick, coarse hair that grows around the face, neck, and shoulders. The darker the mane, the healthier and stronger the lion! Kazi's dark brown mane tells everyone he is in his prime. The mane makes him look much bigger than he really is, which scares away rivals. It also protects his neck during fights. No two lion manes are exactly alike — each one is as unique as a fingerprint!"
+    es: "¡Mira la increíble melena de Papá Kazi! La melena de un león está hecha de pelo grueso y áspero que crece alrededor de la cara, cuello y hombros. ¡Cuanto más oscura la melena, más sano y fuerte el león! La melena marrón oscura de Kazi le dice a todos que está en su mejor momento. La melena lo hace parecer mucho más grande de lo que realmente es, lo que asusta a los rivales. También protege su cuello durante las peleas."
+    ru: "Посмотрите на невероятную гриву Папы Кази! Грива льва состоит из толстых, жёстких волос, растущих вокруг лица, шеи и плеч. Чем темнее грива, тем здоровее и сильнее лев! Тёмно-коричневая грива Кази говорит всем, что он в расцвете сил. Грива делает его намного больше, чем он есть на самом деле, что отпугивает соперников. Она также защищает шею в боях. Нет двух одинаковых грив — каждая уникальна, как отпечаток пальца!"
+  image: "detail-mane-closeup.jpg"
+
+- title:
+    en: "Retractable Claws"
+    es: "Garras Retráctiles"
+    ru: "Втягивающиеся когти"
+  description:
+    en: "Lions have an amazing superpower — retractable claws! When walking, their sharp claws are tucked inside soft, furry paw pads, keeping them quiet and their claws razor-sharp. But when hunting or climbing, the claws pop out like hidden knives! Each claw can be up to 1.5 inches long and curved like a hook. This retractable design means their claws never get dull from walking on hard ground. Lions are one of the few cats that can't fully retract their claws — cheetahs can't at all!"
+    es: "¡Los leones tienen un superpoder asombroso — garras retráctiles! Al caminar, sus afiladas garras están guardadas dentro de suaves almohadillas peludas, manteniéndolos silenciosos y sus garras afiladísimas. ¡Pero al cazar o trepar, las garras salen como cuchillos ocultos! Cada garra puede medir hasta 4 centímetros de largo y curvarse como un gancho. Este diseño retráctil significa que sus garras nunca se desgastan al caminar sobre suelo duro."
+    ru: "У львов есть удивительная суперспособность — втягивающиеся когти! При ходьбе острые когти спрятаны внутри мягких пушистых подушечек лап, что делает шаги бесшумными и сохраняет когти острыми как бритва. Но во время охоты или лазания когти выскакивают как скрытые ножи! Каждый коготь может достигать 4 сантиметров в длину и изогнут как крючок. Этот убирающийся механизм означает, что когти никогда не тупятся от ходьбы по твёрдой земле."
+  image: "detail-retractable-claws.jpg"
+
+- title:
+    en: "Whisker Spot ID"
+    es: "Identificación por Bigotes"
+    ru: "Усы-отпечатки"
+  description:
+    en: "Did you know that every lion has a unique pattern of whisker spots? The small dark dots on a lion's muzzle where each whisker grows form a pattern that is different for every single lion — just like human fingerprints! Scientists use these whisker spot patterns to identify individual lions in the wild. Next time you see a lion, look closely at the dots on its muzzle — no other lion in the world has the exact same pattern!"
+    es: "¿Sabías que cada león tiene un patrón único de puntos de bigotes? Los pequeños puntos oscuros en el hocico de un león donde crece cada bigote forman un patrón diferente para cada león — ¡igual que las huellas dactilares humanas! Los científicos usan estos patrones de puntos de bigotes para identificar leones individuales en la naturaleza. La próxima vez que veas un león, mira de cerca los puntos en su hocico."
+    ru: "Вы знали, что у каждого льва уникальный рисунок точек у усов? Маленькие тёмные точки на морде льва, где растёт каждый ус, образуют рисунок, отличающийся у каждого льва — как отпечатки пальцев у людей! Учёные используют эти рисунки точек у усов для идентификации отдельных львов в дикой природе. В следующий раз, когда увидите льва, присмотритесь к точкам на его морде — ни у одного другого льва в мире нет такого же рисунка!"
+  image: "detail-whisker-spots.jpg"
+
+- title:
+    en: "Sandpaper Tongue"
+    es: "Lengua de Lija"
+    ru: "Язык-наждачка"
+  description:
+    en: "A lion's tongue is covered in tiny backward-pointing barbs called papillae, making it rough like sandpaper! These barbs are made of the same material as your fingernails. The rough tongue helps lions scrape every last bit of meat from bones, and it works like a comb for grooming their fur. When Mama Dalila licks her cubs clean, it's like a gentle scrubbing brush! One lick from a lion's tongue could scratch your skin — but to the cubs, it feels like the warmest, most loving bath."
+    es: "¡La lengua de un león está cubierta de pequeñas púas apuntando hacia atrás llamadas papilas, haciéndola áspera como papel de lija! Estas púas están hechas del mismo material que tus uñas. La lengua áspera ayuda a los leones a raspar hasta el último pedazo de carne de los huesos, y funciona como un peine para acicalar su pelaje. ¡Cuando Mamá Dalila lame a sus cachorros para limpiarlos, es como un suave cepillo de fregar!"
+    ru: "Язык льва покрыт крошечными направленными назад шипами — папиллами, что делает его шершавым как наждачная бумага! Эти шипы сделаны из того же материала, что и ваши ногти. Шершавый язык помогает львам соскребать каждый кусочек мяса с костей и работает как расчёска для ухода за шерстью. Когда Мама Далила вылизывает львят, это как нежная щёточка! Одно облизывание львиным языком может поцарапать кожу — но для львят это самая тёплая и любящая ванна."
+  image: "detail-rough-tongue.jpg"
+
+routing:
+    gemini:
+      - "hero-savanna.jpg"
+      - "fun-fact-sleeping.jpg"
+      - "fun-fact-spots.jpg"
+      - "detail-retractable-claws.jpg"
+      - "kazi-portrait.jpg"
+      - "dalila-portrait.jpg"
+      - "cubs-playing.jpg"
+      - "learning-to-stalk.jpg"
+      - "dalila-hunting.jpg"
+      - "kazi-roaring.jpg"
+      - "family-napping.jpg"
+      - "watering-hole.jpg"
+      - "kazi-night-patrol.jpg"
+      - "cubs-growing.jpg"
+      - "pride-together.jpg"
+      - "detail-mane-closeup.jpg"
+      - "detail-whisker-spots.jpg"
+      - "detail-rough-tongue.jpg"
+      - "fun-fact-roar.jpg"
+      - "fun-fact-huntress.jpg"
+      - "magazine-cover.jpg"

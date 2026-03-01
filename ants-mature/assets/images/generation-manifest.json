@@ -1,0 +1,197 @@
+{
+  "chapter": "ants-mature",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in earth, leaves, and tunnel walls. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Meadow and underground settings with rich browns, dramatic golden and red lighting, epic atmosphere. Emotional depth and gravitas appropriate for mature themes of sacrifice and endurance."
+  },
+  "routing": {},
+  "characters": {
+    "queen-terra": {
+      "name": "Queen Terra",
+      "description": "The ant queen, largest ant in the colony, deep reddish-brown, wise ancient eyes, sits in the heart of the nest with a slightly iridescent wing remnant on her back",
+      "uniqueFeatures": [
+        "LARGEST ant character — visibly much bigger than all other ants, massive abdomen",
+        "DEEP REDDISH-BROWN coloring — rich, warm wood-toned exoskeleton",
+        "WISE ANCIENT EYES — calm, knowing expression, seen a thousand seasons",
+        "IRIDESCENT WING REMNANT on her back — small shimmering stubs that catch the light like tiny rainbows, the mark of a founding queen",
+        "Regal posture — sits upright and still, surrounded by attendant workers",
+        "Largest head with smooth, polished-looking exoskeleton"
+      ],
+      "personality": "Wise, warm, and regal — sits calmly and speaks with quiet authority, carries the weight of every sacrifice",
+      "notLike": "NOT small or lean like Scout, NOT dark like Tiny, NOT aggressive-looking like Major"
+    },
+    "scout": {
+      "name": "Scout",
+      "description": "Explorer ant, lean and fast, lighter brown color, antennae always pointing forward alertly, one antenna slightly bent from an adventure",
+      "uniqueFeatures": [
+        "LEAN and FAST build — longest legs proportionally, streamlined body",
+        "LIGHTER BROWN coloring — sandier, paler than Queen Terra's deep reddish-brown",
+        "ANTENNAE pointing FORWARD alertly — always sensing, always searching",
+        "ONE ANTENNA SLIGHTLY BENT — the left antenna has a noticeable crook from her first adventure, her signature feature",
+        "Front legs often raised — poised to run, ready for action",
+        "Alert, wide-eyed expression — always looking into the distance"
+      ],
+      "personality": "Brave and resourceful — the first to see danger, the first to act, carries intelligence like a weapon",
+      "notLike": "NOT large like Queen Terra, NOT dark or small like Tiny, NOT bulky like Major"
+    },
+    "tiny": {
+      "name": "Tiny",
+      "description": "Young worker ant, smallest of the group, darker color, eager to help but clumsy, always carries leaves twice her size",
+      "uniqueFeatures": [
+        "SMALLEST ant character — noticeably smaller than all others, baby proportions",
+        "DARKER coloring — darker brown-black than the others, distinct from Scout's light brown",
+        "Always carrying something TOO BIG — signature look is struggling under an oversized load",
+        "ROUND, oversized head relative to body — baby-like proportions",
+        "Legs slightly splayed for balance — always wobbling, endearingly determined",
+        "Fierce determination in small eyes — the heart of a giant in the body of the smallest"
+      ],
+      "personality": "Small but unbreakable — carries impossible burdens without complaint, the colony's future in her jaws",
+      "notLike": "NOT lean like Scout, NOT large like Queen Terra, NOT intimidating like Major"
+    },
+    "major": {
+      "name": "Major",
+      "description": "Soldier ant, biggest worker with oversized mandibles, dark reddish-black, stands guard at tunnel entrances, intimidating but gentle with colony-mates",
+      "uniqueFeatures": [
+        "BIGGEST WORKER ant — second only to Queen Terra in size, but stockier and more muscular",
+        "MASSIVE HEAD with OVERSIZED MANDIBLES — enormous jaws that dominate his face",
+        "DARK REDDISH-BLACK coloring — darker and more intense than Queen Terra's warm brown",
+        "WIDE, planted stance — legs spread, blocking tunnel entrances, immovable",
+        "Gentle eyes that contrast with intimidating jaws — soft expression despite fearsome appearance",
+        "Battle-scarred exoskeleton — marks of service and sacrifice visible on his armor"
+      ],
+      "personality": "The immovable guardian — willing to give everything, speaks softly but holds absolutely, peace in his eyes even in his final stand",
+      "notLike": "NOT lean like Scout, NOT small like Tiny, NOT regal like Queen Terra"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-colony-siege.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "A vast ant colony under siege at dramatic red-golden sunset, dark columns of invading army ants streaming over the hill toward a peaceful anthill, defender ants massing at the entrances, ominous clouds above, the mood is tense and epic",
+        "es": "Una vasta colonia de hormigas bajo asedio al dramatico atardecer rojo-dorado, columnas oscuras de hormigas invasoras fluyendo sobre la colina hacia un pacifico hormiguero, hormigas defensoras agrupandose en las entradas, nubes ominosas arriba",
+        "ru": "Огромная колония муравьёв в осаде на фоне драматичного красно-золотого заката, тёмные колонны вторгающихся кочевых муравьёв хлынули через холм к мирному муравейнику, муравьи-защитники собираются у входов, зловещие тучи наверху"
+      }
+    },
+    {
+      "filename": "peaceful-morning.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Serene morning at a thriving ant colony, ants moving peacefully, wildflowers blooming, warm golden sunlight, calm idyllic meadow scene",
+        "es": "Manana serena en una prospera colonia de hormigas, hormigas moviéndose pacificamente, flores silvestres floreciendo, calida luz dorada",
+        "ru": "Безмятежное утро в процветающей колонии муравьёв, муравьи мирно движутся, полевые цветы цветут, тёплый золотистый свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "scouts-report-danger.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Lean brown ant racing frantically toward the anthill, dark mass of army ants visible on the horizon, storm clouds gathering, dramatic lighting",
+        "es": "Hormiga marron delgada corriendo franticamente hacia el hormiguero, masa oscura de hormigas legionarias visible en el horizonte, nubes de tormenta",
+        "ru": "Стройный коричневый муравей мчится к муравейнику, тёмная масса кочевых муравьёв видна на горизонте, грозовые тучи собираются"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "enemy-approaches.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Terrifying close-up of invading army ant column, hundreds of dark aggressive ants with huge mandibles in tight formation, barren stripped earth behind them, dramatic red lighting",
+        "es": "Primer plano aterrador de la columna de hormigas legionarias invasoras, cientos de hormigas oscuras agresivas con mandibulas enormes en formacion cerrada",
+        "ru": "Устрашающий крупный план колонны вторгающихся кочевых муравьёв, сотни тёмных агрессивных муравьёв с огромными челюстями в тесном строю, голая земля позади"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "majors-decision.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Large soldier ant facing the queen in a dimly lit chamber, solemn mood, other ants watching in the background, warm amber light, council of war atmosphere",
+        "es": "Gran hormiga soldado frente a la reina en una camara tenuemente iluminada, ambiente solemne, otras hormigas observando al fondo",
+        "ru": "Большой муравей-солдат перед королевой в тускло освещённой камере, торжественная атмосфера, другие муравьи наблюдают на заднем плане"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tunnel-defenders.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Soldier ants plugging tunnel entrance with their bodies, massive heads and mandibles facing outward, enemy ants approaching, heroic and heartbreaking, dramatic lighting",
+        "es": "Hormigas soldado tapando la entrada del tunel con sus cuerpos, cabezas masivas y mandibulas hacia afuera, hormigas enemigas acercandose, heroico y desgarrador",
+        "ru": "Муравьи-солдаты затыкают вход в тоннель своими телами, массивные головы и челюсти направлены наружу, вражеские муравьи приближаются, героическая и душераздирающая сцена"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "chemical-warfare.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Intense battle between defender ants spraying formic acid mist and invading army ants recoiling, churned earth, harsh red-orange lighting, chaotic scene",
+        "es": "Batalla intensa entre hormigas defensoras rociando acido formico y hormigas invasoras retrocediendo, tierra revuelta, iluminacion rojo-naranja",
+        "ru": "Ожесточённая битва между защитниками, распыляющими муравьиную кислоту, и отступающими захватчиками, разрытая земля, резкое красно-оранжевое освещение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "nursery-evacuation.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Small dark ant carrying white eggs through a narrow underground tunnel, other worker ants with larvae, dust falling from ceiling, urgent but tender, amber light",
+        "es": "Pequena hormiga oscura cargando huevos blancos por un estrecho tunel subterraneo, otras obreras con larvas, polvo cayendo del techo, urgente pero tierno",
+        "ru": "Маленький тёмный муравей несёт белые яйца через узкий подземный тоннель, другие рабочие с личинками, пыль сыплется с потолка, срочно но нежно"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "soldiers-sacrifice.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Battered soldier ant wedged in tunnel entrance still holding firm, cracked exoskeleton, raiders pressing against him, golden light behind like a halo, heroic last stand",
+        "es": "Hormiga soldado maltratada incrustada en la entrada del tunel resistiendo, exoesqueleto agrietado, invasoras presionando contra el, luz dorada detras como un halo",
+        "ru": "Побитый муравей-солдат, вклинившийся во вход тоннеля и держащийся, треснутый экзоскелет, захватчики давят на него, золотистый свет позади как ореол"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "the-aftermath.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Devastated anthill at grey dawn, scarred earth, collapsed tunnel entrances, exhausted ants emerging, crushed wildflowers, solemn quiet aftermath",
+        "es": "Hormiguero devastado al amanecer gris, tierra marcada, entradas de tuneles colapsadas, hormigas exhaustas emergiendo, flores aplastadas",
+        "ru": "Разорённый муравейник на фоне серого рассвета, израненная земля, обрушенные входы, измотанные муравьи выходят, помятые цветы"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "rebuilding.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Ants rebuilding their colony in golden morning light, carrying earth, clearing debris, new green shoots growing, sunrise breaking through clouds, hope and determination",
+        "es": "Hormigas reconstruyendo su colonia en luz dorada matutina, cargando tierra, limpiando escombros, nuevos brotes verdes creciendo, amanecer",
+        "ru": "Муравьи восстанавливают свою колонию в золотистом утреннем свете, несут землю, расчищают завалы, новые зелёные ростки, рассвет пробивается сквозь тучи"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "colony-endures.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magnificent restored ant colony at golden sunset, larger and stronger anthill, organized ant lines, new wildflowers, all four characters visible, triumphant golden light, clouds parting",
+        "es": "Magnifica colonia restaurada al atardecer dorado, hormiguero mas grande y fuerte, lineas organizadas, nuevas flores, los cuatro personajes visibles, luz dorada triunfante",
+        "ru": "Великолепная восстановленная колония на фоне золотого заката, увеличенный и укреплённый муравейник, организованные колонны, новые цветы, все четыре персонажа видны, триумфальный золотистый свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "natures-lesson.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Single ant silhouetted on a tall grass blade at golden sunset, vast meadow and rebuilt anthill below, enormous sky, small creature against vast world, philosophical and profound",
+        "es": "Hormiga sola silueteada en una hoja de hierba alta al atardecer dorado, vasto prado y hormiguero reconstruido abajo, cielo enorme, pequena criatura contra el vasto mundo",
+        "ru": "Одинокий муравей на фоне заката на высокой травинке, бескрайний луг и восстановленный муравейник внизу, огромное небо, маленькое существо на фоне огромного мира"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

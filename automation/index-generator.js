@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 const handlebars = require('handlebars');
+const logger = require('./logger');
 
 class IndexGenerator {
     constructor() {
@@ -13,6 +14,8 @@ class IndexGenerator {
     }
 
     async generateIndex() {
+        const _logTaskId = logger.taskStart('Index generation');
+
         console.log('\n📚 Starting Index Generation');
         console.log('=' .repeat(60));
         
@@ -28,7 +31,9 @@ class IndexGenerator {
         // Write to file
         fs.writeFileSync(this.outputPath, html);
         console.log(`\n✅ Index generated successfully: ${this.outputPath}`);
-        
+
+        logger.taskEnd(_logTaskId, { chapters: this.chapters.length });
+
         return this.chapters;
     }
 

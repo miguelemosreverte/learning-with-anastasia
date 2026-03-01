@@ -1,0 +1,197 @@
+{
+  "chapter": "bees",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, wings, and flowers. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Sunny wildflower meadow setting with golden light, colorful flowers, warm honey tones, and a cozy beehive in an old oak tree. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "queen-aurelia": {
+      "name": "Queen Aurelia",
+      "description": "Majestic honey bee queen, the largest bee in the hive, with an elongated golden abdomen, regal bearing, golden crown-like pattern on her thorax",
+      "uniqueFeatures": [
+        "LARGEST bee character — noticeably bigger than all workers, elongated body",
+        "ELONGATED GOLDEN ABDOMEN — much longer than worker bees, tapered and elegant",
+        "GOLDEN CROWN-LIKE PATTERN on thorax — distinctive marking that looks like a tiny crown",
+        "Moves SLOWLY and DELIBERATELY — never rushed, always regal",
+        "Warmer, deeper gold coloring than standard yellow-black workers",
+        "Workers always clustered around her, attending and feeding"
+      ],
+      "personality": "Regal and calm — moves with slow deliberate grace, the calm center of the hive's activity",
+      "notLike": "NOT small like workers, NOT black-and-yellow striped like Buzz, NOT fluffy like Petal"
+    },
+    "buzz": {
+      "name": "Buzz",
+      "description": "Hardworking worker bee with bright yellow-and-black stripes, fuzzy body always covered in pollen, one wing with a tiny notch",
+      "uniqueFeatures": [
+        "Standard worker size — much smaller than Queen Aurelia",
+        "BRIGHT YELLOW-AND-BLACK stripes — classic bee coloring, vivid and cheerful",
+        "TINY NOTCH in one wing — distinctive identifying mark, but flies perfectly",
+        "FUZZY body always DUSTED WITH POLLEN — looks like she rolled in gold dust",
+        "Always in motion — wings buzzing, legs moving, never still",
+        "Cheerful, bright-eyed expression"
+      ],
+      "personality": "Hardworking and cheerful — always busy, always smiling, never complains",
+      "notLike": "NOT large like Queen Aurelia, NOT extra fluffy like Petal, NOT dark like Spike"
+    },
+    "petal": {
+      "name": "Petal",
+      "description": "Young bee on her first foraging flights, slightly smaller than other workers, lighter coloring, extra fluffy fuzz, wide-eyed wonder",
+      "uniqueFeatures": [
+        "SLIGHTLY SMALLER than other worker bees — young and delicate",
+        "LIGHTER COLORING — paler yellow, less intense stripes than Buzz",
+        "EXTRA FLUFFY — has not worn down her fuzz yet, looks like a tiny pompom",
+        "WIDE EYES — bigger, rounder eyes than other bees, full of wonder",
+        "Lighter, more translucent wings — newer and more delicate",
+        "Often looking around in amazement at everything"
+      ],
+      "personality": "Nervous but excited — wide-eyed wonder at everything outside the hive, eager to learn",
+      "notLike": "NOT as boldly striped as Buzz, NOT large like Queen Aurelia, NOT dark like Spike"
+    },
+    "spike": {
+      "name": "Spike",
+      "description": "Guard bee, slightly larger worker with darker coloring, stationed at the hive entrance, mandibles always ready",
+      "uniqueFeatures": [
+        "SLIGHTLY LARGER than standard workers — bulkier, more muscular build",
+        "DARKER COLORING — deeper brown-black with darker yellow, more muted stripes",
+        "Always STANDING ALERT with MANDIBLES READY — jaws slightly open",
+        "Stockier build — wider thorax and legs than other workers",
+        "Positioned at hive entrance — always on guard duty",
+        "Intense, watchful eyes scanning everything"
+      ],
+      "personality": "Protective and vigilant — always scanning, always alert, takes his duty seriously",
+      "notLike": "NOT cheerful and bouncy like Buzz, NOT fluffy like Petal, NOT regal like Queen Aurelia"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-meadow.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "A sun-drenched wildflower meadow at golden hour with a large beehive nestled in an old oak tree, bees buzzing among colorful wildflowers, warm golden light, rolling green hills in the background",
+        "es": "Un prado de flores silvestres banado por el sol en la hora dorada con una gran colmena en un viejo roble, abejas zumbando entre flores silvestres coloridas, calida luz dorada, colinas verdes al fondo",
+        "ru": "Залитый солнцем луг с полевыми цветами в золотой час, большой улей в старом дубе, пчёлы жужжат среди ярких полевых цветов, тёплый золотистый свет, зелёные холмы на заднем плане"
+      }
+    },
+    {
+      "filename": "the-buzzing-hive.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magnificent golden beehive inside a hollow oak tree with thousands of bees on honeycomb, warm amber light, magical atmosphere",
+        "es": "Magnifica colmena dorada dentro de un roble hueco con miles de abejas en panal, calida luz ambar, atmosfera magica",
+        "ru": "Великолепный золотой улей внутри дуба с тысячами пчёл на сотах, тёплый янтарный свет, волшебная атмосфера"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "queen-aurelia-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Majestic honey bee queen with elongated golden abdomen and crown-like pattern, surrounded by attentive worker bees on golden honeycomb",
+        "es": "Majestuosa abeja reina con abdomen dorado alargado y patron de corona, rodeada de abejas obreras atentas en panal dorado",
+        "ru": "Величественная пчелиная королева с удлинённым золотистым брюшком и узором-короной, окружённая заботливыми рабочими пчёлами на золотистых сотах"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "buzz-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Cheerful fuzzy worker bee with bright yellow-and-black stripes covered in pollen, flying among colorful wildflowers in golden sunlight",
+        "es": "Alegre abeja obrera peluda con rayas amarillas y negras cubierta de polen, volando entre flores silvestres coloridas bajo la luz dorada",
+        "ru": "Весёлая пушистая рабочая пчела с яркими жёлто-чёрными полосками, покрытая пыльцой, летящая среди ярких полевых цветов в золотистом свете"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "petal-first-flight.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Young fluffy bee taking her first flight from the hive entrance, gazing wide-eyed at a vast colorful flower meadow, golden sunlight",
+        "es": "Joven abeja esponjosa tomando su primer vuelo desde la entrada de la colmena, mirando con ojos enormes un vasto prado de flores coloridas",
+        "ru": "Молодая пушистая пчёлка в своём первом полёте из входа улья, с широко раскрытыми глазами глядящая на огромный красочный цветочный луг"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "flower-garden.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Two bees collecting pollen inside colorful flowers in a sunny meadow, covered in golden pollen, surrounded by sunflowers, lavender and daisies",
+        "es": "Dos abejas recolectando polen dentro de flores coloridas en un prado soleado, cubiertas de polen dorado, rodeadas de girasoles, lavanda y margaritas",
+        "ru": "Две пчелы собирают пыльцу внутри ярких цветов на солнечном лугу, покрытые золотой пыльцой, в окружении подсолнухов, лаванды и ромашек"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "waggle-dance.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Worker bee performing the waggle dance in a figure-eight on honeycomb, surrounded by attentive bees watching and learning, warm amber light",
+        "es": "Abeja obrera realizando la danza del meneo en forma de ocho sobre panal, rodeada de abejas atentas observando y aprendiendo, calida luz ambar",
+        "ru": "Рабочая пчела исполняет виляющий танец восьмёркой на сотах, окружённая внимательными пчёлами, которые смотрят и учатся, тёплый янтарный свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "making-honey.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Bees working together inside the hive to make honey, passing nectar and fanning honeycomb, golden honey glistening in cells, warm amber glow",
+        "es": "Abejas trabajando juntas dentro de la colmena para hacer miel, pasando nectar y abanicando panal, miel dorada brillando en celdas",
+        "ru": "Пчёлы работают вместе внутри улья, делая мёд, передавая нектар и обмахивая соты, золотистый мёд блестит в ячейках, тёплое янтарное свечение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "building-beeswax.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Bees building perfect hexagonal honeycomb from beeswax, producing wax flakes and shaping them into hexagons, warm golden architectural wonder",
+        "es": "Abejas construyendo panal hexagonal perfecto de cera, produciendo escamas de cera y moldeandolas en hexagonos, calida maravilla arquitectonica dorada",
+        "ru": "Пчёлы строят идеальные шестиугольные соты из воска, производят восковые чешуйки и формируют их в шестиугольники, тёплое золотистое архитектурное чудо"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "spike-guards-door.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Alert guard bee standing watch at the hive entrance, mandibles ready, checking arriving bees, golden afternoon light, protective stance",
+        "es": "Abeja guardia alerta en la entrada de la colmena, mandibulas listas, revisando abejas que llegan, luz dorada de la tarde, postura protectora",
+        "ru": "Бдительная пчела-охранник стоит на страже у входа в улей, жвалы наготове, проверяет прибывающих пчёл, золотистый дневной свет, защитная поза"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "winter-cluster.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Thousands of bees huddled in a warm cluster inside the hive during winter, queen in the center, snow outside, warm golden glow within",
+        "es": "Miles de abejas acurrucadas en un grupo caliente dentro de la colmena durante el invierno, reina en el centro, nieve afuera, calido brillo dorado adentro",
+        "ru": "Тысячи пчёл, сбившихся в тёплый клубок внутри улья зимой, королева в центре, снег снаружи, тёплое золотистое свечение внутри"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "sweet-golden-honey.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Thick golden honey dripping from honeycomb, two proud bees beside perfectly capped honey cells, golden light streaming through amber honey",
+        "es": "Espesa miel dorada goteando del panal, dos abejas orgullosas junto a celdas de miel perfectamente selladas, luz dorada atravesando miel ambar",
+        "ru": "Густой золотистый мёд стекает с сот, две гордые пчелы рядом с идеально запечатанными медовыми ячейками, золотистый свет проходит сквозь янтарный мёд"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "our-garden-friends.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Four bee characters flying together over a magnificent blooming meadow at golden sunset, flowers and fruits growing below, triumphant and joyful",
+        "es": "Cuatro personajes de abejas volando juntos sobre un magnifico prado florido al atardecer dorado, flores y frutas creciendo abajo, triunfante y alegre",
+        "ru": "Четыре пчёлки летят вместе над великолепным цветущим лугом в золотистом закате, цветы и плоды растут внизу, торжественная и радостная сцена"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ants: The Last Stand - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Ants: The Last Stand</h1>
+        <h1 data-lang="es">Hormigas: La Ultima Resistencia</h1>
+        <h1 data-lang="ru">Муравьи: Последний Рубеж</h1>
+        <p data-lang="en" class="active">Sacrifice, War, and the Colony That Never Gives Up</p>
+        <p data-lang="es">Sacrificio, Guerra y la Colonia Que Nunca Se Rinde</p>
+        <p data-lang="ru">Жертва, война и колония, которая никогда не сдаётся</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-colony-siege.jpg"
+             alt="Ants"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Ants</h2>
+            <h2 class="hero-title" data-lang="es">Hormigas</h2>
+            <h2 class="hero-title" data-lang="ru">Муравьи</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Last Stand</p>
+            <p class="hero-subtitle" data-lang="es">La Ultima Resistencia</p>
+            <p class="hero-subtitle" data-lang="ru">Последний Рубеж</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/peaceful-morning.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Serene morning at a thriving ant colony, ants moving peacefully, wildflowers blooming, warm golden sunlight, calm idyllic meadow scene"
+                 data-alt-en="Serene morning at a thriving ant colony, ants moving peacefully, wildflowers blooming, warm golden sunlight, calm idyllic meadow scene"
+                 data-alt-es="Manana serena en una prospera colonia de hormigas, hormigas moviéndose pacificamente, flores silvestres floreciendo, calida luz dorada"
+                 data-alt-ru="Безмятежное утро в процветающей колонии муравьёв, муравьи мирно движутся, полевые цветы цветут, тёплый золотистый свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">A Peaceful Morning</h2>
+            <h2 data-lang="es">Una Manana Pacifica</h2>
+            <h2 data-lang="ru">Мирное утро</h2>
+            <div data-lang="en" class="active">
+                <p>The morning is perfect. Sunlight warms the earth above Queen Terra&#x27;s colony, and the meadow hums with peaceful industry. Lines of workers stream out to gather food, returning laden with seeds and leaf fragments. Tiny struggles happily beneath her oversized load. Scout ranges far afield, mapping new territory. Major stands at the main gate, nodding as each familiar ant passes. Deep below, Queen Terra tends to the next generation of eggs in the warm nursery. Every ant knows her purpose. Every tunnel leads somewhere important. This colony is a masterpiece of cooperation — thousands of individuals, one shared heartbeat. No one knows that by sunset, everything will change.</p>
+            </div>
+            <div data-lang="es">
+                <p>La manana es perfecta. La luz del sol calienta la tierra sobre la colonia de la Reina Terra, y el prado zumba con industria pacifica. Filas de obreras salen a recolectar comida, regresando cargadas de semillas y fragmentos de hojas. Diminuta lucha felizmente bajo su carga sobredimensionada. Exploradora se aventura lejos, mapeando nuevo territorio. Mayor esta en la puerta principal, asintiendo mientras cada hormiga familiar pasa. En las profundidades, la Reina Terra cuida la proxima generacion de huevos en la calida guarderia. Cada hormiga conoce su proposito. Cada tunel lleva a algun lugar importante. Esta colonia es una obra maestra de cooperacion — miles de individuos, un solo latido compartido. Nadie sabe que al atardecer, todo cambiara.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Утро совершенно. Солнечный свет греет землю над колонией Королевы Терры, и луг гудит мирным трудом. Вереницы рабочих выходят за едой, возвращаясь гружёные семенами и кусочками листьев. Крошка счастливо борется под своей непомерной ношей. Разведчица уходит далеко, нанося на карту новые территории. Майор стоит у главных ворот, кивая каждому знакомому муравью. Глубоко внизу Королева Терра ухаживает за следующим поколением яиц в тёплой детской. Каждый муравей знает своё предназначение. Каждый тоннель ведёт куда-то важному. Эта колония — шедевр сотрудничества: тысячи особей, одно общее сердцебиение. Никто не знает, что к закату всё изменится.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/scouts-report-danger.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Lean brown ant racing frantically toward the anthill, dark mass of army ants visible on the horizon, storm clouds gathering, dramatic lighting"
+                 data-alt-en="Lean brown ant racing frantically toward the anthill, dark mass of army ants visible on the horizon, storm clouds gathering, dramatic lighting"
+                 data-alt-es="Hormiga marron delgada corriendo franticamente hacia el hormiguero, masa oscura de hormigas legionarias visible en el horizonte, nubes de tormenta"
+                 data-alt-ru="Стройный коричневый муравей мчится к муравейнику, тёмная масса кочевых муравьёв видна на горизонте, грозовые тучи собираются"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Scouts Report Danger</h2>
+            <h2 data-lang="es">Las Exploradoras Reportan Peligro</h2>
+            <h2 data-lang="ru">Разведчицы сообщают об опасности</h2>
+            <div data-lang="en" class="active">
+                <p>Scout sees them first. A dark, living river flowing over the hill. Not dozens, not hundreds — THOUSANDS of army ants, marching in columns ten bodies wide, their massive jaws snapping like scissors. They are Dorylus — driver ants — and they consume everything in their path. Insects, lizards, even small mammals that cannot flee fast enough. Scout&#x27;s bent antenna trembles. She has never run so fast in her life. She bursts into the colony, releasing alarm pheromones so powerful that every ant in every tunnel freezes. &#x27;They&#x27;re coming,&#x27; she gasps. &#x27;The raiders. Thousands of them. We have hours, maybe less.&#x27; In the queen&#x27;s chamber, Queen Terra closes her ancient eyes. She has seen this before. She knows what it costs.</p>
+            </div>
+            <div data-lang="es">
+                <p>Exploradora los ve primero. Un rio oscuro y viviente fluyendo sobre la colina. No docenas, no cientos — MILES de hormigas legionarias, marchando en columnas de diez cuerpos de ancho, sus mandibulas masivas chasqueando como tijeras. Son Dorylus — hormigas conductoras — y devoran todo a su paso. Insectos, lagartijas, incluso pequenos mamiferos que no pueden huir lo suficientemente rapido. La antena doblada de Exploradora tiembla. Nunca ha corrido tan rapido en su vida. Irrumpe en la colonia, liberando feromonas de alarma tan potentes que cada hormiga en cada tunel se congela. &#x27;Vienen,&#x27; jadea. &#x27;Las invasoras. Miles de ellas. Tenemos horas, quiza menos.&#x27; En la camara de la reina, la Reina Terra cierra sus antiguos ojos. Ha visto esto antes. Sabe lo que cuesta.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Разведчица видит их первой. Тёмная, живая река, текущая через холм. Не десятки, не сотни — ТЫСЯЧИ кочевых муравьёв, марширующих колоннами шириной в десять тел, их массивные челюсти щёлкают как ножницы. Это дорилусы — бродячие муравьи — и они пожирают всё на своём пути. Насекомых, ящериц, даже мелких млекопитающих, не успевших убежать. Изогнутый усик Разведчицы дрожит. Она никогда не бежала так быстро в жизни. Она врывается в колонию, выпуская тревожные феромоны такой силы, что каждый муравей в каждом тоннеле замирает. &#x27;Они идут,&#x27; задыхается она. &#x27;Захватчики. Тысячи. У нас часы, может меньше.&#x27; В камере королевы Королева Терра закрывает свои древние глаза. Она видела это раньше. Она знает, чего это стоит.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/enemy-approaches.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Terrifying close-up of invading army ant column, hundreds of dark aggressive ants with huge mandibles in tight formation, barren stripped earth behind them, dramatic red lighting"
+                 data-alt-en="Terrifying close-up of invading army ant column, hundreds of dark aggressive ants with huge mandibles in tight formation, barren stripped earth behind them, dramatic red lighting"
+                 data-alt-es="Primer plano aterrador de la columna de hormigas legionarias invasoras, cientos de hormigas oscuras agresivas con mandibulas enormes en formacion cerrada"
+                 data-alt-ru="Устрашающий крупный план колонны вторгающихся кочевых муравьёв, сотни тёмных агрессивных муравьёв с огромными челюстями в тесном строю, голая земля позади"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Enemy Army</h2>
+            <h2 data-lang="es">El Ejercito Enemigo</h2>
+            <h2 data-lang="ru">Вражеская армия</h2>
+            <div data-lang="en" class="active">
+                <p>The army ants are unlike anything in the colony&#x27;s experience. They have no permanent home — they ARE the invasion. Their queen is carried in the center of the swarm, surrounded by millions of soldiers whose only purpose is to kill and consume. Where Terra&#x27;s colony is built on roles and cooperation, this army is built on one thing: conquest. The raiders don&#x27;t negotiate. They don&#x27;t coexist. They strip the earth bare and move on. As the column advances, the ground behind it is clean — every insect, every larva, every living thing devoured. Scout watches from a grass blade, counting. She stops counting at ten thousand. It doesn&#x27;t matter anymore. There are more raiders than blades of grass.</p>
+            </div>
+            <div data-lang="es">
+                <p>Las hormigas legionarias son diferentes a todo lo que la colonia ha experimentado. No tienen hogar permanente — ELLAS SON la invasion. Su reina es cargada en el centro del enjambre, rodeada por millones de soldados cuyo unico proposito es matar y consumir. Donde la colonia de Terra esta construida sobre roles y cooperacion, este ejercito esta construido sobre una cosa: conquista. Las invasoras no negocian. No coexisten. Despojan la tierra y siguen adelante. Mientras la columna avanza, el suelo detras queda limpio — cada insecto, cada larva, cada ser vivo devorado. Exploradora observa desde una hoja de hierba, contando. Deja de contar en diez mil. Ya no importa. Hay mas invasoras que hojas de hierba.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Кочевые муравьи не похожи ни на что из опыта колонии. У них нет постоянного дома — они САМИ и есть вторжение. Их королеву несут в центре роя, окружённую миллионами солдат, чья единственная цель — убивать и пожирать. Там, где колония Терры построена на ролях и сотрудничестве, эта армия построена на одном: завоевании. Захватчики не ведут переговоров. Не сосуществуют. Они обдирают землю догола и идут дальше. По мере продвижения колонны земля позади неё чиста — каждое насекомое, каждая личинка, всё живое пожрано. Разведчица наблюдает с травинки, считая. Она перестаёт считать на десяти тысячах. Это больше не имеет значения. Захватчиков больше, чем травинок.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/majors-decision.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Large soldier ant facing the queen in a dimly lit chamber, solemn mood, other ants watching in the background, warm amber light, council of war atmosphere"
+                 data-alt-en="Large soldier ant facing the queen in a dimly lit chamber, solemn mood, other ants watching in the background, warm amber light, council of war atmosphere"
+                 data-alt-es="Gran hormiga soldado frente a la reina en una camara tenuemente iluminada, ambiente solemne, otras hormigas observando al fondo"
+                 data-alt-ru="Большой муравей-солдат перед королевой в тускло освещённой камере, торжественная атмосфера, другие муравьи наблюдают на заднем плане"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Major&#x27;s Decision</h2>
+            <h2 data-lang="es">La Decision de Mayor</h2>
+            <h2 data-lang="ru">Решение Майора</h2>
+            <div data-lang="en" class="active">
+                <p>In the queen&#x27;s chamber, Major stands before Queen Terra. The room is silent. Every ant knows what must happen. &#x27;The tunnels must be sealed,&#x27; Terra says quietly. &#x27;The main corridors. The secondary routes. All of them.&#x27; Major nods. He knows what this means. The ants who seal the tunnels will be on the WRONG side of the barrier — between the colony and the invaders. They won&#x27;t be coming back. &#x27;I&#x27;ll lead the defenders,&#x27; Major says. His voice doesn&#x27;t waver. &#x27;Choose only volunteers,&#x27; Terra says. Her ancient eyes are wet. &#x27;They are all volunteers, my Queen,&#x27; Major replies. &#x27;Every single one.&#x27; And this is true. In a colony built on selflessness, no one needs to be ordered to sacrifice. They simply step forward.</p>
+            </div>
+            <div data-lang="es">
+                <p>En la camara de la reina, Mayor esta frente a la Reina Terra. La habitacion esta en silencio. Cada hormiga sabe lo que debe pasar. &#x27;Los tuneles deben ser sellados,&#x27; dice Terra en voz baja. &#x27;Los corredores principales. Las rutas secundarias. Todos.&#x27; Mayor asiente. Sabe lo que esto significa. Las hormigas que sellen los tuneles estaran en el lado EQUIVOCADO de la barrera — entre la colonia y los invasores. No van a volver. &#x27;Yo liderare a los defensores,&#x27; dice Mayor. Su voz no tiembla. &#x27;Elige solo voluntarias,&#x27; dice Terra. Sus ojos ancianos estan humedos. &#x27;Todas son voluntarias, mi Reina,&#x27; responde Mayor. &#x27;Cada una de ellas.&#x27; Y esto es verdad. En una colonia construida sobre el altruismo, nadie necesita que le ordenen sacrificarse. Simplemente dan un paso adelante.</p>
+            </div>
+            <div data-lang="ru">
+                <p>В камере королевы Майор стоит перед Королевой Террой. В комнате тишина. Каждый муравей знает, что должно произойти. &#x27;Тоннели должны быть запечатаны,&#x27; тихо говорит Терра. &#x27;Главные коридоры. Запасные пути. Все.&#x27; Майор кивает. Он знает, что это значит. Муравьи, которые запечатают тоннели, окажутся по НЕПРАВИЛЬНУЮ сторону преграды — между колонией и захватчиками. Они не вернутся. &#x27;Я поведу защитников,&#x27; говорит Майор. Его голос не дрожит. &#x27;Выбери только добровольцев,&#x27; говорит Терра. Её древние глаза влажны. &#x27;Они все добровольцы, моя Королева,&#x27; отвечает Майор. &#x27;Каждый из них.&#x27; И это правда. В колонии, построенной на самоотверженности, никому не нужно приказывать жертвовать собой. Они просто делают шаг вперёд.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/tunnel-defenders.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Soldier ants plugging tunnel entrance with their bodies, massive heads and mandibles facing outward, enemy ants approaching, heroic and heartbreaking, dramatic lighting"
+                 data-alt-en="Soldier ants plugging tunnel entrance with their bodies, massive heads and mandibles facing outward, enemy ants approaching, heroic and heartbreaking, dramatic lighting"
+                 data-alt-es="Hormigas soldado tapando la entrada del tunel con sus cuerpos, cabezas masivas y mandibulas hacia afuera, hormigas enemigas acercandose, heroico y desgarrador"
+                 data-alt-ru="Муравьи-солдаты затыкают вход в тоннель своими телами, массивные головы и челюсти направлены наружу, вражеские муравьи приближаются, героическая и душераздирающая сцена"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Living Wall</h2>
+            <h2 data-lang="es">La Pared Viviente</h2>
+            <h2 data-lang="ru">Живая стена</h2>
+            <div data-lang="en" class="active">
+                <p>This is the part of the story that is hardest to tell, because it is true. When army ants invade a colony, defender ants plug the tunnel entrances with their own bodies. They wedge themselves into the openings — head first, mandibles facing outward — and they HOLD. The raiders bite them, pull at them, spray acid on them. The defenders do not move. Behind them, the colony evacuates. Workers carry eggs and larvae through deeper tunnels. Major is the first to plug the main entrance. His massive head fills the gap perfectly. &#x27;Go,&#x27; he says calmly to the ants streaming past behind him. &#x27;Take the children and go.&#x27; He can feel the raiders&#x27; mandibles on his exoskeleton. He does not flinch. This is what he was born for.</p>
+            </div>
+            <div data-lang="es">
+                <p>Esta es la parte de la historia mas dificil de contar, porque es verdad. Cuando las hormigas legionarias invaden una colonia, las hormigas defensoras tapan las entradas de los tuneles con sus propios cuerpos. Se incrustan en las aberturas — cabeza primero, mandibulas hacia afuera — y RESISTEN. Las invasoras las muerden, las jalan, les rocian acido. Las defensoras no se mueven. Detras de ellas, la colonia evacua. Las obreras cargan huevos y larvas por tuneles mas profundos. Mayor es el primero en tapar la entrada principal. Su cabeza masiva llena el espacio perfectamente. &#x27;Vayan,&#x27; dice calmadamente a las hormigas que pasan detras de el. &#x27;Lleven a los ninos y vayan.&#x27; Puede sentir las mandibulas de las invasoras en su exoesqueleto. No se inmuta. Para esto nacio.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Это самая тяжёлая часть истории, потому что она правдива. Когда кочевые муравьи вторгаются в колонию, муравьи-защитники затыкают входы в тоннели собственными телами. Они вклиниваются в проёмы — головой вперёд, челюстями наружу — и ДЕРЖАТСЯ. Захватчики кусают их, тянут, брызгают кислотой. Защитники не двигаются. Позади них колония эвакуируется. Рабочие несут яйца и личинки через более глубокие тоннели. Майор первым затыкает главный вход. Его массивная голова идеально заполняет проём. &#x27;Идите,&#x27; спокойно говорит он муравьям, бегущим мимо позади него. &#x27;Берите детей и идите.&#x27; Он чувствует челюсти захватчиков на своём экзоскелете. Он не вздрагивает. Для этого он родился.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/chemical-warfare.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Intense battle between defender ants spraying formic acid mist and invading army ants recoiling, churned earth, harsh red-orange lighting, chaotic scene"
+                 data-alt-en="Intense battle between defender ants spraying formic acid mist and invading army ants recoiling, churned earth, harsh red-orange lighting, chaotic scene"
+                 data-alt-es="Batalla intensa entre hormigas defensoras rociando acido formico y hormigas invasoras retrocediendo, tierra revuelta, iluminacion rojo-naranja"
+                 data-alt-ru="Ожесточённая битва между защитниками, распыляющими муравьиную кислоту, и отступающими захватчиками, разрытая земля, резкое красно-оранжевое освещение"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Chemical Warfare</h2>
+            <h2 data-lang="es">Guerra Quimica</h2>
+            <h2 data-lang="ru">Химическая война</h2>
+            <div data-lang="en" class="active">
+                <p>Above ground, the battle is even more brutal. Defender ants have a weapon the raiders don&#x27;t expect: formic acid. They spray it from their abdomens in desperate clouds, and where the acid lands, it burns. The raiders reel back, confused and in pain. But there are so many of them. For every raider that falls, ten more take her place. Scout leads a flanking team, striking at the edges of the army column, trying to disrupt their scent trails and cause confusion. It works — for a while. Separated from the chemical trail, groups of raiders mill in circles, lost. But the main column adapts. It always adapts. This is what army ants do. They don&#x27;t think. They don&#x27;t strategize. They simply overwhelm. And against that, even courage has limits.</p>
+            </div>
+            <div data-lang="es">
+                <p>Sobre la superficie, la batalla es aun mas brutal. Las hormigas defensoras tienen un arma que las invasoras no esperan: acido formico. Lo rocian desde sus abdomenes en nubes desesperadas, y donde el acido cae, quema. Las invasoras retroceden, confundidas y adoloridas. Pero son tantas. Por cada invasora que cae, diez mas toman su lugar. Exploradora lidera un equipo de flanqueo, golpeando los bordes de la columna del ejercito, tratando de interrumpir sus rastros de olor y causar confusion. Funciona — por un tiempo. Separados del rastro quimico, grupos de invasoras giran en circulos, perdidos. Pero la columna principal se adapta. Siempre se adapta. Esto es lo que hacen las hormigas legionarias. No piensan. No planifican estrategias. Simplemente abruman. Y contra eso, incluso el coraje tiene limites.</p>
+            </div>
+            <div data-lang="ru">
+                <p>На поверхности битва ещё более жестокая. У защитников есть оружие, которого захватчики не ожидают: муравьиная кислота. Они распыляют её из брюшек отчаянными облаками, и там, где кислота попадает, она жжёт. Захватчики отшатываются, сбитые с толку и от боли. Но их так много. На каждого павшего захватчика приходят десять новых. Разведчица ведёт фланговую группу, нанося удары по краям армейской колонны, пытаясь нарушить их тропы запахов и посеять хаос. Это работает — какое-то время. Отрезанные от химической тропы, группы захватчиков кружат на месте, потерянные. Но основная колонна адаптируется. Она всегда адаптируется. Это то, что делают кочевые муравьи. Они не думают. Не строят стратегий. Они просто подавляют числом. И против этого даже мужество имеет пределы.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/nursery-evacuation.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Small dark ant carrying white eggs through a narrow underground tunnel, other worker ants with larvae, dust falling from ceiling, urgent but tender, amber light"
+                 data-alt-en="Small dark ant carrying white eggs through a narrow underground tunnel, other worker ants with larvae, dust falling from ceiling, urgent but tender, amber light"
+                 data-alt-es="Pequena hormiga oscura cargando huevos blancos por un estrecho tunel subterraneo, otras obreras con larvas, polvo cayendo del techo, urgente pero tierno"
+                 data-alt-ru="Маленький тёмный муравей несёт белые яйца через узкий подземный тоннель, другие рабочие с личинками, пыль сыплется с потолка, срочно но нежно"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Save the Children</h2>
+            <h2 data-lang="es">Salven a los Ninos</h2>
+            <h2 data-lang="ru">Спасите детей</h2>
+            <div data-lang="en" class="active">
+                <p>Deep in the colony, Tiny has the most important job she&#x27;s ever had. While the soldiers fight and die above, the workers are evacuating the nursery. Every egg, every larva, every pupa must be carried to the deepest emergency chambers — tunnels so far down that the raiders may never reach them. Tiny cradles a cluster of eggs in her mandibles, more gently than she has ever held anything. These eggs are the colony&#x27;s future. If the soldiers buy enough time, if the tunnels hold, these tiny white eggs will become the ants who rebuild everything. Tiny runs. The tunnel shakes as battle rages above. Dust falls from the ceiling. She shields the eggs with her body and keeps running. She is small. She has always been small. But right now, carrying the future in her jaws, she has never felt more important.</p>
+            </div>
+            <div data-lang="es">
+                <p>En lo profundo de la colonia, Diminuta tiene el trabajo mas importante que ha tenido. Mientras las soldados luchan y mueren arriba, las obreras estan evacuando la guarderia. Cada huevo, cada larva, cada pupa debe ser llevada a las camaras de emergencia mas profundas — tuneles tan abajo que las invasoras quiza nunca lleguen. Diminuta acuna un grupo de huevos en sus mandibulas, mas delicadamente de lo que ha sostenido nada jamas. Estos huevos son el futuro de la colonia. Si las soldados ganan suficiente tiempo, si los tuneles resisten, estos pequenos huevos blancos se convertiran en las hormigas que reconstruiran todo. Diminuta corre. El tunel tiembla mientras la batalla ruge arriba. Polvo cae del techo. Protege los huevos con su cuerpo y sigue corriendo. Es pequena. Siempre ha sido pequena. Pero ahora, cargando el futuro en sus mandibulas, nunca se ha sentido mas importante.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Глубоко в колонии у Крошки самая важная работа в её жизни. Пока солдаты сражаются и гибнут наверху, рабочие эвакуируют детскую. Каждое яйцо, каждая личинка, каждая куколка должна быть перенесена в самые глубокие аварийные камеры — тоннели так глубоко, что захватчики, может быть, никогда туда не доберутся. Крошка бережно несёт гроздь яиц в челюстях, нежнее, чем когда-либо что-то держала. Эти яйца — будущее колонии. Если солдаты выиграют достаточно времени, если тоннели выдержат, эти крошечные белые яйца станут муравьями, которые всё отстроят заново. Крошка бежит. Тоннель содрогается от битвы наверху. Пыль сыплется с потолка. Она прикрывает яйца своим телом и продолжает бежать. Она маленькая. Она всегда была маленькой. Но сейчас, неся будущее в своих челюстях, она никогда не чувствовала себя важнее.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/soldiers-sacrifice.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Battered soldier ant wedged in tunnel entrance still holding firm, cracked exoskeleton, raiders pressing against him, golden light behind like a halo, heroic last stand"
+                 data-alt-en="Battered soldier ant wedged in tunnel entrance still holding firm, cracked exoskeleton, raiders pressing against him, golden light behind like a halo, heroic last stand"
+                 data-alt-es="Hormiga soldado maltratada incrustada en la entrada del tunel resistiendo, exoesqueleto agrietado, invasoras presionando contra el, luz dorada detras como un halo"
+                 data-alt-ru="Побитый муравей-солдат, вклинившийся во вход тоннеля и держащийся, треснутый экзоскелет, захватчики давят на него, золотистый свет позади как ореол"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Soldier&#x27;s Sacrifice</h2>
+            <h2 data-lang="es">El Sacrificio del Soldado</h2>
+            <h2 data-lang="ru">Жертва солдата</h2>
+            <div data-lang="en" class="active">
+                <p>Major has been holding the main tunnel for hours. His exoskeleton is cracked in three places. One mandible is chipped. The raiders have thrown everything at him — bites, acid, sheer numbers pushing against his body. He has not moved one inch. Behind him, the tunnel is empty. The evacuation is complete. Every egg is safe. Every worker is deep below. Queen Terra herself sent the last message through the pheromone chain: &#x27;The children are safe. Thank you.&#x27; Major feels the message reach him and something inside him lets go — not his grip, never his grip — but the tension he didn&#x27;t know he was carrying. He did his job. Every defender did their job. Some will not survive the night. Major may not survive the night. But the colony will live. And in the ant world, that is everything.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mayor ha estado sosteniendo el tunel principal por horas. Su exoesqueleto esta agrietado en tres lugares. Una mandibula esta astillada. Las invasoras han lanzado todo contra el — mordidas, acido, el puro numero presionando contra su cuerpo. No se ha movido ni un centimetro. Detras de el, el tunel esta vacio. La evacuacion esta completa. Cada huevo esta a salvo. Cada obrera esta en las profundidades. La Reina Terra misma envio el ultimo mensaje por la cadena de feromonas: &#x27;Los ninos estan a salvo. Gracias.&#x27; Mayor siente que el mensaje lo alcanza y algo dentro de el se afloja — no su agarre, nunca su agarre — sino la tension que no sabia que cargaba. Hizo su trabajo. Cada defensor hizo su trabajo. Algunos no sobreviviran la noche. Mayor quiza no sobreviva la noche. Pero la colonia vivira. Y en el mundo de las hormigas, eso es todo.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Майор держит главный тоннель уже несколько часов. Его экзоскелет треснул в трёх местах. Одна челюсть сколота. Захватчики бросили на него всё — укусы, кислоту, чистую массу тел, давящих на него. Он не сдвинулся ни на сантиметр. За ним тоннель пуст. Эвакуация завершена. Каждое яйцо в безопасности. Каждый рабочий глубоко внизу. Сама Королева Терра послала последнее сообщение по цепочке феромонов: &#x27;Дети в безопасности. Спасибо.&#x27; Майор чувствует, как сообщение достигает его, и что-то внутри отпускает — не хватка, никогда не хватка — но напряжение, о котором он не знал. Он выполнил свою работу. Каждый защитник выполнил свою. Некоторые не переживут эту ночь. Майор, может быть, не переживёт эту ночь. Но колония будет жить. А в мире муравьёв это — всё.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/the-aftermath.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Devastated anthill at grey dawn, scarred earth, collapsed tunnel entrances, exhausted ants emerging, crushed wildflowers, solemn quiet aftermath"
+                 data-alt-en="Devastated anthill at grey dawn, scarred earth, collapsed tunnel entrances, exhausted ants emerging, crushed wildflowers, solemn quiet aftermath"
+                 data-alt-es="Hormiguero devastado al amanecer gris, tierra marcada, entradas de tuneles colapsadas, hormigas exhaustas emergiendo, flores aplastadas"
+                 data-alt-ru="Разорённый муравейник на фоне серого рассвета, израненная земля, обрушенные входы, измотанные муравьи выходят, помятые цветы"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Aftermath</h2>
+            <h2 data-lang="es">Las Consecuencias</h2>
+            <h2 data-lang="ru">Последствия</h2>
+            <div data-lang="en" class="active">
+                <p>By dawn, the raiders have moved on. Army ants never stay — they are a storm, not a siege. They swept through the upper tunnels, took what they could reach, and continued their endless march. The surface is scarred. Tunnel entrances are collapsed or torn open. The ground looks like a battlefield because it was one. Scout emerges first, her bent antenna testing the air for danger. Nothing. The chemical traces are fading. The raiders are gone. Slowly, cautiously, other ants begin to appear from the deep tunnels. They look at the devastation in silence. The meadow that was so beautiful yesterday is churned and scarred. Some of the defenders who held the tunnels are still there — motionless now, still wedged in their positions, still facing outward. They held. To the very end, they held.</p>
+            </div>
+            <div data-lang="es">
+                <p>Al amanecer, las invasoras se han ido. Las hormigas legionarias nunca se quedan — son una tormenta, no un asedio. Barrieron los tuneles superiores, tomaron lo que pudieron alcanzar, y continuaron su marcha interminable. La superficie esta marcada. Las entradas de los tuneles estan colapsadas o destrozadas. El suelo parece un campo de batalla porque lo fue. Exploradora emerge primero, su antena doblada probando el aire en busca de peligro. Nada. Los rastros quimicos se desvanecen. Las invasoras se fueron. Lentamente, cautelosamente, otras hormigas comienzan a aparecer de los tuneles profundos. Miran la devastacion en silencio. El prado que era tan hermoso ayer esta revuelto y marcado. Algunas de las defensoras que sostuvieron los tuneles siguen ahi — inmoviles ahora, aun incrustadas en sus posiciones, aun mirando hacia afuera. Resistieron. Hasta el final, resistieron.</p>
+            </div>
+            <div data-lang="ru">
+                <p>К рассвету захватчики ушли. Кочевые муравьи никогда не остаются — они буря, не осада. Они прошли через верхние тоннели, взяли что смогли, и продолжили свой бесконечный марш. Поверхность изранена. Входы в тоннели обрушены или разорваны. Земля выглядит как поле битвы, потому что им и была. Разведчица выходит первой, её изогнутый усик проверяет воздух на опасность. Ничего. Химические следы тают. Захватчики ушли. Медленно, осторожно, другие муравьи начинают появляться из глубоких тоннелей. Они молча смотрят на разрушения. Луг, который был таким красивым вчера, изрыт и изранен. Некоторые защитники, державшие тоннели, всё ещё там — неподвижные теперь, всё ещё вклиненные в свои позиции, всё ещё лицом наружу. Они выстояли. До самого конца они выстояли.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/rebuilding.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Ants rebuilding their colony in golden morning light, carrying earth, clearing debris, new green shoots growing, sunrise breaking through clouds, hope and determination"
+                 data-alt-en="Ants rebuilding their colony in golden morning light, carrying earth, clearing debris, new green shoots growing, sunrise breaking through clouds, hope and determination"
+                 data-alt-es="Hormigas reconstruyendo su colonia en luz dorada matutina, cargando tierra, limpiando escombros, nuevos brotes verdes creciendo, amanecer"
+                 data-alt-ru="Муравьи восстанавливают свою колонию в золотистом утреннем свете, несут землю, расчищают завалы, новые зелёные ростки, рассвет пробивается сквозь тучи"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Rebuilding from Ashes</h2>
+            <h2 data-lang="es">Reconstruyendo de las Cenizas</h2>
+            <h2 data-lang="ru">Возрождение из пепла</h2>
+            <div data-lang="en" class="active">
+                <p>Before the morning sun has fully risen, the rebuilding begins. This is perhaps the most remarkable thing about ants: they do not mourn long. They do not give up. They BUILD. Tiny is the first to start carrying earth to repair the tunnels. Her load is too big — it&#x27;s always too big — but she carries it anyway. Scout maps new routes around the damaged sections. Workers stream out in organized lines, clearing debris, reopening passages, reinforcing walls. Deep below, Queen Terra begins laying eggs again. New life. New soldiers. New workers. The colony&#x27;s answer to destruction is not despair — it is creation. Within days, the tunnels will be deeper and stronger than before. The colony learns from every invasion. It adapts. It endures.</p>
+            </div>
+            <div data-lang="es">
+                <p>Antes de que el sol de la manana haya salido completamente, la reconstruccion comienza. Esto es quiza lo mas notable de las hormigas: no lloran mucho tiempo. No se rinden. CONSTRUYEN. Diminuta es la primera en empezar a cargar tierra para reparar los tuneles. Su carga es demasiado grande — siempre es demasiado grande — pero la carga de todas formas. Exploradora traza nuevas rutas alrededor de las secciones danadas. Las obreras salen en filas organizadas, limpiando escombros, reabriendo pasajes, reforzando paredes. En las profundidades, la Reina Terra comienza a poner huevos de nuevo. Nueva vida. Nuevas soldados. Nuevas obreras. La respuesta de la colonia a la destruccion no es la desesperacion — es la creacion.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Ещё до того, как утреннее солнце полностью взошло, начинается восстановление. Это, пожалуй, самое замечательное в муравьях: они не горюют долго. Они не сдаются. Они СТРОЯТ. Крошка первой начинает носить землю для ремонта тоннелей. Её ноша слишком велика — она всегда слишком велика — но она несёт её всё равно. Разведчица прокладывает новые маршруты вокруг повреждённых участков. Рабочие выходят организованными колоннами, расчищая завалы, открывая проходы, укрепляя стены. Глубоко внизу Королева Терра снова начинает откладывать яйца. Новая жизнь. Новые солдаты. Новые рабочие. Ответ колонии на разрушение — не отчаяние, а созидание. За несколько дней тоннели будут глубже и крепче, чем прежде.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/colony-endures.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Magnificent restored ant colony at golden sunset, larger and stronger anthill, organized ant lines, new wildflowers, all four characters visible, triumphant golden light, clouds parting"
+                 data-alt-en="Magnificent restored ant colony at golden sunset, larger and stronger anthill, organized ant lines, new wildflowers, all four characters visible, triumphant golden light, clouds parting"
+                 data-alt-es="Magnifica colonia restaurada al atardecer dorado, hormiguero mas grande y fuerte, lineas organizadas, nuevas flores, los cuatro personajes visibles, luz dorada triunfante"
+                 data-alt-ru="Великолепная восстановленная колония на фоне золотого заката, увеличенный и укреплённый муравейник, организованные колонны, новые цветы, все четыре персонажа видны, триумфальный золотистый свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Colony Endures</h2>
+            <h2 data-lang="es">La Colonia Perdura</h2>
+            <h2 data-lang="ru">Колония выстоит</h2>
+            <div data-lang="en" class="active">
+                <p>Weeks later, you would never know a war was fought here. The anthill is bigger than before. The tunnels go deeper. A new generation of soldiers guards the gates — their mandibles even larger, their instincts sharper. Scout has mapped escape routes in every direction. Tiny trains the new young workers, showing them how to carry loads bigger than themselves. &#x27;It&#x27;s all about heart,&#x27; she tells them, and she means it. Queen Terra sits in her chamber, surrounded by thousands of new eggs, and she remembers. She remembers every defender who held a tunnel. Every soldier who didn&#x27;t come home. In the ant world, there are no monuments, no names carved in stone. But the colony itself is the monument — every tunnel dug, every egg tended, every enemy turned away. The colony endures. It has endured for fifty million years. And it will endure long after we are gone.</p>
+            </div>
+            <div data-lang="es">
+                <p>Semanas despues, nunca sabrias que se libro una guerra aqui. El hormiguero es mas grande que antes. Los tuneles son mas profundos. Una nueva generacion de soldados custodia las puertas — sus mandibulas aun mas grandes, sus instintos mas agudos. Exploradora ha mapeado rutas de escape en todas direcciones. Diminuta entrena a las nuevas obreras jovenes, mostrandoles como cargar cosas mas grandes que ellas mismas. &#x27;Todo es cuestion de corazon,&#x27; les dice, y lo dice en serio. La Reina Terra se sienta en su camara, rodeada de miles de nuevos huevos, y recuerda. Recuerda a cada defensora que sostuvo un tunel. Cada soldado que no volvio a casa. En el mundo de las hormigas, no hay monumentos, no hay nombres grabados en piedra. Pero la colonia misma es el monumento. La colonia perdura. Ha perdurado por cincuenta millones de anos. Y perdurara mucho despues de que nosotros nos hayamos ido.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Спустя недели вы бы никогда не узнали, что здесь была война. Муравейник больше прежнего. Тоннели глубже. Новое поколение солдат охраняет ворота — их челюсти ещё больше, инстинкты острее. Разведчица проложила пути отступления во все стороны. Крошка обучает новых молодых рабочих, показывая, как нести груз больше себя. &#x27;Всё дело в сердце,&#x27; говорит она, и говорит серьёзно. Королева Терра сидит в своей камере, окружённая тысячами новых яиц, и помнит. Она помнит каждого защитника, державшего тоннель. Каждого солдата, не вернувшегося домой. В мире муравьёв нет памятников, нет имён, высеченных в камне. Но сама колония — это памятник. Колония выстоит. Она выстояла пятьдесят миллионов лет. И выстоит долго после того, как нас не станет.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#12</span>
+            <img data-src="assets/images/natures-lesson.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Single ant silhouetted on a tall grass blade at golden sunset, vast meadow and rebuilt anthill below, enormous sky, small creature against vast world, philosophical and profound"
+                 data-alt-en="Single ant silhouetted on a tall grass blade at golden sunset, vast meadow and rebuilt anthill below, enormous sky, small creature against vast world, philosophical and profound"
+                 data-alt-es="Hormiga sola silueteada en una hoja de hierba alta al atardecer dorado, vasto prado y hormiguero reconstruido abajo, cielo enorme, pequena criatura contra el vasto mundo"
+                 data-alt-ru="Одинокий муравей на фоне заката на высокой травинке, бескрайний луг и восстановленный муравейник внизу, огромное небо, маленькое существо на фоне огромного мира"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Nature&#x27;s Lesson</h2>
+            <h2 data-lang="es">La Leccion de la Naturaleza</h2>
+            <h2 data-lang="ru">Урок природы</h2>
+            <div data-lang="en" class="active">
+                <p>There is a lesson in the ants, if we choose to see it. Some colonies are democracies — every worker contributes freely, the queen is a mother not a tyrant, and the colony thrives because each member serves willingly. Other colonies are empires — slave-making ants that raid, enslave, and exploit. Army ants that destroy without building. Nature shows us both paths, and it shows us which one endures. The colonies built on cooperation — on every ant doing her part, on soldiers who choose to sacrifice, on workers who carry loads too heavy because they refuse to let their sisters down — these are the colonies that survive for millions of years. The raiders come and go like storms. But the builders remain. Perhaps the smallest creatures on Earth have the biggest lesson to teach us: that what we build together is always stronger than what we destroy alone.</p>
+            </div>
+            <div data-lang="es">
+                <p>Hay una leccion en las hormigas, si elegimos verla. Algunas colonias son democracias — cada obrera contribuye libremente, la reina es una madre no una tirana, y la colonia prospera porque cada miembro sirve voluntariamente. Otras colonias son imperios — hormigas esclavistas que asaltan, esclavizan y explotan. Hormigas legionarias que destruyen sin construir. La naturaleza nos muestra ambos caminos, y nos muestra cual perdura. Las colonias construidas sobre la cooperacion — donde cada hormiga hace su parte, donde los soldados eligen sacrificarse, donde las obreras cargan cargas demasiado pesadas porque se niegan a decepcionar a sus hermanas — estas son las colonias que sobreviven por millones de anos. Las invasoras vienen y van como tormentas. Pero las constructoras permanecen. Quiza las criaturas mas pequenas de la Tierra tienen la leccion mas grande que ensenarnos: que lo que construimos juntos siempre es mas fuerte que lo que destruimos solos.</p>
+            </div>
+            <div data-lang="ru">
+                <p>В муравьях есть урок, если мы решим его увидеть. Некоторые колонии — демократии: каждый рабочий вносит вклад добровольно, королева — мать, а не тиран, и колония процветает, потому что каждый член служит по своей воле. Другие колонии — империи: муравьи-рабовладельцы, которые нападают, порабощают и эксплуатируют. Кочевые муравьи, которые разрушают, не строя. Природа показывает нам оба пути и показывает, какой из них выдерживает. Колонии, построенные на сотрудничестве — где каждый муравей делает свою часть, где солдаты выбирают жертвовать собой, где рабочие несут непосильный груз, потому что отказываются подвести своих сестёр — это колонии, которые выживают миллионы лет. Захватчики приходят и уходят как бури. Но строители остаются. Может быть, самые маленькие создания на Земле преподают нам самый великий урок: то, что мы строим вместе, всегда сильнее того, что мы разрушаем поодиночке.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-mandible-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Mandible Power"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Mandible Power</h3>
+                    <h3 data-lang="es">Poder de las Mandibulas</h3>
+                    <h3 data-lang="ru">Сила челюстей</h3>
+                    <p data-lang="en" class="active">Look at Major&#x27;s massive mandibles — those are his jaws! Ant mandibles are like a Swiss Army knife: they can cut leaves, dig tunnels, carry food, feed baby ants, and fight off enemies. Major&#x27;s mandibles are especially large because he&#x27;s a soldier ant. The inside edges are serrated like a tiny saw blade, perfect for gripping and cutting. In battle, soldier ants can snap their mandibles shut with enough force to fling an enemy ant through the air. Some trap-jaw ants can close their jaws at speeds of up to 230 kilometers per hour — one of the fastest movements in nature.</p>
+                    <p data-lang="es">Mira las mandibulas masivas de Mayor — esas son sus quijadas! Las mandibulas de las hormigas son como una navaja suiza: pueden cortar hojas, cavar tuneles, cargar comida, alimentar bebes y luchar contra enemigos. Las mandibulas de Mayor son especialmente grandes porque es un soldado. En batalla, las hormigas soldado pueden cerrar sus mandibulas con suficiente fuerza para lanzar a una hormiga enemiga por el aire.</p>
+                    <p data-lang="ru">Посмотрите на массивные мандибулы Майора — это его челюсти! Челюсти муравья как швейцарский нож: ими можно резать листья, копать тоннели, переносить еду, кормить малышей и отбиваться от врагов. В бою муравьи-солдаты могут захлопнуть челюсти с силой, достаточной, чтобы отбросить врага. Некоторые муравьи-капканчики закрывают челюсти со скоростью до 230 км/ч — одно из самых быстрых движений в природе.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-antenna-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Amazing Antennae"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Amazing Antennae</h3>
+                    <h3 data-lang="es">Antenas Asombrosas</h3>
+                    <h3 data-lang="ru">Удивительные усики</h3>
+                    <p data-lang="en" class="active">Scout&#x27;s antennae are her most critical survival tools. Each antenna has a special elbow joint that lets it bend and sweep in all directions. The tip contains thousands of scent receptors that can detect chemical signals — including the alarm pheromones that saved the colony. When Scout detected the army ants, her antennae picked up their chemical signature from hundreds of body lengths away. Ants can distinguish between dozens of different pheromone messages: food trails, alarm signals, colony identification, and even death signals that tell workers to remove fallen colony-mates.</p>
+                    <p data-lang="es">Las antenas de Exploradora son sus herramientas de supervivencia mas criticas. Cada antena tiene una articulacion que le permite doblarse y barrer en todas direcciones. La punta contiene miles de receptores de olor que detectan senales quimicas — incluyendo las feromonas de alarma que salvaron la colonia. Los muravьi pueden distinguir entre docenas de mensajes de feromonas diferentes.</p>
+                    <p data-lang="ru">Усики Разведчицы — её важнейшие инструменты выживания. На каждом есть локтевой сустав для сгибания во всех направлениях. Кончик содержит тысячи рецепторов запаха, улавливающих химические сигналы — включая тревожные феромоны, спасшие колонию. Когда Разведчица обнаружила кочевых муравьёв, её усики уловили их химическую подпись за сотни длин тела. Муравьи различают десятки разных феромонных сигналов: пищевые тропы, тревогу, опознание колонии и даже сигналы смерти.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-exoskeleton-texture.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Armor Exoskeleton"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Armor Exoskeleton</h3>
+                    <h3 data-lang="es">Exoesqueleto Armadura</h3>
+                    <h3 data-lang="ru">Экзоскелет-броня</h3>
+                    <p data-lang="en" class="active">Queen Terra&#x27;s body is encased in chitin — a material so strong that it inspired human engineers to develop new armor technologies. The exoskeleton is divided into plates connected by flexible joints, allowing full mobility while providing protection. In battle, Major&#x27;s thicker exoskeleton can withstand multiple bites from raider mandibles. The chitin also serves as chemical armor — its surface properties can neutralize some of the formic acid sprayed by enemy ants. After millions of years of evolution, ant armor is one of nature&#x27;s most sophisticated defense systems.</p>
+                    <p data-lang="es">El cuerpo de la Reina Terra esta envuelto en quitina — un material tan fuerte que inspiro a los ingenieros humanos a desarrollar nuevas tecnologias de armadura. El exoesqueleto esta dividido en placas conectadas por articulaciones flexibles. En batalla, el exoesqueleto mas grueso de Mayor puede resistir multiples mordidas de mandibulas invasoras.</p>
+                    <p data-lang="ru">Тело Королевы Терры заключено в хитин — материал настолько прочный, что вдохновил инженеров на создание новых технологий брони. Экзоскелет разделён на пластины с гибкими суставами, обеспечивая подвижность и защиту. В бою более толстый экзоскелет Майора выдерживает множество укусов. Хитин также служит химической бронёй — его поверхность может нейтрализовать часть муравьиной кислоты противника.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-leg-grip.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Grip and Climb"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Grip and Climb</h3>
+                    <h3 data-lang="es">Agarre y Escalada</h3>
+                    <h3 data-lang="ru">Хватка и лазание</h3>
+                    <p data-lang="en" class="active">Each ant foot has two tarsal claws plus a sticky arolium pad — a dual-grip system that lets ants walk on almost any surface. During the colony evacuation, Tiny used these grips to run at full speed through vertical tunnel sections while carrying eggs heavier than herself. The tarsal claws hook into rough surfaces while the arolium creates wet adhesion on smooth ones. This system is so effective that engineers study it to design better climbing robots. Even on surfaces covered in formic acid from battle, an ant&#x27;s grip rarely fails — a matter of life and death when carrying the colony&#x27;s future.</p>
+                    <p data-lang="es">Cada pata de hormiga tiene dos garras tarsales mas una almohadilla adhesiva — un sistema de doble agarre que permite a las hormigas caminar sobre casi cualquier superficie. Durante la evacuacion, Diminuta uso estos agarres para correr a toda velocidad por secciones verticales mientras cargaba huevos mas pesados que ella misma.</p>
+                    <p data-lang="ru">На каждой лапке два тарзальных коготка плюс липкая подушечка-аролиум — двойная система захвата, позволяющая ходить почти по любой поверхности. Во время эвакуации Крошка использовала эту хватку, чтобы бежать на полной скорости по вертикальным участкам тоннелей, неся яйца тяжелее себя. Коготки цепляются за шероховатости, а аролиум создаёт влажную адгезию на гладких поверхностях. Эта система настолько эффективна, что инженеры изучают её для создания роботов-альпинистов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Ant Facts!</h2>
+            <h2 data-lang="es">Datos Asombrosos sobre Hormigas!</h2>
+            <h2 data-lang="ru">Удивительные факты о муравьях!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-strength.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Super Strength"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Super Strength</h3>
+                        <h3 data-lang="es">Super Fuerza</h3>
+                        <h3 data-lang="ru">Суперсила</h3>
+                        <p data-lang="en" class="active">Ants can carry objects 50 times their own body weight! That&#x27;s like a human picking up a car and carrying it over their head. Their secret is their exoskeleton — a hard outer shell that acts like a suit of armor and gives their muscles incredible leverage. Some species can even carry 100 times their weight when working together!</p>
+                        <p data-lang="es">Las hormigas pueden cargar objetos 50 veces su propio peso! Eso es como si un humano levantara un auto y lo cargara sobre su cabeza. Su secreto es su exoesqueleto — una cubierta exterior dura que actua como una armadura y da a sus musculos una palanca increible. Algunas especies pueden incluso cargar 100 veces su peso cuando trabajan juntas!</p>
+                        <p data-lang="ru">Муравьи могут нести предметы в 50 раз тяжелее собственного веса! Это как если бы человек поднял автомобиль и нёс его над головой. Их секрет — экзоскелет, твёрдая внешняя оболочка, которая действует как доспехи и даёт их мышцам невероятный рычаг. Некоторые виды могут нести даже в 100 раз больше своего веса, работая вместе!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-colony-size.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Mega Colonies"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Mega Colonies</h3>
+                        <h3 data-lang="es">Mega Colonias</h3>
+                        <h3 data-lang="ru">Мегаколонии</h3>
+                        <p data-lang="en" class="active">Some ant colonies can have MILLIONS of members! The largest known ant supercolony stretches over 6,000 kilometers across southern Europe — that&#x27;s wider than the United States! These massive colonies have multiple queens and billions of workers. A single colony of leafcutter ants can strip a whole tree of its leaves in one night!</p>
+                        <p data-lang="es">Algunas colonias de hormigas pueden tener MILLONES de miembros! La supercolonia de hormigas mas grande conocida se extiende por mas de 6,000 kilometros a traves del sur de Europa — eso es mas ancho que los Estados Unidos! Estas colonias masivas tienen multiples reinas y miles de millones de trabajadoras.</p>
+                        <p data-lang="ru">Некоторые колонии муравьёв могут насчитывать МИЛЛИОНЫ членов! Самая большая известная суперколония муравьёв простирается на более чем 6 000 километров через южную Европу — это шире, чем США! Эти огромные колонии имеют множество королев и миллиарды рабочих.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-scent-trails.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Scent Language"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Scent Language</h3>
+                        <h3 data-lang="es">Lenguaje de Olores</h3>
+                        <h3 data-lang="ru">Язык запахов</h3>
+                        <p data-lang="en" class="active">Ants talk to each other using special chemicals called pheromones! They leave scent trails on the ground to say &#x27;food this way,&#x27; release alarm scents that mean &#x27;danger!&#x27;, and even have a special smell that says &#x27;I&#x27;m from this colony.&#x27; An ant&#x27;s antennae can detect incredibly tiny amounts of these chemicals — it&#x27;s like having a super-powered nose on your head!</p>
+                        <p data-lang="es">Las hormigas hablan entre si usando quimicos especiales llamados feromonas! Dejan rastros de olor en el suelo para decir &#x27;comida por aqui,&#x27; liberan olores de alarma que significan &#x27;peligro!&#x27;, e incluso tienen un olor especial que dice &#x27;soy de esta colonia.&#x27;</p>
+                        <p data-lang="ru">Муравьи разговаривают друг с другом с помощью особых химических веществ — феромонов! Они оставляют пахучие следы на земле, чтобы сказать &#x27;еда тут,&#x27; выпускают тревожные запахи, означающие &#x27;опасность!&#x27;, и даже имеют особый запах, говорящий &#x27;я из этой колонии.&#x27;</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-fungus-farming.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Tiny Farmers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Tiny Farmers</h3>
+                        <h3 data-lang="es">Pequenas Granjeras</h3>
+                        <h3 data-lang="ru">Крошечные фермеры</h3>
+                        <p data-lang="en" class="active">Leafcutter ants have been farming fungus for over 50 MILLION years — that&#x27;s way before humans even existed! They cut leaves, carry them underground, chew them into a paste, and grow a special fungus on top. They even use natural antibiotics to keep their gardens disease-free. They were the world&#x27;s first farmers, and they&#x27;re still some of the best!</p>
+                        <p data-lang="es">Las hormigas cortadoras de hojas han cultivado hongos por mas de 50 MILLONES de anos — eso es mucho antes de que los humanos existieran! Cortan hojas, las llevan bajo tierra, las mastican hasta hacer una pasta y cultivan un hongo especial encima. Fueron las primeras granjeras del mundo!</p>
+                        <p data-lang="ru">Муравьи-листорезы выращивают грибы уже более 50 МИЛЛИОНОВ лет — это задолго до появления людей! Они срезают листья, несут их под землю, пережёвывают в пасту и выращивают на ней особый гриб. Они были первыми фермерами в мире и до сих пор одни из лучших!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">A story of sacrifice, courage, and what it truly means to stand together</p>
+        <p data-lang="es" style="margin-top: 10px;">Una historia de sacrificio, coraje y lo que realmente significa estar juntos</p>
+        <p data-lang="ru" style="margin-top: 10px;">История жертвы, мужества и того, что значит стоять вместе</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

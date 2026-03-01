@@ -1,0 +1,22 @@
+{
+  "chapter": "bees",
+  "completedAt": "2026-02-28T23:00:05.097Z",
+  "unifiedCast": "unified-cast.jpg",
+  "characterSheets": {
+    "meet-queen-aurelia": "queen-aurelia-sheet.jpg",
+    "buzzs-busy-day": "buzz-sheet.jpg",
+    "petals-first-flight": "petal-sheet.jpg",
+    "spike-guards-the-door": "spike-sheet.jpg"
+  },
+  "styleReference": "style-reference.jpg",
+  "chosenStyle": {
+    "id": "translucency-botanical",
+    "name": "Translucency + Lush Botanical",
+    "base": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.",
+    "moods": [
+      "translucency",
+      "lush-botanical"
+    ],
+    "description": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nEmphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.\n\nRich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper."
+  }
+}

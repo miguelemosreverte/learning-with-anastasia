@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Bible — Bees: The Honey Makers</title>
+<style>
+    :root {
+        --bg: #0d1117; --surface: #161b22; --surface2: #21262d; --border: #30363d;
+        --text: #e6edf3; --text-dim: #8b949e; --accent: #58a6ff; --green: #3fb950;
+        --orange: #d29922; --red: #f85149; --purple: #bc8cff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        background: var(--bg); color: var(--text); line-height: 1.6; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px; }
+    .hero-header { text-align: center; padding: 48px 24px; border-bottom: 1px solid var(--border); margin-bottom: 32px; }
+    .hero-header h1 { font-size: 2.5em; margin-bottom: 8px; }
+    .hero-header .subtitle { color: var(--accent); font-size: 1.3em; margin-bottom: 16px; }
+    .hero-header .meta-line { color: var(--text-dim); font-size: 0.9em; }
+    .hero-header .description { max-width: 700px; margin: 16px auto; color: var(--text-dim); }
+    .hero-image { width: 100%; max-height: 400px; object-fit: cover; border-radius: 12px; margin-top: 24px; border: 1px solid var(--border); }
+    h2 { font-size: 1.5em; margin: 40px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+    h3 { font-size: 1.2em; margin: 24px 0 12px; color: var(--accent); }
+    .preface { background: var(--surface); border-radius: 8px; padding: 24px; border-left: 4px solid var(--accent); margin-bottom: 32px; }
+    .preface p { margin-bottom: 12px; color: var(--text-dim); }
+    .preface p:last-child { margin-bottom: 0; }
+    .style-banner { background: linear-gradient(135deg, #1a1e2e, #1e2636); border-radius: 8px; padding: 20px 24px; border: 1px solid var(--purple); margin-bottom: 32px; }
+    .style-banner strong { color: var(--purple); }
+    .characters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .character-profile { display: flex; gap: 16px; background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .character-thumb { width: 100px; height: 100px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
+    .character-thumb-placeholder { width: 100px; height: 100px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-size: 2em; color: var(--text-dim); flex-shrink: 0; }
+    .character-info h4 { margin-bottom: 4px; }
+    .character-info p { color: var(--text-dim); font-size: 0.9em; }
+    .small-text { color: var(--text-dim); font-size: 0.75em; font-family: monospace; }
+    .sections-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; margin-bottom: 32px; }
+    .section-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .section-card.character-card { border-color: var(--green); }
+    .section-header { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+    .section-id { font-family: monospace; color: var(--text-dim); font-size: 0.8em; }
+    .section-image { width: 100%; border-radius: 6px; margin: 12px 0; max-height: 300px; object-fit: cover; }
+    .section-content { color: var(--text-dim); font-size: 0.9em; margin: 8px 0; max-height: 80px; overflow: hidden; }
+    .prompt-block { background: var(--surface2); padding: 8px 12px; border-radius: 4px; font-size: 0.8em; margin: 8px 0; color: var(--text-dim); border-left: 3px solid var(--orange); }
+    .refs { font-size: 0.8em; color: var(--purple); margin-top: 4px; }
+    .image-filename { font-family: monospace; font-size: 0.75em; color: var(--text-dim); margin-top: 8px; }
+    .missing-image { background: var(--surface2); border: 2px dashed var(--red); border-radius: 6px; padding: 40px; text-align: center; color: var(--red); margin: 12px 0; }
+    .missing-thumb { background: var(--surface2); border: 1px dashed var(--red); border-radius: 4px; padding: 12px; text-align: center; color: var(--red); font-size: 0.8em; }
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 12px; font-size: 0.7em; font-weight: 600; text-transform: uppercase; }
+    .badge-gemini { background: #1a3a2a; color: var(--green); }
+    .badge-openai { background: #2a2a1a; color: var(--orange); }
+    .badge-unknown { background: var(--surface2); color: var(--text-dim); }
+    .badge-character { background: #1a2a1a; color: var(--green); }
+    .details-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-bottom: 32px; }
+    .detail-card { background: var(--surface); border-radius: 8px; padding: 16px; border: 1px solid var(--border); }
+    .detail-image { width: 100%; border-radius: 6px; margin-bottom: 12px; max-height: 200px; object-fit: cover; }
+    .detail-card h4 { margin-bottom: 8px; }
+    .detail-card p { color: var(--text-dim); font-size: 0.85em; }
+    .hidden-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .hidden-section-card { background: var(--surface); border-radius: 6px; padding: 12px; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 8px; }
+    .thumb { width: 100%; height: 120px; object-fit: cover; border-radius: 4px; }
+    .small-prompt { font-size: 0.75em; color: var(--text-dim); }
+    .prepro-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+    .prepro-step { background: var(--surface); border-radius: 8px; padding: 20px; border: 2px solid var(--border); text-align: center; }
+    .prepro-step h4 { margin-bottom: 8px; }
+    .prepro-step p { color: var(--text-dim); font-size: 0.9em; margin-bottom: 8px; }
+    .step-approved { border-color: var(--green); }
+    .step-pending { border-color: var(--orange); }
+    .check { color: var(--green); font-weight: 600; }
+    .pending { color: var(--orange); font-weight: 600; }
+    .image-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; margin-bottom: 32px; }
+    .prepro-image-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    .prepro-image-grid .grid-item img { height: 280px; }
+    .grid-item { background: var(--surface); border-radius: 6px; overflow: hidden; border: 1px solid var(--border); text-align: center; }
+    .grid-item img { width: 100%; height: 160px; object-fit: cover; }
+    .grid-item span { display: block; padding: 4px 8px; font-size: 0.7em; color: var(--text-dim); font-family: monospace; }
+    .approved-item { border-color: var(--green); border-width: 2px; }
+    .approved-item span { color: var(--green); }
+    .cover-section { text-align: center; margin-bottom: 32px; }
+    .cover-image { max-width: 400px; border-radius: 8px; border: 2px solid var(--accent); }
+    .stats-bar { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; padding: 20px; background: var(--surface); border-radius: 8px; margin-bottom: 32px; }
+    .stat { text-align: center; }
+    .stat .num { font-size: 2em; font-weight: 700; color: var(--accent); }
+    .stat .label { font-size: 0.8em; color: var(--text-dim); }
+    footer { text-align: center; padding: 32px; color: var(--text-dim); font-size: 0.8em; border-top: 1px solid var(--border); margin-top: 40px; }
+    @media (max-width: 768px) {
+        .prepro-grid { grid-template-columns: 1fr; }
+        .sections-grid { grid-template-columns: 1fr; }
+        .hero-header h1 { font-size: 1.8em; }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-header">
+        <h1>Bees: The Honey Makers</h1>
+        <div class="subtitle">A Sweet Story of Flowers, Dance, and Teamwork</div>
+        <div class="meta-line">February 2026 &bull; Issue #17 &bull; Chapter: bees</div>
+        <p class="description">Follow Queen Aurelia, Buzz, Petal, and Spike through the magical world of a beehive, where dancing, flower-visiting, and teamwork create the sweetest honey in the meadow</p>
+        
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat"><div class="num">4</div><div class="label">Characters</div></div>
+        <div class="stat"><div class="num">12</div><div class="label">Scenes</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Viewer Details</div></div>
+        <div class="stat"><div class="num">4</div><div class="label">Fun Facts</div></div>
+        <div class="stat"><div class="num">0</div><div class="label">Total Images</div></div>
+        <div class="stat"><div class="num">0 / 0</div><div class="label">Gemini / OpenAI</div></div>
+    </div>
+
+    <h2>Preface</h2>
+    <div class="preface">
+        <p>Welcome to the buzzing, golden world of the beehive! Inside this incredible home, thousands of bees work together like one big family, each with a special job to do. Some build, some guard, some dance, and some fly far and wide to visit flowers!</p>
+<p>Bees are some of the most important creatures on Earth. Every time you eat a strawberry, an apple, or a slice of watermelon, you can thank a bee! They carry pollen from flower to flower, helping plants grow the fruits and vegetables we all love.</p>
+<p>In this adventure, you will meet Queen Aurelia, the heart of the hive, hardworking Buzz, brave little Petal on her very first flight, and loyal Spike who keeps everyone safe. Together, they will show you how teamwork, dancing, and a little bit of magic turn flower nectar into golden honey!</p>
+    </div>
+
+    <h2>Art Direction</h2>
+    <div class="style-banner">
+        <strong>Global Style:</strong> Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, wings, and flowers. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Sunny wildflower meadow setting with golden light, colorful flowers, warm honey tones, and a cozy beehive in an old oak tree. Child-friendly and inviting.
+    </div>
+
+    <h2>Pre-Production Pipeline</h2>
+    
+        <div class="prepro-grid" style="grid-template-columns: repeat(4, 1fr);">
+            <div class="prepro-step step-pending">
+                <h4>Step 0: Storyline</h4>
+                <p>pending (0 attempts)</p>
+                <span class="pending">pending</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 1: Unified Cast Sheet</h4>
+                <p>approved (1 attempts)</p>
+                <span class="check">Approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 2: Character Sheets</h4>
+                <p>approved</p>
+                <span class="check">Queen Aurelia: approved</span><br><span class="check">Buzz: approved</span><br><span class="check">Petal: approved</span><br><span class="check">Spike: approved</span>
+            </div>
+            <div class="prepro-step step-approved">
+                <h4>Step 3: Mood Proposals</h4>
+                <p>approved</p>
+                <span class="check">Moods: translucency, lush-botanical</span>
+            </div>
+        </div>
+    
+    <h3>Step 1: Unified Cast Sheets</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step1-unified/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>approved.jpg (APPROVED)</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step1-unified/unified-cast-v1.jpg" alt="unified-cast-v1.jpg" loading="lazy" />
+                        <span>unified-cast-v1.jpg</span>
+                    </div></div><h3>Step 2: Queen Aurelia Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/queen-aurelia/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/queen-aurelia/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Buzz Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/buzz/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/buzz/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Petal Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/petal/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/petal/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 2: Spike Sheets</h3><div class="image-grid prepro-image-grid">
+                        <div class="grid-item approved-item">
+                            <img src="step2-characters/spike/approved.jpg" alt="approved.jpg" loading="lazy" />
+                            <span>approved.jpg (APPROVED)</span>
+                        </div>
+                        <div class="grid-item ">
+                            <img src="step2-characters/spike/sheet-v1.jpg" alt="sheet-v1.jpg" loading="lazy" />
+                            <span>sheet-v1.jpg</span>
+                        </div></div><h3>Step 3: Pixar Mood Proposals</h3><div class="image-grid prepro-image-grid">
+                    <div class="grid-item approved-item">
+                        <img src="step3-style/approved.jpg" alt="approved.jpg" loading="lazy" />
+                        <span>APPROVED</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-1-translucency-botanical.jpg" alt="proposal-1-translucency-botanical.jpg" loading="lazy" />
+                        <span>1-translucency-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-2-epic-intimate.jpg" alt="proposal-2-epic-intimate.jpg" loading="lazy" />
+                        <span>2-epic-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-3-golden-botanical.jpg" alt="proposal-3-golden-botanical.jpg" loading="lazy" />
+                        <span>3-golden-botanical</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-4-translucency-intimate.jpg" alt="proposal-4-translucency-intimate.jpg" loading="lazy" />
+                        <span>4-translucency-intimate</span>
+                    </div>
+                    <div class="grid-item ">
+                        <img src="step3-style/proposal-5-epic-golden.jpg" alt="proposal-5-epic-golden.jpg" loading="lazy" />
+                        <span>5-epic-golden</span>
+                    </div></div>
+
+    <h2>Character Cast</h2>
+    <div class="characters-grid">
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">Q</div>
+                <div class="character-info">
+                    <h4>Queen Aurelia</h4>
+                    <p>Majestic honey bee queen, the largest bee in the hive, with an elongated golden abdomen, regal bearing, golden crown-like pattern on her thorax</p>
+                    <span class="small-text">queen-aurelia-portrait.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">B</div>
+                <div class="character-info">
+                    <h4>Buzz</h4>
+                    <p>Hardworking worker bee with bright yellow-and-black stripes, fuzzy body always covered in pollen, one wing with a tiny notch</p>
+                    <span class="small-text">buzz-portrait.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">P</div>
+                <div class="character-info">
+                    <h4>Petal</h4>
+                    <p>Young bee on her first foraging flights, slightly smaller than other workers, lighter coloring, extra fluffy fuzz, wide-eyed wonder</p>
+                    <span class="small-text">petal-first-flight.jpg</span>
+                </div>
+            </div>
+            <div class="character-profile">
+                <div class="character-thumb-placeholder">S</div>
+                <div class="character-info">
+                    <h4>Spike</h4>
+                    <p>Guard bee, slightly larger worker with darker coloring, stationed at the hive entrance, mandibles always ready</p>
+                    <span class="small-text">spike-guards-door.jpg</span>
+                </div>
+            </div></div>
+
+    <h2>Scene Plan (12 scenes)</h2>
+    <div class="sections-grid">
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-buzzing-hive</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Buzzing Hive</h3>
+                <div class="missing-image">Missing: the-buzzing-hive.jpg</div>
+                <p class="section-content">Deep inside an old oak tree, in a meadow full of wildflowers, lives the most amazing city you have ever seen. It is built entirely of golden wax, shaped into thousands of perfect little hexagons, and it BUZZES with life! This is the beehive, and it is home to fifty thousand bees, all working together. The air inside smells like warm honey and sunshine. Every bee has a job, every honeycomb has a purpose, and every day is an adventure. Welcome to the hive!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> sweeping wide view of a magnificent golden beehive inside a hollow oak tree, thousands of bees on hexagonal honeycomb, warm amber light glowing from within, wildflower meadow visible outside, golden honey dripping from comb, magical and inviting atmosphere</div>
+                
+                <div class="image-filename">the-buzzing-hive.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">meet-queen-aurelia</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Meet Queen Aurelia</h3>
+                <div class="missing-image">Missing: queen-aurelia-portrait.jpg</div>
+                <p class="section-content">At the very heart of the hive lives Queen Aurelia, the most important bee of all. She is much bigger than the other bees, with a long, elegant golden body that gleams like treasure. On her thorax, she wears a pattern that looks just like a tiny golden crown! Queen Aurelia moves slowly and gracefully while dozens of worker bees flutter around her, feeding her, grooming her, and keeping her comfortable. She is the mother of every single bee in the hive. 'My children,' she hums softly, 'together we are strong.'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> a majestic honey bee queen, noticeably larger than surrounding worker bees, with an elongated golden abdomen and a crown-like golden pattern on her thorax, moving slowly and deliberately on honeycomb while smaller worker bees attend to her, regal bearing, warm amber light inside the hive, classic hand-drawn Disney animation style</div>
+                
+                <div class="image-filename">queen-aurelia-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">buzzs-busy-day</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Buzz's Busy Day</h3>
+                <div class="missing-image">Missing: buzz-portrait.jpg</div>
+                <p class="section-content">Buzz is the busiest bee in the whole hive! From the moment the sun rises, she is zooming from job to job. First, she feeds the baby bees their special honey breakfast. Then she helps pack pollen into the honeycomb. Then she fans the honey with her wings to make it thick and perfect. Buzz has a tiny notch in one wing, but she flies just as fast as everyone else! Her fuzzy golden body is always dusted with pollen. 'No time to rest!' she buzzes happily. 'There is so much to do and every job matters!'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> a cheerful worker honey bee with bright yellow-and-black stripes and a fuzzy body covered in golden pollen, one wing with a tiny notch visible, flying energetically among colorful wildflowers carrying pollen on her legs, sunny meadow, warm golden light, joyful and busy expression, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: meet-queen-aurelia</div>
+                <div class="image-filename">buzz-portrait.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">petals-first-flight</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Petal's First Flight</h3>
+                <div class="missing-image">Missing: petal-first-flight.jpg</div>
+                <p class="section-content">Little Petal has never been outside the hive before. She stands at the entrance, her extra-fluffy fuzz blowing in the breeze, her wide eyes staring at the enormous world. 'It is SO big out there!' she squeaks. Buzz lands beside her. 'I know it looks scary,' Buzz says kindly, 'but just wait until you smell your first flower!' Petal takes a deep breath, spreads her wings, and — BUZZ! She is flying! The wind lifts her up and suddenly the whole meadow stretches below her, a carpet of purple, yellow, and pink flowers. 'This is AMAZING!' Petal shouts.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> a young slightly smaller honey bee with lighter coloring and extra fluffy fuzz, wide nervous eyes, standing at the entrance of a beehive looking out at a vast sunny meadow full of flowers for the very first time, an older worker bee with a notched wing encouraging her, warm golden light, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: buzzs-busy-day</div>
+                <div class="image-filename">petal-first-flight.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-flower-garden</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Flower Garden</h3>
+                <div class="missing-image">Missing: flower-garden.jpg</div>
+                <p class="section-content">Buzz takes Petal to the best flower garden in the meadow. 'Watch me!' Buzz says, diving headfirst into a big sunflower. She rolls around in the golden pollen until she looks like a fuzzy yellow snowball! 'Now you try!' Petal carefully lands on a purple lavender bloom. The smell is heavenly! Tiny grains of pollen stick to her fluffy body. 'Every time we visit a flower,' Buzz explains, 'we carry pollen to the next one. That helps flowers make seeds so new flowers can grow!' Petal gasps. 'We help the flowers grow? We are garden helpers!'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> two honey bees — one standard worker covered in pollen with a notched wing, one smaller and extra fluffy — landing inside a large open sunflower, both covered in golden pollen, surrounded by lavender, daisies, and clover blossoms, bees deep inside flower petals collecting nectar, sunny meadow, vibrant colors, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: buzzs-busy-day, petals-first-flight</div>
+                <div class="image-filename">flower-garden.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-waggle-dance</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Waggle Dance</h3>
+                <div class="missing-image">Missing: waggle-dance.jpg</div>
+                <p class="section-content">Back in the hive, Buzz has exciting news. She found a field of clover bursting with sweet nectar! But how does she tell the other bees where it is? She DANCES! Buzz walks in a figure-eight pattern on the honeycomb, waggling her bottom as she goes. The direction she waggles tells the other bees which way to fly. How long she waggles tells them how far away the flowers are! All the bees watch closely. 'Turn left at the big oak, then straight past the pond!' Buzz waggles. The bees cheer and zoom off to find the clover!</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> inside a golden beehive, a worker bee with a notched wing performing the waggle dance on honeycomb — doing a figure-eight pattern with her body wiggling, surrounded by a circle of attentive worker bees watching and learning the dance, warm amber honeycomb glow, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: buzzs-busy-day, meet-queen-aurelia</div>
+                <div class="image-filename">waggle-dance.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">making-honey</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Making Honey</h3>
+                <div class="missing-image">Missing: making-honey.jpg</div>
+                <p class="section-content">Making honey is teamwork! First, the forager bees collect sweet nectar from flowers in their special honey stomachs. Back at the hive, they pass the nectar mouth-to-mouth to other bees — like a game of telephone! Each bee adds special enzymes that start turning the nectar into honey. Then the bees fan the honeycomb with their tiny wings — BZZZZZ! — to blow away the extra water. When the honey is thick and golden and perfectly sweet, they cap each cell with a little lid of white wax. 'Sealed and safe!' Buzz announces. 'Honey that will last forever!'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> inside a golden beehive, bees passing nectar mouth-to-mouth in a chain, other bees fanning honeycomb cells with their wings to evaporate water from the honey, golden honey glistening in hexagonal cells, some cells being capped with white wax, warm amber glow, educational cross-section view, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: buzzs-busy-day, petals-first-flight</div>
+                <div class="image-filename">making-honey.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">building-with-beeswax</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Building with Beeswax</h3>
+                <div class="missing-image">Missing: building-beeswax.jpg</div>
+                <p class="section-content">Bees are the most amazing builders! They make their own building material right from their bodies — tiny flakes of white wax that come from special glands on their tummies. The builder bees chew the wax until it is soft, then shape it into perfect hexagons. Why hexagons? Because they are the strongest shape that wastes no space! Every cell fits perfectly against the next one with no gaps. Petal watches in wonder as the builders work. 'It is like a puzzle where every piece fits perfectly!' she says. 'It IS a puzzle,' Buzz smiles. 'And we solved it!'</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> bees building perfect hexagonal honeycomb cells from beeswax, some bees producing tiny wax flakes from their abdomens, others shaping and sculpting the wax into perfect hexagons, beautiful geometric pattern of honeycomb, warm golden light, architectural wonder, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: buzzs-busy-day</div>
+                <div class="image-filename">building-beeswax.jpg</div>
+            </div>
+            <div class="section-card character-card">
+                <div class="section-header">
+                    <span class="section-id">spike-guards-the-door</span>
+                    <span class="badge badge-character">CHARACTER</span>
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Spike Guards the Door</h3>
+                <div class="missing-image">Missing: spike-guards-door.jpg</div>
+                <p class="section-content">Every hive needs a guard, and Spike is the best! He stands at the entrance all day long, alert and watchful, his mandibles ready. Spike's job is to make sure that only bees from his hive come inside. How does he know? By smell! Every hive has its own special scent, and Spike sniffs each bee that arrives. 'You may enter!' he nods to a returning forager. When a wasp tries to sneak in, Spike blocks the entrance. 'Not today!' he says firmly. The wasp flies away. 'Nobody gets past Spike!' the worker bees cheer.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> a slightly larger darker-colored guard bee standing alert at the entrance of a beehive, mandibles ready, vigilant posture, checking incoming bees for the right scent, golden afternoon light on the hive entrance, meadow visible in background, protective and watchful expression, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: meet-queen-aurelia</div>
+                <div class="image-filename">spike-guards-door.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">the-winter-cluster</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>The Winter Cluster</h3>
+                <div class="missing-image">Missing: winter-cluster.jpg</div>
+                <p class="section-content">When winter comes and snow covers the meadow, the bees do something wonderful. They all huddle together in a big, warm ball called a cluster! Queen Aurelia stays right in the cozy center, while thousands of bees surround her, vibrating their wing muscles to make heat. The bees on the outside slowly rotate to the warm inside, and the warm bees move out — everyone takes turns! 'It is like a group hug that lasts all winter,' Petal says, snuggled between Buzz and Spike. 'The biggest, warmest hug in the world,' Buzz agrees.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> thousands of bees huddled together in a tight warm ball inside the hive during winter, the queen in the center protected by layers of worker bees, snow visible outside the hive entrance, bees vibrating their wings to generate heat, warm golden glow from within contrasting with cold blue winter outside, cozy and protective, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: meet-queen-aurelia, buzzs-busy-day, petals-first-flight, spike-guards-the-door</div>
+                <div class="image-filename">winter-cluster.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">sweet-golden-honey</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Sweet Golden Honey</h3>
+                <div class="missing-image">Missing: sweet-golden-honey.jpg</div>
+                <p class="section-content">Spring has returned, and the honey store is full! Row after row of golden, glistening honeycomb, each cell capped with perfect white wax. Buzz and Petal stand before the golden treasure, sunlight streaming through the amber honey like liquid gold. 'We did this together,' Buzz says proudly. 'Every single bee helped — the foragers, the builders, the nurses, the guards, and our Queen.' Petal touches a drop of honey with her tongue. It tastes like sunshine and flowers and a whole summer of hard work. 'This is what teamwork tastes like!' she laughs.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> beautiful scene of thick golden honey dripping from honeycomb, a worker bee with a notched wing and a small fluffy bee standing proudly beside rows of perfectly capped honey cells, golden light streaming through the amber honey making it glow like liquid gold, warm and sweet atmosphere, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: buzzs-busy-day, petals-first-flight</div>
+                <div class="image-filename">sweet-golden-honey.jpg</div>
+            </div>
+            <div class="section-card ">
+                <div class="section-header">
+                    <span class="section-id">our-garden-friends</span>
+                    
+                    <span class="badge badge-gemini">GEMINI</span>
+                </div>
+                <h3>Our Garden Friends</h3>
+                <div class="missing-image">Missing: our-garden-friends.jpg</div>
+                <p class="section-content">As the golden sun sets over the meadow, all four friends fly together above the flowers. Queen Aurelia, the heart of the hive. Buzz, who never stops working. Petal, who discovered how big and beautiful the world is. And Spike, who keeps everyone safe. Below them, the meadow is bursting with life — flowers blooming, fruits growing, seeds spreading — all because the bees visited every single blossom. 'We are small,' Queen Aurelia hums, 'but together, we help the whole world grow.' And in the golden evening light, fifty thousand bees hum in agreement.</p>
+                <div class="prompt-block"><strong>Action prompt:</strong> all four bee characters flying together over a magnificent blooming meadow at golden sunset, the queen larger and regal, the worker covered in pollen with notched wing, the young fluffy bee, and the darker guard bee, flowers blooming everywhere below them, fruits and vegetables growing in a nearby garden thanks to pollination, warm golden light, triumphant and joyful scene, classic hand-drawn Disney animation style</div>
+                <div class="refs">References: meet-queen-aurelia, buzzs-busy-day, petals-first-flight, spike-guards-the-door</div>
+                <div class="image-filename">our-garden-friends.jpg</div>
+            </div></div>
+
+    <h2>Viewer Details</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-wing-closeup.jpg</div>
+                <h4>Wings That Never Stop</h4>
+                <p>Look at Buzz's tiny wings — they beat an incredible 200 times per second! That is so fast they become a blur and create the buzzing sound we all know. Each bee has two pairs of wings that hook together with tiny clasps called hamuli, turning four wings into two bigger ones for powerful flight. Bees can fly at about 15 miles per hour and visit up to 5,000 flowers in a single day!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-compound-eye.jpg</div>
+                <h4>A Thousand Tiny Eyes</h4>
+                <p>A bee's compound eye is made up of about 6,900 tiny hexagonal lenses called ommatidia — each one is like a mini eye! Together, they create a mosaic-like image of the world. Bees can see ultraviolet light that is invisible to humans, which reveals secret patterns on flowers. They can also detect polarized light, which helps them navigate using the sun even on cloudy days. The compound eye looks like a tiny honeycomb itself!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-pollen-basket.jpg</div>
+                <h4>Pollen Shopping Baskets</h4>
+                <p>On each of Buzz's back legs, there is a special structure called a corbicula, or pollen basket. It is a smooth, slightly concave area surrounded by stiff curved hairs. As the bee visits flowers, she combs pollen from her fuzzy body and packs it into these baskets using a little bit of nectar as glue. The bright orange or yellow pollen balls on a bee's legs can contain pollen from hundreds of different flowers — like a grocery bag full of flower food!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: detail-honeycomb-hexagon.jpg</div>
+                <h4>The Perfect Hexagon</h4>
+                <p>Each honeycomb cell is a masterpiece of engineering! The hexagonal shape is mathematically the most efficient way to divide a surface into equal units with the least total perimeter. This means bees use the minimum amount of wax to create the maximum storage space. Each cell is tilted slightly upward at a 13-degree angle to prevent honey from dripping out. The walls are only 0.05 millimeters thick — thinner than a sheet of paper — yet strong enough to hold 25 times their own weight in honey!</p>
+            </div></div>
+
+    <h2>Fun Facts</h2>
+    <div class="details-grid">
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-two-million.jpg</div>
+                <h4>Two Million Flowers!</h4>
+                <p>To make just one pound of honey, bees must visit about two million flowers and fly over 55,000 miles — that is more than twice around the entire Earth! A single worker bee makes only about one-twelfth of a teaspoon of honey in her entire lifetime. That means the jar of honey in your kitchen is the life's work of hundreds of bees. Every drop is precious!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-waggle-dance.jpg</div>
+                <h4>The Waggle Dance Language</h4>
+                <p>Bees have their own language — and it is a DANCE! When a forager bee finds flowers, she returns to the hive and performs a special waggle dance. The angle of her dance tells other bees the direction relative to the sun. The duration of her waggle tells them the distance. Bees can communicate the location of flowers up to 6 miles away, all through dancing! Karl von Frisch won the Nobel Prize for figuring this out.</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-hexagons.jpg</div>
+                <h4>Hexagons: Nature's Perfect Shape</h4>
+                <p>Bees build their honeycomb using hexagons because they are the most efficient shape in nature! Hexagons fit together perfectly with no gaps and no wasted space. They also use the least amount of wax while holding the most honey. Scientists and engineers copy this design for airplane wings, satellite panels, and building structures. Bees figured out the best engineering solution millions of years before humans did!</p>
+            </div>
+            <div class="detail-card">
+                <div class="missing-thumb">Missing: fun-fact-ultraviolet.jpg</div>
+                <h4>Seeing Ultraviolet!</h4>
+                <p>Bees can see colors that are completely invisible to humans! They see ultraviolet light, which means flowers look totally different to bees than they do to us. Many flowers have secret ultraviolet patterns — like bullseyes and landing strips — that guide bees straight to the nectar. A plain yellow flower to us looks like an airport runway to a bee! Bees cannot see the color red, but their ultraviolet vision more than makes up for it.</p>
+            </div></div>
+
+    <h2>Hidden Generation Sections</h2>
+    <div class="hidden-grid">
+            <div class="hidden-section-card">
+                <span class="section-id">detail-wing-closeup</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">MACRO CLOSE-UP photograph-style detail shot — a single honey bee WING showing the transparent membrane with visible vein...</p>
+                <span class="refs">Ref: buzzs-busy-day</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-compound-eye</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the bee from reference, extreme close-up of a honey bee's compound eye showing thousands of tiny hexagonal lenses ...</p>
+                <span class="refs">Ref: buzzs-busy-day</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-pollen-basket</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">MACRO CLOSE-UP photograph-style detail shot — a honey bee's hind leg showing the corbicula (pollen basket), a smooth con...</p>
+                <span class="refs">Ref: buzzs-busy-day</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">detail-honeycomb-hexagon</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Extreme close-up of perfect hexagonal honeycomb cells, some filled with golden honey, some with pollen of different colo...</p>
+                
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-two-million-img</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Educational illustration showing the incredible journey from flower to honey: a swirling path of two million tiny flower...</p>
+                
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-waggle-dance-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the bee from reference, educational illustration showing the waggle dance diagram — a figure-eight pattern drawn o...</p>
+                <span class="refs">Ref: buzzs-busy-day</span>
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-hexagons-img</span>
+                <span class="badge badge-openai">OPENAI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Educational illustration comparing different shapes — circles with wasted gaps, squares that are weak, and hexagons that...</p>
+                
+            </div>
+            <div class="hidden-section-card">
+                <span class="section-id">fun-fact-ultraviolet-img</span>
+                <span class="badge badge-gemini">GEMINI</span>
+                <div class="missing-thumb">Missing</div>
+                <p class="small-prompt">Using the bee from reference, split-view illustration showing a flower as humans see it (plain yellow) versus how bees s...</p>
+                <span class="refs">Ref: petals-first-flight</span>
+            </div></div>
+
+    
+
+    <h2>All Images — Visual Consistency Check</h2>
+    <div class="image-grid"></div>
+
+    <footer>
+        Production Bible &bull; Generated 2026-02-28 &bull; Bees: The Honey Makers
+    </footer>
+</div>
+</body>
+</html>

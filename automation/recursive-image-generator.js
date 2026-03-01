@@ -6,6 +6,8 @@ const execPromise = util.promisify(exec);
 const PromptArchiver = require('./prompt-archiver');
 const ImageQA = require('./image-qa');
 const StyleReviewer = require('./style-reviewer');
+const promptSanitizer = require('./prompt-sanitizer');
+const promptHistory = require('./prompt-history');
 
 class RecursiveImageGenerator {
     constructor() {
@@ -319,7 +321,11 @@ class RecursiveImageGenerator {
                                section.referenceImage || section.characterReference ||
                                (section.characterReferences && section.characterReferences.length > 0) ||
                                (section.missingCharacterRefs && section.missingCharacterRefs.length > 0);
-        const service = wantsReference ? 'gemini' : 'openai';
+        // Check YAML routing config — only use openai if explicitly listed under openai routing
+        const routingConfig = this.chapterData && this.chapterData.routing;
+        const openaiRouted = routingConfig && routingConfig.openai &&
+                             routingConfig.openai.includes(section.image);
+        const service = (!openaiRouted || wantsReference) ? 'gemini' : 'openai';
 
         console.log(`   Service: ${service.toUpperCase()}`);
         if (section.action) {
@@ -370,6 +376,17 @@ class RecursiveImageGenerator {
 
                     if (!result.success) {
                         lastError = result.error || 'Generation failed';
+                        // Record failed attempt in prompt history
+                        const sr = section._sanitizeResult || {};
+                        promptHistory.record({
+                            image: outputPath, chapter: this._chapterName, sectionId: section.id,
+                            attempt: totalAttempts, service,
+                            original: sr.original || '', sanitized: sr.sanitized || '',
+                            wasSanitized: sr.wasModified || false, sanitizeMethod: sr.method || 'none',
+                            triggeredPatterns: sr.triggeredPatterns || [],
+                            outcome: 'api_error', error: lastError, qaResult: null,
+                            durationMs: Date.now() - startTime
+                        });
                         continue;
                     }
 
@@ -382,6 +399,17 @@ class RecursiveImageGenerator {
                         if (!qaResult.pass) {
                             console.log(`   ⚠️ QA issues: ${qaResult.issues.join(', ')}`);
                             this._saveAttempt(outputPath, totalAttempts);
+                            // Record QA failure in prompt history
+                            const sr = section._sanitizeResult || {};
+                            promptHistory.record({
+                                image: outputPath, chapter: this._chapterName, sectionId: section.id,
+                                attempt: totalAttempts, service,
+                                original: sr.original || '', sanitized: sr.sanitized || '',
+                                wasSanitized: sr.wasModified || false, sanitizeMethod: sr.method || 'none',
+                                triggeredPatterns: sr.triggeredPatterns || [],
+                                outcome: 'qa_failed', error: qaResult.issues.join('; '), qaResult,
+                                durationMs: Date.now() - startTime
+                            });
                             if (qaAttempt < maxQAAttempts) {
                                 console.log(`   🔄 Regenerating for QA (attempt ${qaAttempt + 1}/${maxQAAttempts})...`);
                                 await new Promise(r => setTimeout(r, 3000));
@@ -424,6 +452,18 @@ class RecursiveImageGenerator {
                         totalAttempts
                     });
 
+                    // Record success in prompt history
+                    const sr = section._sanitizeResult || {};
+                    promptHistory.record({
+                        image: outputPath, chapter: this._chapterName, sectionId: section.id,
+                        attempt: totalAttempts, service,
+                        original: sr.original || '', sanitized: sr.sanitized || '',
+                        wasSanitized: sr.wasModified || false, sanitizeMethod: sr.method || 'none',
+                        triggeredPatterns: sr.triggeredPatterns || [],
+                        outcome: 'success', error: null, qaResult,
+                        durationMs: timeMs
+                    });
+
                     this.generatedImages[section.id] = outputPath;
                     if (section.generate_character) {
                         this.characters[section.id] = outputPath;
@@ -449,6 +489,19 @@ class RecursiveImageGenerator {
                 } catch (error) {
                     lastError = error.message;
                     console.error(`   ❌ Error: ${error.message}`);
+                    // Record error in prompt history
+                    const sr = section._sanitizeResult || {};
+                    const isContentFilter = /blocked|safety|content.*policy|moderation/i.test(error.message);
+                    promptHistory.record({
+                        image: outputPath, chapter: this._chapterName, sectionId: section.id,
+                        attempt: totalAttempts, service,
+                        original: sr.original || '', sanitized: sr.sanitized || '',
+                        wasSanitized: sr.wasModified || false, sanitizeMethod: sr.method || 'none',
+                        triggeredPatterns: sr.triggeredPatterns || [],
+                        outcome: isContentFilter ? 'content_filter' : 'api_error',
+                        error: error.message, qaResult: null,
+                        durationMs: Date.now() - startTime
+                    });
                 }
             }
         }
@@ -521,8 +574,12 @@ class RecursiveImageGenerator {
             styleInstruction = `Style: ${this.styleDescription || 'Studio Ghibli warmth, Pixar quality, vibrant colors, magical lighting, child-friendly.'}`;
         }
 
+        const rawActionText = section.action || section.prompt || section.content?.en || 'Generate image';
+        const sanitizeResult = await promptSanitizer.sanitize(rawActionText);
+        const safeAction = sanitizeResult.sanitized;
+
         contents.push({
-            text: `Create a cheerful, child-friendly illustration. Using the character(s) from the reference image(s), create a heartwarming scene: ${section.action || section.prompt || section.content?.en || 'Generate image'}
+            text: `Create a cheerful, child-friendly illustration. Using the character(s) from the reference image(s), create a heartwarming scene: ${safeAction}
 
             Keep the characters looking exactly the same as in the reference - same proportions, same features, same distinguishing marks.
             ${section.title && section.title.en ? 'Context: ' + section.title.en : ''}
@@ -530,6 +587,9 @@ class RecursiveImageGenerator {
             ${styleInstruction}
             Absolutely NO text or words in the image.`
         });
+
+        // Store sanitization info for prompt history recording
+        section._sanitizeResult = sanitizeResult;
 
         // Add primary reference image
         contents.push({
@@ -635,23 +695,33 @@ class RecursiveImageGenerator {
      * Generate with Gemini (no reference)
      */
     async generateWithGemini(section, outputPath) {
-        const { GoogleGenerativeAI } = require("@google/generative-ai");
-        const genAI = new GoogleGenerativeAI(this.geminiKey);
+        const { GoogleGenAI } = require("@google/genai");
+        const ai = new GoogleGenAI({ apiKey: this.geminiKey });
 
-        const promptText = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
-        const prompt = `Create: ${promptText}
+        const rawPromptText = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
+        const sanitizeResult = await promptSanitizer.sanitize(rawPromptText);
+        const promptText = sanitizeResult.sanitized;
+        section._sanitizeResult = sanitizeResult;
+
+        const styleInstruction = this.styleDescription
+            ? `Style: ${this.styleDescription}`
+            : 'Style: Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors.';
+
+        const prompt = `Create a cheerful, child-friendly illustration: ${promptText}
 
         ${section.title && section.title.en ? 'Scene: ' + section.title.en : ''}
 
-        Style: Studio Ghibli warmth, Pixar quality, child-friendly, vibrant colors.
-        NO TEXT in the image.`;
+        ${styleInstruction}
+        Absolutely NO text or words in the image.`;
 
         let retries = 3;
         while (retries > 0) {
             try {
                 console.log("   🔄 Calling Gemini API...");
-                const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-                const response = await model.generateContent(prompt);
+                const response = await ai.models.generateContent({
+                    model: "gemini-2.5-flash-image",
+                    contents: [{ text: prompt }]
+                });
 
                 if (!response || !response.candidates || !response.candidates[0]) {
                     throw new Error("Invalid response structure from Gemini");
@@ -689,8 +759,11 @@ class RecursiveImageGenerator {
      * Generate with OpenAI
      */
     async generateWithOpenAI(section, outputPath) {
-        const prompt = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
-        
+        const rawPrompt = section.prompt || section.imageAlt?.en || section.content?.en || 'Generate image';
+        const sanitizeResult = await promptSanitizer.sanitize(rawPrompt);
+        const prompt = sanitizeResult.sanitized;
+        section._sanitizeResult = sanitizeResult;
+
         const scriptContent = `
 const https = require('https');
 const fs = require('fs');
@@ -786,7 +859,9 @@ req.end();
 
         // Store context for hooks
         this.chapterDir = outputDir;
+        this._chapterName = chapterData.meta?.folderName || chapterData.meta?.id || path.basename(outputDir);
         this.reportGenerator = reportGenerator || null;
+        this.chapterData = chapterData;
 
         // Extract global style from chapter data
         if (chapterData.imageGeneration && chapterData.imageGeneration.style) {

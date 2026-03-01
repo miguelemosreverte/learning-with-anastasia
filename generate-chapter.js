@@ -18,6 +18,7 @@ const path = require('path');
 const yaml = require('js-yaml');
 const { execSync, spawn } = require('child_process');
 const ChangeLog = require('./automation/changelog');
+const logger = require('./automation/logger');
 const {
     loadChapterImages,
     resolveImagePaths,
@@ -33,7 +34,7 @@ function parseArgs() {
     const args = process.argv.slice(2);
     const opts = {
         chapter: null,
-        skipQa: true,
+        skipQa: false,
         qaOnly: false,
         noPdf: false,
         noOpen: false,
@@ -302,7 +303,7 @@ async function main() {
 Usage: node generate-chapter.js <chapter> [options]
 
 Options:
-  --with-qa        Enable QA sweep (disabled by default)
+  --skip-qa        Disable QA sweep (enabled by default)
   --qa-only        Run QA sweep only (no generation)
   --no-pdf         Skip PDF generation
   --no-open        Don't open result in browser
@@ -319,6 +320,7 @@ Examples:
     const chapter = opts.chapter;
     const startTime = Date.now();
     const changelog = new ChangeLog(chapter);
+    const _logTaskId = logger.taskStart(`Chapter pipeline: ${chapter}`);
 
     // Determine animal type from chapter name for QA prompts
     const animalType = chapter.replace(/-/g, ' ');
@@ -331,6 +333,7 @@ Examples:
     if (!opts.qaOnly) {
         console.log('\n📸 STEP 1: Image Generation');
         runScript('Generate images', `node run-recursive-generation.js ${chapter}`);
+        logger.event('milestone', 'Image generation complete', { chapter });
     }
 
     // ── Step 2-3: QA + Auto-fix loop ─────────────────────────────
@@ -400,6 +403,7 @@ Examples:
 
     // ── Step 5: Build HTML ───────────────────────────────────────
     console.log('\n📄 STEP 5: Build HTML');
+    logger.event('milestone', 'HTML build started', { chapter });
     runScript('Build HTML', `node -e "
         const ChapterBuilder = require('./automation/chapter-builder');
         const b = new ChapterBuilder();
@@ -414,6 +418,7 @@ Examples:
     if (!opts.noPdf) {
         console.log('\n📋 STEP 7: Generate PDF');
         runScript('Generate PDF (English)', `node generate-pdf.js ${chapter}`);
+        logger.event('milestone', 'PDF generated', { chapter });
     }
 
     // ── Step 8: Open result ──────────────────────────────────────
@@ -450,9 +455,12 @@ Examples:
     console.log(`  Changelog:       ${chapter}/changelog.md`);
     console.log(`  Report:          ${chapter}/generation-report.md`);
     console.log('═'.repeat(60));
+
+    logger.taskEnd(_logTaskId, { interventions: summary.total, qaRounds, styleIssues: styleIssues.length });
 }
 
 main().catch(err => {
     console.error(`\n❌ Pipeline failed: ${err.message}`);
+    logger.event('error', `Pipeline failed: ${err.message}`);
     process.exit(1);
 });

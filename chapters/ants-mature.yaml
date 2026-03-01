@@ -1,0 +1,511 @@
+# Ants Chapter Definition - The Last Stand (Mature/Moral Version)
+meta:
+  id: ants-mature
+  issueNumber: 16
+  date: "February 2026"
+  folderName: "ants-mature"
+  title:
+    en: "Ants: The Last Stand"
+    es: "Hormigas: La Ultima Resistencia"
+    ru: "Муравьи: Последний Рубеж"
+  subtitle:
+    en: "Sacrifice, War, and the Colony That Never Gives Up"
+    es: "Sacrificio, Guerra y la Colonia Que Nunca Se Rinde"
+    ru: "Жертва, война и колония, которая никогда не сдаётся"
+  magazineText:
+    en: "Witness the true cost of survival in the ant world. When an army of raiders descends on a peaceful colony, ants must make impossible choices — blocking tunnels with their own bodies, waging chemical warfare, and sacrificing everything to save the next generation. This is not a fairy tale. This is nature at its most brutal and most beautiful."
+    es: "Presencia el verdadero costo de la supervivencia en el mundo de las hormigas. Cuando un ejercito de invasoras desciende sobre una colonia pacifica, las hormigas deben tomar decisiones imposibles — bloqueando tuneles con sus propios cuerpos, librando guerra quimica y sacrificando todo para salvar a la proxima generacion. Esto no es un cuento de hadas. Esto es la naturaleza en su forma mas brutal y hermosa."
+    ru: "Станьте свидетелями истинной цены выживания в мире муравьёв. Когда армия захватчиков обрушивается на мирную колонию, муравьи должны принимать невозможные решения — блокировать тоннели собственными телами, вести химическую войну и жертвовать всем ради спасения следующего поколения. Это не сказка. Это природа в самом жестоком и прекрасном проявлении."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "A story of sacrifice, courage, and what it truly means to stand together"
+    es: "Una historia de sacrificio, coraje y lo que realmente significa estar juntos"
+    ru: "История жертвы, мужества и того, что значит стоять вместе"
+  description: "When a raiding army threatens Queen Terra's peaceful colony, Major, Scout, and Tiny must face impossible choices about sacrifice, duty, and the true cost of protecting those you love"
+  preface:
+    en:
+      - "What would you give up to protect your family? In the ant world, this is not a hypothetical question. Every day, ants make choices that would humble the bravest human soldier — blocking tunnel entrances with their own bodies so their sisters can escape, spraying acid at enemies ten times their size, and fighting to the last breath so the colony's children might survive."
+      - "This story is real. Ant colonies face invasions from army ants — vast, relentless swarms that devour everything in their path. Some species raid other colonies to steal their young and force them into labor. Nature is not always kind, but within this brutality lies something extraordinary: creatures that will give their lives, without hesitation, for others."
+      - "Through the eyes of Queen Terra's colony, you'll witness the difference between a society built on cooperation and one built on conquest. You'll see what democracy looks like at its smallest scale — and what tyranny looks like when it comes marching over the hill. Most of all, you'll learn that true strength is not about being the biggest or the fiercest. It's about what you're willing to sacrifice for those who cannot fight for themselves."
+    es:
+      - "Que darias por proteger a tu familia? En el mundo de las hormigas, esta no es una pregunta hipotetica. Cada dia, las hormigas toman decisiones que humillarian al soldado humano mas valiente — bloqueando entradas de tuneles con sus propios cuerpos para que sus hermanas puedan escapar, rociando acido a enemigos diez veces su tamano y luchando hasta el ultimo aliento para que los hijos de la colonia sobrevivan."
+      - "Esta historia es real. Las colonias de hormigas enfrentan invasiones de hormigas legionarias — enjambres vastos e implacables que devoran todo a su paso. Algunas especies asaltan otras colonias para robar a sus jovenes y forzarlas a trabajar. La naturaleza no siempre es amable, pero dentro de esta brutalidad yace algo extraordinario: criaturas que dan sus vidas, sin vacilar, por otros."
+      - "A traves de los ojos de la colonia de la Reina Terra, presenciaras la diferencia entre una sociedad construida sobre la cooperacion y una construida sobre la conquista. Veras como se ve la democracia en su escala mas pequena — y como se ve la tirania cuando viene marchando por la colina. Sobre todo, aprenderas que la verdadera fuerza no se trata de ser el mas grande o el mas feroz. Se trata de lo que estas dispuesto a sacrificar por quienes no pueden luchar por si mismos."
+    ru:
+      - "Что бы вы отдали, чтобы защитить свою семью? В мире муравьёв это не гипотетический вопрос. Каждый день муравьи принимают решения, которые посрамили бы храбрейшего человеческого солдата — блокируют входы в тоннели собственными телами, чтобы их сёстры могли спастись, брызгают кислотой на врагов в десять раз крупнее себя и сражаются до последнего вздоха, чтобы дети колонии выжили."
+      - "Эта история реальна. Колонии муравьёв сталкиваются с нашествиями кочевых муравьёв — бескрайних, неумолимых полчищ, пожирающих всё на своём пути. Некоторые виды нападают на другие колонии, чтобы украсть молодняк и принудить к рабству. Природа не всегда добра, но в этой жестокости скрыто нечто необыкновенное: существа, которые отдают свои жизни, не колеблясь, ради других."
+      - "Глазами колонии Королевы Терры вы увидите разницу между обществом, построенным на сотрудничестве, и обществом, построенным на завоевании. Вы увидите, как выглядит демократия в самом малом масштабе — и как выглядит тирания, когда она марширует через холм. И главное — вы поймёте, что настоящая сила не в том, чтобы быть самым большим или свирепым. Она в том, чем вы готовы пожертвовать ради тех, кто не может сражаться за себя."
+
+hero:
+  title:
+    en: "Ants"
+    es: "Hormigas"
+    ru: "Муравьи"
+  subtitle:
+    en: "The Last Stand"
+    es: "La Ultima Resistencia"
+    ru: "Последний Рубеж"
+  image: "hero-colony-siege.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "A vast ant colony under siege at dramatic red-golden sunset, dark columns of invading army ants streaming over the hill toward a peaceful anthill, defender ants massing at the entrances, ominous clouds above, the mood is tense and epic"
+    es: "Una vasta colonia de hormigas bajo asedio al dramatico atardecer rojo-dorado, columnas oscuras de hormigas invasoras fluyendo sobre la colina hacia un pacifico hormiguero, hormigas defensoras agrupandose en las entradas, nubes ominosas arriba"
+    ru: "Огромная колония муравьёв в осаде на фоне драматичного красно-золотого заката, тёмные колонны вторгающихся кочевых муравьёв хлынули через холм к мирному муравейнику, муравьи-защитники собираются у входов, зловещие тучи наверху"
+
+sections:
+  # A Peaceful Morning
+  - id: peaceful-morning
+    mood: [golden-hour, lush-botanical]
+    action: "a serene and beautiful morning scene at a thriving ant colony, ants moving peacefully in organized lines, some carrying food, some tending the mound, wildflowers blooming around the anthill, butterflies in the air, warm golden sunlight, dappled shadows on the grass, the feeling is calm and idyllic, like a village that doesn't know what's coming"
+    title:
+      en: "A Peaceful Morning"
+      es: "Una Manana Pacifica"
+      ru: "Мирное утро"
+    content:
+      en: "The morning is perfect. Sunlight warms the earth above Queen Terra's colony, and the meadow hums with peaceful industry. Lines of workers stream out to gather food, returning laden with seeds and leaf fragments. Tiny struggles happily beneath her oversized load. Scout ranges far afield, mapping new territory. Major stands at the main gate, nodding as each familiar ant passes. Deep below, Queen Terra tends to the next generation of eggs in the warm nursery. Every ant knows her purpose. Every tunnel leads somewhere important. This colony is a masterpiece of cooperation — thousands of individuals, one shared heartbeat. No one knows that by sunset, everything will change."
+      es: "La manana es perfecta. La luz del sol calienta la tierra sobre la colonia de la Reina Terra, y el prado zumba con industria pacifica. Filas de obreras salen a recolectar comida, regresando cargadas de semillas y fragmentos de hojas. Diminuta lucha felizmente bajo su carga sobredimensionada. Exploradora se aventura lejos, mapeando nuevo territorio. Mayor esta en la puerta principal, asintiendo mientras cada hormiga familiar pasa. En las profundidades, la Reina Terra cuida la proxima generacion de huevos en la calida guarderia. Cada hormiga conoce su proposito. Cada tunel lleva a algun lugar importante. Esta colonia es una obra maestra de cooperacion — miles de individuos, un solo latido compartido. Nadie sabe que al atardecer, todo cambiara."
+      ru: "Утро совершенно. Солнечный свет греет землю над колонией Королевы Терры, и луг гудит мирным трудом. Вереницы рабочих выходят за едой, возвращаясь гружёные семенами и кусочками листьев. Крошка счастливо борется под своей непомерной ношей. Разведчица уходит далеко, нанося на карту новые территории. Майор стоит у главных ворот, кивая каждому знакомому муравью. Глубоко внизу Королева Терра ухаживает за следующим поколением яиц в тёплой детской. Каждый муравей знает своё предназначение. Каждый тоннель ведёт куда-то важному. Эта колония — шедевр сотрудничества: тысячи особей, одно общее сердцебиение. Никто не знает, что к закату всё изменится."
+    image: "peaceful-morning.jpg"
+    imageAlt:
+      en: "Serene morning at a thriving ant colony, ants moving peacefully, wildflowers blooming, warm golden sunlight, calm idyllic meadow scene"
+      es: "Manana serena en una prospera colonia de hormigas, hormigas moviéndose pacificamente, flores silvestres floreciendo, calida luz dorada"
+      ru: "Безмятежное утро в процветающей колонии муравьёв, муравьи мирно движутся, полевые цветы цветут, тёплый золотистый свет"
+
+  # Scouts Report Danger
+  - id: scouts-report-danger
+    mood: [epic-skies, golden-hour]
+    use_characters: ["${meet-scout.image}", "${meet-queen-terra.image}"]
+    action: "a lean lighter brown ant with one bent antenna racing frantically back toward the anthill entrance, antennae flat against her body in alarm, behind her in the far distance a dark mass of army ants is visible on the horizon like a storm cloud, other ants near the entrance are beginning to react with alarm, dramatic lighting with storm clouds gathering"
+    title:
+      en: "Scouts Report Danger"
+      es: "Las Exploradoras Reportan Peligro"
+      ru: "Разведчицы сообщают об опасности"
+    content:
+      en: "Scout sees them first. A dark, living river flowing over the hill. Not dozens, not hundreds — THOUSANDS of army ants, marching in columns ten bodies wide, their massive jaws snapping like scissors. They are Dorylus — driver ants — and they consume everything in their path. Insects, lizards, even small mammals that cannot flee fast enough. Scout's bent antenna trembles. She has never run so fast in her life. She bursts into the colony, releasing alarm pheromones so powerful that every ant in every tunnel freezes. 'They're coming,' she gasps. 'The raiders. Thousands of them. We have hours, maybe less.' In the queen's chamber, Queen Terra closes her ancient eyes. She has seen this before. She knows what it costs."
+      es: "Exploradora los ve primero. Un rio oscuro y viviente fluyendo sobre la colina. No docenas, no cientos — MILES de hormigas legionarias, marchando en columnas de diez cuerpos de ancho, sus mandibulas masivas chasqueando como tijeras. Son Dorylus — hormigas conductoras — y devoran todo a su paso. Insectos, lagartijas, incluso pequenos mamiferos que no pueden huir lo suficientemente rapido. La antena doblada de Exploradora tiembla. Nunca ha corrido tan rapido en su vida. Irrumpe en la colonia, liberando feromonas de alarma tan potentes que cada hormiga en cada tunel se congela. 'Vienen,' jadea. 'Las invasoras. Miles de ellas. Tenemos horas, quiza menos.' En la camara de la reina, la Reina Terra cierra sus antiguos ojos. Ha visto esto antes. Sabe lo que cuesta."
+      ru: "Разведчица видит их первой. Тёмная, живая река, текущая через холм. Не десятки, не сотни — ТЫСЯЧИ кочевых муравьёв, марширующих колоннами шириной в десять тел, их массивные челюсти щёлкают как ножницы. Это дорилусы — бродячие муравьи — и они пожирают всё на своём пути. Насекомых, ящериц, даже мелких млекопитающих, не успевших убежать. Изогнутый усик Разведчицы дрожит. Она никогда не бежала так быстро в жизни. Она врывается в колонию, выпуская тревожные феромоны такой силы, что каждый муравей в каждом тоннеле замирает. 'Они идут,' задыхается она. 'Захватчики. Тысячи. У нас часы, может меньше.' В камере королевы Королева Терра закрывает свои древние глаза. Она видела это раньше. Она знает, чего это стоит."
+    image: "scouts-report-danger.jpg"
+    imageAlt:
+      en: "Lean brown ant racing frantically toward the anthill, dark mass of army ants visible on the horizon, storm clouds gathering, dramatic lighting"
+      es: "Hormiga marron delgada corriendo franticamente hacia el hormiguero, masa oscura de hormigas legionarias visible en el horizonte, nubes de tormenta"
+      ru: "Стройный коричневый муравей мчится к муравейнику, тёмная масса кочевых муравьёв видна на горизонте, грозовые тучи собираются"
+
+  # The Enemy Approaches
+  - id: enemy-approaches
+    mood: [epic-skies]
+    action: "a terrifying close-up of the invading army ant column — hundreds of dark, aggressive-looking ants with huge snapping mandibles marching in tight formation over a barren patch of earth, the ground beneath them looks stripped clean, smaller ants fleeing before the advancing column, dramatic dark red lighting, the army stretches endlessly into the background, menacing and unstoppable"
+    title:
+      en: "The Enemy Army"
+      es: "El Ejercito Enemigo"
+      ru: "Вражеская армия"
+    content:
+      en: "The army ants are unlike anything in the colony's experience. They have no permanent home — they ARE the invasion. Their queen is carried in the center of the swarm, surrounded by millions of soldiers whose only purpose is to kill and consume. Where Terra's colony is built on roles and cooperation, this army is built on one thing: conquest. The raiders don't negotiate. They don't coexist. They strip the earth bare and move on. As the column advances, the ground behind it is clean — every insect, every larva, every living thing devoured. Scout watches from a grass blade, counting. She stops counting at ten thousand. It doesn't matter anymore. There are more raiders than blades of grass."
+      es: "Las hormigas legionarias son diferentes a todo lo que la colonia ha experimentado. No tienen hogar permanente — ELLAS SON la invasion. Su reina es cargada en el centro del enjambre, rodeada por millones de soldados cuyo unico proposito es matar y consumir. Donde la colonia de Terra esta construida sobre roles y cooperacion, este ejercito esta construido sobre una cosa: conquista. Las invasoras no negocian. No coexisten. Despojan la tierra y siguen adelante. Mientras la columna avanza, el suelo detras queda limpio — cada insecto, cada larva, cada ser vivo devorado. Exploradora observa desde una hoja de hierba, contando. Deja de contar en diez mil. Ya no importa. Hay mas invasoras que hojas de hierba."
+      ru: "Кочевые муравьи не похожи ни на что из опыта колонии. У них нет постоянного дома — они САМИ и есть вторжение. Их королеву несут в центре роя, окружённую миллионами солдат, чья единственная цель — убивать и пожирать. Там, где колония Терры построена на ролях и сотрудничестве, эта армия построена на одном: завоевании. Захватчики не ведут переговоров. Не сосуществуют. Они обдирают землю догола и идут дальше. По мере продвижения колонны земля позади неё чиста — каждое насекомое, каждая личинка, всё живое пожрано. Разведчица наблюдает с травинки, считая. Она перестаёт считать на десяти тысячах. Это больше не имеет значения. Захватчиков больше, чем травинок."
+    image: "enemy-approaches.jpg"
+    imageAlt:
+      en: "Terrifying close-up of invading army ant column, hundreds of dark aggressive ants with huge mandibles in tight formation, barren stripped earth behind them, dramatic red lighting"
+      es: "Primer plano aterrador de la columna de hormigas legionarias invasoras, cientos de hormigas oscuras agresivas con mandibulas enormes en formacion cerrada"
+      ru: "Устрашающий крупный план колонны вторгающихся кочевых муравьёв, сотни тёмных агрессивных муравьёв с огромными челюстями в тесном строю, голая земля позади"
+
+  # Major's Decision
+  - id: majors-decision
+    mood: [soft-intimate, epic-skies]
+    use_characters: ["${major-guards-gate.image}", "${meet-queen-terra.image}"]
+    action: "a large dark reddish-black soldier ant with a massive head and oversized mandibles standing in the queen's chamber facing the large reddish-brown queen ant, both looking at each other with deep gravity, the chamber is dimly lit with amber light, worker ants visible in the background watching, the mood is solemn and weighty like a council of war"
+    title:
+      en: "Major's Decision"
+      es: "La Decision de Mayor"
+      ru: "Решение Майора"
+    content:
+      en: "In the queen's chamber, Major stands before Queen Terra. The room is silent. Every ant knows what must happen. 'The tunnels must be sealed,' Terra says quietly. 'The main corridors. The secondary routes. All of them.' Major nods. He knows what this means. The ants who seal the tunnels will be on the WRONG side of the barrier — between the colony and the invaders. They won't be coming back. 'I'll lead the defenders,' Major says. His voice doesn't waver. 'Choose only volunteers,' Terra says. Her ancient eyes are wet. 'They are all volunteers, my Queen,' Major replies. 'Every single one.' And this is true. In a colony built on selflessness, no one needs to be ordered to sacrifice. They simply step forward."
+      es: "En la camara de la reina, Mayor esta frente a la Reina Terra. La habitacion esta en silencio. Cada hormiga sabe lo que debe pasar. 'Los tuneles deben ser sellados,' dice Terra en voz baja. 'Los corredores principales. Las rutas secundarias. Todos.' Mayor asiente. Sabe lo que esto significa. Las hormigas que sellen los tuneles estaran en el lado EQUIVOCADO de la barrera — entre la colonia y los invasores. No van a volver. 'Yo liderare a los defensores,' dice Mayor. Su voz no tiembla. 'Elige solo voluntarias,' dice Terra. Sus ojos ancianos estan humedos. 'Todas son voluntarias, mi Reina,' responde Mayor. 'Cada una de ellas.' Y esto es verdad. En una colonia construida sobre el altruismo, nadie necesita que le ordenen sacrificarse. Simplemente dan un paso adelante."
+      ru: "В камере королевы Майор стоит перед Королевой Террой. В комнате тишина. Каждый муравей знает, что должно произойти. 'Тоннели должны быть запечатаны,' тихо говорит Терра. 'Главные коридоры. Запасные пути. Все.' Майор кивает. Он знает, что это значит. Муравьи, которые запечатают тоннели, окажутся по НЕПРАВИЛЬНУЮ сторону преграды — между колонией и захватчиками. Они не вернутся. 'Я поведу защитников,' говорит Майор. Его голос не дрожит. 'Выбери только добровольцев,' говорит Терра. Её древние глаза влажны. 'Они все добровольцы, моя Королева,' отвечает Майор. 'Каждый из них.' И это правда. В колонии, построенной на самоотверженности, никому не нужно приказывать жертвовать собой. Они просто делают шаг вперёд."
+    image: "majors-decision.jpg"
+    imageAlt:
+      en: "Large soldier ant facing the queen in a dimly lit chamber, solemn mood, other ants watching in the background, warm amber light, council of war atmosphere"
+      es: "Gran hormiga soldado frente a la reina en una camara tenuemente iluminada, ambiente solemne, otras hormigas observando al fondo"
+      ru: "Большой муравей-солдат перед королевой в тускло освещённой камере, торжественная атмосфера, другие муравьи наблюдают на заднем плане"
+
+  # The Tunnel Defenders
+  - id: tunnel-defenders
+    mood: [epic-skies, soft-intimate]
+    use_characters: ["${major-guards-gate.image}"]
+    action: "inside an ant tunnel, several large soldier ants are PLUGGING the tunnel entrance with their own bodies, their massive heads and mandibles facing outward toward approaching enemy ants, their bodies wedged tightly into the tunnel opening forming a living wall, the defenders' eyes show determination not fear, dramatic amber and red lighting, heroic and heartbreaking scene"
+    title:
+      en: "The Living Wall"
+      es: "La Pared Viviente"
+      ru: "Живая стена"
+    content:
+      en: "This is the part of the story that is hardest to tell, because it is true. When army ants invade a colony, defender ants plug the tunnel entrances with their own bodies. They wedge themselves into the openings — head first, mandibles facing outward — and they HOLD. The raiders bite them, pull at them, spray acid on them. The defenders do not move. Behind them, the colony evacuates. Workers carry eggs and larvae through deeper tunnels. Major is the first to plug the main entrance. His massive head fills the gap perfectly. 'Go,' he says calmly to the ants streaming past behind him. 'Take the children and go.' He can feel the raiders' mandibles on his exoskeleton. He does not flinch. This is what he was born for."
+      es: "Esta es la parte de la historia mas dificil de contar, porque es verdad. Cuando las hormigas legionarias invaden una colonia, las hormigas defensoras tapan las entradas de los tuneles con sus propios cuerpos. Se incrustan en las aberturas — cabeza primero, mandibulas hacia afuera — y RESISTEN. Las invasoras las muerden, las jalan, les rocian acido. Las defensoras no se mueven. Detras de ellas, la colonia evacua. Las obreras cargan huevos y larvas por tuneles mas profundos. Mayor es el primero en tapar la entrada principal. Su cabeza masiva llena el espacio perfectamente. 'Vayan,' dice calmadamente a las hormigas que pasan detras de el. 'Lleven a los ninos y vayan.' Puede sentir las mandibulas de las invasoras en su exoesqueleto. No se inmuta. Para esto nacio."
+      ru: "Это самая тяжёлая часть истории, потому что она правдива. Когда кочевые муравьи вторгаются в колонию, муравьи-защитники затыкают входы в тоннели собственными телами. Они вклиниваются в проёмы — головой вперёд, челюстями наружу — и ДЕРЖАТСЯ. Захватчики кусают их, тянут, брызгают кислотой. Защитники не двигаются. Позади них колония эвакуируется. Рабочие несут яйца и личинки через более глубокие тоннели. Майор первым затыкает главный вход. Его массивная голова идеально заполняет проём. 'Идите,' спокойно говорит он муравьям, бегущим мимо позади него. 'Берите детей и идите.' Он чувствует челюсти захватчиков на своём экзоскелете. Он не вздрагивает. Для этого он родился."
+    image: "tunnel-defenders.jpg"
+    imageAlt:
+      en: "Soldier ants plugging tunnel entrance with their bodies, massive heads and mandibles facing outward, enemy ants approaching, heroic and heartbreaking, dramatic lighting"
+      es: "Hormigas soldado tapando la entrada del tunel con sus cuerpos, cabezas masivas y mandibulas hacia afuera, hormigas enemigas acercandose, heroico y desgarrador"
+      ru: "Муравьи-солдаты затыкают вход в тоннель своими телами, массивные головы и челюсти направлены наружу, вражеские муравьи приближаются, героическая и душераздирающая сцена"
+
+  # Chemical Warfare
+  - id: chemical-warfare
+    mood: [epic-skies]
+    use_characters: ["${meet-scout.image}"]
+    action: "an intense battle scene between defender ants and invading army ants on the surface near the anthill, defender ants spraying formic acid from their abdomens creating visible misty clouds, the acid spray is shown as a dramatic mist, invading ants recoiling from the chemical attack, the ground is churned up from the battle, harsh dramatic lighting with red and orange tones, chaotic and intense"
+    title:
+      en: "Chemical Warfare"
+      es: "Guerra Quimica"
+      ru: "Химическая война"
+    content:
+      en: "Above ground, the battle is even more brutal. Defender ants have a weapon the raiders don't expect: formic acid. They spray it from their abdomens in desperate clouds, and where the acid lands, it burns. The raiders reel back, confused and in pain. But there are so many of them. For every raider that falls, ten more take her place. Scout leads a flanking team, striking at the edges of the army column, trying to disrupt their scent trails and cause confusion. It works — for a while. Separated from the chemical trail, groups of raiders mill in circles, lost. But the main column adapts. It always adapts. This is what army ants do. They don't think. They don't strategize. They simply overwhelm. And against that, even courage has limits."
+      es: "Sobre la superficie, la batalla es aun mas brutal. Las hormigas defensoras tienen un arma que las invasoras no esperan: acido formico. Lo rocian desde sus abdomenes en nubes desesperadas, y donde el acido cae, quema. Las invasoras retroceden, confundidas y adoloridas. Pero son tantas. Por cada invasora que cae, diez mas toman su lugar. Exploradora lidera un equipo de flanqueo, golpeando los bordes de la columna del ejercito, tratando de interrumpir sus rastros de olor y causar confusion. Funciona — por un tiempo. Separados del rastro quimico, grupos de invasoras giran en circulos, perdidos. Pero la columna principal se adapta. Siempre se adapta. Esto es lo que hacen las hormigas legionarias. No piensan. No planifican estrategias. Simplemente abruman. Y contra eso, incluso el coraje tiene limites."
+      ru: "На поверхности битва ещё более жестокая. У защитников есть оружие, которого захватчики не ожидают: муравьиная кислота. Они распыляют её из брюшек отчаянными облаками, и там, где кислота попадает, она жжёт. Захватчики отшатываются, сбитые с толку и от боли. Но их так много. На каждого павшего захватчика приходят десять новых. Разведчица ведёт фланговую группу, нанося удары по краям армейской колонны, пытаясь нарушить их тропы запахов и посеять хаос. Это работает — какое-то время. Отрезанные от химической тропы, группы захватчиков кружат на месте, потерянные. Но основная колонна адаптируется. Она всегда адаптируется. Это то, что делают кочевые муравьи. Они не думают. Не строят стратегий. Они просто подавляют числом. И против этого даже мужество имеет пределы."
+    image: "chemical-warfare.jpg"
+    imageAlt:
+      en: "Intense battle between defender ants spraying formic acid mist and invading army ants recoiling, churned earth, harsh red-orange lighting, chaotic scene"
+      es: "Batalla intensa entre hormigas defensoras rociando acido formico y hormigas invasoras retrocediendo, tierra revuelta, iluminacion rojo-naranja"
+      ru: "Ожесточённая битва между защитниками, распыляющими муравьиную кислоту, и отступающими захватчиками, разрытая земля, резкое красно-оранжевое освещение"
+
+  # The Nursery Evacuation
+  - id: nursery-evacuation
+    mood: [soft-intimate, translucency]
+    use_characters: ["${tinys-big-job.image}", "${meet-queen-terra.image}"]
+    action: "inside a deep underground tunnel, a small dark ant carefully carries a cluster of white ant eggs in her mandibles, running through the tunnel with other worker ants also carrying eggs and larvae, the tunnel is narrow and the ants are urgent but gentle with their cargo, behind them the distant sounds of battle are suggested by dust falling from the tunnel ceiling, warm amber light fading to darkness, desperate but tender scene"
+    title:
+      en: "Save the Children"
+      es: "Salven a los Ninos"
+      ru: "Спасите детей"
+    content:
+      en: "Deep in the colony, Tiny has the most important job she's ever had. While the soldiers fight and die above, the workers are evacuating the nursery. Every egg, every larva, every pupa must be carried to the deepest emergency chambers — tunnels so far down that the raiders may never reach them. Tiny cradles a cluster of eggs in her mandibles, more gently than she has ever held anything. These eggs are the colony's future. If the soldiers buy enough time, if the tunnels hold, these tiny white eggs will become the ants who rebuild everything. Tiny runs. The tunnel shakes as battle rages above. Dust falls from the ceiling. She shields the eggs with her body and keeps running. She is small. She has always been small. But right now, carrying the future in her jaws, she has never felt more important."
+      es: "En lo profundo de la colonia, Diminuta tiene el trabajo mas importante que ha tenido. Mientras las soldados luchan y mueren arriba, las obreras estan evacuando la guarderia. Cada huevo, cada larva, cada pupa debe ser llevada a las camaras de emergencia mas profundas — tuneles tan abajo que las invasoras quiza nunca lleguen. Diminuta acuna un grupo de huevos en sus mandibulas, mas delicadamente de lo que ha sostenido nada jamas. Estos huevos son el futuro de la colonia. Si las soldados ganan suficiente tiempo, si los tuneles resisten, estos pequenos huevos blancos se convertiran en las hormigas que reconstruiran todo. Diminuta corre. El tunel tiembla mientras la batalla ruge arriba. Polvo cae del techo. Protege los huevos con su cuerpo y sigue corriendo. Es pequena. Siempre ha sido pequena. Pero ahora, cargando el futuro en sus mandibulas, nunca se ha sentido mas importante."
+      ru: "Глубоко в колонии у Крошки самая важная работа в её жизни. Пока солдаты сражаются и гибнут наверху, рабочие эвакуируют детскую. Каждое яйцо, каждая личинка, каждая куколка должна быть перенесена в самые глубокие аварийные камеры — тоннели так глубоко, что захватчики, может быть, никогда туда не доберутся. Крошка бережно несёт гроздь яиц в челюстях, нежнее, чем когда-либо что-то держала. Эти яйца — будущее колонии. Если солдаты выиграют достаточно времени, если тоннели выдержат, эти крошечные белые яйца станут муравьями, которые всё отстроят заново. Крошка бежит. Тоннель содрогается от битвы наверху. Пыль сыплется с потолка. Она прикрывает яйца своим телом и продолжает бежать. Она маленькая. Она всегда была маленькой. Но сейчас, неся будущее в своих челюстях, она никогда не чувствовала себя важнее."
+    image: "nursery-evacuation.jpg"
+    imageAlt:
+      en: "Small dark ant carrying white eggs through a narrow underground tunnel, other worker ants with larvae, dust falling from ceiling, urgent but tender, amber light"
+      es: "Pequena hormiga oscura cargando huevos blancos por un estrecho tunel subterraneo, otras obreras con larvas, polvo cayendo del techo, urgente pero tierno"
+      ru: "Маленький тёмный муравей несёт белые яйца через узкий подземный тоннель, другие рабочие с личинками, пыль сыплется с потолка, срочно но нежно"
+
+  # The Soldier's Sacrifice
+  - id: soldiers-sacrifice
+    mood: [epic-skies, soft-intimate]
+    use_characters: ["${major-guards-gate.image}"]
+    action: "a powerful and emotional scene — a large dark soldier ant with massive mandibles wedged into a tunnel entrance, his exoskeleton battered and cracked, still holding firm as invading ants press against him, behind him the tunnel stretches into safe darkness where the colony has escaped, his eyes show peace not pain, golden light filtering from behind him like a halo, heroic and deeply moving, the feeling of a last stand"
+    title:
+      en: "The Soldier's Sacrifice"
+      es: "El Sacrificio del Soldado"
+      ru: "Жертва солдата"
+    content:
+      en: "Major has been holding the main tunnel for hours. His exoskeleton is cracked in three places. One mandible is chipped. The raiders have thrown everything at him — bites, acid, sheer numbers pushing against his body. He has not moved one inch. Behind him, the tunnel is empty. The evacuation is complete. Every egg is safe. Every worker is deep below. Queen Terra herself sent the last message through the pheromone chain: 'The children are safe. Thank you.' Major feels the message reach him and something inside him lets go — not his grip, never his grip — but the tension he didn't know he was carrying. He did his job. Every defender did their job. Some will not survive the night. Major may not survive the night. But the colony will live. And in the ant world, that is everything."
+      es: "Mayor ha estado sosteniendo el tunel principal por horas. Su exoesqueleto esta agrietado en tres lugares. Una mandibula esta astillada. Las invasoras han lanzado todo contra el — mordidas, acido, el puro numero presionando contra su cuerpo. No se ha movido ni un centimetro. Detras de el, el tunel esta vacio. La evacuacion esta completa. Cada huevo esta a salvo. Cada obrera esta en las profundidades. La Reina Terra misma envio el ultimo mensaje por la cadena de feromonas: 'Los ninos estan a salvo. Gracias.' Mayor siente que el mensaje lo alcanza y algo dentro de el se afloja — no su agarre, nunca su agarre — sino la tension que no sabia que cargaba. Hizo su trabajo. Cada defensor hizo su trabajo. Algunos no sobreviviran la noche. Mayor quiza no sobreviva la noche. Pero la colonia vivira. Y en el mundo de las hormigas, eso es todo."
+      ru: "Майор держит главный тоннель уже несколько часов. Его экзоскелет треснул в трёх местах. Одна челюсть сколота. Захватчики бросили на него всё — укусы, кислоту, чистую массу тел, давящих на него. Он не сдвинулся ни на сантиметр. За ним тоннель пуст. Эвакуация завершена. Каждое яйцо в безопасности. Каждый рабочий глубоко внизу. Сама Королева Терра послала последнее сообщение по цепочке феромонов: 'Дети в безопасности. Спасибо.' Майор чувствует, как сообщение достигает его, и что-то внутри отпускает — не хватка, никогда не хватка — но напряжение, о котором он не знал. Он выполнил свою работу. Каждый защитник выполнил свою. Некоторые не переживут эту ночь. Майор, может быть, не переживёт эту ночь. Но колония будет жить. А в мире муравьёв это — всё."
+    image: "soldiers-sacrifice.jpg"
+    imageAlt:
+      en: "Battered soldier ant wedged in tunnel entrance still holding firm, cracked exoskeleton, raiders pressing against him, golden light behind like a halo, heroic last stand"
+      es: "Hormiga soldado maltratada incrustada en la entrada del tunel resistiendo, exoesqueleto agrietado, invasoras presionando contra el, luz dorada detras como un halo"
+      ru: "Побитый муравей-солдат, вклинившийся во вход тоннеля и держащийся, треснутый экзоскелет, захватчики давят на него, золотистый свет позади как ореол"
+
+  # The Aftermath
+  - id: the-aftermath
+    mood: [soft-intimate]
+    action: "the anthill after the army ants have passed — the surface is scarred and churned, broken tunnel entrances visible, a few exhausted defender ants limp across the damaged ground, the sky is grey dawn light after a storm, devastation but also stillness, some wildflowers are crushed but a few still stand, solemn and quiet aftermath of battle"
+    title:
+      en: "The Aftermath"
+      es: "Las Consecuencias"
+      ru: "Последствия"
+    content:
+      en: "By dawn, the raiders have moved on. Army ants never stay — they are a storm, not a siege. They swept through the upper tunnels, took what they could reach, and continued their endless march. The surface is scarred. Tunnel entrances are collapsed or torn open. The ground looks like a battlefield because it was one. Scout emerges first, her bent antenna testing the air for danger. Nothing. The chemical traces are fading. The raiders are gone. Slowly, cautiously, other ants begin to appear from the deep tunnels. They look at the devastation in silence. The meadow that was so beautiful yesterday is churned and scarred. Some of the defenders who held the tunnels are still there — motionless now, still wedged in their positions, still facing outward. They held. To the very end, they held."
+      es: "Al amanecer, las invasoras se han ido. Las hormigas legionarias nunca se quedan — son una tormenta, no un asedio. Barrieron los tuneles superiores, tomaron lo que pudieron alcanzar, y continuaron su marcha interminable. La superficie esta marcada. Las entradas de los tuneles estan colapsadas o destrozadas. El suelo parece un campo de batalla porque lo fue. Exploradora emerge primero, su antena doblada probando el aire en busca de peligro. Nada. Los rastros quimicos se desvanecen. Las invasoras se fueron. Lentamente, cautelosamente, otras hormigas comienzan a aparecer de los tuneles profundos. Miran la devastacion en silencio. El prado que era tan hermoso ayer esta revuelto y marcado. Algunas de las defensoras que sostuvieron los tuneles siguen ahi — inmoviles ahora, aun incrustadas en sus posiciones, aun mirando hacia afuera. Resistieron. Hasta el final, resistieron."
+      ru: "К рассвету захватчики ушли. Кочевые муравьи никогда не остаются — они буря, не осада. Они прошли через верхние тоннели, взяли что смогли, и продолжили свой бесконечный марш. Поверхность изранена. Входы в тоннели обрушены или разорваны. Земля выглядит как поле битвы, потому что им и была. Разведчица выходит первой, её изогнутый усик проверяет воздух на опасность. Ничего. Химические следы тают. Захватчики ушли. Медленно, осторожно, другие муравьи начинают появляться из глубоких тоннелей. Они молча смотрят на разрушения. Луг, который был таким красивым вчера, изрыт и изранен. Некоторые защитники, державшие тоннели, всё ещё там — неподвижные теперь, всё ещё вклиненные в свои позиции, всё ещё лицом наружу. Они выстояли. До самого конца они выстояли."
+    image: "the-aftermath.jpg"
+    imageAlt:
+      en: "Devastated anthill at grey dawn, scarred earth, collapsed tunnel entrances, exhausted ants emerging, crushed wildflowers, solemn quiet aftermath"
+      es: "Hormiguero devastado al amanecer gris, tierra marcada, entradas de tuneles colapsadas, hormigas exhaustas emergiendo, flores aplastadas"
+      ru: "Разорённый муравейник на фоне серого рассвета, израненная земля, обрушенные входы, измотанные муравьи выходят, помятые цветы"
+
+  # Rebuilding
+  - id: rebuilding
+    mood: [golden-hour, lush-botanical]
+    use_characters: ["${tinys-big-job.image}", "${meet-scout.image}", "${meet-queen-terra.image}"]
+    action: "ants rebuilding their colony in warm golden morning light, some repairing tunnel entrances carrying balls of earth, some clearing debris, a small dark ant carrying a huge leaf piece is leading a line of workers, the anthill is being reconstructed, new green shoots growing through the damaged earth, hope and determination in the scene, sunrise golden light breaking through clouds"
+    title:
+      en: "Rebuilding from Ashes"
+      es: "Reconstruyendo de las Cenizas"
+      ru: "Возрождение из пепла"
+    content:
+      en: "Before the morning sun has fully risen, the rebuilding begins. This is perhaps the most remarkable thing about ants: they do not mourn long. They do not give up. They BUILD. Tiny is the first to start carrying earth to repair the tunnels. Her load is too big — it's always too big — but she carries it anyway. Scout maps new routes around the damaged sections. Workers stream out in organized lines, clearing debris, reopening passages, reinforcing walls. Deep below, Queen Terra begins laying eggs again. New life. New soldiers. New workers. The colony's answer to destruction is not despair — it is creation. Within days, the tunnels will be deeper and stronger than before. The colony learns from every invasion. It adapts. It endures."
+      es: "Antes de que el sol de la manana haya salido completamente, la reconstruccion comienza. Esto es quiza lo mas notable de las hormigas: no lloran mucho tiempo. No se rinden. CONSTRUYEN. Diminuta es la primera en empezar a cargar tierra para reparar los tuneles. Su carga es demasiado grande — siempre es demasiado grande — pero la carga de todas formas. Exploradora traza nuevas rutas alrededor de las secciones danadas. Las obreras salen en filas organizadas, limpiando escombros, reabriendo pasajes, reforzando paredes. En las profundidades, la Reina Terra comienza a poner huevos de nuevo. Nueva vida. Nuevas soldados. Nuevas obreras. La respuesta de la colonia a la destruccion no es la desesperacion — es la creacion."
+      ru: "Ещё до того, как утреннее солнце полностью взошло, начинается восстановление. Это, пожалуй, самое замечательное в муравьях: они не горюют долго. Они не сдаются. Они СТРОЯТ. Крошка первой начинает носить землю для ремонта тоннелей. Её ноша слишком велика — она всегда слишком велика — но она несёт её всё равно. Разведчица прокладывает новые маршруты вокруг повреждённых участков. Рабочие выходят организованными колоннами, расчищая завалы, открывая проходы, укрепляя стены. Глубоко внизу Королева Терра снова начинает откладывать яйца. Новая жизнь. Новые солдаты. Новые рабочие. Ответ колонии на разрушение — не отчаяние, а созидание. За несколько дней тоннели будут глубже и крепче, чем прежде."
+    image: "rebuilding.jpg"
+    imageAlt:
+      en: "Ants rebuilding their colony in golden morning light, carrying earth, clearing debris, new green shoots growing, sunrise breaking through clouds, hope and determination"
+      es: "Hormigas reconstruyendo su colonia en luz dorada matutina, cargando tierra, limpiando escombros, nuevos brotes verdes creciendo, amanecer"
+      ru: "Муравьи восстанавливают свою колонию в золотистом утреннем свете, несут землю, расчищают завалы, новые зелёные ростки, рассвет пробивается сквозь тучи"
+
+  # The Colony Endures
+  - id: colony-endures
+    mood: [epic-skies, golden-hour, lush-botanical]
+    use_characters: ["${meet-queen-terra.image}", "${meet-scout.image}", "${tinys-big-job.image}", "${major-guards-gate.image}"]
+    action: "a magnificent wide shot at golden sunset — the ant colony restored and thriving again, the anthill is larger and stronger than before, organized lines of ants streaming in and out, new wildflowers blooming around the mound, Queen Terra visible in an underground cutaway chamber with new eggs, Scout on a high grass blade surveying the land, a large soldier ant standing guard at the rebuilt entrance, a small dark ant carrying an oversized leaf, golden sunset light, clouds parting to reveal blue sky, triumphant and hopeful, the feeling of endurance and rebirth"
+    title:
+      en: "The Colony Endures"
+      es: "La Colonia Perdura"
+      ru: "Колония выстоит"
+    content:
+      en: "Weeks later, you would never know a war was fought here. The anthill is bigger than before. The tunnels go deeper. A new generation of soldiers guards the gates — their mandibles even larger, their instincts sharper. Scout has mapped escape routes in every direction. Tiny trains the new young workers, showing them how to carry loads bigger than themselves. 'It's all about heart,' she tells them, and she means it. Queen Terra sits in her chamber, surrounded by thousands of new eggs, and she remembers. She remembers every defender who held a tunnel. Every soldier who didn't come home. In the ant world, there are no monuments, no names carved in stone. But the colony itself is the monument — every tunnel dug, every egg tended, every enemy turned away. The colony endures. It has endured for fifty million years. And it will endure long after we are gone."
+      es: "Semanas despues, nunca sabrias que se libro una guerra aqui. El hormiguero es mas grande que antes. Los tuneles son mas profundos. Una nueva generacion de soldados custodia las puertas — sus mandibulas aun mas grandes, sus instintos mas agudos. Exploradora ha mapeado rutas de escape en todas direcciones. Diminuta entrena a las nuevas obreras jovenes, mostrandoles como cargar cosas mas grandes que ellas mismas. 'Todo es cuestion de corazon,' les dice, y lo dice en serio. La Reina Terra se sienta en su camara, rodeada de miles de nuevos huevos, y recuerda. Recuerda a cada defensora que sostuvo un tunel. Cada soldado que no volvio a casa. En el mundo de las hormigas, no hay monumentos, no hay nombres grabados en piedra. Pero la colonia misma es el monumento. La colonia perdura. Ha perdurado por cincuenta millones de anos. Y perdurara mucho despues de que nosotros nos hayamos ido."
+      ru: "Спустя недели вы бы никогда не узнали, что здесь была война. Муравейник больше прежнего. Тоннели глубже. Новое поколение солдат охраняет ворота — их челюсти ещё больше, инстинкты острее. Разведчица проложила пути отступления во все стороны. Крошка обучает новых молодых рабочих, показывая, как нести груз больше себя. 'Всё дело в сердце,' говорит она, и говорит серьёзно. Королева Терра сидит в своей камере, окружённая тысячами новых яиц, и помнит. Она помнит каждого защитника, державшего тоннель. Каждого солдата, не вернувшегося домой. В мире муравьёв нет памятников, нет имён, высеченных в камне. Но сама колония — это памятник. Колония выстоит. Она выстояла пятьдесят миллионов лет. И выстоит долго после того, как нас не станет."
+    image: "colony-endures.jpg"
+    imageAlt:
+      en: "Magnificent restored ant colony at golden sunset, larger and stronger anthill, organized ant lines, new wildflowers, all four characters visible, triumphant golden light, clouds parting"
+      es: "Magnifica colonia restaurada al atardecer dorado, hormiguero mas grande y fuerte, lineas organizadas, nuevas flores, los cuatro personajes visibles, luz dorada triunfante"
+      ru: "Великолепная восстановленная колония на фоне золотого заката, увеличенный и укреплённый муравейник, организованные колонны, новые цветы, все четыре персонажа видны, триумфальный золотистый свет"
+
+  # Nature's Lesson
+  - id: natures-lesson
+    mood: [golden-hour, soft-intimate]
+    action: "a contemplative final scene — a single ant standing on the tip of a tall grass blade at golden sunset, looking out over the vast meadow, the rebuilt anthill visible below, the horizon stretches endlessly, the ant is small against the enormous sky but stands tall and resolute, golden light creates a silhouette effect, the mood is philosophical and profound, the contrast between tiny creature and vast world"
+    title:
+      en: "Nature's Lesson"
+      es: "La Leccion de la Naturaleza"
+      ru: "Урок природы"
+    content:
+      en: "There is a lesson in the ants, if we choose to see it. Some colonies are democracies — every worker contributes freely, the queen is a mother not a tyrant, and the colony thrives because each member serves willingly. Other colonies are empires — slave-making ants that raid, enslave, and exploit. Army ants that destroy without building. Nature shows us both paths, and it shows us which one endures. The colonies built on cooperation — on every ant doing her part, on soldiers who choose to sacrifice, on workers who carry loads too heavy because they refuse to let their sisters down — these are the colonies that survive for millions of years. The raiders come and go like storms. But the builders remain. Perhaps the smallest creatures on Earth have the biggest lesson to teach us: that what we build together is always stronger than what we destroy alone."
+      es: "Hay una leccion en las hormigas, si elegimos verla. Algunas colonias son democracias — cada obrera contribuye libremente, la reina es una madre no una tirana, y la colonia prospera porque cada miembro sirve voluntariamente. Otras colonias son imperios — hormigas esclavistas que asaltan, esclavizan y explotan. Hormigas legionarias que destruyen sin construir. La naturaleza nos muestra ambos caminos, y nos muestra cual perdura. Las colonias construidas sobre la cooperacion — donde cada hormiga hace su parte, donde los soldados eligen sacrificarse, donde las obreras cargan cargas demasiado pesadas porque se niegan a decepcionar a sus hermanas — estas son las colonias que sobreviven por millones de anos. Las invasoras vienen y van como tormentas. Pero las constructoras permanecen. Quiza las criaturas mas pequenas de la Tierra tienen la leccion mas grande que ensenarnos: que lo que construimos juntos siempre es mas fuerte que lo que destruimos solos."
+      ru: "В муравьях есть урок, если мы решим его увидеть. Некоторые колонии — демократии: каждый рабочий вносит вклад добровольно, королева — мать, а не тиран, и колония процветает, потому что каждый член служит по своей воле. Другие колонии — империи: муравьи-рабовладельцы, которые нападают, порабощают и эксплуатируют. Кочевые муравьи, которые разрушают, не строя. Природа показывает нам оба пути и показывает, какой из них выдерживает. Колонии, построенные на сотрудничестве — где каждый муравей делает свою часть, где солдаты выбирают жертвовать собой, где рабочие несут непосильный груз, потому что отказываются подвести своих сестёр — это колонии, которые выживают миллионы лет. Захватчики приходят и уходят как бури. Но строители остаются. Может быть, самые маленькие создания на Земле преподают нам самый великий урок: то, что мы строим вместе, всегда сильнее того, что мы разрушаем поодиночке."
+    image: "natures-lesson.jpg"
+    imageAlt:
+      en: "Single ant silhouetted on a tall grass blade at golden sunset, vast meadow and rebuilt anthill below, enormous sky, small creature against vast world, philosophical and profound"
+      es: "Hormiga sola silueteada en una hoja de hierba alta al atardecer dorado, vasto prado y hormiguero reconstruido abajo, cielo enorme, pequena criatura contra el vasto mundo"
+      ru: "Одинокий муравей на фоне заката на высокой травинке, бескрайний луг и восстановленный муравейник внизу, огромное небо, маленькое существо на фоне огромного мира"
+
+  # Hidden sections for viewer detail and fun fact image generation
+  - id: "detail-mandible-closeup"
+    image: "detail-mandible-closeup.jpg"
+    referenceImage: "${major-guards-gate.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single ant HEAD showing the massive mandibles (jaws) in extraordinary detail. The mandibles are open wide, showing their serrated inner edges like tiny saw blades. The compound eyes are visible on the sides of the head. Battle damage visible — small chips and scratches on the mandibles. Only the head and mandibles visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-antenna-closeup"
+    image: "detail-antenna-closeup.jpg"
+    referenceImage: "${meet-scout.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single ant antenna in extreme detail, showing the segmented structure with the elbow joint clearly visible, one antenna has a slight bend. Tiny scent molecules are illustrated floating toward the antenna tip, including alarm pheromone molecules shown in red. Only the antenna and part of the head visible. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-exoskeleton-texture"
+    image: "detail-exoskeleton-texture.jpg"
+    referenceImage: "${meet-queen-terra.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — the surface of an ant's reddish-brown exoskeleton showing the segmented armor plates, the textured surface like hammered metal, the joints between body sections. Some battle scars visible as lighter marks on the dark chitin. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-leg-grip"
+    image: "detail-leg-grip.jpg"
+    referenceImage: "${tinys-big-job.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single ant FOOT gripping onto a blade of grass, showing the tiny hooks (tarsal claws) at the tip of the foot and the adhesive pad between the claws. The grip looks tenacious and unbreakable. Only the foot and part of the leg visible. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-strength-img"
+    image: "fun-fact-strength.jpg"
+    prompt: "Educational illustration showing an ant lifting an enormous weight above its head with '50x' written in big numbers, a comparison showing a human lifting a car to demonstrate equivalent strength. Split comparison style. Classic hand-drawn Disney animation style, colorful meadow background."
+    hidden: true
+
+  - id: "fun-fact-colony-size-img"
+    image: "fun-fact-colony-size.jpg"
+    prompt: "Educational illustration showing a map of southern Europe with a massive ant supercolony marked stretching 6000km, with magnified views showing millions of individual ants, dramatic scale comparison. Classic hand-drawn Disney animation style, informative and impressive."
+    hidden: true
+
+  - id: "fun-fact-scent-trails-img"
+    image: "fun-fact-scent-trails.jpg"
+    referenceImage: "${meet-scout.image}"
+    prompt: "Using the ant from reference, educational illustration showing an ant leaving different colored scent trails — golden for food trails, red for alarm pheromones, blue for colony identification, diagram-style labels showing pheromone communication types. Classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-fungus-farming-img"
+    image: "fun-fact-fungus-farming.jpg"
+    prompt: "Educational illustration showing leaf-cutter ants in their underground fungus garden with a timeline showing '50 million years of farming' — ancient ant fossils compared to modern ants doing the same farming, showing continuity across time. Classic hand-drawn Disney animation style, warm lighting."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a dramatic magazine cover featuring a large dark soldier ant with massive mandibles standing guard at a tunnel entrance in the foreground, looking directly at the viewer with fierce determination but gentle eyes. Behind him, a vast army of dark ants streams over a hill toward a defended anthill. In a cutaway below ground, a small ant carries white eggs through a tunnel. The sky is dramatic red-gold sunset with ominous clouds. Style: Classic hand-drawn Disney animation — warm organic lines, soulful expressive eyes, painterly brushwork, vintage animation warmth but with dramatic intensity. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${meet-queen-terra.image}"
+      - "${meet-scout.image}"
+      - "${tinys-big-job.image}"
+      - "${major-guards-gate.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Soldier ant guarding tunnel entrance with fierce determination, army of invaders on the horizon, small ant carrying eggs underground, dramatic red-gold sunset"
+      es: "Hormiga soldado guardando la entrada del tunel con feroz determinacion, ejercito de invasoras en el horizonte, pequena hormiga cargando huevos bajo tierra, dramatico atardecer rojo-dorado"
+      ru: "Муравей-солдат охраняет вход в тоннель с яростной решимостью, армия захватчиков на горизонте, маленький муравей несёт яйца под землёй, драматичный красно-золотой закат"
+
+funFacts:
+  title:
+    en: "Amazing Ant Facts!"
+    es: "Datos Asombrosos sobre Hormigas!"
+    ru: "Удивительные факты о муравьях!"
+  facts:
+    - title:
+        en: "Super Strength"
+        es: "Super Fuerza"
+        ru: "Суперсила"
+      content:
+        en: "Ants can carry objects 50 times their own body weight! That's like a human picking up a car and carrying it over their head. Their secret is their exoskeleton — a hard outer shell that acts like a suit of armor and gives their muscles incredible leverage. Some species can even carry 100 times their weight when working together!"
+        es: "Las hormigas pueden cargar objetos 50 veces su propio peso! Eso es como si un humano levantara un auto y lo cargara sobre su cabeza. Su secreto es su exoesqueleto — una cubierta exterior dura que actua como una armadura y da a sus musculos una palanca increible. Algunas especies pueden incluso cargar 100 veces su peso cuando trabajan juntas!"
+        ru: "Муравьи могут нести предметы в 50 раз тяжелее собственного веса! Это как если бы человек поднял автомобиль и нёс его над головой. Их секрет — экзоскелет, твёрдая внешняя оболочка, которая действует как доспехи и даёт их мышцам невероятный рычаг. Некоторые виды могут нести даже в 100 раз больше своего веса, работая вместе!"
+      image: "fun-fact-strength.jpg"
+
+    - title:
+        en: "Mega Colonies"
+        es: "Mega Colonias"
+        ru: "Мегаколонии"
+      content:
+        en: "Some ant colonies can have MILLIONS of members! The largest known ant supercolony stretches over 6,000 kilometers across southern Europe — that's wider than the United States! These massive colonies have multiple queens and billions of workers. A single colony of leafcutter ants can strip a whole tree of its leaves in one night!"
+        es: "Algunas colonias de hormigas pueden tener MILLONES de miembros! La supercolonia de hormigas mas grande conocida se extiende por mas de 6,000 kilometros a traves del sur de Europa — eso es mas ancho que los Estados Unidos! Estas colonias masivas tienen multiples reinas y miles de millones de trabajadoras."
+        ru: "Некоторые колонии муравьёв могут насчитывать МИЛЛИОНЫ членов! Самая большая известная суперколония муравьёв простирается на более чем 6 000 километров через южную Европу — это шире, чем США! Эти огромные колонии имеют множество королев и миллиарды рабочих."
+      image: "fun-fact-colony-size.jpg"
+
+    - title:
+        en: "Scent Language"
+        es: "Lenguaje de Olores"
+        ru: "Язык запахов"
+      content:
+        en: "Ants talk to each other using special chemicals called pheromones! They leave scent trails on the ground to say 'food this way,' release alarm scents that mean 'danger!', and even have a special smell that says 'I'm from this colony.' An ant's antennae can detect incredibly tiny amounts of these chemicals — it's like having a super-powered nose on your head!"
+        es: "Las hormigas hablan entre si usando quimicos especiales llamados feromonas! Dejan rastros de olor en el suelo para decir 'comida por aqui,' liberan olores de alarma que significan 'peligro!', e incluso tienen un olor especial que dice 'soy de esta colonia.'"
+        ru: "Муравьи разговаривают друг с другом с помощью особых химических веществ — феромонов! Они оставляют пахучие следы на земле, чтобы сказать 'еда тут,' выпускают тревожные запахи, означающие 'опасность!', и даже имеют особый запах, говорящий 'я из этой колонии.'"
+      image: "fun-fact-scent-trails.jpg"
+
+    - title:
+        en: "Tiny Farmers"
+        es: "Pequenas Granjeras"
+        ru: "Крошечные фермеры"
+      content:
+        en: "Leafcutter ants have been farming fungus for over 50 MILLION years — that's way before humans even existed! They cut leaves, carry them underground, chew them into a paste, and grow a special fungus on top. They even use natural antibiotics to keep their gardens disease-free. They were the world's first farmers, and they're still some of the best!"
+        es: "Las hormigas cortadoras de hojas han cultivado hongos por mas de 50 MILLONES de anos — eso es mucho antes de que los humanos existieran! Cortan hojas, las llevan bajo tierra, las mastican hasta hacer una pasta y cultivan un hongo especial encima. Fueron las primeras granjeras del mundo!"
+        ru: "Муравьи-листорезы выращивают грибы уже более 50 МИЛЛИОНОВ лет — это задолго до появления людей! Они срезают листья, несут их под землю, пережёвывают в пасту и выращивают на ней особый гриб. Они были первыми фермерами в мире и до сих пор одни из лучших!"
+      image: "fun-fact-fungus-farming.jpg"
+
+imageGeneration:
+  characters:
+    queen-terra:
+      name: "Queen Terra"
+      description: "The ant queen, largest ant in the colony, deep reddish-brown, wise ancient eyes, sits in the heart of the nest with a slightly iridescent wing remnant on her back"
+      uniqueFeatures:
+        - "LARGEST ant character — visibly much bigger than all other ants, massive abdomen"
+        - "DEEP REDDISH-BROWN coloring — rich, warm wood-toned exoskeleton"
+        - "WISE ANCIENT EYES — calm, knowing expression, seen a thousand seasons"
+        - "IRIDESCENT WING REMNANT on her back — small shimmering stubs that catch the light like tiny rainbows, the mark of a founding queen"
+        - "Regal posture — sits upright and still, surrounded by attendant workers"
+        - "Largest head with smooth, polished-looking exoskeleton"
+      personality: "Wise, warm, and regal — sits calmly and speaks with quiet authority, carries the weight of every sacrifice"
+      notLike: "NOT small or lean like Scout, NOT dark like Tiny, NOT aggressive-looking like Major"
+
+    scout:
+      name: "Scout"
+      description: "Explorer ant, lean and fast, lighter brown color, antennae always pointing forward alertly, one antenna slightly bent from an adventure"
+      uniqueFeatures:
+        - "LEAN and FAST build — longest legs proportionally, streamlined body"
+        - "LIGHTER BROWN coloring — sandier, paler than Queen Terra's deep reddish-brown"
+        - "ANTENNAE pointing FORWARD alertly — always sensing, always searching"
+        - "ONE ANTENNA SLIGHTLY BENT — the left antenna has a noticeable crook from her first adventure, her signature feature"
+        - "Front legs often raised — poised to run, ready for action"
+        - "Alert, wide-eyed expression — always looking into the distance"
+      personality: "Brave and resourceful — the first to see danger, the first to act, carries intelligence like a weapon"
+      notLike: "NOT large like Queen Terra, NOT dark or small like Tiny, NOT bulky like Major"
+
+    tiny:
+      name: "Tiny"
+      description: "Young worker ant, smallest of the group, darker color, eager to help but clumsy, always carries leaves twice her size"
+      uniqueFeatures:
+        - "SMALLEST ant character — noticeably smaller than all others, baby proportions"
+        - "DARKER coloring — darker brown-black than the others, distinct from Scout's light brown"
+        - "Always carrying something TOO BIG — signature look is struggling under an oversized load"
+        - "ROUND, oversized head relative to body — baby-like proportions"
+        - "Legs slightly splayed for balance — always wobbling, endearingly determined"
+        - "Fierce determination in small eyes — the heart of a giant in the body of the smallest"
+      personality: "Small but unbreakable — carries impossible burdens without complaint, the colony's future in her jaws"
+      notLike: "NOT lean like Scout, NOT large like Queen Terra, NOT intimidating like Major"
+
+    major:
+      name: "Major"
+      description: "Soldier ant, biggest worker with oversized mandibles, dark reddish-black, stands guard at tunnel entrances, intimidating but gentle with colony-mates"
+      uniqueFeatures:
+        - "BIGGEST WORKER ant — second only to Queen Terra in size, but stockier and more muscular"
+        - "MASSIVE HEAD with OVERSIZED MANDIBLES — enormous jaws that dominate his face"
+        - "DARK REDDISH-BLACK coloring — darker and more intense than Queen Terra's warm brown"
+        - "WIDE, planted stance — legs spread, blocking tunnel entrances, immovable"
+        - "Gentle eyes that contrast with intimidating jaws — soft expression despite fearsome appearance"
+        - "Battle-scarred exoskeleton — marks of service and sacrifice visible on his armor"
+      personality: "The immovable guardian — willing to give everything, speaks softly but holds absolutely, peace in his eyes even in his final stand"
+      notLike: "NOT lean like Scout, NOT small like Tiny, NOT regal like Queen Terra"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in earth, leaves, and tunnel walls. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Meadow and underground settings with rich browns, dramatic golden and red lighting, epic atmosphere. Emotional depth and gravitas appropriate for mature themes of sacrifice and endurance."
+
+viewerDetails:
+- title:
+    en: "Mandible Power"
+    es: "Poder de las Mandibulas"
+    ru: "Сила челюстей"
+  description:
+    en: "Look at Major's massive mandibles — those are his jaws! Ant mandibles are like a Swiss Army knife: they can cut leaves, dig tunnels, carry food, feed baby ants, and fight off enemies. Major's mandibles are especially large because he's a soldier ant. The inside edges are serrated like a tiny saw blade, perfect for gripping and cutting. In battle, soldier ants can snap their mandibles shut with enough force to fling an enemy ant through the air. Some trap-jaw ants can close their jaws at speeds of up to 230 kilometers per hour — one of the fastest movements in nature."
+    es: "Mira las mandibulas masivas de Mayor — esas son sus quijadas! Las mandibulas de las hormigas son como una navaja suiza: pueden cortar hojas, cavar tuneles, cargar comida, alimentar bebes y luchar contra enemigos. Las mandibulas de Mayor son especialmente grandes porque es un soldado. En batalla, las hormigas soldado pueden cerrar sus mandibulas con suficiente fuerza para lanzar a una hormiga enemiga por el aire."
+    ru: "Посмотрите на массивные мандибулы Майора — это его челюсти! Челюсти муравья как швейцарский нож: ими можно резать листья, копать тоннели, переносить еду, кормить малышей и отбиваться от врагов. В бою муравьи-солдаты могут захлопнуть челюсти с силой, достаточной, чтобы отбросить врага. Некоторые муравьи-капканчики закрывают челюсти со скоростью до 230 км/ч — одно из самых быстрых движений в природе."
+  image: "detail-mandible-closeup.jpg"
+
+- title:
+    en: "Amazing Antennae"
+    es: "Antenas Asombrosas"
+    ru: "Удивительные усики"
+  description:
+    en: "Scout's antennae are her most critical survival tools. Each antenna has a special elbow joint that lets it bend and sweep in all directions. The tip contains thousands of scent receptors that can detect chemical signals — including the alarm pheromones that saved the colony. When Scout detected the army ants, her antennae picked up their chemical signature from hundreds of body lengths away. Ants can distinguish between dozens of different pheromone messages: food trails, alarm signals, colony identification, and even death signals that tell workers to remove fallen colony-mates."
+    es: "Las antenas de Exploradora son sus herramientas de supervivencia mas criticas. Cada antena tiene una articulacion que le permite doblarse y barrer en todas direcciones. La punta contiene miles de receptores de olor que detectan senales quimicas — incluyendo las feromonas de alarma que salvaron la colonia. Los muravьi pueden distinguir entre docenas de mensajes de feromonas diferentes."
+    ru: "Усики Разведчицы — её важнейшие инструменты выживания. На каждом есть локтевой сустав для сгибания во всех направлениях. Кончик содержит тысячи рецепторов запаха, улавливающих химические сигналы — включая тревожные феромоны, спасшие колонию. Когда Разведчица обнаружила кочевых муравьёв, её усики уловили их химическую подпись за сотни длин тела. Муравьи различают десятки разных феромонных сигналов: пищевые тропы, тревогу, опознание колонии и даже сигналы смерти."
+  image: "detail-antenna-closeup.jpg"
+
+- title:
+    en: "Armor Exoskeleton"
+    es: "Exoesqueleto Armadura"
+    ru: "Экзоскелет-броня"
+  description:
+    en: "Queen Terra's body is encased in chitin — a material so strong that it inspired human engineers to develop new armor technologies. The exoskeleton is divided into plates connected by flexible joints, allowing full mobility while providing protection. In battle, Major's thicker exoskeleton can withstand multiple bites from raider mandibles. The chitin also serves as chemical armor — its surface properties can neutralize some of the formic acid sprayed by enemy ants. After millions of years of evolution, ant armor is one of nature's most sophisticated defense systems."
+    es: "El cuerpo de la Reina Terra esta envuelto en quitina — un material tan fuerte que inspiro a los ingenieros humanos a desarrollar nuevas tecnologias de armadura. El exoesqueleto esta dividido en placas conectadas por articulaciones flexibles. En batalla, el exoesqueleto mas grueso de Mayor puede resistir multiples mordidas de mandibulas invasoras."
+    ru: "Тело Королевы Терры заключено в хитин — материал настолько прочный, что вдохновил инженеров на создание новых технологий брони. Экзоскелет разделён на пластины с гибкими суставами, обеспечивая подвижность и защиту. В бою более толстый экзоскелет Майора выдерживает множество укусов. Хитин также служит химической бронёй — его поверхность может нейтрализовать часть муравьиной кислоты противника."
+  image: "detail-exoskeleton-texture.jpg"
+
+- title:
+    en: "Grip and Climb"
+    es: "Agarre y Escalada"
+    ru: "Хватка и лазание"
+  description:
+    en: "Each ant foot has two tarsal claws plus a sticky arolium pad — a dual-grip system that lets ants walk on almost any surface. During the colony evacuation, Tiny used these grips to run at full speed through vertical tunnel sections while carrying eggs heavier than herself. The tarsal claws hook into rough surfaces while the arolium creates wet adhesion on smooth ones. This system is so effective that engineers study it to design better climbing robots. Even on surfaces covered in formic acid from battle, an ant's grip rarely fails — a matter of life and death when carrying the colony's future."
+    es: "Cada pata de hormiga tiene dos garras tarsales mas una almohadilla adhesiva — un sistema de doble agarre que permite a las hormigas caminar sobre casi cualquier superficie. Durante la evacuacion, Diminuta uso estos agarres para correr a toda velocidad por secciones verticales mientras cargaba huevos mas pesados que ella misma."
+    ru: "На каждой лапке два тарзальных коготка плюс липкая подушечка-аролиум — двойная система захвата, позволяющая ходить почти по любой поверхности. Во время эвакуации Крошка использовала эту хватку, чтобы бежать на полной скорости по вертикальным участкам тоннелей, неся яйца тяжелее себя. Коготки цепляются за шероховатости, а аролиум создаёт влажную адгезию на гладких поверхностях. Эта система настолько эффективна, что инженеры изучают её для создания роботов-альпинистов."
+  image: "detail-leg-grip.jpg"
+
+routing:
+    gemini:
+      - "hero-colony-siege.jpg"
+      - "fun-fact-strength.jpg"
+      - "fun-fact-colony-size.jpg"
+      - "fun-fact-fungus-farming.jpg"
+      - "peaceful-morning.jpg"
+      - "scouts-report-danger.jpg"
+      - "enemy-approaches.jpg"
+      - "majors-decision.jpg"
+      - "tunnel-defenders.jpg"
+      - "chemical-warfare.jpg"
+      - "nursery-evacuation.jpg"
+      - "soldiers-sacrifice.jpg"
+      - "the-aftermath.jpg"
+      - "rebuilding.jpg"
+      - "colony-endures.jpg"
+      - "natures-lesson.jpg"
+      - "detail-mandible-closeup.jpg"
+      - "detail-antenna-closeup.jpg"
+      - "detail-exoskeleton-texture.jpg"
+      - "detail-leg-grip.jpg"
+      - "fun-fact-scent-trails.jpg"
+      - "magazine-cover.jpg"

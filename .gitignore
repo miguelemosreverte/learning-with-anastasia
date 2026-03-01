@@ -20,6 +20,19 @@ npm-debug.log
 # Generated PDFs
 pdfs/
 
+# Activity logs (machine-readable)
+logs/*.jsonl
+
+# QA attempt images (large, temporary)
+*/assets/images/attempts/
+
+# One-off scratch scripts
+check-missing.js
+fix-routing.js
+generate-missing.js
+generate-missing-v2.js
+generate-missing-v3.js
+
 # Keep images since they're generated
 # Uncomment below if you want to exclude generated images from git
 # */assets/images/*.jpg

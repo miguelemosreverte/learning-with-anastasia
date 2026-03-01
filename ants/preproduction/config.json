@@ -1,0 +1,113 @@
+{
+  "chapter": "ants",
+  "createdAt": "2026-02-28T22:56:23.866Z",
+  "characters": [
+    {
+      "id": "queen-terra",
+      "name": "Queen Terra",
+      "description": "The ant queen, largest ant in the colony, deep reddish-brown, wise ancient eyes, sits in the heart of the nest with a slightly iridescent wing remnant on her back",
+      "uniqueFeatures": [
+        "LARGEST ant character — visibly much bigger than all other ants, massive abdomen",
+        "DEEP REDDISH-BROWN coloring — rich, warm wood-toned exoskeleton",
+        "WISE ANCIENT EYES — calm, knowing expression, seen a thousand seasons",
+        "IRIDESCENT WING REMNANT on her back — small shimmering stubs that catch the light like tiny rainbows, the mark of a founding queen",
+        "Regal posture — sits upright and still, surrounded by attendant workers",
+        "Largest head with smooth, polished-looking exoskeleton"
+      ],
+      "personality": "Wise, warm, and regal — sits calmly and speaks with quiet authority, maternal and commanding",
+      "notLike": "NOT small or lean like Scout, NOT dark like Tiny, NOT aggressive-looking like Major"
+    },
+    {
+      "id": "scout",
+      "name": "Scout",
+      "description": "Explorer ant, lean and fast, lighter brown color, antennae always pointing forward alertly, one antenna slightly bent from an adventure",
+      "uniqueFeatures": [
+        "LEAN and FAST build — longest legs proportionally, streamlined body",
+        "LIGHTER BROWN coloring — sandier, paler than Queen Terra's deep reddish-brown",
+        "ANTENNAE pointing FORWARD alertly — always sensing, always searching",
+        "ONE ANTENNA SLIGHTLY BENT — the left antenna has a noticeable crook from her first adventure, her signature feature",
+        "Front legs often raised — poised to run, ready for action",
+        "Alert, wide-eyed expression — always looking into the distance"
+      ],
+      "personality": "Brave and curious — constantly exploring, front legs raised, leaning forward into the unknown",
+      "notLike": "NOT large like Queen Terra, NOT dark or small like Tiny, NOT bulky like Major"
+    },
+    {
+      "id": "tiny",
+      "name": "Tiny",
+      "description": "Young worker ant, smallest of the group, darker color, eager to help but clumsy, always carries leaves twice her size",
+      "uniqueFeatures": [
+        "SMALLEST ant character — noticeably smaller than all others, baby proportions",
+        "DARKER coloring — darker brown-black than the others, distinct from Scout's light brown",
+        "Always carrying something TOO BIG — signature look is struggling under an oversized leaf",
+        "ROUND, oversized head relative to body — baby-like proportions",
+        "Legs slightly splayed for balance — always wobbling, endearingly clumsy",
+        "Determined expression despite struggling — never gives up"
+      ],
+      "personality": "Eager, determined, and adorably clumsy — always trying too hard, never giving up, heart of gold",
+      "notLike": "NOT lean like Scout, NOT large like Queen Terra, NOT intimidating like Major"
+    },
+    {
+      "id": "major",
+      "name": "Major",
+      "description": "Soldier ant, biggest worker with oversized mandibles, dark reddish-black, stands guard at tunnel entrances, intimidating but gentle with colony-mates",
+      "uniqueFeatures": [
+        "BIGGEST WORKER ant — second only to Queen Terra in size, but stockier and more muscular",
+        "MASSIVE HEAD with OVERSIZED MANDIBLES — enormous jaws that dominate his face",
+        "DARK REDDISH-BLACK coloring — darker and more intense than Queen Terra's warm brown",
+        "WIDE, planted stance — legs spread, blocking tunnel entrances, immovable",
+        "Gentle eyes that contrast with intimidating jaws — soft expression despite fearsome appearance",
+        "Thicker exoskeleton with visible armor-like plates on head"
+      ],
+      "personality": "Powerful and protective but gentle — stands like an immovable guardian, speaks softly to colony-mates",
+      "notLike": "NOT lean like Scout, NOT small like Tiny, NOT regal like Queen Terra"
+    }
+  ],
+  "step0": {
+    "status": "pending",
+    "attempts": 0,
+    "feedback": []
+  },
+  "step1": {
+    "status": "approved",
+    "attempts": 1,
+    "feedback": [],
+    "approvedVersion": 1
+  },
+  "step2": {
+    "status": "approved",
+    "characters": {
+      "queen-terra": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "scout": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "tiny": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "major": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      }
+    }
+  },
+  "step3": {
+    "status": "approved",
+    "chosenStyle": 1,
+    "styleName": "translucency-botanical",
+    "chosenMoods": [
+      "translucency",
+      "lush-botanical"
+    ],
+    "styleDescription": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nEmphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.\n\nRich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper."
+  },
+  "updatedAt": "2026-02-28T22:59:57.773Z"
+}

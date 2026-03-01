@@ -1,0 +1,518 @@
+# Bees Chapter Definition - The Honey Makers
+meta:
+  id: bees
+  issueNumber: 17
+  date: "February 2026"
+  folderName: "bees"
+  title:
+    en: "Bees: The Honey Makers"
+    es: "Abejas: Las Hacedoras de Miel"
+    ru: "Пчёлы: Создательницы Мёда"
+  subtitle:
+    en: "A Sweet Story of Flowers, Dance, and Teamwork"
+    es: "Una Dulce Historia de Flores, Baile y Trabajo en Equipo"
+    ru: "Сладкая история о цветах, танце и командной работе"
+  magazineText:
+    en: "Fly into the wonderful world of bees! Meet Queen Aurelia, hardworking Buzz, brave little Petal, and watchful Spike as they build their golden hive, dance to share secrets, visit beautiful flowers, and make the sweetest honey in the meadow. Teamwork makes the dream work!"
+    es: "!Vuela al maravilloso mundo de las abejas! Conoce a la Reina Aurelia, la trabajadora Buzz, la valiente Petal y el vigilante Spike mientras construyen su colmena dorada, bailan para compartir secretos, visitan hermosas flores y hacen la miel mas dulce del prado. !El trabajo en equipo hace que el sueno se haga realidad!"
+    ru: "Залетайте в удивительный мир пчёл! Познакомьтесь с Королевой Аурелией, трудолюбивой Базз, храброй малышкой Петал и бдительным Спайком, когда они строят свой золотой улей, танцуют, чтобы делиться секретами, навещают прекрасные цветы и делают самый сладкий мёд на лугу. Вместе мы — сила!"
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "Celebrating the sweetest teamwork in the animal kingdom"
+    es: "Celebrando el trabajo en equipo mas dulce del reino animal"
+    ru: "Празднуя самую сладкую командную работу в животном мире"
+  description: "Follow Queen Aurelia, Buzz, Petal, and Spike through the magical world of a beehive, where dancing, flower-visiting, and teamwork create the sweetest honey in the meadow"
+  preface:
+    en:
+      - "Welcome to the buzzing, golden world of the beehive! Inside this incredible home, thousands of bees work together like one big family, each with a special job to do. Some build, some guard, some dance, and some fly far and wide to visit flowers!"
+      - "Bees are some of the most important creatures on Earth. Every time you eat a strawberry, an apple, or a slice of watermelon, you can thank a bee! They carry pollen from flower to flower, helping plants grow the fruits and vegetables we all love."
+      - "In this adventure, you will meet Queen Aurelia, the heart of the hive, hardworking Buzz, brave little Petal on her very first flight, and loyal Spike who keeps everyone safe. Together, they will show you how teamwork, dancing, and a little bit of magic turn flower nectar into golden honey!"
+    es:
+      - "!Bienvenidos al zumbante y dorado mundo de la colmena! Dentro de este increible hogar, miles de abejas trabajan juntas como una gran familia, cada una con un trabajo especial. !Algunas construyen, algunas guardan, algunas bailan y algunas vuelan lejos para visitar flores!"
+      - "Las abejas son algunas de las criaturas mas importantes de la Tierra. Cada vez que comes una fresa, una manzana o una rebanada de sandia, !puedes agradecer a una abeja! Llevan polen de flor en flor, ayudando a las plantas a crecer las frutas y verduras que todos amamos."
+      - "En esta aventura, conoceras a la Reina Aurelia, el corazon de la colmena, a la trabajadora Buzz, a la valiente Petal en su primer vuelo y al leal Spike que mantiene a todos a salvo. !Juntos te mostraran como el trabajo en equipo, el baile y un poco de magia convierten el nectar de las flores en miel dorada!"
+    ru:
+      - "Добро пожаловать в жужжащий, золотистый мир пчелиного улья! Внутри этого невероятного дома тысячи пчёл работают вместе, как одна большая семья, и у каждой есть особенная работа. Одни строят, другие охраняют, третьи танцуют, а некоторые летают далеко-далеко к цветам!"
+      - "Пчёлы — одни из самых важных существ на Земле. Каждый раз, когда вы едите клубнику, яблоко или кусочек арбуза, вы можете поблагодарить пчелу! Они переносят пыльцу с цветка на цветок, помогая растениям выращивать фрукты и овощи, которые мы все любим."
+      - "В этом приключении вы познакомитесь с Королевой Аурелией — сердцем улья, трудолюбивой Базз, храброй малышкой Петал в её самом первом полёте и верным Спайком, который хранит всех в безопасности. Вместе они покажут вам, как командная работа, танцы и немного волшебства превращают цветочный нектар в золотистый мёд!"
+
+hero:
+  title:
+    en: "Bees"
+    es: "Abejas"
+    ru: "Пчёлы"
+  subtitle:
+    en: "The Honey Makers"
+    es: "Las Hacedoras de Miel"
+    ru: "Создательницы Мёда"
+  image: "hero-meadow.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "A sun-drenched wildflower meadow at golden hour with a large beehive nestled in an old oak tree, bees buzzing among colorful wildflowers, warm golden light, rolling green hills in the background"
+    es: "Un prado de flores silvestres banado por el sol en la hora dorada con una gran colmena en un viejo roble, abejas zumbando entre flores silvestres coloridas, calida luz dorada, colinas verdes al fondo"
+    ru: "Залитый солнцем луг с полевыми цветами в золотой час, большой улей в старом дубе, пчёлы жужжат среди ярких полевых цветов, тёплый золотистый свет, зелёные холмы на заднем плане"
+
+sections:
+  # The Buzzing Hive
+  - id: the-buzzing-hive
+    mood: [golden-hour, lush-botanical]
+    action: "sweeping wide view of a magnificent golden beehive inside a hollow oak tree, thousands of bees on hexagonal honeycomb, warm amber light glowing from within, wildflower meadow visible outside, golden honey dripping from comb, magical and inviting atmosphere"
+    title:
+      en: "The Buzzing Hive"
+      es: "La Colmena Zumbante"
+      ru: "Жужжащий улей"
+    content:
+      en: "Deep inside an old oak tree, in a meadow full of wildflowers, lives the most amazing city you have ever seen. It is built entirely of golden wax, shaped into thousands of perfect little hexagons, and it BUZZES with life! This is the beehive, and it is home to fifty thousand bees, all working together. The air inside smells like warm honey and sunshine. Every bee has a job, every honeycomb has a purpose, and every day is an adventure. Welcome to the hive!"
+      es: "Dentro de un viejo roble, en un prado lleno de flores silvestres, vive la ciudad mas asombrosa que hayas visto. !Esta construida enteramente de cera dorada, formada en miles de pequenos hexagonos perfectos, y ZUMBA con vida! Esta es la colmena, y es hogar de cincuenta mil abejas, todas trabajando juntas. El aire huele a miel calida y sol. Cada abeja tiene un trabajo, cada panal tiene un proposito y cada dia es una aventura. !Bienvenidos a la colmena!"
+      ru: "Глубоко внутри старого дуба, на лугу, полном полевых цветов, живёт самый удивительный город, который вы когда-либо видели. Он целиком построен из золотистого воска, сложен в тысячи идеальных маленьких шестиугольников и ЖУЖЖИТ жизнью! Это пчелиный улей, и в нём живут пятьдесят тысяч пчёл, которые все работают вместе. Воздух внутри пахнет тёплым мёдом и солнцем. У каждой пчелы есть работа, у каждых сот есть назначение, и каждый день — приключение. Добро пожаловать в улей!"
+    image: "the-buzzing-hive.jpg"
+    imageAlt:
+      en: "Magnificent golden beehive inside a hollow oak tree with thousands of bees on honeycomb, warm amber light, magical atmosphere"
+      es: "Magnifica colmena dorada dentro de un roble hueco con miles de abejas en panal, calida luz ambar, atmosfera magica"
+      ru: "Великолепный золотой улей внутри дуба с тысячами пчёл на сотах, тёплый янтарный свет, волшебная атмосфера"
+
+  # Meet Queen Aurelia
+  - id: meet-queen-aurelia
+    generate_character: true
+    mood: [golden-hour, soft-intimate]
+    action: "a majestic honey bee queen, noticeably larger than surrounding worker bees, with an elongated golden abdomen and a crown-like golden pattern on her thorax, moving slowly and deliberately on honeycomb while smaller worker bees attend to her, regal bearing, warm amber light inside the hive, classic hand-drawn Disney animation style"
+    title:
+      en: "Meet Queen Aurelia"
+      es: "Conoce a la Reina Aurelia"
+      ru: "Знакомьтесь: Королева Аурелия"
+    content:
+      en: "At the very heart of the hive lives Queen Aurelia, the most important bee of all. She is much bigger than the other bees, with a long, elegant golden body that gleams like treasure. On her thorax, she wears a pattern that looks just like a tiny golden crown! Queen Aurelia moves slowly and gracefully while dozens of worker bees flutter around her, feeding her, grooming her, and keeping her comfortable. She is the mother of every single bee in the hive. 'My children,' she hums softly, 'together we are strong.'"
+      es: "En el corazon de la colmena vive la Reina Aurelia, la abeja mas importante de todas. Es mucho mas grande que las demas abejas, con un cuerpo dorado largo y elegante que brilla como un tesoro. En su torax, lleva un patron que parece una pequena corona dorada. La Reina Aurelia se mueve lenta y graciosamente mientras docenas de abejas obreras revolotean a su alrededor, alimentandola, acicalandola y manteniendola comoda. Ella es la madre de cada abeja en la colmena. 'Mis hijas,' zumba suavemente, 'juntas somos fuertes.'"
+      ru: "В самом сердце улья живёт Королева Аурелия — самая важная пчела из всех. Она намного крупнее остальных пчёл, с длинным, элегантным золотистым телом, которое сияет как сокровище. На её грудке — узор, похожий на крошечную золотую корону! Королева Аурелия движется медленно и грациозно, пока десятки рабочих пчёл порхают вокруг неё, кормят, чистят и заботятся о ней. Она — мать каждой пчелы в улье. 'Мои дети,' тихо жужжит она, 'вместе мы сильны.'"
+    image: "queen-aurelia-portrait.jpg"
+    imageAlt:
+      en: "Majestic honey bee queen with elongated golden abdomen and crown-like pattern, surrounded by attentive worker bees on golden honeycomb"
+      es: "Majestuosa abeja reina con abdomen dorado alargado y patron de corona, rodeada de abejas obreras atentas en panal dorado"
+      ru: "Величественная пчелиная королева с удлинённым золотистым брюшком и узором-короной, окружённая заботливыми рабочими пчёлами на золотистых сотах"
+
+  # Buzz's Busy Day
+  - id: buzzs-busy-day
+    generate_character: true
+    mood: [golden-hour, lush-botanical]
+    use_character: "${meet-queen-aurelia.image}"
+    action: "a cheerful worker honey bee with bright yellow-and-black stripes and a fuzzy body covered in golden pollen, one wing with a tiny notch visible, flying energetically among colorful wildflowers carrying pollen on her legs, sunny meadow, warm golden light, joyful and busy expression, classic hand-drawn Disney animation style"
+    title:
+      en: "Buzz's Busy Day"
+      es: "El Dia Ocupado de Buzz"
+      ru: "Занятой день Базз"
+    content:
+      en: "Buzz is the busiest bee in the whole hive! From the moment the sun rises, she is zooming from job to job. First, she feeds the baby bees their special honey breakfast. Then she helps pack pollen into the honeycomb. Then she fans the honey with her wings to make it thick and perfect. Buzz has a tiny notch in one wing, but she flies just as fast as everyone else! Her fuzzy golden body is always dusted with pollen. 'No time to rest!' she buzzes happily. 'There is so much to do and every job matters!'"
+      es: "!Buzz es la abeja mas ocupada de toda la colmena! Desde que sale el sol, va volando de trabajo en trabajo. Primero, alimenta a las abejas bebe con su desayuno especial de miel. Luego ayuda a empacar polen en el panal. Despues abanica la miel con sus alas para hacerla espesa y perfecta. Buzz tiene una pequena muesca en un ala, !pero vuela tan rapido como todas las demas! Su cuerpo dorado y peludo siempre esta cubierto de polen. '!No hay tiempo para descansar!' zumba felizmente."
+      ru: "Базз — самая занятая пчела во всём улье! С самого восхода солнца она мчится от одного дела к другому. Сначала она кормит малышей-пчёлок их особенным медовым завтраком. Потом помогает укладывать пыльцу в соты. Потом обмахивает мёд крылышками, чтобы он стал густым и идеальным. У Базз маленькая зазубринка на одном крыле, но она летает так же быстро, как все остальные! Её пушистое золотистое тело всегда припорошено пыльцой. 'Некогда отдыхать!' жужжит она счастливо. 'Столько дел, и каждое важно!'"
+    image: "buzz-portrait.jpg"
+    imageAlt:
+      en: "Cheerful fuzzy worker bee with bright yellow-and-black stripes covered in pollen, flying among colorful wildflowers in golden sunlight"
+      es: "Alegre abeja obrera peluda con rayas amarillas y negras cubierta de polen, volando entre flores silvestres coloridas bajo la luz dorada"
+      ru: "Весёлая пушистая рабочая пчела с яркими жёлто-чёрными полосками, покрытая пыльцой, летящая среди ярких полевых цветов в золотистом свете"
+
+  # Petal's First Flight
+  - id: petals-first-flight
+    generate_character: true
+    mood: [golden-hour, epic-skies]
+    use_character: "${buzzs-busy-day.image}"
+    action: "a young slightly smaller honey bee with lighter coloring and extra fluffy fuzz, wide nervous eyes, standing at the entrance of a beehive looking out at a vast sunny meadow full of flowers for the very first time, an older worker bee with a notched wing encouraging her, warm golden light, classic hand-drawn Disney animation style"
+    title:
+      en: "Petal's First Flight"
+      es: "El Primer Vuelo de Petal"
+      ru: "Первый полёт Петал"
+    content:
+      en: "Little Petal has never been outside the hive before. She stands at the entrance, her extra-fluffy fuzz blowing in the breeze, her wide eyes staring at the enormous world. 'It is SO big out there!' she squeaks. Buzz lands beside her. 'I know it looks scary,' Buzz says kindly, 'but just wait until you smell your first flower!' Petal takes a deep breath, spreads her wings, and — BUZZ! She is flying! The wind lifts her up and suddenly the whole meadow stretches below her, a carpet of purple, yellow, and pink flowers. 'This is AMAZING!' Petal shouts."
+      es: "La pequena Petal nunca ha estado fuera de la colmena. Esta parada en la entrada, su pelusa extra esponjosa ondeando con la brisa, sus ojos enormes mirando el mundo gigante. '!Es TAN grande alla afuera!' chilla. Buzz aterriza a su lado. 'Se que parece aterrador,' dice Buzz amablemente, '!pero espera a que huelas tu primera flor!' Petal respira profundo, extiende sus alas y — !BUZZ! !Esta volando! El viento la eleva y de repente todo el prado se extiende debajo, una alfombra de flores moradas, amarillas y rosas. '!Esto es INCREIBLE!' grita Petal."
+      ru: "Маленькая Петал никогда раньше не была за пределами улья. Она стоит у входа, её особенно пушистый пушок развевается на ветру, а широко раскрытые глаза смотрят на огромный мир. 'Там ТАК просторно!' пищит она. Базз приземляется рядом. 'Я знаю, выглядит страшно,' ласково говорит Базз, 'но подожди, пока понюхаешь свой первый цветок!' Петал делает глубокий вдох, расправляет крылышки и — ЖЖЖЖ! Она летит! Ветер поднимает её, и вдруг весь луг расстилается внизу, ковёр из фиолетовых, жёлтых и розовых цветов. 'Это НЕВЕРОЯТНО!' кричит Петал."
+    image: "petal-first-flight.jpg"
+    imageAlt:
+      en: "Young fluffy bee taking her first flight from the hive entrance, gazing wide-eyed at a vast colorful flower meadow, golden sunlight"
+      es: "Joven abeja esponjosa tomando su primer vuelo desde la entrada de la colmena, mirando con ojos enormes un vasto prado de flores coloridas"
+      ru: "Молодая пушистая пчёлка в своём первом полёте из входа улья, с широко раскрытыми глазами глядящая на огромный красочный цветочный луг"
+
+  # The Flower Garden
+  - id: the-flower-garden
+    mood: [lush-botanical, golden-hour]
+    use_characters: ["${buzzs-busy-day.image}", "${petals-first-flight.image}"]
+    action: "two honey bees — one standard worker covered in pollen with a notched wing, one smaller and extra fluffy — landing inside a large open sunflower, both covered in golden pollen, surrounded by lavender, daisies, and clover blossoms, bees deep inside flower petals collecting nectar, sunny meadow, vibrant colors, classic hand-drawn Disney animation style"
+    title:
+      en: "The Flower Garden"
+      es: "El Jardin de Flores"
+      ru: "Цветочный сад"
+    content:
+      en: "Buzz takes Petal to the best flower garden in the meadow. 'Watch me!' Buzz says, diving headfirst into a big sunflower. She rolls around in the golden pollen until she looks like a fuzzy yellow snowball! 'Now you try!' Petal carefully lands on a purple lavender bloom. The smell is heavenly! Tiny grains of pollen stick to her fluffy body. 'Every time we visit a flower,' Buzz explains, 'we carry pollen to the next one. That helps flowers make seeds so new flowers can grow!' Petal gasps. 'We help the flowers grow? We are garden helpers!'"
+      es: "Buzz lleva a Petal al mejor jardin de flores del prado. '!Mirame!' dice Buzz, lanzandose de cabeza a un gran girasol. !Se revuelca en el polen dorado hasta parecer una bola de nieve amarilla y peluda! '!Ahora tu!' Petal aterriza cuidadosamente en una flor de lavanda morada. !El aroma es celestial! Pequenos granos de polen se pegan a su cuerpo esponjoso. 'Cada vez que visitamos una flor,' explica Buzz, 'llevamos polen a la siguiente. !Eso ayuda a las flores a hacer semillas para que crezcan nuevas flores!' Petal exclama. '!Ayudamos a las flores a crecer!'"
+      ru: "Базз ведёт Петал в лучший цветочный сад на лугу. 'Смотри на меня!' говорит Базз, ныряя головой вперёд в большой подсолнух. Она катается в золотой пыльце, пока не становится похожа на пушистый жёлтый снежок! 'Теперь ты!' Петал осторожно садится на фиолетовый цветок лаванды. Запах — просто райский! Крошечные зёрнышки пыльцы прилипают к её пушистому телу. 'Каждый раз, когда мы посещаем цветок,' объясняет Базз, 'мы переносим пыльцу на следующий. Это помогает цветам делать семена, чтобы росли новые цветы!' Петал ахает. 'Мы помогаем цветам расти? Мы — садовые помощницы!'"
+    image: "flower-garden.jpg"
+    imageAlt:
+      en: "Two bees collecting pollen inside colorful flowers in a sunny meadow, covered in golden pollen, surrounded by sunflowers, lavender and daisies"
+      es: "Dos abejas recolectando polen dentro de flores coloridas en un prado soleado, cubiertas de polen dorado, rodeadas de girasoles, lavanda y margaritas"
+      ru: "Две пчелы собирают пыльцу внутри ярких цветов на солнечном лугу, покрытые золотой пыльцой, в окружении подсолнухов, лаванды и ромашек"
+
+  # The Waggle Dance
+  - id: the-waggle-dance
+    mood: [golden-hour, soft-intimate]
+    use_characters: ["${buzzs-busy-day.image}", "${meet-queen-aurelia.image}"]
+    action: "inside a golden beehive, a worker bee with a notched wing performing the waggle dance on honeycomb — doing a figure-eight pattern with her body wiggling, surrounded by a circle of attentive worker bees watching and learning the dance, warm amber honeycomb glow, classic hand-drawn Disney animation style"
+    title:
+      en: "The Waggle Dance"
+      es: "La Danza del Meneo"
+      ru: "Виляющий танец"
+    content:
+      en: "Back in the hive, Buzz has exciting news. She found a field of clover bursting with sweet nectar! But how does she tell the other bees where it is? She DANCES! Buzz walks in a figure-eight pattern on the honeycomb, waggling her bottom as she goes. The direction she waggles tells the other bees which way to fly. How long she waggles tells them how far away the flowers are! All the bees watch closely. 'Turn left at the big oak, then straight past the pond!' Buzz waggles. The bees cheer and zoom off to find the clover!"
+      es: "De vuelta en la colmena, Buzz tiene noticias emocionantes. !Encontro un campo de trebol rebosante de nectar dulce! Pero, como les dice a las demas abejas donde esta? !BAILA! Buzz camina en un patron de ocho sobre el panal, meneando su colita mientras avanza. La direccion del meneo les dice a las abejas hacia donde volar. !La duracion del meneo les dice que tan lejos estan las flores! Todas las abejas miran atentamente. '!Giren a la izquierda en el gran roble, luego derecho pasando el estanque!' menea Buzz."
+      ru: "Вернувшись в улей, Базз приносит захватывающие новости. Она нашла поле клевера, полное сладкого нектара! Но как же рассказать другим пчёлам, где оно? Она ТАНЦУЕТ! Базз ходит по сотам, рисуя фигуру-восьмёрку и виляя брюшком на ходу. Направление виляния говорит пчёлам, куда лететь. А продолжительность виляния — как далеко до цветов! Все пчёлы внимательно смотрят. 'Поверните налево у большого дуба, потом прямо мимо пруда!' виляет Базз. Пчёлы радуются и мчатся на поиски клевера!"
+    image: "waggle-dance.jpg"
+    imageAlt:
+      en: "Worker bee performing the waggle dance in a figure-eight on honeycomb, surrounded by attentive bees watching and learning, warm amber light"
+      es: "Abeja obrera realizando la danza del meneo en forma de ocho sobre panal, rodeada de abejas atentas observando y aprendiendo, calida luz ambar"
+      ru: "Рабочая пчела исполняет виляющий танец восьмёркой на сотах, окружённая внимательными пчёлами, которые смотрят и учатся, тёплый янтарный свет"
+
+  # Making Honey
+  - id: making-honey
+    mood: [golden-hour, soft-intimate]
+    use_characters: ["${buzzs-busy-day.image}", "${petals-first-flight.image}"]
+    action: "inside a golden beehive, bees passing nectar mouth-to-mouth in a chain, other bees fanning honeycomb cells with their wings to evaporate water from the honey, golden honey glistening in hexagonal cells, some cells being capped with white wax, warm amber glow, educational cross-section view, classic hand-drawn Disney animation style"
+    title:
+      en: "Making Honey"
+      es: "Haciendo Miel"
+      ru: "Делаем мёд"
+    content:
+      en: "Making honey is teamwork! First, the forager bees collect sweet nectar from flowers in their special honey stomachs. Back at the hive, they pass the nectar mouth-to-mouth to other bees — like a game of telephone! Each bee adds special enzymes that start turning the nectar into honey. Then the bees fan the honeycomb with their tiny wings — BZZZZZ! — to blow away the extra water. When the honey is thick and golden and perfectly sweet, they cap each cell with a little lid of white wax. 'Sealed and safe!' Buzz announces. 'Honey that will last forever!'"
+      es: "!Hacer miel es trabajo en equipo! Primero, las abejas recolectoras recogen nectar dulce de las flores en sus estomagos especiales de miel. De vuelta en la colmena, pasan el nectar de boca en boca — !como un juego de telefono! Cada abeja anade enzimas especiales que comienzan a convertir el nectar en miel. Luego las abejas abanian el panal con sus pequenas alas — !BZZZZZ! — para soplar el agua extra. Cuando la miel es espesa, dorada y perfectamente dulce, sellan cada celda con una tapita de cera blanca. '!Sellada y segura!' anuncia Buzz."
+      ru: "Делать мёд — это командная работа! Сначала пчёлы-собирательницы набирают сладкий нектар из цветов в свои особые медовые желудки. Вернувшись в улей, они передают нектар изо рта в рот другим пчёлам — как игра в телефон! Каждая пчела добавляет специальные ферменты, которые начинают превращать нектар в мёд. Потом пчёлы обмахивают соты своими крошечными крылышками — БЗЗЗЗ! — чтобы испарить лишнюю воду. Когда мёд становится густым, золотистым и идеально сладким, они запечатывают каждую ячейку крышечкой из белого воска. 'Запечатано и в сохранности!' объявляет Базз."
+    image: "making-honey.jpg"
+    imageAlt:
+      en: "Bees working together inside the hive to make honey, passing nectar and fanning honeycomb, golden honey glistening in cells, warm amber glow"
+      es: "Abejas trabajando juntas dentro de la colmena para hacer miel, pasando nectar y abanicando panal, miel dorada brillando en celdas"
+      ru: "Пчёлы работают вместе внутри улья, делая мёд, передавая нектар и обмахивая соты, золотистый мёд блестит в ячейках, тёплое янтарное свечение"
+
+  # Building with Beeswax
+  - id: building-with-beeswax
+    mood: [golden-hour, soft-intimate]
+    use_characters: ["${buzzs-busy-day.image}"]
+    action: "bees building perfect hexagonal honeycomb cells from beeswax, some bees producing tiny wax flakes from their abdomens, others shaping and sculpting the wax into perfect hexagons, beautiful geometric pattern of honeycomb, warm golden light, architectural wonder, classic hand-drawn Disney animation style"
+    title:
+      en: "Building with Beeswax"
+      es: "Construyendo con Cera"
+      ru: "Строим из воска"
+    content:
+      en: "Bees are the most amazing builders! They make their own building material right from their bodies — tiny flakes of white wax that come from special glands on their tummies. The builder bees chew the wax until it is soft, then shape it into perfect hexagons. Why hexagons? Because they are the strongest shape that wastes no space! Every cell fits perfectly against the next one with no gaps. Petal watches in wonder as the builders work. 'It is like a puzzle where every piece fits perfectly!' she says. 'It IS a puzzle,' Buzz smiles. 'And we solved it!'"
+      es: "!Las abejas son las constructoras mas increibles! Hacen su propio material de construccion directamente de sus cuerpos — pequenas escamas de cera blanca que salen de glandulas especiales en sus pancitas. Las abejas constructoras mastican la cera hasta que esta suave, luego la moldean en hexagonos perfectos. Por que hexagonos? !Porque son la forma mas fuerte que no desperdicia espacio! Cada celda encaja perfectamente con la siguiente sin huecos. Petal observa maravillada. '!Es como un rompecabezas donde cada pieza encaja perfectamente!'"
+      ru: "Пчёлы — самые удивительные строители! Они делают свой собственный строительный материал прямо из своих тел — крошечные чешуйки белого воска, которые выделяются из специальных желёз на их животиках. Пчёлы-строители жуют воск, пока он не станет мягким, а потом лепят из него идеальные шестиугольники. Почему шестиугольники? Потому что это самая прочная форма, которая не тратит пространство впустую! Каждая ячейка идеально прилегает к соседней без зазоров. Петал смотрит с восхищением. 'Это как пазл, где каждый кусочек подходит идеально!' говорит она."
+    image: "building-beeswax.jpg"
+    imageAlt:
+      en: "Bees building perfect hexagonal honeycomb from beeswax, producing wax flakes and shaping them into hexagons, warm golden architectural wonder"
+      es: "Abejas construyendo panal hexagonal perfecto de cera, produciendo escamas de cera y moldeandolas en hexagonos, calida maravilla arquitectonica dorada"
+      ru: "Пчёлы строят идеальные шестиугольные соты из воска, производят восковые чешуйки и формируют их в шестиугольники, тёплое золотистое архитектурное чудо"
+
+  # Spike Guards the Door
+  - id: spike-guards-the-door
+    generate_character: true
+    mood: [golden-hour, epic-skies]
+    use_character: "${meet-queen-aurelia.image}"
+    action: "a slightly larger darker-colored guard bee standing alert at the entrance of a beehive, mandibles ready, vigilant posture, checking incoming bees for the right scent, golden afternoon light on the hive entrance, meadow visible in background, protective and watchful expression, classic hand-drawn Disney animation style"
+    title:
+      en: "Spike Guards the Door"
+      es: "Spike Guarda la Puerta"
+      ru: "Спайк охраняет вход"
+    content:
+      en: "Every hive needs a guard, and Spike is the best! He stands at the entrance all day long, alert and watchful, his mandibles ready. Spike's job is to make sure that only bees from his hive come inside. How does he know? By smell! Every hive has its own special scent, and Spike sniffs each bee that arrives. 'You may enter!' he nods to a returning forager. When a wasp tries to sneak in, Spike blocks the entrance. 'Not today!' he says firmly. The wasp flies away. 'Nobody gets past Spike!' the worker bees cheer."
+      es: "Toda colmena necesita un guardia, !y Spike es el mejor! Se para en la entrada todo el dia, alerta y vigilante, con sus mandibulas listas. El trabajo de Spike es asegurarse de que solo entren las abejas de su colmena. Como lo sabe? !Por el olor! Cada colmena tiene su propio aroma especial, y Spike olfatea a cada abeja que llega. '!Puedes entrar!' asiente a una recolectora que regresa. Cuando una avispa intenta colarse, Spike bloquea la entrada. '!Hoy no!' dice firmemente. La avispa se va. '!Nadie pasa de Spike!' animan las obreras."
+      ru: "Каждому улью нужен охранник, и Спайк — лучший! Он стоит у входа весь день, бдительный и внимательный, с готовыми жвалами. Работа Спайка — следить, чтобы внутрь попадали только пчёлы из его улья. Как он узнаёт? По запаху! У каждого улья свой особый аромат, и Спайк обнюхивает каждую прилетевшую пчелу. 'Можешь войти!' кивает он возвращающейся собирательнице. Когда оса пытается проскользнуть, Спайк загораживает вход. 'Только не сегодня!' говорит он твёрдо. Оса улетает. 'Мимо Спайка никто не пройдёт!' радуются рабочие пчёлы."
+    image: "spike-guards-door.jpg"
+    imageAlt:
+      en: "Alert guard bee standing watch at the hive entrance, mandibles ready, checking arriving bees, golden afternoon light, protective stance"
+      es: "Abeja guardia alerta en la entrada de la colmena, mandibulas listas, revisando abejas que llegan, luz dorada de la tarde, postura protectora"
+      ru: "Бдительная пчела-охранник стоит на страже у входа в улей, жвалы наготове, проверяет прибывающих пчёл, золотистый дневной свет, защитная поза"
+
+  # The Winter Cluster
+  - id: the-winter-cluster
+    mood: [soft-intimate, golden-hour]
+    use_characters: ["${meet-queen-aurelia.image}", "${buzzs-busy-day.image}", "${petals-first-flight.image}", "${spike-guards-the-door.image}"]
+    action: "thousands of bees huddled together in a tight warm ball inside the hive during winter, the queen in the center protected by layers of worker bees, snow visible outside the hive entrance, bees vibrating their wings to generate heat, warm golden glow from within contrasting with cold blue winter outside, cozy and protective, classic hand-drawn Disney animation style"
+    title:
+      en: "The Winter Cluster"
+      es: "El Grupo de Invierno"
+      ru: "Зимний клубок"
+    content:
+      en: "When winter comes and snow covers the meadow, the bees do something wonderful. They all huddle together in a big, warm ball called a cluster! Queen Aurelia stays right in the cozy center, while thousands of bees surround her, vibrating their wing muscles to make heat. The bees on the outside slowly rotate to the warm inside, and the warm bees move out — everyone takes turns! 'It is like a group hug that lasts all winter,' Petal says, snuggled between Buzz and Spike. 'The biggest, warmest hug in the world,' Buzz agrees."
+      es: "Cuando llega el invierno y la nieve cubre el prado, las abejas hacen algo maravilloso. !Todas se acurrucan juntas en una gran bola caliente llamada grupo! La Reina Aurelia se queda en el centro acogedor, mientras miles de abejas la rodean, vibrando sus musculos de las alas para generar calor. Las abejas de afuera rotan lentamente hacia el interior caliente, y las calientes se mueven afuera — !todas toman turnos! 'Es como un abrazo grupal que dura todo el invierno,' dice Petal, acurrucada entre Buzz y Spike."
+      ru: "Когда приходит зима и снег покрывает луг, пчёлы делают кое-что удивительное. Они все сбиваются вместе в большой, тёплый шар, который называется клубок! Королева Аурелия остаётся прямо в уютном центре, а тысячи пчёл окружают её, вибрируя мышцами крыльев, чтобы создавать тепло. Пчёлы снаружи постепенно перемещаются в тёплый центр, а тёплые выходят наружу — все меняются! 'Это как групповые обнимашки на всю зиму,' говорит Петал, устроившись между Базз и Спайком. 'Самые большие и тёплые обнимашки в мире,' соглашается Базз."
+    image: "winter-cluster.jpg"
+    imageAlt:
+      en: "Thousands of bees huddled in a warm cluster inside the hive during winter, queen in the center, snow outside, warm golden glow within"
+      es: "Miles de abejas acurrucadas en un grupo caliente dentro de la colmena durante el invierno, reina en el centro, nieve afuera, calido brillo dorado adentro"
+      ru: "Тысячи пчёл, сбившихся в тёплый клубок внутри улья зимой, королева в центре, снег снаружи, тёплое золотистое свечение внутри"
+
+  # Sweet Golden Honey
+  - id: sweet-golden-honey
+    mood: [golden-hour, lush-botanical]
+    use_characters: ["${buzzs-busy-day.image}", "${petals-first-flight.image}"]
+    action: "beautiful scene of thick golden honey dripping from honeycomb, a worker bee with a notched wing and a small fluffy bee standing proudly beside rows of perfectly capped honey cells, golden light streaming through the amber honey making it glow like liquid gold, warm and sweet atmosphere, classic hand-drawn Disney animation style"
+    title:
+      en: "Sweet Golden Honey"
+      es: "Dulce Miel Dorada"
+      ru: "Сладкий золотой мёд"
+    content:
+      en: "Spring has returned, and the honey store is full! Row after row of golden, glistening honeycomb, each cell capped with perfect white wax. Buzz and Petal stand before the golden treasure, sunlight streaming through the amber honey like liquid gold. 'We did this together,' Buzz says proudly. 'Every single bee helped — the foragers, the builders, the nurses, the guards, and our Queen.' Petal touches a drop of honey with her tongue. It tastes like sunshine and flowers and a whole summer of hard work. 'This is what teamwork tastes like!' she laughs."
+      es: "!La primavera ha vuelto y la reserva de miel esta llena! Fila tras fila de panal dorado y brillante, cada celda sellada con cera blanca perfecta. Buzz y Petal se paran ante el tesoro dorado, la luz del sol pasando a traves de la miel ambar como oro liquido. 'Hicimos esto juntas,' dice Buzz con orgullo. 'Cada abeja ayudo — las recolectoras, las constructoras, las enfermeras, los guardias y nuestra Reina.' Petal toca una gota de miel con su lengua. Sabe a sol, flores y todo un verano de trabajo. '!A esto sabe el trabajo en equipo!'"
+      ru: "Весна вернулась, и запасы мёда полны! Ряд за рядом золотистых, блестящих сот, каждая ячейка запечатана идеальным белым воском. Базз и Петал стоят перед золотым сокровищем, солнечный свет проходит сквозь янтарный мёд, как жидкое золото. 'Мы сделали это вместе,' гордо говорит Базз. 'Каждая пчёлка помогла — собирательницы, строители, няньки, охранники и наша Королева.' Петал касается язычком капельки мёда. На вкус как солнце, цветы и целое лето усердного труда. 'Вот какой вкус у командной работы!' смеётся она."
+    image: "sweet-golden-honey.jpg"
+    imageAlt:
+      en: "Thick golden honey dripping from honeycomb, two proud bees beside perfectly capped honey cells, golden light streaming through amber honey"
+      es: "Espesa miel dorada goteando del panal, dos abejas orgullosas junto a celdas de miel perfectamente selladas, luz dorada atravesando miel ambar"
+      ru: "Густой золотистый мёд стекает с сот, две гордые пчелы рядом с идеально запечатанными медовыми ячейками, золотистый свет проходит сквозь янтарный мёд"
+
+  # Our Garden Friends
+  - id: our-garden-friends
+    mood: [golden-hour, epic-skies, lush-botanical]
+    use_characters: ["${meet-queen-aurelia.image}", "${buzzs-busy-day.image}", "${petals-first-flight.image}", "${spike-guards-the-door.image}"]
+    action: "all four bee characters flying together over a magnificent blooming meadow at golden sunset, the queen larger and regal, the worker covered in pollen with notched wing, the young fluffy bee, and the darker guard bee, flowers blooming everywhere below them, fruits and vegetables growing in a nearby garden thanks to pollination, warm golden light, triumphant and joyful scene, classic hand-drawn Disney animation style"
+    title:
+      en: "Our Garden Friends"
+      es: "Nuestros Amigos del Jardin"
+      ru: "Наши друзья из сада"
+    content:
+      en: "As the golden sun sets over the meadow, all four friends fly together above the flowers. Queen Aurelia, the heart of the hive. Buzz, who never stops working. Petal, who discovered how big and beautiful the world is. And Spike, who keeps everyone safe. Below them, the meadow is bursting with life — flowers blooming, fruits growing, seeds spreading — all because the bees visited every single blossom. 'We are small,' Queen Aurelia hums, 'but together, we help the whole world grow.' And in the golden evening light, fifty thousand bees hum in agreement."
+      es: "Mientras el sol dorado se pone sobre el prado, los cuatro amigos vuelan juntos sobre las flores. La Reina Aurelia, el corazon de la colmena. Buzz, que nunca deja de trabajar. Petal, que descubrio lo grande y hermoso que es el mundo. Y Spike, que mantiene a todos a salvo. Debajo de ellos, el prado rebosa de vida — flores floreciendo, frutas creciendo, semillas esparciendose — todo porque las abejas visitaron cada flor. 'Somos pequenas,' zumba la Reina Aurelia, 'pero juntas, ayudamos a crecer al mundo entero.'"
+      ru: "Когда золотое солнце садится над лугом, все четверо друзей летят вместе над цветами. Королева Аурелия — сердце улья. Базз, которая никогда не перестаёт работать. Петал, которая открыла, какой большой и прекрасный мир. И Спайк, который хранит всех в безопасности. Под ними луг кипит жизнью — цветы цветут, плоды растут, семена разлетаются — и всё потому, что пчёлы навестили каждый цветок. 'Мы маленькие,' жужжит Королева Аурелия, 'но вместе мы помогаем расти всему миру.' И в золотистом вечернем свете пятьдесят тысяч пчёл жужжат в согласии."
+    image: "our-garden-friends.jpg"
+    imageAlt:
+      en: "Four bee characters flying together over a magnificent blooming meadow at golden sunset, flowers and fruits growing below, triumphant and joyful"
+      es: "Cuatro personajes de abejas volando juntos sobre un magnifico prado florido al atardecer dorado, flores y frutas creciendo abajo, triunfante y alegre"
+      ru: "Четыре пчёлки летят вместе над великолепным цветущим лугом в золотистом закате, цветы и плоды растут внизу, торжественная и радостная сцена"
+
+  # Hidden sections for viewer detail and fun fact image generation
+  - id: "detail-wing-closeup"
+    image: "detail-wing-closeup.jpg"
+    referenceImage: "${buzzs-busy-day.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single honey bee WING showing the transparent membrane with visible veins, the wing beating in a blur suggesting 200 beats per second, tiny hooks visible on the wing edge that link front and back wings together. Only the wing and part of the thorax visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-compound-eye"
+    image: "detail-compound-eye.jpg"
+    referenceImage: "${buzzs-busy-day.image}"
+    prompt: "Using the bee from reference, extreme close-up of a honey bee's compound eye showing thousands of tiny hexagonal lenses (ommatidia), reflecting flowers and ultraviolet patterns. The eye surface looks like a tiny honeycomb itself. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-pollen-basket"
+    image: "detail-pollen-basket.jpg"
+    referenceImage: "${buzzs-busy-day.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a honey bee's hind leg showing the corbicula (pollen basket), a smooth concave area surrounded by stiff hairs, packed full of bright orange-yellow pollen in a large round ball. Only the leg and pollen basket visible. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-honeycomb-hexagon"
+    image: "detail-honeycomb-hexagon.jpg"
+    prompt: "Extreme close-up of perfect hexagonal honeycomb cells, some filled with golden honey, some with pollen of different colors, some containing tiny bee larvae, some capped with white wax. Beautiful geometric pattern showing why hexagons are the most efficient shape. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-two-million-img"
+    image: "fun-fact-two-million.jpg"
+    prompt: "Educational illustration showing the incredible journey from flower to honey: a swirling path of two million tiny flowers spiraling down to a single jar of honey, bees flying along the path collecting nectar, warm golden tones, child-friendly infographic style. Classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-waggle-dance-img"
+    image: "fun-fact-waggle-dance.jpg"
+    referenceImage: "${buzzs-busy-day.image}"
+    prompt: "Using the bee from reference, educational illustration showing the waggle dance diagram — a figure-eight pattern drawn on honeycomb with arrows showing direction relative to the sun, the bee dancing in the center. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-hexagons-img"
+    image: "fun-fact-hexagons.jpg"
+    prompt: "Educational illustration comparing different shapes — circles with wasted gaps, squares that are weak, and hexagons that fit perfectly with no gaps and maximum strength. Cross-section of honeycomb showing structural efficiency. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "fun-fact-ultraviolet-img"
+    image: "fun-fact-ultraviolet.jpg"
+    referenceImage: "${petals-first-flight.image}"
+    prompt: "Using the bee from reference, split-view illustration showing a flower as humans see it (plain yellow) versus how bees see it (with ultraviolet bullseye patterns and landing guides in vivid purple and blue). Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a charming magazine cover featuring a cheerful fuzzy honey bee with bright yellow-and-black stripes sitting on a large sunflower in the foreground, looking directly at the viewer with a friendly expression. Behind, a majestic queen bee on golden honeycomb. The background shows a sunny wildflower meadow with golden light, other bees flying, and a beehive in an old oak tree. Style: Classic hand-drawn Disney animation — warm organic lines, soulful expressive eyes, painterly brushwork, vintage animation warmth. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${buzzs-busy-day.image}"
+      - "${meet-queen-aurelia.image}"
+      - "${petals-first-flight.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Cheerful fuzzy bee on a sunflower, queen bee on honeycomb behind, sunny wildflower meadow with beehive in old oak tree"
+      es: "Alegre abeja peluda en un girasol, abeja reina en panal detras, prado soleado de flores silvestres con colmena en viejo roble"
+      ru: "Весёлая пушистая пчёлка на подсолнухе, королева-пчела на сотах позади, солнечный луг с полевыми цветами и ульем в старом дубе"
+
+funFacts:
+  title:
+    en: "Amazing Bee Facts!"
+    es: "!Datos Asombrosos sobre Abejas!"
+    ru: "Удивительные факты о пчёлах!"
+  facts:
+    - title:
+        en: "Two Million Flowers!"
+        es: "!Dos Millones de Flores!"
+        ru: "Два миллиона цветов!"
+      content:
+        en: "To make just one pound of honey, bees must visit about two million flowers and fly over 55,000 miles — that is more than twice around the entire Earth! A single worker bee makes only about one-twelfth of a teaspoon of honey in her entire lifetime. That means the jar of honey in your kitchen is the life's work of hundreds of bees. Every drop is precious!"
+        es: "Para hacer solo medio kilo de miel, las abejas deben visitar unos dos millones de flores y volar mas de 88,000 kilometros — !eso es mas de dos vueltas a toda la Tierra! Una sola abeja obrera hace solo alrededor de un doceavo de cucharadita de miel en toda su vida. Eso significa que el frasco de miel en tu cocina es el trabajo de toda la vida de cientos de abejas. !Cada gota es preciosa!"
+        ru: "Чтобы сделать всего полкилограмма мёда, пчёлы должны посетить около двух миллионов цветов и пролететь более 88 000 километров — это больше, чем дважды обогнуть всю Землю! Одна рабочая пчела за всю свою жизнь делает лишь около одной двенадцатой чайной ложки мёда. Это значит, что банка мёда на вашей кухне — это труд всей жизни сотен пчёл. Каждая капля драгоценна!"
+      image: "fun-fact-two-million.jpg"
+
+    - title:
+        en: "The Waggle Dance Language"
+        es: "El Lenguaje de la Danza del Meneo"
+        ru: "Язык виляющего танца"
+      content:
+        en: "Bees have their own language — and it is a DANCE! When a forager bee finds flowers, she returns to the hive and performs a special waggle dance. The angle of her dance tells other bees the direction relative to the sun. The duration of her waggle tells them the distance. Bees can communicate the location of flowers up to 6 miles away, all through dancing! Karl von Frisch won the Nobel Prize for figuring this out."
+        es: "Las abejas tienen su propio lenguaje — !y es un BAILE! Cuando una abeja recolectora encuentra flores, regresa a la colmena y realiza una danza especial del meneo. El angulo de su baile les dice a las demas abejas la direccion relativa al sol. La duracion de su meneo les dice la distancia. !Las abejas pueden comunicar la ubicacion de flores hasta a 10 kilometros de distancia, todo a traves del baile! Karl von Frisch gano el Premio Nobel por descubrir esto."
+        ru: "У пчёл есть свой язык — и это ТАНЕЦ! Когда пчела-собирательница находит цветы, она возвращается в улей и исполняет особый виляющий танец. Угол её танца сообщает другим пчёлам направление относительно солнца. Продолжительность виляния — расстояние. Пчёлы могут сообщить местоположение цветов на расстоянии до 10 километров, и всё это через танец! Карл фон Фриш получил Нобелевскую премию за это открытие."
+      image: "fun-fact-waggle-dance.jpg"
+
+    - title:
+        en: "Hexagons: Nature's Perfect Shape"
+        es: "Hexagonos: La Forma Perfecta de la Naturaleza"
+        ru: "Шестиугольники: идеальная форма природы"
+      content:
+        en: "Bees build their honeycomb using hexagons because they are the most efficient shape in nature! Hexagons fit together perfectly with no gaps and no wasted space. They also use the least amount of wax while holding the most honey. Scientists and engineers copy this design for airplane wings, satellite panels, and building structures. Bees figured out the best engineering solution millions of years before humans did!"
+        es: "!Las abejas construyen su panal usando hexagonos porque son la forma mas eficiente de la naturaleza! Los hexagonos encajan perfectamente sin espacios ni desperdicio. Tambien usan la menor cantidad de cera mientras sostienen la mayor cantidad de miel. Cientificos e ingenieros copian este diseno para alas de aviones, paneles satelitales y estructuras de edificios. !Las abejas descubrieron la mejor solucion de ingenieria millones de anos antes que los humanos!"
+        ru: "Пчёлы строят соты из шестиугольников, потому что это самая эффективная форма в природе! Шестиугольники идеально соединяются без зазоров и пустого пространства. Они также используют наименьшее количество воска, вмещая наибольшее количество мёда. Учёные и инженеры копируют этот дизайн для крыльев самолётов, спутниковых панелей и строительных конструкций. Пчёлы нашли лучшее инженерное решение за миллионы лет до людей!"
+      image: "fun-fact-hexagons.jpg"
+
+    - title:
+        en: "Seeing Ultraviolet!"
+        es: "!Viendo Ultravioleta!"
+        ru: "Видят ультрафиолет!"
+      content:
+        en: "Bees can see colors that are completely invisible to humans! They see ultraviolet light, which means flowers look totally different to bees than they do to us. Many flowers have secret ultraviolet patterns — like bullseyes and landing strips — that guide bees straight to the nectar. A plain yellow flower to us looks like an airport runway to a bee! Bees cannot see the color red, but their ultraviolet vision more than makes up for it."
+        es: "!Las abejas pueden ver colores que son completamente invisibles para los humanos! Ven la luz ultravioleta, lo que significa que las flores se ven totalmente diferentes para las abejas que para nosotros. Muchas flores tienen patrones ultravioleta secretos — como dianas y pistas de aterrizaje — que guian a las abejas directamente al nectar. !Una flor amarilla simple para nosotros parece una pista de aeropuerto para una abeja! Las abejas no pueden ver el color rojo, pero su vision ultravioleta compensa con creces."
+        ru: "Пчёлы видят цвета, совершенно невидимые для людей! Они видят ультрафиолетовый свет, а значит, цветы выглядят для пчёл совсем иначе, чем для нас. У многих цветов есть секретные ультрафиолетовые узоры — мишени и посадочные полосы — которые направляют пчёл прямо к нектару. Простой жёлтый цветок для нас выглядит как взлётная полоса для пчелы! Пчёлы не видят красный цвет, но их ультрафиолетовое зрение с лихвой это компенсирует."
+      image: "fun-fact-ultraviolet.jpg"
+
+imageGeneration:
+  characters:
+    queen-aurelia:
+      name: "Queen Aurelia"
+      description: "Majestic honey bee queen, the largest bee in the hive, with an elongated golden abdomen, regal bearing, golden crown-like pattern on her thorax"
+      uniqueFeatures:
+        - "LARGEST bee character — noticeably bigger than all workers, elongated body"
+        - "ELONGATED GOLDEN ABDOMEN — much longer than worker bees, tapered and elegant"
+        - "GOLDEN CROWN-LIKE PATTERN on thorax — distinctive marking that looks like a tiny crown"
+        - "Moves SLOWLY and DELIBERATELY — never rushed, always regal"
+        - "Warmer, deeper gold coloring than standard yellow-black workers"
+        - "Workers always clustered around her, attending and feeding"
+      personality: "Regal and calm — moves with slow deliberate grace, the calm center of the hive's activity"
+      notLike: "NOT small like workers, NOT black-and-yellow striped like Buzz, NOT fluffy like Petal"
+
+    buzz:
+      name: "Buzz"
+      description: "Hardworking worker bee with bright yellow-and-black stripes, fuzzy body always covered in pollen, one wing with a tiny notch"
+      uniqueFeatures:
+        - "Standard worker size — much smaller than Queen Aurelia"
+        - "BRIGHT YELLOW-AND-BLACK stripes — classic bee coloring, vivid and cheerful"
+        - "TINY NOTCH in one wing — distinctive identifying mark, but flies perfectly"
+        - "FUZZY body always DUSTED WITH POLLEN — looks like she rolled in gold dust"
+        - "Always in motion — wings buzzing, legs moving, never still"
+        - "Cheerful, bright-eyed expression"
+      personality: "Hardworking and cheerful — always busy, always smiling, never complains"
+      notLike: "NOT large like Queen Aurelia, NOT extra fluffy like Petal, NOT dark like Spike"
+
+    petal:
+      name: "Petal"
+      description: "Young bee on her first foraging flights, slightly smaller than other workers, lighter coloring, extra fluffy fuzz, wide-eyed wonder"
+      uniqueFeatures:
+        - "SLIGHTLY SMALLER than other worker bees — young and delicate"
+        - "LIGHTER COLORING — paler yellow, less intense stripes than Buzz"
+        - "EXTRA FLUFFY — has not worn down her fuzz yet, looks like a tiny pompom"
+        - "WIDE EYES — bigger, rounder eyes than other bees, full of wonder"
+        - "Lighter, more translucent wings — newer and more delicate"
+        - "Often looking around in amazement at everything"
+      personality: "Nervous but excited — wide-eyed wonder at everything outside the hive, eager to learn"
+      notLike: "NOT as boldly striped as Buzz, NOT large like Queen Aurelia, NOT dark like Spike"
+
+    spike:
+      name: "Spike"
+      description: "Guard bee, slightly larger worker with darker coloring, stationed at the hive entrance, mandibles always ready"
+      uniqueFeatures:
+        - "SLIGHTLY LARGER than standard workers — bulkier, more muscular build"
+        - "DARKER COLORING — deeper brown-black with darker yellow, more muted stripes"
+        - "Always STANDING ALERT with MANDIBLES READY — jaws slightly open"
+        - "Stockier build — wider thorax and legs than other workers"
+        - "Positioned at hive entrance — always on guard duty"
+        - "Intense, watchful eyes scanning everything"
+      personality: "Protective and vigilant — always scanning, always alert, takes his duty seriously"
+      notLike: "NOT cheerful and bouncy like Buzz, NOT fluffy like Petal, NOT regal like Queen Aurelia"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, wings, and flowers. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Sunny wildflower meadow setting with golden light, colorful flowers, warm honey tones, and a cozy beehive in an old oak tree. Child-friendly and inviting."
+
+viewerDetails:
+- title:
+    en: "Wings That Never Stop"
+    es: "Alas Que Nunca Paran"
+    ru: "Крылья, которые не останавливаются"
+  description:
+    en: "Look at Buzz's tiny wings — they beat an incredible 200 times per second! That is so fast they become a blur and create the buzzing sound we all know. Each bee has two pairs of wings that hook together with tiny clasps called hamuli, turning four wings into two bigger ones for powerful flight. Bees can fly at about 15 miles per hour and visit up to 5,000 flowers in a single day!"
+    es: "!Mira las pequenas alas de Buzz — laten una increible cantidad de 200 veces por segundo! Eso es tan rapido que se vuelven borrosas y crean el zumbido que todos conocemos. Cada abeja tiene dos pares de alas que se enganchan con pequenos ganchos llamados hamuli, convirtiendo cuatro alas en dos mas grandes para un vuelo poderoso. !Las abejas pueden volar a unos 24 kilometros por hora y visitar hasta 5,000 flores en un solo dia!"
+    ru: "Посмотрите на крошечные крылья Базз — они бьют невероятные 200 раз в секунду! Это настолько быстро, что они становятся размытыми и создают жужжание, которое мы все знаем. У каждой пчелы две пары крыльев, которые соединяются крошечными крючками — гамулями, превращая четыре крыла в два больших для мощного полёта. Пчёлы летают со скоростью около 24 километров в час и могут посетить до 5 000 цветов за один день!"
+  image: "detail-wing-closeup.jpg"
+
+- title:
+    en: "A Thousand Tiny Eyes"
+    es: "Mil Ojos Diminutos"
+    ru: "Тысяча крошечных глаз"
+  description:
+    en: "A bee's compound eye is made up of about 6,900 tiny hexagonal lenses called ommatidia — each one is like a mini eye! Together, they create a mosaic-like image of the world. Bees can see ultraviolet light that is invisible to humans, which reveals secret patterns on flowers. They can also detect polarized light, which helps them navigate using the sun even on cloudy days. The compound eye looks like a tiny honeycomb itself!"
+    es: "El ojo compuesto de una abeja esta formado por unas 6,900 pequenas lentes hexagonales llamadas omatidios — !cada uno es como un mini ojo! Juntos, crean una imagen tipo mosaico del mundo. Las abejas pueden ver luz ultravioleta que es invisible para los humanos, lo que revela patrones secretos en las flores. Tambien pueden detectar luz polarizada, lo que les ayuda a navegar usando el sol incluso en dias nublados."
+    ru: "Сложный глаз пчелы состоит примерно из 6 900 крошечных шестиугольных линз, называемых омматидиями — каждая как мини-глаз! Вместе они создают мозаичное изображение мира. Пчёлы видят ультрафиолетовый свет, невидимый для людей, который раскрывает тайные узоры на цветах. Они также могут обнаруживать поляризованный свет, что помогает ориентироваться по солнцу даже в пасмурные дни. Сложный глаз сам похож на крошечные соты!"
+  image: "detail-compound-eye.jpg"
+
+- title:
+    en: "Pollen Shopping Baskets"
+    es: "Cestas de Compras de Polen"
+    ru: "Корзинки для пыльцы"
+  description:
+    en: "On each of Buzz's back legs, there is a special structure called a corbicula, or pollen basket. It is a smooth, slightly concave area surrounded by stiff curved hairs. As the bee visits flowers, she combs pollen from her fuzzy body and packs it into these baskets using a little bit of nectar as glue. The bright orange or yellow pollen balls on a bee's legs can contain pollen from hundreds of different flowers — like a grocery bag full of flower food!"
+    es: "En cada una de las patas traseras de Buzz, hay una estructura especial llamada corbicula, o cesta de polen. Es un area lisa, ligeramente concava, rodeada de pelos curvos y rigidos. Mientras la abeja visita flores, peina el polen de su cuerpo peludo y lo empaca en estas cestas usando un poco de nectar como pegamento. !Las bolas de polen naranja o amarillo brillante en las patas de una abeja pueden contener polen de cientos de flores diferentes!"
+    ru: "На каждой задней ножке Базз есть особая структура — корбикула, или пыльцевая корзинка. Это гладкая, слегка вогнутая область, окружённая жёсткими изогнутыми волосками. Когда пчела посещает цветы, она счёсывает пыльцу со своего пушистого тела и упаковывает её в эти корзинки, используя немного нектара как клей. Яркие оранжевые или жёлтые шарики пыльцы на ножках пчелы могут содержать пыльцу сотен разных цветов!"
+  image: "detail-pollen-basket.jpg"
+
+- title:
+    en: "The Perfect Hexagon"
+    es: "El Hexagono Perfecto"
+    ru: "Идеальный шестиугольник"
+  description:
+    en: "Each honeycomb cell is a masterpiece of engineering! The hexagonal shape is mathematically the most efficient way to divide a surface into equal units with the least total perimeter. This means bees use the minimum amount of wax to create the maximum storage space. Each cell is tilted slightly upward at a 13-degree angle to prevent honey from dripping out. The walls are only 0.05 millimeters thick — thinner than a sheet of paper — yet strong enough to hold 25 times their own weight in honey!"
+    es: "!Cada celda del panal es una obra maestra de ingenieria! La forma hexagonal es matematicamente la manera mas eficiente de dividir una superficie en unidades iguales con el menor perimetro total. Esto significa que las abejas usan la cantidad minima de cera para crear el maximo espacio de almacenamiento. Cada celda esta inclinada ligeramente hacia arriba en un angulo de 13 grados para evitar que la miel gotee. !Las paredes tienen solo 0.05 milimetros de grosor pero pueden sostener 25 veces su propio peso en miel!"
+    ru: "Каждая ячейка сот — шедевр инженерии! Шестиугольная форма математически является самым эффективным способом разделить поверхность на равные части с наименьшим общим периметром. Это значит, что пчёлы используют минимум воска для создания максимального пространства хранения. Каждая ячейка слегка наклонена вверх под углом 13 градусов, чтобы мёд не вытекал. Стенки толщиной всего 0,05 миллиметра — тоньше листа бумаги — но достаточно прочные, чтобы выдержать вес мёда в 25 раз больше собственного!"
+  image: "detail-honeycomb-hexagon.jpg"
+
+routing:
+    openai:
+      - "hero-meadow.jpg"
+      - "fun-fact-two-million.jpg"
+      - "fun-fact-hexagons.jpg"
+      - "detail-honeycomb-hexagon.jpg"
+
+    gemini:
+      - "queen-aurelia-portrait.jpg"
+      - "buzz-portrait.jpg"
+      - "petal-first-flight.jpg"
+      - "spike-guards-door.jpg"
+      - "the-buzzing-hive.jpg"
+      - "flower-garden.jpg"
+      - "waggle-dance.jpg"
+      - "making-honey.jpg"
+      - "building-beeswax.jpg"
+      - "winter-cluster.jpg"
+      - "sweet-golden-honey.jpg"
+      - "our-garden-friends.jpg"
+      - "detail-wing-closeup.jpg"
+      - "detail-compound-eye.jpg"
+      - "detail-pollen-basket.jpg"
+      - "fun-fact-waggle-dance.jpg"
+      - "fun-fact-ultraviolet.jpg"
+      - "magazine-cover.jpg"

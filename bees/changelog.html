@@ -1,0 +1,1703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Changelog — bees</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0d1117; color: #c9d1d9; padding: 2rem; }
+  h1 { color: #f0f6fc; margin-bottom: 0.25rem; }
+  .subtitle { color: #8b949e; margin-bottom: 2rem; font-size: 0.9rem; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+  .stat { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; text-align: center; }
+  .stat-value { font-size: 1.8rem; font-weight: 700; color: #58a6ff; }
+  .stat-label { font-size: 0.8rem; color: #8b949e; margin-top: 0.25rem; }
+  .breakdown-row { display: flex; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap; }
+  .breakdown { background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 1rem; flex: 1; min-width: 200px; }
+  .breakdown h3 { color: #f0f6fc; font-size: 0.9rem; margin-bottom: 0.5rem; }
+  .breakdown-item { display: flex; justify-content: space-between; padding: 0.25rem 0; font-size: 0.85rem; border-bottom: 1px solid #21262d; }
+  .breakdown-item:last-child { border-bottom: none; }
+  h2 { color: #f0f6fc; margin: 2rem 0 1rem; }
+  .card { background: #161b22; border: 1px solid #30363d; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+  .card.verified { border-left: 4px solid #3fb950; }
+  .card.failed { border-left: 4px solid #f85149; }
+  .card-header { display: flex; align-items: center; gap: 0.75rem; padding: 1rem 1rem 0.5rem; flex-wrap: wrap; }
+  .card-number { font-weight: 700; color: #8b949e; font-size: 0.85rem; }
+  .card-image { font-weight: 600; color: #f0f6fc; font-family: monospace; font-size: 0.95rem; }
+  .card-tag { background: #30363d; color: #c9d1d9; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.8rem; font-family: monospace; }
+  .status-badge { padding: 0.15rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+  .status-badge.verified { background: #23842a; color: #fff; }
+  .status-badge.failed { background: #b62324; color: #fff; }
+  .card-meta { display: flex; gap: 1rem; padding: 0 1rem 0.5rem; font-size: 0.8rem; color: #8b949e; flex-wrap: wrap; }
+  .card-time { margin-left: auto; }
+  .card-description { padding: 0.5rem 1rem 1rem; font-size: 0.9rem; line-height: 1.5; }
+  .image-comparison { display: flex; gap: 1rem; padding: 0 1rem 1rem; flex-wrap: wrap; }
+  .image-panel { flex: 1; min-width: 250px; }
+  .image-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.6rem; background: #b62324; color: #fff; display: inline-block; border-radius: 4px 4px 0 0; }
+  .after-label { background: #23842a; }
+  .image-panel img { width: 100%; border-radius: 0 4px 4px 4px; border: 1px solid #30363d; display: block; }
+  .missing { padding: 3rem; text-align: center; color: #8b949e; background: #0d1117; border-radius: 4px; border: 1px dashed #30363d; }
+  .attempts-detail { padding: 0 1rem 1rem; }
+  .attempts-detail summary { cursor: pointer; color: #58a6ff; font-size: 0.85rem; padding: 0.25rem 0; }
+  .attempts-grid { display: flex; gap: 0.75rem; margin-top: 0.5rem; overflow-x: auto; padding-bottom: 0.5rem; }
+  .attempt-thumb { min-width: 150px; max-width: 200px; }
+  .attempt-label { font-size: 0.7rem; font-weight: 600; color: #8b949e; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .attempt-thumb img { width: 100%; border-radius: 4px; border: 1px solid #30363d; }
+  .clean-run { text-align: center; padding: 4rem 2rem; font-size: 1.2rem; color: #3fb950; background: #161b22; border-radius: 8px; border: 1px solid #30363d; }
+</style>
+</head>
+<body>
+  <h1>Changelog: bees</h1>
+  <div class="subtitle">Last updated: 2026-02-28T23:55:51.652Z &mdash; Every attempt is preserved, nothing is discarded.</div>
+
+  
+        <div class="stats-grid">
+          <div class="stat"><div class="stat-value">39</div><div class="stat-label">Interventions</div></div>
+          <div class="stat"><div class="stat-value">8</div><div class="stat-label">Verified (21%)</div></div>
+          <div class="stat"><div class="stat-value">39</div><div class="stat-label">Automated (100%)</div></div>
+          <div class="stat"><div class="stat-value">0</div><div class="stat-label">Manual</div></div>
+          <div class="stat"><div class="stat-value">2.7</div><div class="stat-label">Avg Attempts</div></div>
+          <div class="stat"><div class="stat-value">$4.28</div><div class="stat-label">Est. Cost</div></div>
+        </div>
+        <div class="breakdown-row">
+          <div class="breakdown">
+            <h3>By Type</h3>
+            <div class="breakdown-item"><span>anatomical-fix</span><span>31</span></div><div class="breakdown-item"><span>composition-fix</span><span>4</span></div><div class="breakdown-item"><span>physics-fix</span><span>4</span></div>
+          </div>
+          <div class="breakdown">
+            <h3>By Tool</h3>
+            <div class="breakdown-item"><span>fix-image</span><span>39</span></div>
+          </div>
+        </div>
+
+  <h2>Interventions</h2>
+  
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#1</span>
+              <span class="card-image">the-buzzing-hive.jpg</span>
+              <span class="card-tag">#1</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:18:23</span>
+            </div>
+            <div class="card-description">Anatomy: Multiple bees exhibit an anatomically incorrect number of visible legs (e.g., 4 or 5 instead of the correct 6), or have distorted limb structures making an accurate count impossible.; Visual Artifacts: Minor visual artifacts are present, including some indistinct rendering in the honey drips and slight artificiality in the background foliage and distant elements.; Quality: Certain smaller elements, particularly some bees and floral details, lack crispness and exhibit minor blur or distortion, impacting overall image clarity.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/the-buzzing-hive-v1.jpg" alt="Before: the-buzzing-hive.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/the-buzzing-hive.jpg" alt="After: the-buzzing-hive.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/the-buzzing-hive-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/the-buzzing-hive-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/the-buzzing-hive-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#2</span>
+              <span class="card-image">queen-aurelia-portrait.jpg</span>
+              <span class="card-tag">#2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:19:06</span>
+            </div>
+            <div class="card-description">ANATOMY: Most bees in the illustration consistently have 4 legs instead of the anatomically correct 6 legs. This includes the larger bee on the ground and multiple flying bees.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/queen-aurelia-portrait-v1.jpg" alt="Before: queen-aurelia-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/queen-aurelia-portrait.jpg" alt="After: queen-aurelia-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/queen-aurelia-portrait-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/queen-aurelia-portrait-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/queen-aurelia-portrait-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#3</span>
+              <span class="card-image">buzz-portrait.jpg</span>
+              <span class="card-tag">#3</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:19:36</span>
+            </div>
+            <div class="card-description">ANATOMY: The bee does not clearly display all 6 anatomically correct legs; only 4 are distinctly visible, and a fifth is partially obscured, leading to missing visible limbs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/buzz-portrait-v1.jpg" alt="Before: buzz-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/buzz-portrait.jpg" alt="After: buzz-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#4</span>
+              <span class="card-image">petal-first-flight.jpg</span>
+              <span class="card-tag">#4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:20:22</span>
+            </div>
+            <div class="card-description">ANATOMY: On both bees, only three legs are distinctly visible. For a bee to have the anatomically correct number of six legs, the remaining three legs are either entirely obscured by the body/pose or missing from the illustration, preventing them from being counted as per instructions.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/petal-first-flight-v1.jpg" alt="Before: petal-first-flight.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/petal-first-flight.jpg" alt="After: petal-first-flight.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/petal-first-flight-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/petal-first-flight-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/petal-first-flight-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#5</span>
+              <span class="card-image">flower-garden.jpg</span>
+              <span class="card-tag">#5</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:21:18</span>
+            </div>
+            <div class="card-description">ANATOMY: Unable to confirm the anatomically correct number of six legs for each bee due to obscured limbs and stylized representation, making it impossible for a strict count.; COMPOSITION: The dense, patterned texture of the sunflower's center could potentially trigger trypophobia in sensitive individuals.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/flower-garden-v1.jpg" alt="Before: flower-garden.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/flower-garden.jpg" alt="After: flower-garden.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/flower-garden-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/flower-garden-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/flower-garden-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#6</span>
+              <span class="card-image">waggle-dance.jpg</span>
+              <span class="card-tag">#6</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:21:59</span>
+            </div>
+            <div class="card-description">Composition: The prominent honeycomb texture with multiple clustered holes and droplets may act as a trypophobia trigger.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/waggle-dance-v1.jpg" alt="Before: waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/waggle-dance.jpg" alt="After: waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/waggle-dance-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/waggle-dance-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/waggle-dance-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#7</span>
+              <span class="card-image">making-honey.jpg</span>
+              <span class="card-tag">#7</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:22:39</span>
+            </div>
+            <div class="card-description">ANATOMY: All bees are depicted with 4 legs instead of the anatomically correct 6 legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/making-honey-v1.jpg" alt="Before: making-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/making-honey.jpg" alt="After: making-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/making-honey-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/making-honey-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/making-honey-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#8</span>
+              <span class="card-image">building-beeswax.jpg</span>
+              <span class="card-tag">#8</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:23:32</span>
+            </div>
+            <div class="card-description">ANATOMY: Most bees are depicted with only 4 visible legs, instead of the anatomically correct 6 legs for an insect.; COMPOSITION: The repeating hexagonal pattern of the honeycomb could potentially trigger trypophobia in some sensitive individuals.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/building-beeswax-v1.jpg" alt="Before: building-beeswax.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/building-beeswax.jpg" alt="After: building-beeswax.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/building-beeswax-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/building-beeswax-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/building-beeswax-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#9</span>
+              <span class="card-image">spike-guards-door.jpg</span>
+              <span class="card-tag">#9</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:24:19</span>
+            </div>
+            <div class="card-description">ANATOMY: The main bee only shows 4 legs, missing 2. The two smaller bees each show only 2 legs, missing 4 each. Bees should anatomically have 6 legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/spike-guards-door-v1.jpg" alt="Before: spike-guards-door.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/spike-guards-door.jpg" alt="After: spike-guards-door.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/spike-guards-door-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/spike-guards-door-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/spike-guards-door-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#10</span>
+              <span class="card-image">winter-cluster.jpg</span>
+              <span class="card-tag">#10</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:25:06</span>
+            </div>
+            <div class="card-description">ANATOMY: Many worker bees in the cluster do not clearly display the anatomically correct number of six legs due to perspective, overlap, or obscured views, often showing only two or three visible limbs. According to strict anatomical requirements for every bee, this constitutes missing limbs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/winter-cluster-v1.jpg" alt="Before: winter-cluster.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/winter-cluster.jpg" alt="After: winter-cluster.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/winter-cluster-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/winter-cluster-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/winter-cluster-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#11</span>
+              <span class="card-image">sweet-golden-honey.jpg</span>
+              <span class="card-tag">#11</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:26:04</span>
+            </div>
+            <div class="card-description">The bee on the left has 3 visible legs, not the anatomically correct 6 legs for a bee.; The bee on the right has 3 visible legs, not the anatomically correct 6 legs for a bee.; The pervasive hexagonal honeycomb pattern, both in the background and forming the ground, could potentially trigger trypophobia in sensitive viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/sweet-golden-honey-v1.jpg" alt="Before: sweet-golden-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/sweet-golden-honey.jpg" alt="After: sweet-golden-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/sweet-golden-honey-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/sweet-golden-honey-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/sweet-golden-honey-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#12</span>
+              <span class="card-image">our-garden-friends.jpg</span>
+              <span class="card-tag">#12</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:26:47</span>
+            </div>
+            <div class="card-description">ANATOMY: All three bee characters are depicted with 4 limbs (2 arms and 2 legs) instead of the anatomically correct 6 legs for a bee, violating the requirement for the correct number of limbs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/our-garden-friends-v1.jpg" alt="Before: our-garden-friends.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/our-garden-friends.jpg" alt="After: our-garden-friends.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/our-garden-friends-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/our-garden-friends-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/our-garden-friends-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#13</span>
+              <span class="card-image">detail-compound-eye.jpg</span>
+              <span class="card-tag">V2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:27:53</span>
+            </div>
+            <div class="card-description">Anatomical verification of limbs is not possible as no limbs are visible on the bee.; The prominent honeycomb pattern in the bee's eye may trigger trypophobia.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-compound-eye-v1.jpg" alt="Before: detail-compound-eye.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-compound-eye.jpg" alt="After: detail-compound-eye.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-compound-eye-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-compound-eye-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-compound-eye-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#14</span>
+              <span class="card-image">detail-pollen-basket.jpg</span>
+              <span class="card-tag">V3</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:28:39</span>
+            </div>
+            <div class="card-description">ANATOMY: The full number of limbs on the bee cannot be verified as most of its body and legs are out of frame, preventing confirmation of the anatomically correct count of six legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-pollen-basket-v1.jpg" alt="Before: detail-pollen-basket.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-pollen-basket.jpg" alt="After: detail-pollen-basket.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-pollen-basket-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-pollen-basket-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-pollen-basket-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#15</span>
+              <span class="card-image">detail-honeycomb-hexagon.jpg</span>
+              <span class="card-tag">V4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:29:39</span>
+            </div>
+            <div class="card-description">ANATOMY: While no obvious extra or missing limbs were observed on any bee, it is impossible to verify the anatomically correct number of 6 legs for every single bee due to varying sizes, angles, and occlusion within the dense composition.; COMPOSITION: The detailed, repeating pattern of numerous, closely packed honeycomb cells containing various textures (pollen, honey, stylized flowers) may be a trigger for trypophobia in some sensitive viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-honeycomb-hexagon-v1.jpg" alt="Before: detail-honeycomb-hexagon.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-honeycomb-hexagon.jpg" alt="After: detail-honeycomb-hexagon.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-honeycomb-hexagon-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-honeycomb-hexagon-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-honeycomb-hexagon-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#16</span>
+              <span class="card-image">fun-fact-two-million.jpg</span>
+              <span class="card-tag">F1</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>physics-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:30:53</span>
+            </div>
+            <div class="card-description">Multiple floating elements are present without physical support, including numbers ('2', '16', '6J', '3:') and hexagonal particles containing letters ('M', 'S', 'A', 'I', 'O', 'P').; Embedded text and labels are present on the honey jar, including a misspelling ('HONIEY' instead of 'HONEY') and unreadable gibberish text.; The prominent honeycomb sphere and dense clusters of small flowers may present textures that could trigger trypophobia.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-two-million-v1.jpg" alt="Before: fun-fact-two-million.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-two-million.jpg" alt="After: fun-fact-two-million.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-two-million-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-two-million-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-two-million-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#17</span>
+              <span class="card-image">fun-fact-waggle-dance.jpg</span>
+              <span class="card-tag">F2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:31:31</span>
+            </div>
+            <div class="card-description">The bee has 4 legs, which is anatomically incorrect for an insect that should have 6 legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-waggle-dance-v1.jpg" alt="Before: fun-fact-waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-waggle-dance.jpg" alt="After: fun-fact-waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-waggle-dance-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-waggle-dance-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-waggle-dance-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#18</span>
+              <span class="card-image">fun-fact-hexagons.jpg</span>
+              <span class="card-tag">F3</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>physics-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:32:26</span>
+            </div>
+            <div class="card-description">Physics: The central honeycomb structure and several connected decorative elements (e.g., spheres, ladders) are floating without visible support, violating the rule that all objects must obey gravity.; Composition: The dense arrangement of hexagonal cells with various textures, including honeycomb-like and pitted surfaces, could be considered trypophobia-triggering for sensitive viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-hexagons-v1.jpg" alt="Before: fun-fact-hexagons.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-hexagons.jpg" alt="After: fun-fact-hexagons.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-hexagons-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-hexagons-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-hexagons-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#19</span>
+              <span class="card-image">fun-fact-ultraviolet.jpg</span>
+              <span class="card-tag">F4</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:32:41</span>
+            </div>
+            <div class="card-description">ANATOMY: The bee in the illustration only visibly has 2 legs/feet. Anatomically, bees have 6 legs. Therefore, 4 legs are missing.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-ultraviolet-v1.jpg" alt="Before: fun-fact-ultraviolet.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-ultraviolet.jpg" alt="After: fun-fact-ultraviolet.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#20</span>
+              <span class="card-image">queen-aurelia-portrait.jpg</span>
+              <span class="card-tag">#2</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:36:59</span>
+            </div>
+            <div class="card-description">The central Queen bee character has two human-like arms and zero bee legs, which deviates from the anatomically correct six legs for a bee, as required for 'every bees'.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/queen-aurelia-portrait-v4.jpg" alt="Before: queen-aurelia-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/queen-aurelia-portrait.jpg" alt="After: queen-aurelia-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#21</span>
+              <span class="card-image">buzz-portrait.jpg</span>
+              <span class="card-tag">#3</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:37:35</span>
+            </div>
+            <div class="card-description">The bee has an anatomically incorrect number of legs, with only 4 visible instead of the correct 6.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/buzz-portrait-v2.jpg" alt="Before: buzz-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/buzz-portrait.jpg" alt="After: buzz-portrait.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/buzz-portrait-v2.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/buzz-portrait-v3.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/buzz-portrait-v4.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#22</span>
+              <span class="card-image">petal-first-flight.jpg</span>
+              <span class="card-tag">#4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:38:13</span>
+            </div>
+            <div class="card-description">Both bees have only 4 visible legs instead of the anatomically correct 6 legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/petal-first-flight-v4.jpg" alt="Before: petal-first-flight.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/petal-first-flight.jpg" alt="After: petal-first-flight.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/petal-first-flight-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/petal-first-flight-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/petal-first-flight-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#23</span>
+              <span class="card-image">flower-garden.jpg</span>
+              <span class="card-tag">#5</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:38:55</span>
+            </div>
+            <div class="card-description">The left bee has an anatomically incorrect number of visible legs (3 visible instead of 6).; The right bee has an anatomically incorrect number of visible legs (3 visible instead of 6).</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/flower-garden-v4.jpg" alt="Before: flower-garden.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/flower-garden.jpg" alt="After: flower-garden.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/flower-garden-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/flower-garden-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/flower-garden-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#24</span>
+              <span class="card-image">waggle-dance.jpg</span>
+              <span class="card-tag">#6</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:40:34</span>
+            </div>
+            <div class="card-description">Potential trypophobia trigger due to dense hexagonal honeycomb patterns.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/waggle-dance-v4.jpg" alt="Before: waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/waggle-dance.jpg" alt="After: waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/waggle-dance-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/waggle-dance-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/waggle-dance-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#25</span>
+              <span class="card-image">building-beeswax.jpg</span>
+              <span class="card-tag">#8</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:40:48</span>
+            </div>
+            <div class="card-description">Composition: The honeycomb texture, with its repetitive hexagonal cells, may be a trypophobia trigger for some viewers, which could be problematic for a children's book illustration.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/building-beeswax-v4.jpg" alt="Before: building-beeswax.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/building-beeswax.jpg" alt="After: building-beeswax.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#26</span>
+              <span class="card-image">winter-cluster.jpg</span>
+              <span class="card-tag">#10</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:41:30</span>
+            </div>
+            <div class="card-description">Anatomy: Many bees, including the central queen figure, do not display the anatomically correct number of six legs; most visible bees have fewer than six or no discernible limbs.; Physics: The central queen bee figure is depicted floating without any visible physical support, violating the rule that all objects must obey gravity.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/winter-cluster-v4.jpg" alt="Before: winter-cluster.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/winter-cluster.jpg" alt="After: winter-cluster.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/winter-cluster-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/winter-cluster-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/winter-cluster-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#27</span>
+              <span class="card-image">sweet-golden-honey.jpg</span>
+              <span class="card-tag">#11</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:42:07</span>
+            </div>
+            <div class="card-description">ANATOMY: The smaller bee on the right only has 4 clearly visible legs. An anatomically correct bee should have 6 legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/sweet-golden-honey-v4.jpg" alt="Before: sweet-golden-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/sweet-golden-honey.jpg" alt="After: sweet-golden-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/sweet-golden-honey-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/sweet-golden-honey-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/sweet-golden-honey-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#28</span>
+              <span class="card-image">our-garden-friends.jpg</span>
+              <span class="card-tag">#12</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:42:53</span>
+            </div>
+            <div class="card-description">The middle bee has only 3 visible legs instead of the anatomically correct 6 legs.; The rightmost bee has only 3 visible legs instead of the anatomically correct 6 legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/our-garden-friends-v4.jpg" alt="Before: our-garden-friends.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/our-garden-friends.jpg" alt="After: our-garden-friends.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/our-garden-friends-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/our-garden-friends-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/our-garden-friends-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#29</span>
+              <span class="card-image">detail-wing-closeup.jpg</span>
+              <span class="card-tag">V1</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:43:35</span>
+            </div>
+            <div class="card-description">The bee's body is significantly cropped, making it impossible to count all limbs and verify the anatomically correct number of legs.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-wing-closeup-v1.jpg" alt="Before: detail-wing-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-wing-closeup.jpg" alt="After: detail-wing-closeup.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-wing-closeup-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-wing-closeup-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-wing-closeup-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#30</span>
+              <span class="card-image">detail-compound-eye.jpg</span>
+              <span class="card-tag">V2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:44:35</span>
+            </div>
+            <div class="card-description">The bee-like character is missing the anatomically correct number of limbs (bees should have 6, but none are clearly visible). Additionally, the numerous small dots on the character's skin could potentially trigger trypophobia.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-compound-eye-v4.jpg" alt="Before: detail-compound-eye.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-compound-eye.jpg" alt="After: detail-compound-eye.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-compound-eye-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-compound-eye-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-compound-eye-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#31</span>
+              <span class="card-image">detail-honeycomb-hexagon.jpg</span>
+              <span class="card-tag">V4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:45:34</span>
+            </div>
+            <div class="card-description">ANATOMY: Several bees throughout the illustration exhibit an anatomically incorrect number of limbs (some appear to have more or fewer than six), or display malformed/fused limbs.; COMPOSITION: The dense and repetitive pattern of hexagonal cells filled with various objects could potentially trigger trypophobia in sensitive viewers, which is a concern for children's book illustrations.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/detail-honeycomb-hexagon-v4.jpg" alt="Before: detail-honeycomb-hexagon.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/detail-honeycomb-hexagon.jpg" alt="After: detail-honeycomb-hexagon.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/detail-honeycomb-hexagon-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/detail-honeycomb-hexagon-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/detail-honeycomb-hexagon-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card verified">
+            <div class="card-header">
+              <span class="card-number">#32</span>
+              <span class="card-image">fun-fact-two-million.jpg</span>
+              <span class="card-tag">F1</span>
+              <span class="status-badge verified">VERIFIED</span>
+            </div>
+            <div class="card-meta">
+              <span>physics-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>1 attempt</span>
+              <span class="card-time">2026-02-28 23:45:47</span>
+            </div>
+            <div class="card-description">PHYSICS: Several spherical flower clusters are floating in the upper part of the image without any visible support, violating the rule that objects must obey gravity.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-two-million-v4.jpg" alt="Before: fun-fact-two-million.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-two-million.jpg" alt="After: fun-fact-two-million.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#33</span>
+              <span class="card-image">fun-fact-waggle-dance.jpg</span>
+              <span class="card-tag">F2</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>composition-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:46:37</span>
+            </div>
+            <div class="card-description">TEXT/WATERMARKS: The image contains embedded graphical labels/symbols (a sun icon with a smiley face and circular arrows), which violates the rule stating there should be NONE.; COMPOSITION: The prominent honeycomb pattern consists of many closely packed cells, which may be a trypophobia trigger for some viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-waggle-dance-v4.jpg" alt="Before: fun-fact-waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-waggle-dance.jpg" alt="After: fun-fact-waggle-dance.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-waggle-dance-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-waggle-dance-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-waggle-dance-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#34</span>
+              <span class="card-image">fun-fact-hexagons.jpg</span>
+              <span class="card-tag">F3</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>physics-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:47:20</span>
+            </div>
+            <div class="card-description">Physics: Several small spherical objects are floating without any visible support or attachment.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-hexagons-v4.jpg" alt="Before: fun-fact-hexagons.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-hexagons.jpg" alt="After: fun-fact-hexagons.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-hexagons-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-hexagons-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-hexagons-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#35</span>
+              <span class="card-image">fun-fact-ultraviolet.jpg</span>
+              <span class="card-tag">F4</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:48:05</span>
+            </div>
+            <div class="card-description">ANATOMY: The bee has only 4 clearly visible legs, which is anatomically incorrect for a bee (should have 6 limbs).; COMPOSITION: The dense circular pattern of seeds in the sunflower head could be a trypophobia-triggering texture for some viewers.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/fun-fact-ultraviolet-v2.jpg" alt="Before: fun-fact-ultraviolet.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/fun-fact-ultraviolet.jpg" alt="After: fun-fact-ultraviolet.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/fun-fact-ultraviolet-v2.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/fun-fact-ultraviolet-v3.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/fun-fact-ultraviolet-v4.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#36</span>
+              <span class="card-image">hero-meadow.jpg</span>
+              <span class="card-tag">H</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:52:41</span>
+            </div>
+            <div class="card-description">Many flying bees have an anatomically incorrect number of legs (fewer than 6) or are too indistinct to verify the correct count.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/hero-meadow-v1.jpg" alt="Before: hero-meadow.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/hero-meadow.jpg" alt="After: hero-meadow.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/hero-meadow-v1.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/hero-meadow-v2.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/hero-meadow-v3.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#37</span>
+              <span class="card-image">the-buzzing-hive.jpg</span>
+              <span class="card-tag">#1</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:53:33</span>
+            </div>
+            <div class="card-description">ANATOMY: Several bees do not clearly display the anatomically correct number of six legs. Many bees have indistinct, partially obscured, or fewer than six visible limbs, making it impossible to confirm the correct count for every individual bee.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/the-buzzing-hive-v4.jpg" alt="Before: the-buzzing-hive.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/the-buzzing-hive.jpg" alt="After: the-buzzing-hive.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/the-buzzing-hive-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/the-buzzing-hive-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/the-buzzing-hive-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#38</span>
+              <span class="card-image">making-honey.jpg</span>
+              <span class="card-tag">#7</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:54:20</span>
+            </div>
+            <div class="card-description">Anatomy: For Bee 1 (top left) and Bee 4 (bottom right), not all six legs are clearly visible due to angle, blur, or obstruction, making it impossible to definitively count all anatomically correct limbs.; Composition: The dense, repetitive pattern of the honeycomb cells, while contextually appropriate, could potentially be a trypophobia trigger for some sensitive individuals.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/making-honey-v4.jpg" alt="Before: making-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/making-honey.jpg" alt="After: making-honey.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/making-honey-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/making-honey-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/making-honey-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+          <div class="card failed">
+            <div class="card-header">
+              <span class="card-number">#39</span>
+              <span class="card-image">spike-guards-door.jpg</span>
+              <span class="card-tag">#9</span>
+              <span class="status-badge failed">FAILED</span>
+            </div>
+            <div class="card-meta">
+              <span>anatomical-fix</span>
+              <span>fix-image</span>
+              <span>Automated</span>
+              <span>3 attempts</span>
+              <span class="card-time">2026-02-28 23:54:59</span>
+            </div>
+            <div class="card-description">Anatomy check failed: All bees are depicted with fewer than the anatomically correct six legs. The prominent foreground bee visibly has only four legs, and the flying bees only show two each.</div>
+            <div class="image-comparison">
+              <div class="image-panel">
+                <div class="image-label">BEFORE</div>
+                <img src="assets/images/attempts/spike-guards-door-v4.jpg" alt="Before: spike-guards-door.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div>
+              <div class="image-panel">
+                <div class="image-label after-label">AFTER</div>
+                <img src="assets/images/spike-guards-door.jpg" alt="After: spike-guards-door.jpg" onerror="this.parentElement.innerHTML='<div class=\'missing\'>Image not found</div>'" />
+              </div></div>
+            
+            <details class="attempts-detail">
+              <summary>All 3 attempts</summary>
+              <div class="attempts-grid">
+                
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v1</div>
+                    <img src="assets/images/attempts/spike-guards-door-v4.jpg" alt="Attempt 1" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v1 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v2</div>
+                    <img src="assets/images/attempts/spike-guards-door-v5.jpg" alt="Attempt 2" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v2 missing</div>'" />
+                  </div>
+                  <div class="attempt-thumb">
+                    <div class="attempt-label">v3</div>
+                    <img src="assets/images/attempts/spike-guards-door-v6.jpg" alt="Attempt 3" onerror="this.parentElement.innerHTML='<div class=\'missing\'>v3 missing</div>'" />
+                  </div>
+              </div>
+            </details>
+          </div>
+</body>
+</html>

@@ -4,6 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const puppeteer = require('puppeteer');
 const sharp = require('sharp');
+const logger = require('./automation/logger');
 
 const ROOT_DIR = __dirname;
 const DEFAULT_OUTPUT_DIR = path.join(ROOT_DIR, 'pdfs');
@@ -539,6 +540,8 @@ async function main() {
         fs.mkdirSync(args.outputDir, { recursive: true });
     }
 
+    const _logTaskId = logger.taskStart(`PDF generation: ${chapters.join(', ')} [${languages.join(', ')}]`);
+
     console.log('\n📄 PDF Generation Tool (Screenshot Mode)');
     console.log('='.repeat(50));
     console.log(`   Chapters:  ${chapters.join(', ')}`);
@@ -571,6 +574,9 @@ async function main() {
     }
 
     await browser.close();
+
+    const totalPages = results.reduce((sum, r) => sum + r.pages, 0);
+    logger.taskEnd(_logTaskId, { files: results.length, pages: totalPages });
 
     console.log(`\n✨ Done! Generated ${results.length} PDF(s)`);
     results.forEach(r => console.log(`   📄 ${r.path}`));

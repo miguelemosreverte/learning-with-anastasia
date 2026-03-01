@@ -1,0 +1,492 @@
+# Bees Chapter Definition - The Price of Honey (Mature Version)
+meta:
+  id: bees-mature
+  issueNumber: 18
+  date: "February 2026"
+  folderName: "bees-mature"
+  title:
+    en: "Bees: The Price of Honey"
+    es: "Abejas: El Precio de la Miel"
+    ru: "Пчёлы: Цена Мёда"
+  subtitle:
+    en: "Sacrifice, Democracy, and a Sting That Costs Everything"
+    es: "Sacrificio, Democracia y un Aguijon Que Cuesta Todo"
+    ru: "Жертва, демократия и жало, которое стоит всего"
+  magazineText:
+    en: "Behind every drop of golden honey lies a story of sacrifice, duty, and decisions that cost lives. Meet Queen Aurelia, who killed her sisters to claim the throne. Meet Buzz, who will work herself to death in six short weeks. Meet Spike, whose sting is a one-way weapon. And witness a colony's democratic vote that determines who survives — and who does not."
+    es: "Detras de cada gota de miel dorada hay una historia de sacrificio, deber y decisiones que cuestan vidas. Conoce a la Reina Aurelia, que mato a sus hermanas para reclamar el trono. Conoce a Buzz, que se trabajara hasta morir en seis cortas semanas. Conoce a Spike, cuyo aguijon es un arma sin retorno. Y presencia la votacion democratica de una colonia que determina quien sobrevive — y quien no."
+    ru: "За каждой каплей золотого мёда скрывается история жертвы, долга и решений, которые стоят жизней. Познакомьтесь с Королевой Аурелией, убившей своих сестёр ради трона. С Базз, которая заработает себя до смерти за шесть коротких недель. Со Спайком, чьё жало — оружие одного удара. И станьте свидетелями демократического голосования колонии, определяющего, кто выживет — а кто нет."
+  magazineCover: "magazine-cover.jpg"
+  hasGeneratedContent: true
+  footerSubtitle:
+    en: "The hidden cost behind nature's sweetest gift"
+    es: "El costo oculto detras del regalo mas dulce de la naturaleza"
+    ru: "Скрытая цена за самый сладкий дар природы"
+  description: "An honest look at the bee colony — where queens kill rivals, workers die in weeks, stinging means death, and survival depends on unity, sacrifice, and democratic decision-making"
+  preface:
+    en:
+      - "Honey is one of the sweetest things in nature. But sweetness has a price. Behind the golden glow of every jar lies a story that is far more complex, brutal, and beautiful than most people ever realize. This is the true story of what it costs to make honey."
+      - "In a bee colony, every drop of sweetness is paid for in labor, sacrifice, and sometimes death. Worker bees literally work themselves to death — their wings shred, their bodies wear out, and after just six weeks of ceaseless labor, they die. Guard bees defend the hive with a weapon that kills them when they use it. And the queen? She secured her throne by eliminating every rival before they could even emerge."
+      - "Yet this same colony is also one of nature's great democracies. When it is time to find a new home, bees debate, argue, and vote. The decision is made not by the queen, but by the collective wisdom of thousands. This is a story of sacrifice and democracy, of duty and death, of sweetness earned at the highest price."
+    es:
+      - "La miel es una de las cosas mas dulces de la naturaleza. Pero la dulzura tiene un precio. Detras del brillo dorado de cada frasco hay una historia mucho mas compleja, brutal y hermosa de lo que la mayoria imagina. Esta es la verdadera historia de lo que cuesta hacer miel."
+      - "En una colonia de abejas, cada gota de dulzura se paga con trabajo, sacrificio y a veces muerte. Las abejas obreras literalmente se trabajan hasta morir — sus alas se deshilachan, sus cuerpos se desgastan, y despues de solo seis semanas de trabajo incesante, mueren. Las abejas guardianas defienden la colmena con un arma que las mata cuando la usan. Y la reina? Aseguro su trono eliminando a cada rival antes de que pudieran emerger."
+      - "Sin embargo, esta misma colonia es tambien una de las grandes democracias de la naturaleza. Cuando es hora de encontrar un nuevo hogar, las abejas debaten, discuten y votan. La decision no la toma la reina, sino la sabiduria colectiva de miles. Esta es una historia de sacrificio y democracia, de deber y muerte, de dulzura ganada al precio mas alto."
+    ru:
+      - "Мёд — одна из самых сладких вещей в природе. Но у сладости есть цена. За золотистым сиянием каждой банки скрывается история куда более сложная, жестокая и прекрасная, чем большинство людей осознаёт. Это настоящая история о том, чего стоит сделать мёд."
+      - "В пчелиной колонии каждая капля сладости оплачена трудом, жертвой, а порой и смертью. Рабочие пчёлы буквально работают до смерти — их крылья изнашиваются, тела слабеют, и после всего шести недель непрерывного труда они умирают. Пчёлы-охранники защищают улей оружием, которое убивает их самих. А королева? Она обеспечила себе трон, уничтожив каждую соперницу прежде, чем та успела появиться."
+      - "И всё же эта колония — также одна из величайших демократий в природе. Когда приходит время искать новый дом, пчёлы спорят, обсуждают и голосуют. Решение принимает не королева, а коллективная мудрость тысяч. Это история жертвы и демократии, долга и смерти, сладости, заработанной самой высокой ценой."
+
+hero:
+  title:
+    en: "Bees"
+    es: "Abejas"
+    ru: "Пчёлы"
+  subtitle:
+    en: "The Price of Honey"
+    es: "El Precio de la Miel"
+    ru: "Цена Мёда"
+  image: "hero-dark-hive.jpg"
+  imageType: "landscape"
+  imageAlt:
+    en: "A beehive at dusk with dramatic storm clouds gathering, bees flying in urgent formation, the warm golden glow of the hive interior contrasting with the dark threatening sky, a lone hornet silhouette on the horizon"
+    es: "Una colmena al anochecer con dramaticas nubes de tormenta acumulandose, abejas volando en formacion urgente, el calido brillo dorado del interior de la colmena contrastando con el cielo oscuro amenazante, la silueta de un avispón en el horizonte"
+    ru: "Улей в сумерках с надвигающимися грозовыми тучами, пчёлы летят в срочном строю, тёплое золотистое свечение улья контрастирует с тёмным угрожающим небом, одинокий силуэт шершня на горизонте"
+
+sections:
+  # A Hive in Danger
+  - id: a-hive-in-danger
+    mood: [epic-skies, golden-hour]
+    action: "dramatic wide shot of a beehive in an old oak tree at dusk, ominous dark storm clouds gathering, the warm golden glow of the hive contrasting with the darkening sky, bees returning urgently to the hive, tension in the air, a few large dark hornet shapes visible in the distance, cinematic and foreboding atmosphere, classic hand-drawn Disney animation style"
+    title:
+      en: "A Hive in Danger"
+      es: "Una Colmena en Peligro"
+      ru: "Улей в опасности"
+    content:
+      en: "The hive has survived drought and rain, heat and cold. Fifty thousand lives, humming together as one. But tonight, something is different. Spike stands at the entrance and feels it — a scent on the wind that does not belong. Something is watching the hive from the treeline. Something hungry. The last of the foragers rush home, their baskets heavy with pollen they may never unload. Inside, the hive hums a lower note tonight. Not the hum of work, but the hum of warning. Danger is coming, and every bee can feel it."
+      es: "La colmena ha sobrevivido sequias y lluvias, calor y frio. Cincuenta mil vidas, zumbando juntas como una sola. Pero esta noche, algo es diferente. Spike esta en la entrada y lo siente — un aroma en el viento que no pertenece. Algo observa la colmena desde la linea de arboles. Algo hambriento. Las ultimas recolectoras se apresuran a casa, sus cestas pesadas con polen que quiza nunca descarguen. Adentro, la colmena zumba en una nota mas baja esta noche. No el zumbido del trabajo, sino el zumbido de advertencia."
+      ru: "Улей пережил засуху и дождь, жару и холод. Пятьдесят тысяч жизней, жужжащих как одно целое. Но сегодня что-то не так. Спайк стоит у входа и чувствует это — запах на ветру, которому здесь не место. Что-то наблюдает за ульем из-за деревьев. Что-то голодное. Последние собирательницы спешат домой с корзинками, полными пыльцы, которую они, возможно, никогда не разгрузят. Внутри улей гудит тише обычного. Не гудение работы, а гудение тревоги. Опасность приближается, и каждая пчела это чувствует."
+    image: "hive-in-danger.jpg"
+    imageAlt:
+      en: "Beehive at dusk with storm clouds, bees rushing home, dark hornet shapes in the distance, ominous atmosphere"
+      es: "Colmena al anochecer con nubes de tormenta, abejas apresurandose a casa, formas oscuras de avispones a lo lejos, atmosfera ominosa"
+      ru: "Улей в сумерках с грозовыми тучами, пчёлы спешат домой, тёмные силуэты шершней вдали, зловещая атмосфера"
+
+  # The Hornet Scouts Arrive
+  - id: the-hornet-scouts
+    mood: [epic-skies]
+    use_character: "${a-hive-in-danger.image}"
+    action: "two massive giant hornets with dark brown and orange bodies, much larger than honey bees, hovering menacingly near the hive entrance, their huge mandibles visible, a single guard bee standing defiant but tiny against them, dramatic lighting, tension and danger, the hornets dwarf the bee completely, classic hand-drawn Disney animation style"
+    title:
+      en: "The Hornet Scouts Arrive"
+      es: "Los Exploradores Avispones Llegan"
+      ru: "Разведчики шершней прибывают"
+    content:
+      en: "They come at dawn — two giant hornets, each one five times the size of a honey bee. Their bodies are armored in dark brown and burnt orange, their mandibles thick enough to snap a bee in half with one bite. They are scouts, sent ahead to find food for their colony. One hornet can kill forty bees in a single minute. If these scouts return to their nest with the location of this hive, they will come back with reinforcements — and they will destroy everything. Spike watches them circle. He knows what is at stake. Not just honey. Not just comb. Every single life inside."
+      es: "Llegan al amanecer — dos avispones gigantes, cada uno cinco veces mas grande que una abeja. Sus cuerpos estan blindados en marron oscuro y naranja quemado, sus mandibulas lo suficientemente gruesas para partir una abeja en dos de un mordisco. Son exploradores, enviados para encontrar comida para su colonia. Un avispón puede matar cuarenta abejas en un solo minuto. Si estos exploradores regresan a su nido con la ubicacion de esta colmena, volveran con refuerzos — y destruiran todo. Spike los observa circular. Sabe lo que esta en juego. No solo la miel. No solo el panal. Cada vida adentro."
+      ru: "Они приходят на рассвете — два гигантских шершня, каждый в пять раз больше медоносной пчелы. Их тела покрыты бронёй из тёмно-коричневого и жжёно-оранжевого, их жвалы достаточно мощны, чтобы перекусить пчелу пополам одним укусом. Они — разведчики, посланные найти пищу для своей колонии. Один шершень может убить сорок пчёл за одну минуту. Если эти разведчики вернутся в своё гнездо с местоположением улья, они прилетят с подкреплением — и уничтожат всё. Спайк наблюдает, как они кружат. Он знает, что поставлено на карту. Не просто мёд. Не просто соты. Каждая жизнь внутри."
+    image: "hornet-scouts.jpg"
+    imageAlt:
+      en: "Two massive giant hornets hovering menacingly near the hive entrance, dwarfing a lone guard bee, dramatic tense lighting"
+      es: "Dos avispones gigantes masivos suspendidos amenazadoramente cerca de la entrada de la colmena, empequeñeciendo a una abeja guardia solitaria"
+      ru: "Два огромных шершня угрожающе зависли у входа в улей, крошечная пчела-охранник перед ними, напряжённое драматичное освещение"
+
+  # Spike's Alarm
+  - id: spikes-alarm
+    generate_character: true
+    mood: [epic-skies, golden-hour]
+    action: "a darker-colored guard bee at the hive entrance releasing visible alarm pheromone — shown as a golden misty cloud spreading from the bee, other bees inside the hive reacting with raised antennae and alert postures, chain reaction of alarm spreading through the colony, urgent dramatic atmosphere, classic hand-drawn Disney animation style"
+    title:
+      en: "Spike's Alarm"
+      es: "La Alarma de Spike"
+      ru: "Тревога Спайка"
+    content:
+      en: "Spike does not hesitate. He raises his abdomen and releases the alarm pheromone — a chemical scream that spreads through the hive like wildfire. The scent hits the nearest bees in seconds. Their antennae snap up. Their wings begin to vibrate. The alarm passes from bee to bee to bee, deeper and deeper into the hive. Within thirty seconds, every single bee in the colony knows: the hive is under threat. There is no committee, no debate, no vote. This is war, and the alarm is absolute. Thousands of bees begin to mobilize. Buzz drops her nectar load. Petal stops mid-flight. Even Queen Aurelia stirs from the royal chamber. The hive is waking for battle."
+      es: "Spike no duda. Levanta su abdomen y libera la feromona de alarma — un grito quimico que se esparce por la colmena como un incendio. El aroma golpea a las abejas mas cercanas en segundos. Sus antenas se alzan. Sus alas comienzan a vibrar. La alarma pasa de abeja en abeja, mas y mas profundo en la colmena. En treinta segundos, cada abeja de la colonia sabe: la colmena esta bajo amenaza. No hay comite, ni debate, ni voto. Esto es guerra, y la alarma es absoluta. Miles de abejas comienzan a movilizarse. Buzz suelta su carga de nectar. Petal se detiene en pleno vuelo. Incluso la Reina Aurelia se agita en la camara real."
+      ru: "Спайк не колеблется. Он поднимает брюшко и выпускает феромон тревоги — химический крик, который распространяется по улью как лесной пожар. Запах достигает ближайших пчёл за секунды. Их усики встают. Крылья начинают вибрировать. Тревога передаётся от пчелы к пчеле, всё глубже в улей. За тридцать секунд каждая пчела в колонии знает: улей под угрозой. Нет комитета, нет обсуждения, нет голосования. Это война, и тревога абсолютна. Тысячи пчёл начинают мобилизацию. Базз бросает свой груз нектара. Петал замирает в полёте. Даже Королева Аурелия пробуждается в королевской палате. Улей просыпается к битве."
+    image: "spikes-alarm.jpg"
+    imageAlt:
+      en: "Guard bee releasing alarm pheromone as a golden mist, chain reaction of alert spreading through the colony, urgent dramatic atmosphere"
+      es: "Abeja guardia liberando feromona de alarma como una niebla dorada, reaccion en cadena de alerta esparciendose por la colonia"
+      ru: "Пчела-охранник выпускает феромон тревоги в виде золотистого тумана, цепная реакция тревоги распространяется по колонии"
+
+  # The Heat Defense
+  - id: the-heat-defense
+    mood: [epic-skies, soft-intimate]
+    use_characters: ["${spikes-alarm.image}", "${the-hornet-scouts.image}"]
+    action: "a tight ball of hundreds of honey bees completely engulfing a giant hornet, the bees vibrating their flight muscles intensely, visible heat waves radiating from the bee ball, the hornet trapped inside struggling, the surrounding bees are straining with effort, some collapsing from exhaustion, dramatic lighting showing the heat, sweat and sacrifice, classic hand-drawn Disney animation style"
+    title:
+      en: "The Heat Defense"
+      es: "La Defensa de Calor"
+      ru: "Тепловая оборона"
+    content:
+      en: "What happens next is one of nature's most extraordinary acts of collective defense. Five hundred bees swarm the first hornet scout and form a tight, vibrating ball around it. Then they do something remarkable — they disconnect their wings from their flight muscles and vibrate those muscles as fast as they can. The temperature inside the bee ball rockets to 117 degrees Fahrenheit. The hornet can only survive up to 115. The bees can survive up to 118. That three-degree margin is the difference between life and death. The hornet cooks alive. Some bees at the center die too, crushed or overheated. They knew the risk. They did it anyway."
+      es: "Lo que sucede despues es uno de los actos de defensa colectiva mas extraordinarios de la naturaleza. Quinientas abejas rodean al primer explorador y forman una bola apretada y vibrante a su alrededor. Luego hacen algo notable — desconectan sus alas de los musculos de vuelo y vibran esos musculos lo mas rapido posible. La temperatura dentro de la bola se dispara a 47 grados Celsius. El avispón solo sobrevive hasta 46. Las abejas sobreviven hasta 48. Ese margen de tres grados es la diferencia entre la vida y la muerte. El avispón se cuece vivo. Algunas abejas del centro tambien mueren, aplastadas o sobrecalentadas. Sabian el riesgo. Lo hicieron de todas formas."
+      ru: "То, что происходит дальше — один из самых необычных актов коллективной обороны в природе. Пятьсот пчёл окружают первого разведчика и формируют плотный вибрирующий шар вокруг него. Затем они делают нечто поразительное — отсоединяют крылья от летательных мышц и вибрируют этими мышцами изо всех сил. Температура внутри шара взлетает до 47 градусов Цельсия. Шершень выдерживает максимум 46. Пчёлы выдерживают до 48. Этот трёхградусный зазор — разница между жизнью и смертью. Шершень варится заживо. Некоторые пчёлы в центре тоже гибнут, раздавленные или перегретые. Они знали риск. Они сделали это всё равно."
+    image: "heat-defense.jpg"
+    imageAlt:
+      en: "Hundreds of bees forming a vibrating heat ball around a trapped giant hornet, visible heat waves, some bees collapsing from the effort"
+      es: "Cientos de abejas formando una bola de calor vibrante alrededor de un avispón atrapado, ondas de calor visibles, algunas abejas colapsando por el esfuerzo"
+      ru: "Сотни пчёл формируют вибрирующий тепловой шар вокруг пойманного шершня, видимые тепловые волны, некоторые пчёлы падают от усилия"
+
+  # When Stinging Means Dying
+  - id: when-stinging-means-dying
+    mood: [soft-intimate, golden-hour]
+    use_characters: ["${spikes-alarm.image}"]
+    action: "a dramatic close-up of a honey bee that has just stung a large intruder, the barbed stinger visibly embedded in the target with the venom sac still attached, the bee pulling away with a visible wound in her abdomen where the stinger was torn out, her expression showing determination not pain, other bees watching solemnly, emotionally powerful, classic hand-drawn Disney animation style"
+    title:
+      en: "When Stinging Means Dying"
+      es: "Cuando Picar Significa Morir"
+      ru: "Когда ужалить — значит умереть"
+    content:
+      en: "The second hornet breaks through. Spike meets it at the entrance. He knows what he has to do, and he knows what it will cost. A honey bee's stinger has barbs — tiny hooks that catch in the skin of the enemy. When the bee pulls away, the stinger stays behind, and with it comes the venom sac, muscles, and part of the bee's own abdomen. It is a wound no bee survives. Spike drives his stinger deep into the hornet's joint. He feels the barbs catch. He pulls away and feels the tearing. It does not matter. The venom keeps pumping automatically. The alarm pheromone from his wound calls more defenders. Spike stumbles, then falls. He gave everything to protect his home."
+      es: "El segundo avispón irrumpe. Spike lo enfrenta en la entrada. Sabe lo que tiene que hacer, y sabe lo que costara. El aguijon de una abeja tiene ganchos — pequenas puas que se enganchan en la piel del enemigo. Cuando la abeja se retira, el aguijon se queda, y con el viene el saco de veneno, musculos y parte del propio abdomen de la abeja. Es una herida que ninguna abeja sobrevive. Spike clava su aguijon profundamente en la articulacion del avispón. Siente los ganchos agarrar. Se retira y siente el desgarro. No importa. El veneno sigue bombeandose automaticamente. La feromona de alarma de su herida llama a mas defensores. Spike se tambalea, luego cae. Dio todo para proteger su hogar."
+      ru: "Второй шершень прорывается. Спайк встречает его у входа. Он знает, что должен сделать, и знает, чего это будет стоить. Жало медоносной пчелы имеет зазубрины — крошечные крючки, которые застревают в теле врага. Когда пчела отрывается, жало остаётся, а с ним — ядовитый мешочек, мышцы и часть собственного брюшка пчелы. Это рана, от которой ни одна пчела не выживает. Спайк вонзает жало глубоко в сочленение шершня. Он чувствует, как зазубрины зацепились. Он отрывается и чувствует, как рвётся. Это неважно. Яд продолжает качаться автоматически. Феромон тревоги из его раны зовёт новых защитников. Спайк спотыкается, затем падает. Он отдал всё, чтобы защитить свой дом."
+    image: "stinging-means-dying.jpg"
+    imageAlt:
+      en: "Dramatic close-up of a bee with barbed stinger torn from its abdomen after stinging a hornet, showing the ultimate sacrifice"
+      es: "Dramatico primer plano de una abeja con aguijon arrancado de su abdomen tras picar a un avispón, mostrando el sacrificio definitivo"
+      ru: "Драматичный крупный план пчелы с вырванным зазубренным жалом из брюшка после того, как ужалила шершня, высшая жертва"
+
+  # A Worker's Short Life
+  - id: a-workers-short-life
+    mood: [soft-intimate, golden-hour]
+    use_characters: ["${the-hornet-scouts.image}"]
+    action: "a sequence showing the life stages of a single worker bee — from a plump white larva in a cell, to a young nurse bee, to a builder bee making wax, to a forager bee with worn frayed wings visiting a flower, to finally an exhausted bee with tattered wings lying on a flower petal, the progression from youth to death in six short weeks, emotionally moving, warm but bittersweet lighting, classic hand-drawn Disney animation style"
+    title:
+      en: "A Worker's Short Life"
+      es: "La Corta Vida de una Obrera"
+      ru: "Короткая жизнь работницы"
+    content:
+      en: "Buzz has been alive for five weeks and three days. In bee time, she is old. She hatched from an egg in a wax cell, spent her first days as a nurse feeding larvae, then became a builder secreting wax, then a guard, and finally a forager — the most dangerous job of all. Her wings, once pristine, are now frayed at the edges. She has flown over five hundred miles in her short life. Her body aches from carrying loads of nectar heavier than herself. A summer worker bee lives just six weeks. Buzz knows she has days left, not weeks. But she does not stop. She cannot. There is nectar to gather, and the hive depends on her until her very last flight."
+      es: "Buzz ha estado viva por cinco semanas y tres dias. En tiempo de abeja, es vieja. Nacio de un huevo en una celda de cera, paso sus primeros dias como enfermera alimentando larvas, luego se convirtio en constructora secretando cera, luego guardia, y finalmente recolectora — el trabajo mas peligroso de todos. Sus alas, antes impecables, ahora estan deshilachadas en los bordes. Ha volado mas de ochocientos kilometros en su corta vida. Su cuerpo duele de cargar nectar mas pesado que ella misma. Una abeja obrera de verano vive solo seis semanas. Buzz sabe que le quedan dias, no semanas. Pero no se detiene. No puede. Hay nectar que recolectar, y la colmena depende de ella hasta su ultimo vuelo."
+      ru: "Базз жива уже пять недель и три дня. По пчелиным меркам она стара. Она вылупилась из яйца в восковой ячейке, первые дни провела нянькой, кормя личинок, потом стала строителем, выделяя воск, потом охранником, и наконец собирательницей — самая опасная работа из всех. Её крылья, некогда безупречные, теперь истрёпаны по краям. Она пролетела более восьмисот километров за свою короткую жизнь. Её тело болит от груза нектара тяжелее её самой. Летняя рабочая пчела живёт всего шесть недель. Базз знает, что ей остались дни, не недели. Но она не останавливается. Не может. Нужно собирать нектар, и улей зависит от неё до самого последнего полёта."
+    image: "workers-short-life.jpg"
+    imageAlt:
+      en: "Progression of a worker bee's life from larva to worn-out forager with frayed wings, the bittersweet passage of six short weeks"
+      es: "Progresion de la vida de una obrera desde larva hasta recolectora desgastada con alas deshilachadas, el agridulce paso de seis cortas semanas"
+      ru: "Жизненный путь рабочей пчелы от личинки до изношенной собирательницы с истрёпанными крыльями, горько-сладкое течение шести коротких недель"
+
+  # The Queen's Dark Secret
+  - id: the-queens-dark-secret
+    generate_character: true
+    mood: [soft-intimate]
+    action: "inside a dark royal chamber of a beehive, a newly emerged queen bee with an elongated golden abdomen approaching several sealed queen cells, one cell already torn open and empty, the queen's expression cold and determined, dramatic shadows, the sealed cells containing rival queens who will never emerge, dark and regal atmosphere, classic hand-drawn Disney animation style"
+    title:
+      en: "The Queen's Dark Secret"
+      es: "El Oscuro Secreto de la Reina"
+      ru: "Тёмная тайна Королевы"
+    content:
+      en: "Queen Aurelia does not speak of how she became queen. When the old queen left with a swarm, the hive raised several new queens. Aurelia was the first to emerge from her royal cell. And she knew, with an instinct older than thought, exactly what she had to do. She moved through the darkness of the hive to the other queen cells — her sisters, still developing inside. One by one, she stung through the wax and killed them before they could emerge. It was not cruelty. It was the law of the hive. Two queens cannot coexist. The colony needs one voice, one mother, one center. Aurelia earned her crown not by election, but by elimination. Every queen in every hive carries this same secret."
+      es: "La Reina Aurelia no habla de como se convirtio en reina. Cuando la vieja reina se fue con un enjambre, la colmena crio varias reinas nuevas. Aurelia fue la primera en emerger de su celda real. Y supo, con un instinto mas antiguo que el pensamiento, exactamente lo que tenia que hacer. Se movio a traves de la oscuridad de la colmena hacia las otras celdas reales — sus hermanas, aun desarrollandose adentro. Una por una, pico a traves de la cera y las mato antes de que pudieran emerger. No fue crueldad. Fue la ley de la colmena. Dos reinas no pueden coexistir. La colonia necesita una voz, una madre, un centro. Aurelia gano su corona no por eleccion, sino por eliminacion."
+      ru: "Королева Аурелия не рассказывает о том, как стала королевой. Когда старая королева улетела с роем, улей вырастил несколько новых королев. Аурелия первой вышла из своей маточной ячейки. И она знала, инстинктом древнее мысли, что именно должна сделать. Она двигалась сквозь темноту улья к другим маточным ячейкам — к своим сёстрам, всё ещё развивающимся внутри. Одну за другой она жалила сквозь воск и убивала их прежде, чем они успевали появиться. Это не было жестокостью. Это был закон улья. Две королевы не могут сосуществовать. Колонии нужен один голос, одна мать, один центр. Аурелия заслужила корону не выборами, а уничтожением. Каждая королева в каждом улье несёт этот же секрет."
+    image: "queens-dark-secret.jpg"
+    imageAlt:
+      en: "Queen bee approaching sealed rival queen cells in a dark royal chamber, one cell already torn open, cold determined expression"
+      es: "Abeja reina acercandose a celdas reales selladas de rivales en una oscura camara real, una celda ya abierta, expresion fria y decidida"
+      ru: "Королева пчёл приближается к запечатанным маточным ячейкам соперниц в тёмной королевской палате, одна ячейка уже вскрыта, холодное решительное выражение"
+
+  # Democracy in Action
+  - id: democracy-in-action
+    mood: [epic-skies, golden-hour]
+    use_characters: ["${the-queens-dark-secret.image}", "${spikes-alarm.image}"]
+    action: "a dramatic scene of bee democracy — a massive swarm of bees hanging from a tree branch in a living cluster, individual scout bees performing waggle dances on the surface of the swarm pointing in different directions, some bees following one scout while others follow a different scout, a visual representation of voting and debate, golden afternoon light, the swarm is democracy made visible, classic hand-drawn Disney animation style"
+    title:
+      en: "Democracy in Action"
+      es: "Democracia en Accion"
+      ru: "Демократия в действии"
+    content:
+      en: "When the hive becomes too crowded, something extraordinary happens. The old queen leaves with half the colony in a great swarm — a living cloud of fifty thousand bees hanging from a tree branch. They need a new home. But the queen does not choose it. The BEES do. Scout bees fly out in every direction, searching for hollow trees, sheltered spots, dry cavities. Each scout returns and performs a waggle dance describing her candidate site. Other bees investigate, and if they agree, they dance for the same site. Slowly, consensus builds. It is a debate, an argument, a vote — all conducted in dance. When eighty percent of scouts dance for the same location, the swarm lifts off together. The queen follows. Even in a monarchy, the real power belongs to the many."
+      es: "Cuando la colmena se llena demasiado, algo extraordinario sucede. La vieja reina se va con la mitad de la colonia en un gran enjambre — una nube viviente de cincuenta mil abejas colgando de una rama. Necesitan un nuevo hogar. Pero la reina no lo elige. Las ABEJAS lo hacen. Abejas exploradoras vuelan en todas direcciones, buscando arboles huecos, lugares resguardados, cavidades secas. Cada exploradora regresa y realiza una danza describiendo su lugar candidato. Otras abejas investigan, y si estan de acuerdo, bailan por el mismo sitio. Lentamente, se construye el consenso. Es un debate, una discusion, un voto — todo conducido en danza. Cuando el ochenta por ciento baila por el mismo lugar, el enjambre despega junto. La reina sigue. Incluso en una monarquia, el verdadero poder pertenece a la mayoria."
+      ru: "Когда улей становится слишком тесным, происходит нечто необычайное. Старая королева улетает с половиной колонии в великом рое — живое облако из пятидесяти тысяч пчёл, свисающее с ветки дерева. Им нужен новый дом. Но королева не выбирает его. Это делают ПЧЁЛЫ. Пчёлы-разведчицы летят во все стороны, ища дупла деревьев, защищённые места, сухие полости. Каждая разведчица возвращается и исполняет виляющий танец, описывающий найденное место. Другие пчёлы проверяют, и если согласны, танцуют за то же место. Постепенно формируется консенсус. Это дебаты, спор, голосование — всё на языке танца. Когда восемьдесят процентов разведчиц танцуют за одно место, рой поднимается вместе. Королева следует за ними. Даже в монархии настоящая власть принадлежит многим."
+    image: "democracy-in-action.jpg"
+    imageAlt:
+      en: "Massive swarm of bees on a branch with scouts performing competing waggle dances, a living democratic vote in golden light"
+      es: "Enjambre masivo de abejas en una rama con exploradoras realizando danzas competitivas, un voto democratico viviente en luz dorada"
+      ru: "Огромный рой пчёл на ветке, разведчицы исполняют конкурирующие танцы, живое демократическое голосование в золотистом свете"
+
+  # The Unprepared Hive
+  - id: the-unprepared-hive
+    mood: [epic-skies]
+    action: "a devastated beehive torn open by a predator or hornets, broken honeycomb scattered, dead bees on the ground, honey dripping wasted onto the earth, a few surviving bees hovering in confusion above the ruins, a stark contrast to a thriving hive — this one was weak, queenless, or unprepared, muted cold lighting, somber and sobering scene, classic hand-drawn Disney animation style"
+    title:
+      en: "The Unprepared Hive"
+      es: "La Colmena Desprevenida"
+      ru: "Неготовый улей"
+    content:
+      en: "Not every hive survives. Across the meadow, there was another colony. Their queen had died in autumn, and they failed to raise a new one in time. Without a queen, no new bees were born. The population dwindled. The guard force thinned. When the hornets came, there were not enough bees to form a heat ball. Not enough guards to mount a defense. The hornets broke through and destroyed the colony in hours — ripping open the comb, eating the larvae, stealing the honey. A few survivors hover above the ruins. Nature does not guarantee survival. It only gives you the tools. Unity, preparation, and sacrifice — without all three, even the sweetest hive will fall."
+      es: "No toda colmena sobrevive. Al otro lado del prado, habia otra colonia. Su reina habia muerto en otono, y no lograron criar una nueva a tiempo. Sin reina, no nacieron nuevas abejas. La poblacion disminuyo. La fuerza de guardia se debilito. Cuando llegaron los avispones, no habia suficientes abejas para formar una bola de calor. No suficientes guardias para montar una defensa. Los avispones irrumpieron y destruyeron la colonia en horas — abriendo el panal, comiendo las larvas, robando la miel. Unos pocos sobrevivientes flotan sobre las ruinas. La naturaleza no garantiza la supervivencia. Solo te da las herramientas. Unidad, preparacion y sacrificio — sin los tres, incluso la colmena mas dulce caera."
+      ru: "Не каждый улей выживает. На другом конце луга была другая колония. Их королева умерла осенью, и они не успели вырастить новую. Без королевы новые пчёлы не рождались. Население сокращалось. Охрана редела. Когда пришли шершни, пчёл не хватило, чтобы сформировать тепловой шар. Не хватило охранников для обороны. Шершни прорвались и уничтожили колонию за часы — разорвали соты, съели личинок, украли мёд. Несколько выживших кружат над руинами. Природа не гарантирует выживание. Она лишь даёт инструменты. Единство, подготовка и жертвенность — без всех трёх даже самый сладкий улей падёт."
+    image: "unprepared-hive.jpg"
+    imageAlt:
+      en: "Devastated beehive torn apart, broken honeycomb and dead bees, honey dripping to waste, a few survivors above the ruins, cold somber light"
+      es: "Colmena devastada destrozada, panal roto y abejas muertas, miel goteando desperdiciada, unos pocos sobrevivientes sobre las ruinas, luz fria y sombria"
+      ru: "Разрушенный улей, сломанные соты и погибшие пчёлы, мёд стекает впустую, несколько выживших над руинами, холодный мрачный свет"
+
+  # The Cost of Sweetness
+  - id: the-cost-of-sweetness
+    mood: [golden-hour, soft-intimate]
+    use_characters: ["${the-queens-dark-secret.image}", "${spikes-alarm.image}"]
+    action: "a single jar of golden honey sitting on a windowsill in warm morning light, but around the jar like ghostly memories are the images of all the bees who gave their lives to make it — worn-out workers, fallen guards, the heat-ball defenders — their translucent forms fading into golden light, bittersweet and beautiful, honoring the sacrifice behind the sweetness, classic hand-drawn Disney animation style"
+    title:
+      en: "The Cost of Sweetness"
+      es: "El Costo de la Dulzura"
+      ru: "Цена сладости"
+    content:
+      en: "A single jar of honey. It sits in warm morning light, golden and glowing, and it looks simple. But it is not. That jar contains the flight miles of a thousand bees who will never fly again. It contains the sacrifice of guards who gave their lives at the entrance. It contains the labor of builders who secreted wax until their glands were spent. It contains six weeks of a worker's entire existence — every sunrise, every flower, every mile — distilled into sweetness. The next time you hold a jar of honey, hold it gently. It is not just food. It is the sum of thousands of small lives, lived fully, spent completely, given freely. Sweetness always has a price."
+      es: "Un solo frasco de miel. Esta en la luz calida de la manana, dorada y brillante, y parece simple. Pero no lo es. Ese frasco contiene los kilometros de vuelo de mil abejas que nunca volaran de nuevo. Contiene el sacrificio de guardias que dieron sus vidas en la entrada. Contiene el trabajo de constructoras que secretaron cera hasta agotar sus glandulas. Contiene seis semanas de la existencia completa de una obrera — cada amanecer, cada flor, cada kilometro — destilado en dulzura. La proxima vez que sostengas un frasco de miel, sostenlo con cuidado. No es solo alimento. Es la suma de miles de pequenas vidas, vividas plenamente, gastadas completamente, dadas libremente. La dulzura siempre tiene un precio."
+      ru: "Одна банка мёда. Она стоит в тёплом утреннем свете, золотистая и сияющая, и выглядит просто. Но это не так. Эта банка содержит километры полёта тысячи пчёл, которые больше никогда не полетят. Содержит жертву охранников, отдавших жизнь у входа. Содержит труд строителей, выделявших воск, пока их железы не иссякли. Содержит шесть недель всей жизни работницы — каждый рассвет, каждый цветок, каждый километр — переплавленных в сладость. Когда в следующий раз возьмёте банку мёда, держите бережно. Это не просто еда. Это сумма тысяч маленьких жизней, прожитых сполна, отданных без остатка, подаренных свободно. У сладости всегда есть цена."
+    image: "cost-of-sweetness.jpg"
+    imageAlt:
+      en: "Jar of golden honey on a windowsill surrounded by translucent ghostly images of bees who gave their lives, bittersweet and beautiful"
+      es: "Frasco de miel dorada en un alfeizar rodeado de imagenes translucidas fantasmales de abejas que dieron sus vidas, agridulce y hermoso"
+      ru: "Банка золотистого мёда на подоконнике, окружённая полупрозрачными образами пчёл, отдавших свои жизни, горько-сладкое и прекрасное"
+
+  # Nature's Bittersweet Balance
+  - id: natures-bittersweet-balance
+    mood: [epic-skies, golden-hour, lush-botanical]
+    use_characters: ["${the-queens-dark-secret.image}", "${spikes-alarm.image}"]
+    action: "a powerful final image — the beehive in the old oak tree at golden sunrise after the battle, some bees mourning fallen defenders outside the entrance, new young bees emerging from cells inside, Petal now an experienced forager heading out to the flowers, life continuing despite loss, golden light and morning dew, the cycle of sacrifice and renewal, hopeful yet honest, classic hand-drawn Disney animation style"
+    title:
+      en: "Nature's Bittersweet Balance"
+      es: "El Agridulce Equilibrio de la Naturaleza"
+      ru: "Горько-сладкое равновесие природы"
+    content:
+      en: "Morning comes. The hive survived. But the entrance tells the story — fallen defenders lie where they gave their last sting. Inside, new eggs glisten in their cells, laid by Queen Aurelia through the night. New workers will hatch in twenty-one days. Petal, who was once the nervous young bee on her first flight, is now a seasoned forager. She has one week left, maybe two. She does not waste a moment. She launches into the dawn and heads for the flowers. Behind her, a brand-new bee peers out of the hive entrance for the very first time, wide-eyed at the enormous world. The hive endures. That is the lesson. Not that life is easy, or fair, or long. But that together, with sacrifice and purpose, sweetness can be made from sunlight, and a colony can outlive any single bee within it. That is the price of honey. And it is worth paying."
+      es: "Llega la manana. La colmena sobrevivio. Pero la entrada cuenta la historia — defensores caidos yacen donde dieron su ultimo aguijonazo. Adentro, nuevos huevos brillan en sus celdas, puestos por la Reina Aurelia durante la noche. Nuevas obreras naceran en veintiun dias. Petal, quien alguna vez fue la joven nerviosa en su primer vuelo, ahora es una recolectora experimentada. Le queda una semana, quiza dos. No desperdicia un momento. Se lanza al amanecer hacia las flores. Detras de ella, una abeja nueva se asoma por la entrada de la colmena por primera vez, con ojos enormes ante el mundo. La colmena perdura. Esa es la leccion. No que la vida sea facil, o justa, o larga. Sino que juntas, con sacrificio y proposito, la dulzura puede hacerse de la luz del sol, y una colonia puede sobrevivir a cualquier abeja dentro de ella. Ese es el precio de la miel. Y vale la pena pagarlo."
+      ru: "Наступает утро. Улей выстоял. Но вход рассказывает историю — павшие защитники лежат там, где нанесли свой последний укус. Внутри в ячейках блестят новые яйца, отложенные Королевой Аурелией за ночь. Новые работницы вылупятся через двадцать один день. Петал, которая когда-то была нервной молодой пчёлкой в первом полёте, теперь опытная собирательница. У неё осталась неделя, может две. Она не теряет ни мгновения. Она бросается в рассвет к цветам. За ней совсем новая пчёлка выглядывает из входа улья впервые, широко раскрыв глаза на огромный мир. Улей стоит. Вот в чём урок. Не в том, что жизнь легка, или справедлива, или долга. А в том, что вместе, с жертвой и целью, из солнечного света можно сделать сладость, и колония может пережить любую пчелу внутри неё. Это цена мёда. И она стоит того."
+    image: "bittersweet-balance.jpg"
+    imageAlt:
+      en: "Beehive at golden sunrise after battle, fallen defenders at entrance, new bees emerging inside, experienced forager heading to flowers, life continuing"
+      es: "Colmena al amanecer dorado despues de la batalla, defensores caidos en la entrada, nuevas abejas emergiendo adentro, recolectora experimentada dirigiendose a las flores"
+      ru: "Улей на золотистом рассвете после битвы, павшие защитники у входа, новые пчёлы рождаются внутри, опытная собирательница летит к цветам, жизнь продолжается"
+
+  # Hidden sections for viewer detail and fun fact image generation
+  - id: "detail-wing-closeup"
+    image: "detail-wing-closeup.jpg"
+    referenceImage: "${spikes-alarm.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a single honey bee WING showing the transparent membrane with visible veins, the wing beating in a blur suggesting 200 beats per second, tiny hooks visible on the wing edge that link front and back wings together. Only the wing and part of the thorax visible — NOT a full body shot. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-compound-eye"
+    image: "detail-compound-eye.jpg"
+    referenceImage: "${spikes-alarm.image}"
+    prompt: "Using the bee from reference, extreme close-up of a honey bee's compound eye showing thousands of tiny hexagonal lenses (ommatidia), reflecting the approaching hornets and danger. The eye surface looks like a tiny honeycomb itself. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "detail-pollen-basket"
+    image: "detail-pollen-basket.jpg"
+    referenceImage: "${spikes-alarm.image}"
+    prompt: "MACRO CLOSE-UP photograph-style detail shot — a honey bee's hind leg showing the corbicula (pollen basket), a smooth concave area surrounded by stiff hairs, packed full of bright orange-yellow pollen in a large round ball. Only the leg and pollen basket visible. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "detail-honeycomb-hexagon"
+    image: "detail-honeycomb-hexagon.jpg"
+    prompt: "Extreme close-up of perfect hexagonal honeycomb cells, some filled with golden honey, some with pollen of different colors, some containing tiny bee larvae, some capped with white wax. Beautiful geometric pattern showing why hexagons are the most efficient shape. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  # Fun fact images
+  - id: "fun-fact-two-million-img"
+    image: "fun-fact-two-million.jpg"
+    prompt: "Educational illustration showing the incredible journey from flower to honey: a swirling path of two million tiny flowers spiraling down to a single jar of honey, bees flying along the path collecting nectar, some bees fallen and exhausted along the way, warm golden but bittersweet tones. Classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-waggle-dance-img"
+    image: "fun-fact-waggle-dance.jpg"
+    referenceImage: "${spikes-alarm.image}"
+    prompt: "Using the bee from reference, educational illustration showing the waggle dance diagram — a figure-eight pattern drawn on honeycomb with arrows showing direction relative to the sun, the bee dancing in the center. Same character and classic hand-drawn Disney animation style."
+    hidden: true
+
+  - id: "fun-fact-hexagons-img"
+    image: "fun-fact-hexagons.jpg"
+    prompt: "Educational illustration comparing different shapes — circles with wasted gaps, squares that are weak, and hexagons that fit perfectly with no gaps and maximum strength. Cross-section of honeycomb showing structural efficiency. Classic hand-drawn Disney animation style, warm educational illustration."
+    hidden: true
+
+  - id: "fun-fact-ultraviolet-img"
+    image: "fun-fact-ultraviolet.jpg"
+    prompt: "Split-view illustration showing a flower as humans see it (plain yellow) versus how bees see it (with ultraviolet bullseye patterns and landing guides in vivid purple and blue), a bee approaching the UV-visible flower. Classic hand-drawn Disney animation style."
+    hidden: true
+
+  # Magazine Cover
+  - id: magazine-cover
+    hidden: true
+    isMagazineCover: true
+    prompt: "Create a dramatic magazine cover featuring a guard bee with dark coloring standing defiant at the entrance of a beehive, mandibles ready, with the shadow of a giant hornet looming overhead. Behind, the warm golden glow of honeycomb and the silhouette of the queen deep inside. The background shows a dramatic sky at dusk with storm clouds. Style: Classic hand-drawn Disney animation — warm organic lines but with dramatic tension, soulful expressive eyes, painterly brushwork. Vertical composition suitable for magazine cover. NO TEXT in image."
+    use_characters:
+      - "${spikes-alarm.image}"
+      - "${the-queens-dark-secret.image}"
+    image: "magazine-cover.jpg"
+    imageAlt:
+      en: "Guard bee standing defiant at hive entrance with hornet shadow looming, golden honeycomb glowing within, dramatic dusk sky"
+      es: "Abeja guardia desafiante en la entrada de la colmena con sombra de avispón acechando, panal dorado brillando adentro, dramatico cielo al anochecer"
+      ru: "Пчела-охранник стоит у входа в улей, тень шершня нависает, золотистые соты светятся внутри, драматичное сумеречное небо"
+
+funFacts:
+  title:
+    en: "Amazing Bee Facts!"
+    es: "!Datos Asombrosos sobre Abejas!"
+    ru: "Удивительные факты о пчёлах!"
+  facts:
+    - title:
+        en: "Two Million Flowers!"
+        es: "!Dos Millones de Flores!"
+        ru: "Два миллиона цветов!"
+      content:
+        en: "To make just one pound of honey, bees must visit about two million flowers and fly over 55,000 miles — that is more than twice around the entire Earth! A single worker bee makes only about one-twelfth of a teaspoon of honey in her entire lifetime. That means the jar of honey in your kitchen is the life's work of hundreds of bees. Every drop is precious!"
+        es: "Para hacer solo medio kilo de miel, las abejas deben visitar unos dos millones de flores y volar mas de 88,000 kilometros — !eso es mas de dos vueltas a toda la Tierra! Una sola abeja obrera hace solo alrededor de un doceavo de cucharadita de miel en toda su vida. Eso significa que el frasco de miel en tu cocina es el trabajo de toda la vida de cientos de abejas. !Cada gota es preciosa!"
+        ru: "Чтобы сделать всего полкилограмма мёда, пчёлы должны посетить около двух миллионов цветов и пролететь более 88 000 километров — это больше, чем дважды обогнуть всю Землю! Одна рабочая пчела за всю свою жизнь делает лишь около одной двенадцатой чайной ложки мёда. Это значит, что банка мёда на вашей кухне — это труд всей жизни сотен пчёл. Каждая капля драгоценна!"
+      image: "fun-fact-two-million.jpg"
+
+    - title:
+        en: "The Waggle Dance Language"
+        es: "El Lenguaje de la Danza del Meneo"
+        ru: "Язык виляющего танца"
+      content:
+        en: "Bees have their own language — and it is a DANCE! When a forager bee finds flowers, she returns to the hive and performs a special waggle dance. The angle of her dance tells other bees the direction relative to the sun. The duration of her waggle tells them the distance. Bees can communicate the location of flowers up to 6 miles away, all through dancing! Karl von Frisch won the Nobel Prize for figuring this out."
+        es: "Las abejas tienen su propio lenguaje — !y es un BAILE! Cuando una abeja recolectora encuentra flores, regresa a la colmena y realiza una danza especial del meneo. El angulo de su baile les dice a las demas abejas la direccion relativa al sol. La duracion de su meneo les dice la distancia. !Las abejas pueden comunicar la ubicacion de flores hasta a 10 kilometros de distancia, todo a traves del baile! Karl von Frisch gano el Premio Nobel por descubrir esto."
+        ru: "У пчёл есть свой язык — и это ТАНЕЦ! Когда пчела-собирательница находит цветы, она возвращается в улей и исполняет особый виляющий танец. Угол её танца сообщает другим пчёлам направление относительно солнца. Продолжительность виляния — расстояние. Пчёлы могут сообщить местоположение цветов на расстоянии до 10 километров, и всё это через танец! Карл фон Фриш получил Нобелевскую премию за это открытие."
+      image: "fun-fact-waggle-dance.jpg"
+
+    - title:
+        en: "Hexagons: Nature's Perfect Shape"
+        es: "Hexagonos: La Forma Perfecta de la Naturaleza"
+        ru: "Шестиугольники: идеальная форма природы"
+      content:
+        en: "Bees build their honeycomb using hexagons because they are the most efficient shape in nature! Hexagons fit together perfectly with no gaps and no wasted space. They also use the least amount of wax while holding the most honey. Scientists and engineers copy this design for airplane wings, satellite panels, and building structures. Bees figured out the best engineering solution millions of years before humans did!"
+        es: "!Las abejas construyen su panal usando hexagonos porque son la forma mas eficiente de la naturaleza! Los hexagonos encajan perfectamente sin espacios ni desperdicio. Tambien usan la menor cantidad de cera mientras sostienen la mayor cantidad de miel. Cientificos e ingenieros copian este diseno para alas de aviones, paneles satelitales y estructuras de edificios. !Las abejas descubrieron la mejor solucion de ingenieria millones de anos antes que los humanos!"
+        ru: "Пчёлы строят соты из шестиугольников, потому что это самая эффективная форма в природе! Шестиугольники идеально соединяются без зазоров и пустого пространства. Они также используют наименьшее количество воска, вмещая наибольшее количество мёда. Учёные и инженеры копируют этот дизайн для крыльев самолётов, спутниковых панелей и строительных конструкций. Пчёлы нашли лучшее инженерное решение за миллионы лет до людей!"
+      image: "fun-fact-hexagons.jpg"
+
+    - title:
+        en: "Seeing Ultraviolet!"
+        es: "!Viendo Ultravioleta!"
+        ru: "Видят ультрафиолет!"
+      content:
+        en: "Bees can see colors that are completely invisible to humans! They see ultraviolet light, which means flowers look totally different to bees than they do to us. Many flowers have secret ultraviolet patterns — like bullseyes and landing strips — that guide bees straight to the nectar. A plain yellow flower to us looks like an airport runway to a bee! Bees cannot see the color red, but their ultraviolet vision more than makes up for it."
+        es: "!Las abejas pueden ver colores que son completamente invisibles para los humanos! Ven la luz ultravioleta, lo que significa que las flores se ven totalmente diferentes para las abejas que para nosotros. Muchas flores tienen patrones ultravioleta secretos — como dianas y pistas de aterrizaje — que guian a las abejas directamente al nectar. !Una flor amarilla simple para nosotros parece una pista de aeropuerto para una abeja! Las abejas no pueden ver el color rojo, pero su vision ultravioleta compensa con creces."
+        ru: "Пчёлы видят цвета, совершенно невидимые для людей! Они видят ультрафиолетовый свет, а значит, цветы выглядят для пчёл совсем иначе, чем для нас. У многих цветов есть секретные ультрафиолетовые узоры — мишени и посадочные полосы — которые направляют пчёл прямо к нектару. Простой жёлтый цветок для нас выглядит как взлётная полоса для пчелы! Пчёлы не видят красный цвет, но их ультрафиолетовое зрение с лихвой это компенсирует."
+      image: "fun-fact-ultraviolet.jpg"
+
+imageGeneration:
+  characters:
+    queen-aurelia:
+      name: "Queen Aurelia"
+      description: "Majestic honey bee queen, the largest bee in the hive, with an elongated golden abdomen, regal bearing, golden crown-like pattern on her thorax"
+      uniqueFeatures:
+        - "LARGEST bee character — noticeably bigger than all workers, elongated body"
+        - "ELONGATED GOLDEN ABDOMEN — much longer than worker bees, tapered and elegant"
+        - "GOLDEN CROWN-LIKE PATTERN on thorax — distinctive marking that looks like a tiny crown"
+        - "Moves SLOWLY and DELIBERATELY — never rushed, always regal"
+        - "Warmer, deeper gold coloring than standard yellow-black workers"
+        - "Workers always clustered around her, attending and feeding"
+      personality: "Regal and cold — carries the weight of her crown and the secret of how she earned it"
+      notLike: "NOT small like workers, NOT black-and-yellow striped like Buzz, NOT fluffy like Petal"
+
+    buzz:
+      name: "Buzz"
+      description: "Hardworking worker bee with bright yellow-and-black stripes, fuzzy body always covered in pollen, one wing with a tiny notch, shows increasing wear as story progresses"
+      uniqueFeatures:
+        - "Standard worker size — much smaller than Queen Aurelia"
+        - "BRIGHT YELLOW-AND-BLACK stripes — classic bee coloring, vivid and cheerful"
+        - "TINY NOTCH in one wing — distinctive identifying mark, but flies perfectly"
+        - "FUZZY body always DUSTED WITH POLLEN — looks like she rolled in gold dust"
+        - "Wings become visibly FRAYED and WORN as story progresses — showing her short lifespan"
+        - "Expression shifts from cheerful to determined to weary but unwavering"
+      personality: "Hardworking and uncomplaining — works until her body gives out, never questions her duty"
+      notLike: "NOT large like Queen Aurelia, NOT extra fluffy like Petal, NOT dark like Spike"
+
+    petal:
+      name: "Petal"
+      description: "Young bee on her first foraging flights, slightly smaller than other workers, lighter coloring, extra fluffy fuzz, wide-eyed wonder that matures into quiet resolve"
+      uniqueFeatures:
+        - "SLIGHTLY SMALLER than other worker bees — young and delicate"
+        - "LIGHTER COLORING — paler yellow, less intense stripes than Buzz"
+        - "EXTRA FLUFFY — has not worn down her fuzz yet, looks like a tiny pompom"
+        - "WIDE EYES — bigger, rounder eyes than other bees, full of wonder"
+        - "Lighter, more translucent wings — newer and more delicate"
+        - "Transforms from nervous newcomer to determined veteran across the story"
+      personality: "Starts nervous and wide-eyed, ends resolute — the witness who sees both beauty and cost"
+      notLike: "NOT as boldly striped as Buzz, NOT large like Queen Aurelia, NOT dark like Spike"
+
+    spike:
+      name: "Spike"
+      description: "Guard bee, slightly larger worker with darker coloring, stationed at the hive entrance, mandibles always ready, willing to make the ultimate sacrifice"
+      uniqueFeatures:
+        - "SLIGHTLY LARGER than standard workers — bulkier, more muscular build"
+        - "DARKER COLORING — deeper brown-black with darker yellow, more muted stripes"
+        - "Always STANDING ALERT with MANDIBLES READY — jaws slightly open"
+        - "Stockier build — wider thorax and legs than other workers"
+        - "Positioned at hive entrance — always on guard duty"
+        - "Intense, watchful eyes scanning everything — the face of sacrifice"
+      personality: "Protective and selfless — knows his sting will kill him, stands ready anyway"
+      notLike: "NOT cheerful and bouncy like Buzz, NOT fluffy like Petal, NOT regal like Queen Aurelia"
+
+  style:
+    global: "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, wings, and flowers. Soft rounded character proportions. Vintage animation cel warmth with dramatic lighting for tense scenes. Mixed setting — sunny wildflower meadow for peaceful scenes, dramatic shadows and storm light for conflict scenes. Warm honey tones contrasted with cold danger tones. Emotionally honest and visually powerful."
+
+viewerDetails:
+- title:
+    en: "Wings That Never Stop"
+    es: "Alas Que Nunca Paran"
+    ru: "Крылья, которые не останавливаются"
+  description:
+    en: "Look at Buzz's tiny wings — they beat an incredible 200 times per second! That is so fast they become a blur and create the buzzing sound we all know. Each bee has two pairs of wings that hook together with tiny clasps called hamuli, turning four wings into two bigger ones for powerful flight. Bees can fly at about 15 miles per hour and visit up to 5,000 flowers in a single day!"
+    es: "!Mira las pequenas alas de Buzz — laten una increible cantidad de 200 veces por segundo! Eso es tan rapido que se vuelven borrosas y crean el zumbido que todos conocemos. Cada abeja tiene dos pares de alas que se enganchan con pequenos ganchos llamados hamuli, convirtiendo cuatro alas en dos mas grandes para un vuelo poderoso. !Las abejas pueden volar a unos 24 kilometros por hora y visitar hasta 5,000 flores en un solo dia!"
+    ru: "Посмотрите на крошечные крылья Базз — они бьют невероятные 200 раз в секунду! Это настолько быстро, что они становятся размытыми и создают жужжание, которое мы все знаем. У каждой пчелы две пары крыльев, которые соединяются крошечными крючками — гамулями, превращая четыре крыла в два больших для мощного полёта. Пчёлы летают со скоростью около 24 километров в час и могут посетить до 5 000 цветов за один день!"
+  image: "detail-wing-closeup.jpg"
+
+- title:
+    en: "A Thousand Tiny Eyes"
+    es: "Mil Ojos Diminutos"
+    ru: "Тысяча крошечных глаз"
+  description:
+    en: "A bee's compound eye is made up of about 6,900 tiny hexagonal lenses called ommatidia — each one is like a mini eye! Together, they create a mosaic-like image of the world. Bees can see ultraviolet light that is invisible to humans, which reveals secret patterns on flowers. They can also detect polarized light, which helps them navigate using the sun even on cloudy days. The compound eye looks like a tiny honeycomb itself!"
+    es: "El ojo compuesto de una abeja esta formado por unas 6,900 pequenas lentes hexagonales llamadas omatidios — !cada uno es como un mini ojo! Juntos, crean una imagen tipo mosaico del mundo. Las abejas pueden ver luz ultravioleta que es invisible para los humanos, lo que revela patrones secretos en las flores. Tambien pueden detectar luz polarizada, lo que les ayuda a navegar usando el sol incluso en dias nublados."
+    ru: "Сложный глаз пчелы состоит примерно из 6 900 крошечных шестиугольных линз, называемых омматидиями — каждая как мини-глаз! Вместе они создают мозаичное изображение мира. Пчёлы видят ультрафиолетовый свет, невидимый для людей, который раскрывает тайные узоры на цветах. Они также могут обнаруживать поляризованный свет, что помогает ориентироваться по солнцу даже в пасмурные дни. Сложный глаз сам похож на крошечные соты!"
+  image: "detail-compound-eye.jpg"
+
+- title:
+    en: "Pollen Shopping Baskets"
+    es: "Cestas de Compras de Polen"
+    ru: "Корзинки для пыльцы"
+  description:
+    en: "On each of Buzz's back legs, there is a special structure called a corbicula, or pollen basket. It is a smooth, slightly concave area surrounded by stiff curved hairs. As the bee visits flowers, she combs pollen from her fuzzy body and packs it into these baskets using a little bit of nectar as glue. The bright orange or yellow pollen balls on a bee's legs can contain pollen from hundreds of different flowers — like a grocery bag full of flower food!"
+    es: "En cada una de las patas traseras de Buzz, hay una estructura especial llamada corbicula, o cesta de polen. Es un area lisa, ligeramente concava, rodeada de pelos curvos y rigidos. Mientras la abeja visita flores, peina el polen de su cuerpo peludo y lo empaca en estas cestas usando un poco de nectar como pegamento. !Las bolas de polen naranja o amarillo brillante en las patas de una abeja pueden contener polen de cientos de flores diferentes!"
+    ru: "На каждой задней ножке Базз есть особая структура — корбикула, или пыльцевая корзинка. Это гладкая, слегка вогнутая область, окружённая жёсткими изогнутыми волосками. Когда пчела посещает цветы, она счёсывает пыльцу со своего пушистого тела и упаковывает её в эти корзинки, используя немного нектара как клей. Яркие оранжевые или жёлтые шарики пыльцы на ножках пчелы могут содержать пыльцу сотен разных цветов!"
+  image: "detail-pollen-basket.jpg"
+
+- title:
+    en: "The Perfect Hexagon"
+    es: "El Hexagono Perfecto"
+    ru: "Идеальный шестиугольник"
+  description:
+    en: "Each honeycomb cell is a masterpiece of engineering! The hexagonal shape is mathematically the most efficient way to divide a surface into equal units with the least total perimeter. This means bees use the minimum amount of wax to create the maximum storage space. Each cell is tilted slightly upward at a 13-degree angle to prevent honey from dripping out. The walls are only 0.05 millimeters thick — thinner than a sheet of paper — yet strong enough to hold 25 times their own weight in honey!"
+    es: "!Cada celda del panal es una obra maestra de ingenieria! La forma hexagonal es matematicamente la manera mas eficiente de dividir una superficie en unidades iguales con el menor perimetro total. Esto significa que las abejas usan la cantidad minima de cera para crear el maximo espacio de almacenamiento. Cada celda esta inclinada ligeramente hacia arriba en un angulo de 13 grados para evitar que la miel gotee. !Las paredes tienen solo 0.05 milimetros de grosor pero pueden sostener 25 veces su propio peso en miel!"
+    ru: "Каждая ячейка сот — шедевр инженерии! Шестиугольная форма математически является самым эффективным способом разделить поверхность на равные части с наименьшим общим периметром. Это значит, что пчёлы используют минимум воска для создания максимального пространства хранения. Каждая ячейка слегка наклонена вверх под углом 13 градусов, чтобы мёд не вытекал. Стенки толщиной всего 0,05 миллиметра — тоньше листа бумаги — но достаточно прочные, чтобы выдержать вес мёда в 25 раз больше собственного!"
+  image: "detail-honeycomb-hexagon.jpg"
+
+routing:
+    openai:
+      - "hero-dark-hive.jpg"
+      - "fun-fact-two-million.jpg"
+      - "fun-fact-hexagons.jpg"
+      - "detail-honeycomb-hexagon.jpg"
+
+    gemini:
+      - "hive-in-danger.jpg"
+      - "hornet-scouts.jpg"
+      - "spikes-alarm.jpg"
+      - "heat-defense.jpg"
+      - "stinging-means-dying.jpg"
+      - "workers-short-life.jpg"
+      - "queens-dark-secret.jpg"
+      - "democracy-in-action.jpg"
+      - "unprepared-hive.jpg"
+      - "cost-of-sweetness.jpg"
+      - "bittersweet-balance.jpg"
+      - "detail-wing-closeup.jpg"
+      - "detail-compound-eye.jpg"
+      - "detail-pollen-basket.jpg"
+      - "fun-fact-waggle-dance.jpg"
+      - "fun-fact-ultraviolet.jpg"
+      - "magazine-cover.jpg"

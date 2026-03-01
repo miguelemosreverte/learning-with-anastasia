@@ -37,6 +37,7 @@ const {
 } = require('./automation/image-utils');
 const { GoogleGenAI } = require('@google/genai');
 const ChangeLog = require('./automation/changelog');
+const logger = require('./automation/logger');
 
 /**
  * Generate with both a source image and a style-reference image
@@ -118,6 +119,8 @@ async function restyleImage(chapterName, identifier, direction, options = {}) {
             return false;
         }
     }
+
+    const _logTaskId = logger.taskStart(`Restyle image: ${chapterName}/${filename}`);
 
     console.log(`\n🎨 Restyling: ${filename}`);
     console.log(`   Direction: ${direction}`);
@@ -203,6 +206,7 @@ RULES:
                     attemptImages
                 });
                 changelog.save();
+                logger.taskEnd(_logTaskId, { attempts: attempt, verified: true, tool: 'restyle-image' });
                 return true;
             } else {
                 console.log(`   ⚠️  Issue: ${verdict.reason}`);
@@ -222,6 +226,7 @@ RULES:
     }
 
     console.error(`   ❌ Failed after ${maxRetries} attempts`);
+    logger.taskEnd(_logTaskId, { attempts: maxRetries, verified: false, tool: 'restyle-image' });
     const changelog = new ChangeLog(chapterName);
     changelog.log({
         image: filename,

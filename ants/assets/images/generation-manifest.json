@@ -1,0 +1,197 @@
+{
+  "chapter": "ants",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in earth, leaves, and tunnel walls. Soft rounded character proportions. Vintage animation cel warmth with gentle watercolor-like backgrounds. Lush meadow and underground settings with rich browns, golden light, green grass, and wildflowers. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "queen-terra": {
+      "name": "Queen Terra",
+      "description": "The ant queen, largest ant in the colony, deep reddish-brown, wise ancient eyes, sits in the heart of the nest with a slightly iridescent wing remnant on her back",
+      "uniqueFeatures": [
+        "LARGEST ant character — visibly much bigger than all other ants, massive abdomen",
+        "DEEP REDDISH-BROWN coloring — rich, warm wood-toned exoskeleton",
+        "WISE ANCIENT EYES — calm, knowing expression, seen a thousand seasons",
+        "IRIDESCENT WING REMNANT on her back — small shimmering stubs that catch the light like tiny rainbows, the mark of a founding queen",
+        "Regal posture — sits upright and still, surrounded by attendant workers",
+        "Largest head with smooth, polished-looking exoskeleton"
+      ],
+      "personality": "Wise, warm, and regal — sits calmly and speaks with quiet authority, maternal and commanding",
+      "notLike": "NOT small or lean like Scout, NOT dark like Tiny, NOT aggressive-looking like Major"
+    },
+    "scout": {
+      "name": "Scout",
+      "description": "Explorer ant, lean and fast, lighter brown color, antennae always pointing forward alertly, one antenna slightly bent from an adventure",
+      "uniqueFeatures": [
+        "LEAN and FAST build — longest legs proportionally, streamlined body",
+        "LIGHTER BROWN coloring — sandier, paler than Queen Terra's deep reddish-brown",
+        "ANTENNAE pointing FORWARD alertly — always sensing, always searching",
+        "ONE ANTENNA SLIGHTLY BENT — the left antenna has a noticeable crook from her first adventure, her signature feature",
+        "Front legs often raised — poised to run, ready for action",
+        "Alert, wide-eyed expression — always looking into the distance"
+      ],
+      "personality": "Brave and curious — constantly exploring, front legs raised, leaning forward into the unknown",
+      "notLike": "NOT large like Queen Terra, NOT dark or small like Tiny, NOT bulky like Major"
+    },
+    "tiny": {
+      "name": "Tiny",
+      "description": "Young worker ant, smallest of the group, darker color, eager to help but clumsy, always carries leaves twice her size",
+      "uniqueFeatures": [
+        "SMALLEST ant character — noticeably smaller than all others, baby proportions",
+        "DARKER coloring — darker brown-black than the others, distinct from Scout's light brown",
+        "Always carrying something TOO BIG — signature look is struggling under an oversized leaf",
+        "ROUND, oversized head relative to body — baby-like proportions",
+        "Legs slightly splayed for balance — always wobbling, endearingly clumsy",
+        "Determined expression despite struggling — never gives up"
+      ],
+      "personality": "Eager, determined, and adorably clumsy — always trying too hard, never giving up, heart of gold",
+      "notLike": "NOT lean like Scout, NOT large like Queen Terra, NOT intimidating like Major"
+    },
+    "major": {
+      "name": "Major",
+      "description": "Soldier ant, biggest worker with oversized mandibles, dark reddish-black, stands guard at tunnel entrances, intimidating but gentle with colony-mates",
+      "uniqueFeatures": [
+        "BIGGEST WORKER ant — second only to Queen Terra in size, but stockier and more muscular",
+        "MASSIVE HEAD with OVERSIZED MANDIBLES — enormous jaws that dominate his face",
+        "DARK REDDISH-BLACK coloring — darker and more intense than Queen Terra's warm brown",
+        "WIDE, planted stance — legs spread, blocking tunnel entrances, immovable",
+        "Gentle eyes that contrast with intimidating jaws — soft expression despite fearsome appearance",
+        "Thicker exoskeleton with visible armor-like plates on head"
+      ],
+      "personality": "Powerful and protective but gentle — stands like an immovable guardian, speaks softly to colony-mates",
+      "notLike": "NOT lean like Scout, NOT small like Tiny, NOT regal like Queen Terra"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-anthill.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "A cross-section view of a magnificent ant colony underground, showing tunnels and chambers filled with busy ants, with a lush green meadow and wildflowers above ground, warm golden sunlight",
+        "es": "Vista en corte transversal de una magnifica colonia de hormigas subterranea, mostrando tuneles y camaras llenas de hormigas ocupadas, con un exuberante prado verde y flores silvestres en la superficie, calida luz dorada",
+        "ru": "Вид в разрезе великолепной подземной колонии муравьёв с тоннелями и камерами, полными занятых муравьёв, с пышным зелёным лугом и полевыми цветами наверху, тёплый золотистый свет"
+      }
+    },
+    {
+      "filename": "colony-awakens.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Sunrise over a green meadow with a large anthill, tiny ants emerging from entrances, dewdrops on grass, warm golden morning light",
+        "es": "Amanecer sobre un prado verde con un gran hormiguero, pequenas hormigas emergiendo de las entradas, gotas de rocio en la hierba, calida luz dorada matutina",
+        "ru": "Рассвет над зелёным лугом с большим муравейником, крошечные муравьи выходят из входов, капли росы на траве, тёплый золотистый утренний свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "queen-terra-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Large reddish-brown ant queen with wise eyes and an iridescent wing remnant on her back, sitting regally in an underground chamber surrounded by worker ants",
+        "es": "Gran hormiga reina marron rojiza con ojos sabios y un resto de ala iridiscente en su espalda, sentada regiamente en una camara subterranea rodeada de hormigas obreras",
+        "ru": "Большая красновато-коричневая королева муравьёв с мудрыми глазами и переливающимся остатком крыла на спине, величественно сидящая в подземной камере в окружении рабочих муравьёв"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "scout-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Lean, alert lighter brown ant with one bent antenna standing at the anthill entrance looking out over a vast meadow, adventurous pose, morning light",
+        "es": "Hormiga delgada y alerta de color marron claro con una antena doblada, de pie en la entrada del hormiguero mirando un vasto prado, pose aventurera, luz matutina",
+        "ru": "Стройный, настороженный светло-коричневый муравей с одним изогнутым усиком, стоящий у входа в муравейник и смотрящий на бескрайний луг, приключенческая поза, утренний свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "scout-finds-strawberry.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Small lighter brown ant excitedly discovering a huge ripe strawberry on the ground, grass blades towering around, golden sunlight, magical discovery moment",
+        "es": "Pequena hormiga marron claro descubriendo emocionada una enorme fresa madura en el suelo, hojas de hierba imponentes alrededor, luz dorada, momento de descubrimiento magico",
+        "ru": "Маленький светло-коричневый муравей с восторгом обнаруживает огромную спелую клубнику на земле, травинки возвышаются вокруг, золотистый солнечный свет, волшебный момент открытия"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "trail-of-scents.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Line of ants marching single-file along a glowing scent trail through the grass, led by a lighter brown ant with a bent antenna, warm dappled sunlight",
+        "es": "Linea de hormigas marchando en fila india a lo largo de un rastro de aroma brillante a traves de la hierba, lideradas por una hormiga marron claro con antena doblada, calida luz moteada",
+        "ru": "Колонна муравьёв, марширующих гуськом по светящейся тропе запахов через траву, ведомых светло-коричневым муравьём с изогнутым усиком, тёплый пятнистый солнечный свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "tiny-carries-leaf.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Very small dark ant struggling adorably to carry a leaf piece twice her size over her head, wobbling with determination near the anthill entrance, warm sunlight",
+        "es": "Hormiga muy pequena y oscura luchando adorablemente por cargar un trozo de hoja el doble de su tamano sobre su cabeza, tambaleandose con determinacion cerca de la entrada del hormiguero",
+        "ru": "Очень маленький тёмный муравей, трогательно пытающийся нести кусок листа вдвое больше себя над головой, шатаясь с решимостью у входа в муравейник, тёплый солнечный свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "major-guards-gate.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Large dark reddish-black soldier ant with massive head and oversized mandibles standing guard at a tunnel entrance, smaller worker ants passing safely, dramatic lighting",
+        "es": "Gran hormiga soldado rojo-negra oscura con cabeza masiva y mandibulas enormes de guardia en la entrada de un tunel, hormigas obreras mas pequenas pasando a salvo, iluminacion dramatica",
+        "ru": "Большой тёмный красновато-чёрный муравей-солдат с массивной головой и огромными челюстями на страже у входа в тоннель, маленькие рабочие муравьи безопасно проходят мимо, драматичное освещение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "building-tunnels.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Cross-section view of underground ant tunnels with worker ants digging and carrying earth balls, smooth tunnel walls, root tendrils, warm amber glow, impressive engineering",
+        "es": "Vista en corte transversal de tuneles subterraneos con hormigas obreras cavando y cargando bolitas de tierra, paredes lisas, raices, resplandor ambar calido",
+        "ru": "Вид в разрезе подземных муравьиных тоннелей с рабочими муравьями, копающими и несущими комочки земли, гладкие стены, корешки, тёплое янтарное свечение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "fungus-garden.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magical underground chamber with ants farming white fluffy fungus on beds of chewed leaves, soft glowing light, tiny ant farmers tending the garden",
+        "es": "Camara subterranea magica con hormigas cultivando hongos blancos esponjosos en camas de hojas masticadas, luz suave y brillante, pequenas hormigas granjeras cuidando el jardin",
+        "ru": "Волшебная подземная камера, где муравьи выращивают белые пушистые грибы на подстилке из пережёванных листьев, мягкое свечение, крошечные муравьи-фермеры ухаживают за садом"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "carrying-giants.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Team of ants working together to carry an enormous piece of fruit, some pushing, some pulling, some lifting, golden afternoon light, incredible teamwork",
+        "es": "Equipo de hormigas trabajando juntas para cargar un enorme trozo de fruta, algunas empujando, otras jalando, otras levantando, luz dorada de la tarde, increible trabajo en equipo",
+        "ru": "Команда муравьёв, работающих вместе, чтобы нести огромный кусок фрукта, одни толкают, другие тянут, третьи поднимают, золотистый послеполуденный свет, невероятная командная работа"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "the-nursery.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Warm underground nursery chamber with tiny white eggs and larvae, nurse ants carefully tending babies, a small dark ant gently holding an egg, soft amber lighting",
+        "es": "Calida camara subterranea de guarderia con diminutos huevos blancos y larvas, hormigas niñeras cuidando bebes, una pequena hormiga oscura sosteniendo un huevo suavemente",
+        "ru": "Тёплая подземная камера-детская с крошечными белыми яйцами и личинками, муравьи-няни бережно ухаживают за малышами, маленький тёмный муравей нежно держит яйцо"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "all-together-strong.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magnificent wide shot of the ant colony at golden sunset, ants streaming in organized lines, all four main characters visible, anthill glowing warmly, wildflowers surrounding",
+        "es": "Magnifica toma amplia de la colonia al atardecer dorado, hormigas en lineas organizadas, los cuatro personajes principales visibles, hormiguero brillando calidamente",
+        "ru": "Великолепный широкий план колонии муравьёв на фоне золотого заката, муравьи движутся организованными колоннами, все четыре главных персонажа видны, муравейник тепло светится"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

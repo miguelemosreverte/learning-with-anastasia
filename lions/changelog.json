@@ -1,0 +1,426 @@
+{
+  "chapter": "lions",
+  "lastUpdated": "2026-02-28T23:36:56.167Z",
+  "summary": {
+    "total": 22,
+    "byType": {
+      "anatomical-fix": 14,
+      "physics-fix": 2,
+      "composition-fix": 5,
+      "style-restyle": 1
+    },
+    "byTool": {
+      "fix-image": 22
+    },
+    "verified": 12,
+    "verifiedRate": "55%",
+    "automated": 22,
+    "manual": 0,
+    "automatedRate": "100%",
+    "avgAttempts": 2.2,
+    "totalCost": 1.96
+  },
+  "entries": [
+    {
+      "timestamp": "2026-02-28T23:22:50.946Z",
+      "image": "cubs-growing.jpg",
+      "tag": "#10",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The adult male lion lacks an anatomically correct fourth hind leg; it appears either missing or improperly rendered and fused with the background.",
+      "attempts": 2,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/cubs-growing-v1.jpg",
+      "afterImage": "assets/images/cubs-growing.jpg",
+      "attemptImages": [
+        "assets/images/attempts/cubs-growing-v1.jpg",
+        "assets/images/attempts/cubs-growing-v2.jpg"
+      ],
+      "cost_estimate": 0.08
+    },
+    {
+      "timestamp": "2026-02-28T23:23:38.815Z",
+      "image": "detail-mane-closeup.jpg",
+      "tag": "V1",
+      "type": "physics-fix",
+      "tool": "fix-image",
+      "description": "PHYSICS: Small light particles/water droplets are floating in the air without any visible support, violating the rule that all objects must obey gravity.",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-mane-closeup-v1.jpg",
+      "afterImage": "assets/images/detail-mane-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-mane-closeup-v1.jpg",
+        "assets/images/attempts/detail-mane-closeup-v2.jpg",
+        "assets/images/attempts/detail-mane-closeup-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:23:46.281Z",
+      "image": "detail-whisker-spots.jpg",
+      "tag": "V3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The image does not contain any lions or birds, making it impossible to perform the requested anatomical limb count checks for these specific species as per the instructions. While other criteria such as physics, text/watermarks, composition, and overall quality appear satisfactory, the inability to complete the primary anatomical review for the specified subjects results in a failed review.",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-whisker-spots-v1.jpg",
+      "afterImage": "assets/images/detail-whisker-spots.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-whisker-spots-v1.jpg",
+        "assets/images/attempts/detail-whisker-spots-v2.jpg",
+        "assets/images/attempts/detail-whisker-spots-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:23:57.556Z",
+      "image": "detail-retractable-claws.jpg",
+      "tag": "V2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: Cannot verify the total number of limbs for a lion as only a single paw is visible, thus preventing full adherence to the anatomy check regarding limb count for a lion.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-retractable-claws-v1.jpg",
+      "afterImage": "assets/images/detail-retractable-claws.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-retractable-claws-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:24:31.394Z",
+      "image": "detail-rough-tongue.jpg",
+      "tag": "V4",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "The dense, pointed texture (papillae) on the lion's tongue may be trypophobia-triggering, which is a concern under the composition check for children's illustrations.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-rough-tongue-v1.jpg",
+      "afterImage": "assets/images/detail-rough-tongue.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-rough-tongue-v1.jpg",
+        "assets/images/attempts/detail-rough-tongue-v2.jpg",
+        "assets/images/attempts/detail-rough-tongue-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:24:49.885Z",
+      "image": "fun-fact-roar.jpg",
+      "tag": "F2",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Embedded text/labels are present on the signs ('1 MILE', '2 MILES', '3 MILES', '4 MILES'), violating the rule that there should be NONE.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-roar-v1.jpg",
+      "afterImage": "assets/images/fun-fact-roar.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-roar-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:25:06.042Z",
+      "image": "detail-whisker-spots.jpg",
+      "tag": "V3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The image does not contain any lions, making the requested limb count for lions impossible to perform.; The image does not contain any birds, making the requested leg/feet count for birds impossible to perform.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-whisker-spots-v4.jpg",
+      "afterImage": "assets/images/detail-whisker-spots.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-whisker-spots-v4.jpg",
+        "assets/images/attempts/detail-whisker-spots-v5.jpg",
+        "assets/images/attempts/detail-whisker-spots-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:25:56.354Z",
+      "image": "detail-rough-tongue.jpg",
+      "tag": "V4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy check incomplete: Only a partial view of one lion is present, making it impossible to count all limbs as required.; Composition concern: The dense, spiky texture of the tongue's papillae might be unsettling for some viewers sensitive to certain textures (trypophobia).",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-rough-tongue-v4.jpg",
+      "afterImage": "assets/images/detail-rough-tongue.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-rough-tongue-v4.jpg",
+        "assets/images/attempts/detail-rough-tongue-v5.jpg",
+        "assets/images/attempts/detail-rough-tongue-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:26:10.607Z",
+      "image": "fun-fact-sleeping.jpg",
+      "tag": "F1",
+      "type": "physics-fix",
+      "tool": "fix-image",
+      "description": "The golden string holding the clocks and suns is floating in the sky without any visible support or attachment to the trees or other objects.; One of the suns on the far right is floating without clear attachment.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-sleeping-v1.jpg",
+      "afterImage": "assets/images/fun-fact-sleeping.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-sleeping-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:26:52.301Z",
+      "image": "fun-fact-roar.jpg",
+      "tag": "F2",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Embedded text labels '1 MILE', '2 MILES', '3 MILES', '4 MILES' are present on the path.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-roar-v2.jpg",
+      "afterImage": "assets/images/fun-fact-roar.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-roar-v2.jpg",
+        "assets/images/attempts/fun-fact-roar-v3.jpg",
+        "assets/images/attempts/fun-fact-roar-v4.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:27:52.640Z",
+      "image": "hero-savanna.jpg",
+      "tag": "H",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Composition: The numerous clustered seeds/fluffs on the dandelion heads, and similar patterns in some other flowers, could potentially be perceived as trypophobia-triggering textures.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/hero-savanna-v1.jpg",
+      "afterImage": "assets/images/hero-savanna.jpg",
+      "attemptImages": [
+        "assets/images/attempts/hero-savanna-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:28:08.409Z",
+      "image": "learning-to-stalk.jpg",
+      "tag": "#4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The adult lion in the center-right appears to have only three visible or implied limbs, which is anatomically incorrect.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/learning-to-stalk-v1.jpg",
+      "afterImage": "assets/images/learning-to-stalk.jpg",
+      "attemptImages": [
+        "assets/images/attempts/learning-to-stalk-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:28:49.813Z",
+      "image": "pride-together.jpg",
+      "tag": "#11",
+      "type": "style-restyle",
+      "tool": "fix-image",
+      "description": "Slight color banding visible in the sky gradient, particularly in the upper cloud areas.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/pride-together-v1.jpg",
+      "afterImage": "assets/images/pride-together.jpg",
+      "attemptImages": [
+        "assets/images/attempts/pride-together-v1.jpg",
+        "assets/images/attempts/pride-together-v2.jpg",
+        "assets/images/attempts/pride-together-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:29:03.663Z",
+      "image": "detail-mane-closeup.jpg",
+      "tag": "V1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The lion's limbs are not visible in the illustration, making it impossible to confirm the anatomically correct number of legs/limbs as required by the anatomy check.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-mane-closeup-v4.jpg",
+      "afterImage": "assets/images/detail-mane-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-mane-closeup-v4.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:29:52.143Z",
+      "image": "detail-retractable-claws.jpg",
+      "tag": "V2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The illustration does not show the full body of any lion, making it impossible to count all limbs and verify the anatomically correct number of legs (four) per animal as required by the prompt.",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-retractable-claws-v2.jpg",
+      "afterImage": "assets/images/detail-retractable-claws.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-retractable-claws-v2.jpg",
+        "assets/images/attempts/detail-retractable-claws-v3.jpg",
+        "assets/images/attempts/detail-retractable-claws-v4.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:30:38.107Z",
+      "image": "detail-rough-tongue.jpg",
+      "tag": "V4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The image shows only a partial view of the lion, making it impossible to count all its limbs and confirm anatomical correctness regarding the number of legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-rough-tongue-v7.jpg",
+      "afterImage": "assets/images/detail-rough-tongue.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-rough-tongue-v7.jpg",
+        "assets/images/attempts/detail-rough-tongue-v8.jpg",
+        "assets/images/attempts/detail-rough-tongue-v9.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:30:48.572Z",
+      "image": "pride-together.jpg",
+      "tag": "#11",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Minor visual artifact observed in the blending of the male lion's mane near the shoulder.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/pride-together-v4.jpg",
+      "afterImage": "assets/images/pride-together.jpg",
+      "attemptImages": [
+        "assets/images/attempts/pride-together-v4.jpg",
+        "assets/images/attempts/pride-together-v5.jpg",
+        "assets/images/attempts/pride-together-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:31:06.781Z",
+      "image": "detail-mane-closeup.jpg",
+      "tag": "V1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Cannot verify the anatomically correct number of limbs for the lion as its full body is not visible due to cropping.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-mane-closeup-v5.jpg",
+      "afterImage": "assets/images/detail-mane-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-mane-closeup-v5.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:31:49.557Z",
+      "image": "detail-whisker-spots.jpg",
+      "tag": "V3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Some flying birds do not have visible legs, violating the rule that each bird must have exactly 2 legs. All other checks passed.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-whisker-spots-v7.jpg",
+      "afterImage": "assets/images/detail-whisker-spots.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-whisker-spots-v7.jpg",
+        "assets/images/attempts/detail-whisker-spots-v8.jpg",
+        "assets/images/attempts/detail-whisker-spots-v9.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:32:29.976Z",
+      "image": "detail-rough-tongue.jpg",
+      "tag": "V4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Cannot verify the total number of limbs for the lion as most of its body is out of frame, making it impossible to confirm the anatomically correct count of legs/limbs as per the instruction.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-rough-tongue-v10.jpg",
+      "afterImage": "assets/images/detail-rough-tongue.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-rough-tongue-v10.jpg",
+        "assets/images/attempts/detail-rough-tongue-v11.jpg",
+        "assets/images/attempts/detail-rough-tongue-v12.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-02-28T23:33:49.078Z",
+      "image": "watering-hole.jpg",
+      "tag": "#8",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: Unable to verify the total number of limbs for the third lion cub on the right, as its rear legs are obscured by another cub and the water's edge, preventing an accurate count of all four limbs.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/watering-hole-v1.jpg",
+      "afterImage": "assets/images/watering-hole.jpg",
+      "attemptImages": [
+        "assets/images/attempts/watering-hole-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-02-28T23:36:07.961Z",
+      "image": "detail-retractable-claws.jpg",
+      "tag": "V2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: The second lion depicted (adult lion) is only partially shown, with only one paw and part of a leg visible. This makes it impossible to count all its limbs to confirm the anatomically correct number of legs/limbs (4), as strictly required by the instructions.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-retractable-claws-v5.jpg",
+      "afterImage": "assets/images/detail-retractable-claws.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-retractable-claws-v5.jpg",
+        "assets/images/attempts/detail-retractable-claws-v6.jpg",
+        "assets/images/attempts/detail-retractable-claws-v7.jpg"
+      ],
+      "cost_estimate": 0.12
+    }
+  ]
+}

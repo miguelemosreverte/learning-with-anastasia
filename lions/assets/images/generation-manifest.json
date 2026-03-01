@@ -1,0 +1,167 @@
+{
+  "chapter": "lions",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, grass, and sky. Soft rounded character proportions for cubs. Vintage animation cel warmth with gentle watercolor-like backgrounds. Golden African savanna setting with warm amber tones, acacia trees, tall grass, dramatic sunsets, and starry nights. Child-friendly and inviting."
+  },
+  "routing": {},
+  "characters": {
+    "kazi": {
+      "name": "Papa Kazi",
+      "description": "Magnificent male lion father with a huge dark brown mane, golden amber eyes, powerful muscular build, proud protective stance",
+      "uniqueFeatures": [
+        "LARGEST character — visibly bigger and more powerful than all others",
+        "HUGE DARK BROWN MANE — thick, voluminous, frames his entire face like a crown",
+        "GOLDEN AMBER EYES — intense, warm, watchful",
+        "POWERFUL MUSCULAR BUILD — broad chest, thick legs, massive paws",
+        "PROUD PROTECTIVE STANCE — always standing tall, chest out, head held high",
+        "Signature: his mane is so thick and dark it almost looks black at the center"
+      ],
+      "personality": "Proud, protective, and regal — stands tall and alert, always watching over his family, but with surprising tenderness",
+      "notLike": "NOT sleek or slim like Dalila, NOT small like the cubs, the BIGGEST character by far"
+    },
+    "dalila": {
+      "name": "Mama Dalila",
+      "description": "Sleek golden lioness mother, skilled huntress, athletic muscular build, warm caring eyes, small notch on left ear",
+      "uniqueFeatures": [
+        "SMALLER than Kazi — no mane, sleek and streamlined",
+        "ATHLETIC MUSCULAR BUILD — lean and powerful, built for speed",
+        "WARM CARING EYES — softer expression than Kazi, but intense when hunting",
+        "SMALL NOTCH ON LEFT EAR — her signature mark from a past hunt",
+        "SMOOTH GOLDEN FUR — lighter and more uniform than Kazi's coloring",
+        "Low hunting stance — often shown crouched and ready to spring"
+      ],
+      "personality": "Clever, fast, and nurturing — graceful in movement, fierce when protecting cubs, tender with family",
+      "notLike": "NOT as large or dark as Kazi, NOT spotted like cubs, always identifiable by ear notch"
+    },
+    "taji": {
+      "name": "Taji",
+      "description": "Male lion cub, curious and playful, lighter golden fur with faint spots still visible, big oversized paws he hasn't grown into yet",
+      "uniqueFeatures": [
+        "LIGHTER GOLDEN FUR with FAINT SPOTS — baby rosettes still visible on coat",
+        "OVERSIZED PAWS — comically big compared to his body, he trips over them",
+        "BIGGER than Zuri — the larger of the two cubs",
+        "Later: tiny tufts of mane beginning to grow around neck",
+        "GOOFY GRIN — always smiling, one side of mouth higher than the other",
+        "Round cub face with oversized ears"
+      ],
+      "personality": "Curious, playful, always getting into trouble — pounces on everything, falls over his own paws, eternally cheerful",
+      "notLike": "NOT as dark as Zuri, NOT as big as parents, identifiable by big paws and lighter color"
+    },
+    "zuri": {
+      "name": "Zuri",
+      "description": "Female lion cub, brave and bold for her size, slightly smaller than Taji, darker golden fur, always trying to keep up with the adults",
+      "uniqueFeatures": [
+        "DARKER GOLDEN FUR — noticeably darker shade than Taji",
+        "SLIGHTLY SMALLER than Taji — the smaller of the two cubs",
+        "DETERMINED EXPRESSION — eyebrows set, jaw firm, ready for anything",
+        "More ATHLETIC build than Taji even as a cub — takes after Mama",
+        "Later: sleek and fast like Dalila, no mane development",
+        "Often shown trying to match the adults' stride"
+      ],
+      "personality": "Brave, bold, determined — always trying to keep up with the grown-ups, serious about learning to hunt",
+      "notLike": "NOT as light-colored as Taji, NOT as big as Taji, NOT as large as parents"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-savanna.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "Vast golden African savanna at sunrise with acacia trees silhouetted against a warm orange sky, tall golden grass swaying in the breeze, distant mountains on the horizon",
+        "es": "Vasta sabana africana dorada al amanecer con acacias silueteadas contra un cálido cielo naranja, hierba alta dorada mecida por la brisa, montañas distantes en el horizonte",
+        "ru": "Бескрайняя золотистая африканская саванна на рассвете с силуэтами акаций на фоне тёплого оранжевого неба, высокая золотая трава колышется на ветру, далёкие горы на горизонте"
+      }
+    },
+    {
+      "filename": "kazi-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magnificent male lion with huge dark brown mane standing proudly on a rocky hill, golden amber eyes, powerful muscular build, golden savanna stretching behind him at sunrise",
+        "es": "Magnífico león macho con enorme melena marrón oscura de pie orgullosamente en una colina rocosa, ojos dorados de ámbar, constitución poderosa y musculosa, sabana dorada extendiéndose detrás al amanecer",
+        "ru": "Великолепный лев-самец с огромной тёмно-коричневой гривой, гордо стоящий на скалистом холме, золотисто-янтарные глаза, мощное мускулистое тело, золотая саванна простирается позади на рассвете"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "dalila-portrait.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Sleek golden lioness in hunting stance in tall savanna grass, athletic muscular build, small notch on left ear, warm focused eyes, golden hour light",
+        "es": "Esbelta leona dorada en postura de caza en la hierba alta de la sabana, constitución atlética y musculosa, pequeña muesca en la oreja izquierda, ojos cálidos y enfocados, luz de hora dorada",
+        "ru": "Стройная золотистая львица в охотничьей стойке в высокой траве саванны, атлетическое мускулистое тело, маленькая зарубка на левом ухе, тёплые сосредоточенные глаза, свет золотого часа"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "cubs-playing.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Two adorable lion cubs tumbling and playing in golden savanna grass, one larger with faint spots and big paws, one smaller and darker, parents watching from shade of acacia tree",
+        "es": "Dos adorables cachorros de león rodando y jugando en la hierba dorada de la sabana, uno más grande con manchas tenues y patas grandes, otro más pequeño y oscuro, padres observando desde la sombra de un árbol de acacia",
+        "ru": "Два очаровательных львёнка кувыркаются и играют в золотой траве саванны, один крупнее с бледными пятнышками и большими лапами, другой поменьше и темнее, родители наблюдают из тени акации"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "learning-to-stalk.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "dalila-hunting.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Powerful golden lioness sprinting at full speed through golden savanna grass, muscles rippling, dust flying, intense focused expression, dramatic golden hour light",
+        "es": "Poderosa leona dorada corriendo a toda velocidad por la hierba dorada de la sabana, músculos ondeando, polvo volando, expresión intensa y enfocada, luz dramática de hora dorada",
+        "ru": "Мощная золотистая львица мчится на полной скорости по золотой траве саванны, мускулы перекатываются, пыль летит, сосредоточенный взгляд, драматичный свет золотого часа"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kazi-roaring.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Magnificent male lion roaring powerfully on rocky outcrop at sunset, huge dark brown mane blowing in wind, dramatic orange and purple sky behind",
+        "es": "Magnífico león macho rugiendo poderosamente en un promontorio rocoso al atardecer, enorme melena marrón oscura al viento, dramático cielo naranja y púrpura detrás",
+        "ru": "Великолепный лев-самец могуче рычит на скалистом выступе на закате, огромная тёмно-коричневая грива развевается на ветру, драматичное оранжево-пурпурное небо позади"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "family-napping.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "watering-hole.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Lion family drinking together at African watering hole at sunset, reflections in still water, zebras and giraffes in distant background, golden light, acacia tree silhouettes",
+        "es": "Familia de leones bebiendo juntos en un abrevadero africano al atardecer, reflejos en el agua quieta, cebras y jirafas en el fondo distante, luz dorada, siluetas de acacias",
+        "ru": "Семья львов пьёт вместе у африканского водопоя на закате, отражения в тихой воде, зебры и жирафы на дальнем фоне, золотой свет, силуэты акаций"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "kazi-night-patrol.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "cubs-growing.jpg",
+      "type": "content",
+      "needsTranslations": false
+    },
+    {
+      "filename": "pride-together.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Majestic lion family sitting together on rocky outcrop overlooking vast African savanna at golden sunset, father with dark mane in center, mother beside him, two young lions in front, dramatic sky",
+        "es": "Majestuosa familia de leones sentada junta en un promontorio rocoso sobre la vasta sabana africana al atardecer dorado, padre con melena oscura en el centro, madre a su lado, dos leones jóvenes al frente, cielo dramático",
+        "ru": "Величественная семья львов сидит вместе на скалистом выступе над бескрайней африканской саванной на золотом закате, отец с тёмной гривой в центре, мать рядом, два молодых льва впереди, драматичное небо"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

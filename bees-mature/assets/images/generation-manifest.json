@@ -1,0 +1,187 @@
+{
+  "chapter": "bees-mature",
+  "style": {
+    "global": "Classic hand-drawn Disney animation style inspired by the Golden Age (Snow White, Bambi). Warm organic flowing lines with natural variation in line weight. Large soulful expressive eyes. Painterly brushstrokes visible in fur, wings, and flowers. Soft rounded character proportions. Vintage animation cel warmth with dramatic lighting for tense scenes. Mixed setting — sunny wildflower meadow for peaceful scenes, dramatic shadows and storm light for conflict scenes. Warm honey tones contrasted with cold danger tones. Emotionally honest and visually powerful."
+  },
+  "routing": {},
+  "characters": {
+    "queen-aurelia": {
+      "name": "Queen Aurelia",
+      "description": "Majestic honey bee queen, the largest bee in the hive, with an elongated golden abdomen, regal bearing, golden crown-like pattern on her thorax",
+      "uniqueFeatures": [
+        "LARGEST bee character — noticeably bigger than all workers, elongated body",
+        "ELONGATED GOLDEN ABDOMEN — much longer than worker bees, tapered and elegant",
+        "GOLDEN CROWN-LIKE PATTERN on thorax — distinctive marking that looks like a tiny crown",
+        "Moves SLOWLY and DELIBERATELY — never rushed, always regal",
+        "Warmer, deeper gold coloring than standard yellow-black workers",
+        "Workers always clustered around her, attending and feeding"
+      ],
+      "personality": "Regal and cold — carries the weight of her crown and the secret of how she earned it",
+      "notLike": "NOT small like workers, NOT black-and-yellow striped like Buzz, NOT fluffy like Petal"
+    },
+    "buzz": {
+      "name": "Buzz",
+      "description": "Hardworking worker bee with bright yellow-and-black stripes, fuzzy body always covered in pollen, one wing with a tiny notch, shows increasing wear as story progresses",
+      "uniqueFeatures": [
+        "Standard worker size — much smaller than Queen Aurelia",
+        "BRIGHT YELLOW-AND-BLACK stripes — classic bee coloring, vivid and cheerful",
+        "TINY NOTCH in one wing — distinctive identifying mark, but flies perfectly",
+        "FUZZY body always DUSTED WITH POLLEN — looks like she rolled in gold dust",
+        "Wings become visibly FRAYED and WORN as story progresses — showing her short lifespan",
+        "Expression shifts from cheerful to determined to weary but unwavering"
+      ],
+      "personality": "Hardworking and uncomplaining — works until her body gives out, never questions her duty",
+      "notLike": "NOT large like Queen Aurelia, NOT extra fluffy like Petal, NOT dark like Spike"
+    },
+    "petal": {
+      "name": "Petal",
+      "description": "Young bee on her first foraging flights, slightly smaller than other workers, lighter coloring, extra fluffy fuzz, wide-eyed wonder that matures into quiet resolve",
+      "uniqueFeatures": [
+        "SLIGHTLY SMALLER than other worker bees — young and delicate",
+        "LIGHTER COLORING — paler yellow, less intense stripes than Buzz",
+        "EXTRA FLUFFY — has not worn down her fuzz yet, looks like a tiny pompom",
+        "WIDE EYES — bigger, rounder eyes than other bees, full of wonder",
+        "Lighter, more translucent wings — newer and more delicate",
+        "Transforms from nervous newcomer to determined veteran across the story"
+      ],
+      "personality": "Starts nervous and wide-eyed, ends resolute — the witness who sees both beauty and cost",
+      "notLike": "NOT as boldly striped as Buzz, NOT large like Queen Aurelia, NOT dark like Spike"
+    },
+    "spike": {
+      "name": "Spike",
+      "description": "Guard bee, slightly larger worker with darker coloring, stationed at the hive entrance, mandibles always ready, willing to make the ultimate sacrifice",
+      "uniqueFeatures": [
+        "SLIGHTLY LARGER than standard workers — bulkier, more muscular build",
+        "DARKER COLORING — deeper brown-black with darker yellow, more muted stripes",
+        "Always STANDING ALERT with MANDIBLES READY — jaws slightly open",
+        "Stockier build — wider thorax and legs than other workers",
+        "Positioned at hive entrance — always on guard duty",
+        "Intense, watchful eyes scanning everything — the face of sacrifice"
+      ],
+      "personality": "Protective and selfless — knows his sting will kill him, stands ready anyway",
+      "notLike": "NOT cheerful and bouncy like Buzz, NOT fluffy like Petal, NOT regal like Queen Aurelia"
+    }
+  },
+  "actions": [],
+  "images": [
+    {
+      "filename": "hero-dark-hive.jpg",
+      "type": "landscape",
+      "alt": {
+        "en": "A beehive at dusk with dramatic storm clouds gathering, bees flying in urgent formation, the warm golden glow of the hive interior contrasting with the dark threatening sky, a lone hornet silhouette on the horizon",
+        "es": "Una colmena al anochecer con dramaticas nubes de tormenta acumulandose, abejas volando en formacion urgente, el calido brillo dorado del interior de la colmena contrastando con el cielo oscuro amenazante, la silueta de un avispón en el horizonte",
+        "ru": "Улей в сумерках с надвигающимися грозовыми тучами, пчёлы летят в срочном строю, тёплое золотистое свечение улья контрастирует с тёмным угрожающим небом, одинокий силуэт шершня на горизонте"
+      }
+    },
+    {
+      "filename": "hive-in-danger.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Beehive at dusk with storm clouds, bees rushing home, dark hornet shapes in the distance, ominous atmosphere",
+        "es": "Colmena al anochecer con nubes de tormenta, abejas apresurandose a casa, formas oscuras de avispones a lo lejos, atmosfera ominosa",
+        "ru": "Улей в сумерках с грозовыми тучами, пчёлы спешат домой, тёмные силуэты шершней вдали, зловещая атмосфера"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "hornet-scouts.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Two massive giant hornets hovering menacingly near the hive entrance, dwarfing a lone guard bee, dramatic tense lighting",
+        "es": "Dos avispones gigantes masivos suspendidos amenazadoramente cerca de la entrada de la colmena, empequeñeciendo a una abeja guardia solitaria",
+        "ru": "Два огромных шершня угрожающе зависли у входа в улей, крошечная пчела-охранник перед ними, напряжённое драматичное освещение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "spikes-alarm.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Guard bee releasing alarm pheromone as a golden mist, chain reaction of alert spreading through the colony, urgent dramatic atmosphere",
+        "es": "Abeja guardia liberando feromona de alarma como una niebla dorada, reaccion en cadena de alerta esparciendose por la colonia",
+        "ru": "Пчела-охранник выпускает феромон тревоги в виде золотистого тумана, цепная реакция тревоги распространяется по колонии"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "heat-defense.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Hundreds of bees forming a vibrating heat ball around a trapped giant hornet, visible heat waves, some bees collapsing from the effort",
+        "es": "Cientos de abejas formando una bola de calor vibrante alrededor de un avispón atrapado, ondas de calor visibles, algunas abejas colapsando por el esfuerzo",
+        "ru": "Сотни пчёл формируют вибрирующий тепловой шар вокруг пойманного шершня, видимые тепловые волны, некоторые пчёлы падают от усилия"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "stinging-means-dying.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Dramatic close-up of a bee with barbed stinger torn from its abdomen after stinging a hornet, showing the ultimate sacrifice",
+        "es": "Dramatico primer plano de una abeja con aguijon arrancado de su abdomen tras picar a un avispón, mostrando el sacrificio definitivo",
+        "ru": "Драматичный крупный план пчелы с вырванным зазубренным жалом из брюшка после того, как ужалила шершня, высшая жертва"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "workers-short-life.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Progression of a worker bee's life from larva to worn-out forager with frayed wings, the bittersweet passage of six short weeks",
+        "es": "Progresion de la vida de una obrera desde larva hasta recolectora desgastada con alas deshilachadas, el agridulce paso de seis cortas semanas",
+        "ru": "Жизненный путь рабочей пчелы от личинки до изношенной собирательницы с истрёпанными крыльями, горько-сладкое течение шести коротких недель"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "queens-dark-secret.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Queen bee approaching sealed rival queen cells in a dark royal chamber, one cell already torn open, cold determined expression",
+        "es": "Abeja reina acercandose a celdas reales selladas de rivales en una oscura camara real, una celda ya abierta, expresion fria y decidida",
+        "ru": "Королева пчёл приближается к запечатанным маточным ячейкам соперниц в тёмной королевской палате, одна ячейка уже вскрыта, холодное решительное выражение"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "democracy-in-action.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Massive swarm of bees on a branch with scouts performing competing waggle dances, a living democratic vote in golden light",
+        "es": "Enjambre masivo de abejas en una rama con exploradoras realizando danzas competitivas, un voto democratico viviente en luz dorada",
+        "ru": "Огромный рой пчёл на ветке, разведчицы исполняют конкурирующие танцы, живое демократическое голосование в золотистом свете"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "unprepared-hive.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Devastated beehive torn apart, broken honeycomb and dead bees, honey dripping to waste, a few survivors above the ruins, cold somber light",
+        "es": "Colmena devastada destrozada, panal roto y abejas muertas, miel goteando desperdiciada, unos pocos sobrevivientes sobre las ruinas, luz fria y sombria",
+        "ru": "Разрушенный улей, сломанные соты и погибшие пчёлы, мёд стекает впустую, несколько выживших над руинами, холодный мрачный свет"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "cost-of-sweetness.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Jar of golden honey on a windowsill surrounded by translucent ghostly images of bees who gave their lives, bittersweet and beautiful",
+        "es": "Frasco de miel dorada en un alfeizar rodeado de imagenes translucidas fantasmales de abejas que dieron sus vidas, agridulce y hermoso",
+        "ru": "Банка золотистого мёда на подоконнике, окружённая полупрозрачными образами пчёл, отдавших свои жизни, горько-сладкое и прекрасное"
+      },
+      "needsTranslations": false
+    },
+    {
+      "filename": "bittersweet-balance.jpg",
+      "type": "content",
+      "alt": {
+        "en": "Beehive at golden sunrise after battle, fallen defenders at entrance, new bees emerging inside, experienced forager heading to flowers, life continuing",
+        "es": "Colmena al amanecer dorado despues de la batalla, defensores caidos en la entrada, nuevas abejas emergiendo adentro, recolectora experimentada dirigiendose a las flores",
+        "ru": "Улей на золотистом рассвете после битвы, павшие защитники у входа, новые пчёлы рождаются внутри, опытная собирательница летит к цветам, жизнь продолжается"
+      },
+      "needsTranslations": false
+    }
+  ]
+}

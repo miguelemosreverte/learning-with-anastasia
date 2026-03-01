@@ -1,0 +1,113 @@
+{
+  "chapter": "lions",
+  "createdAt": "2026-02-28T22:56:22.989Z",
+  "characters": [
+    {
+      "id": "kazi",
+      "name": "Papa Kazi",
+      "description": "Magnificent male lion father with a huge dark brown mane, golden amber eyes, powerful muscular build, proud protective stance",
+      "uniqueFeatures": [
+        "LARGEST character — visibly bigger and more powerful than all others",
+        "HUGE DARK BROWN MANE — thick, voluminous, frames his entire face like a crown",
+        "GOLDEN AMBER EYES — intense, warm, watchful",
+        "POWERFUL MUSCULAR BUILD — broad chest, thick legs, massive paws",
+        "PROUD PROTECTIVE STANCE — always standing tall, chest out, head held high",
+        "Signature: his mane is so thick and dark it almost looks black at the center"
+      ],
+      "personality": "Proud, protective, and regal — stands tall and alert, always watching over his family, but with surprising tenderness",
+      "notLike": "NOT sleek or slim like Dalila, NOT small like the cubs, the BIGGEST character by far"
+    },
+    {
+      "id": "dalila",
+      "name": "Mama Dalila",
+      "description": "Sleek golden lioness mother, skilled huntress, athletic muscular build, warm caring eyes, small notch on left ear",
+      "uniqueFeatures": [
+        "SMALLER than Kazi — no mane, sleek and streamlined",
+        "ATHLETIC MUSCULAR BUILD — lean and powerful, built for speed",
+        "WARM CARING EYES — softer expression than Kazi, but intense when hunting",
+        "SMALL NOTCH ON LEFT EAR — her signature mark from a past hunt",
+        "SMOOTH GOLDEN FUR — lighter and more uniform than Kazi's coloring",
+        "Low hunting stance — often shown crouched and ready to spring"
+      ],
+      "personality": "Clever, fast, and nurturing — graceful in movement, fierce when protecting cubs, tender with family",
+      "notLike": "NOT as large or dark as Kazi, NOT spotted like cubs, always identifiable by ear notch"
+    },
+    {
+      "id": "taji",
+      "name": "Taji",
+      "description": "Male lion cub, curious and playful, lighter golden fur with faint spots still visible, big oversized paws he hasn't grown into yet",
+      "uniqueFeatures": [
+        "LIGHTER GOLDEN FUR with FAINT SPOTS — baby rosettes still visible on coat",
+        "OVERSIZED PAWS — comically big compared to his body, he trips over them",
+        "BIGGER than Zuri — the larger of the two cubs",
+        "Later: tiny tufts of mane beginning to grow around neck",
+        "GOOFY GRIN — always smiling, one side of mouth higher than the other",
+        "Round cub face with oversized ears"
+      ],
+      "personality": "Curious, playful, always getting into trouble — pounces on everything, falls over his own paws, eternally cheerful",
+      "notLike": "NOT as dark as Zuri, NOT as big as parents, identifiable by big paws and lighter color"
+    },
+    {
+      "id": "zuri",
+      "name": "Zuri",
+      "description": "Female lion cub, brave and bold for her size, slightly smaller than Taji, darker golden fur, always trying to keep up with the adults",
+      "uniqueFeatures": [
+        "DARKER GOLDEN FUR — noticeably darker shade than Taji",
+        "SLIGHTLY SMALLER than Taji — the smaller of the two cubs",
+        "DETERMINED EXPRESSION — eyebrows set, jaw firm, ready for anything",
+        "More ATHLETIC build than Taji even as a cub — takes after Mama",
+        "Later: sleek and fast like Dalila, no mane development",
+        "Often shown trying to match the adults' stride"
+      ],
+      "personality": "Brave, bold, determined — always trying to keep up with the grown-ups, serious about learning to hunt",
+      "notLike": "NOT as light-colored as Taji, NOT as big as Taji, NOT as large as parents"
+    }
+  ],
+  "step0": {
+    "status": "pending",
+    "attempts": 0,
+    "feedback": []
+  },
+  "step1": {
+    "status": "approved",
+    "attempts": 1,
+    "feedback": [],
+    "approvedVersion": 1
+  },
+  "step2": {
+    "status": "approved",
+    "characters": {
+      "kazi": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "dalila": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "taji": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      },
+      "zuri": {
+        "status": "approved",
+        "attempts": 1,
+        "approvedVersion": 1
+      }
+    }
+  },
+  "step3": {
+    "status": "approved",
+    "chosenStyle": 1,
+    "styleName": "translucency-botanical",
+    "chosenMoods": [
+      "translucency",
+      "lush-botanical"
+    ],
+    "styleDescription": "Pixar-quality 3D rendering. Smooth, rounded forms with subsurface scattering on skin. Expressive character animation with large soulful eyes. Rich saturated colors. Photorealistic textures but stylized proportions. Professional children's book illustration quality. Cinematic lighting with warm key light and cool fill.\n\nEmphasis on light passing through materials — translucent ears, glowing skin edges, light shining through leaves/water/ice. Subsurface scattering cranked up. Back-lit subjects with ethereal glow.\n\nRich botanical detail filling the frame — individually rendered leaves, visible bark texture, dewdrops on petals, moss on stones, flowers in full bloom. Nature as living wallpaper."
+  },
+  "updatedAt": "2026-02-28T23:01:27.022Z"
+}

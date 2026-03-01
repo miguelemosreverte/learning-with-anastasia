@@ -1,0 +1,588 @@
+{
+  "chapter": "ants-mature",
+  "lastUpdated": "2026-03-01T00:49:44.496Z",
+  "summary": {
+    "total": 30,
+    "byType": {
+      "anatomical-fix": 23,
+      "composition-fix": 7
+    },
+    "byTool": {
+      "fix-image": 30
+    },
+    "verified": 5,
+    "verifiedRate": "17%",
+    "automated": 30,
+    "manual": 0,
+    "automatedRate": "100%",
+    "avgAttempts": 2.8,
+    "totalCost": 3.4
+  },
+  "entries": [
+    {
+      "timestamp": "2026-03-01T00:12:59.452Z",
+      "image": "hero-colony-siege.jpg",
+      "tag": "H",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: Several ants in the background and midground have an incorrect number of limbs (fewer than 6 visible legs or ambiguous number due to merging/missing limbs). For example, many ants appear to have only 2-4 legs, or their legs are indistinguishable.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/hero-colony-siege-v1.jpg",
+      "afterImage": "assets/images/hero-colony-siege.jpg",
+      "attemptImages": [
+        "assets/images/attempts/hero-colony-siege-v1.jpg",
+        "assets/images/attempts/hero-colony-siege-v2.jpg",
+        "assets/images/attempts/hero-colony-siege-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:13:42.516Z",
+      "image": "scouts-report-danger.jpg",
+      "tag": "#2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The instruction states to count all limbs on every mature ant to ensure anatomical correctness. While the foreground and midground ants clearly exhibit the anatomically correct six legs, the large background swarm of ants is too dense and indistinct to accurately count the limbs of each individual ant. Therefore, a complete verification of all ants' limb counts cannot be performed as strictly required.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/scouts-report-danger-v1.jpg",
+      "afterImage": "assets/images/scouts-report-danger.jpg",
+      "attemptImages": [
+        "assets/images/attempts/scouts-report-danger-v1.jpg",
+        "assets/images/attempts/scouts-report-danger-v2.jpg",
+        "assets/images/attempts/scouts-report-danger-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:14:28.884Z",
+      "image": "majors-decision.jpg",
+      "tag": "#4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: All visible ants consistently have 4 legs instead of the anatomically correct 6 legs. This includes the two prominent ants in the foreground and all background ants.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/majors-decision-v1.jpg",
+      "afterImage": "assets/images/majors-decision.jpg",
+      "attemptImages": [
+        "assets/images/attempts/majors-decision-v1.jpg",
+        "assets/images/attempts/majors-decision-v2.jpg",
+        "assets/images/attempts/majors-decision-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:15:19.400Z",
+      "image": "tunnel-defenders.jpg",
+      "tag": "#5",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The three large, prominent ants in the foreground do not clearly display the anatomically correct six legs; based on visible limbs, they appear to have fewer. Many of the smaller ants in the background are too obscured to accurately count their limbs, failing the requirement to count limbs on 'every ants mature'.; COMPOSITION: The texture of the tunnel walls, particularly visible in the cropped images, features numerous small, irregular bumps and holes which could potentially trigger trypophobia.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/tunnel-defenders-v1.jpg",
+      "afterImage": "assets/images/tunnel-defenders.jpg",
+      "attemptImages": [
+        "assets/images/attempts/tunnel-defenders-v1.jpg",
+        "assets/images/attempts/tunnel-defenders-v2.jpg",
+        "assets/images/attempts/tunnel-defenders-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:16:07.850Z",
+      "image": "nursery-evacuation.jpg",
+      "tag": "#7",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Unable to confirm the anatomically correct number of limbs for all 'ants mature' in the illustration. While foreground ants appear correct, many ants in the mid-ground and background are too obscured or blurred due to depth of field to allow for an accurate count of all six legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/nursery-evacuation-v1.jpg",
+      "afterImage": "assets/images/nursery-evacuation.jpg",
+      "attemptImages": [
+        "assets/images/attempts/nursery-evacuation-v1.jpg",
+        "assets/images/attempts/nursery-evacuation-v2.jpg",
+        "assets/images/attempts/nursery-evacuation-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:16:58.887Z",
+      "image": "the-aftermath.jpg",
+      "tag": "#9",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Potential trypophobia-triggering texture in the ant mound design due to repetitive holes.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/the-aftermath-v1.jpg",
+      "afterImage": "assets/images/the-aftermath.jpg",
+      "attemptImages": [
+        "assets/images/attempts/the-aftermath-v1.jpg",
+        "assets/images/attempts/the-aftermath-v2.jpg",
+        "assets/images/attempts/the-aftermath-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:17:46.067Z",
+      "image": "colony-endures.jpg",
+      "tag": "#11",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "COMPOSITION: The clustered small holes on the ant-hill structure and the arrangement of ant eggs/larvae inside the window could be mildly trypophobia-triggering for some sensitive individuals.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/colony-endures-v1.jpg",
+      "afterImage": "assets/images/colony-endures.jpg",
+      "attemptImages": [
+        "assets/images/attempts/colony-endures-v1.jpg",
+        "assets/images/attempts/colony-endures-v2.jpg",
+        "assets/images/attempts/colony-endures-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:18:53.561Z",
+      "image": "detail-mandible-closeup.jpg",
+      "tag": "V1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The ant does not have the anatomically correct number of visible legs. Only 3-4 legs are clearly discernible, whereas an ant should have 6 legs.",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-mandible-closeup-v1.jpg",
+      "afterImage": "assets/images/detail-mandible-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-mandible-closeup-v1.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v2.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:19:50.876Z",
+      "image": "detail-antenna-closeup.jpg",
+      "tag": "V2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The ant has only 4 visible limbs, whereas an anatomically correct ant should have 6 legs.; PHYSICS: The glowing red and blue/white entities are floating without visible support, which violates the rule that all objects must obey gravity.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-antenna-closeup-v1.jpg",
+      "afterImage": "assets/images/detail-antenna-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-antenna-closeup-v1.jpg",
+        "assets/images/attempts/detail-antenna-closeup-v2.jpg",
+        "assets/images/attempts/detail-antenna-closeup-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:20:32.183Z",
+      "image": "detail-exoskeleton-texture.jpg",
+      "tag": "V3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The small ant does not clearly display the anatomically correct number of 6 limbs; only 3-4 limbs are distinctly visible, with others being obscured or not rendered.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-exoskeleton-texture-v1.jpg",
+      "afterImage": "assets/images/detail-exoskeleton-texture.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-exoskeleton-texture-v1.jpg",
+        "assets/images/attempts/detail-exoskeleton-texture-v2.jpg",
+        "assets/images/attempts/detail-exoskeleton-texture-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:20:50.772Z",
+      "image": "detail-leg-grip.jpg",
+      "tag": "V4",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The ant has an anatomically incorrect number of visible legs; only 4 legs are clearly discernible (3 on the left, 1 specialized leg on the right), whereas an ant should have 6 legs.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-leg-grip-v1.jpg",
+      "afterImage": "assets/images/detail-leg-grip.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-leg-grip-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-03-01T00:21:06.479Z",
+      "image": "fun-fact-strength.jpg",
+      "tag": "F1",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Embedded text '50X' found on the dumbbell, which violates the 'no embedded text, labels, watermarks, or signatures' rule.",
+      "attempts": 1,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-strength-v1.jpg",
+      "afterImage": "assets/images/fun-fact-strength.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-strength-v1.jpg"
+      ],
+      "cost_estimate": 0.04
+    },
+    {
+      "timestamp": "2026-03-01T00:21:51.325Z",
+      "image": "fun-fact-fungus-farming.jpg",
+      "tag": "F4",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "The dense cluster of textured, round objects in the lower right and center may trigger trypophobia in some viewers.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-fungus-farming-v1.jpg",
+      "afterImage": "assets/images/fun-fact-fungus-farming.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-fungus-farming-v1.jpg",
+        "assets/images/attempts/fun-fact-fungus-farming-v2.jpg",
+        "assets/images/attempts/fun-fact-fungus-farming-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:29:38.052Z",
+      "image": "hero-colony-siege.jpg",
+      "tag": "H",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Several ants in the background marching lines have an incorrect or inconsistent number of visible legs, appearing to have fewer than the anatomically correct six limbs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/hero-colony-siege-v4.jpg",
+      "afterImage": "assets/images/hero-colony-siege.jpg",
+      "attemptImages": [
+        "assets/images/attempts/hero-colony-siege-v4.jpg",
+        "assets/images/attempts/hero-colony-siege-v5.jpg",
+        "assets/images/attempts/hero-colony-siege-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:30:17.903Z",
+      "image": "scouts-report-danger.jpg",
+      "tag": "#2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Several ants in the large group on the far-left background are too obscured or stylized to definitively count all 6 limbs, violating the requirement that each ant mature must have the anatomically correct number of legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/scouts-report-danger-v4.jpg",
+      "afterImage": "assets/images/scouts-report-danger.jpg",
+      "attemptImages": [
+        "assets/images/attempts/scouts-report-danger-v4.jpg",
+        "assets/images/attempts/scouts-report-danger-v5.jpg",
+        "assets/images/attempts/scouts-report-danger-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:31:08.821Z",
+      "image": "tunnel-defenders.jpg",
+      "tag": "#5",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: The three mature ants in the foreground do not clearly display all six legs; only four legs are distinctly visible for each, indicating two missing legs from an anatomically correct count.; Composition: The textured walls of the tunnel feature numerous small, irregularly shaped indentations and bumps, which could potentially trigger trypophobia.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/tunnel-defenders-v4.jpg",
+      "afterImage": "assets/images/tunnel-defenders.jpg",
+      "attemptImages": [
+        "assets/images/attempts/tunnel-defenders-v4.jpg",
+        "assets/images/attempts/tunnel-defenders-v5.jpg",
+        "assets/images/attempts/tunnel-defenders-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:31:58.156Z",
+      "image": "chemical-warfare.jpg",
+      "tag": "#6",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Ant on the far left appears to have only 5 visible legs.; Ant on the far right (partially visible body) appears to have only 3 visible legs.; Ant on the bottom right (mostly obscured) appears to have only 2 visible legs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/chemical-warfare-v1.jpg",
+      "afterImage": "assets/images/chemical-warfare.jpg",
+      "attemptImages": [
+        "assets/images/attempts/chemical-warfare-v1.jpg",
+        "assets/images/attempts/chemical-warfare-v2.jpg",
+        "assets/images/attempts/chemical-warfare-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:32:37.122Z",
+      "image": "soldiers-sacrifice.jpg",
+      "tag": "#8",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The main muscular ant is depicted with two prominent, arm-like limbs originating from its upper thorax, in addition to four more typical walking legs lower down on its body. Ants are anatomically characterized by having six legs, all of which typically serve in locomotion and manipulation without such a distinct separation into 'arms' and 'legs'. This representation of separate 'arms' alongside four 'legs' constitutes an anatomical impossibility for an ant.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/soldiers-sacrifice-v1.jpg",
+      "afterImage": "assets/images/soldiers-sacrifice.jpg",
+      "attemptImages": [
+        "assets/images/attempts/soldiers-sacrifice-v1.jpg",
+        "assets/images/attempts/soldiers-sacrifice-v2.jpg",
+        "assets/images/attempts/soldiers-sacrifice-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:33:15.974Z",
+      "image": "detail-mandible-closeup.jpg",
+      "tag": "V1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The ant, which should anatomically have 6 legs, only clearly shows 4 discernible legs. The remaining 2 legs are not visible or clearly implied, making it impossible to confirm the anatomically correct number of limbs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-mandible-closeup-v4.jpg",
+      "afterImage": "assets/images/detail-mandible-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-mandible-closeup-v4.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v5.jpg",
+        "assets/images/attempts/detail-mandible-closeup-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:33:43.926Z",
+      "image": "detail-antenna-closeup.jpg",
+      "tag": "V2",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "COMPOSITION: The clustered, glowing red elements within the web may be mildly trypophobia-triggering for some viewers due to their repetitive, organic, and somewhat porous appearance.",
+      "attempts": 2,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/detail-antenna-closeup-v4.jpg",
+      "afterImage": "assets/images/detail-antenna-closeup.jpg",
+      "attemptImages": [
+        "assets/images/attempts/detail-antenna-closeup-v4.jpg",
+        "assets/images/attempts/detail-antenna-closeup-v5.jpg"
+      ],
+      "cost_estimate": 0.08
+    },
+    {
+      "timestamp": "2026-03-01T00:34:26.999Z",
+      "image": "fun-fact-colony-size.jpg",
+      "tag": "F2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Multiple ants on the glowing trail lack the anatomically correct number of legs (some appear to have 4 or 5 legs, instead of 6). This is particularly noticeable in the zoomed-in circles where individual ants can be better inspected. For instance, in the top-left circle, the ant at the very top-left corner appears to have only 4 legs. The ant at the bottom right of the same circle has only 5 visible legs. In the bottom-right circle, several ants appear to have fewer than 6 legs due to imperfect rendering.; COMPOSITION: Some visual artifacts are present, especially along the glowing trail, where the ants are not always distinct entities but sometimes merge slightly or have inconsistent limb counts due to the generation process at smaller scales.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-colony-size-v1.jpg",
+      "afterImage": "assets/images/fun-fact-colony-size.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-colony-size-v1.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v2.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:35:04.744Z",
+      "image": "fun-fact-scent-trails.jpg",
+      "tag": "F3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "The ant in the mid-ground has only 4 legs, which is anatomically incorrect for an ant (should have 6).",
+      "attempts": 3,
+      "verified": true,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-scent-trails-v1.jpg",
+      "afterImage": "assets/images/fun-fact-scent-trails.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-scent-trails-v1.jpg",
+        "assets/images/attempts/fun-fact-scent-trails-v2.jpg",
+        "assets/images/attempts/fun-fact-scent-trails-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:35:46.256Z",
+      "image": "fun-fact-fungus-farming.jpg",
+      "tag": "F4",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "COMPOSITION: The white mounds exhibit textures that may trigger trypophobia, which is unsuitable for a children's book illustration.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-fungus-farming-v4.jpg",
+      "afterImage": "assets/images/fun-fact-fungus-farming.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-fungus-farming-v4.jpg",
+        "assets/images/attempts/fun-fact-fungus-farming-v5.jpg",
+        "assets/images/attempts/fun-fact-fungus-farming-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:43:40.673Z",
+      "image": "enemy-approaches.jpg",
+      "tag": "#3",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: Numerous ants, particularly those in the mid-ground and background, exhibit indistinct, fused, or potentially fewer than the anatomically correct six legs, making it impossible to definitively verify the limb count for every individual ant as required.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/enemy-approaches-v1.jpg",
+      "afterImage": "assets/images/enemy-approaches.jpg",
+      "attemptImages": [
+        "assets/images/attempts/enemy-approaches-v1.jpg",
+        "assets/images/attempts/enemy-approaches-v2.jpg",
+        "assets/images/attempts/enemy-approaches-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:44:33.081Z",
+      "image": "chemical-warfare.jpg",
+      "tag": "#6",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Ant 5 (mid-right, partially obscured) only clearly shows 5 legs, not the anatomically correct 6.; Ant 6 (far right, partially obscured) only clearly shows 3 legs, not the anatomically correct 6.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/chemical-warfare-v4.jpg",
+      "afterImage": "assets/images/chemical-warfare.jpg",
+      "attemptImages": [
+        "assets/images/attempts/chemical-warfare-v4.jpg",
+        "assets/images/attempts/chemical-warfare-v5.jpg",
+        "assets/images/attempts/chemical-warfare-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:45:21.620Z",
+      "image": "nursery-evacuation.jpg",
+      "tag": "#7",
+      "type": "composition-fix",
+      "tool": "fix-image",
+      "description": "Visual artifacts: Faint circular marks present in the bottom right corner.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/nursery-evacuation-v4.jpg",
+      "afterImage": "assets/images/nursery-evacuation.jpg",
+      "attemptImages": [
+        "assets/images/attempts/nursery-evacuation-v4.jpg",
+        "assets/images/attempts/nursery-evacuation-v5.jpg",
+        "assets/images/attempts/nursery-evacuation-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:46:06.958Z",
+      "image": "soldiers-sacrifice.jpg",
+      "tag": "#8",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "ANATOMY: The exact number of legs cannot be confirmed for two ants in the blurry background due to obscuration and depth-of-field blur, making it impossible to verify they each have the anatomically correct six limbs.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/soldiers-sacrifice-v4.jpg",
+      "afterImage": "assets/images/soldiers-sacrifice.jpg",
+      "attemptImages": [
+        "assets/images/attempts/soldiers-sacrifice-v4.jpg",
+        "assets/images/attempts/soldiers-sacrifice-v5.jpg",
+        "assets/images/attempts/soldiers-sacrifice-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:46:53.479Z",
+      "image": "rebuilding.jpg",
+      "tag": "#10",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: The limb count for one ant (small red-brown ant in the mid-background left) cannot be definitively confirmed as having 6 legs due to its size and angle, failing the strict anatomical count requirement for every ant.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/rebuilding-v1.jpg",
+      "afterImage": "assets/images/rebuilding.jpg",
+      "attemptImages": [
+        "assets/images/attempts/rebuilding-v1.jpg",
+        "assets/images/attempts/rebuilding-v2.jpg",
+        "assets/images/attempts/rebuilding-v3.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:47:35.489Z",
+      "image": "fun-fact-strength.jpg",
+      "tag": "F1",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Ant has 8 limbs (6 legs and 2 distinct arms), which is not anatomically correct for an ant.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-strength-v2.jpg",
+      "afterImage": "assets/images/fun-fact-strength.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-strength-v2.jpg",
+        "assets/images/attempts/fun-fact-strength-v3.jpg",
+        "assets/images/attempts/fun-fact-strength-v4.jpg"
+      ],
+      "cost_estimate": 0.12
+    },
+    {
+      "timestamp": "2026-03-01T00:49:08.932Z",
+      "image": "fun-fact-colony-size.jpg",
+      "tag": "F2",
+      "type": "anatomical-fix",
+      "tool": "fix-image",
+      "description": "Anatomy: One ant in the top-left magnified circle appears to have only 5 legs. Counting from the top, it is the 6th ant from the left on the upper row. Its rear-right leg is missing or obscured in a way that makes it appear absent.; Anatomy: One ant in the top-left magnified circle appears to have only 5 legs. Counting from the top, it is the 3rd ant from the left on the lower row. Its rear-right leg is missing or obscured in a way that makes it appear absent.; Anatomy: One ant in the bottom-right magnified circle appears to have only 5 legs. Counting from the right, it is the 4th ant from the top on the right side. Its rear-left leg is missing or obscured in a way that makes it appear absent.; Anatomy: One ant in the bottom-right magnified circle appears to have only 5 legs. Counting from the right, it is the 6th ant from the bottom on the left side. Its rear-right leg is missing or obscured in a way that makes it appear absent.",
+      "attempts": 3,
+      "verified": false,
+      "automated": true,
+      "beforeImage": "assets/images/attempts/fun-fact-colony-size-v4.jpg",
+      "afterImage": "assets/images/fun-fact-colony-size.jpg",
+      "attemptImages": [
+        "assets/images/attempts/fun-fact-colony-size-v4.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v5.jpg",
+        "assets/images/attempts/fun-fact-colony-size-v6.jpg"
+      ],
+      "cost_estimate": 0.12
+    }
+  ]
+}

@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lions: Kings of the Savanna - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Lions: Kings of the Savanna</h1>
+        <h1 data-lang="es">Leones: Reyes de la Sabana</h1>
+        <h1 data-lang="ru">Львы: Короли Саванны</h1>
+        <p data-lang="en" class="active">A Family of Roars, Naps, and Mighty Love</p>
+        <p data-lang="es">Una Familia de Rugidos, Siestas y Amor Poderoso</p>
+        <p data-lang="ru">Семья рыков, снов и могучей любви</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-savanna.jpg"
+             alt="Lions"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Lions</h2>
+            <h2 class="hero-title" data-lang="es">Leones</h2>
+            <h2 class="hero-title" data-lang="ru">Львы</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">Kings of the Savanna</p>
+            <p class="hero-subtitle" data-lang="es">Reyes de la Sabana</p>
+            <p class="hero-subtitle" data-lang="ru">Короли Саванны</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/kazi-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Magnificent male lion with huge dark brown mane standing proudly on a rocky hill, golden amber eyes, powerful muscular build, golden savanna stretching behind him at sunrise"
+                 data-alt-en="Magnificent male lion with huge dark brown mane standing proudly on a rocky hill, golden amber eyes, powerful muscular build, golden savanna stretching behind him at sunrise"
+                 data-alt-es="Magnífico león macho con enorme melena marrón oscura de pie orgullosamente en una colina rocosa, ojos dorados de ámbar, constitución poderosa y musculosa, sabana dorada extendiéndose detrás al amanecer"
+                 data-alt-ru="Великолепный лев-самец с огромной тёмно-коричневой гривой, гордо стоящий на скалистом холме, золотисто-янтарные глаза, мощное мускулистое тело, золотая саванна простирается позади на рассвете"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Papa Kazi, the Mighty King</h2>
+            <h2 data-lang="es">Conoce a Papá Kazi, el Rey Poderoso</h2>
+            <h2 data-lang="ru">Знакомьтесь: Папа Кази, могучий король</h2>
+            <div data-lang="en" class="active">
+                <p>Standing on a rocky hill overlooking the golden savanna, Papa Kazi is the most magnificent lion you have ever seen! His huge dark brown mane flows around his face like a crown, making him look twice as big as he already is — and he is BIG. His golden amber eyes see everything — every bird, every rustle in the grass. When Kazi yawns, you can see teeth as long as your fingers! But don&#x27;t worry — this mighty king has the gentlest heart. &#x27;My job,&#x27; he rumbles in his deep voice, &#x27;is to keep my family safe. And I always will.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡De pie en una colina rocosa sobre la dorada sabana, Papá Kazi es el león más magnífico que hayas visto! Su enorme melena marrón oscura fluye alrededor de su cara como una corona, haciéndolo parecer el doble de grande de lo que ya es — y es MUY grande. Sus ojos dorados de ámbar lo ven todo — cada pájaro, cada susurro en la hierba. ¡Cuando Kazi bosteza, puedes ver dientes tan largos como tus dedos! Pero no te preocupes — este poderoso rey tiene el corazón más tierno. &#x27;Mi trabajo,&#x27; retumba con su voz profunda, &#x27;es mantener a mi familia a salvo. Y siempre lo haré.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Стоя на скалистом холме над золотой саванной, Папа Кази — самый великолепный лев, которого вы когда-либо видели! Его огромная тёмно-коричневая грива обрамляет лицо как корона, делая его вдвое больше, чем он уже есть — а он ОГРОМНЫЙ. Его золотисто-янтарные глаза видят всё — каждую птицу, каждый шорох в траве. Когда Кази зевает, видны зубы длиной с ваши пальцы! Но не волнуйтесь — у этого могучего короля самое нежное сердце. &#x27;Моя работа,&#x27; рокочет он глубоким голосом, &#x27;защищать мою семью. И я всегда буду.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/dalila-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Sleek golden lioness in hunting stance in tall savanna grass, athletic muscular build, small notch on left ear, warm focused eyes, golden hour light"
+                 data-alt-en="Sleek golden lioness in hunting stance in tall savanna grass, athletic muscular build, small notch on left ear, warm focused eyes, golden hour light"
+                 data-alt-es="Esbelta leona dorada en postura de caza en la hierba alta de la sabana, constitución atlética y musculosa, pequeña muesca en la oreja izquierda, ojos cálidos y enfocados, luz de hora dorada"
+                 data-alt-ru="Стройная золотистая львица в охотничьей стойке в высокой траве саванны, атлетическое мускулистое тело, маленькая зарубка на левом ухе, тёплые сосредоточенные глаза, свет золотого часа"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama Dalila, the Great Huntress</h2>
+            <h2 data-lang="es">Mamá Dalila, la Gran Cazadora</h2>
+            <h2 data-lang="ru">Мама Далила, великая охотница</h2>
+            <div data-lang="en" class="active">
+                <p>While Papa Kazi is the biggest and loudest, Mama Dalila is the cleverest and fastest. She is a sleek, golden lioness with strong muscles that ripple under her smooth fur. See that little notch on her left ear? She got that from a brave hunt long ago, and she wears it proudly. Dalila can sneak through the tall grass without making a single sound. She can run as fast as a car on a neighborhood street! &#x27;Being strong isn&#x27;t just about roaring,&#x27; she tells the cubs. &#x27;It&#x27;s about being smart, patient, and working together.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras Papá Kazi es el más grande y ruidoso, Mamá Dalila es la más lista y rápida. Es una leona dorada y esbelta con músculos fuertes que se marcan bajo su suave pelaje. ¿Ves esa pequeña muesca en su oreja izquierda? La obtuvo en una valiente cacería hace mucho tiempo, y la lleva con orgullo. Dalila puede deslizarse por la hierba alta sin hacer un solo sonido. ¡Puede correr tan rápido como un auto en una calle residencial! &#x27;Ser fuerte no se trata solo de rugir,&#x27; les dice a los cachorros. &#x27;Se trata de ser inteligente, paciente y trabajar juntos.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пока Папа Кази — самый большой и громкий, Мама Далила — самая умная и быстрая. Она стройная, золотистая львица с сильными мускулами, которые перекатываются под гладкой шерстью. Видите маленькую зарубку на её левом ухе? Она получила её на храброй охоте давным-давно и носит с гордостью. Далила может красться по высокой траве, не издав ни звука. Она бежит так быстро, как машина на городской улице! &#x27;Быть сильным — это не только рычать,&#x27; говорит она львятам. &#x27;Это значит быть умным, терпеливым и работать вместе.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/cubs-playing.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Two adorable lion cubs tumbling and playing in golden savanna grass, one larger with faint spots and big paws, one smaller and darker, parents watching from shade of acacia tree"
+                 data-alt-en="Two adorable lion cubs tumbling and playing in golden savanna grass, one larger with faint spots and big paws, one smaller and darker, parents watching from shade of acacia tree"
+                 data-alt-es="Dos adorables cachorros de león rodando y jugando en la hierba dorada de la sabana, uno más grande con manchas tenues y patas grandes, otro más pequeño y oscuro, padres observando desde la sombra de un árbol de acacia"
+                 data-alt-ru="Два очаровательных львёнка кувыркаются и играют в золотой траве саванны, один крупнее с бледными пятнышками и большими лапами, другой поменьше и темнее, родители наблюдают из тени акации"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Cubs at Play: Taji and Zuri!</h2>
+            <h2 data-lang="es">¡Cachorros Jugando: Taji y Zuri!</h2>
+            <h2 data-lang="ru">Львята играют: Таджи и Зури!</h2>
+            <div data-lang="en" class="active">
+                <p>POUNCE! TUMBLE! ROLL! Meet Taji and Zuri, the two funniest, bounciest lion cubs on the entire savanna! Taji is the bigger one — his golden fur still has faint baby spots, and his paws are ENORMOUS compared to his body. He hasn&#x27;t grown into them yet! He&#x27;s always getting into trouble, sneaking up on butterflies and falling over his own big feet. Little Zuri is smaller but OH so brave! She has darker golden fur and she is always trying to keep up with the grown-ups. Right now, she&#x27;s pounced on Taji&#x27;s tail and WON&#x27;T let go! &#x27;That&#x27;s MY tail!&#x27; Taji squeals, and they both tumble into a giggling heap.</p>
+            </div>
+            <div data-lang="es">
+                <p>¡SALTO! ¡VOLTERETA! ¡RUEDO! ¡Conoce a Taji y Zuri, los dos cachorros de león más graciosos y saltarines de toda la sabana! Taji es el más grande — su pelaje dorado todavía tiene tenues manchas de bebé, y sus patas son ENORMES comparadas con su cuerpo. ¡Todavía no les ha dado alcance! Siempre se mete en problemas, acechando mariposas y tropezando con sus propias patas grandes. ¡La pequeña Zuri es más chiquita pero MUY valiente! Tiene pelaje dorado más oscuro y siempre intenta seguir el paso de los grandes. ¡Ahora mismo ha saltado sobre la cola de Taji y NO la suelta! &#x27;¡Esa es MI cola!&#x27; chilla Taji, y ambos caen en un montón de risitas.</p>
+            </div>
+            <div data-lang="ru">
+                <p>ПРЫГ! КУВЫРК! КАТИСЬ! Познакомьтесь с Таджи и Зури — двумя самыми смешными и прыгучими львятами во всей саванне! Таджи покрупнее — на его золотистой шерсти ещё видны бледные детские пятнышки, а лапы ОГРОМНЫЕ по сравнению с телом. Он ещё не дорос до них! Он вечно попадает в переделки, подкрадывается к бабочкам и спотыкается о собственные большие лапы. Маленькая Зури поменьше, но О какая храбрая! У неё более тёмная золотистая шерсть, и она всегда пытается угнаться за взрослыми. Прямо сейчас она вцепилась в хвост Таджи и НЕ отпускает! &#x27;Это МОЙ хвост!&#x27; визжит Таджи, и оба кубарем валятся в хохочущую кучу.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/learning-to-stalk.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Learning to Stalk</h2>
+            <h2 data-lang="es">Aprendiendo a Acechar</h2>
+            <h2 data-lang="ru">Учимся подкрадываться</h2>
+            <div data-lang="en" class="active">
+                <p>&#x27;Lesson one,&#x27; Mama Dalila whispers. &#x27;Get LOW.&#x27; She sinks into the golden grass until she&#x27;s nearly invisible. Only her eyes peek above the tips of the grass, watching. &#x27;Now you try.&#x27; Zuri drops down perfectly — her darker fur blends right into the shadows. &#x27;Excellent, Zuri!&#x27; Mama purrs. Taji tries too, but his big bottom sticks up like a golden hill. A bird lands right on it! &#x27;Taji!&#x27; Zuri giggles. &#x27;You&#x27;re supposed to be HIDING!&#x27; Taji grins his goofy grin. &#x27;I was testing if the bird would notice. It&#x27;s... research!&#x27; Mama laughs softly. &#x27;Practice makes perfect, my darlings.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>&#x27;Lección uno,&#x27; susurra Mamá Dalila. &#x27;Agáchense BIEN.&#x27; Se hunde en la hierba dorada hasta quedar casi invisible. Solo sus ojos se asoman por encima de las puntas de la hierba. &#x27;Ahora inténtenlo.&#x27; Zuri se agacha perfectamente — su pelaje más oscuro se funde con las sombras. &#x27;¡Excelente, Zuri!&#x27; ronronea Mamá. Taji también lo intenta, pero su gran trasero sobresale como una colina dorada. ¡Un pájaro se posa encima! &#x27;¡Taji!&#x27; se ríe Zuri. &#x27;¡Se supone que debes ESCONDERTE!&#x27; Taji sonríe con su sonrisa tontita. &#x27;Estaba probando si el pájaro notaría. Es... ¡investigación!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>&#x27;Урок первый,&#x27; шепчет Мама Далила. &#x27;Ниже.&#x27; Она опускается в золотую траву, пока не становится почти невидимой. Только глаза выглядывают над кончиками травинок. &#x27;Теперь вы.&#x27; Зури приседает идеально — её тёмная шерсть сливается с тенями. &#x27;Отлично, Зури!&#x27; мурлычет Мама. Таджи тоже пытается, но его большая попа торчит как золотой холмик. Птичка садится прямо на неё! &#x27;Таджи!&#x27; хихикает Зури. &#x27;Ты должен ПРЯТАТЬСЯ!&#x27; Таджи ухмыляется своей глупой улыбкой. &#x27;Я проверял, заметит ли птица. Это... исследование!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/dalila-hunting.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Powerful golden lioness sprinting at full speed through golden savanna grass, muscles rippling, dust flying, intense focused expression, dramatic golden hour light"
+                 data-alt-en="Powerful golden lioness sprinting at full speed through golden savanna grass, muscles rippling, dust flying, intense focused expression, dramatic golden hour light"
+                 data-alt-es="Poderosa leona dorada corriendo a toda velocidad por la hierba dorada de la sabana, músculos ondeando, polvo volando, expresión intensa y enfocada, luz dramática de hora dorada"
+                 data-alt-ru="Мощная золотистая львица мчится на полной скорости по золотой траве саванны, мускулы перекатываются, пыль летит, сосредоточенный взгляд, драматичный свет золотого часа"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Mama&#x27;s Amazing Hunt!</h2>
+            <h2 data-lang="es">¡La Increíble Cacería de Mamá!</h2>
+            <h2 data-lang="ru">Потрясающая охота Мамы!</h2>
+            <div data-lang="en" class="active">
+                <p>Today, the cubs get to WATCH Mama hunt for the very first time! They hide in the tall grass with Papa Kazi, eyes wide. Mama Dalila creeps through the grass, so low and so quiet, she&#x27;s like a golden shadow. Step... step... step... Then — WHOOOOSH! Mama EXPLODES forward like a golden rocket! Her powerful legs eat up the ground. Dust flies everywhere! She&#x27;s SO FAST! The cubs&#x27; mouths drop open. &#x27;Is Mama FLYING?!&#x27; Taji gasps. Papa chuckles proudly. &#x27;Your mother is the finest huntress in all the land. She feeds our whole family with her skill and bravery.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Hoy los cachorros pueden VER a Mamá cazar por primera vez! Se esconden en la hierba alta con Papá Kazi, ojos bien abiertos. Mamá Dalila se arrastra por la hierba, tan baja y tan silenciosa, como una sombra dorada. Paso... paso... paso... ¡Entonces — FUUUUSH! ¡Mamá EXPLOTA hacia adelante como un cohete dorado! Sus poderosas patas devoran el suelo. ¡El polvo vuela por todas partes! ¡Es TAN RÁPIDA! Las bocas de los cachorros se abren. &#x27;¿¡Mamá está VOLANDO?!&#x27; jadea Taji. Papá se ríe orgulloso. &#x27;Su madre es la mejor cazadora de toda la tierra.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Сегодня львята впервые СМОТРЯТ, как Мама охотится! Они прячутся в высокой траве с Папой Кази, глаза широко открыты. Мама Далила крадётся по траве, так низко и так тихо, что она как золотая тень. Шаг... шаг... шаг... И — ВЖУУУХ! Мама ВЗРЫВАЕТСЯ вперёд как золотая ракета! Её мощные лапы пожирают землю. Пыль летит повсюду! Она ТАКАЯ быстрая! У львят отвисают челюсти. &#x27;Мама ЛЕТИТ?!&#x27; задыхается Таджи. Папа горделиво хмыкает. &#x27;Ваша мать — лучшая охотница во всей округе.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/kazi-roaring.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Magnificent male lion roaring powerfully on rocky outcrop at sunset, huge dark brown mane blowing in wind, dramatic orange and purple sky behind"
+                 data-alt-en="Magnificent male lion roaring powerfully on rocky outcrop at sunset, huge dark brown mane blowing in wind, dramatic orange and purple sky behind"
+                 data-alt-es="Magnífico león macho rugiendo poderosamente en un promontorio rocoso al atardecer, enorme melena marrón oscura al viento, dramático cielo naranja y púrpura detrás"
+                 data-alt-ru="Великолепный лев-самец могуче рычит на скалистом выступе на закате, огромная тёмно-коричневая грива развевается на ветру, драматичное оранжево-пурпурное небо позади"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Mightiest Roar!</h2>
+            <h2 data-lang="es">¡El Rugido Más Poderoso!</h2>
+            <h2 data-lang="ru">Самый могучий рык!</h2>
+            <div data-lang="en" class="active">
+                <p>As the sun turns the sky orange and purple, Papa Kazi climbs to the highest rock. He takes a DEEP breath, his enormous chest expanding, his great dark mane bristling in the wind. Then — RRRROOOOAAARRR! The ground seems to SHAKE! Birds scatter! The grass RIPPLES! Papa&#x27;s roar rolls across the savanna like thunder, on and on and on. It can be heard FIVE MILES away! &#x27;AGAIN! AGAIN!&#x27; the cubs cheer. Taji tries his own roar — &#x27;Mew!&#x27; Zuri tries too — &#x27;Mip!&#x27; Papa laughs so hard his mane shakes. &#x27;Don&#x27;t worry, little ones. Your roars will come. And they will be MIGHTY.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando el sol tiñe el cielo de naranja y púrpura, Papá Kazi sube a la roca más alta. Toma una respiración PROFUNDA, su enorme pecho expandiéndose, su gran melena oscura erizándose en el viento. ¡Entonces — RRRROOOOAAARRR! ¡El suelo parece TEMBLAR! ¡Los pájaros huyen! ¡La hierba ONDULA! El rugido de Papá rueda por la sabana como un trueno. ¡Se puede escuchar a OCHO KILÓMETROS! &#x27;¡OTRA VEZ! ¡OTRA VEZ!&#x27; animan los cachorros. Taji intenta su propio rugido — &#x27;¡Miu!&#x27; Zuri también — &#x27;¡Mip!&#x27; Papá se ríe tanto que su melena tiembla. &#x27;No se preocupen, pequeños. Sus rugidos vendrán. Y serán PODEROSOS.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда солнце окрашивает небо в оранжевый и пурпурный, Папа Кази поднимается на самую высокую скалу. Он делает ГЛУБОКИЙ вдох, его огромная грудь расширяется, великая тёмная грива встаёт дыбом на ветру. И — РРРООООААААРРР! Земля, кажется, ДРОЖИТ! Птицы разлетаются! Трава ВОЛНУЕТСЯ! Рык Папы катится по саванне как гром, дальше и дальше. Его слышно за ВОСЕМЬ КИЛОМЕТРОВ! &#x27;ЕЩЁ! ЕЩЁ!&#x27; кричат львята. Таджи пробует свой рык — &#x27;Мяу!&#x27; Зури тоже — &#x27;Мип!&#x27; Папа смеётся так, что грива трясётся. &#x27;Не волнуйтесь, малыши. Ваши рыки придут. И они будут МОГУЧИМИ.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/family-napping.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Great Big Nap</h2>
+            <h2 data-lang="es">La Gran Siesta</h2>
+            <h2 data-lang="ru">Великий сон</h2>
+            <div data-lang="en" class="active">
+                <p>If there&#x27;s one thing lions are CHAMPIONS at, it&#x27;s SLEEPING! Lions sleep up to TWENTY hours a day — that&#x27;s almost the whole day! And the way they sleep is the cutest thing ever. Papa Kazi lies on his back under the big acacia tree, his huge paws in the air, snoring like a rumbling engine. Taji is curled up right on Papa&#x27;s fluffy belly, rising and falling with each giant breath. Zuri is tucked between Mama and Papa, purring in her sleep. Mama Dalila has her paw draped gently over both cubs. One big, warm, furry pile of love. &#x27;Shhhh,&#x27; the wind whispers. &#x27;The kings are sleeping.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>¡Si hay algo en lo que los leones son CAMPEONES, es en DORMIR! Los leones duermen hasta VEINTE horas al día — ¡eso es casi todo el día! Y la forma en que duermen es lo más tierno del mundo. Papá Kazi yace boca arriba bajo la gran acacia, sus enormes patas en el aire, roncando como un motor. Taji está acurrucado sobre la barriguita peluda de Papá, subiendo y bajando con cada respiración gigante. Zuri está encajada entre Mamá y Papá, ronroneando dormida. Mamá Dalila tiene su pata suavemente sobre ambos cachorros. Un gran montón cálido y peludo de amor. &#x27;Shhhh,&#x27; susurra el viento. &#x27;Los reyes están durmiendo.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Если и есть то, в чём львы — ЧЕМПИОНЫ, так это СОН! Львы спят до ДВАДЦАТИ часов в день — это почти весь день! И то, как они спят — самое милое на свете. Папа Кази лежит на спине под большой акацией, огромные лапы в воздухе, храпит как мотор. Таджи свернулся прямо на пушистом животе Папы, поднимаясь и опускаясь с каждым гигантским вдохом. Зури устроилась между Мамой и Папой, мурлыча во сне. Мама Далила нежно положила лапу на обоих львят. Одна большая, тёплая, пушистая куча любви. &#x27;Тшшш,&#x27; шепчет ветер. &#x27;Короли спят.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/watering-hole.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Lion family drinking together at African watering hole at sunset, reflections in still water, zebras and giraffes in distant background, golden light, acacia tree silhouettes"
+                 data-alt-en="Lion family drinking together at African watering hole at sunset, reflections in still water, zebras and giraffes in distant background, golden light, acacia tree silhouettes"
+                 data-alt-es="Familia de leones bebiendo juntos en un abrevadero africano al atardecer, reflejos en el agua quieta, cebras y jirafas en el fondo distante, luz dorada, siluetas de acacias"
+                 data-alt-ru="Семья львов пьёт вместе у африканского водопоя на закате, отражения в тихой воде, зебры и жирафы на дальнем фоне, золотой свет, силуэты акаций"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Watering Hole</h2>
+            <h2 data-lang="es">El Abrevadero</h2>
+            <h2 data-lang="ru">Водопой</h2>
+            <div data-lang="en" class="active">
+                <p>When the afternoon heat cools, the whole family walks to the watering hole. It&#x27;s like the neighborhood park of the savanna — everyone comes here! Papa Kazi walks in front, his dark mane swaying. The zebras and giraffes see him coming and step back politely. &#x27;Good evening, Kazi!&#x27; a giraffe nods from a safe distance. At the water&#x27;s edge, the whole family drinks together — lap, lap, lap. Taji sees his reflection and POUNCES on it — SPLASH! He&#x27;s soaking wet. &#x27;I caught a lion!&#x27; he announces proudly. Everyone laughs — even the zebras.</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando el calor de la tarde se enfría, toda la familia camina al abrevadero. ¡Es como el parque del vecindario de la sabana — todos vienen aquí! Papá Kazi camina al frente, su melena oscura balanceándose. Las cebras y jirafas lo ven venir y se apartan educadamente. &#x27;¡Buenas tardes, Kazi!&#x27; asiente una jirafa desde una distancia segura. En la orilla del agua, toda la familia bebe junta — lap, lap, lap. Taji ve su reflejo y ¡SALTA sobre él — SPLASH! Está empapado. &#x27;¡Atrapé un león!&#x27; anuncia orgulloso. Todos se ríen — hasta las cebras.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда послеобеденная жара спадает, вся семья идёт к водопою. Это как парк по соседству в саванне — все приходят сюда! Папа Кази идёт впереди, его тёмная грива покачивается. Зебры и жирафы видят его и вежливо отступают. &#x27;Добрый вечер, Кази!&#x27; кивает жираф с безопасного расстояния. У кромки воды вся семья пьёт вместе — лакать, лакать, лакать. Таджи видит своё отражение и ПРЫГАЕТ на него — ВСПЛЕСК! Он весь мокрый. &#x27;Я поймал льва!&#x27; объявляет он гордо. Все смеются — даже зебры.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/kazi-night-patrol.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Papa&#x27;s Night Patrol</h2>
+            <h2 data-lang="es">La Patrulla Nocturna de Papá</h2>
+            <h2 data-lang="ru">Ночной обход Папы</h2>
+            <div data-lang="en" class="active">
+                <p>While the family sleeps under the stars, Papa Kazi is on patrol. He walks the edges of their territory, his golden eyes glowing softly in the moonlight. Every few minutes, he lets out a low, rumbling roar — not his big roar, but a gentle one that says: &#x27;I am here. My family is safe.&#x27; The sound travels across the dark savanna, and every animal for miles knows — this land belongs to Kazi. Back at the sleeping spot, the cubs stir. &#x27;Is that Papa?&#x27; Zuri murmurs sleepily. &#x27;Yes,&#x27; Mama whispers. &#x27;Papa is watching over us. Go back to sleep, my love.&#x27; And they do, feeling perfectly safe.</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras la familia duerme bajo las estrellas, Papá Kazi está de patrulla. Camina por los bordes de su territorio, sus ojos dorados brillando suavemente a la luz de la luna. Cada pocos minutos, deja escapar un rugido bajo y retumbante — no su gran rugido, sino uno suave que dice: &#x27;Estoy aquí. Mi familia está a salvo.&#x27; El sonido viaja por la oscura sabana. De vuelta con los que duermen, los cachorros se mueven. &#x27;¿Ese es Papá?&#x27; murmura Zuri adormilada. &#x27;Sí,&#x27; susurra Mamá. &#x27;Papá nos vigila. Vuelve a dormir, mi amor.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пока семья спит под звёздами, Папа Кази на обходе. Он бродит по границам их территории, золотые глаза мягко светятся в лунном свете. Каждые несколько минут он издаёт низкий, раскатистый рык — не свой большой рык, а нежный, который говорит: &#x27;Я здесь. Моя семья в безопасности.&#x27; Звук летит по тёмной саванне, и каждое животное на километры знает — эта земля принадлежит Кази. У спящих львят Зури шевелится. &#x27;Это Папа?&#x27; бормочет она сонно. &#x27;Да,&#x27; шепчет Мама. &#x27;Папа охраняет нас. Спи, моя любовь.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/cubs-growing.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt=""
+                 data-alt-en=""
+                 data-alt-es=""
+                 data-alt-ru=""
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Growing Bigger Every Day!</h2>
+            <h2 data-lang="es">¡Creciendo Más Cada Día!</h2>
+            <h2 data-lang="ru">Растём каждый день!</h2>
+            <div data-lang="en" class="active">
+                <p>The days turn to weeks, and the weeks turn to months, and OH how Taji and Zuri have GROWN! Taji&#x27;s big paws finally match his body, and something exciting is happening — tiny tufts of fur are growing around his neck. &#x27;Is that... a MANE?&#x27; he asks Papa, eyes shining. Papa examines it seriously. &#x27;Why, I believe it is! A fine mane is beginning, son. It will grow big and strong like mine.&#x27; Zuri has grown sleek and fast like Mama. She can already stalk a grasshopper without making a sound. &#x27;My little huntress,&#x27; Mama beams. The cubs aren&#x27;t so little anymore!</p>
+            </div>
+            <div data-lang="es">
+                <p>Los días se convierten en semanas, y las semanas en meses, ¡y CÓMO han CRECIDO Taji y Zuri! Las grandes patas de Taji por fin van con su cuerpo, y algo emocionante está pasando — pequeños mechones de pelo crecen alrededor de su cuello. &#x27;¿Eso es... una MELENA?&#x27; pregunta a Papá, ojos brillantes. Papá lo examina seriamente. &#x27;¡Pues creo que sí! Una fina melena está empezando, hijo. Crecerá grande y fuerte como la mía.&#x27; Zuri se ha vuelto esbelta y rápida como Mamá. Ya puede acechar a un saltamontes sin hacer ruido. &#x27;Mi pequeña cazadora,&#x27; Mamá sonríe. ¡Los cachorros ya no son tan pequeños!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Дни превращаются в недели, недели в месяцы, и КАК выросли Таджи и Зури! Большие лапы Таджи наконец подходят к его телу, и происходит кое-что волнующее — крошечные пучки шерсти растут вокруг его шеи. &#x27;Это... ГРИВА?&#x27; спрашивает он Папу, глаза сияют. Папа серьёзно осматривает. &#x27;Что ж, похоже! Прекрасная грива начинается, сынок. Она вырастет большой и сильной, как моя.&#x27; Зури стала стройной и быстрой, как Мама. Она уже может выследить кузнечика, не издав ни звука. &#x27;Моя маленькая охотница,&#x27; сияет Мама. Львята уже не такие маленькие!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section action-sequence">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/pride-together.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Majestic lion family sitting together on rocky outcrop overlooking vast African savanna at golden sunset, father with dark mane in center, mother beside him, two young lions in front, dramatic sky"
+                 data-alt-en="Majestic lion family sitting together on rocky outcrop overlooking vast African savanna at golden sunset, father with dark mane in center, mother beside him, two young lions in front, dramatic sky"
+                 data-alt-es="Majestuosa familia de leones sentada junta en un promontorio rocoso sobre la vasta sabana africana al atardecer dorado, padre con melena oscura en el centro, madre a su lado, dos leones jóvenes al frente, cielo dramático"
+                 data-alt-ru="Величественная семья львов сидит вместе на скалистом выступе над бескрайней африканской саванной на золотом закате, отец с тёмной гривой в центре, мать рядом, два молодых льва впереди, драматичное небо"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Our Pride, Our Family</h2>
+            <h2 data-lang="es">Nuestra Manada, Nuestra Familia</h2>
+            <h2 data-lang="ru">Наш прайд, наша семья</h2>
+            <div data-lang="en" class="active">
+                <p>As the golden sun melts into the African horizon, the family climbs to their favorite rocky hill. Papa Kazi sits tall in the center, his magnificent mane catching the last warm light. Mama Dalila leans against him, her notched ear a badge of honor. Taji sits up straight, trying to look as regal as Papa. Zuri sits close to Mama, eyes full of dreams. Below them, the whole savanna stretches out — golden, endless, and beautiful. &#x27;This is our home,&#x27; Papa says, his deep voice full of love. &#x27;And we are a pride — a family. We roar together, hunt together, sleep together, and love together. No matter what comes, we face it as one.&#x27; And somewhere across the savanna, a distant lion roars. And Kazi roars back. Always.</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando el sol dorado se derrite en el horizonte africano, la familia sube a su colina rocosa favorita. Papá Kazi se sienta erguido en el centro, su magnífica melena captando la última luz cálida. Mamá Dalila se recarga contra él, su oreja con muesca como insignia de honor. Taji se sienta derecho, intentando verse tan regio como Papá. Zuri se sienta cerca de Mamá, ojos llenos de sueños. Debajo de ellos, toda la sabana se extiende — dorada, infinita y hermosa. &#x27;Este es nuestro hogar,&#x27; dice Papá, su voz profunda llena de amor. &#x27;Y somos una manada — una familia. Rugimos juntos, cazamos juntos, dormimos juntos y nos amamos juntos. Sin importar lo que venga, lo enfrentamos como uno.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда золотое солнце тает в африканском горизонте, семья поднимается на свой любимый скалистый холм. Папа Кази сидит прямо в центре, его великолепная грива ловит последний тёплый свет. Мама Далила прижимается к нему, зарубка на ухе — знак чести. Таджи сидит ровно, стараясь выглядеть таким же величественным, как Папа. Зури прижалась к Маме, глаза полны мечтаний. Под ними простирается вся саванна — золотая, бесконечная и прекрасная. &#x27;Это наш дом,&#x27; говорит Папа, его глубокий голос полон любви. &#x27;И мы — прайд. Семья. Мы рычим вместе, охотимся вместе, спим вместе и любим вместе. Что бы ни случилось, мы встречаем это вместе.&#x27;</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-mane-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="The Mighty Mane"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">The Mighty Mane</h3>
+                    <h3 data-lang="es">La Melena Poderosa</h3>
+                    <h3 data-lang="ru">Могучая грива</h3>
+                    <p data-lang="en" class="active">Look at Papa Kazi&#x27;s incredible mane! A lion&#x27;s mane is made of thick, coarse hair that grows around the face, neck, and shoulders. The darker the mane, the healthier and stronger the lion! Kazi&#x27;s dark brown mane tells everyone he is in his prime. The mane makes him look much bigger than he really is, which scares away rivals. It also protects his neck during fights. No two lion manes are exactly alike — each one is as unique as a fingerprint!</p>
+                    <p data-lang="es">¡Mira la increíble melena de Papá Kazi! La melena de un león está hecha de pelo grueso y áspero que crece alrededor de la cara, cuello y hombros. ¡Cuanto más oscura la melena, más sano y fuerte el león! La melena marrón oscura de Kazi le dice a todos que está en su mejor momento. La melena lo hace parecer mucho más grande de lo que realmente es, lo que asusta a los rivales. También protege su cuello durante las peleas.</p>
+                    <p data-lang="ru">Посмотрите на невероятную гриву Папы Кази! Грива льва состоит из толстых, жёстких волос, растущих вокруг лица, шеи и плеч. Чем темнее грива, тем здоровее и сильнее лев! Тёмно-коричневая грива Кази говорит всем, что он в расцвете сил. Грива делает его намного больше, чем он есть на самом деле, что отпугивает соперников. Она также защищает шею в боях. Нет двух одинаковых грив — каждая уникальна, как отпечаток пальца!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-retractable-claws.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Retractable Claws"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Retractable Claws</h3>
+                    <h3 data-lang="es">Garras Retráctiles</h3>
+                    <h3 data-lang="ru">Втягивающиеся когти</h3>
+                    <p data-lang="en" class="active">Lions have an amazing superpower — retractable claws! When walking, their sharp claws are tucked inside soft, furry paw pads, keeping them quiet and their claws razor-sharp. But when hunting or climbing, the claws pop out like hidden knives! Each claw can be up to 1.5 inches long and curved like a hook. This retractable design means their claws never get dull from walking on hard ground. Lions are one of the few cats that can&#x27;t fully retract their claws — cheetahs can&#x27;t at all!</p>
+                    <p data-lang="es">¡Los leones tienen un superpoder asombroso — garras retráctiles! Al caminar, sus afiladas garras están guardadas dentro de suaves almohadillas peludas, manteniéndolos silenciosos y sus garras afiladísimas. ¡Pero al cazar o trepar, las garras salen como cuchillos ocultos! Cada garra puede medir hasta 4 centímetros de largo y curvarse como un gancho. Este diseño retráctil significa que sus garras nunca se desgastan al caminar sobre suelo duro.</p>
+                    <p data-lang="ru">У львов есть удивительная суперспособность — втягивающиеся когти! При ходьбе острые когти спрятаны внутри мягких пушистых подушечек лап, что делает шаги бесшумными и сохраняет когти острыми как бритва. Но во время охоты или лазания когти выскакивают как скрытые ножи! Каждый коготь может достигать 4 сантиметров в длину и изогнут как крючок. Этот убирающийся механизм означает, что когти никогда не тупятся от ходьбы по твёрдой земле.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-whisker-spots.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Whisker Spot ID"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Whisker Spot ID</h3>
+                    <h3 data-lang="es">Identificación por Bigotes</h3>
+                    <h3 data-lang="ru">Усы-отпечатки</h3>
+                    <p data-lang="en" class="active">Did you know that every lion has a unique pattern of whisker spots? The small dark dots on a lion&#x27;s muzzle where each whisker grows form a pattern that is different for every single lion — just like human fingerprints! Scientists use these whisker spot patterns to identify individual lions in the wild. Next time you see a lion, look closely at the dots on its muzzle — no other lion in the world has the exact same pattern!</p>
+                    <p data-lang="es">¿Sabías que cada león tiene un patrón único de puntos de bigotes? Los pequeños puntos oscuros en el hocico de un león donde crece cada bigote forman un patrón diferente para cada león — ¡igual que las huellas dactilares humanas! Los científicos usan estos patrones de puntos de bigotes para identificar leones individuales en la naturaleza. La próxima vez que veas un león, mira de cerca los puntos en su hocico.</p>
+                    <p data-lang="ru">Вы знали, что у каждого льва уникальный рисунок точек у усов? Маленькие тёмные точки на морде льва, где растёт каждый ус, образуют рисунок, отличающийся у каждого льва — как отпечатки пальцев у людей! Учёные используют эти рисунки точек у усов для идентификации отдельных львов в дикой природе. В следующий раз, когда увидите льва, присмотритесь к точкам на его морде — ни у одного другого льва в мире нет такого же рисунка!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-rough-tongue.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Sandpaper Tongue"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Sandpaper Tongue</h3>
+                    <h3 data-lang="es">Lengua de Lija</h3>
+                    <h3 data-lang="ru">Язык-наждачка</h3>
+                    <p data-lang="en" class="active">A lion&#x27;s tongue is covered in tiny backward-pointing barbs called papillae, making it rough like sandpaper! These barbs are made of the same material as your fingernails. The rough tongue helps lions scrape every last bit of meat from bones, and it works like a comb for grooming their fur. When Mama Dalila licks her cubs clean, it&#x27;s like a gentle scrubbing brush! One lick from a lion&#x27;s tongue could scratch your skin — but to the cubs, it feels like the warmest, most loving bath.</p>
+                    <p data-lang="es">¡La lengua de un león está cubierta de pequeñas púas apuntando hacia atrás llamadas papilas, haciéndola áspera como papel de lija! Estas púas están hechas del mismo material que tus uñas. La lengua áspera ayuda a los leones a raspar hasta el último pedazo de carne de los huesos, y funciona como un peine para acicalar su pelaje. ¡Cuando Mamá Dalila lame a sus cachorros para limpiarlos, es como un suave cepillo de fregar!</p>
+                    <p data-lang="ru">Язык льва покрыт крошечными направленными назад шипами — папиллами, что делает его шершавым как наждачная бумага! Эти шипы сделаны из того же материала, что и ваши ногти. Шершавый язык помогает львам соскребать каждый кусочек мяса с костей и работает как расчёска для ухода за шерстью. Когда Мама Далила вылизывает львят, это как нежная щёточка! Одно облизывание львиным языком может поцарапать кожу — но для львят это самая тёплая и любящая ванна.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Lion Facts!</h2>
+            <h2 data-lang="es">¡Datos Asombrosos sobre Leones!</h2>
+            <h2 data-lang="ru">Удивительные факты о львах!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-sleeping.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Champion Sleepers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Champion Sleepers</h3>
+                        <h3 data-lang="es">Campeones de la Siesta</h3>
+                        <h3 data-lang="ru">Чемпионы по сну</h3>
+                        <p data-lang="en" class="active">Lions sleep up to 20 hours a day! That makes them one of the sleepiest animals on Earth. They rest so much because hunting takes enormous energy — a single hunt can use up all their strength. So when they&#x27;re not hunting or eating, lions spend their time dozing in the shade, cuddling with family, and taking the world&#x27;s longest naps. Even their name in some African languages means &#x27;the lazy one&#x27;!</p>
+                        <p data-lang="es">¡Los leones duermen hasta 20 horas al día! Eso los convierte en uno de los animales más dormilones de la Tierra. Descansan tanto porque la caza requiere una energía enorme — una sola cacería puede usar toda su fuerza. Así que cuando no están cazando o comiendo, los leones pasan el tiempo dormitando a la sombra, acurrucándose con la familia y tomando las siestas más largas del mundo.</p>
+                        <p data-lang="ru">Львы спят до 20 часов в день! Это делает их одними из самых сонливых животных на Земле. Они столько отдыхают, потому что охота требует огромной энергии — одна охота может забрать все силы. Поэтому, когда они не охотятся и не едят, львы дремлют в тени, обнимаются с семьёй и устраивают самые длинные в мире тихие часы.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-roar.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="The 5-Mile Roar"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">The 5-Mile Roar</h3>
+                        <h3 data-lang="es">El Rugido de 8 Kilómetros</h3>
+                        <h3 data-lang="ru">Рык на 8 километров</h3>
+                        <p data-lang="en" class="active">A lion&#x27;s roar is the loudest of any big cat and can be heard from 5 miles (8 kilometers) away! That&#x27;s like roaring at one end of town and being heard at the other end. Lions roar to communicate with their pride, to warn rivals to stay away, and to find family members in the dark. They have a special bone in their throat called the hyoid bone that lets them produce such incredibly deep, powerful sounds.</p>
+                        <p data-lang="es">¡El rugido de un león es el más fuerte de todos los grandes felinos y se puede escuchar a 8 kilómetros de distancia! Es como rugir en un extremo del pueblo y ser escuchado en el otro. Los leones rugen para comunicarse con su manada, para advertir a los rivales que se mantengan lejos, y para encontrar a miembros de la familia en la oscuridad. Tienen un hueso especial en la garganta llamado hueso hioides.</p>
+                        <p data-lang="ru">Рык льва — самый громкий среди всех больших кошек, его слышно за 8 километров! Это как зарычать на одном конце города и быть услышанным на другом. Львы рычат, чтобы общаться со своим прайдом, предупреждать соперников держаться подальше и находить членов семьи в темноте. У них есть особая кость в горле — подъязычная кость, которая позволяет издавать такие невероятно глубокие, мощные звуки.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-huntress.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Girl Power Hunters"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Girl Power Hunters</h3>
+                        <h3 data-lang="es">Cazadoras Poderosas</h3>
+                        <h3 data-lang="ru">Охотницы-чемпионки</h3>
+                        <p data-lang="en" class="active">In a lion pride, the lionesses do most of the hunting! They work together as a team, using clever strategies — some lionesses chase the prey toward others waiting in ambush. Lionesses are faster, lighter, and more agile than male lions, whose big heavy manes would slow them down and make them easy to spot. The males have a different job — they patrol and protect the territory so the family is safe.</p>
+                        <p data-lang="es">¡En una manada de leones, las leonas hacen la mayor parte de la caza! Trabajan juntas como equipo, usando estrategias inteligentes — algunas leonas persiguen a la presa hacia otras que esperan emboscadas. Las leonas son más rápidas, ligeras y ágiles que los leones machos, cuyas grandes y pesadas melenas los harían más lentos y fáciles de detectar. Los machos tienen un trabajo diferente — patrullan y protegen el territorio.</p>
+                        <p data-lang="ru">В львином прайде львицы выполняют основную часть охоты! Они работают вместе как команда, используя хитрые стратегии — одни львицы гонят добычу к другим, ждущим в засаде. Львицы быстрее, легче и проворнее львов-самцов, чьи большие тяжёлые гривы замедляли бы их и делали заметными. У самцов другая работа — они патрулируют и защищают территорию, чтобы семья была в безопасности.</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-spots.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Spots That Disappear"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Spots That Disappear</h3>
+                        <h3 data-lang="es">Manchas Que Desaparecen</h3>
+                        <h3 data-lang="ru">Исчезающие пятнышки</h3>
+                        <p data-lang="en" class="active">Lion cubs are born with spotted fur! These faint rosette-shaped spots help baby lions hide in the dappled shade of bushes and grass, camouflaging them from predators while they&#x27;re small and vulnerable. As the cubs grow bigger and stronger, their spots gradually fade away until they have the smooth golden coat of an adult lion. Some lions keep very faint spots on their belly even as adults — look closely next time!</p>
+                        <p data-lang="es">¡Los cachorros de león nacen con pelaje manchado! Estas tenues manchas en forma de roseta ayudan a los bebés león a esconderse en la sombra moteada de arbustos y hierba, camuflándolos de depredadores mientras son pequeños y vulnerables. A medida que los cachorros crecen más grandes y fuertes, sus manchas se desvanecen gradualmente hasta tener el suave pelaje dorado de un león adulto. ¡Algunos leones mantienen manchas muy tenues en su vientre incluso de adultos!</p>
+                        <p data-lang="ru">Львята рождаются с пятнистой шерстью! Эти бледные пятнышки-розетки помогают маленьким львам прятаться в пятнистой тени кустов и травы, маскируя их от хищников, пока они маленькие и уязвимые. По мере того как львята растут и крепнут, пятна постепенно исчезают, пока не остаётся гладкая золотистая шерсть взрослого льва. Некоторые львы сохраняют очень бледные пятна на животе даже во взрослом возрасте — присмотритесь внимательнее!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the mightiest family on the African savanna</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando la familia más poderosa de la sabana africana</p>
+        <p data-lang="ru" style="margin-top: 10px;">Самая могучая семья африканской саванны</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>

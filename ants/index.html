@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ants: The Tiny Builders - Educational Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            overflow-x: hidden;
+            max-width: 100%;
+        }
+        
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 4px solid #FFCC00;
+        }
+        
+        .header h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .header p {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 1000;
+            max-width: 200px;
+        }
+        
+        .lang-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 3px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .lang-btn:hover {
+            transform: scale(1.1);
+            border-color: #FFCC00;
+            box-shadow: 0 4px 20px rgba(255, 204, 0, 0.4);
+        }
+        
+        .lang-btn.active {
+            border-color: #FFCC00;
+            transform: scale(1.05);
+        }
+        
+        .flag-emoji {
+            font-size: 28px;
+            line-height: 1;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            height: 70vh;
+            overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        
+        .hero-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.7);
+        }
+        
+        .hero-subtitle {
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+            color: #FFCC00;
+            margin-top: 20px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            max-width: 1200px;
+            width: 100%;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        /* Action Sequence Sections - Indented sub-stories */
+        .content-section.action-sequence {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,204,0,0.05) 10%, rgba(255,204,0,0.05) 90%, transparent 100%);
+            border-left: 3px solid #FFCC00;
+            padding-left: 40px;
+            position: relative;
+        }
+        
+        .content-section.action-sequence::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFCC00;
+            font-size: 1.5rem;
+        }
+        
+        .content-section.action-sequence .text-content h2 {
+            font-size: 1.8rem;
+            color: #666;
+        }
+        
+        .content-section.action-sequence .image-container img {
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(255,204,0,0.2);
+        }
+        
+        .content-section:nth-child(even) {
+            direction: rtl;
+        }
+        
+        .content-section:nth-child(even) .text-content {
+            direction: ltr;
+        }
+        
+        .text-content {
+            padding: 30px;
+        }
+        
+        .text-content h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .text-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .image-container img {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Fun Fact Cards */
+        .fun-facts-section {
+            background: #000;
+            padding: 60px 20px;
+            margin-top: 60px;
+            margin-bottom: 0;
+        }
+
+        .fun-facts-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .fun-facts-section h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            color: #FFCC00;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .facts-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fact-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-left: 4px solid #FFCC00;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .fact-card-content {
+            padding: 30px;
+        }
+
+        .fact-card h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .fact-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        /* Viewer Details Section */
+        .viewer-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .viewer-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: #000;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .detail-content {
+            padding: 20px;
+        }
+
+        .detail-content h3 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.3rem;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .detail-content p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #000;
+            color: rgb(102, 102, 102);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 0;
+            border-top: 2px solid rgb(255, 204, 0);
+        }
+
+        .footer p {
+            font-family: "Source Sans Pro", sans-serif;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-section {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section.action-sequence {
+                padding-left: 20px;
+                margin: 20px auto;
+            }
+
+            .content-section:nth-child(even) {
+                direction: ltr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .text-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hide elements for language switching - but NOT the buttons themselves */
+        [data-lang]:not(.active):not(.lang-btn) {
+            display: none;
+        }
+        /* Main wrapper to prevent overflow */
+        .main-wrapper {
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Debug image reference badges */
+        .img-ref {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #FFCC00;
+            font-family: 'Oswald', monospace;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            z-index: 10;
+            pointer-events: none;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+<div class="main-wrapper">
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <button class="lang-btn active" data-lang="en" title="English">
+            <div class="flag-emoji">🇬🇧</div>
+        </button>
+        <button class="lang-btn" data-lang="es" title="Español">
+            <div class="flag-emoji">🇪🇸</div>
+        </button>
+        <button class="lang-btn" data-lang="ru" title="Русский">
+            <div class="flag-emoji">🇷🇺</div>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <h1 data-lang="en" class="active">Ants: The Tiny Builders</h1>
+        <h1 data-lang="es">Hormigas: Las Pequenas Constructoras</h1>
+        <h1 data-lang="ru">Муравьи: Маленькие Строители</h1>
+        <p data-lang="en" class="active">A World of Teamwork Under Our Feet</p>
+        <p data-lang="es">Un Mundo de Trabajo en Equipo Bajo Nuestros Pies</p>
+        <p data-lang="ru">Мир командной работы у нас под ногами</p>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <span class="img-ref">H</span>
+        <img src="assets/images/hero-anthill.jpg"
+             alt="Ants"
+             class="hero-image critical"
+             loading="eager">
+        <div class="hero-overlay">
+            <h2 class="hero-title" data-lang="en" class="active">Ants</h2>
+            <h2 class="hero-title" data-lang="es">Hormigas</h2>
+            <h2 class="hero-title" data-lang="ru">Муравьи</h2>
+            <p class="hero-subtitle" data-lang="en" class="active">The Tiny Builders</p>
+            <p class="hero-subtitle" data-lang="es">Las Pequenas Constructoras</p>
+            <p class="hero-subtitle" data-lang="ru">Маленькие Строители</p>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#1</span>
+            <img data-src="assets/images/colony-awakens.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Sunrise over a green meadow with a large anthill, tiny ants emerging from entrances, dewdrops on grass, warm golden morning light"
+                 data-alt-en="Sunrise over a green meadow with a large anthill, tiny ants emerging from entrances, dewdrops on grass, warm golden morning light"
+                 data-alt-es="Amanecer sobre un prado verde con un gran hormiguero, pequenas hormigas emergiendo de las entradas, gotas de rocio en la hierba, calida luz dorada matutina"
+                 data-alt-ru="Рассвет над зелёным лугом с большим муравейником, крошечные муравьи выходят из входов, капли росы на траве, тёплый золотистый утренний свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Colony Awakens</h2>
+            <h2 data-lang="es">La Colonia Despierta</h2>
+            <h2 data-lang="ru">Колония просыпается</h2>
+            <div data-lang="en" class="active">
+                <p>As the first golden rays of sunshine warm the earth, something magical happens beneath the meadow. Deep underground, in a city of tunnels and chambers bigger than your bedroom, thousands of tiny feet begin to stir. The ants are waking up! One by one, they stretch their six legs, wiggle their antennae, and get ready for the busiest day you can imagine. Up on the surface, little doors in the anthill open, and the first brave ants peek outside. A new day in the colony has begun!</p>
+            </div>
+            <div data-lang="es">
+                <p>Cuando los primeros rayos dorados del sol calientan la tierra, algo magico ocurre debajo del prado. En las profundidades, en una ciudad de tuneles y camaras mas grande que tu habitacion, miles de patitas comienzan a moverse. Las hormigas estan despertando! Una por una, estiran sus seis patas, mueven sus antenas y se preparan para el dia mas ocupado que puedas imaginar. En la superficie, pequenas puertas del hormiguero se abren, y las primeras hormigas valientes se asoman. Un nuevo dia en la colonia ha comenzado!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Когда первые золотые лучи солнца согревают землю, нечто волшебное происходит под лугом. Глубоко под землёй, в городе из тоннелей и камер больше вашей комнаты, тысячи крошечных ножек начинают шевелиться. Муравьи просыпаются! Один за другим они вытягивают шесть лапок, шевелят усиками и готовятся к самому занятому дню, какой только можно представить. На поверхности маленькие дверцы муравейника открываются, и первые смелые муравьи выглядывают наружу. Новый день в колонии начался!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#2</span>
+            <img data-src="assets/images/queen-terra-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Large reddish-brown ant queen with wise eyes and an iridescent wing remnant on her back, sitting regally in an underground chamber surrounded by worker ants"
+                 data-alt-en="Large reddish-brown ant queen with wise eyes and an iridescent wing remnant on her back, sitting regally in an underground chamber surrounded by worker ants"
+                 data-alt-es="Gran hormiga reina marron rojiza con ojos sabios y un resto de ala iridiscente en su espalda, sentada regiamente en una camara subterranea rodeada de hormigas obreras"
+                 data-alt-ru="Большая красновато-коричневая королева муравьёв с мудрыми глазами и переливающимся остатком крыла на спине, величественно сидящая в подземной камере в окружении рабочих муравьёв"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Meet Queen Terra</h2>
+            <h2 data-lang="es">Conoce a la Reina Terra</h2>
+            <h2 data-lang="ru">Знакомьтесь: Королева Терра</h2>
+            <div data-lang="en" class="active">
+                <p>Deep in the very heart of the colony lives the most important ant of all — Queen Terra! She is the mother of every single ant in the colony, and she is MAGNIFICENT. Queen Terra is the biggest ant you&#x27;ve ever seen, with a deep reddish-brown body that gleams like polished wood. Her eyes are old and wise — she has seen a thousand sunrises from underground. On her back, you can see something special: a tiny, shimmering wing remnant that sparkles like a rainbow. Long ago, she flew through the sky to find this perfect spot and start her family. &#x27;Welcome, little ones,&#x27; she says in her warm, deep voice. &#x27;Every one of you is important.&#x27;</p>
+            </div>
+            <div data-lang="es">
+                <p>En lo mas profundo del corazon de la colonia vive la hormiga mas importante de todas: la Reina Terra! Ella es la madre de cada hormiga en la colonia, y es MAGNIFICA. La Reina Terra es la hormiga mas grande que hayas visto, con un cuerpo marron rojizo profundo que brilla como madera pulida. Sus ojos son ancianos y sabios — ha visto mil amaneceres desde bajo tierra. En su espalda puedes ver algo especial: un pequeno resto de ala brillante que centellea como un arcoiris. Hace mucho tiempo, ella volo por el cielo para encontrar este lugar perfecto y comenzar su familia. &#x27;Bienvenidos, pequenos,&#x27; dice con su voz calida y profunda. &#x27;Cada uno de ustedes es importante.&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Глубоко в самом сердце колонии живёт самый важный муравей — Королева Терра! Она мать каждого муравья в колонии, и она ВЕЛИКОЛЕПНА. Королева Терра — самый большой муравей, какого вы когда-либо видели, с глубоким красновато-коричневым телом, блестящим как полированное дерево. Её глаза старые и мудрые — она видела тысячу восходов из-под земли. На её спине можно заметить кое-что особенное: крошечный переливающийся остаток крыла, сверкающий как радуга. Давным-давно она летела по небу, чтобы найти это идеальное место и начать свою семью. &#x27;Добро пожаловать, малыши,&#x27; говорит она тёплым, глубоким голосом. &#x27;Каждый из вас важен.&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#3</span>
+            <img data-src="assets/images/scout-portrait.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Lean, alert lighter brown ant with one bent antenna standing at the anthill entrance looking out over a vast meadow, adventurous pose, morning light"
+                 data-alt-en="Lean, alert lighter brown ant with one bent antenna standing at the anthill entrance looking out over a vast meadow, adventurous pose, morning light"
+                 data-alt-es="Hormiga delgada y alerta de color marron claro con una antena doblada, de pie en la entrada del hormiguero mirando un vasto prado, pose aventurera, luz matutina"
+                 data-alt-ru="Стройный, настороженный светло-коричневый муравей с одним изогнутым усиком, стоящий у входа в муравейник и смотрящий на бескрайний луг, приключенческая поза, утренний свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Scout Sets Out!</h2>
+            <h2 data-lang="es">Exploradora Sale a Buscar!</h2>
+            <h2 data-lang="ru">Разведчица отправляется в путь!</h2>
+            <div data-lang="en" class="active">
+                <p>Meet Scout — the bravest explorer in the whole colony! Scout is lean and fast, with lighter brown coloring that helps her blend with the dry leaves. Her antennae are always pointing forward, feeling and smelling everything around her. Look closely — see how one of her antennae has a little bend in it? She got that on her very first adventure, when she bravely explored a garden all by herself! &#x27;Today I&#x27;m going to find the biggest, most delicious food for the colony!&#x27; Scout announces, wiggling her bent antenna. And off she goes, racing into the enormous world of grass and soil!</p>
+            </div>
+            <div data-lang="es">
+                <p>Conoce a Exploradora — la exploradora mas valiente de toda la colonia! Exploradora es delgada y rapida, con un color marron mas claro que la ayuda a camuflarse con las hojas secas. Sus antenas siempre apuntan hacia adelante, sintiendo y oliendo todo a su alrededor. Mira de cerca — ves como una de sus antenas tiene una pequena curva? La obtuvo en su primera aventura, cuando exploro valientemente un jardin ella sola! &#x27;Hoy voy a encontrar la comida mas grande y deliciosa para la colonia!&#x27; anuncia Exploradora, moviendo su antena doblada. Y se va, corriendo hacia el enorme mundo de hierba y tierra!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Знакомьтесь — Разведчица, самая храбрая исследовательница во всей колонии! Разведчица стройная и быстрая, с более светлой коричневой окраской, помогающей ей сливаться с сухими листьями. Её усики всегда направлены вперёд, ощупывая и обнюхивая всё вокруг. Присмотритесь — видите, как один из её усиков слегка изогнут? Это случилось в её самом первом приключении, когда она смело исследовала сад совсем одна! &#x27;Сегодня я найду самую большую и вкусную еду для колонии!&#x27; объявляет Разведчица, шевеля изогнутым усиком. И вот она мчится в огромный мир травы и почвы!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#4</span>
+            <img data-src="assets/images/scout-finds-strawberry.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Small lighter brown ant excitedly discovering a huge ripe strawberry on the ground, grass blades towering around, golden sunlight, magical discovery moment"
+                 data-alt-en="Small lighter brown ant excitedly discovering a huge ripe strawberry on the ground, grass blades towering around, golden sunlight, magical discovery moment"
+                 data-alt-es="Pequena hormiga marron claro descubriendo emocionada una enorme fresa madura en el suelo, hojas de hierba imponentes alrededor, luz dorada, momento de descubrimiento magico"
+                 data-alt-ru="Маленький светло-коричневый муравей с восторгом обнаруживает огромную спелую клубнику на земле, травинки возвышаются вокруг, золотистый солнечный свет, волшебный момент открытия"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Greatest Discovery!</h2>
+            <h2 data-lang="es">El Mayor Descubrimiento!</h2>
+            <h2 data-lang="ru">Величайшее открытие!</h2>
+            <div data-lang="en" class="active">
+                <p>Scout races through the forest of grass blades, climbing over pebbles like mountains and jumping over puddles like lakes. Then she smells something AMAZING. She follows her nose — or rather, her antennae — and finds... a STRAWBERRY! It&#x27;s fallen from the garden above, and it&#x27;s the biggest, most beautiful red thing Scout has ever seen. It&#x27;s a hundred times bigger than she is! &#x27;The colony is going to FEAST!&#x27; Scout dances in a happy circle. But how will she tell everyone where it is? Scout has a plan — she&#x27;ll leave a trail of special scent that every ant can follow!</p>
+            </div>
+            <div data-lang="es">
+                <p>Exploradora corre a traves del bosque de hojas de hierba, trepando piedras como montanas y saltando charcos como lagos. Entonces huele algo INCREIBLE. Sigue su nariz — o mejor dicho, sus antenas — y encuentra... una FRESA! Ha caido del jardin de arriba, y es la cosa roja mas grande y hermosa que Exploradora ha visto. Es cien veces mas grande que ella! &#x27;La colonia va a tener un FESTIN!&#x27; Exploradora baila en un circulo feliz. Pero como les dira a todos donde esta? Exploradora tiene un plan — dejara un rastro de olor especial que cada hormiga puede seguir!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Разведчица мчится через лес из травинок, карабкается через камешки как через горы и перепрыгивает через лужи как через озёра. И тут она чувствует нечто ПОТРЯСАЮЩЕЕ. Она идёт по запаху — точнее, по усикам — и находит... КЛУБНИКУ! Она упала из сада наверху, и это самая большая, самая красивая красная вещь, которую Разведчица когда-либо видела. Она в сто раз больше неё! &#x27;Колония будет ПИРОВАТЬ!&#x27; Разведчица танцует в счастливом кружочке. Но как рассказать всем, где это? У Разведчицы есть план — она оставит след из особого запаха, по которому каждый муравей сможет пойти!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#5</span>
+            <img data-src="assets/images/trail-of-scents.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Line of ants marching single-file along a glowing scent trail through the grass, led by a lighter brown ant with a bent antenna, warm dappled sunlight"
+                 data-alt-en="Line of ants marching single-file along a glowing scent trail through the grass, led by a lighter brown ant with a bent antenna, warm dappled sunlight"
+                 data-alt-es="Linea de hormigas marchando en fila india a lo largo de un rastro de aroma brillante a traves de la hierba, lideradas por una hormiga marron claro con antena doblada, calida luz moteada"
+                 data-alt-ru="Колонна муравьёв, марширующих гуськом по светящейся тропе запахов через траву, ведомых светло-коричневым муравьём с изогнутым усиком, тёплый пятнистый солнечный свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Trail of Scents</h2>
+            <h2 data-lang="es">El Rastro de Olores</h2>
+            <h2 data-lang="ru">Тропа запахов</h2>
+            <div data-lang="en" class="active">
+                <p>Scout races back to the colony, dragging her belly along the ground as she runs. She&#x27;s leaving behind a special invisible perfume called a PHEROMONE — a chemical message that says &#x27;FOOD THIS WAY!&#x27; When she reaches the colony, she dances excitedly. &#x27;Follow me! Follow me!&#x27; The other ants touch her antennae and smell the message. One by one, they line up behind Scout and march out in a perfect single-file line. Each ant follows the scent trail exactly, adding more scent as she goes. The more ants that walk the trail, the STRONGER the smell gets! It&#x27;s like a highway made of perfume!</p>
+            </div>
+            <div data-lang="es">
+                <p>Exploradora corre de vuelta a la colonia, arrastrando su barriga por el suelo mientras corre. Esta dejando atras un perfume invisible especial llamado FEROMONA — un mensaje quimico que dice &#x27;COMIDA POR AQUI!&#x27; Cuando llega a la colonia, baila emocionada. &#x27;Siganme! Siganme!&#x27; Las otras hormigas tocan sus antenas y huelen el mensaje. Una por una, se alinean detras de Exploradora y marchan en una perfecta fila india. Cada hormiga sigue el rastro de olor exactamente, anadiendo mas aroma mientras camina. Cuantas mas hormigas caminan por el rastro, mas FUERTE se vuelve el olor! Es como una autopista hecha de perfume!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Разведчица мчится обратно в колонию, волоча брюшко по земле на бегу. Она оставляет за собой особые невидимые духи — ФЕРОМОН — химическое сообщение, которое говорит &#x27;ЕДА ТУТ!&#x27; Когда она добирается до колонии, она взволнованно танцует. &#x27;За мной! За мной!&#x27; Другие муравьи касаются её усиков и чувствуют запах-послание. Один за другим они выстраиваются за Разведчицей и маршируют в идеальной колонне. Каждый муравей следует по следу запаха точно, добавляя ещё больше аромата по пути. Чем больше муравьёв идёт по тропе, тем СИЛЬНЕЕ становится запах! Это как шоссе, сделанное из духов!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#6</span>
+            <img data-src="assets/images/tiny-carries-leaf.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Very small dark ant struggling adorably to carry a leaf piece twice her size over her head, wobbling with determination near the anthill entrance, warm sunlight"
+                 data-alt-en="Very small dark ant struggling adorably to carry a leaf piece twice her size over her head, wobbling with determination near the anthill entrance, warm sunlight"
+                 data-alt-es="Hormiga muy pequena y oscura luchando adorablemente por cargar un trozo de hoja el doble de su tamano sobre su cabeza, tambaleandose con determinacion cerca de la entrada del hormiguero"
+                 data-alt-ru="Очень маленький тёмный муравей, трогательно пытающийся нести кусок листа вдвое больше себя над головой, шатаясь с решимостью у входа в муравейник, тёплый солнечный свет"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Tiny&#x27;s Big Job</h2>
+            <h2 data-lang="es">El Gran Trabajo de Diminuta</h2>
+            <h2 data-lang="ru">Большая работа Крошки</h2>
+            <div data-lang="en" class="active">
+                <p>Little Tiny is the SMALLEST ant in the whole colony, but she has the BIGGEST heart! Today is her first day carrying food back to the nest, and she has found a piece of leaf that is TWICE her size. She grabs it with her tiny mandibles and lifts it over her head. WOBBLE! She tips left. WOBBLE! She tips right. The leaf spins her in a circle! &#x27;I... can... DO this!&#x27; Tiny grunts. The other ants cheer her on. &#x27;You&#x27;ve got it, Tiny!&#x27; Step by wobbly step, she marches toward home. The leaf is SO heavy, but Tiny never gives up. She finally makes it to the tunnel entrance — and all the ants cheer!</p>
+            </div>
+            <div data-lang="es">
+                <p>La pequena Diminuta es la hormiga MAS PEQUENA de toda la colonia, pero tiene el corazon MAS GRANDE! Hoy es su primer dia cargando comida de vuelta al nido, y ha encontrado un trozo de hoja que es el DOBLE de su tamano. Lo agarra con sus diminutas mandibulas y lo levanta sobre su cabeza. TAMBALEO! Se inclina a la izquierda. TAMBALEO! Se inclina a la derecha. La hoja la hace girar en circulo! &#x27;Yo... puedo... HACERLO!&#x27; gruñe Diminuta. Las otras hormigas la animan. &#x27;Tu puedes, Diminuta!&#x27; Paso a tambaleante paso, marcha hacia casa. La hoja es TAN pesada, pero Diminuta nunca se rinde. Finalmente llega a la entrada del tunel — y todas las hormigas celebran!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Маленькая Крошка — САМЫЙ МАЛЕНЬКИЙ муравей во всей колонии, но у неё САМОЕ БОЛЬШОЕ сердце! Сегодня её первый день, когда она несёт еду в гнездо, и она нашла кусочек листа ВДВОЕ больше себя. Она хватает его крошечными челюстями и поднимает над головой. ШАТАНИЕ! Она наклоняется влево. ШАТАНИЕ! Наклоняется вправо. Лист крутит её по кругу! &#x27;Я... могу... ЭТО СДЕЛАТЬ!&#x27; пыхтит Крошка. Другие муравьи подбадривают её. &#x27;Давай, Крошка!&#x27; Шаг за шатким шагом она марширует к дому. Лист ТАКОЙ тяжёлый, но Крошка никогда не сдаётся. Наконец она добирается до входа в тоннель — и все муравьи ликуют!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#7</span>
+            <img data-src="assets/images/major-guards-gate.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Large dark reddish-black soldier ant with massive head and oversized mandibles standing guard at a tunnel entrance, smaller worker ants passing safely, dramatic lighting"
+                 data-alt-en="Large dark reddish-black soldier ant with massive head and oversized mandibles standing guard at a tunnel entrance, smaller worker ants passing safely, dramatic lighting"
+                 data-alt-es="Gran hormiga soldado rojo-negra oscura con cabeza masiva y mandibulas enormes de guardia en la entrada de un tunel, hormigas obreras mas pequenas pasando a salvo, iluminacion dramatica"
+                 data-alt-ru="Большой тёмный красновато-чёрный муравей-солдат с массивной головой и огромными челюстями на страже у входа в тоннель, маленькие рабочие муравьи безопасно проходят мимо, драматичное освещение"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Major Guards the Gate</h2>
+            <h2 data-lang="es">Mayor Guarda la Puerta</h2>
+            <h2 data-lang="ru">Майор охраняет ворота</h2>
+            <div data-lang="en" class="active">
+                <p>At the main entrance of the colony stands MAJOR — the biggest, strongest ant you&#x27;ve ever seen! His head is enormous, and his mandibles (that&#x27;s what ant jaws are called) are so big they look like they could cut through anything. Major looks SO scary from the outside! But here&#x27;s a secret: Major is the GENTLEST ant in the colony. When little Tiny wobbles past with her giant leaf, Major softly guides her through. &#x27;Great job, little one,&#x27; he rumbles. But when a stranger ant from another colony tries to sneak in — Major blocks the way! &#x27;This is OUR home,&#x27; he says firmly. Nobody gets past Major.</p>
+            </div>
+            <div data-lang="es">
+                <p>En la entrada principal de la colonia esta MAYOR — la hormiga mas grande y fuerte que hayas visto! Su cabeza es enorme, y sus mandibulas (asi se llaman las quijadas de las hormigas) son tan grandes que parece que podrian cortar cualquier cosa. Mayor se ve TAN aterrador desde afuera! Pero aqui hay un secreto: Mayor es la hormiga MAS GENTIL de la colonia. Cuando la pequena Diminuta pasa tambaleandose con su hoja gigante, Mayor la guia suavemente. &#x27;Buen trabajo, pequena,&#x27; murmura. Pero cuando una hormiga extraña de otra colonia intenta colarse — Mayor bloquea el camino! &#x27;Este es NUESTRO hogar,&#x27; dice firmemente.</p>
+            </div>
+            <div data-lang="ru">
+                <p>У главного входа в колонию стоит МАЙОР — самый большой, самый сильный муравей, какого вы когда-либо видели! Его голова огромна, а его мандибулы (так называются челюсти муравьёв) такие большие, что кажется, будто они могут разрезать что угодно. Майор выглядит ТАК страшно снаружи! Но вот секрет: Майор — САМЫЙ НЕЖНЫЙ муравей в колонии. Когда маленькая Крошка шатко проходит мимо со своим гигантским листом, Майор мягко направляет её. &#x27;Отличная работа, малышка,&#x27; гудит он. Но когда чужой муравей из другой колонии пытается прокрасться — Майор преграждает путь! &#x27;Это НАШ дом,&#x27; говорит он твёрдо. Никто не пройдёт мимо Майора.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#8</span>
+            <img data-src="assets/images/building-tunnels.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Cross-section view of underground ant tunnels with worker ants digging and carrying earth balls, smooth tunnel walls, root tendrils, warm amber glow, impressive engineering"
+                 data-alt-en="Cross-section view of underground ant tunnels with worker ants digging and carrying earth balls, smooth tunnel walls, root tendrils, warm amber glow, impressive engineering"
+                 data-alt-es="Vista en corte transversal de tuneles subterraneos con hormigas obreras cavando y cargando bolitas de tierra, paredes lisas, raices, resplandor ambar calido"
+                 data-alt-ru="Вид в разрезе подземных муравьиных тоннелей с рабочими муравьями, копающими и несущими комочки земли, гладкие стены, корешки, тёплое янтарное свечение"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Building the Underground City</h2>
+            <h2 data-lang="es">Construyendo la Ciudad Subterranea</h2>
+            <h2 data-lang="ru">Строим подземный город</h2>
+            <div data-lang="en" class="active">
+                <p>Underground, the ants are building something INCREDIBLE. Thousands of workers dig with their strong mandibles, scooping out tiny balls of earth and carrying them to the surface. They&#x27;re building tunnels that connect hundreds of rooms — nurseries for babies, storage rooms for food, resting chambers, and even a special room for Queen Terra! The tunnels go deeper than a tall person! Some rooms have perfect ventilation to keep the air fresh. Scout plans the routes while Tiny and her friends do the digging. Every tunnel is smooth and perfectly round. It&#x27;s like an entire city — and ANTS built it, grain by grain!</p>
+            </div>
+            <div data-lang="es">
+                <p>Bajo tierra, las hormigas estan construyendo algo INCREIBLE. Miles de obreras cavan con sus fuertes mandibulas, sacando pequenas bolitas de tierra y llevandolas a la superficie. Estan construyendo tuneles que conectan cientos de habitaciones — guarderias para bebes, almacenes para comida, camaras de descanso, e incluso una habitacion especial para la Reina Terra! Los tuneles van mas profundo que una persona alta! Algunas habitaciones tienen ventilacion perfecta para mantener el aire fresco. Exploradora planifica las rutas mientras Diminuta y sus amigas hacen la excavacion. Cada tunel es liso y perfectamente redondo. Es como una ciudad entera — y las HORMIGAS la construyeron, grano por grano!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Под землёй муравьи строят нечто НЕВЕРОЯТНОЕ. Тысячи рабочих копают сильными челюстями, вычерпывая крошечные комочки земли и вынося их на поверхность. Они строят тоннели, соединяющие сотни комнат — детские для малышей, кладовые для еды, камеры отдыха и даже особую комнату для Королевы Терры! Тоннели уходят глубже, чем рост высокого человека! В некоторых комнатах идеальная вентиляция для свежего воздуха. Разведчица планирует маршруты, а Крошка с подружками копают. Каждый тоннель гладкий и идеально круглый. Это целый город — и МУРАВЬИ построили его, песчинка за песчинкой!</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#9</span>
+            <img data-src="assets/images/fungus-garden.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Magical underground chamber with ants farming white fluffy fungus on beds of chewed leaves, soft glowing light, tiny ant farmers tending the garden"
+                 data-alt-en="Magical underground chamber with ants farming white fluffy fungus on beds of chewed leaves, soft glowing light, tiny ant farmers tending the garden"
+                 data-alt-es="Camara subterranea magica con hormigas cultivando hongos blancos esponjosos en camas de hojas masticadas, luz suave y brillante, pequenas hormigas granjeras cuidando el jardin"
+                 data-alt-ru="Волшебная подземная камера, где муравьи выращивают белые пушистые грибы на подстилке из пережёванных листьев, мягкое свечение, крошечные муравьи-фермеры ухаживают за садом"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Fungus Garden</h2>
+            <h2 data-lang="es">El Jardin de Hongos</h2>
+            <h2 data-lang="ru">Грибной сад</h2>
+            <div data-lang="en" class="active">
+                <p>Here&#x27;s the most AMAZING secret in the ant world: some ants are FARMERS! Deep in the colony, there&#x27;s a special room that looks like a magical garden. Remember all those leaves Tiny and the others carried in? They don&#x27;t eat the leaves — they CHEW them up into tiny pieces and use them to grow FUNGUS! The white, fluffy fungus is the ants&#x27; favorite food. They tend their garden like tiny farmers, pulling out weeds, adding fresh leaves, and harvesting the yummy fungus when it&#x27;s ready. Tiny is learning to be a fungus gardener, and she&#x27;s SO gentle with the delicate white puffs. &#x27;It&#x27;s like growing a cloud!&#x27; she says dreamily.</p>
+            </div>
+            <div data-lang="es">
+                <p>Aqui esta el secreto mas ASOMBROSO del mundo de las hormigas: algunas hormigas son GRANJERAS! En lo profundo de la colonia, hay una habitacion especial que parece un jardin magico. Recuerdan todas esas hojas que Diminuta y las demas cargaron? No se comen las hojas — las MASTICAN en pedacitos y las usan para cultivar HONGOS! El hongo blanco y esponjoso es la comida favorita de las hormigas. Cuidan su jardin como pequenas granjeras, arrancando malezas, anadiendo hojas frescas y cosechando el delicioso hongo cuando esta listo. Diminuta esta aprendiendo a ser jardinera de hongos, y es TAN delicada con los suaves copitos blancos. &#x27;Es como cultivar una nube!&#x27; dice sonadora.</p>
+            </div>
+            <div data-lang="ru">
+                <p>Вот самый УДИВИТЕЛЬНЫЙ секрет мира муравьёв: некоторые муравьи — ФЕРМЕРЫ! Глубоко в колонии есть особая комната, похожая на волшебный сад. Помните все те листья, что Крошка и другие приносили? Они не едят листья — они ПЕРЕЖЁВЫВАЮТ их в крошечные кусочки и используют для выращивания ГРИБОВ! Белый, пушистый гриб — любимая еда муравьёв. Они ухаживают за своим садом как крошечные фермеры, вырывая сорняки, добавляя свежие листья и собирая вкусный гриб, когда он готов. Крошка учится быть грибным садовником, и она ТАКАЯ нежная с деликатными белыми пушинками. &#x27;Это как выращивать облако!&#x27; говорит она мечтательно.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#10</span>
+            <img data-src="assets/images/carrying-giants.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Team of ants working together to carry an enormous piece of fruit, some pushing, some pulling, some lifting, golden afternoon light, incredible teamwork"
+                 data-alt-en="Team of ants working together to carry an enormous piece of fruit, some pushing, some pulling, some lifting, golden afternoon light, incredible teamwork"
+                 data-alt-es="Equipo de hormigas trabajando juntas para cargar un enorme trozo de fruta, algunas empujando, otras jalando, otras levantando, luz dorada de la tarde, increible trabajo en equipo"
+                 data-alt-ru="Команда муравьёв, работающих вместе, чтобы нести огромный кусок фрукта, одни толкают, другие тянут, третьи поднимают, золотистый послеполуденный свет, невероятная командная работа"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">Carrying Giants!</h2>
+            <h2 data-lang="es">Cargando Gigantes!</h2>
+            <h2 data-lang="ru">Несём великанов!</h2>
+            <div data-lang="en" class="active">
+                <p>Here comes the BEST part about ants — they are the STRONGEST animals for their size on the ENTIRE PLANET! An ant can carry FIFTY TIMES her own body weight. That would be like YOU picking up a school bus! When Scout found that enormous strawberry, it took a team of ants to carry it home. Some push from behind, some pull from the front, and some lift from underneath. &#x27;One, two, THREE — LIFT!&#x27; calls Scout. The strawberry rises off the ground! Even little Tiny helps, pushing with all her might from the back. &#x27;TEAMWORK!&#x27; they all shout together. And inch by inch, the giant strawberry moves toward home.</p>
+            </div>
+            <div data-lang="es">
+                <p>Aqui viene lo MEJOR de las hormigas — son los animales MAS FUERTES para su tamano en TODO EL PLANETA! Una hormiga puede cargar CINCUENTA VECES su propio peso. Eso seria como si TU levantaras un autobus escolar! Cuando Exploradora encontro esa enorme fresa, se necesito un equipo de hormigas para llevarla a casa. Algunas empujan por detras, algunas jalan por delante, y algunas levantan por debajo. &#x27;Una, dos, TRES — LEVANTEN!&#x27; grita Exploradora. La fresa se eleva del suelo! Incluso la pequena Diminuta ayuda, empujando con todas sus fuerzas por detras. &#x27;TRABAJO EN EQUIPO!&#x27; gritan todas juntas.</p>
+            </div>
+            <div data-lang="ru">
+                <p>А вот САМОЕ ЛУЧШЕЕ в муравьях — они САМЫЕ СИЛЬНЫЕ животные для своего размера на ВСЕЙ ПЛАНЕТЕ! Муравей может нести в ПЯТЬДЕСЯТ раз больше собственного веса. Это как если бы ВЫ подняли школьный автобус! Когда Разведчица нашла ту огромную клубнику, понадобилась команда муравьёв, чтобы отнести её домой. Одни толкают сзади, другие тянут спереди, третьи поднимают снизу. &#x27;Раз, два, ТРИ — ПОДЪЁМ!&#x27; командует Разведчица. Клубника поднимается с земли! Даже маленькая Крошка помогает, толкая изо всех сил сзади. &#x27;КОМАНДНАЯ РАБОТА!&#x27; кричат они все вместе.</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#11</span>
+            <img data-src="assets/images/the-nursery.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Warm underground nursery chamber with tiny white eggs and larvae, nurse ants carefully tending babies, a small dark ant gently holding an egg, soft amber lighting"
+                 data-alt-en="Warm underground nursery chamber with tiny white eggs and larvae, nurse ants carefully tending babies, a small dark ant gently holding an egg, soft amber lighting"
+                 data-alt-es="Calida camara subterranea de guarderia con diminutos huevos blancos y larvas, hormigas niñeras cuidando bebes, una pequena hormiga oscura sosteniendo un huevo suavemente"
+                 data-alt-ru="Тёплая подземная камера-детская с крошечными белыми яйцами и личинками, муравьи-няни бережно ухаживают за малышами, маленький тёмный муравей нежно держит яйцо"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">The Nursery</h2>
+            <h2 data-lang="es">La Guarderia</h2>
+            <h2 data-lang="ru">Детская</h2>
+            <div data-lang="en" class="active">
+                <p>The most precious room in the entire colony is the nursery. Here, special nurse ants take care of Queen Terra&#x27;s eggs and babies. The tiny white eggs are so small you&#x27;d need a magnifying glass to see them! The nurses carry them gently in their mandibles, moving them to warmer or cooler spots depending on what the babies need. Tiny has been chosen as a nursery helper today! She holds a single tiny egg so carefully, like it&#x27;s the most precious thing in the world — because it IS. &#x27;Hello, little one,&#x27; Tiny whispers to the egg. &#x27;I was small once too, and look at me now — I can carry a whole leaf!&#x27; The egg seems to wiggle in response.</p>
+            </div>
+            <div data-lang="es">
+                <p>La habitacion mas preciada de toda la colonia es la guarderia. Aqui, hormigas niñeras especiales cuidan los huevos y bebes de la Reina Terra. Los diminutos huevos blancos son tan pequenos que necesitarias una lupa para verlos! Las niñeras los cargan suavemente en sus mandibulas, moviendolos a lugares mas calidos o frios dependiendo de lo que los bebes necesiten. Diminuta ha sido elegida como ayudante de guarderia hoy! Sostiene un pequeno huevo con tanto cuidado, como si fuera la cosa mas preciosa del mundo — porque lo ES. &#x27;Hola, pequenito,&#x27; susurra Diminuta al huevo. &#x27;Yo tambien fui pequena, y mirame ahora — puedo cargar una hoja entera!&#x27;</p>
+            </div>
+            <div data-lang="ru">
+                <p>Самая драгоценная комната во всей колонии — детская. Здесь особые муравьи-няни заботятся о яйцах и малышах Королевы Терры. Крошечные белые яйца настолько малы, что вам понадобится лупа, чтобы их увидеть! Няни нежно несут их в челюстях, перенося в более тёплые или прохладные места в зависимости от того, что нужно малышам. Крошка сегодня выбрана помощницей в детской! Она держит одно крошечное яйцо так бережно, будто это самая ценная вещь в мире — потому что так и ЕСТЬ. &#x27;Привет, малыш,&#x27; шепчет Крошка яйцу. &#x27;Я тоже когда-то была маленькой, а теперь — могу нести целый лист!&#x27;</p>
+            </div>
+        </div>
+    </section>
+    <section class="content-section">
+        <div class="image-container">
+            <span class="img-ref">#12</span>
+            <img data-src="assets/images/all-together-strong.jpg"
+                 src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 800'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                 alt="Magnificent wide shot of the ant colony at golden sunset, ants streaming in organized lines, all four main characters visible, anthill glowing warmly, wildflowers surrounding"
+                 data-alt-en="Magnificent wide shot of the ant colony at golden sunset, ants streaming in organized lines, all four main characters visible, anthill glowing warmly, wildflowers surrounding"
+                 data-alt-es="Magnifica toma amplia de la colonia al atardecer dorado, hormigas en lineas organizadas, los cuatro personajes principales visibles, hormiguero brillando calidamente"
+                 data-alt-ru="Великолепный широкий план колонии муравьёв на фоне золотого заката, муравьи движутся организованными колоннами, все четыре главных персонажа видны, муравейник тепло светится"
+                 loading="lazy">
+        </div>
+        <div class="text-content">
+            <h2 data-lang="en" class="active">All Together Strong!</h2>
+            <h2 data-lang="es">Juntas Somos Fuertes!</h2>
+            <h2 data-lang="ru">Вместе мы сила!</h2>
+            <div data-lang="en" class="active">
+                <p>As the golden sunset paints the sky, look at what these tiny ants have built TOGETHER! Queen Terra watches from her chamber with pride. Scout has found enough food for everyone. Tiny proved that even the smallest ant makes a BIG difference. And Major keeps them all safe. Thousands of ants, each one as small as a grain of sand, built an underground city, grew their own food, raised their babies, and protected their home — all by working TOGETHER. No ant could do it alone, but together? Together they can move mountains — one grain at a time. And THAT is the most amazing thing about ants: alone they are tiny, but together they are UNSTOPPABLE!</p>
+            </div>
+            <div data-lang="es">
+                <p>Mientras el atardecer dorado pinta el cielo, miren lo que estas diminutas hormigas construyeron JUNTAS! La Reina Terra observa desde su camara con orgullo. Exploradora encontro suficiente comida para todos. Diminuta demostro que incluso la hormiga mas pequena hace una GRAN diferencia. Y Mayor las mantiene a todas seguras. Miles de hormigas, cada una tan pequena como un grano de arena, construyeron una ciudad subterranea, cultivaron su propia comida, criaron a sus bebes y protegieron su hogar — todo trabajando JUNTAS. Ninguna hormiga podria hacerlo sola, pero juntas? Juntas pueden mover montanas — un grano a la vez. Y ESO es lo mas asombroso de las hormigas: solas son diminutas, pero juntas son IMPARABLES!</p>
+            </div>
+            <div data-lang="ru">
+                <p>Пока золотой закат раскрашивает небо, посмотрите, что эти крошечные муравьи построили ВМЕСТЕ! Королева Терра смотрит из своей камеры с гордостью. Разведчица нашла достаточно еды для всех. Крошка доказала, что даже самый маленький муравей вносит БОЛЬШОЙ вклад. А Майор хранит всех в безопасности. Тысячи муравьёв, каждый размером с песчинку, построили подземный город, вырастили собственную еду, воспитали малышей и защитили свой дом — всё благодаря КОМАНДНОЙ РАБОТЕ. Ни один муравей не смог бы сделать это в одиночку, но вместе? Вместе они могут сдвинуть горы — песчинка за песчинкой. И ЭТО самое удивительное в муравьях: поодиночке они крошечные, но вместе они НЕУДЕРЖИМЫ!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Viewer Details Section -->
+    <section class="viewer-details">
+        <h2 data-lang="en" class="active">Did You Notice?</h2>
+        <h2 data-lang="es">¿Te Diste Cuenta?</h2>
+        <h2 data-lang="ru">Вы Заметили?</h2>
+        <div class="details-grid">
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V1</span>
+                <img data-src="assets/images/detail-mandible-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Mandible Power"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Mandible Power</h3>
+                    <h3 data-lang="es">Poder de las Mandibulas</h3>
+                    <h3 data-lang="ru">Сила челюстей</h3>
+                    <p data-lang="en" class="active">Look at Major&#x27;s massive mandibles — those are his jaws! Ant mandibles are like a Swiss Army knife: they can cut leaves, dig tunnels, carry food, feed baby ants, and fight off enemies. Major&#x27;s mandibles are especially large because he&#x27;s a soldier ant. The inside edges are serrated like a tiny saw blade, perfect for gripping and cutting. Some ants can even snap their mandibles shut faster than almost any movement in the animal kingdom!</p>
+                    <p data-lang="es">Mira las mandibulas masivas de Mayor — esas son sus quijadas! Las mandibulas de las hormigas son como una navaja suiza: pueden cortar hojas, cavar tuneles, cargar comida, alimentar bebes y luchar contra enemigos. Las mandibulas de Mayor son especialmente grandes porque es un soldado. Los bordes interiores estan serrados como una pequena sierra, perfectos para agarrar y cortar.</p>
+                    <p data-lang="ru">Посмотрите на массивные мандибулы Майора — это его челюсти! Челюсти муравья как швейцарский нож: ими можно резать листья, копать тоннели, переносить еду, кормить малышей и отбиваться от врагов. Челюсти Майора особенно большие, потому что он муравей-солдат. Внутренние края зазубрены как крошечная пила, идеальны для захвата и резки.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V2</span>
+                <img data-src="assets/images/detail-antenna-closeup.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Amazing Antennae"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Amazing Antennae</h3>
+                    <h3 data-lang="es">Antenas Asombrosas</h3>
+                    <h3 data-lang="ru">Удивительные усики</h3>
+                    <p data-lang="en" class="active">Scout&#x27;s antennae are her most important tools! Each antenna has a special elbow joint in the middle that lets it bend and reach in all directions. The tip is covered in thousands of tiny scent receptors that can detect chemical signals in the air. Ants use their antennae to smell, taste, touch, and even measure things! When two ants meet, they touch antennae to share information — it&#x27;s like a secret handshake that tells them everything about each other.</p>
+                    <p data-lang="es">Las antenas de Exploradora son sus herramientas mas importantes! Cada antena tiene una articulacion especial en el medio que le permite doblarse y alcanzar en todas direcciones. La punta esta cubierta de miles de receptores de olor que pueden detectar senales quimicas en el aire. Las hormigas usan sus antenas para oler, saborear, tocar e incluso medir cosas!</p>
+                    <p data-lang="ru">Усики Разведчицы — её важнейшие инструменты! На каждом усике есть особый локтевой сустав посередине, позволяющий сгибаться и дотягиваться во всех направлениях. Кончик покрыт тысячами крошечных рецепторов запаха, способных улавливать химические сигналы в воздухе. Муравьи используют усики, чтобы нюхать, пробовать на вкус, осязать и даже измерять! Когда два муравья встречаются, они касаются усиками — это как тайное рукопожатие.</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V3</span>
+                <img data-src="assets/images/detail-exoskeleton-texture.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Armor Exoskeleton"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Armor Exoskeleton</h3>
+                    <h3 data-lang="es">Exoesqueleto Armadura</h3>
+                    <h3 data-lang="ru">Экзоскелет-броня</h3>
+                    <p data-lang="en" class="active">Queen Terra&#x27;s body is covered in an exoskeleton — a hard outer shell made of a material called chitin (say &#x27;KY-tin&#x27;). It&#x27;s like wearing a suit of armor on the outside instead of having bones on the inside! The exoskeleton is divided into plates connected by flexible joints, so ants can still move freely. It protects them from damage and keeps water inside their bodies. As ants grow, they shed their exoskeleton and grow a bigger one — like getting a new suit of armor!</p>
+                    <p data-lang="es">El cuerpo de la Reina Terra esta cubierto por un exoesqueleto — una cubierta exterior dura hecha de un material llamado quitina. Es como llevar una armadura por fuera en lugar de tener huesos por dentro! El exoesqueleto esta dividido en placas conectadas por articulaciones flexibles, para que las hormigas puedan moverse libremente. Las protege del dano y mantiene el agua dentro de sus cuerpos.</p>
+                    <p data-lang="ru">Тело Королевы Терры покрыто экзоскелетом — твёрдой внешней оболочкой из материала хитин. Это как носить доспехи снаружи вместо костей внутри! Экзоскелет разделён на пластины, соединённые гибкими суставами, чтобы муравьи могли свободно двигаться. Он защищает их от повреждений и удерживает воду внутри тела. По мере роста муравьи сбрасывают экзоскелет и выращивают новый — как получить новые доспехи!</p>
+                </div>
+            </div>
+            <div class="detail-card" style="position: relative;">
+                <span class="img-ref">V4</span>
+                <img data-src="assets/images/detail-leg-grip.jpg"
+                     src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                     alt="Grip and Climb"
+                     loading="lazy">
+                <div class="detail-content">
+                    <h3 data-lang="en" class="active">Grip and Climb</h3>
+                    <h3 data-lang="es">Agarre y Escalada</h3>
+                    <h3 data-lang="ru">Хватка и лазание</h3>
+                    <p data-lang="en" class="active">How does Tiny walk up walls and even upside down on ceilings? Each ant foot has two tiny hooks called tarsal claws, plus a sticky pad between them called an arolium. The claws grip rough surfaces like bark and soil, while the sticky pad works on smooth surfaces like leaves and glass. This dual system means ants can walk on almost ANYTHING — vertical walls, upside down, even on water surface tension! That&#x27;s why you see ants climbing everywhere without ever falling.</p>
+                    <p data-lang="es">Como camina Diminuta por las paredes e incluso boca abajo en los techos? Cada pata de hormiga tiene dos ganchos llamados garras tarsales, mas una almohadilla pegajosa entre ellas llamada arolio. Las garras agarran superficies rugosas como corteza y tierra, mientras la almohadilla pegajosa funciona en superficies lisas como hojas y vidrio. Este sistema doble significa que las hormigas pueden caminar en casi CUALQUIER COSA!</p>
+                    <p data-lang="ru">Как Крошка ходит по стенам и даже вверх ногами по потолкам? На каждой лапке муравья есть два крошечных крючка — тарзальные коготки, плюс липкая подушечка между ними — аролиум. Коготки цепляются за шероховатые поверхности вроде коры и почвы, а липкая подушечка работает на гладких поверхностях вроде листьев и стекла. Эта двойная система означает, что муравьи могут ходить почти по ЧЕМУ УГОДНО — по вертикальным стенам, вверх ногами, даже по поверхности воды!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section class="fun-facts-section">
+        <div class="fun-facts-container">
+            <h2 data-lang="en" class="active">Amazing Ant Facts!</h2>
+            <h2 data-lang="es">Datos Asombrosos sobre Hormigas!</h2>
+            <h2 data-lang="ru">Удивительные факты о муравьях!</h2>
+            <div class="facts-grid">
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F1</span>
+                    <img data-src="assets/images/fun-fact-strength.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Super Strength"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Super Strength</h3>
+                        <h3 data-lang="es">Super Fuerza</h3>
+                        <h3 data-lang="ru">Суперсила</h3>
+                        <p data-lang="en" class="active">Ants can carry objects 50 times their own body weight! That&#x27;s like a human picking up a car and carrying it over their head. Their secret is their exoskeleton — a hard outer shell that acts like a suit of armor and gives their muscles incredible leverage. Some species can even carry 100 times their weight when working together!</p>
+                        <p data-lang="es">Las hormigas pueden cargar objetos 50 veces su propio peso! Eso es como si un humano levantara un auto y lo cargara sobre su cabeza. Su secreto es su exoesqueleto — una cubierta exterior dura que actua como una armadura y da a sus musculos una palanca increible. Algunas especies pueden incluso cargar 100 veces su peso cuando trabajan juntas!</p>
+                        <p data-lang="ru">Муравьи могут нести предметы в 50 раз тяжелее собственного веса! Это как если бы человек поднял автомобиль и нёс его над головой. Их секрет — экзоскелет, твёрдая внешняя оболочка, которая действует как доспехи и даёт их мышцам невероятный рычаг. Некоторые виды могут нести даже в 100 раз больше своего веса, работая вместе!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F2</span>
+                    <img data-src="assets/images/fun-fact-colony-size.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Mega Colonies"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Mega Colonies</h3>
+                        <h3 data-lang="es">Mega Colonias</h3>
+                        <h3 data-lang="ru">Мегаколонии</h3>
+                        <p data-lang="en" class="active">Some ant colonies can have MILLIONS of members! The largest known ant supercolony stretches over 6,000 kilometers across southern Europe — that&#x27;s wider than the United States! These massive colonies have multiple queens and billions of workers. A single colony of leafcutter ants can strip a whole tree of its leaves in one night!</p>
+                        <p data-lang="es">Algunas colonias de hormigas pueden tener MILLONES de miembros! La supercolonia de hormigas mas grande conocida se extiende por mas de 6,000 kilometros a traves del sur de Europa — eso es mas ancho que los Estados Unidos! Estas colonias masivas tienen multiples reinas y miles de millones de trabajadoras. Una sola colonia de hormigas cortadoras puede despojar un arbol entero de sus hojas en una noche!</p>
+                        <p data-lang="ru">Некоторые колонии муравьёв могут насчитывать МИЛЛИОНЫ членов! Самая большая известная суперколония муравьёв простирается на более чем 6 000 километров через южную Европу — это шире, чем США! Эти огромные колонии имеют множество королев и миллиарды рабочих. Одна колония муравьёв-листорезов может обобрать целое дерево за одну ночь!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F3</span>
+                    <img data-src="assets/images/fun-fact-scent-trails.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Scent Language"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Scent Language</h3>
+                        <h3 data-lang="es">Lenguaje de Olores</h3>
+                        <h3 data-lang="ru">Язык запахов</h3>
+                        <p data-lang="en" class="active">Ants talk to each other using special chemicals called pheromones! They leave scent trails on the ground to say &#x27;food this way,&#x27; release alarm scents that mean &#x27;danger!&#x27;, and even have a special smell that says &#x27;I&#x27;m from this colony.&#x27; An ant&#x27;s antennae can detect incredibly tiny amounts of these chemicals — it&#x27;s like having a super-powered nose on your head!</p>
+                        <p data-lang="es">Las hormigas hablan entre si usando quimicos especiales llamados feromonas! Dejan rastros de olor en el suelo para decir &#x27;comida por aqui,&#x27; liberan olores de alarma que significan &#x27;peligro!&#x27;, e incluso tienen un olor especial que dice &#x27;soy de esta colonia.&#x27; Las antenas de una hormiga pueden detectar cantidades increiblemente pequenas de estos quimicos — es como tener una super nariz en tu cabeza!</p>
+                        <p data-lang="ru">Муравьи разговаривают друг с другом с помощью особых химических веществ — феромонов! Они оставляют пахучие следы на земле, чтобы сказать &#x27;еда тут,&#x27; выпускают тревожные запахи, означающие &#x27;опасность!&#x27;, и даже имеют особый запах, говорящий &#x27;я из этой колонии.&#x27; Усики муравья могут обнаружить невероятно малые количества этих веществ — это как иметь суперносик на голове!</p>
+                    </div>
+                </div>
+                <div class="fact-card" style="position: relative;">
+                    <span class="img-ref">F4</span>
+                    <img data-src="assets/images/fun-fact-fungus-farming.jpg"
+                         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23f0f0f0'/%3E%3C/svg%3E"
+                         alt="Tiny Farmers"
+                         class="fact-card-image"
+                         loading="lazy">
+                    <div class="fact-card-content">
+                        <h3 data-lang="en" class="active">Tiny Farmers</h3>
+                        <h3 data-lang="es">Pequenas Granjeras</h3>
+                        <h3 data-lang="ru">Крошечные фермеры</h3>
+                        <p data-lang="en" class="active">Leafcutter ants have been farming fungus for over 50 MILLION years — that&#x27;s way before humans even existed! They cut leaves, carry them underground, chew them into a paste, and grow a special fungus on top. They even use natural antibiotics to keep their gardens disease-free. They were the world&#x27;s first farmers, and they&#x27;re still some of the best!</p>
+                        <p data-lang="es">Las hormigas cortadoras de hojas han cultivado hongos por mas de 50 MILLONES de anos — eso es mucho antes de que los humanos existieran! Cortan hojas, las llevan bajo tierra, las mastican hasta hacer una pasta y cultivan un hongo especial encima. Incluso usan antibioticos naturales para mantener sus jardines libres de enfermedades. Fueron las primeras granjeras del mundo, y siguen siendo de las mejores!</p>
+                        <p data-lang="ru">Муравьи-листорезы выращивают грибы уже более 50 МИЛЛИОНОВ лет — это задолго до появления людей! Они срезают листья, несут их под землю, пережёвывают в пасту и выращивают на ней особый гриб. Они даже используют природные антибиотики, чтобы защитить свои сады от болезней. Они были первыми фермерами в мире и до сих пор одни из лучших!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p data-lang="en" class="active">© 2025 Learning with Anastasia - Educational Magazine Collection</p>
+        <p data-lang="es">© 2025 Aprendiendo con Anastasia - Colección de Revistas Educativas</p>
+        <p data-lang="ru">© 2025 Учимся с Анастасией - Коллекция образовательных журналов</p>
+        <p data-lang="en" class="active" style="margin-top: 10px;">Celebrating the power of teamwork in nature&#x27;s tiniest builders</p>
+        <p data-lang="es" style="margin-top: 10px;">Celebrando el poder del trabajo en equipo en las constructoras mas pequenas de la naturaleza</p>
+        <p data-lang="ru" style="margin-top: 10px;">Восхваляя силу командной работы самых маленьких строителей природы</p>
+    </footer>
+
+    <script>
+        // Virtual rendering for performance and language switching
+        class VirtualRenderer {
+            constructor() {
+                this.sections = [];
+                this.visibleRange = { start: 0, end: 0 };
+                this.buffer = 2; // Render 2 sections above and below viewport
+                this.initialize();
+            }
+            
+            initialize() {
+                // Get all content sections
+                this.sections = Array.from(document.querySelectorAll('.content-section'));
+                
+                // Store original HTML for each section
+                this.sections.forEach((section, index) => {
+                    section.dataset.sectionIndex = index;
+                    section.dataset.originalHtml = section.innerHTML;
+                });
+                
+                // Initial render
+                this.updateVisibleSections();
+                
+                // Set up scroll listener with debouncing
+                let scrollTimeout;
+                window.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => this.updateVisibleSections(), 50);
+                });
+            }
+            
+            updateVisibleSections() {
+                const viewportTop = window.scrollY - 500;
+                const viewportBottom = window.scrollY + window.innerHeight + 500;
+                
+                let newStart = -1;
+                let newEnd = -1;
+                
+                // Find visible sections
+                this.sections.forEach((section, index) => {
+                    const rect = section.getBoundingClientRect();
+                    const sectionTop = rect.top + window.scrollY;
+                    const sectionBottom = sectionTop + rect.height;
+                    
+                    if (sectionBottom >= viewportTop && sectionTop <= viewportBottom) {
+                        if (newStart === -1) newStart = index;
+                        newEnd = index;
+                    }
+                });
+                
+                // Add buffer
+                newStart = Math.max(0, newStart - this.buffer);
+                newEnd = Math.min(this.sections.length - 1, newEnd + this.buffer);
+                
+                // Only update if range changed
+                if (newStart !== this.visibleRange.start || newEnd !== this.visibleRange.end) {
+                    this.renderRange(newStart, newEnd);
+                    this.visibleRange = { start: newStart, end: newEnd };
+                }
+            }
+            
+            renderRange(start, end) {
+                this.sections.forEach((section, index) => {
+                    if (index >= start && index <= end) {
+                        // Render section if not already rendered
+                        if (section.dataset.rendered !== 'true') {
+                            section.innerHTML = section.dataset.originalHtml;
+                            section.dataset.rendered = 'true';
+                            // Re-apply language setting
+                            const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+                            this.applyLanguageToSection(section, currentLang);
+                            // Re-trigger lazy loading for new img elements
+                            if (window.initNewLazyImages) {
+                                window.initNewLazyImages();
+                            }
+                        }
+                    } else {
+                        // Unrender section but keep placeholder
+                        if (section.dataset.rendered === 'true') {
+                            const height = section.offsetHeight;
+                            section.innerHTML = `<div style="height: ${height}px; background: transparent;"></div>`;
+                            section.dataset.rendered = 'false';
+                        }
+                    }
+                });
+            }
+            
+            applyLanguageToSection(section, lang) {
+                // Hide all language elements in this section
+                section.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                
+                // Show selected language elements
+                section.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                
+                // Update image alt texts
+                section.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            refreshLanguage(lang) {
+                // Only update rendered sections
+                this.sections.forEach((section, index) => {
+                    if (section.dataset.rendered === 'true') {
+                        this.applyLanguageToSection(section, lang);
+                    }
+                });
+            }
+        }
+        
+        let virtualRenderer = null;
+        // Language switching functionality
+        function changeLanguage(lang) {
+            // Find the most visible section before switching
+            const sections = document.querySelectorAll('.content-section');
+            let mostVisibleSection = null;
+            let maxVisibility = 0;
+            
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                // Calculate how much of the section is visible
+                const visibleTop = Math.max(0, Math.min(rect.bottom, viewportHeight));
+                const visibleBottom = Math.max(0, rect.top);
+                const visibleHeight = visibleTop - visibleBottom;
+                
+                if (visibleHeight > maxVisibility && rect.top < viewportHeight / 2) {
+                    maxVisibility = visibleHeight;
+                    mostVisibleSection = section;
+                }
+            });
+            
+            // If a section is partially visible at the top, scroll it fully into view
+            if (mostVisibleSection) {
+                const rect = mostVisibleSection.getBoundingClientRect();
+                if (rect.top < 100 && rect.top > -50) {
+                    mostVisibleSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    // Wait for scroll to complete
+                    setTimeout(() => performLanguageSwitch(lang), 300);
+                    return;
+                }
+            }
+            
+            performLanguageSwitch(lang);
+        }
+        
+        function performLanguageSwitch(lang) {
+            // Prevent any scroll changes
+            const scrollPos = window.scrollY;
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollPos}px`;
+            document.body.style.width = '100%';
+            
+            // Update button states
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            // Update non-section language elements (header, footer, etc)
+            document.querySelectorAll('.header [data-lang], .footer [data-lang], .fun-facts-section [data-lang], .viewer-details [data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll(`.header [data-lang="${lang}"], .footer [data-lang="${lang}"], .fun-facts-section [data-lang="${lang}"], .viewer-details [data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Use virtual renderer for content sections
+            if (virtualRenderer) {
+                virtualRenderer.refreshLanguage(lang);
+            } else {
+                // Fallback for non-virtual rendering
+                document.querySelectorAll('[data-lang]').forEach(el => {
+                    el.classList.remove('active');
+                });
+                document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                    el.classList.add('active');
+                });
+                document.querySelectorAll('img[data-alt-' + lang + ']').forEach(img => {
+                    img.alt = img.getAttribute('data-alt-' + lang);
+                });
+            }
+            
+            // Restore scroll exactly
+            document.body.style.position = '';
+            document.body.style.overflow = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollPos);
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Load saved language preference
+        window.addEventListener('DOMContentLoaded', () => {
+            // Initialize virtual renderer
+            virtualRenderer = new VirtualRenderer();
+            
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+            
+            // Add click handlers to language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            });
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</div>
+    <script src="../assets/lazy-loading.js"></script>
+    <script>
+        // Preload critical images immediately
+        if (window.preloadCriticalImages) {
+            window.preloadCriticalImages();
+        }
+    </script>
+</body>
+</html>
