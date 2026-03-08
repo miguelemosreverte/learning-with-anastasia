@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" translate="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google" content="notranslate">
     <title>The Amazing Iron Snail - Learning with Anastasia</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
@@ -622,6 +623,7 @@
         var currentLanguage = 'en';
 
         function changeLanguage(lang) {
+            console.log('[LANG DEBUG] changeLanguage called with:', lang, 'current:', currentLanguage, 'stack:', new Error().stack.split('\n')[2]);
             if (lang === currentLanguage) return;
             currentLanguage = lang;
 
@@ -646,6 +648,7 @@
         (function init() {
             var savedLang = 'en';
             try { savedLang = localStorage.getItem('preferredLanguage') || 'en'; } catch(e) {}
+            console.log('[LANG DEBUG] init: localStorage preferredLanguage =', savedLang);
 
             // Force initial language (bypass the currentLanguage guard for first run)
             currentLanguage = '';
