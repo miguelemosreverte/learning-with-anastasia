@@ -504,12 +504,15 @@
         
         function switchLanguage(lang) {
             currentLang = lang;
-            
+
+            // Save preference to localStorage
+            localStorage.setItem('preferredLanguage', lang);
+
             // Update active button
             document.querySelectorAll('.language-selector button').forEach(btn => {
                 btn.classList.toggle('active', btn.dataset.lang === lang);
             });
-            
+
             // Update all text elements
             document.querySelectorAll('[data-' + lang + ']').forEach(element => {
                 if (element.tagName === 'INPUT' && element.hasAttribute('data-placeholder-' + lang)) {
@@ -519,11 +522,17 @@
                 }
             });
         }
-        
+
         // Add language button listeners
         document.querySelectorAll('.language-selector button').forEach(button => {
             button.addEventListener('click', () => switchLanguage(button.dataset.lang));
         });
+
+        // Load saved language preference
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang && savedLang !== 'en') {
+            switchLanguage(savedLang);
+        }
         
         // Search functionality
         const searchInput = document.getElementById('searchInput');
