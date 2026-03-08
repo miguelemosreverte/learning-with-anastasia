@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="pageTitle">Seals of the World - Learning with Anastasia</title>
+    <title>Seals of the World - Learning with Anastasia</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Merriweather:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap');
         
@@ -250,13 +250,13 @@
 <body>
     <!-- Language Switcher -->
     <div class="language-switcher">
-        <button class="lang-btn active" data-lang="en" title="English">
+        <button type="button" class="lang-btn active" data-lang="en" title="English">
             <div class="flag-emoji">🇬🇧</div>
         </button>
-        <button class="lang-btn" data-lang="es" title="Español">
+        <button type="button" class="lang-btn" data-lang="es" title="Español">
             <div class="flag-emoji">🇪🇸</div>
         </button>
-        <button class="lang-btn" data-lang="ru" title="Русский">
+        <button type="button" class="lang-btn" data-lang="ru" title="Русский">
             <div class="flag-emoji">🇷🇺</div>
         </button>
     </div>
@@ -602,46 +602,73 @@
         };
 
         function updateContent(lang) {
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
+            var t = translations[lang];
+            if (!t) return;
 
-            document.querySelectorAll('[data-i18n-alt]').forEach(element => {
-                const key = element.getAttribute('data-i18n-alt');
-                if (translations[lang] && translations[lang][key]) {
-                    element.alt = translations[lang][key];
-                }
-            });
+            // Update page title separately
+            if (t.pageTitle) document.title = t.pageTitle;
 
-            document.documentElement.lang = lang;
+            // Update text content
+            var elements = document.querySelectorAll('[data-i18n]');
+            for (var i = 0; i < elements.length; i++) {
+                var key = elements[i].getAttribute('data-i18n');
+                if (key !== 'pageTitle' && t[key]) {
+                    elements[i].textContent = t[key];
+                }
+            }
+
+            // Update alt text
+            var altElements = document.querySelectorAll('[data-i18n-alt]');
+            for (var j = 0; j < altElements.length; j++) {
+                var altKey = altElements[j].getAttribute('data-i18n-alt');
+                if (t[altKey]) {
+                    altElements[j].alt = t[altKey];
+                }
+            }
         }
 
+        var currentLanguage = 'en';
+
         function changeLanguage(lang) {
+            if (lang === currentLanguage) return;
+            currentLanguage = lang;
+
             // Update button states
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
-            });
+            var buttons = document.querySelectorAll('.lang-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                if (buttons[i].getAttribute('data-lang') === lang) {
+                    buttons[i].classList.add('active');
+                } else {
+                    buttons[i].classList.remove('active');
+                }
+            }
 
             // Save preference
-            localStorage.setItem('preferredLanguage', lang);
+            try { localStorage.setItem('preferredLanguage', lang); } catch(e) {}
 
             // Update content
             updateContent(lang);
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+        // Initialize immediately (script is at bottom of body, DOM is ready)
+        (function init() {
+            var savedLang = 'en';
+            try { savedLang = localStorage.getItem('preferredLanguage') || 'en'; } catch(e) {}
+
+            // Force initial language (bypass the currentLanguage guard for first run)
+            currentLanguage = '';
             changeLanguage(savedLang);
 
             // Add click handlers to language buttons
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.addEventListener('click', () => changeLanguage(btn.dataset.lang));
-            });
-        });
+            var buttons = document.querySelectorAll('.lang-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    changeLanguage(this.getAttribute('data-lang'));
+                });
+            }
+        })();
     </script>
 </body>
 </html>
