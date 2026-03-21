@@ -710,3 +710,40 @@
 | 02:27 | Session started | |
 | 02:27 | Task started | PDF generation: lions-mature [ru] |
 | 02:28 | Task ended | PDF generation: lions-mature [ru] — 34s — files: 1, pages: 13 |
+
+## 2026-03-02
+
+### Session s_b13fa8be (15:16 — 15:19)
+
+| Time | Event | Details |
+|------|-------|---------|
+| 15:16 | Session started | |
+| 15:16 | Task started | Chapter pipeline: lions |
+| 15:19 | milestone | Image generation complete (chapter: lions) |
+| 15:19 | milestone | HTML build started (chapter: lions) |
+| 15:19 | milestone | PDF generated (chapter: lions) |
+| 15:19 | Task ended | Chapter pipeline: lions — 2m 48s — interventions: 22, qaRounds: 0, styleIssues: 0 |
+
+### Session s_9b3f4b25 (15:16 — 15:19)
+
+| Time | Event | Details |
+|------|-------|---------|
+| 15:16 | Session started | |
+| 15:16 | Task started | Image generation: lions |
+| 15:19 | Task ended | Image generation: lions — 2m 13s — generated: 0, skipped: 28, failed: 1 |
+
+### Session s_2b671450 (15:19 — 15:19)
+
+| Time | Event | Details |
+|------|-------|---------|
+| 15:19 | Session started | |
+| 15:19 | Task started | Index generation |
+| 15:19 | Task ended | Index generation — 0s — chapters: 14 |
+
+### Session s_ff0f1023 (15:19 — 15:19)
+
+| Time | Event | Details |
+|------|-------|---------|
+| 15:19 | Session started | |
+| 15:19 | Task started | PDF generation: lions [en] |
+| 15:19 | Task ended | PDF generation: lions [en] — 34s — files: 1, pages: 12 |

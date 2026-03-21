@@ -1,6 +1,6 @@
 # Prompt History
 
-> 206 total attempts | 41 sanitized | 147 succeeded | 59 failed
+> 209 total attempts | 41 sanitized | 147 succeeded | 62 failed
 
 ## lions
 
@@ -266,6 +266,9 @@
 | 3 | - | No | gemini | api_error | 133.4s |
 | 2 | - | No | gemini | api_error | 104.2s |
 | 3 | - | No | gemini | api_error | 150.0s |
+| 1 | - | No | gemini | api_error | 42.7s |
+| 2 | - | No | gemini | api_error | 94.3s |
+| 3 | - | No | gemini | api_error | 133.4s |
 
 ### fun-fact-2 (fun-fact-huntress.jpg)
 
